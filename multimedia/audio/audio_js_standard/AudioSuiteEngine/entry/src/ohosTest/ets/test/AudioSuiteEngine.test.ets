@@ -2071,5 +2071,310 @@ export default function AudioSuiteEngineTest() {
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
       done();
     })
+
+    /**
+     * @tc.number     AudioSuiteEngine_CreatePipeline_0001
+     * @tc.name       AudioSuiteEngine createpipeline test
+     * @tc.desc       AudioSuiteEngine createpipeline test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_CreatePipeline_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_CreatePipeline_0001();
+      console.info(`Tag: AudioSuiteEngine_CreatePipeline_0001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_CreatePipeline_0002
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_CreatePipeline_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_CreatePipeline_0002();
+      console.info(`Tag: AudioSuiteEngine_CreatePipeline_0002 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_CreatePipeline_0003
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_CreatePipeline_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_CreatePipeline_0003();
+      console.info(`Tag: AudioSuiteEngine_CreatePipeline_0003 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_CreatePipeline_0004
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_ENGINE_NOT_EXIST test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_ENGINE_NOT_EXIST test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_CreatePipeline_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_CreatePipeline_0004();
+      console.info(`Tag: AudioSuiteEngine_CreatePipeline_0004 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_CreatePipeline_0005
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_CREATE_EXCEED_SYSTEM_LIMITS test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_CREATE_EXCEED_SYSTEM_LIMITS test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_CreatePipeline_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_CreatePipeline_0005();
+      console.info(`Tag: AudioSuiteEngine_CreatePipeline_0005 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_DestroyPipeline_0001
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_DestroyPipeline_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_DestroyPipeline_0001();
+      console.info(`Tag: AudioSuiteEngine_DestroyPipeline_0001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_DestroyPipeline_0002
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_DestroyPipeline_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_DestroyPipeline_0002();
+      console.info(`Tag: AudioSuiteEngine_DestroyPipeline_0002 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_DestroyPipeline_0003
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_DestroyPipeline_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_DestroyPipeline_0003();
+      console.info(`Tag: AudioSuiteEngine_DestroyPipeline_0003 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_DestroyPipeline_0004
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_DestroyPipeline_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_DestroyPipeline_0004();
+      console.info(`Tag: AudioSuiteEngine_DestroyPipeline_0004 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StartPipeline_0001
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StartPipeline_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StartPipeline_0001();
+      console.info(`Tag: AudioSuiteEngine_StartPipeline_0001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StartPipeline_0002
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StartPipeline_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StartPipeline_0002();
+      console.info(`Tag: AudioSuiteEngine_StartPipeline_0002 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StartPipeline_0003
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StartPipeline_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StartPipeline_0003();
+      console.info(`Tag: AudioSuiteEngine_StartPipeline_0003 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StartPipeline_0004
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StartPipeline_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StartPipeline_0004();
+      console.info(`Tag: AudioSuiteEngine_StartPipeline_0004 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StartPipeline_0005
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StartPipeline_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StartPipeline_0005();
+      console.info(`Tag: AudioSuiteEngine_StartPipeline_0005 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StartPipeline_0006
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StartPipeline_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StartPipeline_0006();
+      console.info(`Tag: AudioSuiteEngine_StartPipeline_0006 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StopPipeline_0001
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StopPipeline_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StopPipeline_0001();
+      console.info(`Tag: AudioSuiteEngine_StopPipeline_0001 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StopPipeline_0002
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StopPipeline_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StopPipeline_0002();
+      console.info(`Tag: AudioSuiteEngine_StopPipeline_0002 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StopPipeline_0003
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StopPipeline_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StopPipeline_0003();
+      console.info(`Tag: AudioSuiteEngine_StopPipeline_0003 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number     AudioSuiteEngine_StopPipeline_0004
+     * @tc.name       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.desc       AudioSuiteEngine AUDIOSUITE_SUCCESS test
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('AudioSuiteEngine_StopPipeline_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.AudioSuiteEngine_StopPipeline_0004();
+      console.info(`Tag: AudioSuiteEngine_StopPipeline_0004 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
+
   })
 }
