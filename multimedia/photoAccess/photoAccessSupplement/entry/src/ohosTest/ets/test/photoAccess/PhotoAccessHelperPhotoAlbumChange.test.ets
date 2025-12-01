@@ -111,7 +111,6 @@ export default function PhotoAccessHelperPhotoAlbumChange() {
      * @tc.type   Function
      * @tc.level  Level 0
      */
-
     it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_VIDEO_SESSION_OFF_AUTO_DEVICE_SWITCH_STATUS_CHANGE_003';
       try {
