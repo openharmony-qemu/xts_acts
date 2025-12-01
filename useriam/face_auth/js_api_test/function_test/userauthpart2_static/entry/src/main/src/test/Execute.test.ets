@@ -42,6 +42,10 @@ const widgetParamDefault: userAuth.WidgetParam = {
   title: '使用密码验证',
 };
 
+const widgetParam = {
+  title: '请输入密码',
+  uiContext: null,
+};
 
 function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
   return new Promise<void>((resolve, reject) => {
