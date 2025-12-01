@@ -5468,21 +5468,5 @@ export default function AVRecorderTest() {
       offCallback(['audioCapturerChange']);
       done();
     })
-
-/*
-    /**
-     * @tc.name   photoAssetAvailable_listen_001
-     * @tc.number photoAssetAvailable_listen_001
-     * @tc.desc   photoAssetAvailable_listen_001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('photoAssetAvailable_listen_001', Level.LEVEL2, async (done: Function) => {
-      await createAvRecorderPromise();
-      photoAssetAvailableListen();
-      done();
-    })
-*/
   })
 }

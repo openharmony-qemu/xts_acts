@@ -328,28 +328,6 @@ export default function AVScreenCaptureRecorderTest() {
       done();
     })
 
-/*
-    /**
-     * @tc.name   skipPrivacyMode_001
-     * @tc.number skipPrivacyMode_001
-     * @tc.desc   skipPrivacyMode_001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('skipPrivacyMode_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'skipPrivacyMode_001';
-      let windowIDs = [0];
-      await createAVScreenCaptureRecorder(done, testName);
-      onListen(testName);
-      await initConfig(testName);
-      await startRecording(testName);
-      await skipPrivacyMode(testName, windowIDs);
-      offListen();
-      done();
-    });
-*/
-
     /**
      * @tc.name   setMicEnabled_001
      * @tc.number AV_SCREEN_CAPTURE_RECORDER_TEST_006

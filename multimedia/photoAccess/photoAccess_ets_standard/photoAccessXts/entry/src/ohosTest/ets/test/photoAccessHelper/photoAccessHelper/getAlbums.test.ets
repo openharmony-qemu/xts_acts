@@ -457,25 +457,6 @@ export default function getAlbumsTest() {
       await getAlbumsCallbackWithOptionsAbnormalTest(done, type, subType, fetchOps);
     })
 
-    /*
-            /**
-             * @tc.name   getAlbums_callback_user_ops_abnormal_004
-             * @tc.number getAlbums_callback_user_ops_abnormal_004
-             * @tc.desc   getAlbums_callback_user_ops_abnormal_004
-             * @tc.type   FUNCTION
-             * @tc.size   MEDIUMTEST
-             * @tc.level  LEVEL2
-             */
-            it('getAlbums_callback_user_ops_abnormal_004', Level.LEVEL2, async (done: Function) => {
-              const testName = 'getAlbums_callback_user_ops_abnormal_004';
-              console.info(TAG, testName);
-              const type: photoAccessHelper.AlbumType = albumType.USER;
-              const subType: photoAccessHelper.AlbumSubtype = albumSubtype.USER_GENERIC;
-              const fetchOps: photoAccessHelper.FetchOptions | undefined = undefined;
-              await getAlbumsCallbackWithOptionsAbnormalTest(done, type, subType, fetchOps);
-            })
-    */
-
     /**
      * @tc.name   getAlbums_callback_user_001
      * @tc.number PHOTO_ACCESS_HELPER_GET_ALBUMS_012
@@ -764,25 +745,6 @@ export default function getAlbumsTest() {
       };
       await getAlbumsCallbackWithOptionsAbnormalTest(done, type, subType, fetchOps);
     })
-
-    /*
-        /**
-         * @tc.name   getAlbums_callback_system_ops_abnormal_004
-         * @tc.number getAlbums_callback_system_ops_abnormal_004
-         * @tc.desc   getAlbums_callback_system_ops_abnormal_004
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('getAlbums_callback_system_ops_abnormal_004', Level.LEVEL2, async (done: Function) => {
-          const testName = 'getAlbums_callback_system_ops_abnormal_004';
-          console.info(TAG, testName);
-          const type: photoAccessHelper.AlbumType = albumType.SYSTEM;
-          const subType: photoAccessHelper.AlbumSubtype = albumSubtype.USER_GENERIC;
-          const fetchOps: photoAccessHelper.FetchOptions | undefined = undefined;
-          await getAlbumsCallbackWithOptionsAbnormalTest(done, type, subType, fetchOps);
-        })
-    */
 
     /**
      * @tc.name   getAlbums_callback_system_001
