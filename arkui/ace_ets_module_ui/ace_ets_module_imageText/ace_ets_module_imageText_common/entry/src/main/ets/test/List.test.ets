@@ -43,6 +43,8 @@ import TextAddApi1 from './TextAddApi1.test';
 import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
 import TextMenuType from './TextMenuType.test';
 
+import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
+
 export default function testsuite() {
   InputPresetTest()
   // FontTest
@@ -74,4 +76,5 @@ export default function testsuite() {
   TextAddApi1()
   TextMenuItemIdEqualsTest()
   TextMenuType()
+  RichEditorDeleteTest();
 }
