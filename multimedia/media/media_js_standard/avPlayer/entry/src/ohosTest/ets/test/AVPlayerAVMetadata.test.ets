@@ -984,6 +984,30 @@ export default function AVMetadata() {
       await mediaTestBase.msleepAsync(SLEEP_TIME)
       done();
     });
+    /* *
+      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+      * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+      * @tc.desc      : Local Video playback control test
+      * @tc.size      : MediumTest
+      * @tc.type      : Function Test
+      * @tc.level     : Level0
+      */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      await avMetadataExtractor.fetchMetadata().then((metadata) => {
+        console.info(TAG, `fetchMetadata callback success video description :${metadata.description}}`);
+        expect(metadata.description).assertEqual("Test");
+        avMetadataExtractor.release();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
