@@ -1,6 +1,6 @@
 # the minimum version of CMake.
 cmake_minimum_required(VERSION 3.5.0)
-project(LCNXComponent2)
+project(LCNXComponent)
 
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -11,13 +11,13 @@ endif()
 include_directories(
     ${NATIVERENDER_ROOT_PATH}
     ${NATIVERENDER_ROOT_PATH}/render
-    ${NATIVERENDER_ROOT_PATH}/manager
+    ${NATIVERENDER_ROOT_PATH}/XComponent
 )
 
 add_library(nativerender SHARED
     render/EGLRender.cpp
-    manager/plugin_manager.cpp
-    napi_init.cpp
+    XComponent/XComponentSurfaceConfigTest.cpp
+    napi_render_init.cpp
 )
 find_library(
     # Sets the name of the path variable.

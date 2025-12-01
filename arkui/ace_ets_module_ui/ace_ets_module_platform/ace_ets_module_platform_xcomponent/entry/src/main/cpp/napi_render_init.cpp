@@ -14,7 +14,7 @@
  */
 #include <hilog/log.h>
 #include "common/common.h"
-#include "manager/plugin_manager.h"
+#include "XComponent/XComponentSurfaceConfigTest.h"
 
 namespace NativeXComponentSample {
 
@@ -24,13 +24,13 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     // 向ArkTS侧暴露接口
     napi_property_descriptor desc[] = {
-        {"bindNode", nullptr, PluginManager::BindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"unbindNode", nullptr, PluginManager::UnbindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"drawStar", nullptr, PluginManager::DrawStar, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"bindNode", nullptr, XComponentSurfaceConfigTest::BindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"unbindNode", nullptr, XComponentSurfaceConfigTest::UnbindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"drawStar", nullptr, XComponentSurfaceConfigTest::DrawStar, nullptr, nullptr, nullptr, napi_default, nullptr},
 
-        {"TestSetSurfaceConfigErrorCode001", nullptr, PluginManager::TestSetSurfaceConfigErrorCode001,
+        {"TestSetSurfaceConfigErrorCode001", nullptr, XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode001,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestSetSurfaceConfigErrorCode002", nullptr, PluginManager::TestSetSurfaceConfigErrorCode002,
+        {"TestSetSurfaceConfigErrorCode002", nullptr, XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

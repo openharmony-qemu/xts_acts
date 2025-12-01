@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "plugin_manager.h"
+#include "XComponentSurfaceConfigTest.h"
 #include <ace/xcomponent/native_interface_xcomponent.h>
 #include <cstdint>
 #include <hilog/log.h>
@@ -21,10 +21,10 @@
 #include <arkui/native_interface.h>
 
 namespace NativeXComponentSample {
-std::unordered_map<std::string, ArkUI_NodeHandle> PluginManager::nodeHandleMap_;
-std::unordered_map<void *, OH_ArkUI_SurfaceCallback *> PluginManager::callbackMap_;
-std::unordered_map<void *, OH_ArkUI_SurfaceHolder *> PluginManager::surfaceHolderMap_;
-ArkUI_AccessibilityProvider *PluginManager::provider_ = nullptr;
+std::unordered_map<std::string, ArkUI_NodeHandle> XComponentSurfaceConfigTest::nodeHandleMap_;
+std::unordered_map<void *, OH_ArkUI_SurfaceCallback *> XComponentSurfaceConfigTest::callbackMap_;
+std::unordered_map<void *, OH_ArkUI_SurfaceHolder *> XComponentSurfaceConfigTest::surfaceHolderMap_;
+ArkUI_AccessibilityProvider *XComponentSurfaceConfigTest::provider_ = nullptr;
 ArkUI_NativeNodeAPI_1 *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
     OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
 
@@ -72,7 +72,7 @@ namespace {
     
     void OnFrameCallback(ArkUI_NodeHandle node, uint64_t timestamp, uint64_t targetTimestamp)
     {
-        if (!PluginManager::surfaceHolderMap_.count(node)) {
+        if (!XComponentSurfaceConfigTest::surfaceHolderMap_.count(node)) {
             return;
         }
         static uint64_t count = 0;
@@ -88,7 +88,7 @@ namespace {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "on event");
         if (eventType == NODE_TOUCH_EVENT) {
             ArkUI_NodeHandle handle = OH_ArkUI_NodeEvent_GetNodeHandle(event); // 获取触发该事件的组件对象
-            auto holder = PluginManager::surfaceHolderMap_[handle];
+            auto holder = XComponentSurfaceConfigTest::surfaceHolderMap_[handle];
             EGLRender* render = reinterpret_cast<EGLRender*>(OH_ArkUI_SurfaceHolder_GetUserData(holder));
             render->DrawStar(false); // 绘制五角星
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "on touch");
@@ -96,7 +96,7 @@ namespace {
     }
 } // namespace
 
-napi_value PluginManager::BindNode(napi_env env, napi_callback_info info)
+napi_value XComponentSurfaceConfigTest::BindNode(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -136,7 +136,7 @@ napi_value PluginManager::BindNode(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-napi_value PluginManager::UnbindNode(napi_env env, napi_callback_info info)
+napi_value XComponentSurfaceConfigTest::UnbindNode(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -151,11 +151,11 @@ napi_value PluginManager::UnbindNode(napi_env env, napi_callback_info info)
     OH_ArkUI_XComponent_UnregisterOnFrameCallback(node); // 解注册帧回调
     OH_ArkUI_AccessibilityProvider_Dispose(provider_);   // 销毁 ArkUI_AccessibilityProvider
     auto holder = surfaceHolderMap_[node];
-    if (PluginManager::callbackMap_.count(holder)) {
-        auto callback = PluginManager::callbackMap_[holder];
+    if (XComponentSurfaceConfigTest::callbackMap_.count(holder)) {
+        auto callback = XComponentSurfaceConfigTest::callbackMap_[holder];
         OH_ArkUI_SurfaceHolder_RemoveSurfaceCallback(holder, callback); // 移除SurfaceCallback
         OH_ArkUI_SurfaceCallback_Dispose(callback);                     // 销毁surfaceCallback
-        PluginManager::callbackMap_.erase(holder);
+        XComponentSurfaceConfigTest::callbackMap_.erase(holder);
     }
     auto render = reinterpret_cast<EGLRender*>(OH_ArkUI_SurfaceHolder_GetUserData(holder));
     delete render; // 销毁EGLRender对象
@@ -165,7 +165,7 @@ napi_value PluginManager::UnbindNode(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-napi_value PluginManager::DrawStar(napi_env env, napi_callback_info info)
+napi_value XComponentSurfaceConfigTest::DrawStar(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -185,7 +185,7 @@ napi_value PluginManager::DrawStar(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-napi_value PluginManager::TestSetSurfaceConfigErrorCode001(napi_env env, napi_callback_info info)
+napi_value XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode001(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -205,7 +205,7 @@ napi_value PluginManager::TestSetSurfaceConfigErrorCode001(napi_env env, napi_ca
     NAPI_END;
 }
 
-napi_value PluginManager::TestSetSurfaceConfigErrorCode002(napi_env env, napi_callback_info info)
+napi_value XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode002(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};

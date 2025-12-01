@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef NATIVEXCOMPONENT_PLUGIN_MANAGER_H
-#define NATIVEXCOMPONENT_PLUGIN_MANAGER_H
+#ifndef NATIVEXCOMPONENT_SURFACE_CONFIG_TEST_H
+#define NATIVEXCOMPONENT_SURFACE_CONFIG_TEST_H
 
 #include <ace/xcomponent/native_interface_xcomponent.h>
 #include <unordered_map>
@@ -28,9 +28,9 @@ constexpr const int FIRST_ARG = 1;
 constexpr const int SECOND_ARG = 2;
 constexpr const int THIRD_ARG = 3;
 constexpr const int FRAME_COUNT = 50;
-class PluginManager {
+class XComponentSurfaceConfigTest {
 public:
-    ~PluginManager();
+    ~XComponentSurfaceConfigTest();
         
     static napi_value BindNode(napi_env env, napi_callback_info info);
     static napi_value UnbindNode(napi_env env, napi_callback_info info);
@@ -45,4 +45,4 @@ public:
     static ArkUI_AccessibilityProvider *provider_;
 };
 } // namespace NativeXComponentSample
-#endif // NATIVEXCOMPONENT_PLUGIN_MANAGER_H
+#endif // NATIVEXCOMPONENT_SURFACE_CONFIG_TEST_H
