@@ -50,15 +50,15 @@ export default function SliderOptionValue() {
 			done()
 		})
 
-		/**
-		 * @tc.number    SUB_ACE_ARKUI_SliderOptionValue_0101
-		 * @tc.name      Slider_0101
-		 * @tc.desc      TestUpdater: Set the prefix to Text Custom Component
-		 * @tc.level:    Level 0
-		 * @tc.type :    Function
-		 * @tc.size :    MediumTest
-		 */
 
+  /**
+   * @tc.name   Slider_0101
+   * @tc.number Slider_0101
+   * @tc.desc   Slider_0101
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
 		it('Slider_0101', Level.LEVEL1, async (done: Function) => {
 			let driver = await Driver.create();
 			let strJson = getInspectorByKey("buildTest1");
@@ -67,15 +67,15 @@ export default function SliderOptionValue() {
 			expect(obj.$attrs.content).assertEqual('message1');
 			done();
 		})
-		/**
-		 * @tc.number    SUB_ACE_ARKUI_SliderOptionValue_0102
-		 * @tc.name      Slider_0102
-		 * @tc.desc      TestUpdater: Set the suffix to Text Custom Component
-		 * @tc.level:    Level 0
-		 * @tc.type :    Function
-		 * @tc.size :    MediumTest
-		 */
 
+  /**
+   * @tc.name   Slider_0102
+   * @tc.number Slider_0102
+   * @tc.desc   Slider_0102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
 		it('Slider_0102', Level.LEVEL1, async (done: Function) => {
 			let driver = await Driver.create();
 			let strJson = getInspectorByKey("buildTest2");
@@ -84,14 +84,14 @@ export default function SliderOptionValue() {
 			expect(obj.$attrs.content).assertEqual('');
 			done();
 		});
-		/**
-		 * @tc.number    SUB_ACE_ARKUI_SliderOptionValue_0103
-		 * @tc.name      Slider_0103
-		 * @tc.desc      TestUpdater: Set the prefix to special text
-		 * @tc.level:    Level 0
-		 * @tc.type :    Function
-		 * @tc.size :    MediumTest
-		 */
+  /**
+   * @tc.name   Slider_0103
+   * @tc.number SUB_ACE_ARKUI_SliderOptionValue_0103
+   * @tc.desc   TestUpdater: Set the prefix to special text
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
 		it('Slider_0103', Level.LEVEL1, async (done: Function) => {
 			let driver = await Driver.create();
 			let strJson = getInspectorByKey("buildTest3");
@@ -100,14 +100,14 @@ export default function SliderOptionValue() {
 			expect(obj.$attrs.content).assertEqual('😎😌👨‍👩‍👦‍👦👨👨‍👩‍👦‍👦👁‍🗨123');
 			done();
 		});
-		/**
-		 * @tc.number    SUB_ACE_ARKUI_SliderOptionValue_0104
-		 * @tc.name      Slider_0104
-		 * @tc.desc      TestUpdater: Set the suffix to resource text
-		 * @tc.level:    Level 0
-		 * @tc.type :    Function
-		 * @tc.size :    MediumTest
-		 */
+  /**
+   * @tc.name   Slider_0104
+   * @tc.number SUB_ACE_ARKUI_SliderOptionValue_0104
+   * @tc.desc   TestUpdater: Set the suffix to resource text
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
 		it('Slider_0104', Level.LEVEL1, async (done: Function) => {
 			let driver = await Driver.create();
 			let strJson = getInspectorByKey("buildTest4");
@@ -116,14 +116,14 @@ export default function SliderOptionValue() {
 			expect(obj.$attrs.content).assertEqual('12');
 			done();
 		});
-		/**
-		 * @tc.number    SUB_ACE_ARKUI_SliderOptionValue_0105
-		 * @tc.name      Slider_0105
-		 * @tc.desc      TestUpdater: Set the prefix to text
-		 * @tc.level:    Level 0
-		 * @tc.type :    Function
-		 * @tc.size :    MediumTest
-		 */
+  /**
+   * @tc.name   Slider_0105
+   * @tc.number SUB_ACE_ARKUI_SliderOptionValue_0105
+   * @tc.desc   TestUpdater: Set the prefix to text
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
 		it('Slider_0105', Level.LEVEL1, async (done: Function) => {
 			let driver = await Driver.create();
 			let strJson = getInspectorByKey("buildTest5");
@@ -132,14 +132,14 @@ export default function SliderOptionValue() {
 			expect(obj.$attrs.content).assertEqual('message5');
 			done();
 		});
-		/**
-		 * @tc.number    SUB_ACE_ARKUI_SliderOptionValue_0106
-		 * @tc.name      Slider_0106
-		 * @tc.desc      TestUpdater: Set the suffix to text
-		 * @tc.level:    Level 0
-		 * @tc.type :    Function
-		 * @tc.size :    MediumTest
-		 */
+  /**
+   * @tc.name   Slider_0106
+   * @tc.number SUB_ACE_ARKUI_SliderOptionValue_0106
+   * @tc.desc   TestUpdater: Set the suffix to text
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
 		it('Slider_0106', Level.LEVEL1, async (done: Function) => {
 			let driver = await Driver.create();
 			let strJson = getInspectorByKey("buildTest6");

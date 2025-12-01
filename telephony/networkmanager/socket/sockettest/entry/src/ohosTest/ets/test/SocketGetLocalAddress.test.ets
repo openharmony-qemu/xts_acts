@@ -190,13 +190,13 @@ function expectTrue(exp: boolean, info: string = ''): void {
 export default function SocketGetLocalSocketTest() {
   describe('SocketGetLocalSocketTest', () => {
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0100
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0100
-     * @tc.desc  :  test UDP GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAdrressTest0100
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0100
+     * @tc.desc   test UDP GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAdrressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0100';
@@ -229,13 +229,13 @@ export default function SocketGetLocalSocketTest() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0200
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0200
-     * @tc.desc  :  test Multicast GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0200
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0200
+     * @tc.desc   test Multicast GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0200';
@@ -268,13 +268,13 @@ export default function SocketGetLocalSocketTest() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0300
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0300
-     * @tc.desc  :  test TlsSocket GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0300
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0300
+     * @tc.desc   test TlsSocket GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0300';
@@ -321,13 +321,13 @@ export default function SocketGetLocalSocketTest() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0400
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0400
-     * @tc.desc  :  test TlsSocket GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0400
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0400
+     * @tc.desc   test TlsSocket GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0400';
@@ -368,13 +368,13 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0500
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0500
-     * @tc.desc  :  test TlsServer GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0500
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0500
+     * @tc.desc   test TlsServer GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0500';
@@ -429,13 +429,13 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0600
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0600
-     * @tc.desc  :  test TcpSocket GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0600
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0600
+     * @tc.desc   test TcpSocket GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0600';
@@ -467,13 +467,13 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0700
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0700
-     * @tc.desc  :  test TcpServer GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0700
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0700
+     * @tc.desc   test TcpServer GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0700';
@@ -504,13 +504,13 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0800
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0800
-     * @tc.desc  :  test LocalSocket GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0800
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0800
+     * @tc.desc   test LocalSocket GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0800';
@@ -540,13 +540,13 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_0900
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest0900
-     * @tc.desc  :  test LocalServer GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0900
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0900
+     * @tc.desc   test LocalServer GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0900';
@@ -576,13 +576,13 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
-     /* *
-     * @tc.number:  SUB_NetworkMgr_Socket GetLocalAddress_1000
-     * @tc.name  :  testNetworkMgrSocketGetLocalAddressTest1000
-     * @tc.desc  :  test LocalConnection GetLocalAddress function.
-     * @tc.size  :  SmallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1000
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_1000
+     * @tc.desc   test LocalConnection GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketGetLocalAddressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1000';

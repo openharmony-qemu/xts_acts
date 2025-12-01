@@ -26,39 +26,39 @@ export default function textAreaFontFamilyTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_FONTFAMILY_0100
-     * @tc.name       : testTextAreaFontFamily001
-     * @tc.desc       : testing fontFamily for TextArea with HarmonyOS Sans value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaFontFamily001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_FONTFAMILY_0100
+     * @tc.desc   testing fontFamily for TextArea with HarmonyOS Sans value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaFontFamily001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaFontFamily001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_FONTFAMILY_0200
-     * @tc.name       : testTextAreaFontFamily002
-     * @tc.desc       : testing fontFamily for TextArea with HarmonyOS Sans STR_AREA value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaFontFamily002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_FONTFAMILY_0200
+     * @tc.desc   testing fontFamily for TextArea with HarmonyOS Sans STR_AREA value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaFontFamily002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaFontFamily002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_FONTFAMILY_0300
-     * @tc.name       : testTextAreaFontFamily003
-     * @tc.desc       : testing fontFamily for TextArea with "" value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextAreaFontFamily003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_FONTFAMILY_0300
+     * @tc.desc   testing fontFamily for TextArea with "" value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaFontFamily003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaFontFamily003()).assertEqual(0)

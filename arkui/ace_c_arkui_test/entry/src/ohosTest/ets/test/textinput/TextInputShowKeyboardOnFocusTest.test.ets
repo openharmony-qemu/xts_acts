@@ -26,37 +26,37 @@ export default function textInputShowKeyboardOnFocusTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SHOW_KEYBOARD_ON_FOCUS_0001
-     * @tc.name: testTextInputShowKeyboardOnFocus001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputShowKeyboardOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOW_KEYBOARD_ON_FOCUS_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowKeyboardOnFocus001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowKeyboardOnFocus001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SHOW_KEYBOARD_ON_FOCUS_0002
-     * @tc.name: testTextInputShowKeyboardOnFocus002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputShowKeyboardOnFocus002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOW_KEYBOARD_ON_FOCUS_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowKeyboardOnFocus002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowKeyboardOnFocus002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SHOW_KEYBOARD_ON_FOCUS_0003
-     * @tc.name: testTextInputShowKeyboardOnFocus003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputShowKeyboardOnFocus003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SHOW_KEYBOARD_ON_FOCUS_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputShowKeyboardOnFocus003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputShowKeyboardOnFocus003()).assertEqual(0)

@@ -53,6 +53,14 @@ export default function stageDatePickerDialog() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   testDatePickerDialog001
+     * @tc.number testDatePickerDialog001
+     * @tc.desc   testDatePickerDialog001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerDialog001', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog001 START');
       setTimeout(() => {
@@ -81,6 +89,14 @@ export default function stageDatePickerDialog() {
       }, 500)
     });
 
+    /**
+     * @tc.name   testDatePickerDialog002
+     * @tc.number testDatePickerDialog002
+     * @tc.desc   testDatePickerDialog002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerDialog002', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog002 START');
       setTimeout(() => {
@@ -108,6 +124,14 @@ export default function stageDatePickerDialog() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   testDatePickerDialog003
+     * @tc.number testDatePickerDialog003
+     * @tc.desc   testDatePickerDialog003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDatePickerDialog003', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog003 START');
       setTimeout(() => {

@@ -65,12 +65,12 @@ export default function listItem_Padding() {
     });
 
     /**
+     * @tc.name   testListItemPadding
      * @tc.number SUB_ACE_LIST_LISTITEM_PADDING_TEST_0100
-     * @tc.name testListItemPadding
-     * @tc.desc ListItem subcomponent binding padding property
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding padding property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemPadding',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemPadding START');

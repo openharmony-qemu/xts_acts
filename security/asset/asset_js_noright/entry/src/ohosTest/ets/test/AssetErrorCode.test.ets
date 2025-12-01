@@ -33,12 +33,12 @@ export default function AssetErrorCodeTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_JS_wraptype_0100
      * @tc.number SUB_Security_DataSecurity_Asset_JS_wraptype_0100
-     * @tc.name test wraptype
-     * @tc.desc 数据库允许导出字段测试
-     * @tc.size MediumTest
-     * @tc.level Level0
-     * @tc.type Function
+     * @tc.desc   数据库允许导出字段测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_DataSecurity_Asset_JS_wraptype_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -59,12 +59,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_JS_wraptype_0200
      * @tc.number SUB_Security_DataSecurity_Asset_JS_wraptype_0200
-     * @tc.name test wraptype
-     * @tc.desc 数据库不允许导出字段测试
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   数据库不允许导出字段测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_JS_wraptype_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -85,12 +85,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_add_0300_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_add_0300_0100
-     * @tc.name test add
-     * @tc.desc 存在同名资产时新增数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   存在同名资产时新增数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_add_0300_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -113,12 +113,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_add_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_add_401_0100
-     * @tc.name test add
-     * @tc.desc 参数异常时新增数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时新增数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_add_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -135,12 +135,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_postQuerySync_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_postQuerySync_401_0100
-     * @tc.name test postQuerySync
-     * @tc.desc 参数异常时使用postQuerySync接口，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用postQuerySync接口，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_postQuerySync_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -157,12 +157,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_postQuery_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_postQuery_401_0100
-     * @tc.name test postQuery
-     * @tc.desc 参数异常时使用postQuery接口，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用postQuery接口，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_postQuery_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -179,12 +179,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_removeSync_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_removeSync_02_0100
-     * @tc.name test removeSync
-     * @tc.desc 调用removeSync接口，删除不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用removeSync接口，删除不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_removeSync_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -201,12 +201,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_remove_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_remove_02_0100
-     * @tc.name test remove
-     * @tc.desc 调用remove接口，删除不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用remove接口，删除不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_remove_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -227,12 +227,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_016_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_016_0100
-     * @tc.name test preQuerySync
-     * @tc.desc 反复调用preQuerySync接口，不释放缓存返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   反复调用preQuerySync接口，不释放缓存返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_016_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let challenge = new Uint8Array ([]);
@@ -260,12 +260,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_017_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_017_0100
-     * @tc.name test preQuerySync
-     * @tc.desc 调用preQuerySync接口，查询不支持的功能，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用preQuerySync接口，查询不支持的功能，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_017_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -293,12 +293,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_02_0100
-     * @tc.name test preQuerySync
-     * @tc.desc 调用preQuerySync接口，查询不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用preQuerySync接口，查询不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -320,12 +320,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuery_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuery_02_0100
-     * @tc.name test preQuery
-     * @tc.desc 调用preQuery接口，查询不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用preQuery接口，查询不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuery_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -351,12 +351,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuery_016_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuery_016_0100
-     * @tc.name test preQuery
-     * @tc.desc 反复调用preQuery接口，不释放缓存返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   反复调用preQuery接口，不释放缓存返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuery_016_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let challenge = new Uint8Array ([]);
@@ -385,12 +385,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_addSync_03_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_addSync_03_0100
-     * @tc.name test addSync
-     * @tc.desc 存在同名资产时新增数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   存在同名资产时新增数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_addSync_03_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -413,12 +413,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_addSync_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_addSync_401_0100
-     * @tc.name test addSync
-     * @tc.desc 参数异常时使用addSync接口新增数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用addSync接口新增数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_addSync_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -435,12 +435,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuery_017_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuery_017_0100
-     * @tc.name test preQuery
-     * @tc.desc 调用preQuery接口，查询不支持的功能，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用preQuery接口，查询不支持的功能，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuery_017_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -470,12 +470,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_querySync_017_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_querySync_017_0100
-     * @tc.name test querySync
-     * @tc.desc 调用querySync接口，批量查询关键资产明文，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用querySync接口，批量查询关键资产明文，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_querySync_017_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -506,12 +506,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_querySync_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_querySync_02_0100
-     * @tc.name test querySync
-     * @tc.desc 调用querySync接口，查询不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用querySync接口，查询不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_querySync_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -528,12 +528,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_querySync_04_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_querySync_04_0100
-     * @tc.name test querySync
-     * @tc.desc 验证身份失败，调用querySync接口，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   验证身份失败，调用querySync接口，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_querySync_04_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -574,12 +574,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_query_017_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_query_017_0100
-     * @tc.name test query
-     * @tc.desc 调用query接口，批量查询关键资产明文，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用query接口，批量查询关键资产明文，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_query_017_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -610,12 +610,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_query_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_query_02_0100
-     * @tc.name test query
-     * @tc.desc 调用query接口，查询不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用query接口，查询不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_query_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -632,12 +632,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_query_04_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_query_04_0100
-     * @tc.name test query
-     * @tc.desc 验证身份失败，调用query接口，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   验证身份失败，调用query接口，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_query_04_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -678,12 +678,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_updateSync_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_updateSync_02_0100
-     * @tc.name test updateSync
-     * @tc.desc 调用updateSync接口，修改不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用updateSync接口，修改不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_updateSync_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -702,12 +702,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_update_02_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_update_02_0100
-     * @tc.name test update
-     * @tc.desc 调用updateSync接口，修改不存在的数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   调用updateSync接口，修改不存在的数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_update_02_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -726,12 +726,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_addSync_201_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_addSync_201_0100
-     * @tc.name test addSync
-     * @tc.desc 没有权限时使用addSync接口新增数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   没有权限时使用addSync接口新增数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_addSync_201_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -750,12 +750,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_add_201_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_add_201_0100
-     * @tc.name test add
-     * @tc.desc 没有权限时使用add接口新增数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   没有权限时使用add接口新增数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_add_201_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -774,12 +774,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_401_0100
-     * @tc.name test preQuerySync
-     * @tc.desc 参数异常时使用preQuerySync接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用preQuerySync接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuerySync_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr1: asset.AssetMap = new Map();
@@ -796,12 +796,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_preQuery_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_preQuery_401_0100
-     * @tc.name test preQuery
-     * @tc.desc 参数异常时使用preQuery接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用preQuery接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_preQuery_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr1: asset.AssetMap = new Map();
@@ -818,12 +818,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_JS_group_0100
      * @tc.number SUB_Security_DataSecurity_Asset_JS_group_0100
-     * @tc.name test GROUP_ID
-     * @tc.desc 数据库群组字段测试
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   数据库群组字段测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_JS_group_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -844,12 +844,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_querySync_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_querySync_401_0100
-     * @tc.name test querySync
-     * @tc.desc 参数异常时使用querySync接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用querySync接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_querySync_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr1: asset.AssetMap = new Map();
@@ -866,12 +866,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_query_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_query_401_0100
-     * @tc.name test query
-     * @tc.desc 参数异常时使用query接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用query接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_query_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr1: asset.AssetMap = new Map();
@@ -888,12 +888,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_removeSync_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_removeSync_401_0100
-     * @tc.name test removeSync
-     * @tc.desc 参数异常时使用removeSync接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用removeSync接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_removeSync_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr1: asset.AssetMap = new Map();
@@ -910,12 +910,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_remove_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_remove_401_0100
-     * @tc.name test remove
-     * @tc.desc 参数异常时使用remove接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用remove接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_remove_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr1: asset.AssetMap = new Map();
@@ -932,12 +932,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_updateSync_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_updateSync_401_0100
-     * @tc.name test updateSync
-     * @tc.desc 参数异常时使用updateSync接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用updateSync接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_updateSync_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -956,12 +956,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_errorCode_update_401_0100
      * @tc.number SUB_Security_DataSecurity_Asset_errorCode_update_401_0100
-     * @tc.name test update
-     * @tc.desc 参数异常时使用remove接口查询数据，返回错误码检查
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   参数异常时使用remove接口查询数据，返回错误码检查
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_errorCode_update_401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -980,12 +980,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_querySyncResult_Func_0100
      * @tc.number SUB_Security_DataSecurity_Asset_querySyncResult_Func_0100
-     * @tc.name SUB_Security_DataSecurity_Asset_querySyncResult_Func_0100
-     * @tc.desc 普通数据库同步查询
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   普通数据库同步查询
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_querySyncResult_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -1009,12 +1009,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_querySyncResult_Func_0101
      * @tc.number SUB_Security_DataSecurity_Asset_querySyncResult_Func_0101
-     * @tc.name SUB_Security_DataSecurity_Asset_querySyncResult_Func_0101
-     * @tc.desc 加密数据库同步查询
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   加密数据库同步查询
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_querySyncResult_Func_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -1038,12 +1038,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_querySyncResult_Func_0102
      * @tc.number SUB_Security_DataSecurity_Asset_querySyncResult_Func_0102
-     * @tc.name SUB_Security_DataSecurity_Asset_querySyncResult_Func_0102
-     * @tc.desc 不传REQUIRE_ATTR_ENCRYPTED
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   不传REQUIRE_ATTR_ENCRYPTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_querySyncResult_Func_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();
@@ -1066,12 +1066,12 @@ export default function AssetErrorCodeTest() {
     });
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_querySyncResult_Func_0103
      * @tc.number SUB_Security_DataSecurity_Asset_querySyncResult_Func_0103
-     * @tc.name SUB_Security_DataSecurity_Asset_querySyncResult_Func_0103
-     * @tc.desc 传入错误的alias，返回对应错误码
-     * @tc.size MediumTest
-     * @tc.level Level3
-     * @tc.type Function
+     * @tc.desc   传入错误的alias，返回对应错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_querySyncResult_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let attr: asset.AssetMap = new Map();

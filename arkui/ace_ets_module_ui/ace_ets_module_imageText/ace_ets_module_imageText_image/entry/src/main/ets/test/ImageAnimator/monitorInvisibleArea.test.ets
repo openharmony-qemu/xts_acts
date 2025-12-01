@@ -43,13 +43,13 @@ export default function monitorInvisibleAreaTest() {
     });
 
 
-    /*
-     * @tc.number  monitorInvisibleAreaTest_001
-     * @tc.name    monitorInvisibleAreaTest_001
-     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):true
-     * @tc.level   Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   monitorInvisibleAreaTest_001
+     * @tc.number monitorInvisibleAreaTest_001
+     * @tc.desc   monitorInvisibleArea(monitorInvisibleArea: boolean):true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('monitorInvisibleAreaTest_001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -89,13 +89,13 @@ export default function monitorInvisibleAreaTest() {
       done();
     });
 
-    /*
-     * @tc.number  monitorInvisibleAreaTest_002
-     * @tc.name    monitorInvisibleAreaTest_002
-     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):false
-     * @tc.level   Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   monitorInvisibleAreaTest_002
+     * @tc.number monitorInvisibleAreaTest_002
+     * @tc.desc   monitorInvisibleArea(monitorInvisibleArea: boolean):false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('monitorInvisibleAreaTest_002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -140,13 +140,13 @@ export default function monitorInvisibleAreaTest() {
       done();
     });
 
-    /*
-     * @tc.number  monitorInvisibleAreaTest_003
-     * @tc.name    monitorInvisibleAreaTest_003
-     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):undefined
-     * @tc.level   Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   monitorInvisibleAreaTest_003
+     * @tc.number monitorInvisibleAreaTest_003
+     * @tc.desc   monitorInvisibleArea(monitorInvisibleArea: boolean):undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('monitorInvisibleAreaTest_003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -190,13 +190,13 @@ export default function monitorInvisibleAreaTest() {
       done();
     });
 
-    /*
-     * @tc.number  monitorInvisibleAreaTest_004
-     * @tc.name    monitorInvisibleAreaTest_004
-     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):null
-     * @tc.level   Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   monitorInvisibleAreaTest_004
+     * @tc.number monitorInvisibleAreaTest_004
+     * @tc.desc   monitorInvisibleArea(monitorInvisibleArea: boolean):null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('monitorInvisibleAreaTest_004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

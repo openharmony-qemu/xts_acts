@@ -47,12 +47,12 @@ export default function setCrossLanguageOptionsErrorCodeTest() {
     });
 
     /**
-     * @tc.number    setCrossLanguageOptionsErrorCodeTest_0100
-     * @tc.name      setCrossLanguageOptionsErrorCodeTest_0100
-     * @tc.desc      frameNode: setCrossLanguageOptions Error Code
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setCrossLanguageOptionsErrorCodeTest_0100
+     * @tc.number setCrossLanguageOptionsErrorCodeTest_0100
+     * @tc.desc   frameNode: setCrossLanguageOptions Error Code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setCrossLanguageOptionsErrorCodeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('setCrossLanguageOptionsErrorCodeTest_0100 START');

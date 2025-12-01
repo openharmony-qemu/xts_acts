@@ -59,12 +59,12 @@ export default function SetSetTest() {
     })
 
     /**
+     * @tc.name   MapSetTest001
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_001
-     * @tc.name MapSetTest001
-     * @tc.desc Basic functionality: set string key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic functionality: set string key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,string> = new Map();
@@ -75,12 +75,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest002
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_002
-     * @tc.name MapSetTest002
-     * @tc.desc Overwrite existing key with new value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Overwrite existing key with new value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['age', 20]]);
@@ -90,12 +90,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest003
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_003
-     * @tc.name MapSetTest003
-     * @tc.desc Set number key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set number key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<number,string> = new Map();
@@ -105,12 +105,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest004
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_004
-     * @tc.name MapSetTest004
-     * @tc.desc Set boolean key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set boolean key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<boolean,string> = new Map();
@@ -121,12 +121,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest005
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_005
-     * @tc.name MapSetTest005
-     * @tc.desc Set null key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set null key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<null,string> = new Map();
@@ -136,12 +136,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest006
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_006
-     * @tc.name MapSetTest006
-     * @tc.desc Set undefined key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set undefined key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<undefined,string> = new Map();
@@ -151,12 +151,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest007
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_007
-     * @tc.name MapSetTest007
-     * @tc.desc Set object key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set object key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest007 = MapSetTest007();
@@ -166,12 +166,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest008
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_008
-     * @tc.name MapSetTest008
-     * @tc.desc Set array key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set array key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -183,12 +183,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest009
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_009
-     * @tc.name MapSetTest009
-     * @tc.desc Set symbol key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set symbol key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest009 = MapSetTest009();
@@ -197,12 +197,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest010
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_010
-     * @tc.name MapSetTest010
-     * @tc.desc Set function key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set function key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest010 = MapSetTest010();
@@ -212,12 +212,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest011
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_011
-     * @tc.name MapSetTest011
-     * @tc.desc Set date object key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set date object key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const date = new Date();
@@ -229,12 +229,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest012
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_012
-     * @tc.name MapSetTest012
-     * @tc.desc Set regexp key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set regexp key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -246,12 +246,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest013
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_013
-     * @tc.name MapSetTest013
-     * @tc.desc Set bigint key-value pair
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set bigint key-value pair
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const bigint = 123n;
@@ -263,12 +263,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest014
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_014
-     * @tc.name MapSetTest014
-     * @tc.desc Set multiple key-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set multiple key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,number> = new Map();
@@ -282,12 +282,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest015
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_015
-     * @tc.name MapSetTest015
-     * @tc.desc Set with same value for different keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with same value for different keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,number> = new Map();
@@ -301,12 +301,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest016
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_016
-     * @tc.name MapSetTest016
-     * @tc.desc Set with object as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with object as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let setTest016 = MapSetTest016();
@@ -315,12 +315,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest017
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_017
-     * @tc.name MapSetTest017
-     * @tc.desc Modifying object value after set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modifying object value after set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest017 = MapSetTest017();
@@ -328,12 +328,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest018
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_018
-     * @tc.name MapSetTest018
-     * @tc.desc Set with array as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with array as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const valueArr = [1, 2, 3];
@@ -344,12 +344,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest019
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_019
-     * @tc.name MapSetTest019
-     * @tc.desc Modifying array value after set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modifying array value after set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const valueArr = [1, 2, 3];
@@ -362,12 +362,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest020
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_020
-     * @tc.name MapSetTest020
-     * @tc.desc Set with function as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with function as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const func = () => 'hello';
@@ -378,12 +378,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest021
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_021
-     * @tc.name MapSetTest021
-     * @tc.desc Set with map as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with map as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest021 = MapSetTest021();
@@ -392,13 +392,12 @@ export default function SetSetTest() {
     });
 
     /**
-
+     * @tc.name   MapSetTest022
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_022
-     * @tc.name MapSetTest022
-     * @tc.desc Set with set as value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with set as value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest022 = MapSetTest022();
@@ -407,12 +406,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest023
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_023
-     * @tc.name MapSetTest023
-     * @tc.desc Set returns the map instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set returns the map instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,string> = new Map();
@@ -421,12 +420,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest024
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_024
-     * @tc.name MapSetTest024
-     * @tc.desc Chaining set operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Chaining set operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,number> = new Map();
@@ -438,12 +437,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest025
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_025
-     * @tc.name MapSetTest025
-     * @tc.desc Set with empty string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,string> = new Map();
@@ -453,12 +452,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest026
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_026
-     * @tc.name MapSetTest026
-     * @tc.desc Set with numeric string vs number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with numeric string vs number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<string|number,string|number> = new Map();
@@ -470,12 +469,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest027
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_027
-     * @tc.name MapSetTest027
-     * @tc.desc Set with negative number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with negative number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<number,string> = new Map();
@@ -486,12 +485,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest028
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_028
-     * @tc.name MapSetTest028
-     * @tc.desc Set with zero and negative zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with zero and negative zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number,string> = new Map();
@@ -502,12 +501,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest029
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_029
-     * @tc.name MapSetTest029
-     * @tc.desc Set with NaN as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with NaN as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number,string> = new Map();
@@ -518,12 +517,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest030
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_030
-     * @tc.name MapSetTest030
-     * @tc.desc Set with Infinity as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Infinity as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number,string> = new Map();
@@ -534,12 +533,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest031
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_031
-     * @tc.name MapSetTest031
-     * @tc.desc Set with -Infinity as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with -Infinity as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number,string> = new Map();
@@ -550,12 +549,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest032
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_032
-     * @tc.name MapSetTest032
-     * @tc.desc Set with very large number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with very large number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const largeNum = Number.MAX_SAFE_INTEGER;
@@ -566,12 +565,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest033
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_033
-     * @tc.name MapSetTest033
-     * @tc.desc Set with very small number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with very small number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const smallNum = Number.MIN_SAFE_INTEGER;
@@ -582,12 +581,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest034
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_034
-     * @tc.name MapSetTest034
-     * @tc.desc Set with float number key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with float number key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<number,string> = new Map();
@@ -597,12 +596,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest035
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_035
-     * @tc.name MapSetTest035
-     * @tc.desc Set with string containing special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with string containing special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = '!@#$%^&*()_+{}:"<>?`~';
@@ -613,12 +612,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest036
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_036
-     * @tc.name MapSetTest036
-     * @tc.desc Set with multi-line string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with multi-line string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = 'line1\nline2';
@@ -629,12 +628,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest037
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_037
-     * @tc.name MapSetTest037
-     * @tc.desc Set with Unicode character key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Unicode character key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const key = '€'; // Unicode character
@@ -645,12 +644,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest038
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_038
-     * @tc.name MapSetTest038
-     * @tc.desc Set with symbol from Symbol.for()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with symbol from Symbol.for()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest038 = MapSetTest038();
@@ -659,12 +658,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest039
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_039
-     * @tc.name MapSetTest039
-     * @tc.desc Set with well-known symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with well-known symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest039 = MapSetTest039();
@@ -673,12 +672,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest040
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_040
-     * @tc.name MapSetTest040
-     * @tc.desc Set with frozen object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with frozen object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest040 = MapSetTest040();
@@ -687,12 +686,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest041
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_041
-     * @tc.name MapSetTest041
-     * @tc.desc Set with sealed object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with sealed object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest041 = MapSetTest041();
@@ -701,12 +700,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest042
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_042
-     * @tc.name MapSetTest042
-     * @tc.desc Set with empty object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with empty object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest042 = MapSetTest042();
@@ -715,12 +714,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest043
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_043
-     * @tc.name MapSetTest043
-     * @tc.desc Set with nested object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with nested object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       interface InnerObj {
@@ -739,12 +738,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest044
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_044
-     * @tc.name MapSetTest044
-     * @tc.desc Modifying object key after set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modifying object key after set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       interface MyObject {
@@ -761,12 +760,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest045
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_045
-     * @tc.name MapSetTest045
-     * @tc.desc Set with array key then modify array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with array key then modify array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -778,12 +777,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest046
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_046
-     * @tc.name MapSetTest046
-     * @tc.desc Set with typed array as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with typed array as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const typedArr = new Uint8Array([1, 2, 3]);
@@ -794,12 +793,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest047
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_047
-     * @tc.name MapSetTest047
-     * @tc.desc Set with Map instance as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Map instance as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyMap:Map<string,string> = new Map();
@@ -810,12 +809,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest048
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_048
-     * @tc.name MapSetTest048
-     * @tc.desc Set with Set instance as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Set instance as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keySet:Set<string> = new Set();
@@ -826,12 +825,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest049
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_049
-     * @tc.name MapSetTest049
-     * @tc.desc Set with WeakMap instance as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with WeakMap instance as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyWeakMap: WeakMap<object, number> = new WeakMap();
@@ -842,12 +841,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest050
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_050
-     * @tc.name MapSetTest050
-     * @tc.desc Set with WeakSet instance as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with WeakSet instance as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keyWeakSet:WeakSet<object> = new WeakSet();
@@ -858,12 +857,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest051
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_051
-     * @tc.name MapSetTest051
-     * @tc.desc Set with Promise as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Promise as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promise = Promise.resolve('test');
@@ -874,12 +873,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest052
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_052
-     * @tc.name MapSetTest052
-     * @tc.desc Set with Error object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Error object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const error = new Error('test');
@@ -890,12 +889,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest053
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_053
-     * @tc.name MapSetTest053
-     * @tc.desc Set with class as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with class as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class TestClass {}
@@ -906,12 +905,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest054
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_054
-     * @tc.name MapSetTest054
-     * @tc.desc Set with class instance as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with class instance as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class TestClass {}
@@ -923,12 +922,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest055
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_055
-     * @tc.name MapSetTest055
-     * @tc.desc Set with generator function as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with generator function as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest055 = MapSetTest055();
@@ -937,12 +936,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest056
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_056
-     * @tc.name MapSetTest056
-     * @tc.desc Set with async function as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with async function as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncFunc = async () => {};
@@ -953,12 +952,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest057
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_057
-     * @tc.name MapSetTest057
-     * @tc.desc Set with arrow function as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with arrow function as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arrowFunc = () => {};
@@ -969,12 +968,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest058
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_058
-     * @tc.name MapSetTest058
-     * @tc.desc Set with bound function as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with bound function as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest058 = MapSetTest058();
@@ -983,12 +982,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest059
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_059
-     * @tc.name MapSetTest059
-     * @tc.desc Set with Proxy object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Set with Proxy object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSetTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let setTest059 = MapSetTest059();
@@ -997,12 +996,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest060
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_060
-     * @tc.name MapSetTest060
-     * @tc.desc Set with revoked proxy as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Set with revoked proxy as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSetTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let setTest060 = MapSetTest060();
@@ -1013,12 +1012,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest061
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_061
-     * @tc.name MapSetTest061
-     * @tc.desc Set with ArrayBuffer as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with ArrayBuffer as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const buffer = new ArrayBuffer(8);
@@ -1029,12 +1028,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest062
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_062
-     * @tc.name MapSetTest062
-     * @tc.desc Set with DataView as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with DataView as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const buffer = new ArrayBuffer(8);
@@ -1046,12 +1045,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest063
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_063
-     * @tc.name MapSetTest063
-     * @tc.desc Set with RegExp with flags as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with RegExp with flags as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const regex = /test/gi;
@@ -1064,12 +1063,12 @@ export default function SetSetTest() {
 
 
     /**
+     * @tc.name   MapSetTest065
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_065
-     * @tc.name MapSetTest065
-     * @tc.desc Set with Math object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Math object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<Math,string> = new Map();
@@ -1079,12 +1078,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest066
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_066
-     * @tc.name MapSetTest066
-     * @tc.desc Set with JSON object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with JSON object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<JSON,string> = new Map();
@@ -1094,12 +1093,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest067
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_067
-     * @tc.name MapSetTest067
-     * @tc.desc Set with Reflect object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Reflect object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest067 = MapSetTest067();
@@ -1108,12 +1107,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest068
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_068
-     * @tc.name MapSetTest068
-     * @tc.desc Set with empty map and add entries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with empty map and add entries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,number> = new Map();
@@ -1127,12 +1126,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest069
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_069
-     * @tc.name MapSetTest069
-     * @tc.desc Set after delete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set after delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['key', 'value']]);
@@ -1145,12 +1144,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest070
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_070
-     * @tc.name MapSetTest070
-     * @tc.desc Set after clear
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set after clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new Map([['a', 1], ['b', 2]]);
@@ -1162,12 +1161,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest071
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_071
-     * @tc.name MapSetTest071
-     * @tc.desc Set with same key multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set with same key multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapSetTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map:Map<string,string> = new Map();
@@ -1180,12 +1179,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest072
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_072
-     * @tc.name MapSetTest072
-     * @tc.desc Set with key that is a map entry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a map entry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const entry = ['key', 'value'];
@@ -1196,12 +1195,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest073
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_073
-     * @tc.name MapSetTest073
-     * @tc.desc Set with key that is a Map iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a Map iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const innerMap = new Map([['a', 1]]);
@@ -1213,12 +1212,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest074
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_074
-     * @tc.name MapSetTest074
-     * @tc.desc Set with large number of entries
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Set with large number of entries
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('MapSetTest074', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const map:Map<string,number> = new Map();
@@ -1230,12 +1229,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest075
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_075
-     * @tc.name MapSetTest075
-     * @tc.desc Performance test: set with string keys
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 3
+     * @tc.desc   Performance test: set with string keys
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('MapSetTest075', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, async () => {
       const map:Map<string,number> = new Map();
@@ -1252,12 +1251,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest076
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_076
-     * @tc.name MapSetTest076
-     * @tc.desc Performance test: set with object keys
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 3
+     * @tc.desc   Performance test: set with object keys
+     * @tc.type   PERFORMANCE
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('MapSetTest076', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, async () => {
       interface IdentifiedObject {
@@ -1284,12 +1283,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest077
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_077
-     * @tc.name MapSetTest077
-     * @tc.desc Set with key that is a number converted to string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a number converted to string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number|string,string> = new Map();
@@ -1302,12 +1301,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest078
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_078
-     * @tc.name MapSetTest078
-     * @tc.desc Set with boolean true and number 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with boolean true and number 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<boolean|number,string> = new Map();
@@ -1320,12 +1319,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest079
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_079
-     * @tc.name MapSetTest079
-     * @tc.desc Set with boolean false and number 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with boolean false and number 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<boolean|number,string> = new Map();
@@ -1338,12 +1337,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest080
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_080
-     * @tc.name MapSetTest080
-     * @tc.desc Set with key that is a string with different cases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a string with different cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<string,string> = new Map();
@@ -1356,12 +1355,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest081
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_081
-     * @tc.name MapSetTest081
-     * @tc.desc Set with key that is a string with whitespace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a string with whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<string,string> = new Map();
@@ -1374,12 +1373,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest082
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_082
-     * @tc.name MapSetTest082
-     * @tc.desc Set with key that is a symbol and a string with same description
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a symbol and a string with same description
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest082 = MapSetTest082();
@@ -1389,12 +1388,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest083
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_083
-     * @tc.name MapSetTest083
-     * @tc.desc Set with key that is a BigInt and a Number with same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a BigInt and a Number with same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<bigint|number,string> = new Map();
@@ -1407,12 +1406,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest084
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_084
-     * @tc.name MapSetTest084
-     * @tc.desc Set with key that is a Date and a string representation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a Date and a string representation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const date = new Date();
@@ -1427,12 +1426,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest085
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_085
-     * @tc.name MapSetTest085
-     * @tc.desc Set with key that is a RegExp and its source string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a RegExp and its source string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const regex = /test/;
@@ -1446,12 +1445,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest086
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_086
-     * @tc.name MapSetTest086
-     * @tc.desc Set with key that is an array and a similar string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is an array and a similar string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
@@ -1465,12 +1464,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest087
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_087
-     * @tc.name MapSetTest087
-     * @tc.desc Set with null prototype object as key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with null prototype object as key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest087 = MapSetTest087();
@@ -1479,12 +1478,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest088
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_088
-     * @tc.name MapSetTest088
-     * @tc.desc Set with object and its prototype as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with object and its prototype as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest088 = MapSetTest088();
@@ -1494,12 +1493,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest089
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_089
-     * @tc.name MapSetTest089
-     * @tc.desc Set with function and its name as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with function and its name as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const myFunc = () => {};
@@ -1513,12 +1512,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest090
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_090
-     * @tc.name MapSetTest090
-     * @tc.desc Set with class and its name as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with class and its name as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       class MyClass {}
@@ -1532,12 +1531,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest091
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_091
-     * @tc.name MapSetTest091
-     * @tc.desc Set with undefined and string 'undefined'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with undefined and string 'undefined'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<undefined|string,string> = new Map();
@@ -1550,12 +1549,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest092
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_092
-     * @tc.name MapSetTest092
-     * @tc.desc Set with null and string 'null'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with null and string 'null'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<null|string,string> = new Map();
@@ -1568,12 +1567,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest093
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_093
-     * @tc.name MapSetTest093
-     * @tc.desc Set with NaN and string 'NaN'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with NaN and string 'NaN'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number|string,string> = new Map();
@@ -1586,12 +1585,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest094
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_094
-     * @tc.name MapSetTest094
-     * @tc.desc Set with Infinity and string 'Infinity'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with Infinity and string 'Infinity'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map:Map<number|string,string> = new Map();
@@ -1604,12 +1603,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest095
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_095
-     * @tc.name MapSetTest095
-     * @tc.desc Set with key that is a proxy and its target
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Set with key that is a proxy and its target
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapSetTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let setTest095 = MapSetTest095();
@@ -1619,12 +1618,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest096
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_096
-     * @tc.name MapSetTest096
-     * @tc.desc Set with key that is a generator object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is a generator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest096 = MapSetTest096();
@@ -1633,12 +1632,12 @@ export default function SetSetTest() {
     });
 
     /**
+     * @tc.name   MapSetTest097
      * @tc.number SUB_BUILTINS_MAP_SET_TEST_097
-     * @tc.name MapSetTest097
-     * @tc.desc Set with key that is an async generator object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Set with key that is an async generator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapSetTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let setTest097 = MapSetTest097();

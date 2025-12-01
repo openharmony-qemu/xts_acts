@@ -41,13 +41,13 @@ export default function DatePickerDialogUIPage() {
       done()
     });
 
-    /*
-     * @tc.number: DatePickerDialogAJsunit_0100
-     * @tc.name  : DatePickerDialogAJsunit_0100
-     * @tc.desc  : set api
-     * @tc.level : Level 2
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   DatePickerDialogAJsunit_0100
+     * @tc.number DatePickerDialogAJsunit_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DatePickerDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('DatePickerDialogAJsunit_0100 START');

@@ -25,12 +25,12 @@ export default function linkNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_LINK_DL_ITERATE_PHDR_0100
-     * @tc.name       : testMuslLinkDlIteratePhdr001
-     * @tc.desc       : test dl_iterate_phdr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslLinkDlIteratePhdr001
+     * @tc.number SUB_THIRDPARTY_MUSL_LINK_DL_ITERATE_PHDR_0100
+     * @tc.desc   test dl_iterate_phdr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslLinkDlIteratePhdr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(linkndk.dl_iterate_phdr()).assertEqual(0);

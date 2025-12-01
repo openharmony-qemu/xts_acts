@@ -47,9 +47,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest01
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest01_1460
-     * @tc.name textInputTest01
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest01', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest01] START');
@@ -64,9 +67,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest02
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest02_1460
-     * @tc.name textInputTest02
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest02', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest02] START');
@@ -94,9 +100,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest03
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest03_1460
-     * @tc.name textInputTest03
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest03', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest03] START');
@@ -110,9 +119,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest04
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest04_1460
-     * @tc.name textInputTest04
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest04', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest04] START');
@@ -140,9 +152,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest05
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest05_1460
-     * @tc.name textInputTest05
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest05', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest05] START');
@@ -156,9 +171,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest06
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest06_1460
-     * @tc.name textInputTest06
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest06', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest06] START');
@@ -186,9 +204,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest07
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest07_1460
-     * @tc.name textInputTest07
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest07', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest07] START');
@@ -202,9 +223,12 @@ export default function textInputJsunit3() {
     });
 
     /**
+     * @tc.name   textInputTest08
      * @tc.number SUB_ACE_BASIC_ETS_textInputTest08_1460
-     * @tc.name textInputTest08
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest08', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest08] START');
@@ -231,10 +255,13 @@ export default function textInputJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :textInputTest09
-     * @tc.name   :test getCaretOffset when iput text is null
-     * @tc.desc   :expect caretOffset index 0 when input text is null
+    /**
+     * @tc.name   textInputTest09
+     * @tc.number textInputTest09
+     * @tc.desc   expect caretOffset index 0 when input text is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest09', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest09] START');
@@ -250,10 +277,13 @@ export default function textInputJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :textInputTest10
-     * @tc.name   :test getCaretOffset when iput text length less than maxLength
-     * @tc.desc   :expect caretOffset index equal input text length
+    /**
+     * @tc.name   textInputTest10
+     * @tc.number textInputTest10
+     * @tc.desc   expect caretOffset index equal input text length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest10', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest10] START');
@@ -285,10 +315,13 @@ export default function textInputJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :textInputTest11
-     * @tc.name   :test getCaretOffset when iput text length exceed maxLength
-     * @tc.desc   :expect caretOffset index equal maxLength
+    /**
+     * @tc.name   textInputTest11
+     * @tc.number textInputTest11
+     * @tc.desc   expect caretOffset index equal maxLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest11', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest13] START');

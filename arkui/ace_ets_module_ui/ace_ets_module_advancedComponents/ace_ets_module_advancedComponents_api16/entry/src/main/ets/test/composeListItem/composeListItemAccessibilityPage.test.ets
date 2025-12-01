@@ -50,12 +50,12 @@ export default function composeListItemAccessibilityTest() {
     })
 
     /**
+     * @tc.name   composeListItemAccessibilityPageTest_0100
      * @tc.number composeListItemAccessibilityPageTest
-     * @tc.name composeListItemAccessibilityPageTest_0100
-     * @tc.desc Test composeListItemAccessibilityPage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test composeListItemAccessibilityPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemAccessibilityPageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
       console.info('[composeListItemAccessibilityPageTest_0100] START');

@@ -45,9 +45,12 @@ export default function flexOffset_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexOffset
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_1000
-     * @tc.name testFlexItemAlignAutoFlexOffset
-     * @tc.desc First subcomponent set offset attribute.
+     * @tc.desc   First subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexOffset',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexOffset START');

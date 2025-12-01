@@ -26,13 +26,12 @@ export default function cloudSynctest() {
 describe('cloudSync_test', function () {
 
   /**
+   * @tc.name   test_ChangeData_IsDirectory_001
    * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0100
-   * @tc.name test_ChangeData_IsDirectory_001
-   * @tc.desc function of API, Test ChangeData isDirectory interfaces.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ChangeData isDirectory interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_ChangeData_IsDirectory_001', Level.LEVEL3, async function () {
     let fpath = await featureAbility.getContext().getFilesDir() + '/test_ChangeData_IsDirectory_001';
@@ -49,14 +48,13 @@ describe('cloudSync_test', function () {
     }
   });
 
-   /**
+  /**
+   * @tc.name   test_ChangeData_IsDirectory_002
    * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0200
-   * @tc.name test_ChangeData_IsDirectory_002
-   * @tc.desc function of API, Test ChangeData isDirectory interfaces.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ChangeData isDirectory interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_ChangeData_IsDirectory_002', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/test_ChangeData_IsDirectory_002';
@@ -75,13 +73,12 @@ describe('cloudSync_test', function () {
   });
 
   /**
+   * @tc.name   test_ChangeData_Uris_003
    * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0300
-   * @tc.name test_ChangeData_Uris_003
-   * @tc.desc function of API, Test ChangeData Uris interfaces.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ChangeData Uris interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_ChangeData_Uris_003', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/test_ChangeData_Uris_003';

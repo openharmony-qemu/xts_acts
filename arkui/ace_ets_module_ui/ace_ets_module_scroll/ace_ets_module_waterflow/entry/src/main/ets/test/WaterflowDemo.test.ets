@@ -44,13 +44,13 @@ export default function WaterflowDemo() {
       console.info("waterflowDemo after each called");
     });
 
-    /*
-     * @tc.number    waterflowTest0001
-     * @tc.name      waterflowTest0001
-     * @tc.desc     waterflowTest0001
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   waterflowTest0001
+     * @tc.number waterflowTest0001
+     * @tc.desc   waterflowTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterflowTest0001',  Level.LEVEL0, async (done: Function) => {
       console.info('waterflowDemo testalphabetIndexerWidth0001 START');

@@ -54,12 +54,14 @@ export default function PropHight() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0580
-    * @tc.name  : PropHight_0100
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropHight_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0580
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropHight_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PropHight_0100 START');
       let driver = await Driver.create()
@@ -75,12 +77,14 @@ export default function PropHight() {
       console.info('[PropHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0590
-    * @tc.name  : PropHight_0200
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropHight_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0590
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropHight_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PropHight_0100 START');
       let driver = await Driver.create()
@@ -96,12 +100,14 @@ export default function PropHight() {
       console.info('[PropHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0600
-    * @tc.name  : PropHight_0300
-    * @tc.desc  : To test that the Prop decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PropHight_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0600
+     * @tc.desc   To test that the Prop decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropHight_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PropHight_0100 START');
       let driver = await Driver.create()

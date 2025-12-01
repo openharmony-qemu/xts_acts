@@ -52,12 +52,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0100
-     * @tc.name BuiltinsReadonlyArrayReduceTest0100
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsReadonlyArrayReduceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
       const numbers: readonly number[] = [1, 2, 3];
@@ -69,12 +69,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     })
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0200
-     * @tc.name BuiltinsReadonlyArrayReduceTest0200
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [1, 2, 3];
@@ -86,12 +86,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0300
-     * @tc.name BuiltinsReadonlyArrayReduceTest0300
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [];
@@ -107,12 +107,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0400
-     * @tc.name BuiltinsReadonlyArrayReduceTest0400
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [];
@@ -124,12 +124,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0500
-     * @tc.name BuiltinsReadonlyArrayReduceTest0500
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly (number | undefined)[] = [1, , 3];
@@ -141,12 +141,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0600
-     * @tc.name BuiltinsReadonlyArrayReduceTest0600
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [5];
@@ -158,12 +158,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0700
-     * @tc.name BuiltinsReadonlyArrayReduceTest0700
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly (number | undefined)[] = [,];
@@ -175,12 +175,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0800
-     * @tc.name BuiltinsReadonlyArrayReduceTest0800
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
 
@@ -195,12 +195,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest0900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_0900
-     * @tc.name BuiltinsReadonlyArrayReduceTest0900
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly (number | undefined | null)[] = [null, undefined, 3];
@@ -212,12 +212,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest1000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_1000
-     * @tc.name BuiltinsReadonlyArrayReduceTest1000
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly myObject[] = [{
@@ -233,12 +233,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest1100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_1100
-     * @tc.name BuiltinsReadonlyArrayReduceTest1100
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly string[] = ['a', 'b', 'c', 'd'];
@@ -250,12 +250,12 @@ export default function builtinsReadonlyArrayReduceRightTest() {
       Done();
     });
     /**
+     * @tc.name   BuiltinsReadonlyArrayReduceTest1200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_REDUCE_TEST_1200
-     * @tc.name BuiltinsReadonlyArrayReduceTest1200
-     * @tc.desc test Readonly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Readonly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayReduceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       const numbers: readonly number[] = [1, 2, 3];

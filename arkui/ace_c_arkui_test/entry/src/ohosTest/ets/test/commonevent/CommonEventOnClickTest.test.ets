@@ -26,14 +26,14 @@ export default function commonEventOnClickTest() {
       await Utils.pushPage(`commonevent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONCLICK_0100
-    * @tc.name       : testCommonEventOnClick001
-    * @tc.desc       : test onClick event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnClick001
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONCLICK_0100
+     * @tc.desc   test onClick event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnClick001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickTestImage')
       await Utils.sleep(2000)
@@ -41,14 +41,14 @@ export default function commonEventOnClickTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONCLICK_0200
-    * @tc.name       : testCommonEventOnClick002
-    * @tc.desc       : test onClick event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnClick002
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONCLICK_0200
+     * @tc.desc   test onClick event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnClick002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickTestImageDisable')
       await Utils.sleep(2000)

@@ -37,7 +37,6 @@ export default function RdbNdkStoreLevelTest() {
         afterAll(() => {})
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0200
          * @tc.desc   Normal testCase of NDK SecurityLevel is S1
@@ -53,7 +52,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1200
          * @tc.desc   Normal testCase of NDK SecurityLevel is S2
@@ -69,7 +67,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1300
          * @tc.desc   Normal testCase of NDK SecurityLevel is S3
@@ -85,7 +82,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1400
          * @tc.desc   Normal testCase of NDK SecurityLevel is S4
@@ -101,7 +97,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_EL_0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1500
          * @tc.desc   Normal testCase of NDK SecurityLevel is S4
@@ -117,7 +112,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_EL_0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1600
          * @tc.desc   Normal testCase of NDK
@@ -133,7 +127,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_EL_0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1700
          * @tc.desc   Normal testCase of NDK
@@ -149,7 +142,6 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_LEVEL_EL_0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1800
          * @tc.desc   Normal testCase of NDK

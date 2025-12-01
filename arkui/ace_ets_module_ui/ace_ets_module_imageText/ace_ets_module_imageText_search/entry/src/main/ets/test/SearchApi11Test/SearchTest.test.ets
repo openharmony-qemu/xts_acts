@@ -143,9 +143,12 @@ export default function search() {
     })
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0100
      * @tc.number ArkUI_Stage_Search_CaretStyle_0100
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Get the default value of caretStyle.width
+     * @tc.desc   Get the default value of caretStyle.width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0100] start");
@@ -161,9 +164,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0200
      * @tc.number ArkUI_Stage_Search_CaretStyle_0200
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 10
+     * @tc.desc   Set the value of caretStyle.width as 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0200] start");
@@ -199,9 +205,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0300
      * @tc.number ArkUI_Stage_Search_CaretStyle_0300
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 15px
+     * @tc.desc   Set the value of caretStyle.width as 15px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0300] start");
@@ -237,9 +246,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0400
      * @tc.number ArkUI_Stage_Search_CaretStyle_0400
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 10fp
+     * @tc.desc   Set the value of caretStyle.width as 10fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0400] start");
@@ -275,9 +287,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0500
      * @tc.number ArkUI_Stage_Search_CaretStyle_0500
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 15lpx
+     * @tc.desc   Set the value of caretStyle.width as 15lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0500] start");
@@ -313,9 +328,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0600
      * @tc.number ArkUI_Stage_Search_CaretStyle_0600
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as sys.float.ohos_id_text_margin_vertical
+     * @tc.desc   Set the value of caretStyle.width as sys.float.ohos_id_text_margin_vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0600] start");
@@ -339,9 +357,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0700
      * @tc.number ArkUI_Stage_Search_CaretStyle_0700
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 0
+     * @tc.desc   Set the value of caretStyle.width as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0700] start");
@@ -377,9 +398,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0800
      * @tc.number ArkUI_Stage_Search_CaretStyle_0800
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as -1.5
+     * @tc.desc   Set the value of caretStyle.width as -1.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0800] start");
@@ -415,9 +439,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_0900
      * @tc.number ArkUI_Stage_Search_CaretStyle_0900
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 100000
+     * @tc.desc   Set the value of caretStyle.width as 100000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_0900] start");
@@ -453,9 +480,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1000
      * @tc.number ArkUI_Stage_Search_CaretStyle_1000
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as null
+     * @tc.desc   Set the value of caretStyle.width as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1000] start");
@@ -491,9 +521,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1100
      * @tc.number ArkUI_Stage_Search_CaretStyle_1100
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as undefined
+     * @tc.desc   Set the value of caretStyle.width as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1100] start");
@@ -529,9 +562,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1200
      * @tc.number ArkUI_Stage_Search_CaretStyle_1200
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Get the default value of caretStyle.color
+     * @tc.desc   Get the default value of caretStyle.color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1200] start");
@@ -549,9 +585,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1300
      * @tc.number ArkUI_Stage_Search_CaretStyle_1300
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as 0xff0000
+     * @tc.desc   Set the value of caretStyle.color as 0xff0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1300] start");
@@ -587,9 +626,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1400
      * @tc.number ArkUI_Stage_Search_CaretStyle_1400
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as Color.Red
+     * @tc.desc   Set the value of caretStyle.color as Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1400] start");
@@ -625,9 +667,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1500
      * @tc.number ArkUI_Stage_Search_CaretStyle_1500
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as #ff9a35
+     * @tc.desc   Set the value of caretStyle.color as #ff9a35
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1500] start");
@@ -663,9 +708,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1600
      * @tc.number ArkUI_Stage_Search_CaretStyle_1600
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as $r('sys.color.ohos_id_color_connected')
+     * @tc.desc   Set the value of caretStyle.color as $r('sys.color.ohos_id_color_connected')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1600] start");
@@ -691,9 +739,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1700
      * @tc.number ArkUI_Stage_Search_CaretStyle_1700
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as abcdefghijk
+     * @tc.desc   Set the value of caretStyle.color as abcdefghijk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1700] start");
@@ -731,9 +782,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1800
      * @tc.number ArkUI_Stage_Search_CaretStyle_1800
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as null
+     * @tc.desc   Set the value of caretStyle.color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1800] start");
@@ -771,9 +825,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_1900
      * @tc.number ArkUI_Stage_Search_CaretStyle_1900
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as undefined
+     * @tc.desc   Set the value of caretStyle.color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_1900] start");
@@ -811,10 +868,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2000
      * @tc.number ArkUI_Stage_Search_CaretStyle_2000
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.width as 10
-     *               Set the value of caretStyle.color as 0xff0000
+     * @tc.desc   Set the value of caretStyle.width as 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_2000] start");
@@ -855,9 +914,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2100
      * @tc.number ArkUI_Stage_Search_CaretStyle_2100
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as rgb(0, 0, 255)
+     * @tc.desc   Set the value of caretStyle.color as rgb(0, 0, 255)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_2100] start");
@@ -893,9 +955,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2200
      * @tc.number ArkUI_Stage_Search_CaretStyle_2200
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as rgba(0, 255, 0, 0)
+     * @tc.desc   Set the value of caretStyle.color as rgba(0, 255, 0, 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_2200] start");
@@ -930,10 +995,13 @@ export default function search() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2300
      * @tc.number ArkUI_Stage_Search_CaretStyle_2300
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as $r('app.color.Caretcolor')
+     * @tc.desc   Set the value of caretStyle.color as $r('app.color.Caretcolor')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_Stage_Search_CaretStyle_2300 START');
@@ -947,10 +1015,13 @@ export default function search() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2400
      * @tc.number ArkUI_Stage_Search_CaretStyle_2400
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as $r('app.float.Caretwidth')
+     * @tc.desc   Set the value of caretStyle.color as $r('app.float.Caretwidth')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_Stage_Search_CaretStyle_2400 START');
@@ -964,10 +1035,13 @@ export default function search() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2500
      * @tc.number ArkUI_Stage_Search_CaretStyle_2500
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as $r('app.string.Caretwidth001')
+     * @tc.desc   Set the value of caretStyle.color as $r('app.string.Caretwidth001')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_Stage_Search_CaretStyle_2500 START');
@@ -981,10 +1055,13 @@ export default function search() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2600
      * @tc.number ArkUI_Stage_Search_CaretStyle_2600
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of caretStyle.color as $r('app.integer.Caretwidth')
+     * @tc.desc   Set the value of caretStyle.color as $r('app.integer.Caretwidth')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_Stage_Search_CaretStyle_2600 START');
@@ -998,10 +1075,13 @@ export default function search() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ArkUI_Stage_Search_CaretStyle_2700
      * @tc.number ArkUI_Stage_Search_CaretStyle_2700
-     * @tc.name Tests the caretStyle property of the search component
-     * @tc.desc Set the value of fontcolor as 0xff0000, assert caretStyle.caretColor
+     * @tc.desc   Set the value of fontcolor as 0xff0000, assert caretStyle.caretColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CaretStyle_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CaretStyle_2700] start");
@@ -1043,9 +1123,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0100
      * @tc.number ArkUI_Stage_Search_SearchIcon_0100
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Get the default value of searchIcon.size
+     * @tc.desc   Get the default value of searchIcon.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0100] start");
@@ -1063,9 +1146,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0200
      * @tc.number ArkUI_Stage_Search_SearchIcon_0200
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 26
+     * @tc.desc   Set the value of searchIcon.size as 26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0200] start");
@@ -1103,9 +1189,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0300
      * @tc.number ArkUI_Stage_Search_SearchIcon_0300
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 50px
+     * @tc.desc   Set the value of searchIcon.size as 50px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0300] start");
@@ -1143,9 +1232,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0400
      * @tc.number ArkUI_Stage_Search_SearchIcon_0400
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 50fp
+     * @tc.desc   Set the value of searchIcon.size as 50fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0400] start");
@@ -1183,9 +1275,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0500
      * @tc.number ArkUI_Stage_Search_SearchIcon_0500
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 50lpx
+     * @tc.desc   Set the value of searchIcon.size as 50lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0500] start");
@@ -1224,9 +1319,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0600
      * @tc.number ArkUI_Stage_Search_SearchIcon_0600
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as $r('sys.float.ohos_id_text_paragraph_margin_m')
+     * @tc.desc   Set the value of searchIcon.size as $r('sys.float.ohos_id_text_paragraph_margin_m')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0600] start");
@@ -1264,9 +1362,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0700
      * @tc.number ArkUI_Stage_Search_SearchIcon_0700
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 40
+     * @tc.desc   Set the value of searchIcon.size as 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0700] start");
@@ -1304,9 +1405,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0800
      * @tc.number ArkUI_Stage_Search_SearchIcon_0800
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 0
+     * @tc.desc   Set the value of searchIcon.size as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0800] start");
@@ -1344,9 +1448,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_0900
      * @tc.number ArkUI_Stage_Search_SearchIcon_0900
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as -16
+     * @tc.desc   Set the value of searchIcon.size as -16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_0900] start");
@@ -1384,9 +1491,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1000
      * @tc.number ArkUI_Stage_Search_SearchIcon_1000
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 10000
+     * @tc.desc   Set the value of searchIcon.size as 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1000] start");
@@ -1424,9 +1534,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1100
      * @tc.number ArkUI_Stage_Search_SearchIcon_1100
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as null
+     * @tc.desc   Set the value of searchIcon.size as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1100] start");
@@ -1464,9 +1577,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1200
      * @tc.number ArkUI_Stage_Search_SearchIcon_1200
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as undefined
+     * @tc.desc   Set the value of searchIcon.size as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1200] start");
@@ -1504,9 +1620,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1300
      * @tc.number ArkUI_Stage_Search_SearchIcon_1300
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Get the default value of searchIcon.color
+     * @tc.desc   Get the default value of searchIcon.color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1300] start");
@@ -1524,9 +1643,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1400
      * @tc.number ArkUI_Stage_Search_SearchIcon_1400
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as 0x00ff00
+     * @tc.desc   Set the value of searchIcon.color as 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1400] start");
@@ -1562,9 +1684,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1500
      * @tc.number ArkUI_Stage_Search_SearchIcon_1500
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as Color.Red
+     * @tc.desc   Set the value of searchIcon.color as Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1500] start");
@@ -1600,9 +1725,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1600
      * @tc.number ArkUI_Stage_Search_SearchIcon_1600
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as #ff9a35
+     * @tc.desc   Set the value of searchIcon.color as #ff9a35
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1600] start");
@@ -1638,9 +1766,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1700
      * @tc.number ArkUI_Stage_Search_SearchIcon_1700
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as $r('sys.color.ohos_id_color_connected')
+     * @tc.desc   Set the value of searchIcon.color as $r('sys.color.ohos_id_color_connected')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1700] start");
@@ -1666,9 +1797,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1800
      * @tc.number ArkUI_Stage_Search_SearchIcon_1800
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as abcdefghijk
+     * @tc.desc   Set the value of searchIcon.color as abcdefghijk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1800] start");
@@ -1706,9 +1840,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_1900
      * @tc.number ArkUI_Stage_Search_SearchIcon_1900
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as null
+     * @tc.desc   Set the value of searchIcon.color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_1900] start");
@@ -1746,9 +1883,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2000
      * @tc.number ArkUI_Stage_Search_SearchIcon_2000
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.color as undefined
+     * @tc.desc   Set the value of searchIcon.color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2000] start");
@@ -1786,10 +1926,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2100
      * @tc.number ArkUI_Stage_Search_SearchIcon_2100
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.size as 26
-     *               Set the value of searchIcon.color as 0x00ff00
+     * @tc.desc   Set the value of searchIcon.size as 26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2100] start");
@@ -1832,9 +1974,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2200
      * @tc.number ArkUI_Stage_Search_SearchIcon_2200
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Get the default value of searchIcon.src
+     * @tc.desc   Get the default value of searchIcon.src
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2200] start");
@@ -1850,9 +1995,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2300
      * @tc.number ArkUI_Stage_Search_SearchIcon_2300
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as common/icon2.svg
+     * @tc.desc   Set the value of searchIcon.src as common/icon2.svg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2300] start");
@@ -1888,9 +2036,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2400
      * @tc.number ArkUI_Stage_Search_SearchIcon_2400
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as common/icon2.jpg
+     * @tc.desc   Set the value of searchIcon.src as common/icon2.jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2400] start");
@@ -1926,9 +2077,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2500
      * @tc.number ArkUI_Stage_Search_SearchIcon_2500
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as common/icon2.png
+     * @tc.desc   Set the value of searchIcon.src as common/icon2.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2500] start");
@@ -1964,9 +2118,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2600
      * @tc.number ArkUI_Stage_Search_SearchIcon_2600
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as $r('sys.media.ohos_app_icon')
+     * @tc.desc   Set the value of searchIcon.src as $r('sys.media.ohos_app_icon')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2600] start");
@@ -1990,9 +2147,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2700
      * @tc.number ArkUI_Stage_Search_SearchIcon_2700
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as abc/def/ghi.jkl
+     * @tc.desc   Set the value of searchIcon.src as abc/def/ghi.jkl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2700] start");
@@ -2028,9 +2188,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2800
      * @tc.number ArkUI_Stage_Search_SearchIcon_2800
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as ''
+     * @tc.desc   Set the value of searchIcon.src as ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2800] start");
@@ -2066,9 +2229,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_2900
      * @tc.number ArkUI_Stage_Search_SearchIcon_2900
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as null
+     * @tc.desc   Set the value of searchIcon.src as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_2900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_2900] start");
@@ -2104,9 +2270,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchIcon_3000
      * @tc.number ArkUI_Stage_Search_SearchIcon_3000
-     * @tc.name Tests the searchIcon property of the search component
-     * @tc.desc Set the value of searchIcon.src as undefined
+     * @tc.desc   Set the value of searchIcon.src as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchIcon_3000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchIcon_3000] start");
@@ -2142,9 +2311,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0100
      * @tc.number ArkUI_Stage_Search_CancelButton_0100
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Get the default value of cancelButton.style
+     * @tc.desc   Get the default value of cancelButton.style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0100] start");
@@ -2160,9 +2332,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0200
      * @tc.number ArkUI_Stage_Search_CancelButton_0200
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.style as CancelButtonStyle.CONSTANT
+     * @tc.desc   Set the value of cancelButton.style as CancelButtonStyle.CONSTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0200] start");
@@ -2198,9 +2373,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0300
      * @tc.number ArkUI_Stage_Search_CancelButton_0300
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.style as CancelButtonStyle.INVISIBLE
+     * @tc.desc   Set the value of cancelButton.style as CancelButtonStyle.INVISIBLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0300] start");
@@ -2236,9 +2414,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0400
      * @tc.number ArkUI_Stage_Search_CancelButton_0400
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.style as null
+     * @tc.desc   Set the value of cancelButton.style as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0400] start");
@@ -2274,9 +2455,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0500
      * @tc.number ArkUI_Stage_Search_CancelButton_0500
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.style as undefined
+     * @tc.desc   Set the value of cancelButton.style as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0500] start");
@@ -2312,9 +2496,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0600
      * @tc.number ArkUI_Stage_Search_CancelButton_0600
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Get the default value of cancelButton.icon.size
+     * @tc.desc   Get the default value of cancelButton.icon.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0600] start");
@@ -2332,9 +2519,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0700
      * @tc.number ArkUI_Stage_Search_CancelButton_0700
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 26
+     * @tc.desc   Set the value of cancelButton.icon.size as 26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0700] start");
@@ -2372,9 +2562,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0800
      * @tc.number ArkUI_Stage_Search_CancelButton_0800
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 50px
+     * @tc.desc   Set the value of cancelButton.icon.size as 50px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0800] start");
@@ -2412,9 +2605,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_0900
      * @tc.number ArkUI_Stage_Search_CancelButton_0900
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 50fp
+     * @tc.desc   Set the value of cancelButton.icon.size as 50fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_0900] start");
@@ -2452,9 +2648,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1000
      * @tc.number ArkUI_Stage_Search_CancelButton_1000
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 50lpx
+     * @tc.desc   Set the value of cancelButton.icon.size as 50lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1000] start");
@@ -2493,9 +2692,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1100
      * @tc.number ArkUI_Stage_Search_CancelButton_1100
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as $r('sys.float.ohos_id_text_paragraph_margin_m')
+     * @tc.desc   Set the value of cancelButton.icon.size as $r('sys.float.ohos_id_text_paragraph_margin_m')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1100] start");
@@ -2533,9 +2735,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1200
      * @tc.number ArkUI_Stage_Search_CancelButton_1200
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 40
+     * @tc.desc   Set the value of cancelButton.icon.size as 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1200] start");
@@ -2573,9 +2778,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1300
      * @tc.number ArkUI_Stage_Search_CancelButton_1300
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 0
+     * @tc.desc   Set the value of cancelButton.icon.size as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1300] start");
@@ -2613,9 +2821,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1400
      * @tc.number ArkUI_Stage_Search_CancelButton_1400
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as -16
+     * @tc.desc   Set the value of cancelButton.icon.size as -16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1400] start");
@@ -2653,9 +2864,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1500
      * @tc.number ArkUI_Stage_Search_CancelButton_1500
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 10000
+     * @tc.desc   Set the value of cancelButton.icon.size as 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1500] start");
@@ -2693,9 +2907,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1600
      * @tc.number ArkUI_Stage_Search_CancelButton_1600
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as null
+     * @tc.desc   Set the value of cancelButton.icon.size as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1600] start");
@@ -2733,9 +2950,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1700
      * @tc.number ArkUI_Stage_Search_CancelButton_1700
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as undefined
+     * @tc.desc   Set the value of cancelButton.icon.size as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1700] start");
@@ -2773,9 +2993,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1800
      * @tc.number ArkUI_Stage_Search_CancelButton_1800
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Get the default value of cancelButton.icon.color
+     * @tc.desc   Get the default value of cancelButton.icon.color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1800] start");
@@ -2793,9 +3016,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_1900
      * @tc.number ArkUI_Stage_Search_CancelButton_1900
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as 0x00ff00
+     * @tc.desc   Set the value of cancelButton.icon.color as 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_1900] start");
@@ -2831,9 +3057,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2000
      * @tc.number ArkUI_Stage_Search_CancelButton_2000
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as Color.Red
+     * @tc.desc   Set the value of cancelButton.icon.color as Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2000] start");
@@ -2869,9 +3098,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2100
      * @tc.number ArkUI_Stage_Search_CancelButton_2100
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as #ff9a35
+     * @tc.desc   Set the value of cancelButton.icon.color as #ff9a35
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2100] start");
@@ -2907,9 +3139,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2200
      * @tc.number ArkUI_Stage_Search_CancelButton_2200
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as $r('sys.color.ohos_id_color_connected')
+     * @tc.desc   Set the value of cancelButton.icon.color as $r('sys.color.ohos_id_color_connected')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2200] start");
@@ -2935,9 +3170,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2300
      * @tc.number ArkUI_Stage_Search_CancelButton_2300
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as abcdefghijk
+     * @tc.desc   Set the value of cancelButton.icon.color as abcdefghijk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2300] start");
@@ -2975,9 +3213,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2400
      * @tc.number ArkUI_Stage_Search_CancelButton_2400
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as null
+     * @tc.desc   Set the value of cancelButton.icon.color as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2400] start");
@@ -3015,9 +3256,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2500
      * @tc.number ArkUI_Stage_Search_CancelButton_2500
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.color as undefined
+     * @tc.desc   Set the value of cancelButton.icon.color as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2500] start");
@@ -3055,10 +3299,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2600
      * @tc.number ArkUI_Stage_Search_CancelButton_2600
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.size as 26
-     *               Set the value of cancelButton.icon.color as 0x00ff00
+     * @tc.desc   Set the value of cancelButton.icon.size as 26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2600] start");
@@ -3101,9 +3347,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2700
      * @tc.number ArkUI_Stage_Search_CancelButton_2700
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Get the default value of cancelButton.icon.src
+     * @tc.desc   Get the default value of cancelButton.icon.src
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2700] start");
@@ -3119,9 +3368,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2800
      * @tc.number ArkUI_Stage_Search_CancelButton_2800
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as common/icon2.svg
+     * @tc.desc   Set the value of cancelButton.icon.src as common/icon2.svg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2800] start");
@@ -3157,9 +3409,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_2900
      * @tc.number ArkUI_Stage_Search_CancelButton_2900
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as common/icon2.jpg
+     * @tc.desc   Set the value of cancelButton.icon.src as common/icon2.jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_2900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_2900] start");
@@ -3195,9 +3450,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_3000
      * @tc.number ArkUI_Stage_Search_CancelButton_3000
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as common/icon2.png
+     * @tc.desc   Set the value of cancelButton.icon.src as common/icon2.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_3000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_3000] start");
@@ -3233,9 +3491,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_3100
      * @tc.number ArkUI_Stage_Search_CancelButton_3100
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as $r('sys.media.ohos_app_icon')
+     * @tc.desc   Set the value of cancelButton.icon.src as $r('sys.media.ohos_app_icon')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_3100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_3100] start");
@@ -3259,9 +3520,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_3200
      * @tc.number ArkUI_Stage_Search_CancelButton_3200
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as abc/def/ghi.jkl
+     * @tc.desc   Set the value of cancelButton.icon.src as abc/def/ghi.jkl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_3200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_3200] start");
@@ -3297,9 +3561,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_3300
      * @tc.number ArkUI_Stage_Search_CancelButton_3300
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as ''
+     * @tc.desc   Set the value of cancelButton.icon.src as ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_3300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_3300] start");
@@ -3335,9 +3602,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_3400
      * @tc.number ArkUI_Stage_Search_CancelButton_3400
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as null
+     * @tc.desc   Set the value of cancelButton.icon.src as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_3400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_3400] start");
@@ -3373,9 +3643,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_CancelButton_3500
      * @tc.number ArkUI_Stage_Search_CancelButton_3500
-     * @tc.name Tests the cancelButton property of the search component
-     * @tc.desc Set the value of cancelButton.icon.src as undefined
+     * @tc.desc   Set the value of cancelButton.icon.src as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_CancelButton_3500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_CancelButton_3500] start");
@@ -3411,9 +3684,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0100
      * @tc.number ArkUI_Stage_Search_SearchButton_0100
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Get the default value of searchButton.fontSize
+     * @tc.desc   Get the default value of searchButton.fontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0100] start");
@@ -3431,9 +3707,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0200
      * @tc.number ArkUI_Stage_Search_SearchButton_0200
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 20vp
+     * @tc.desc   Set the value of searchButton.fontSize as 20vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0200] start");
@@ -3469,9 +3748,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0300
      * @tc.number ArkUI_Stage_Search_SearchButton_0300
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 40vp
+     * @tc.desc   Set the value of searchButton.fontSize as 40vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0300] start");
@@ -3507,9 +3789,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0400
      * @tc.number ArkUI_Stage_Search_SearchButton_0400
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 20
+     * @tc.desc   Set the value of searchButton.fontSize as 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0400] start");
@@ -3545,9 +3830,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0500
      * @tc.number ArkUI_Stage_Search_SearchButton_0500
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 40fp
+     * @tc.desc   Set the value of searchButton.fontSize as 40fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0500] start");
@@ -3583,9 +3871,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0600
      * @tc.number ArkUI_Stage_Search_SearchButton_0600
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 40lpx
+     * @tc.desc   Set the value of searchButton.fontSize as 40lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0600] start");
@@ -3621,9 +3912,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0700
      * @tc.number ArkUI_Stage_Search_SearchButton_0700
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as $r('sys.float.ohos_id_text_paragraph_margin_m')
+     * @tc.desc   Set the value of searchButton.fontSize as $r('sys.float.ohos_id_text_paragraph_margin_m')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0700] start");
@@ -3647,9 +3941,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0800
      * @tc.number ArkUI_Stage_Search_SearchButton_0800
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 0vp
+     * @tc.desc   Set the value of searchButton.fontSize as 0vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0800] start");
@@ -3685,9 +3982,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_0900
      * @tc.number ArkUI_Stage_Search_SearchButton_0900
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 800vp
+     * @tc.desc   Set the value of searchButton.fontSize as 800vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_0900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_0900] start");
@@ -3723,9 +4023,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1000
      * @tc.number ArkUI_Stage_Search_SearchButton_1000
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as -14vp
+     * @tc.desc   Set the value of searchButton.fontSize as -14vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1000] start");
@@ -3763,9 +4066,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1100
      * @tc.number ArkUI_Stage_Search_SearchButton_1100
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as null
+     * @tc.desc   Set the value of searchButton.fontSize as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1100] start");
@@ -3803,9 +4109,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1200
      * @tc.number ArkUI_Stage_Search_SearchButton_1200
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as undefined
+     * @tc.desc   Set the value of searchButton.fontSize as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1200] start");
@@ -3843,9 +4152,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1300
      * @tc.number ArkUI_Stage_Search_SearchButton_1300
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Get the default value of searchButton.fontColor
+     * @tc.desc   Get the default value of searchButton.fontColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1300] start");
@@ -3863,9 +4175,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1400
      * @tc.number ArkUI_Stage_Search_SearchButton_1400
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as 0xff0000
+     * @tc.desc   Set the value of searchButton.fontColor as 0xff0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1400] start");
@@ -3901,9 +4216,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1500
      * @tc.number ArkUI_Stage_Search_SearchButton_1500
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as Color.Blue
+     * @tc.desc   Set the value of searchButton.fontColor as Color.Blue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1500] start");
@@ -3939,9 +4257,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1600
      * @tc.number ArkUI_Stage_Search_SearchButton_1600
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as #ff9a35
+     * @tc.desc   Set the value of searchButton.fontColor as #ff9a35
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1600] start");
@@ -3977,9 +4298,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1700
      * @tc.number ArkUI_Stage_Search_SearchButton_1700
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as $r('sys.color.ohos_id_color_connected')
+     * @tc.desc   Set the value of searchButton.fontColor as $r('sys.color.ohos_id_color_connected')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1700] start");
@@ -4005,9 +4329,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1800
      * @tc.number ArkUI_Stage_Search_SearchButton_1800
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as abcdefghijk
+     * @tc.desc   Set the value of searchButton.fontColor as abcdefghijk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1800] start");
@@ -4045,9 +4372,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_1900
      * @tc.number ArkUI_Stage_Search_SearchButton_1900
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as null
+     * @tc.desc   Set the value of searchButton.fontColor as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_1900] start");
@@ -4085,9 +4415,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_2000
      * @tc.number ArkUI_Stage_Search_SearchButton_2000
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontColor as undefined
+     * @tc.desc   Set the value of searchButton.fontColor as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_2000] start");
@@ -4125,10 +4458,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_SearchButton_2100
      * @tc.number ArkUI_Stage_Search_SearchButton_2100
-     * @tc.name Tests the searchButton property of the search component
-     * @tc.desc Set the value of searchButton.fontSize as 20
-     *               Set the value of searchButton.fontColor as 0xff0000
+     * @tc.desc   Set the value of searchButton.fontSize as 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_SearchButton_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_SearchButton_2100] start");
@@ -4169,9 +4504,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0100
      * @tc.number ArkUI_Stage_Search_FontColor_0100
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Get the default value of fontColor
+     * @tc.desc   Get the default value of fontColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0100] start");
@@ -4188,9 +4526,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0200
      * @tc.number ArkUI_Stage_Search_FontColor_0200
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as 0xff0000
+     * @tc.desc   Set the value of fontColor as 0xff0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0200] start");
@@ -4225,9 +4566,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0300
      * @tc.number ArkUI_Stage_Search_FontColor_0300
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as Color.Red
+     * @tc.desc   Set the value of fontColor as Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0300] start");
@@ -4262,9 +4606,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0400
      * @tc.number ArkUI_Stage_Search_FontColor_0400
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as #ff9a35
+     * @tc.desc   Set the value of fontColor as #ff9a35
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0400] start");
@@ -4299,9 +4646,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0500
      * @tc.number ArkUI_Stage_Search_FontColor_0500
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as $r('sys.color.ohos_id_color_connected')
+     * @tc.desc   Set the value of fontColor as $r('sys.color.ohos_id_color_connected')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0500] start");
@@ -4326,9 +4676,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0600
      * @tc.number ArkUI_Stage_Search_FontColor_0600
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as abcdefghijk
+     * @tc.desc   Set the value of fontColor as abcdefghijk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0600] start");
@@ -4365,9 +4718,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0700
      * @tc.number ArkUI_Stage_Search_FontColor_0700
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as null
+     * @tc.desc   Set the value of fontColor as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0700] start");
@@ -4404,9 +4760,12 @@ export default function search() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Search_FontColor_0800
      * @tc.number ArkUI_Stage_Search_FontColor_0800
-     * @tc.name Tests the fontColor property of the search component
-     * @tc.desc Set the value of fontColor as undefined
+     * @tc.desc   Set the value of fontColor as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Search_FontColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info("[ArkUI_Stage_Search_FontColor_0800] start");

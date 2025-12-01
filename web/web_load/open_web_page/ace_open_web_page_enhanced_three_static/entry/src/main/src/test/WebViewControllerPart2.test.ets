@@ -39,14 +39,14 @@ export default function webViewControllerPart2() {
       console.info("webViewControllerPart2 beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETCUSTOMUSERAGENT_0100
-    * @tc.name       : testGetCustomUserAgentStatic001
-    * @tc.desc       : test getCustomUserAgent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testGetCustomUserAgentStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETCUSTOMUSERAGENT_0100
+     * @tc.desc   test getCustomUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetCustomUserAgentStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(4000);
       Utils.emitEvent("testGetCustomUserAgent001", 10)

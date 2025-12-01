@@ -39,6 +39,14 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanGeometryTestCase
+     * @tc.number TestVulkanGeometryTestCase
+     * @tc.desc   TestVulkanGeometryTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanGeometryTest, TestVulkanGeometryTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanGeometryTest------\n");

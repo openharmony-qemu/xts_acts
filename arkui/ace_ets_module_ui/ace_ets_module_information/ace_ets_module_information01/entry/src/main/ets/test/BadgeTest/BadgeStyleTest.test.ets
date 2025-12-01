@@ -47,12 +47,12 @@ export default function BadgeStyleTest() {
     });
 
     /**
-     * @tc.number     BadgeStyle_0010
-     * @tc.name       BadgeStyle_0010
-     * @tc.desc       test BadgeStyle api enableAutoAvoidance
-     * @tc.level:     Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BadgeStyle_0010
+     * @tc.number BadgeStyle_0010
+     * @tc.desc   test BadgeStyle api enableAutoAvoidance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BadgeStyle_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[BadgeStyle_0010] START');
@@ -105,12 +105,12 @@ export default function BadgeStyleTest() {
     });
 
     /**
-     * @tc.number    BadgeStyle_0020
-     * @tc.name      BadgeStyle_0020
-     * @tc.desc      test BadgeStyle api outerBorderColor
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BadgeStyle_0020
+     * @tc.number BadgeStyle_0020
+     * @tc.desc   test BadgeStyle api outerBorderColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BadgeStyle_0020', Level.LEVEL1, async (done: Function) => {
       console.info('[BadgeStyle_0020] START');
@@ -207,12 +207,12 @@ export default function BadgeStyleTest() {
     });
 
     /**
-     * @tc.number     BadgeStyle_0030
-     * @tc.name       BadgeStyle_0030
-     * @tc.desc       test BadgeStyle api outerBorderWidth
-     * @tc.level:     Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BadgeStyle_0030
+     * @tc.number BadgeStyle_0030
+     * @tc.desc   test BadgeStyle api outerBorderWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BadgeStyle_0030', Level.LEVEL1, async (done: Function) => {
       console.info('[BadgeStyle_0030] START');

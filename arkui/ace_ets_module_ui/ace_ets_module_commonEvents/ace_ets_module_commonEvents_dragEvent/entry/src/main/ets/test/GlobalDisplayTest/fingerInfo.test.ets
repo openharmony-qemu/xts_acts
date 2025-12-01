@@ -47,12 +47,12 @@ export default function fingerInfoTest() {
     });
 
     /**
-     * @tc.number    fingerInfoTest_0010
-     * @tc.name      fingerInfoTest_0010
-     * @tc.desc      fingerInfo get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fingerInfoTest_0010
+     * @tc.number fingerInfoTest_0010
+     * @tc.desc   fingerInfo get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('fingerInfoTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[fingerInfoTest_0010] START');

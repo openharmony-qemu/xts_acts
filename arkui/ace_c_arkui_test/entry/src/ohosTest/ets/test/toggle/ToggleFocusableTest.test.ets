@@ -26,39 +26,39 @@ export default function toggleFocusableTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_FOCUSABLE_0100
-     * @tc.name       : testToggleFocusable001
-     * @tc.desc       : testing focusable for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleFocusable001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_FOCUSABLE_0100
+     * @tc.desc   testing focusable for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleFocusable001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleFocusable001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_FOCUSABLE_0200
-     * @tc.name       : testToggleFocusable002
-     * @tc.desc       : testing focusable for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleFocusable002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_FOCUSABLE_0200
+     * @tc.desc   testing focusable for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleFocusable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleFocusable002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_FOCUSABLE_0300
-     * @tc.name       : testToggleFocusable003
-     * @tc.desc       : testing focusable for toggle with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testToggleFocusable003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_FOCUSABLE_0300
+     * @tc.desc   testing focusable for toggle with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleFocusable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleFocusable003()).assertEqual(0)

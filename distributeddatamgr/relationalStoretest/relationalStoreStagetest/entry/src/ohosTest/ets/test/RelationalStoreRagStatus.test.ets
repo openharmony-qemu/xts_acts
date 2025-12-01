@@ -73,7 +73,6 @@ describe('relationalStoreRagStatusTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DDM_RELATIONALETS_RAGSTATUSTEST_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RagStatusTest_0100
      * @tc.desc   resultSet getBlob normal test

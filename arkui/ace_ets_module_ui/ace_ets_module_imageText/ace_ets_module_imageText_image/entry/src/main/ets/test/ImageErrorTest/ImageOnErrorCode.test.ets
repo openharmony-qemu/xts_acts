@@ -42,12 +42,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_001
-     * @tc.name  : ImageOnErrorCodeTest_001
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_001
+     * @tc.number ImageOnErrorCodeTest_001
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_001] START');
@@ -66,12 +66,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_002
-     * @tc.name  : ImageOnErrorCodeTest_002
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_002
+     * @tc.number ImageOnErrorCodeTest_002
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_002] START');
@@ -90,12 +90,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_003
-     * @tc.name  : ImageOnErrorCodeTest_003
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_003
+     * @tc.number ImageOnErrorCodeTest_003
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_003] START');
@@ -114,12 +114,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_004
-     * @tc.name  : ImageOnErrorCodeTest_004
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_004
+     * @tc.number ImageOnErrorCodeTest_004
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_004] START');
@@ -138,12 +138,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_005
-     * @tc.name  : ImageOnErrorCodeTest_005
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_005
+     * @tc.number ImageOnErrorCodeTest_005
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_005] START');
@@ -162,12 +162,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_006
-     * @tc.name  : ImageOnErrorCodeTest_006
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_006
+     * @tc.number ImageOnErrorCodeTest_006
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_006] START');
@@ -186,12 +186,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_007
-     * @tc.name  : ImageOnErrorCodeTest_007
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_007
+     * @tc.number ImageOnErrorCodeTest_007
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_007] START');
@@ -210,12 +210,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_008
-     * @tc.name  : ImageOnErrorCodeTest_008
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_008
+     * @tc.number ImageOnErrorCodeTest_008
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_008] START');
@@ -234,12 +234,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_009
-     * @tc.name  : ImageOnErrorCodeTest_009
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_009
+     * @tc.number ImageOnErrorCodeTest_009
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_009] START');
@@ -258,12 +258,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_010
-     * @tc.name  : ImageOnErrorCodeTest_010
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_010
+     * @tc.number ImageOnErrorCodeTest_010
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_010] START');
@@ -282,12 +282,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_011
-     * @tc.name  : ImageOnErrorCodeTest_011
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_011
+     * @tc.number ImageOnErrorCodeTest_011
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_011] START');
@@ -306,12 +306,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_012
-     * @tc.name  : ImageOnErrorCodeTest_012
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_012
+     * @tc.number ImageOnErrorCodeTest_012
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_012] START');
@@ -330,12 +330,12 @@ export default function ImageOnErrorCodeTest() {
     });
 
     /**
-     * @tc.number: ImageOnErrorCodeTest_013
-     * @tc.name  : ImageOnErrorCodeTest_013
-     * @tc.desc  : To test the ImageOnError code message
-     * @tc.level : Level 0
-     * @tc.type
-    * @tc.size
+     * @tc.name   ImageOnErrorCodeTest_013
+     * @tc.number ImageOnErrorCodeTest_013
+     * @tc.desc   To test the ImageOnError code message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageOnErrorCodeTest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[ImageOnErrorCodeTest_013] START');

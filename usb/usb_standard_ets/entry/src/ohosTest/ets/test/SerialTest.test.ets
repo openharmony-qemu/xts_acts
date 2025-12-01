@@ -120,7 +120,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetPortList001
      * @tc.number SUB_USB_HostMgr_Serial_JS_getPortList_Func_0100
      * @tc.desc   getportlist successfully.
@@ -152,7 +151,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetPortList002
      * @tc.number SUB_USB_HostMgr_Serial_JS_getPortList_RetValue_0300
      * @tc.desc   getportlist is null.
@@ -174,7 +172,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasSerialRight001
      * @tc.number SUB_USB_HostMgr_Serial_JS_hasSerialRight_Func_0100
      * @tc.desc   hasSerialRight successfully.
@@ -200,7 +197,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasSerialRight002
      * @tc.number SUB_USB_HostMgr_Serial_JS_hasSerialRight_ErrCode_0100
      * @tc.desc   invalidInput hasSerialRight failed.
@@ -227,7 +223,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasSerialRight003
      * @tc.number SUB_USB_HostMgr_Serial_JS_hasSerialRight_ErrCode_0200
      * @tc.desc   invalidPort hasSerialRight failed.
@@ -254,7 +249,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestSerialRight001
      * @tc.number SUB_USB_HostMgr_Serial_JS_requestSerialRight_Func_0100
      * @tc.desc   requestSerialRight successfully.
@@ -291,7 +285,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestSerialRight002
      * @tc.number SUB_USB_HostMgr_Serial_JS_requestSerialRight_ErrCode_0100
      * @tc.desc   invalidInput requestSerialRight failed.
@@ -325,7 +318,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestSerialRight003
      * @tc.number SUB_USB_HostMgr_Serial_JS_requestSerialRight_ErrCode_0200
      * @tc.desc   not exist portId requestSerialRight failed.
@@ -351,7 +343,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpen001
      * @tc.number SUB_USB_HostMgr_Serial_JS_open_Func_0100
      * @tc.desc   open successfully.
@@ -377,7 +368,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpen002
      * @tc.number SUB_USB_HostMgr_Serial_JS_open_ErrCode_0100
      * @tc.desc   invalidPort open failed.
@@ -403,7 +393,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpen003
      * @tc.number SUB_USB_HostMgr_Serial_JS_open_ErrCode_0200
      * @tc.desc   Repeated open.
@@ -430,7 +419,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpen004
      * @tc.number SUB_USB_HostMgr_Serial_JS_open_ErrCode_0300
      * @tc.desc   not exist port to open.
@@ -456,7 +444,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testAddSerialRight001
      * @tc.number SUB_USB_HostMgr_Serial_JS_addSerialRight_ErrCode_0100
      * @tc.desc   not system app.
@@ -487,7 +474,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetAttribute001
      * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_Func_0100
      * @tc.desc   setAttribute successfully.
@@ -520,7 +506,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetAttribute002
      * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0100
      * @tc.desc   not openPortId to setAttribute.
@@ -551,7 +536,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetAttribute003
      * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0200
      * @tc.desc   invalid PortId to setAttribute.
@@ -583,7 +567,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetAttribute004
      * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0300
      * @tc.desc   not exist PortId to setAttribute.
@@ -615,7 +598,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute001
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0100
      * @tc.desc   getAttribute successfully.
@@ -648,7 +630,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute002
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0100
      * @tc.desc   not openPortId to getAttribute.
@@ -673,7 +654,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute003
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0200
      * @tc.desc   invalid openPortId to getAttribute.
@@ -699,7 +679,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetAttribute004
      * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0300
      * @tc.desc   not exist portId to getAttribute.
@@ -725,7 +704,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClose001
      * @tc.number SUB_USB_HostMgr_Serial_JS_close_Func_0100
      * @tc.desc   close port successfully.
@@ -758,7 +736,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClose002
      * @tc.number SUB_USB_HostMgr_Serial_JS_close_ErrCode_0100
      * @tc.desc   Repeated close.
@@ -785,7 +762,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClose003
      * @tc.number SUB_USB_HostMgr_Serial_JS_close_ErrCode_0200
      * @tc.desc   invalid Port to close.
@@ -813,7 +789,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClose004
      * @tc.number SUB_USB_HostMgr_Serial_JS_close_ErrCode_0300
      * @tc.desc   not exist Port to close.
@@ -841,7 +816,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRead001
      * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0100
      * @tc.desc   read timeout.
@@ -870,7 +844,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReadSync001
      * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0100
      * @tc.desc   read timeout.
@@ -897,7 +870,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWriteSync001
      * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_Func_0100
      * @tc.desc   writeSync successfully.
@@ -925,7 +897,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWriteSync002
      * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
      * @tc.desc   not openPortId to writeSync.
@@ -951,7 +922,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWriteSync003
      * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0200
      * @tc.desc   invalidPortId to writeSync.
@@ -978,7 +948,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWriteSync004
      * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0300
      * @tc.desc   not exist PortId to writeSync.
@@ -1005,7 +974,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWrite001
      * @tc.number SUB_USB_HostMgr_Serial_JS_write_Func_0100
      * @tc.desc   write successfully.
@@ -1034,7 +1002,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWrite002
      * @tc.number SUB_USB_HostMgr_Serial_JS_write_ErrCode_0100
      * @tc.desc   invalid PortId to write.
@@ -1063,7 +1030,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWrite003
      * @tc.number SUB_USB_HostMgr_Serial_JS_write_ErrCode_0200
      * @tc.desc   not openPortId to write.
@@ -1089,7 +1055,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testWrite004
      * @tc.number SUB_USB_HostMgr_Serial_JS_write_ErrCode_0300
      * @tc.desc   not exist PortId to write.
@@ -1116,7 +1081,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReadSync002
      * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_Func_0100
      * @tc.desc   readsync successfully.
@@ -1146,7 +1110,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReadSync003
      * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0200
      * @tc.desc   port not open.
@@ -1173,7 +1136,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReadSync004
      * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0300
      * @tc.desc   invalidport to open.
@@ -1200,7 +1162,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReadSync005
      * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0400
      * @tc.desc   invalidport to open.
@@ -1227,7 +1188,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRead002
      * @tc.number SUB_USB_HostMgr_Serial_JS_read_Func_0100
      * @tc.desc   read successfully.
@@ -1258,7 +1218,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRead003
      * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0200
      * @tc.desc   port not open.
@@ -1285,7 +1244,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRead004
      * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0300
      * @tc.desc   invalidPort to read.
@@ -1314,7 +1272,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRead005
      * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0400
      * @tc.desc   not exist to read.
@@ -1341,7 +1298,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testOpen005
      * @tc.number SUB_USB_HostMgr_Serial_JS_open_Func_0400
      * @tc.desc   open failed.
@@ -1367,7 +1323,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCancelSerialRight001
      * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_Func_0100
      * @tc.desc   cancelSerialRight successfully.
@@ -1404,7 +1359,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCancelSerialRight002
      * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0100
      * @tc.desc   invalid portId to cancelSerialRight.
@@ -1430,7 +1384,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCancelSerialRight003
      * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0200
      * @tc.desc   not exist portId to cancelSerialRight.
@@ -1456,7 +1409,6 @@ export default function SerialTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testCancelSerialRight004
      * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0300
      * @tc.desc   no permission to cancelSerialRight.

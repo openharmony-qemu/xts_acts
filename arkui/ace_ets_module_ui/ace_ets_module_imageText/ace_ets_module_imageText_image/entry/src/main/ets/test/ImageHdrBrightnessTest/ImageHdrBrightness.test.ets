@@ -28,13 +28,13 @@ export default function ImageHDRBrightnessTest() {
       console.info("ImageHDRBrightnessTest after each called");
     });
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_001
-     * @tc.name      ImageHDRBrightnessTest_001
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_001
+     * @tc.number ImageHDRBrightnessTest_001
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_001', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -49,13 +49,13 @@ export default function ImageHDRBrightnessTest() {
       done();
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_002
-     * @tc.name      ImageHDRBrightnessTest_002
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_002
+     * @tc.number ImageHDRBrightnessTest_002
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_002', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -70,13 +70,13 @@ export default function ImageHDRBrightnessTest() {
       done();
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_003
-     * @tc.name      ImageHDRBrightnessTest_003
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_003
+     * @tc.number ImageHDRBrightnessTest_003
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_003', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -91,13 +91,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_004
-     * @tc.name      ImageHDRBrightnessTest_004
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_004
+     * @tc.number ImageHDRBrightnessTest_004
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_004', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -112,13 +112,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_005
-     * @tc.name      ImageHDRBrightnessTest_005
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_005
+     * @tc.number ImageHDRBrightnessTest_005
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_005', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -133,13 +133,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_006
-     * @tc.name      ImageHDRBrightnessTest_006
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_006
+     * @tc.number ImageHDRBrightnessTest_006
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_006', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -154,13 +154,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_007
-     * @tc.name      ImageHDRBrightnessTest_007
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_007
+     * @tc.number ImageHDRBrightnessTest_007
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_007', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -175,13 +175,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_008
-     * @tc.name      ImageHDRBrightnessTest_008
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_008
+     * @tc.number ImageHDRBrightnessTest_008
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_008', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -196,13 +196,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_009
-     * @tc.name      ImageHDRBrightnessTest_009
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_009
+     * @tc.number ImageHDRBrightnessTest_009
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_009', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -217,13 +217,13 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    /*
-     * @tc.number    ImageHDRBrightnessTest_010
-     * @tc.name      ImageHDRBrightnessTest_010
-     * @tc.desc      test the ImageHDRBrightness
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   ImageHDRBrightnessTest_010
+     * @tc.number ImageHDRBrightnessTest_010
+     * @tc.desc   test the ImageHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageHDRBrightnessTest_010', Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('noHdrBrightnessImageKey');

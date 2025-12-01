@@ -45,12 +45,12 @@ export default function triggerChange() {
     });
 
     /**
-     * @tc.number triggerChangeTest_0100
      * @tc.name   triggerChangeTest_0100
+     * @tc.number triggerChangeTest_0100
      * @tc.desc   test
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('triggerChangeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('triggerChangeText_0100 START');

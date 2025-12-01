@@ -47,10 +47,12 @@ export default function NavPathInfoIsEntry() {
     });
 
     /**
-     * @tc.number    NavPathInfoIsEntry_0100
-     * @tc.name      NavPathInfoIsEntry_0100
-     * @tc.desc      Test NavPathInfoIsEntry
-     * @tc.level     Level 0
+     * @tc.name   NavPathInfoIsEntry_0100
+     * @tc.number NavPathInfoIsEntry_0100
+     * @tc.desc   Test NavPathInfoIsEntry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathInfoIsEntry_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavPathInfoIsEntry_0100] START');

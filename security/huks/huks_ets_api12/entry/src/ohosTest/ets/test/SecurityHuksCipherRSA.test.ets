@@ -42,12 +42,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0100
-     * @tc.name   : test rsa 1032 ecb/sha1/noPadding mode cipher by two steps, data size equals to key size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0100
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0100
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0100";
@@ -69,12 +69,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0200
-     * @tc.name   : test rsa 1032 ecb/sha224/noPadding mode cipher by two steps, data size equals to key size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0200
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0200
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0200";
@@ -97,12 +97,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0300
-     * @tc.name   : test rsa 1032 ecb/sha256/oaep mode cipher by two steps, max data size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0300
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0300
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0300";
@@ -126,12 +126,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0400
-     * @tc.name   : test rsa 1032 ecb/sha384/pkcs1_v1_5 mode cipher by two steps, 118B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0400
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0400
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0400";
@@ -155,12 +155,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0500
-     * @tc.name   : test rsa 1032 ecb/sha512/pkcs1_v1_5 mode cipher by two steps, 118B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0500
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0500
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0500";
@@ -184,12 +184,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0600
-     * @tc.name   : test rsa 2040 ecb/sha1/noPadding mode cipher by two steps, data size equals to key size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0600
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0600
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0600";
@@ -211,12 +211,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0700
-     * @tc.name   : test rsa 2040 ecb/sha224/noPadding mode cipher by two steps, data size equals to key size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0700
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0700
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0700";
@@ -239,12 +239,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0800
-     * @tc.name   : test rsa 2040 ecb/sha256/noPadding mode cipher by two steps, data size equals to key size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0800
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0800
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0800";
@@ -267,12 +267,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_0900
-     * @tc.name   : test rsa 2040 ecb/sha384/oaep mode cipher by two steps, max data size, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_0900
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_0900
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_0900";
@@ -296,12 +296,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_1000
-     * @tc.name   : test rsa 2040 ecb/sha512/pkcs1_v1_5 mode cipher by two steps, 118B data, process success
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_1000
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_1000
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_1000";
@@ -325,12 +325,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_1100
-     * @tc.name   : test rsa generate with wrong size 1016, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_1100
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_1100
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_1100";
@@ -346,12 +346,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_1200
-     * @tc.name   : test rsa generate with wrong size 2056, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_1200
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_1200
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_1200";
@@ -367,12 +367,12 @@ export default function SecurityHuksCipherRSATest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_Cipher_RSA_API16_Func_1300
-     * @tc.name   : test rsa generate with wrong size 1025, process fail
-     * @tc.desc   : generate key, encrypt, decrypt
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_Cipher_RSA_API16_Func_1300
+     * @tc.number SUB_Security_HUKS_Cipher_RSA_API16_Func_1300
+     * @tc.desc   generate key, encrypt, decrypt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_Cipher_RSA_API16_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Cipher_RSA_API16_Func_1300";

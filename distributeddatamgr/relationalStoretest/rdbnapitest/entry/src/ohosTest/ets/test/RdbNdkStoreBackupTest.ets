@@ -48,7 +48,6 @@ export default function RdbNdkStoreBackupTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0700
          * @tc.desc   Normal testCase of NDK store for Backup、Restore.
@@ -65,7 +64,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0300
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0400
          * @tc.desc   backup file name already exists
@@ -82,7 +80,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0400
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1500
          * @tc.desc   Exception testCase of NDK store for Backup、Restore.
@@ -99,7 +96,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0500
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0300
          * @tc.desc   backup file name is empty
@@ -116,7 +112,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0600
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0500
          * @tc.desc   backup file name is a space
@@ -133,7 +128,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0700
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0600
          * @tc.desc   Backup file name is a null
@@ -150,7 +144,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0800
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0800
          * @tc.desc   Restore file name is a null
@@ -167,7 +160,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0900
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1000
          * @tc.desc   Restore file name is empty
@@ -184,7 +176,6 @@ export default function RdbNdkStoreBackupTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   SUB_DDM_RDB_BackupRestoreTest_0110
          * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0900
          * @tc.desc   Restore file name is invalid

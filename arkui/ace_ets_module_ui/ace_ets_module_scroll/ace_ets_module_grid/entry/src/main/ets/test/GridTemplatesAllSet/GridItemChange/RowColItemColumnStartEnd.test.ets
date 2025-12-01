@@ -45,12 +45,12 @@ export default function RowColItemColumnStartEnd() {
       console.info("Grid_RowCol_ItemColumnStartEndTest after each called");
     });
     /**
+     * @tc.name   testGridRowColItemColumnStartToZeroEndToThree
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_1200
-     * @tc.name testGridRowColItemColumnStartToZeroEndToThree
-     * @tc.desc The first griditem set columnStart to 0,columnEnd to 3
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The first griditem set columnStart to 0,columnEnd to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemColumnStartToZeroEndToThree',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemColumnStartToZeroEndToThree] START');
@@ -139,12 +139,12 @@ export default function RowColItemColumnStartEnd() {
       done();
     });
     /**
+     * @tc.name   testGridRowColItemColumnStartToZeroEndToTwo
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_1300
-     * @tc.name testGridRowColItemColumnStartToZeroEndToTwo
-     * @tc.desc The first griditem set columnStart to 0,columnEnd to 2
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The first griditem set columnStart to 0,columnEnd to 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemColumnStartToZeroEndToTwo',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemColumnStartToZeroEndToTwo] START');

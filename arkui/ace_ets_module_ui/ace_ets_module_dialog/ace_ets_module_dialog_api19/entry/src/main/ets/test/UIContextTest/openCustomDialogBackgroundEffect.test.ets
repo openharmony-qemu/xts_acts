@@ -37,12 +37,12 @@ export default function UIOpenCustomDialogBackgroundEffectTest() {
     });
     
     /**
-     * @tc.number    UIOpenCustomDialogBackgroundEffectTest_0100
-     * @tc.name      UIOpenCustomDialogBackgroundEffectTest_0100
-     * @tc.desc      createOpenCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIOpenCustomDialogBackgroundEffectTest_0100
+     * @tc.number UIOpenCustomDialogBackgroundEffectTest_0100
+     * @tc.desc   createOpenCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIOpenCustomDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIOpenCustomDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function UIOpenCustomDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    UIOpenCustomDialogBackgroundEffectTest_0200
-     * @tc.name      UIOpenCustomDialogBackgroundEffectTest_0200
-     * @tc.desc      createOpenCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIOpenCustomDialogBackgroundEffectTest_0200
+     * @tc.number UIOpenCustomDialogBackgroundEffectTest_0200
+     * @tc.desc   createOpenCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIOpenCustomDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIOpenCustomDialogDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function UIOpenCustomDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    UIOpenCustomDialogBackgroundEffectTest_0300
-     * @tc.name      UIOpenCustomDialogBackgroundEffectTest_0300
-     * @tc.desc      createOpenCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIOpenCustomDialogBackgroundEffectTest_0300
+     * @tc.number UIOpenCustomDialogBackgroundEffectTest_0300
+     * @tc.desc   createOpenCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIOpenCustomDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIOpenCustomDialogBackgroundEffectTest_0300';

@@ -29,13 +29,13 @@ export default function KeyEventGetUnicodeTest() {
     });
 
    
-      /*
-      * @tc.number     : SUB_ARKUI_CAPI_KeyEvent_GetUnicode_0100
-      * @tc.name       : KeyEventGetUnicodeTest_001
-      * @tc.desc       : testing KeyEvent GetType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
+     /**
+      * @tc.name   KeyEventGetUnicodeTest_001
+      * @tc.number SUB_ARKUI_CAPI_KeyEvent_GetUnicode_0100
+      * @tc.desc   testing KeyEvent GetType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
       */
      it('KeyEventGetUnicodeTest_001', Level.LEVEL1, async (done: Function) => {
        console.info('KeyEventGetUnicodeTest_001 START');

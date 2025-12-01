@@ -43,12 +43,12 @@ export default function SetFrameRateRangeTest() {
     });
 
     /**
-     * @tc.number    requireDynamicSyncSceneTest_0010
-     * @tc.name      requireDynamicSyncSceneTest
-     * @tc.desc      UIContext: requireDynamicSyncScene
-     * @tc.level:    Level 2
-     * @tc.type :    Function
-     * @tc.size :    MediumTest
+     * @tc.name   MarqueerequireDynamicSyncSceneTest_0010
+     * @tc.number requireDynamicSyncSceneTest_0010
+     * @tc.desc   UIContext: requireDynamicSyncScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MarqueerequireDynamicSyncSceneTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('MarqueerequireDynamicSyncSceneTest_0010 START');

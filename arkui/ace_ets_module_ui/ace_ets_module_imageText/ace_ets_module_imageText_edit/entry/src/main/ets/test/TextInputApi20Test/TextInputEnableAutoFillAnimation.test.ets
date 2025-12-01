@@ -42,12 +42,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0010
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0010
-     * @tc.desc      test the attr of TextInput: enableAutoFillAnimation(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0010
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0010
+     * @tc.desc   test the attr of TextInput: enableAutoFillAnimation(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0010] START');
@@ -60,12 +60,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0020
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0020
-     * @tc.desc      test the attr of TextInput: enableAutoFillAnimation(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0020
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0020
+     * @tc.desc   test the attr of TextInput: enableAutoFillAnimation(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0020] START');
@@ -78,12 +78,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0030
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0030
-     * @tc.desc      test the attr of TextInput: enableAutoFillAnimation(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0030
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0030
+     * @tc.desc   test the attr of TextInput: enableAutoFillAnimation(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0030] START');
@@ -96,12 +96,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0040
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0040
-     * @tc.desc      test the attr of TextInput: enableAutoFillAnimation(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0040
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0040
+     * @tc.desc   test the attr of TextInput: enableAutoFillAnimation(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0040] START');
@@ -114,12 +114,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0050
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0050
-     * @tc.desc      test the attr of TextInputModifier: enableAutoFillAnimation(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0050
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0050
+     * @tc.desc   test the attr of TextInputModifier: enableAutoFillAnimation(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0050] START');
@@ -132,12 +132,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0060
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0060
-     * @tc.desc      test the attr of TextInputModifier: enableAutoFillAnimation(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0060
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0060
+     * @tc.desc   test the attr of TextInputModifier: enableAutoFillAnimation(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0060] START');
@@ -150,12 +150,12 @@ export default function TextInputEnableAutoFillAnimationTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoFillAnimationTest_0070
-     * @tc.name      TextInputEnableAutoFillAnimationTest_0070
-     * @tc.desc      test the attr of TextInputModifier: enableAutoFillAnimation(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoFillAnimationTest_0070
+     * @tc.number SUB_ACE_TextInputEnableAutoFillAnimationTest_0070
+     * @tc.desc   test the attr of TextInputModifier: enableAutoFillAnimation(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoFillAnimationTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoFillAnimationTest_0070] START');

@@ -56,9 +56,12 @@ export default function QRCodeAttrTest() {
     });
 
     /**
+     * @tc.name   testGetQrcodeAttr010
      * @tc.number SUB_ACE_BASIC_ETS_API_testGetQrcodeAttr010
-     * @tc.name testGetQrcodeAttr010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetQrcodeAttr010', Level.LEVEL0, async (done: Function) => {
       console.info('testGetQrcodeAttr START');

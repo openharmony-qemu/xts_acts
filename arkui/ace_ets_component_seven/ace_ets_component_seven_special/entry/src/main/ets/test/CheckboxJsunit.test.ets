@@ -42,12 +42,12 @@ export default function checkboxJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Checkbox_0100
      * @tc.number ArkUX_Stage_Checkbox_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Checkbox_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Checkbox_0100 START');
@@ -68,12 +68,12 @@ export default function checkboxJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Checkbox_0400
      * @tc.number ArkUX_Stage_Checkbox_0400
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Checkbox_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Checkbox_0400 START');
@@ -94,12 +94,12 @@ export default function checkboxJsunit() {
 
 
     /**
+     * @tc.name   ArkUX_Stage_Checkbox_0300
      * @tc.number ArkUX_Stage_Checkbox_0300
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Checkbox_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Checkbox_0300 START');
@@ -121,12 +121,12 @@ export default function checkboxJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Checkbox_attrs_0200
      * @tc.number ArkUX_Stage_Checkbox_attrs_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Checkbox_attrs_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Checkbox_attrs_0200 START');

@@ -63,10 +63,13 @@ export default function socketJsunit() {
     let tcp = socket.constructTCPSocketInstance();
     let udp = socket.constructUDPSocketInstance();
     let envReady = false;
-    /*
-     * @tc.number    : Telephony_Socket_Socket_constructUDPSocketInstance_0100
-     * @tc.name      : constructUDPSocketInstance
-     * @tc.desc      : Creates a UDPSocket object.
+    /**
+     * @tc.name   Telephony_Socket_Socket_constructUDPSocketInstance_0100
+     * @tc.number Telephony_Socket_Socket_constructUDPSocketInstance_0100
+     * @tc.desc   Creates a UDPSocket object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_Socket_constructUDPSocketInstance_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -80,10 +83,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_Socket_constructUDPSocketInstance_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_Socket_constructTCPSocketInstance_0100
-     * @tc.name      : constructTCPSocketInstance
-     * @tc.desc      : Creates a TCPSocket object.
+    /**
+     * @tc.name   Telephony_Socket_Socket_constructTCPSocketInstance_0100
+     * @tc.number Telephony_Socket_Socket_constructTCPSocketInstance_0100
+     * @tc.desc   Creates a TCPSocket object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_Socket_constructTCPSocketInstance_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -97,10 +103,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_Socket_constructTCPSocketInstance_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_Socket_NetAddress_0100
-     * @tc.name      : NetAddress
-     * @tc.desc      : interface NetAddress
+    /**
+     * @tc.name   Telephony_Socket_Socket_NetAddress_0100
+     * @tc.number Telephony_Socket_Socket_NetAddress_0100
+     * @tc.desc   interface NetAddress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_Socket_NetAddress_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -120,10 +129,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_Socket_NetAddress_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSendOptions_data_0100
-     * @tc.name      : UDPSendOptions.data
-     * @tc.desc      : UDPSendOptions.data
+    /**
+     * @tc.name   Telephony_Socket_UDPSendOptions_data_0100
+     * @tc.number Telephony_Socket_UDPSendOptions_data_0100
+     * @tc.desc   UDPSendOptions.data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSendOptions_data_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -144,10 +156,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSendOptions_data_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_ExtraOptionsBase_receiveBufferSize_0100
-     * @tc.name      : ExtraOptionsBase.receiveBufferSize
-     * @tc.desc      : ExtraOptionsBase.receiveBufferSize
+    /**
+     * @tc.name   Telephony_Socket_ExtraOptionsBase_receiveBufferSize_0100
+     * @tc.number Telephony_Socket_ExtraOptionsBase_receiveBufferSize_0100
+     * @tc.desc   ExtraOptionsBase.receiveBufferSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_ExtraOptionsBase_receiveBufferSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -166,10 +181,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_ExtraOptionsBase_receiveBufferSize_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_ExtraOptionsBase_sendBufferSize_0100
-     * @tc.name      : ExtraOptionsBase.sendBufferSize
-     * @tc.desc      : ExtraOptionsBase.sendBufferSize
+    /**
+     * @tc.name   Telephony_Socket_ExtraOptionsBase_sendBufferSize_0100
+     * @tc.number Telephony_Socket_ExtraOptionsBase_sendBufferSize_0100
+     * @tc.desc   ExtraOptionsBase.sendBufferSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_ExtraOptionsBase_sendBufferSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -188,10 +206,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_ExtraOptionsBase_sendBufferSize_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_ExtraOptionsBase_reuseAddress_0100
-     * @tc.name      : ExtraOptionsBase.reuseAddress
-     * @tc.desc      : ExtraOptionsBase.reuseAddress
+    /**
+     * @tc.name   Telephony_Socket_ExtraOptionsBase_reuseAddress_0100
+     * @tc.number Telephony_Socket_ExtraOptionsBase_reuseAddress_0100
+     * @tc.desc   ExtraOptionsBase.reuseAddress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_ExtraOptionsBase_reuseAddress_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -210,10 +231,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_ExtraOptionsBase_reuseAddress_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_ExtraOptionsBase_socketTimeout_0100
-     * @tc.name      : ExtraOptionsBase.socketTimeout
-     * @tc.desc      : ExtraOptionsBase.socketTimeout
+    /**
+     * @tc.name   Telephony_Socket_ExtraOptionsBase_socketTimeout_0100
+     * @tc.number Telephony_Socket_ExtraOptionsBase_socketTimeout_0100
+     * @tc.desc   ExtraOptionsBase.socketTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_ExtraOptionsBase_socketTimeout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -232,10 +256,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_ExtraOptionsBase_socketTimeout_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_SocketStateBase_isClose_0100
-     * @tc.name      : SocketStateBase.isClose
-     * @tc.desc      : SocketStateBase.isClose
+    /**
+     * @tc.name   Telephony_Socket_SocketStateBase_isClose_0100
+     * @tc.number Telephony_Socket_SocketStateBase_isClose_0100
+     * @tc.desc   SocketStateBase.isClose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_SocketStateBase_isClose_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -253,10 +280,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_SocketStateBase_isClose_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_SocketRemoteInfo_port_0100
-     * @tc.name      : SocketRemoteInfo.port
-     * @tc.desc      : SocketRemoteInfo.port
+    /**
+     * @tc.name   Telephony_Socket_SocketRemoteInfo_port_0100
+     * @tc.number Telephony_Socket_SocketRemoteInfo_port_0100
+     * @tc.desc   SocketRemoteInfo.port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_SocketRemoteInfo_port_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -275,10 +305,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_SocketRemoteInfo_port_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_SocketRemoteInfo_size_0100
-     * @tc.name      : SocketRemoteInfo.size
-     * @tc.desc      : SocketRemoteInfo.size
+    /**
+     * @tc.name   Telephony_Socket_SocketRemoteInfo_size_0100
+     * @tc.number Telephony_Socket_SocketRemoteInfo_size_0100
+     * @tc.desc   SocketRemoteInfo.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_SocketRemoteInfo_size_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -297,10 +330,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_SocketRemoteInfo_size_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPConnectOptions_timeout_0100
-     * @tc.name      : TCPConnectOptions.timeout
-     * @tc.desc      : TCPConnectOptions.timeout
+    /**
+     * @tc.name   Telephony_Socket_TCPConnectOptions_timeout_0100
+     * @tc.number Telephony_Socket_TCPConnectOptions_timeout_0100
+     * @tc.desc   TCPConnectOptions.timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPConnectOptions_timeout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -321,10 +357,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPConnectOptions_timeout_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSendOptions_data_0100
-     * @tc.name      : TCPSendOptions.data
-     * @tc.desc      : TCPSendOptions.data
+    /**
+     * @tc.name   Telephony_Socket_TCPSendOptions_data_0100
+     * @tc.number Telephony_Socket_TCPSendOptions_data_0100
+     * @tc.desc   TCPSendOptions.data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSendOptions_data_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -341,10 +380,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSendOptions_data_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSendOptions_encoding_0100
-     * @tc.name      : TCPSendOptions.encoding
-     * @tc.desc      : TCPSendOptions.encoding
+    /**
+     * @tc.name   Telephony_Socket_TCPSendOptions_encoding_0100
+     * @tc.number Telephony_Socket_TCPSendOptions_encoding_0100
+     * @tc.desc   TCPSendOptions.encoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSendOptions_encoding_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -361,10 +403,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSendOptions_encoding_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPExtraOptions_keepAlive_0100
-     * @tc.name      : TCPExtraOptions.keepAlive
-     * @tc.desc      : TCPExtraOptions.keepAlive
+    /**
+     * @tc.name   Telephony_Socket_TCPExtraOptions_keepAlive_0100
+     * @tc.number Telephony_Socket_TCPExtraOptions_keepAlive_0100
+     * @tc.desc   TCPExtraOptions.keepAlive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPExtraOptions_keepAlive_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -386,10 +431,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPExtraOptions_keepAlive_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPExtraOptions_OOBInline_0100
-     * @tc.name      : TCPExtraOptions.OOBInline
-     * @tc.desc      : TCPExtraOptions.OOBInline
+    /**
+     * @tc.name   Telephony_Socket_TCPExtraOptions_OOBInline_0100
+     * @tc.number Telephony_Socket_TCPExtraOptions_OOBInline_0100
+     * @tc.desc   TCPExtraOptions.OOBInline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPExtraOptions_OOBInline_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -411,10 +459,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPExtraOptions_OOBInline_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPExtraOptions_TCPNoDelay_0100
-     * @tc.name      : TCPExtraOptions.TCPNoDelay
-     * @tc.desc      : TCPExtraOptions.TCPNoDelay
+    /**
+     * @tc.name   Telephony_Socket_TCPExtraOptions_TCPNoDelay_0100
+     * @tc.number Telephony_Socket_TCPExtraOptions_TCPNoDelay_0100
+     * @tc.desc   TCPExtraOptions.TCPNoDelay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPExtraOptions_TCPNoDelay_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -436,10 +487,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPExtraOptions_TCPNoDelay_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPExtraOptions_socketLinger_0100
-     * @tc.name      : TCPExtraOptions.socketLinger
-     * @tc.desc      : TCPExtraOptions.socketLinger
+    /**
+     * @tc.name   Telephony_Socket_TCPExtraOptions_socketLinger_0100
+     * @tc.number Telephony_Socket_TCPExtraOptions_socketLinger_0100
+     * @tc.desc   TCPExtraOptions.socketLinger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPExtraOptions_socketLinger_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -462,10 +516,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPExtraOptions_socketLinger_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_bind_0100
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_bind_0100
+     * @tc.number Telephony_Socket_UDPSocket_bind_0100
+     * @tc.desc   Binds the IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_bind_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -493,10 +550,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_bind_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_bind_0200
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_bind_0200
+     * @tc.number Telephony_Socket_UDPSocket_bind_0200
+     * @tc.desc   Binds the IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_bind_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -527,10 +587,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_bind_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_bind_0300
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_bind_0300
+     * @tc.number Telephony_Socket_UDPSocket_bind_0300
+     * @tc.desc   Binds the IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_bind_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -556,10 +619,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_bind_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_bind_0400
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_bind_0400
+     * @tc.number Telephony_Socket_UDPSocket_bind_0400
+     * @tc.desc   Binds the IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_bind_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -584,10 +650,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_bind_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_send_0100
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_send_0100
+     * @tc.number Telephony_Socket_UDPSocket_send_0100
+     * @tc.desc   Sends data over a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_send_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -618,10 +687,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_send_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_send_0200
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_send_0200
+     * @tc.number Telephony_Socket_UDPSocket_send_0200
+     * @tc.desc   Sends data over a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_send_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -647,10 +719,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_send_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_send_0300
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_send_0300
+     * @tc.number Telephony_Socket_UDPSocket_send_0300
+     * @tc.desc   Sends data over a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_send_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -679,10 +754,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_send_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_send_0400
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_send_0400
+     * @tc.number Telephony_Socket_UDPSocket_send_0400
+     * @tc.desc   Sends data over a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_send_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -706,10 +784,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_send_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_close_0100
-     * @tc.name      : close
-     * @tc.desc      : Closes a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_close_0100
+     * @tc.number Telephony_Socket_UDPSocket_close_0100
+     * @tc.desc   Closes a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -731,10 +812,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_close_0200
-     * @tc.name      : close
-     * @tc.desc      : Closes a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_close_0200
+     * @tc.number Telephony_Socket_UDPSocket_close_0200
+     * @tc.desc   Closes a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -752,10 +836,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_close_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_getState_0100
-     * @tc.name      : getState
-     * @tc.desc      : Obtains the status of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_getState_0100
+     * @tc.number Telephony_Socket_UDPSocket_getState_0100
+     * @tc.desc   Obtains the status of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_getState_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -778,10 +865,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_getState_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_getState_0200
-     * @tc.name      : getState
-     * @tc.desc      : Obtains the status of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_getState_0200
+     * @tc.number Telephony_Socket_UDPSocket_getState_0200
+     * @tc.desc   Obtains the status of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_getState_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -799,10 +889,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_getState_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_setExtraOptions_0100
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_setExtraOptions_0100
+     * @tc.number Telephony_Socket_UDPSocket_setExtraOptions_0100
+     * @tc.desc   Sets other attributes of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_setExtraOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -837,10 +930,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_setExtraOptions_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_setExtraOptions_0200
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_setExtraOptions_0200
+     * @tc.number Telephony_Socket_UDPSocket_setExtraOptions_0200
+     * @tc.desc   Sets other attributes of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_setExtraOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -864,10 +960,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_setExtraOptions_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_setExtraOptions_0300
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_setExtraOptions_0300
+     * @tc.number Telephony_Socket_UDPSocket_setExtraOptions_0300
+     * @tc.desc   Sets other attributes of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_setExtraOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -891,10 +990,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_setExtraOptions_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_setExtraOptions_0400
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_setExtraOptions_0400
+     * @tc.number Telephony_Socket_UDPSocket_setExtraOptions_0400
+     * @tc.desc   Sets other attributes of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_setExtraOptions_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -919,10 +1021,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_setExtraOptions_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_on_message_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for message receiving events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_on_message_0100
+     * @tc.number Telephony_Socket_UDPSocket_on_message_0100
+     * @tc.desc   Listens for message receiving events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_on_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -940,10 +1045,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_on_message_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_message_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for message receiving events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_message_0100
+     * @tc.number Telephony_Socket_UDPSocket_off_message_0100
+     * @tc.desc   Cancels listening for message receiving events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -961,10 +1069,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_message_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_message_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for message receiving events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_message_0200
+     * @tc.number Telephony_Socket_UDPSocket_off_message_0200
+     * @tc.desc   Cancels listening for message receiving events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_message_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -978,10 +1089,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_message_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_on_listening_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for data packet message events or close events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_on_listening_0100
+     * @tc.number Telephony_Socket_UDPSocket_on_listening_0100
+     * @tc.desc   Listens for data packet message events or close events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_on_listening_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -996,10 +1110,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_on_listening_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_listening_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for data packet message events or close events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_listening_0100
+     * @tc.number Telephony_Socket_UDPSocket_off_listening_0100
+     * @tc.desc   Cancels listening for data packet message events or close events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_listening_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1014,10 +1131,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_listening_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_listening_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for data packet message events or close events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_listening_0200
+     * @tc.number Telephony_Socket_UDPSocket_off_listening_0200
+     * @tc.desc   Cancels listening for data packet message events or close events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_listening_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1031,10 +1151,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_listening_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_on_close_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for data packet message events or close events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_on_close_0100
+     * @tc.number Telephony_Socket_UDPSocket_on_close_0100
+     * @tc.desc   Listens for data packet message events or close events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_on_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1049,10 +1172,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_on_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_close_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for data packet message events or close events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_close_0100
+     * @tc.number Telephony_Socket_UDPSocket_off_close_0100
+     * @tc.desc   Cancels listening for data packet message events or close events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1067,10 +1193,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_close_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for data packet message events or close events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_close_0200
+     * @tc.number Telephony_Socket_UDPSocket_off_close_0200
+     * @tc.desc   Cancels listening for data packet message events or close events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1084,10 +1213,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_close_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_on_error_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for error events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_on_error_0100
+     * @tc.number Telephony_Socket_UDPSocket_on_error_0100
+     * @tc.desc   Listens for error events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_on_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1105,10 +1237,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_on_error_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_error_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for error events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_error_0100
+     * @tc.number Telephony_Socket_UDPSocket_off_error_0100
+     * @tc.desc   Cancels listening for error events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1126,10 +1261,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_error_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_UDPSocket_off_error_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for error events of the UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_UDPSocket_off_error_0200
+     * @tc.number Telephony_Socket_UDPSocket_off_error_0200
+     * @tc.desc   Cancels listening for error events of the UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_UDPSocket_off_error_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1143,10 +1281,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_UDPSocket_off_error_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_bind_0100
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_bind_0100
+     * @tc.number Telephony_Socket_TCPSocket_bind_0100
+     * @tc.desc   Binds the IP address and port number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_bind_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1174,10 +1315,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_bind_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_bind_0200
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_bind_0200
+     * @tc.number Telephony_Socket_TCPSocket_bind_0200
+     * @tc.desc   Binds the IP address and port number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_bind_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1202,10 +1346,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_bind_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_bind_0300
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_bind_0300
+     * @tc.number Telephony_Socket_TCPSocket_bind_0300
+     * @tc.desc   Binds the IP address and port number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_bind_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1231,10 +1378,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_bind_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_bind_0400
-     * @tc.name      : bind
-     * @tc.desc      : Binds the IP address and port number
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_bind_0400
+     * @tc.number Telephony_Socket_TCPSocket_bind_0400
+     * @tc.desc   Binds the IP address and port number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_bind_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1257,10 +1407,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_bind_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_send_0100
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_send_0100
+     * @tc.number Telephony_Socket_TCPSocket_send_0100
+     * @tc.desc   Sends data over a TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_send_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1287,10 +1440,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_send_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_send_0200
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_send_0200
+     * @tc.number Telephony_Socket_TCPSocket_send_0200
+     * @tc.desc   Sends data over a TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_send_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1312,10 +1468,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_send_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_send_0300
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_send_0300
+     * @tc.number Telephony_Socket_TCPSocket_send_0300
+     * @tc.desc   Sends data over a TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_send_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1341,10 +1500,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_send_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_send_0400
-     * @tc.name      : send
-     * @tc.desc      : Sends data over a TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_send_0400
+     * @tc.number Telephony_Socket_TCPSocket_send_0400
+     * @tc.desc   Sends data over a TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_send_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1365,10 +1527,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_send_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_connect_0100
-     * @tc.name      : connect
-     * @tc.desc      : Sets up a connection to the specified IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_connect_0100
+     * @tc.number Telephony_Socket_TCPSocket_connect_0100
+     * @tc.desc   Sets up a connection to the specified IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_connect_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1399,10 +1564,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_connect_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_connect_0200
-     * @tc.name      : connect
-     * @tc.desc      : Sets up a connection to the specified IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_connect_0200
+     * @tc.number Telephony_Socket_TCPSocket_connect_0200
+     * @tc.desc   Sets up a connection to the specified IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_connect_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1428,10 +1596,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_connect_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_connect_0300
-     * @tc.name      : connect
-     * @tc.desc      : Sets up a connection to the specified IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_connect_0300
+     * @tc.number Telephony_Socket_TCPSocket_connect_0300
+     * @tc.desc   Sets up a connection to the specified IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_connect_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1461,10 +1632,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_connect_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_connect_0400
-     * @tc.name      : connect
-     * @tc.desc      : Sets up a connection to the specified IP address and port number.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_connect_0400
+     * @tc.number Telephony_Socket_TCPSocket_connect_0400
+     * @tc.desc   Sets up a connection to the specified IP address and port number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_connect_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1489,10 +1663,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_connect_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_close_0100
-     * @tc.name      : close
-     * @tc.desc      : Closes a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_close_0100
+     * @tc.number Telephony_Socket_TCPSocket_close_0100
+     * @tc.desc   Closes a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1514,10 +1691,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_close_0200
-     * @tc.name      : close
-     * @tc.desc      : Closes a UDPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_close_0200
+     * @tc.number Telephony_Socket_TCPSocket_close_0200
+     * @tc.desc   Closes a UDPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1535,10 +1715,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_close_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_getState_0100
-     * @tc.name      : getState
-     * @tc.desc      : Obtains the status of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_getState_0100
+     * @tc.number Telephony_Socket_TCPSocket_getState_0100
+     * @tc.desc   Obtains the status of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_getState_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1561,10 +1744,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_getState_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_getState_0200
-     * @tc.name      : getState
-     * @tc.desc      : Obtains the status of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_getState_0200
+     * @tc.number Telephony_Socket_TCPSocket_getState_0200
+     * @tc.desc   Obtains the status of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_getState_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1582,10 +1768,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_getState_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_setExtraOptions_0100
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_setExtraOptions_0100
+     * @tc.number Telephony_Socket_TCPSocket_setExtraOptions_0100
+     * @tc.desc   Sets other attributes of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_setExtraOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1617,10 +1806,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_setExtraOptions_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_setExtraOptions_0200
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_setExtraOptions_0200
+     * @tc.number Telephony_Socket_TCPSocket_setExtraOptions_0200
+     * @tc.desc   Sets other attributes of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_setExtraOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1653,10 +1845,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_setExtraOptions_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_setExtraOptions_0300
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_setExtraOptions_0300
+     * @tc.number Telephony_Socket_TCPSocket_setExtraOptions_0300
+     * @tc.desc   Sets other attributes of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_setExtraOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1685,10 +1880,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_setExtraOptions_0300 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_setExtraOptions_0400
-     * @tc.name      : setExtraOptions
-     * @tc.desc      : Sets other attributes of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_setExtraOptions_0400
+     * @tc.number Telephony_Socket_TCPSocket_setExtraOptions_0400
+     * @tc.desc   Sets other attributes of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_setExtraOptions_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1718,10 +1916,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_setExtraOptions_0400 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_getRemoteAddress_0100
-     * @tc.name      : getRemoteAddress
-     * @tc.desc      : Obtains the peer address of a TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_getRemoteAddress_0100
+     * @tc.number Telephony_Socket_TCPSocket_getRemoteAddress_0100
+     * @tc.desc   Obtains the peer address of a TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_getRemoteAddress_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1743,10 +1944,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_getRemoteAddress_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_getRemoteAddress_0200
-     * @tc.name      : getRemoteAddress
-     * @tc.desc      : Obtains the peer address of a TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_getRemoteAddress_0200
+     * @tc.number Telephony_Socket_TCPSocket_getRemoteAddress_0200
+     * @tc.desc   Obtains the peer address of a TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_getRemoteAddress_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1764,10 +1968,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_getRemoteAddress_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_on_message_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for message receiving events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_on_message_0100
+     * @tc.number Telephony_Socket_TCPSocket_on_message_0100
+     * @tc.desc   Listens for message receiving events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_on_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1785,10 +1992,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_on_message_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_message_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for message receiving events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_message_0100
+     * @tc.number Telephony_Socket_TCPSocket_off_message_0100
+     * @tc.desc   Cancels listening for message receiving events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_message_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1806,10 +2016,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_message_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_message_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for message receiving events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_message_0200
+     * @tc.number Telephony_Socket_TCPSocket_off_message_0200
+     * @tc.desc   Cancels listening for message receiving events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_message_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1823,10 +2036,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_message_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_on_connect_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for connection or close events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_on_connect_0100
+     * @tc.number Telephony_Socket_TCPSocket_on_connect_0100
+     * @tc.desc   Listens for connection or close events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_on_connect_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1841,10 +2057,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_on_connect_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_connect_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for connection or close events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_connect_0100
+     * @tc.number Telephony_Socket_TCPSocket_off_connect_0100
+     * @tc.desc   Cancels listening for connection or close events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_connect_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1859,10 +2078,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_connect_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_connect_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for connection or close events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_connect_0200
+     * @tc.number Telephony_Socket_TCPSocket_off_connect_0200
+     * @tc.desc   Cancels listening for connection or close events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_connect_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1876,10 +2098,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_connect_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_on_close_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for connection or close events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_on_close_0100
+     * @tc.number Telephony_Socket_TCPSocket_on_close_0100
+     * @tc.desc   Listens for connection or close events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_on_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1894,10 +2119,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_on_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_close_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for connection or close events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_close_0100
+     * @tc.number Telephony_Socket_TCPSocket_off_close_0100
+     * @tc.desc   Cancels listening for connection or close events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1912,10 +2140,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_close_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_close_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for connection or close events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_close_0200
+     * @tc.number Telephony_Socket_TCPSocket_off_close_0200
+     * @tc.desc   Cancels listening for connection or close events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1929,10 +2160,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_close_0200 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_on_error_0100
-     * @tc.name      : on
-     * @tc.desc      : Listens for error events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_on_error_0100
+     * @tc.number Telephony_Socket_TCPSocket_on_error_0100
+     * @tc.desc   Listens for error events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_on_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1950,10 +2184,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_on_error_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_error_0100
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for error events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_error_0100
+     * @tc.number Telephony_Socket_TCPSocket_off_error_0100
+     * @tc.desc   Cancels listening for error events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1971,10 +2208,13 @@ export default function socketJsunit() {
       console.log("************* Telephony_Socket_TCPSocket_off_error_0100 Test end*************");
       done();
     });
-    /*
-     * @tc.number    : Telephony_Socket_TCPSocket_off_error_0200
-     * @tc.name      : off
-     * @tc.desc      : Cancels listening for error events of the TCPSocket connection.
+    /**
+     * @tc.name   Telephony_Socket_TCPSocket_off_error_0200
+     * @tc.number Telephony_Socket_TCPSocket_off_error_0200
+     * @tc.desc   Cancels listening for error events of the TCPSocket connection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_Socket_TCPSocket_off_error_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       if (!envReady) {
@@ -1990,9 +2230,12 @@ export default function socketJsunit() {
     });
     // addMembership:
     /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0100
      * @tc.number NetworkManager_UDPSocket_addMembership_Async_0100
-     * @tc.name UDPSocket::addMembership
-     * @tc.desc Test addMembership property.
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_addMembership_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_addMembership_Async_0100";
@@ -2009,9 +2252,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0200
      * @tc.number NetworkManager_UDPSocket_addMembership_Async_0200
-     * @tc.name UDPSocket::addMembership
-     * @tc.desc Test addMembership property.
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_addMembership_Async_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_addMembership_Async_0200";
@@ -2028,9 +2274,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0300
      * @tc.number NetworkManager_UDPSocket_addMembership_Async_0300
-     * @tc.name UDPSocket::addMembership
-     * @tc.desc Test addMembership property.
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_addMembership_Async_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_addMembership_Async_0300";
@@ -2047,9 +2296,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0400
      * @tc.number NetworkManager_UDPSocket_addMembership_Async_0400
-     * @tc.name UDPSocket::addMembership
-     * @tc.desc Test addMembership property.
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_addMembership_Async_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_addMembership_Async_0400";
@@ -2073,9 +2325,12 @@ export default function socketJsunit() {
     });
     // //send
     /**
+     * @tc.name   NetworkManager_UDPSocket_send_Async_0100
      * @tc.number NetworkManager_UDPSocket_send_Async_0100
-     * @tc.name UDPSocket::send
-     * @tc.desc Test send property.
+     * @tc.desc   Test send property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_send_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_send_Async_0100";
@@ -2101,9 +2356,12 @@ export default function socketJsunit() {
     });
     //setMulticastTTL:
     /**
+     * @tc.name   NetworkManager_UDPSocket_setMulticastTTL_Async_0100
      * @tc.number NetworkManager_UDPSocket_setMulticastTTL_Async_0100
-     * @tc.name UDPSocket::setMulticastTTL
-     * @tc.desc Test setMulticastTTL property.
+     * @tc.desc   Test setMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_setMulticastTTL_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_setMulticastTTL_Async_0100";
@@ -2120,9 +2378,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_setMulticastTTL_Async_0200
      * @tc.number NetworkManager_UDPSocket_setMulticastTTL_Async_0200
-     * @tc.name UDPSocket::setMulticastTTL
-     * @tc.desc Test setMulticastTTL property.
+     * @tc.desc   Test setMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_setMulticastTTL_Async_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_setMulticastTTL_Async_0200";
@@ -2139,9 +2400,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_setMulticastTTL_Async_0300
      * @tc.number NetworkManager_UDPSocket_setMulticastTTL_Async_0300
-     * @tc.name UDPSocket::setMulticastTTL
-     * @tc.desc Test setMulticastTTL property.
+     * @tc.desc   Test setMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_setMulticastTTL_Async_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_setMulticastTTL_Async_0300";
@@ -2165,9 +2429,12 @@ export default function socketJsunit() {
     });
     // //getMulticastTTL
     /**
+     * @tc.name   NetworkManager_UDPSocket_getMulticastTTL_Async_0100
      * @tc.number NetworkManager_UDPSocket_getMulticastTTL_Async_0100
-     * @tc.name UDPSocket::getMulticastTTL
-     * @tc.desc Test getMulticastTTL property.
+     * @tc.desc   Test getMulticastTTL property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_getMulticastTTL_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_getMulticastTTL_Async_0100";
@@ -2185,9 +2452,12 @@ export default function socketJsunit() {
     });
     // setLoopbackMode:
     /**
+     * @tc.name   NetworkManager_UDPSocket_setLoopbackMode_Async_0100
      * @tc.number NetworkManager_UDPSocket_setLoopbackMode_Async_0100
-     * @tc.name UDPSocket::setLoopbackMode
-     * @tc.desc Test setLoopbackMode property.
+     * @tc.desc   Test setLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_setLoopbackMode_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_setLoopbackMode_Async_0100";
@@ -2204,9 +2474,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_setLoopbackMode_Async_0200
      * @tc.number NetworkManager_UDPSocket_setLoopbackMode_Async_0200
-     * @tc.name UDPSocket::setLoopbackMode
-     * @tc.desc Test setLoopbackMode property.
+     * @tc.desc   Test setLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_setLoopbackMode_Async_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_setLoopbackMode_Async_0200";
@@ -2223,9 +2496,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_setLoopbackMode_Async_0300
      * @tc.number NetworkManager_UDPSocket_setLoopbackMode_Async_0300
-     * @tc.name UDPSocket::setLoopbackMode
-     * @tc.desc Test setLoopbackMode property.
+     * @tc.desc   Test setLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_setLoopbackMode_Async_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_setLoopbackMode_Async_0300";
@@ -2249,9 +2525,12 @@ export default function socketJsunit() {
     });
     // getLoopbackMode
     /**
+     * @tc.name   NetworkManager_UDPSocket_getLoopbackMode_Async_0100
      * @tc.number NetworkManager_UDPSocket_getLoopbackMode_Async_0100
-     * @tc.name UDPSocket::getLoopbackMode
-     * @tc.desc Test getLoopbackMode property.
+     * @tc.desc   Test getLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_getLoopbackMode_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_getLoopbackMode_Async_0100";
@@ -2278,9 +2557,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_getLoopbackMode_Async_0200
      * @tc.number NetworkManager_UDPSocket_getLoopbackMode_Async_0200
-     * @tc.name UDPSocket::getLoopbackMode
-     * @tc.desc Test getLoopbackMode property.
+     * @tc.desc   Test getLoopbackMode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_getLoopbackMode_Async_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_getLoopbackMode_Async_0200";
@@ -2308,9 +2590,12 @@ export default function socketJsunit() {
     });
     // dropMembership
     /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0100
      * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0100
-     * @tc.name UDPSocket::dropMembership
-     * @tc.desc Test dropMembership property.
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_dropMembership_Async_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0100";
@@ -2327,9 +2612,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0200
      * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0200
-     * @tc.name UDPSocket::dropMembership
-     * @tc.desc Test dropMembership property.
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_dropMembership_Async_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0200";
@@ -2346,9 +2634,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0300
      * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0300
-     * @tc.name UDPSocket::dropMembership
-     * @tc.desc Test dropMembership property.
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_dropMembership_Async_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0300";
@@ -2365,9 +2656,12 @@ export default function socketJsunit() {
       });
     });
     /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0400
      * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0400
-     * @tc.name UDPSocket::dropMembership
-     * @tc.desc Test dropMembership property.
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("NetworkManager_UDPSocket_dropMembership_Async_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0400";

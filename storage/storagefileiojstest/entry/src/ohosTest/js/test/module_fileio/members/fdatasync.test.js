@@ -23,13 +23,12 @@ export default function fileioFdatasync() {
 describe('fileio_fdatasync', async function () {
 
   /**
+   * @tc.name   fileio_test_fdatasync_async_000
    * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0000
-   * @tc.name fileio_test_fdatasync_async_000
-   * @tc.desc Test fdatasync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdatasync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdatasync_async_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_fdatasync_async_000');
@@ -48,13 +47,12 @@ describe('fileio_fdatasync', async function () {
   });
 
   /**
+   * @tc.name   fileio_test_fdatasync_async_001
    * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0010
-   * @tc.name fileio_test_fdatasync_async_001
-   * @tc.desc Test fdatasync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdatasync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdatasync_async_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_fdatasync_async_001');
@@ -77,15 +75,14 @@ describe('fileio_fdatasync', async function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0020
-   * @tc.name fileio_test_fdatasync_async_002
-   * @tc.desc Test fdatasync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileio_test_fdatasync_async_002
+    * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0020
+    * @tc.desc   Test fdatasync() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_fdatasync_async_002', Level.LEVEL0, async function (done) {
     try {
       let fd = -1;
@@ -99,13 +96,12 @@ describe('fileio_fdatasync', async function () {
   });
 
   /**
+   * @tc.name   fileio_test_fdatasync_sync_000
    * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0000
-   * @tc.name fileio_test_fdatasync_sync_000
-   * @tc.desc Test fdatasyncSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdatasyncSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdatasync_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_fdatasync_sync_000');
@@ -123,13 +119,12 @@ describe('fileio_fdatasync', async function () {
   });
   
   /**
+   * @tc.name   fileio_test_fdatasync_sync_001
    * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0010
-   * @tc.name fileio_test_fdatasync_sync_001
-   * @tc.desc Test fdatasyncSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fdatasyncSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_fdatasync_sync_001', Level.LEVEL0, async function () {
     try {

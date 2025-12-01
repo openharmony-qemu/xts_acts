@@ -41,12 +41,12 @@ export default function ListWillScroll() {
       done();
     });
     /**
-     * @tc.number    ListWillScroll_0100
-     * @tc.name      ListWillScroll_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ListWillScroll_0100
+     * @tc.number ListWillScroll_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ListWillScroll_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ListWillScroll_0100 START');

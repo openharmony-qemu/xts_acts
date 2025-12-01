@@ -27,13 +27,13 @@ export default function CoastingAxisTest(){
       await Utils.sleep(100)
       done()
     })
-    /*
-     * @tc.number: CoastingAxisTest001
-     * @tc.name: CoastingAxisTest001
-     * @tc.desc: Test the alt interface to set normal values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   CoastingAxisTest_a
+     * @tc.number CoastingAxisTest001
+     * @tc.desc   Test the alt interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CoastingAxisTest_a',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.CoastingAxisTest_a()).assertEqual(0)
@@ -41,13 +41,13 @@ export default function CoastingAxisTest(){
       await Utils.sleep(200)
       done()
     })
-    /*
-     * @tc.number: CoastingAxisTest002
-     * @tc.name: CoastingAxisTest002
-     * @tc.desc: Test the alt interface to set normal values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   CoastingAxisTest_b
+     * @tc.number CoastingAxisTest002
+     * @tc.desc   Test the alt interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CoastingAxisTest_b',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.CoastingAxisTest_b()).assertEqual(0)

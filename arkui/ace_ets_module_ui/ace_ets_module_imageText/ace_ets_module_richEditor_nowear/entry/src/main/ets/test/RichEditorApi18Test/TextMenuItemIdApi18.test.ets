@@ -53,10 +53,13 @@ export default function TextMenuItemIdApi18() {
       done();
     });
 
-    /*
-     * @tc.number       TextMenuItemIdApi180001
-     * @tc.name         TextMenuItemIdApi180001
-     * @tc.desc        set TextMenuItem for text
+    /**
+     * @tc.name   TextMenuItemIdApi180001
+     * @tc.number TextMenuItemIdApi180001
+     * @tc.desc   set TextMenuItem for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemIdApi180001', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180001] start");
@@ -81,10 +84,13 @@ export default function TextMenuItemIdApi18() {
       done();
     });
 
-    /*
-     * @tc.number       TextMenuItemIdApi180002
-     * @tc.name         TextMenuItemIdApi180002
-     * @tc.desc        set TextMenuItem for textArea
+    /**
+     * @tc.name   TextMenuItemIdApi180002
+     * @tc.number TextMenuItemIdApi180002
+     * @tc.desc   set TextMenuItem for textArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemIdApi180002', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180002] start");
@@ -109,10 +115,13 @@ export default function TextMenuItemIdApi18() {
       done();
     });
 
-    /*
-     * @tc.number       TextMenuItemIdApi180003
-     * @tc.name         TextMenuItemIdApi180003
-     * @tc.desc        set TextMenuItem for textInput
+    /**
+     * @tc.name   TextMenuItemIdApi180003
+     * @tc.number TextMenuItemIdApi180003
+     * @tc.desc   set TextMenuItem for textInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemIdApi180003', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180003] start");
@@ -137,10 +146,13 @@ export default function TextMenuItemIdApi18() {
       done();
     });
 
-    /*
-     * @tc.number       TextMenuItemIdApi180004
-     * @tc.name         TextMenuItemIdApi180004
-     * @tc.desc        set TextMenuItem for richEditor
+    /**
+     * @tc.name   TextMenuItemIdApi180004
+     * @tc.number TextMenuItemIdApi180004
+     * @tc.desc   set TextMenuItem for richEditor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemIdApi180004', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180004] start");
@@ -165,10 +177,13 @@ export default function TextMenuItemIdApi18() {
       done();
     });
 
-    /*
-     * @tc.number       TextMenuItemIdApi180005
-     * @tc.name         TextMenuItemIdApi180005
-     * @tc.desc        set TextMenuItem for search
+    /**
+     * @tc.name   TextMenuItemIdApi180005
+     * @tc.number TextMenuItemIdApi180005
+     * @tc.desc   set TextMenuItem for search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextMenuItemIdApi180005', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180005] start");

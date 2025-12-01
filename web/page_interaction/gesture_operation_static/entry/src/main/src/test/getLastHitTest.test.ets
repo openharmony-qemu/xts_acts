@@ -60,13 +60,13 @@ export default function HitTest() {
     })
 
 
-    /*
-     * @tc.number     : getLastHitTest001
-     * @tc.name       : getLastHitTestStatic001
-     * @tc.desc       : test getLastHitTest001
-     * @tc.size       : getLastHitTest001
-     * @tc.type       : FunctgetLastHitTest001ion
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   getLastHitTestStatic001
+     * @tc.number getLastHitTest001
+     * @tc.desc   test getLastHitTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getLastHitTestStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

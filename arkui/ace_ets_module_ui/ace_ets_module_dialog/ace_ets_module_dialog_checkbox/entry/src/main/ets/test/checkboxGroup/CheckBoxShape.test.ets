@@ -45,12 +45,12 @@ export default function CheckBoxShape() {
     });
 
     /**
-     * @tc.number CheckBoxShapeTest_0100
      * @tc.name   CheckBoxShapeTest_0100
+     * @tc.number CheckBoxShapeTest_0100
      * @tc.desc   test CheckBoxShape
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CheckBoxShapeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('CheckBoxShapeText_0100 START');

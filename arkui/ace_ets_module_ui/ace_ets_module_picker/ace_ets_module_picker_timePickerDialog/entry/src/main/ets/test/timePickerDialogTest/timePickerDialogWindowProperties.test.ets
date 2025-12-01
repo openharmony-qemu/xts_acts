@@ -45,13 +45,13 @@ export default function TimePickerDialogWindowPropertiesTest() {
       done();
     });
 
-    /*
-     * @tc.number: TimePickerDialogWindowPropertiesTest_0100
-     * @tc.name  : TimePickerDialogWindowPropertiesTest_0100
-     * @tc.desc  : set api
-     * @tc.level : Level 2
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   TimePickerDialogWindowPropertiesTest_0100
+     * @tc.number TimePickerDialogWindowPropertiesTest_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TimePickerDialogWindowPropertiesTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TimePickerDialogWindowPropertiesTest_0100 START');

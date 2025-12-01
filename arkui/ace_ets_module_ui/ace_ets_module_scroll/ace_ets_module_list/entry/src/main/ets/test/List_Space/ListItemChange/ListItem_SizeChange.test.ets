@@ -65,12 +65,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight120Width300
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0100
-     * @tc.name testListItemSizeChangeHeight120Width300
-     * @tc.desc The ListItem subcomponent changes the width 300 and height 120 attributes
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The ListItem subcomponent changes the width 300 and height 120 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight120Width300',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight120Width300 START');
@@ -125,12 +125,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight160Width300
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0200
-     * @tc.name testListItemSizeChangeHeight160Width300
-     * @tc.desc The ListItem subcomponent changes the width 300 and height 160 attributes
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The ListItem subcomponent changes the width 300 and height 160 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight160Width300',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight160Width300 START');
@@ -185,12 +185,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight100Width100
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0300
-     * @tc.name testListItemSizeChangeHeight100Width100
-     * @tc.desc The ListItem subcomponent changes the width 100 and height 100 attributes
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The ListItem subcomponent changes the width 100 and height 100 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight100Width100',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight100Width100 START');
@@ -246,12 +246,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight100Width380
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0400
-     * @tc.name testListItemSizeChangeHeight100Width380
-     * @tc.desc The ListItem subcomponent changes the width 380 and height 100 attributes
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The ListItem subcomponent changes the width 380 and height 100 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight100Width380',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight100Width380 START');
@@ -306,12 +306,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight160Width380
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0500
-     * @tc.name testListItemSizeChangeHeight160Width380
-     * @tc.desc The ListItem subcomponent changes the width 380 and height 100 attributes
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The ListItem subcomponent changes the width 380 and height 100 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight160Width380',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight160Width380 START');

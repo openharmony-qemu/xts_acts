@@ -47,10 +47,12 @@ export default function ImageAttr() {
     });
 
     /**
-     * @tc.number      NavigationAttr_001
-     * @tc.name        NavigationAttr_001
-     * @tc.desc        Navigation test
-     * @tc.level       Level 2
+     * @tc.name   NavigationAttr_001
+     * @tc.number NavigationAttr_001
+     * @tc.desc   Navigation test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationAttr_001',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[NavigationAttr_001] START');

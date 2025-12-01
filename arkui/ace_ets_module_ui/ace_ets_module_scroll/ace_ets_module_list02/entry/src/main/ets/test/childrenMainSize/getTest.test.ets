@@ -41,12 +41,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    getTest_0100
-     * @tc.name      getTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getTest_0100
+     * @tc.number getTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('getTest_0100 START');

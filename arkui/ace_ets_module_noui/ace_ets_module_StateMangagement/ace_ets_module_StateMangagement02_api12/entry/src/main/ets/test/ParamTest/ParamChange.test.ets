@@ -41,12 +41,12 @@ export default function ParamChangeTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PARAM_0030
-     * @tc.name      ParamChangeTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   ParamChangeTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_PARAM_0030
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamChangeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ParamChangeTest_0100 START');

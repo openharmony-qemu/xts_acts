@@ -7,11 +7,14 @@ export default function localUnitTest() {
   const DOMAIN: number = 0x0000;
 
   describe('localUnitTest', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_shortcutManager_001
-     * @tc.name: Sub_Bms_Framework_shortcutManager_001
-     * @tc.desc: Obtain the shortcut config data through the get interface to determine if it is correct.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_shortcutManager_001
+     * @tc.number Sub_Bms_Framework_shortcutManager_001
+     * @tc.desc   Obtain the shortcut config data through the get interface to determine if it is correct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_shortcutManager_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         let tag = 'Sub_Bms_Framework_shortcutManager_001';
@@ -72,11 +75,14 @@ export default function localUnitTest() {
         done();
       }
     })
-    /*
-     * @tc.number: Sub_Bms_Framework_shortcutManager_002
-     * @tc.name: Sub_Bms_Framework_shortcutManager_002
-     * @tc.desc: Set all visible fields to true through 'set' to check if the query data is correct.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_shortcutManager_002
+     * @tc.number Sub_Bms_Framework_shortcutManager_002
+     * @tc.desc   Set all visible fields to true through 'set' to check if the query data is correct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_shortcutManager_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tag = 'Sub_Bms_Framework_shortcutManager_002';
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
@@ -110,11 +116,14 @@ export default function localUnitTest() {
         }
       }
     })
-    /*
-     * @tc.number: Sub_Bms_Framework_shortcutManager_003
-     * @tc.name: Sub_Bms_Framework_shortcutManager_003
-     * @tc.desc: Set all visible fields to false through 'set' to check if the data is correct.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_shortcutManager_003
+     * @tc.number Sub_Bms_Framework_shortcutManager_003
+     * @tc.desc   Set all visible fields to false through 'set' to check if the data is correct.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_shortcutManager_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tag = 'Sub_Bms_Framework_shortcutManager_003';
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
@@ -150,11 +159,14 @@ export default function localUnitTest() {
         }
       }
     })
-    /*
-     * @tc.number: Sub_Bms_Framework_shortcutManager_004
-     * @tc.name: Sub_Bms_Framework_shortcutManager_004
-     * @tc.desc: setShortcutVisibleForSelf 401.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_shortcutManager_004
+     * @tc.number Sub_Bms_Framework_shortcutManager_004
+     * @tc.desc   setShortcutVisibleForSelf 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_shortcutManager_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tag = 'Sub_Bms_Framework_shortcutManager_004';
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
@@ -168,11 +180,14 @@ export default function localUnitTest() {
         done();
       }
     })
-    /*
-     * @tc.number: Sub_Bms_Framework_shortcutManager_005
-     * @tc.name: Sub_Bms_Framework_shortcutManager_005
-     * @tc.desc: setShortcutVisibleForSelf 17700070.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_shortcutManager_005
+     * @tc.number Sub_Bms_Framework_shortcutManager_005
+     * @tc.desc   setShortcutVisibleForSelf 17700070.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_shortcutManager_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tag = 'Sub_Bms_Framework_shortcutManager_005';
       hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);

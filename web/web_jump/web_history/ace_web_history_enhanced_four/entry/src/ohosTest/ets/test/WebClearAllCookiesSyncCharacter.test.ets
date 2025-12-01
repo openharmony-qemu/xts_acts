@@ -57,13 +57,13 @@ export default function webClearAllCookiesSyncCharacter() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_CLEARALLCOOKIESSYNC_CHARACTER_0100
-     * @tc.name       : testClearAllCookiesSyncCharacter
-     * @tc.desc       : test clearAllCookiesSync \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testClearAllCookiesSyncCharacter
+     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_CHARACTER_0100
+     * @tc.desc   test clearAllCookiesSync \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearAllCookiesSyncCharacter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesSyncCharacter', 133400);
@@ -72,13 +72,13 @@ export default function webClearAllCookiesSyncCharacter() {
       });
       sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CLEARALLCOOKIESSYNC_CHARACTER_0200
-     * @tc.name       : testClearAllCookiesSyncCharacterIncognito
-     * @tc.desc       : test clearAllCookiesSync incognito \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testClearAllCookiesSyncCharacterIncognito
+     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_CHARACTER_0200
+     * @tc.desc   test clearAllCookiesSync incognito \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearAllCookiesSyncCharacterIncognito', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesSyncCharacterIncognito', 133400);

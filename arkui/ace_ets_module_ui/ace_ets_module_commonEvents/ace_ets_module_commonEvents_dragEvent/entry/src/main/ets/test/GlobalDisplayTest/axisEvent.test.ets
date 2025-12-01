@@ -47,12 +47,12 @@ export default function axisEventTest() {
     });
 
     /**
-     * @tc.number    axisEventTest_0010
-     * @tc.name      axisEventTest_0010
-     * @tc.desc      axisEventTest get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   axisEventTest_0010
+     * @tc.number axisEventTest_0010
+     * @tc.desc   axisEventTest get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('axisEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[axisEventTest_0010] START');

@@ -47,12 +47,12 @@ export default function enableEdgeAutoScroll_true() {
     });
 
     /**
+     * @tc.name   DenableEdgeAutoScroll_0010
      * @tc.number enableEdgeAutoScroll_true_0010
-     * @tc.name enableEdgeAutoScroll
-     * @tc.desc api
-     * @tc.level: Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DenableEdgeAutoScroll_0010',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('enableEdgeAutoScroll_0010 START');

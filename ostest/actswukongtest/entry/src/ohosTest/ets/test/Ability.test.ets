@@ -44,7 +44,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   wukongtest_0010
      * @tc.number wukongtest_0010
      * @tc.desc   getAbilityLists callback API abilityType is spoken, stateType is install.

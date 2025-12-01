@@ -43,12 +43,12 @@ export default function editMenuOptionsApi12Test() {
     });
 
     /**
-     * @tc.number    editMenuOptionsApi12Test_0100
-     * @tc.name      editMenuOptionsApi12Test_0100
-     * @tc.desc      Text: editMenuOptionsApi12
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMenuOptionsApi12Test_0100
+     * @tc.number editMenuOptionsApi12Test_0100
+     * @tc.desc   Text: editMenuOptionsApi12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('editMenuOptionsApi12Test_0100', Level.LEVEL2, async (done: Function) => {
       console.info('editMenuOptionsApi12Test_0100 START');
@@ -69,12 +69,12 @@ export default function editMenuOptionsApi12Test() {
     });
 
     /**
-     * @tc.number    editMenuOptionsApi12Test_0300
-     * @tc.name      editMenuOptionsApi12Test_0300
-     * @tc.desc      TextInput: editMenuOptionsApi12
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMenuOptionsApi12Test_0300
+     * @tc.number editMenuOptionsApi12Test_0300
+     * @tc.desc   TextInput: editMenuOptionsApi12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('editMenuOptionsApi12Test_0300', Level.LEVEL2, async (done: Function) => {
       console.info('editMenuOptionsApi12Test_0300 START');
@@ -95,12 +95,12 @@ export default function editMenuOptionsApi12Test() {
     });
 
     /**
-     * @tc.number    editMenuOptionsApi12Test_0200
-     * @tc.name      editMenuOptionsApi12Test_0200
-     * @tc.desc      TextArea: editMenuOptionsApi12
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMenuOptionsApi12Test_0200
+     * @tc.number editMenuOptionsApi12Test_0200
+     * @tc.desc   TextArea: editMenuOptionsApi12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('editMenuOptionsApi12Test_0200', Level.LEVEL2, async (done: Function) => {
       console.info('editMenuOptionsApi12Test_0200 START');

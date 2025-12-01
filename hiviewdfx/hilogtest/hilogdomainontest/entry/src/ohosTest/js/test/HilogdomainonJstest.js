@@ -33,9 +33,12 @@ describe('HilogdomainonJstest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi05
      * @tc.number DFX_DFT_Hilog_Domain_White_0500
-     * @tc.name 验证启用domain白名单，type为LOG_APP,domain id有效，日志正常打印
-     * @tc.desc The log tool can read valid app log types when domain on.
+     * @tc.desc   The log tool can read valid app log types when domain on.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi01 start');
@@ -49,9 +52,12 @@ describe('HilogdomainonJstest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi06
      * @tc.number DFX_DFT_Hilog_Domain_White_0600
-     * @tc.name 验证启用domain白名单，type为LOG_APP,domain id无效（在白名单内)，无日志打印
-     * @tc.desc The log tool can't read white app log types when domain on.
+     * @tc.desc   The log tool can't read white app log types when domain on.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi02 start');

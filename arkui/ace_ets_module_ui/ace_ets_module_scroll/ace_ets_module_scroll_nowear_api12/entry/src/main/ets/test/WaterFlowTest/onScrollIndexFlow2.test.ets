@@ -46,12 +46,12 @@ export default function onScrollIndexFlow2() {
     });
 
     /**
-     * @tc.number    onScrollIndexFlow2_001
-     * @tc.name      onScrollIndexFlow2_001
-     * @tc.desc      Sub components are not aligned, fingers slide FlowItem
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   onScrollIndexFlow2_0100
+     * @tc.number onScrollIndexFlow2_001
+     * @tc.desc   Sub components are not aligned, fingers slide FlowItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('onScrollIndexFlow2_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[onScrollIndexFlow2_0100] START');

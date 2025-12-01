@@ -45,9 +45,12 @@ export default function UIObserverContext3Test() {
     });
 
     /**
+     * @tc.name   UIObserverContext3Test_0100
      * @tc.number UIObserverContext3Test_0100
-     * @tc.name UIObserverContext3Test_0100
-     * @tc.desc testNavigation
+     * @tc.desc   testNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UIObserverContext3Test_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UIObserverContext3Test_0100 START');

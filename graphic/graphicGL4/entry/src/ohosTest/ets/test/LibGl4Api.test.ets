@@ -19,12 +19,12 @@ import gl4api from 'libentry.so'
 export default function gl4ApiTest() {
   describe('Gl4Test', () => {
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLTEXTUREARBTEST
-     * @tc.name       : testGLTextureARB
-     * @tc.desc       : test glTextureARB
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLTextureARB
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLTEXTUREARBTEST
+     * @tc.desc   test glTextureARB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLTextureARB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.gLTextureARBTest();
@@ -33,12 +33,12 @@ export default function gl4ApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLBUFFERARBTEST
-     * @tc.name       : testGLBufferARB
-     * @tc.desc       : test glBufferARB
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLBufferARB
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLBUFFERARBTEST
+     * @tc.desc   test glBufferARB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLBufferARB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.gLBufferARBTest();
@@ -47,12 +47,12 @@ export default function gl4ApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLUNIFORMARBTEST
-     * @tc.name       : testGLUniformARB
-     * @tc.desc       : test glUniformARB
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLUniformARB
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLUNIFORMARBTEST
+     * @tc.desc   test glUniformARB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLUniformARB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.gLUniformARBTest();
@@ -61,12 +61,12 @@ export default function gl4ApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLUNIFORMMATRIXARBTEST
-     * @tc.name       : testGLUniformMatrixARB
-     * @tc.desc       : test glUniformMatrixARB
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLUniformMatrixARB
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLUNIFORMMATRIXARBTEST
+     * @tc.desc   test glUniformMatrixARB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLUniformMatrixARB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.gLUniformMatrixARBTest();
@@ -75,12 +75,12 @@ export default function gl4ApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLLINESTIPPLE_001
-     * @tc.name       : testGLLineStippleHalfEmpty
-     * @tc.desc       : test glLineStippleHalfEmpty
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLLineStippleHalfEmpty
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLLINESTIPPLE_001
+     * @tc.desc   test glLineStippleHalfEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLLineStippleHalfEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.glLineStippleHalfEmpty();
@@ -89,12 +89,12 @@ export default function gl4ApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLLINESTIPPLE_002
-     * @tc.name       : testGLLineStippleMaxFactor
-     * @tc.desc       : test glLineStippleMaxFactor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLLineStippleMaxFactor
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLLINESTIPPLE_002
+     * @tc.desc   test glLineStippleMaxFactor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLLineStippleMaxFactor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.glLineStippleMaxFactor();
@@ -103,12 +103,12 @@ export default function gl4ApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLLINESTIPPLE_003
-     * @tc.name       : testGLLineStippleDottedPattern
-     * @tc.desc       : test glLineStippleDottedPattern
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGLLineStippleDottedPattern
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBGL4_GLLINESTIPPLE_003
+     * @tc.desc   test glLineStippleDottedPattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGLLineStippleDottedPattern', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = gl4api.glLineStippleDottedPattern();

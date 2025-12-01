@@ -70,13 +70,13 @@ export default function webViewNativeMediaPlayerHandler3() {
     afterEach(async (done: Function) => {
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0022
-     *@tc.name testWebViewNativeMediaPlayerUpdateRect_1
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerUpdateRect_1
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0022
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerUpdateRect_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -89,13 +89,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0023
-     *@tc.name testWebViewNativeMediaPlayerUpdateRect_2
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerUpdateRect_2
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0023
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerUpdateRect_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -108,13 +108,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0006
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRateNegative1
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRateNegative1
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0006
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRateNegative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -128,13 +128,13 @@ export default function webViewNativeMediaPlayerHandler3() {
       })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0002
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate2
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate2
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0002
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -147,13 +147,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0003
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate2_handleRateChange
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate2_handleRateChange
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0003
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate2_handleRateChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -166,13 +166,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0004
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate3
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate3
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0004
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -185,13 +185,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0005
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate3_handleRateChange
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate3_handleRateChange
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0005
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate3_handleRateChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -204,13 +204,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0001
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate10
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate10
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0001
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -222,13 +222,13 @@ export default function webViewNativeMediaPlayerHandler3() {
           });
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0007
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate1_point_2
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate1_point_2
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0007
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate1_point_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -241,13 +241,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0008
-     *@tc.name testWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0008
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerSetPlayRate1_point_2_handleRateChange',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -260,13 +260,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0013
-     *@tc.name testWebViewNativeMediaPlayerPreloadAuto02
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerPreloadAuto02
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0013
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerPreloadAuto02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -278,13 +278,13 @@ export default function webViewNativeMediaPlayerHandler3() {
           });
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0014
-     *@tc.name testWebViewNativeMediaPlayerTimeUpdate
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerTimeUpdate
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0014
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerTimeUpdate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -297,14 +297,14 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-    *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0016
-    *@tc.name testWebViewNativeMediaPlayerFormatError
-    *@tc.desc test NativeMediaPlayerVSetPlayRate
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerFormatError
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0016
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerFormatError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         emitKey = "emitWebViewNativeMediaPlayerFormatError"
@@ -316,14 +316,14 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-    *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0017
-    *@tc.name testWebViewNativeMediaPlayerNetError
-    *@tc.desc test NativeMediaPlayerVSetPlayRate
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level Level 1
-    */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetError
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0017
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewNativeMediaPlayerNetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         emitKey = "emitWebViewNativeMediaPlayerNetError"
@@ -335,13 +335,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0018
-     *@tc.name testWebViewNativeMediaPlayerDecodeError
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerDecodeError
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0018
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerDecodeError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -354,13 +354,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0020
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateIdle
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateIdle
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0020
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerNetworkStateIdle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -373,13 +373,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0019
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateLoading
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateLoading
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0019
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerNetworkStateLoading', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -391,13 +391,13 @@ export default function webViewNativeMediaPlayerHandler3() {
           });
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0021
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateError
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateError
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0021
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerNetworkStateError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -411,13 +411,13 @@ export default function webViewNativeMediaPlayerHandler3() {
       })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0027
-     *@tc.name testWebViewNativeMediaPlayerReadyState_2
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerReadyState_2
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0027
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerReadyState_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -430,13 +430,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0028
-     *@tc.name testWebViewNativeMediaPlayerReadyState_3
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerReadyState_3
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0028
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerReadyState_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -449,13 +449,13 @@ export default function webViewNativeMediaPlayerHandler3() {
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0024
-     *@tc.name testWebViewNativeMediaPlayerUpdateRect_3
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerUpdateRect_3
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0024
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerUpdateRect_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -467,14 +467,14 @@ export default function webViewNativeMediaPlayerHandler3() {
           });
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
-    /*
-      *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0029
-      *@tc.name testWebViewNativeMediaPlayerReadyState_4
-      *@tc.desc test NativeMediaPlayerVSetPlayRate
-      *@tc.size MediumTest
-      *@tc.type Function
-      *@tc.level Level 2
-      */
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerReadyState_4
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0029
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebViewNativeMediaPlayerReadyState_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         emitKey = "emitWebViewNativeMediaPlayerReadyState_4"
@@ -485,13 +485,13 @@ export default function webViewNativeMediaPlayerHandler3() {
           });
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0025
-     *@tc.name testWebViewNativeMediaPlayerUpdateRect_4
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerUpdateRect_4
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0025
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerUpdateRect_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -503,13 +503,13 @@ export default function webViewNativeMediaPlayerHandler3() {
           });
         await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerRateHandler3')
       })
-    /*
-     *@tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0026
-     *@tc.name testWebViewNativeMediaPlayerReadyState_1
-     *@tc.desc test NativeMediaPlayerVSetPlayRate
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerReadyState_1
+     * @tc.number SUB_ACE_WEB_NativeMediaPlayerSetPlayRate_API_0026
+     * @tc.desc   test NativeMediaPlayerVSetPlayRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerReadyState_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {

@@ -40,6 +40,14 @@ export default function EllipseResourceTest() {
       done();
     });
     
+    /**
+     * @tc.name   EllipseResourceTest_0100
+     * @tc.number EllipseResourceTest_0100
+     * @tc.desc   EllipseResourceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('EllipseResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[EllipseResourceTest_0100] START');
       await CommonFunc.sleep(1000);

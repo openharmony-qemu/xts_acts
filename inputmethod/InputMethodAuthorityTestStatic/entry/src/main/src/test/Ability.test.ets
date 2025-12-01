@@ -55,7 +55,6 @@ export default function inputMethodAuthorityJSUnit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_switchInputMethod__static_0100
          * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_0100
          * @tc.desc   Function test
@@ -81,7 +80,6 @@ export default function inputMethodAuthorityJSUnit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_Misc_inputMethod_switchInputMethod__static_0200
          * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_0200
          * @tc.desc   Function test
@@ -113,7 +111,6 @@ export default function inputMethodAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_001
          * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_001
          * @tc.desc   Test Indicates the input method which will hide softboard with calback.
@@ -158,7 +155,6 @@ export default function inputMethodAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_002
          * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_002
          * @tc.desc   Test Indicates the input method which will hide softboard with Promise.
@@ -197,7 +193,6 @@ export default function inputMethodAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_static_001
          * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_static_001
          * @tc.desc   Switch current input method subtype.
@@ -229,7 +224,6 @@ export default function inputMethodAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_static_002
          * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_static_002
          * @tc.desc   Switch current input method subtype.

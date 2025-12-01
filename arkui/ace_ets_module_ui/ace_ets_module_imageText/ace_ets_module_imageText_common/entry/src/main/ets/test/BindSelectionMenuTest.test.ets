@@ -46,13 +46,13 @@ export default function BindSelectionMenuTest() {
       console.info("bindSelectionMenuTest after each called");
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0001
-    * @tc.name         bindSelectionMenuTest0001
-    * @tc.desc         Test Text by mouseClick
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0001
+     * @tc.number bindSelectionMenuTest0001
+     * @tc.desc   Test Text by mouseClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0001', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -71,13 +71,13 @@ export default function BindSelectionMenuTest() {
         done();
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0002
-    * @tc.name         bindSelectionMenuTest0002
-    * @tc.desc        Test Text by longClick
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0002
+     * @tc.number bindSelectionMenuTest0002
+     * @tc.desc   Test Text by longClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0002', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -94,13 +94,13 @@ export default function BindSelectionMenuTest() {
         done();
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0003
-    * @tc.name         bindSelectionMenuTest0003
-    * @tc.desc        Test  Text by select
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0003
+     * @tc.number bindSelectionMenuTest0003
+     * @tc.desc   Test  Text by select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0003', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -120,13 +120,13 @@ export default function BindSelectionMenuTest() {
     });
 
 
-    /*
-    * @tc.number       bindSelectionMenuTest0004
-    * @tc.name         bindSelectionMenuTest0004
-    * @tc.desc        Test image text by mouseClick
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0004
+     * @tc.number bindSelectionMenuTest0004
+     * @tc.desc   Test image text by mouseClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0004', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -145,13 +145,13 @@ export default function BindSelectionMenuTest() {
         done();
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0005
-    * @tc.name         bindSelectionMenuTest0005
-    * @tc.desc        Test image text by longClick
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0005
+     * @tc.number bindSelectionMenuTest0005
+     * @tc.desc   Test image text by longClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0005', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -168,13 +168,13 @@ export default function BindSelectionMenuTest() {
         done();
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0006
-    * @tc.name         bindSelectionMenuTest0006
-    * @tc.desc        Test image Text by select
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0006
+     * @tc.number bindSelectionMenuTest0006
+     * @tc.desc   Test image Text by select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -195,13 +195,13 @@ export default function BindSelectionMenuTest() {
 
 
 
-    /*
-    * @tc.number       bindSelectionMenuTest0007
-    * @tc.name         bindSelectionMenuTest0007
-    * @tc.desc        Test mixed Text by mouseClick
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0007
+     * @tc.number bindSelectionMenuTest0007
+     * @tc.desc   Test mixed Text by mouseClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0007', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -220,13 +220,13 @@ export default function BindSelectionMenuTest() {
         done();
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0008
-    * @tc.name         bindSelectionMenuTest0008
-    * @tc.desc        Test mixed Text by longClick
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0008
+     * @tc.number bindSelectionMenuTest0008
+     * @tc.desc   Test mixed Text by longClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0008', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -243,13 +243,13 @@ export default function BindSelectionMenuTest() {
         done();
     });
 
-    /*
-    * @tc.number       bindSelectionMenuTest0009
-    * @tc.name         bindSelectionMenuTest0009
-    * @tc.desc        Test mixed Text by select
-	  * @tc.size         MediumTest
-	  * @tc.type         Function
-	  * @tc.level        1
+    /**
+     * @tc.name   bindSelectionMenuTest0009
+     * @tc.number bindSelectionMenuTest0009
+     * @tc.desc   Test mixed Text by select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSelectionMenuTest0009', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();

@@ -48,12 +48,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
+     * @tc.name   ImageLoaderTest001
      * @tc.number ImageLoaderTest001
-     * @tc.name ImageLoaderTest001
-     * @tc.desc test the loadSync
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the loadSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest001', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest001] START');
@@ -79,12 +79,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
+     * @tc.name   ImageLoaderTest002
      * @tc.number ImageLoaderTest002
-     * @tc.name ImageLoaderTest002
-     * @tc.desc test the load
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the load
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest002', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest002] START');
@@ -110,12 +110,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
+     * @tc.name   ImageLoaderTest003
      * @tc.number ImageLoaderTest003
-     * @tc.name ImageLoaderTest003
-     * @tc.desc test the loadSync errorCode 111001
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the loadSync errorCode 111001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest003', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest003] START');
@@ -136,12 +136,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
+     * @tc.name   ImageLoaderTest004
      * @tc.number ImageLoaderTest004
-     * @tc.name ImageLoaderTest004
-     * @tc.desc test the load errorCode 111001
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the load errorCode 111001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest004', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest004] START');

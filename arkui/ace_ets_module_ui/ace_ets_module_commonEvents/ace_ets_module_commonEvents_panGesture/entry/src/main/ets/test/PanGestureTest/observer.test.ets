@@ -47,10 +47,12 @@ export default function PanGestureTest() {
     });
 
     /**
-     * @tc.number    observerTest_0010
-     * @tc.name      observerTest_0010
-     * @tc.desc      observer.on test succ
-     * @tc.level:    Level 1
+     * @tc.name   observerTest_0010
+     * @tc.number observerTest_0010
+     * @tc.desc   observer.on test succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('observerTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('observerTest_0010 START');
@@ -71,10 +73,12 @@ export default function PanGestureTest() {
     });
 
     /**
-     * @tc.number    observerTest_0020
-     * @tc.name      observerTest_0020
-     * @tc.desc      observer.off test succ
-     * @tc.level:    Level 1
+     * @tc.name   observerTest_0020
+     * @tc.number observerTest_0020
+     * @tc.desc   observer.off test succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('observerTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('observerTest_0020 START');

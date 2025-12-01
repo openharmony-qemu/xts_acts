@@ -54,13 +54,13 @@ export default function ImageAnimatorAdvancedTest() {
       console.info('after each called');
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0120
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0120
-     * @tc.desc   : set images,height = 100px
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0120
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0120
+     * @tc.desc   set images,height = 100px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0120', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0120] START');
@@ -74,13 +74,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0130
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0130
-     * @tc.desc   : set images,height = 100
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0130
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0130
+     * @tc.desc   set images,height = 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0130', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0130] START');
@@ -93,13 +93,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0140
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0140
-     * @tc.desc   : set images,height = 50%
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0140
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0140
+     * @tc.desc   set images,height = 50%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0140', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0140] START');
@@ -112,13 +112,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0150
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0150
-     * @tc.desc   : set images,height = outlier
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0150
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0150
+     * @tc.desc   set images,height = outlier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0150', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0150] START');
@@ -131,13 +131,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0160
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0160
-     * @tc.desc   : set images,height = 90
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0160
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0160
+     * @tc.desc   set images,height = 90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0160', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0160] START');
@@ -150,13 +150,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0170
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0170
-     * @tc.desc   : set images,left = string
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0170
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0170
+     * @tc.desc   set images,left = string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0170', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0170] START');
@@ -170,13 +170,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0180
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0180
-     * @tc.desc   : set images,left = number
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0180
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0180
+     * @tc.desc   set images,left = number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0180', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0180] START');
@@ -189,13 +189,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0190
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0190
-     * @tc.desc   : set images, dont set left
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0190
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0190
+     * @tc.desc   set images, dont set left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0190', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0190] START');
@@ -208,13 +208,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0200
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0200
-     * @tc.desc   : set images,top = string
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0200
+     * @tc.desc   set images,top = string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0200] START');
@@ -227,13 +227,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0210
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0210
-     * @tc.desc   : set images,top = number
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0210
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0210
+     * @tc.desc   set images,top = number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0210', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0210] START');
@@ -246,13 +246,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0220
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0220
-     * @tc.desc   : set images,dont set top
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0220
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0220
+     * @tc.desc   set images,dont set top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0220', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0220] START');
@@ -265,13 +265,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0230
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0230
-     * @tc.desc   : set images,width = 100px
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0230
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0230
+     * @tc.desc   set images,width = 100px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0230', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0230] START');
@@ -285,13 +285,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0240
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0240
-     * @tc.desc   : set images,width = 100
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0240
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0240
+     * @tc.desc   set images,width = 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0240', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0240] START');
@@ -304,13 +304,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0250
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0250
-     * @tc.desc   : set images,width = 50%
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0250
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0250
+     * @tc.desc   set images,width = 50%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0250', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0250] START');
@@ -323,13 +323,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0260
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0260
-     * @tc.desc   : set images,width = outlier
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0260
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0260
+     * @tc.desc   set images,width = outlier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0260', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0260] START');
@@ -342,13 +342,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0270
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0270
-     * @tc.desc   : set images,width = 90
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0270
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0270
+     * @tc.desc   set images,width = 90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0270', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0270] START');
@@ -361,13 +361,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0280
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0280
-     * @tc.desc   : set images,Referencing video path
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0280
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0280
+     * @tc.desc   set images,Referencing video path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0280', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0280] START');
@@ -382,13 +382,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0290
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0290
-     * @tc.desc   : set images,Referencing gif or video
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0290
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0290
+     * @tc.desc   set images,Referencing gif or video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0290', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0290] START');
@@ -404,13 +404,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0300
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0300
-     * @tc.desc   : set images,Referencing rawfile
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0300
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0300
+     * @tc.desc   set images,Referencing rawfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0300] START');
@@ -425,13 +425,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0310
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0310
-     * @tc.desc   : set images,Referencing jpg,png,svg,bmp,gif
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0310
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0310
+     * @tc.desc   set images,Referencing jpg,png,svg,bmp,gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0310', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0310] START');
@@ -450,13 +450,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0330
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0330
-     * @tc.desc   : set images,Referencing base64
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0330
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0330
+     * @tc.desc   set images,Referencing base64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0330', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0330] START');
@@ -499,13 +499,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0380
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0380
-     * @tc.desc   : set images,Referencing internal img
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0380
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0380
+     * @tc.desc   set images,Referencing internal img
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0380', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0380] START');
@@ -521,13 +521,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0390
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0390
-     * @tc.desc   : set images,Referencing relative paths
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0390
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0390
+     * @tc.desc   set images,Referencing relative paths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0390', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_0390] START');
@@ -542,13 +542,13 @@ export default function ImageAnimatorAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_0010
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_0010
-     * @tc.desc   : set width and height 400
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_0010
+     * @tc.desc   set width and height 400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_0010', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_0010] START');

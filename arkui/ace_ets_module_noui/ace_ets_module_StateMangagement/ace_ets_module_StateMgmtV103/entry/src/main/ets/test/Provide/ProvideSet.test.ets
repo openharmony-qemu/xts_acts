@@ -54,14 +54,14 @@ export default function ProvideSet() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDESET_0010
-    * @tc.name  : ProvideSet_0100
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideSet_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDESET_0010
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideSet_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideSet_0100 START');
       let driver: Driver = await Driver.create()
@@ -79,14 +79,14 @@ export default function ProvideSet() {
       console.info('[ProvideSet_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDESET_0020
-    * @tc.name  : ProvideSet_0200
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideSet_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDESET_0020
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideSet_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideSet_0200 START');
       let driver: Driver = await Driver.create()
@@ -104,14 +104,14 @@ export default function ProvideSet() {
       console.info('[ProvideSet_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDESET_0030
-    * @tc.name  : ProvideSet_0300
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideSet_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDESET_0030
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideSet_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideSet_0300 START');
       let driver: Driver = await Driver.create()
@@ -129,14 +129,14 @@ export default function ProvideSet() {
       console.info('[ProvideSet_0300] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDESET_0040
-    * @tc.name  : ProvideSet_0400
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideSet_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDESET_0040
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideSet_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideSet_0400 START');
       let driver: Driver = await Driver.create()

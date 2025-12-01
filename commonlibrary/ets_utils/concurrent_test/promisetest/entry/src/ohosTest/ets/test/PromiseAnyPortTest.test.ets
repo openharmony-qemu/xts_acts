@@ -42,12 +42,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0100
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0100
-     * @tc.name TaskpoolPromiseAnyTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -69,12 +69,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0200
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0200
-     * @tc.name TaskpoolPromiseAnyTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -95,12 +95,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0300
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0300
-     * @tc.name TaskpoolPromiseAnyTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -120,12 +120,12 @@ export default function PromiseAnyPortTest() {
       });
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0400
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0400
-     * @tc.name TaskpoolPromiseAnyTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -146,12 +146,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0500
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0500
-     * @tc.name TaskpoolPromiseAnyTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -176,12 +176,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0600
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0600
-     * @tc.name TaskpoolPromiseAnyTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -216,12 +216,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0700
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0700
-     * @tc.name TaskpoolPromiseAnyTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -257,12 +257,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0800
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0800
-     * @tc.name TaskpoolPromiseAnyTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -319,12 +319,12 @@ export default function PromiseAnyPortTest() {
       });
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest0900
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_0900
-     * @tc.name TaskpoolPromiseAnyTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -349,12 +349,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1000
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1000
-     * @tc.name TaskpoolPromiseAnyTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -377,12 +377,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1100
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1100
-     * @tc.name TaskpoolPromiseAnyTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -418,12 +418,12 @@ export default function PromiseAnyPortTest() {
       });
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1200
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1200
-     * @tc.name TaskpoolPromiseAnyTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -461,12 +461,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1300
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1300
-     * @tc.name TaskpoolPromiseAnyTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -515,12 +515,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1400
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1400
-     * @tc.name TaskpoolPromiseAnyTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -555,12 +555,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1500
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1500
-     * @tc.name TaskpoolPromiseAnyTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -597,12 +597,12 @@ export default function PromiseAnyPortTest() {
       });
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1600
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1600
-     * @tc.name TaskpoolPromiseAnyTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -645,12 +645,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1700
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1700
-     * @tc.name TaskpoolPromiseAnyTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -681,12 +681,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1800
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1800
-     * @tc.name TaskpoolPromiseAnyTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -727,12 +727,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest1900
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_1900
-     * @tc.name TaskpoolPromiseAnyTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -780,12 +780,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest2000
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_2000
-     * @tc.name TaskpoolPromiseAnyTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -826,12 +826,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest2100
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_2100
-     * @tc.name TaskpoolPromiseAnyTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -878,12 +878,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest2200
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_2200
-     * @tc.name TaskpoolPromiseAnyTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -924,12 +924,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest2300
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_2300
-     * @tc.name TaskpoolPromiseAnyTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -977,12 +977,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest2400
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_2400
-     * @tc.name TaskpoolPromiseAnyTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -1023,12 +1023,12 @@ export default function PromiseAnyPortTest() {
 
 
     /**
+     * @tc.name   TaskpoolPromiseAnyTest2500
      * @tc.number SUB_TASKPOOL_PROMISE_ANY_TEST_2500
-     * @tc.name TaskpoolPromiseAnyTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TaskpoolPromiseAnyTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

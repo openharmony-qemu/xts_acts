@@ -22,14 +22,12 @@ export default function fileIOWrite() {
   describe('fileIO_fs_write', function () {
 
   /**
+   * @tc.name   fileIO_test_write_sync_000
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0000
-   * @tc.name fileIO_test_write_sync_000
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, default write from current offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_000');
@@ -53,14 +51,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_001
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0100
-   * @tc.name fileIO_test_write_sync_001
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, writing a string with encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_001');
@@ -82,14 +78,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_002
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0200
-   * @tc.name fileIO_test_write_sync_002
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, writing a string from offset(position) = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_002', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_002');
@@ -111,14 +105,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_003
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0300
-   * @tc.name fileIO_test_write_sync_003
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, writing a string of length = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_003');
@@ -139,16 +131,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0400
-   * @tc.name fileIO_test_write_sync_004
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, writing a string of length = 1 and offset(position) = 1.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_sync_004
+    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0400
+    * @tc.desc   Test writeSync() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_004');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -168,16 +158,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0500
-   * @tc.name fileIO_test_write_sync_005
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, writing a string of length = 1, offset(position) = 1, encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_sync_005
+    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0500
+    * @tc.desc   Test writeSync() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_sync_005', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_005');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -199,14 +187,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_006
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0600
-   * @tc.name fileIO_test_write_sync_006
-   * @tc.desc Test writeSync() interfaces.
-   * Write with invalid 'length' option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_006', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_006');
@@ -227,14 +213,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_007
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0700
-   * @tc.name fileIO_test_write_sync_007
-   * @tc.desc Test writeSync() interfaces.
-   * Write with invalid fd parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_007', Level.LEVEL0, function () {
 
@@ -248,14 +232,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_008
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0800
-   * @tc.name fileIO_test_write_sync_008
-   * @tc.desc Test writeSync() interfaces.
-   * Open the file in write-only mode, writing an ArrayBuffer(4096).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_008', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_008');
@@ -275,14 +257,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_009
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_0900
-   * @tc.name fileIO_test_write_sync_009
-   * @tc.desc Test writeSync() interfaces.
-   * Write with invalid 'length' option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_009', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_009');
@@ -303,14 +283,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_010
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1000
-   * @tc.name fileIO_test_write_sync_010
-   * @tc.desc Test writeSync() interfaces.
-   * Write with invalid 'offset' option.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_sync_010', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_010');
@@ -331,14 +309,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_011
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1100
-   * @tc.name fileIO_test_write_sync_011
-   * @tc.desc Test writeSync() interfaces.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_write_sync_011', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_011');
@@ -362,14 +338,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_sync_012
    * @tc.number SUB_DF_FILEIO_WRITE_SYNC_1200
-   * @tc.name fileIO_test_write_sync_012
-   * @tc.desc Test writeSync() interfaces.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test writeSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_write_sync_012', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileIO_test_write_sync_012');
@@ -400,14 +374,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_000
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0000
-   * @tc.name fileIO_test_write_async_000
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in write-only mode, default write from current offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_000');
@@ -432,14 +404,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_001
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0100
-   * @tc.name fileIO_test_write_async_001
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, default write from current offset.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_001');
@@ -474,14 +444,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_002
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0200
-   * @tc.name fileIO_test_write_async_002
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in read-only mode, verifying that it is not writable.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_002');
@@ -502,14 +470,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_003
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0300
-   * @tc.name fileIO_test_write_async_003
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in read-only mode, verifying that it is not writable.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_003');
@@ -534,14 +500,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_004
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0400
-   * @tc.name fileIO_test_write_async_004
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in write-only mode, writing a string of length = 3.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_004');
@@ -563,16 +527,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0500
-   * @tc.name fileIO_test_write_async_005
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, writing a string of length = 3.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_005
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0500
+    * @tc.desc   Test write() interfaces. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_005');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -598,16 +560,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0600
-   * @tc.name fileIO_test_write_async_006
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in write-only mode, writing a string from offset(position) = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_006
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0600
+    * @tc.desc   Test write() interfaces. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_006');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -628,16 +588,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0700
-   * @tc.name fileIO_test_write_async_007
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, writing a string from offset(position) = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_007
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0700
+    * @tc.desc   Test write() interfaces. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_007');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -664,14 +622,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_008
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0800
-   * @tc.name fileIO_test_write_async_008
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in write-only mode, writing a string of with length = 3 and offset = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_008', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_008');
@@ -695,14 +651,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_009
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_0900
-   * @tc.name fileIO_test_write_async_009
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, writing a string of with length = 3 and offset = 5.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_009');
@@ -730,16 +684,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1000
-   * @tc.name fileIO_test_write_async_010
-   * @tc.desc Test write() interfaces.
-   * Open the file in write-only mode, writing a string of with length = 3, offset = 5 and encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_010
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1000
+    * @tc.desc   Test write() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_010', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_010');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -762,16 +714,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1100
-   * @tc.name fileIO_test_write_async_011
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, writing a string of with length = 3, offset = 5 and encoding = 'utf-8'.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_011
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1100
+    * @tc.desc   Test write() interfaces. Callback.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_011', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_011');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -799,16 +749,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1200
-   * @tc.name fileIO_test_write_async_012
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in write-only mode, writing an ArrayBuffer(4096).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_012
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1200
+    * @tc.desc   Test write() interfaces. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_012', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_012');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -828,14 +776,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_013
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1300
-   * @tc.name fileIO_test_write_async_013
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, writing an ArrayBuffer(4096).
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_013', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_013');
@@ -860,15 +806,13 @@ export default function fileIOWrite() {
     }
   });
 
-    /**
+  /**
+   * @tc.name   fileIO_test_write_async_014
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1400
-   * @tc.name fileIO_test_write_async_014
-   * @tc.desc Test write() interfaces. Promise.
-   * Open the file in write-only mode, writing a string with empty option parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_014', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_014');
@@ -889,14 +833,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_015
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1500
-   * @tc.name fileIO_test_write_async_015
-   * @tc.desc Test write() interfaces. Callback.
-   * Open the file in write-only mode, writing a string with empty option parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_015', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_015');
@@ -922,16 +864,14 @@ export default function fileIOWrite() {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1600
-   * @tc.name fileIO_test_write_async_016
-   * @tc.desc Test write() interfaces. Promise.
-   * Write with invalid fd parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileIO_test_write_async_016
+    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1600
+    * @tc.desc   Test write() interfaces. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileIO_test_write_async_016', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_016');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -948,14 +888,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_017
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1700
-   * @tc.name fileIO_test_write_async_017
-   * @tc.desc Test write() interfaces. Callback.
-   * Write with invalid fd parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_017', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_017');
@@ -974,14 +912,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_018
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1800
-   * @tc.name fileIO_test_write_async_018
-   * @tc.desc Test write() interfaces. Callback.
-   * Write with invalid length parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_018', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_018');
@@ -1006,14 +942,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_019
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_1900
-   * @tc.name fileIO_test_write_async_019
-   * @tc.desc Test write() interfaces. Callback.
-   * Write with invalid length parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_019', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_019');
@@ -1038,14 +972,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_020
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2000
-   * @tc.name fileIO_test_write_async_020
-   * @tc.desc Test write() interfaces. Callback.
-   * Write with invalid length parameters.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_write_async_020', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_020');
@@ -1070,14 +1002,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_021
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2100
-   * @tc.name fileIO_test_write_async_021
-   * @tc.desc Test write() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_write_async_021', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_021');
@@ -1102,14 +1032,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_022
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2200
-   * @tc.name fileIO_test_write_async_022
-   * @tc.desc Test write() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_write_async_022', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_022');
@@ -1144,14 +1072,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_023
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2300
-   * @tc.name fileIO_test_write_async_023
-   * @tc.desc Test write() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_write_async_023', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_023');
@@ -1184,14 +1110,12 @@ export default function fileIOWrite() {
   });
 
   /**
+   * @tc.name   fileIO_test_write_async_024
    * @tc.number SUB_DF_FILEIO_WRITE_ASYNC_2400
-   * @tc.name fileIO_test_write_async_024
-   * @tc.desc Test write() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test write() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_write_async_024', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileIO_test_write_async_024');

@@ -44,13 +44,13 @@ export default function ListItemJsunit() {
       console.info("list_itemOnSelect after each called");
     });
 
-    /*
-     * @tc.number    testlist_itemOnSelect0001
-     * @tc.name      testlist_itemOnSelect0001
-     * @tc.desc      acelist_itemOnSelectEtsTest0001
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testlist_itemOnSelect0001
+     * @tc.number testlist_itemOnSelect0001
+     * @tc.desc   acelist_itemOnSelectEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlist_itemOnSelect0001', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0001 START');
@@ -64,13 +64,13 @@ export default function ListItemJsunit() {
 
     });
 
-    /*
-     * @tc.number    testlist_itemOnSelect0002
-     * @tc.name      testlist_itemOnSelect0002
-     * @tc.desc      acelist_itemOnSelectEtsTest0002
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testlist_itemOnSelect0002
+     * @tc.number testlist_itemOnSelect0002
+     * @tc.desc   acelist_itemOnSelectEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlist_itemOnSelect0002', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0002 START');
@@ -84,13 +84,13 @@ export default function ListItemJsunit() {
 
     });
 
-    /*
-     * @tc.number    testlist_itemOnSelect0003
-     * @tc.name      testlist_itemOnSelect0003
-     * @tc.desc      acelist_itemOnSelectEtsTest0002
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testlist_itemOnSelect0003
+     * @tc.number testlist_itemOnSelect0003
+     * @tc.desc   acelist_itemOnSelectEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlist_itemOnSelect0003', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0003 START');
@@ -104,13 +104,13 @@ export default function ListItemJsunit() {
 
     });
 
-    /*
-     * @tc.number    testlist_itemSwipeAction0004
-     * @tc.name      testlist_itemSwipeAction0004
-     * @tc.desc      acelist_itemSwipeActionEtsTest0004
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testlist_itemSwipeAction0004
+     * @tc.number testlist_itemSwipeAction0004
+     * @tc.desc   acelist_itemSwipeActionEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlist_itemSwipeAction0004', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemSwipeAction0004 START');

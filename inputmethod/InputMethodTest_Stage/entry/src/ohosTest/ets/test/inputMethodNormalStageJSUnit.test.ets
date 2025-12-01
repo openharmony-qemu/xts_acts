@@ -47,7 +47,6 @@ export default function inputMethodNormalStageJSUnit() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001
      * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001
      * @tc.desc   Function test
@@ -104,7 +103,6 @@ export default function inputMethodNormalStageJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002
      * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002
      * @tc.desc   Function test
@@ -156,7 +154,6 @@ export default function inputMethodNormalStageJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001
      * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001
      * @tc.desc   Function test
@@ -201,7 +198,6 @@ export default function inputMethodNormalStageJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002
      * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002
      * @tc.desc   Function test

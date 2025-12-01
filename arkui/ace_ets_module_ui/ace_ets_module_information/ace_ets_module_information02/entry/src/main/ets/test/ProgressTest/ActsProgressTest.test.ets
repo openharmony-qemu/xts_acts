@@ -47,10 +47,13 @@ export default function ActsProgressTest() {
     });
 
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0100
      * @tc.number ArkUX_Stage_Progress_updateColor_0100
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0100 START');
@@ -78,10 +81,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0200
      * @tc.number ArkUX_Stage_Progress_updateColor_0200
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to '#fffd0000'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0200 START');
@@ -109,10 +115,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0300
      * @tc.number ArkUX_Stage_Progress_updateColor_0300
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to 'rgb(138,43,226)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0300 START');
@@ -140,11 +149,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
- * @tc.number ArkUX_Stage_Progress_updateColor_0400
- * @tc.name   Tests the updateColor property of the Progress component
- * @tc.desc   Set the updateColor property parameter to Color.Pink
- */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0400
+     * @tc.number ArkUX_Stage_Progress_updateColor_0400
+     * @tc.desc   Set the updateColor property parameter to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0400 START');
       setTimeout(async () => {
@@ -171,10 +183,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0500
      * @tc.number ArkUX_Stage_Progress_updateColor_0500
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to $r("app.color.Progress_updateColor")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0500 START');
@@ -202,10 +217,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0600
      * @tc.number ArkUX_Stage_Progress_updateColor_0600
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to 0xff006cde
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0600 START');
@@ -233,10 +251,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0700
      * @tc.number ArkUX_Stage_Progress_updateColor_0700
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to "#33006cde"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0700 START');
@@ -264,10 +285,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0800
      * @tc.number ArkUX_Stage_Progress_updateColor_0800
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to "rgba(0,108,222,0.8)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0800', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0800 START');
@@ -295,10 +319,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_0900
      * @tc.number ArkUX_Stage_Progress_updateColor_0900
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to $r("app.color.Progress_updateColor_transparency")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_0900 START');
@@ -326,11 +353,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateColor_1000
-    * @tc.name   Tests the updateColor property of the Progress component
-    * @tc.desc   Set the updateColor property parameter to an outlier ""
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1000
+     * @tc.number ArkUX_Stage_Progress_updateColor_1000
+     * @tc.desc   Set the updateColor property parameter to an outlier ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1000 START');
       setTimeout(async () => {
@@ -359,10 +389,13 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1100
      * @tc.number ArkUX_Stage_Progress_updateColor_1100
-     * @tc.name   Tests the updateColor property of the Progress component
      * @tc.desc   Set the updateColor property parameter to an outlier null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Progress_updateColor_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1100 START');
@@ -392,11 +425,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateColor_1200
-    * @tc.name   Tests the updateColor property of the Progress component
-    * @tc.desc   Set the updateColor property parameter to an outlier undefined
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1200
+     * @tc.number ArkUX_Stage_Progress_updateColor_1200
+     * @tc.desc   Set the updateColor property parameter to an outlier undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1200 START');
       setTimeout(async () => {
@@ -425,11 +461,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateColor_1300
-    * @tc.name   Tests the updateColor property of the Progress component
-    * @tc.desc   Set the updateColor property parameter to an outlier 'bgr(138,43,226)'
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1300
+     * @tc.number ArkUX_Stage_Progress_updateColor_1300
+     * @tc.desc   Set the updateColor property parameter to an outlier 'bgr(138,43,226)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_1300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1300 START');
       setTimeout(async () => {
@@ -458,12 +497,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateColor_1400
-    * @tc.name   Tests the updateColor property of the Progress component
-    * @tc.desc   Set the updateColor property parameter to "rgba(0,108,222,70)"
-    *          and again set the updateColor property parameter to Color.Pink.
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1400
+     * @tc.number ArkUX_Stage_Progress_updateColor_1400
+     * @tc.desc   Set the updateColor property parameter to "rgba(0,108,222,70)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_1400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1400 START');
       setTimeout(async () => {
@@ -490,12 +531,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateColor_1500
-    * @tc.name   Tests the updateColor property of the Progress component
-    * @tc.desc   Set the updateColor property parameter to "rgba(0,108,222,70)"
-    *          and again set the updateColor property parameter to outlier undefined.
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1500
+     * @tc.number ArkUX_Stage_Progress_updateColor_1500
+     * @tc.desc   Set the updateColor property parameter to "rgba(0,108,222,70)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_1500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1500 START');
       setTimeout(async () => {
@@ -525,12 +568,14 @@ export default function ActsProgressTest() {
     });
 
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateColor_1600
-    * @tc.name   Tests the updateColor property of the Progress component
-    * @tc.desc   Set the updateColor property parameter to 0x00ff00
-    *          and the universal property backgroundColor property value to Color.Pink
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateColor_1600
+     * @tc.number ArkUX_Stage_Progress_updateColor_1600
+     * @tc.desc   Set the updateColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateColor_1600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateColor_1600 START');
       setTimeout(async () => {
@@ -557,11 +602,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_0100
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to 0
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_0100
+     * @tc.number ArkUX_Stage_Progress_updateProgress_0100
+     * @tc.desc   Set the updateProgress property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_0100 START');
       setTimeout(async () => {
@@ -588,11 +636,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_0200
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to 5
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_0200
+     * @tc.number ArkUX_Stage_Progress_updateProgress_0200
+     * @tc.desc   Set the updateProgress property parameter to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_0200 START');
       setTimeout(async () => {
@@ -619,11 +670,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_0500
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to null
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_0500
+     * @tc.number ArkUX_Stage_Progress_updateProgress_0500
+     * @tc.desc   Set the updateProgress property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_0500 START');
       setTimeout(async () => {
@@ -650,11 +704,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_0600
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to undefined
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_0600
+     * @tc.number ArkUX_Stage_Progress_updateProgress_0600
+     * @tc.desc   Set the updateProgress property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_0600 START');
       setTimeout(async () => {
@@ -681,11 +738,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_0700
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to -2
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_0700
+     * @tc.number ArkUX_Stage_Progress_updateProgress_0700
+     * @tc.desc   Set the updateProgress property parameter to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_0700', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_0700 START');
       setTimeout(async () => {
@@ -712,11 +772,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_0900
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to normal twice
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_0900
+     * @tc.number ArkUX_Stage_Progress_updateProgress_0900
+     * @tc.desc   Set the updateProgress property parameter to normal twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_0900', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_0900 START');
       setTimeout(async () => {
@@ -743,11 +806,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_1000
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to normal first and then abnormal
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_1000
+     * @tc.number ArkUX_Stage_Progress_updateProgress_1000
+     * @tc.desc   Set the updateProgress property parameter to normal first and then abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_1000 START');
       setTimeout(async () => {
@@ -774,11 +840,14 @@ export default function ActsProgressTest() {
       }, 1000)
     });
 
-    /*
-    * @tc.number ArkUX_Stage_Progress_updateProgress_1100
-    * @tc.name   Tests the updateProgress property of the Progress component
-    * @tc.desc   Set the updateProgress property parameter to first exception and then normal
-    */
+    /**
+     * @tc.name   ArkUX_Stage_Progress_updateProgress_1100
+     * @tc.number ArkUX_Stage_Progress_updateProgress_1100
+     * @tc.desc   Set the updateProgress property parameter to first exception and then normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Stage_Progress_updateProgress_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Progress_updateProgress_1100 START');
       setTimeout(async () => {

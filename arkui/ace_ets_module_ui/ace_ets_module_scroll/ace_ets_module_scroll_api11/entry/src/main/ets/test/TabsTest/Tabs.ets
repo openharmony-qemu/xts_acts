@@ -95,9 +95,12 @@ export default function tabs() {
     })
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0100
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      the default divier parameter is {}
+     * @tc.name   ArkUI_Tabs_Divider_0100
+     * @tc.number ArkUI_Tabs_Divider_0100
+     * @tc.desc   the default divier parameter is {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0100 start");
@@ -113,9 +116,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0200
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to type number
+     * @tc.name   ArkUI_Tabs_Divider_0200
+     * @tc.number ArkUI_Tabs_Divider_0200
+     * @tc.desc   set divier parameter to type number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0200 start");
@@ -132,9 +138,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0300
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to type string
+     * @tc.name   ArkUI_Tabs_Divider_0300
+     * @tc.number ArkUI_Tabs_Divider_0300
+     * @tc.desc   set divier parameter to type string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0300 start");
@@ -150,9 +159,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0400
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to type Resource
+     * @tc.name   ArkUI_Tabs_Divider_0400
+     * @tc.number ArkUI_Tabs_Divider_0400
+     * @tc.desc   set divier parameter to type Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0400 start");
@@ -169,9 +181,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0500
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to type Color
+     * @tc.name   ArkUI_Tabs_Divider_0500
+     * @tc.number ArkUI_Tabs_Divider_0500
+     * @tc.desc   set divier parameter to type Color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0500 start");
@@ -188,9 +203,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0600
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to null
+     * @tc.name   ArkUI_Tabs_Divider_0600
+     * @tc.number ArkUI_Tabs_Divider_0600
+     * @tc.desc   set divier parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0600 start");
@@ -229,9 +247,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0700
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to abnormol color value
+     * @tc.name   ArkUI_Tabs_Divider_0700
+     * @tc.number ArkUI_Tabs_Divider_0700
+     * @tc.desc   set divier parameter to abnormol color value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0700 start");
@@ -273,9 +294,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0800
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to abnormol strokeWidthStr value
+     * @tc.name   ArkUI_Tabs_Divider_0800
+     * @tc.number ArkUI_Tabs_Divider_0800
+     * @tc.desc   set divier parameter to abnormol strokeWidthStr value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0800', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0800 start");
@@ -308,9 +332,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_0900
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to abnormol startMarginStr value
+     * @tc.name   ArkUI_Tabs_Divider_0900
+     * @tc.number ArkUI_Tabs_Divider_0900
+     * @tc.desc   set divier parameter to abnormol startMarginStr value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_0900', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_0900 start");
@@ -343,9 +370,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_Divider_1000
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to abnormol endMarginStr value
+     * @tc.name   ArkUI_Tabs_Divider_1000
+     * @tc.number ArkUI_Tabs_Divider_1000
+     * @tc.desc   set divier parameter to abnormol endMarginStr value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_1000', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_1000 start");
@@ -378,9 +408,12 @@ export default function tabs() {
     });
     
     /**
-     * @tc.number    ArkUI_Tabs_Divider_1100
-     * @tc.name      Tests the divider and indicator.selectedMode property of the tabs component
-     * @tc.desc      set divider and indicator.selectedMode test
+     * @tc.name   ArkUI_Tabs_Divider_1100
+     * @tc.number ArkUI_Tabs_Divider_1100
+     * @tc.desc   set divider and indicator.selectedMode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_1100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_1100 start");
@@ -421,9 +454,12 @@ export default function tabs() {
     });
     
     /**
-     * @tc.number    ArkUI_Tabs_Divider_1200
-     * @tc.name      Tests the divier property of the tabs component
-     * @tc.desc      set divier parameter to abnormol endMarginStr value
+     * @tc.name   ArkUI_Tabs_Divider_1200
+     * @tc.number ArkUI_Tabs_Divider_1200
+     * @tc.desc   set divier parameter to abnormol endMarginStr value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_Divider_1200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_Divider_1200 start");
@@ -535,9 +571,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_LabelStyle_0100
-     * @tc.name      Tests the labelStyle default
-     * @tc.desc      the default labelStyle parameter is true
+     * @tc.name   ArkUI_Tabs_LabelStyle_0100
+     * @tc.number ArkUI_Tabs_LabelStyle_0100
+     * @tc.desc   the default labelStyle parameter is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_LabelStyle_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_LabelStyle_0100 start");
@@ -565,9 +604,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_LabelStyle_0200
-     * @tc.name      Tests the labelStyle when single line truncation with ellipsis
-     * @tc.desc      set labelStyle to Single line truncation with ellipsis
+     * @tc.name   ArkUI_Tabs_LabelStyle_0200
+     * @tc.number ArkUI_Tabs_LabelStyle_0200
+     * @tc.desc   set labelStyle to Single line truncation with ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_LabelStyle_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_LabelStyle_0200 start");
@@ -584,9 +626,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_LabelStyle_0300
-     * @tc.name      Tests the labelStyle when Reduce and then truncate
-     * @tc.desc      set labelStyle to Reduce and then truncate
+     * @tc.name   ArkUI_Tabs_LabelStyle_0300
+     * @tc.number ArkUI_Tabs_LabelStyle_0300
+     * @tc.desc   set labelStyle to Reduce and then truncate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_LabelStyle_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_LabelStyle_0300 start");
@@ -604,9 +649,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_LabelStyle_0400
-     * @tc.name      Tests the labelStyle when shrink, wrap, and truncate
-     * @tc.desc      set labelStyle to shrink, wrap, and truncate
+     * @tc.name   ArkUI_Tabs_LabelStyle_0400
+     * @tc.number ArkUI_Tabs_LabelStyle_0400
+     * @tc.desc   set labelStyle to shrink, wrap, and truncate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_LabelStyle_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_LabelStyle_0400 start");
@@ -624,9 +672,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_LabelStyle_0500
-     * @tc.name      Tests the labelStyle when line feed
-     * @tc.desc      set labelStyle to line feed
+     * @tc.name   ArkUI_Tabs_LabelStyle_0500
+     * @tc.number ArkUI_Tabs_LabelStyle_0500
+     * @tc.desc   set labelStyle to line feed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_LabelStyle_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_LabelStyle_0500 start");
@@ -644,9 +695,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_LabelStyle_0600
-     * @tc.name      Tests the labelStyle when null
-     * @tc.desc      set labelStyle to when null
+     * @tc.name   ArkUI_Tabs_LabelStyle_0600
+     * @tc.number ArkUI_Tabs_LabelStyle_0600
+     * @tc.desc   set labelStyle to when null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_LabelStyle_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_LabelStyle_0600 start");
@@ -673,9 +727,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_FadingEdge_0100
-     * @tc.name      Tests the fadingEdge property of the tabs component
-     * @tc.desc      the default fadingEdge parameter is true
+     * @tc.name   ArkUI_Tabs_FadingEdge_0100
+     * @tc.number ArkUI_Tabs_FadingEdge_0100
+     * @tc.desc   the default fadingEdge parameter is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_FadingEdge_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_FadingEdge_0100 start");      
@@ -687,9 +744,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_FadingEdge_0200
-     * @tc.name      Tests the fadingEdge property of the tabs component
-     * @tc.desc      set fadingEdge to true
+     * @tc.name   ArkUI_Tabs_FadingEdge_0200
+     * @tc.number ArkUI_Tabs_FadingEdge_0200
+     * @tc.desc   set fadingEdge to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_FadingEdge_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_FadingEdge_0200 start");
@@ -718,9 +778,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_FadingEdge_0300
-     * @tc.name      Tests the fadingEdge property of the tabs component
-     * @tc.desc      set fadingEdge to false
+     * @tc.name   ArkUI_Tabs_FadingEdge_0300
+     * @tc.number ArkUI_Tabs_FadingEdge_0300
+     * @tc.desc   set fadingEdge to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_FadingEdge_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_FadingEdge_0300 start");
@@ -749,9 +812,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0100
-     * @tc.name      Tests the indicator.color property of the tabs component
-     * @tc.desc      the default indicator.color parameter is "#FF007DFF"
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0100
+     * @tc.number ArkUI_Tabs_IndicatorColor_0100
+     * @tc.desc   the default indicator.color parameter is "#FF007DFF"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0100 start");
@@ -771,9 +837,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0200
-     * @tc.name      Tests the indicator.color property of the tabs component
-     * @tc.desc      set indicator.color to number type
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0200
+     * @tc.number ArkUI_Tabs_IndicatorColor_0200
+     * @tc.desc   set indicator.color to number type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0200 start");
@@ -786,9 +855,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0300
-     * @tc.name      Tests the indicator.color property of the tabs component
-     * @tc.desc      set indicator.color to string type
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0300
+     * @tc.number ArkUI_Tabs_IndicatorColor_0300
+     * @tc.desc   set indicator.color to string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0300 start");
@@ -801,9 +873,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0400
-     * @tc.name      Tests the indicator.color property of the tabs component
-     * @tc.desc      set indicator.color to Resource type
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0400
+     * @tc.number ArkUI_Tabs_IndicatorColor_0400
+     * @tc.desc   set indicator.color to Resource type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0400 start");
@@ -816,9 +891,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0500
-     * @tc.name      Tests the indicator.color property of the tabs component
-     * @tc.desc      set indicator.color to Color type
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0500
+     * @tc.number ArkUI_Tabs_IndicatorColor_0500
+     * @tc.desc   set indicator.color to Color type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0500 start");
@@ -831,9 +909,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0600
-     * @tc.name      Tests the indicator.color property of the tabs component
-     * @tc.desc      set indicator.color to abnormol value "xxxxxxxx" then get the default value "#FF007DFF"
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0600
+     * @tc.number ArkUI_Tabs_IndicatorColor_0600
+     * @tc.desc   set indicator.color to abnormol value "xxxxxxxx" then get the default value "#FF007DFF"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0600 start");
@@ -868,9 +949,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorColor_0700
-     * @tc.name      Tests the indicator property of the tabs component
-     * @tc.desc      set indicator property
+     * @tc.name   ArkUI_Tabs_IndicatorColor_0700
+     * @tc.number ArkUI_Tabs_IndicatorColor_0700
+     * @tc.desc   set indicator property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorColor_0700 start");
@@ -912,9 +996,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0100
-     * @tc.name      Tests the indicator.height property of the tabs component
-     * @tc.desc      the default indicator.height parameter is "2.00vp".
+     * @tc.name   ArkUI_Tabs_IndicatorHeight_0100
+     * @tc.number ArkUI_Tabs_IndicatorHeight_0100
+     * @tc.desc   the default indicator.height parameter is "2.00vp".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorHeight_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0100 start ")
@@ -932,9 +1019,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0200
-     * @tc.name      Tests the indicator.height property of the tabs component
-     * @tc.desc      set indicator.height to number type
+     * @tc.name   ArkUI_Tabs_IndicatorHeight_0200
+     * @tc.number ArkUI_Tabs_IndicatorHeight_0200
+     * @tc.desc   set indicator.height to number type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorHeight_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0200 start ")
@@ -947,9 +1037,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0300
-     * @tc.name      Tests the indicator.height property of the tabs component
-     * @tc.desc      set indicator.height to string type
+     * @tc.name   ArkUI_Tabs_IndicatorHeight_0300
+     * @tc.number ArkUI_Tabs_IndicatorHeight_0300
+     * @tc.desc   set indicator.height to string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorHeight_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start ")
@@ -962,9 +1055,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0400
-     * @tc.name      Tests the indicator.height property of the tabs component
-     * @tc.desc      set indicator.height to resource type
+     * @tc.name   ArkUI_Tabs_IndicatorHeight_0400
+     * @tc.number ArkUI_Tabs_IndicatorHeight_0400
+     * @tc.desc   set indicator.height to resource type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorHeight_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0400 start ")
@@ -977,9 +1073,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0500
-     * @tc.name      Tests the indicator.height property of the tabs component
-     * @tc.desc      set indicator.height to abnormol value -1 then get the default value "2.00vp"
+     * @tc.name   ArkUI_Tabs_IndicatorHeight_0500
+     * @tc.number ArkUI_Tabs_IndicatorHeight_0500
+     * @tc.desc   set indicator.height to abnormol value -1 then get the default value "2.00vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
@@ -1014,9 +1113,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorHeight_0600
-     * @tc.name      Tests the indicator.height property of the tabs component
-     * @tc.desc      set indicator.height with different length's unit
+     * @tc.name   ArkUI_Tabs_IndicatorHeight_0600
+     * @tc.number ArkUI_Tabs_IndicatorHeight_0600
+     * @tc.desc   set indicator.height with different length's unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
@@ -1090,9 +1192,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0100
-     * @tc.name      Tests the indicator.width property of the tabs component
-     * @tc.desc      the default indicator.width parameter is "0.00vp".
+     * @tc.name   ArkUI_Tabs_IndicatorWidth_0100
+     * @tc.number ArkUI_Tabs_IndicatorWidth_0100
+     * @tc.desc   the default indicator.width parameter is "0.00vp".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorWidth_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorWidth_0100 start");
@@ -1105,9 +1210,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0200
-     * @tc.name      Tests the indicator.width property of the tabs component
-     * @tc.desc      set indicator.width to number type
+     * @tc.name   ArkUI_Tabs_IndicatorWidth_0200
+     * @tc.number ArkUI_Tabs_IndicatorWidth_0200
+     * @tc.desc   set indicator.width to number type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorWidth_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorWidth_0200 start");
@@ -1120,9 +1228,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0300
-     * @tc.name      Tests the indicator.width property of the tabs component
-     * @tc.desc      set indicator.width to string type
+     * @tc.name   ArkUI_Tabs_IndicatorWidth_0300
+     * @tc.number ArkUI_Tabs_IndicatorWidth_0300
+     * @tc.desc   set indicator.width to string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorWidth_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorWidth_0300 start");
@@ -1135,9 +1246,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0400
-     * @tc.name      Tests the indicator.width property of the tabs component
-     * @tc.desc      set indicator.width to Resource type
+     * @tc.name   ArkUI_Tabs_IndicatorWidth_0400
+     * @tc.number ArkUI_Tabs_IndicatorWidth_0400
+     * @tc.desc   set indicator.width to Resource type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorWidth_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorWidth_0400 start");
@@ -1151,9 +1265,12 @@ export default function tabs() {
 
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0500
-     * @tc.name      Tests the indicator.width property of the tabs component
-     * @tc.desc      set indicator.color to abnormol value -1 then get the default value "0.00vp"
+     * @tc.name   ArkUI_Tabs_IndicatorWidth_0500
+     * @tc.number ArkUI_Tabs_IndicatorWidth_0500
+     * @tc.desc   set indicator.color to abnormol value -1 then get the default value "0.00vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorWidth_0500 start");
@@ -1183,9 +1300,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorWidth_0600
-     * @tc.name      Tests the indicator.width property of the tabs component
-     * @tc.desc      set indicator.width with different length's unit
+     * @tc.name   ArkUI_Tabs_IndicatorWidth_0600
+     * @tc.number ArkUI_Tabs_IndicatorWidth_0600
+     * @tc.desc   set indicator.width with different length's unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
@@ -1259,9 +1379,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0100
-     * @tc.name      Tests the indicator.borderRadius property of the tabs component
-     * @tc.desc      the default indicator.borderRadius parameter is "0.00vp".
+     * @tc.name   ArkUI_Tabs_IndicatorBorderRadius_0100
+     * @tc.number ArkUI_Tabs_IndicatorBorderRadius_0100
+     * @tc.desc   the default indicator.borderRadius parameter is "0.00vp".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorBorderRadius_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0100 start");
@@ -1274,9 +1397,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0200
-     * @tc.name      Tests the indicator.borderRadius property of the tabs component
-     * @tc.desc      set indicator.borderRadius to number type
+     * @tc.name   ArkUI_Tabs_IndicatorBorderRadius_0200
+     * @tc.number ArkUI_Tabs_IndicatorBorderRadius_0200
+     * @tc.desc   set indicator.borderRadius to number type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorBorderRadius_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0200 start");
@@ -1289,9 +1415,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0300
-     * @tc.name      Tests the indicator.borderRadius property of the tabs component
-     * @tc.desc      set indicator.borderRadius to string type
+     * @tc.name   ArkUI_Tabs_IndicatorBorderRadius_0300
+     * @tc.number ArkUI_Tabs_IndicatorBorderRadius_0300
+     * @tc.desc   set indicator.borderRadius to string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorBorderRadius_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0300 start");
@@ -1304,9 +1433,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0400
-     * @tc.name      Tests the indicator.borderRadius property of the tabs component
-     * @tc.desc      set indicator.borderRadius to Resource type
+     * @tc.name   ArkUI_Tabs_IndicatorBorderRadius_0400
+     * @tc.number ArkUI_Tabs_IndicatorBorderRadius_0400
+     * @tc.desc   set indicator.borderRadius to Resource type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorBorderRadius_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0400 start");
@@ -1319,9 +1451,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0500
-     * @tc.name      Tests the indicator.borderRadius property of the tabs component
-     * @tc.desc      set indicator.borderRadius to abnormol value -1 then get the default value "0.00vp"
+     * @tc.name   ArkUI_Tabs_IndicatorBorderRadius_0500
+     * @tc.number ArkUI_Tabs_IndicatorBorderRadius_0500
+     * @tc.desc   set indicator.borderRadius to abnormol value -1 then get the default value "0.00vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorBorderRadius_0500 start");
@@ -1351,9 +1486,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorBorderRadius_0600
-     * @tc.name      Tests the indicator.borderRadius property of the tabs component
-     * @tc.desc      set indicator.borderRadius with different length's unit
+     * @tc.name   ArkUI_Tabs_IndicatorBorderRadius_0600
+     * @tc.number ArkUI_Tabs_IndicatorBorderRadius_0600
+     * @tc.desc   set indicator.borderRadius with different length's unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
@@ -1427,9 +1565,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0100
-     * @tc.name      Tests the indicator.board.borderRadius property of the tabs component
-     * @tc.desc      the default indicator.height parameter is "8.00vp".
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0100
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0100
+     * @tc.desc   the default indicator.height parameter is "8.00vp".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0100 start");
@@ -1446,9 +1587,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0200
-     * @tc.name      Tests the indicator.board.borderRadius property of the tabs component
-     * @tc.desc      set indicator.board.borderRadius to number type
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0200
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0200
+     * @tc.desc   set indicator.board.borderRadius to number type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0200 start");
@@ -1460,9 +1604,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0300
-     * @tc.name      Tests the indicator.board.borderRadius property of the tabs component
-     * @tc.desc      set indicator.board.borderRadius to string type
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0300
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0300
+     * @tc.desc   set indicator.board.borderRadius to string type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0300 start");
@@ -1474,9 +1621,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0400
-     * @tc.name      Tests the indicator.board.borderRadius property of the tabs component
-     * @tc.desc      set indicator.board.borderRadius to Resource type
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0400
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0400
+     * @tc.desc   set indicator.board.borderRadius to Resource type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0400 start");
@@ -1488,9 +1638,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0500
-     * @tc.name      Tests the indicator.board.borderRadius property of the tabs component
-     * @tc.desc      set indicator.board.borderRadius to abnormol value -1 then get the default value "8.00vp"
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0500
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0500
+     * @tc.desc   set indicator.board.borderRadius to abnormol value -1 then get the default value "8.00vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0500 start");
@@ -1524,9 +1677,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0600
-     * @tc.name      Tests the indicator.border.borderRadius property of the tabs component
-     * @tc.desc      set indicator.border.borderRadius with different length's unit
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0600
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0600
+     * @tc.desc   set indicator.border.borderRadius with different length's unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorHeight_0300 start");
@@ -1597,9 +1753,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SubTabBorderRadius_0700
-     * @tc.name      Tests the indicator SelectedMode.BOARD property of the tabs component
-     * @tc.desc      set indicator property with SelectedMode.BOARD
+     * @tc.name   ArkUI_Tabs_SubTabBorderRadius_0700
+     * @tc.number ArkUI_Tabs_SubTabBorderRadius_0700
+     * @tc.desc   set indicator property with SelectedMode.BOARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SubTabBorderRadius_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SubTabBorderRadius_0700 start");
@@ -1629,9 +1788,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SelectedMode_0100
-     * @tc.name      Tests the indicator.selectedMode property of the tabs component
-     * @tc.desc      the default indicator.selectedMode parameter is "SelectedMode.INDICATOR".
+     * @tc.name   ArkUI_Tabs_SelectedMode_0100
+     * @tc.number ArkUI_Tabs_SelectedMode_0100
+     * @tc.desc   the default indicator.selectedMode parameter is "SelectedMode.INDICATOR".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SelectedMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SelectedMode_0100 start");
@@ -1643,9 +1805,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SelectedMode_0200
-     * @tc.name      Tests the indicator.selectedMode property of the tabs component
-     * @tc.desc      set indicator.selectedMode to SelectedMode.INDICATOR
+     * @tc.name   ArkUI_Tabs_SelectedMode_0200
+     * @tc.number ArkUI_Tabs_SelectedMode_0200
+     * @tc.desc   set indicator.selectedMode to SelectedMode.INDICATOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SelectedMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SelectedMode_0200 start");
@@ -1658,9 +1823,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_SelectedMode_0300
-     * @tc.name      Tests the indicator.selectedMode property of the tabs component
-     * @tc.desc      set indicator.selectedMode to SelectedMode.BOARD
+     * @tc.name   ArkUI_Tabs_SelectedMode_0300
+     * @tc.number ArkUI_Tabs_SelectedMode_0300
+     * @tc.desc   set indicator.selectedMode to SelectedMode.BOARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_SelectedMode_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_SelectedMode_0300 start");
@@ -1690,9 +1858,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_0100
-     * @tc.name      Tests the indicator.marginTop property of the tabs component
-     * @tc.desc      the default indicator.marginTop parameter is "8.00vp".
+     * @tc.name   ArkUI_Tabs_IndicatorMarginTop_0100
+     * @tc.number ArkUI_Tabs_IndicatorMarginTop_0100
+     * @tc.desc   the default indicator.marginTop parameter is "8.00vp".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorMarginTop_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_0100 start");
@@ -1710,9 +1881,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_0200
-     * @tc.name      Tests the indicator.marginTop property of the tabs component
-     * @tc.desc      set indicator.marginTop to number type.
+     * @tc.name   ArkUI_Tabs_IndicatorMarginTop_0200
+     * @tc.number ArkUI_Tabs_IndicatorMarginTop_0200
+     * @tc.desc   set indicator.marginTop to number type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorMarginTop_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_0200 start");
@@ -1725,9 +1899,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_0300
-     * @tc.name      Tests the indicator.marginTop property of the tabs component
-     * @tc.desc      set indicator.width to string type.
+     * @tc.name   ArkUI_Tabs_IndicatorMarginTop_0300
+     * @tc.number ArkUI_Tabs_IndicatorMarginTop_0300
+     * @tc.desc   set indicator.width to string type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorMarginTop_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_0300 start");
@@ -1740,9 +1917,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_0400
-     * @tc.name      Tests the indicator.marginTop property of the tabs component
-     * @tc.desc      set indicator.width to Resource type.
+     * @tc.name   ArkUI_Tabs_IndicatorMarginTop_0400
+     * @tc.number ArkUI_Tabs_IndicatorMarginTop_0400
+     * @tc.desc   set indicator.width to Resource type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorMarginTop_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_0400 start");
@@ -1755,9 +1935,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_0500
-     * @tc.name      Tests the indicator.marginTop property of the tabs component
-     * @tc.desc      set indicator.marginTop to abnormol value -1 then get the default value "8.00vp"
+     * @tc.name   ArkUI_Tabs_IndicatorMarginTop_0500
+     * @tc.number ArkUI_Tabs_IndicatorMarginTop_0500
+     * @tc.desc   set indicator.marginTop to abnormol value -1 then get the default value "8.00vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorMarginTop_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_0500 start");
@@ -1793,9 +1976,12 @@ export default function tabs() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_IndicatorMarginTop_0600
-     * @tc.name      Tests the indicator.marginTop property of the tabs component
-     * @tc.desc      set indicator.marginTop with different length's unit
+     * @tc.name   ArkUI_Tabs_IndicatorMarginTop_0600
+     * @tc.number ArkUI_Tabs_IndicatorMarginTop_0600
+     * @tc.desc   set indicator.marginTop with different length's unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_IndicatorMarginTop_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_IndicatorMarginTop_0600 start");

@@ -42,12 +42,12 @@ export default function tabsCallBack8() {
     });
 
     /**
-     * @tc.number    tabsCallBack8_001
-     * @tc.name      tabsCallBack8_0100
-     * @tc.desc      Click on the tabBar to trigger the start and end callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsCallBack8_0100
+     * @tc.number tabsCallBack8_001
+     * @tc.desc   Click on the tabBar to trigger the start and end callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsCallBack8_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsCallBack8_0100] START');

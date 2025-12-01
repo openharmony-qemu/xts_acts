@@ -60,84 +60,84 @@ export default function webViewController() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ONSHOWFILESELECTOR_0100
-    * @tc.name       : testOnShowFileSelector001
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnShowFileSelector001
+     * @tc.number SUB_WEB_ONSHOWFILESELECTOR_0100
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnShowFileSelector001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnShowFileSelector001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testOnShowFileSelector001", true, 183110, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testOnShowFileSelector001");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETTITLE_0100
-    * @tc.name       : testFileSelectorParamGetTitle001
-    * @tc.desc       : test FileSelectorParam getTitle
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileSelectorParamGetTitle001
+     * @tc.number SUB_WEB_FILESELECTORPARAM_GETTITLE_0100
+     * @tc.desc   test FileSelectorParam getTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileSelectorParamGetTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileSelectorParamGetTitle001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testFileSelectorParamGetTitle001", 'open file', 183120, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamGetTitle001");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETMODE_0100
-    * @tc.name       : testFileSelectorParamGetMode001
-    * @tc.desc       : test FileSelectorParam getMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileSelectorParamGetMode001
+     * @tc.number SUB_WEB_FILESELECTORPARAM_GETMODE_0100
+     * @tc.desc   test FileSelectorParam getMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileSelectorParamGetMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileSelectorParamGetMode001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testFileSelectorParamGetMode001", 0, 183130, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamGetMode001");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETACCEPTTYPE_0100
-    * @tc.name       : testFileSelectorParamGetAcceptType001
-    * @tc.desc       : test FileSelectorParam getAcceptType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileSelectorParamGetAcceptType001
+     * @tc.number SUB_WEB_FILESELECTORPARAM_GETACCEPTTYPE_0100
+     * @tc.desc   test FileSelectorParam getAcceptType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileSelectorParamGetAcceptType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileSelectorParamGetAcceptType001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testFileSelectorParamGetAcceptType001", '.json', 183140, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamGetAcceptType001");
     })
 
-    /*
-   * @tc.number     : SUB_WEB_FILESELECTORPARAM_ISCAPTURE_0100
-   * @tc.name       : testFileSelectorParamIsCapture001
-   * @tc.desc       : test FileSelectorParam isCapture
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testFileSelectorParamIsCapture001
+     * @tc.number SUB_WEB_FILESELECTORPARAM_ISCAPTURE_0100
+     * @tc.desc   test FileSelectorParam isCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileSelectorParamIsCapture001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileSelectorParamIsCapture001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testFileSelectorParamIsCapture001", false, 183150, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorParamIsCapture001");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_0100
-    * @tc.name       : testFileSelectorResultHandleFileList001
-    * @tc.desc       : test FileSelectorResult handleFileList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testFileSelectorResultHandleFileList001
+     * @tc.number SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_0100
+     * @tc.desc   test FileSelectorResult handleFileList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testFileSelectorResultHandleFileList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testFileSelectorResultHandleFileList001", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testFileSelectorResultHandleFileList001", "\"1.json\"", 183160, done);

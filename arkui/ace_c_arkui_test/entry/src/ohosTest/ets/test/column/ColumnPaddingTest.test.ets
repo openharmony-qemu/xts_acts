@@ -26,52 +26,52 @@ export default function columnPaddingTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_PADDING_0100
-     * @tc.name: testColumnPadding001
-     * @tc.desc: testing padding for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnPadding001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_PADDING_0100
+     * @tc.desc   testing padding for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnPadding001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnPadding001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_PADDING_0200
-     * @tc.name: testColumnPadding002
-     * @tc.desc: testing padding for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnPadding002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_PADDING_0200
+     * @tc.desc   testing padding for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnPadding002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnPadding002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_PADDING_0300
-     * @tc.name: testColumnPadding003
-     * @tc.desc: testing padding for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnPadding003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_PADDING_0300
+     * @tc.desc   testing padding for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnPadding003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnPadding003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COLUMN_PADDING_0400
-     * @tc.name: testColumnPadding004
-     * @tc.desc: testing padding for column with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testColumnPadding004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_PADDING_0400
+     * @tc.desc   testing padding for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testColumnPadding004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testColumnPadding004()).assertEqual(0)

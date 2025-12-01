@@ -56,6 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("parallelGesture after each called");
     });
 
+    /**
+     * @tc.name   parallelGestureTest_0100
+     * @tc.number parallelGestureTest_0100
+     * @tc.desc   parallelGestureTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('parallelGestureTest_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
       let rect = CommonFunc.getComponentRect('tapGesture')

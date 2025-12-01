@@ -39,14 +39,14 @@ export default function ModifierTextStyleTest() {
       }
       done()
     });
-    /* *
-    * @tc.number: ModifierTextStyleTest_0100
-    * @tc.name  : ModifierTextStyleTest_0100
-    * @tc.desc  : To test the minFontSize > maxFontSize, overflow = TextOverflow.Ellipsis
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ModifierTextStyleTest_0100
+     * @tc.number ModifierTextStyleTest_0100
+     * @tc.desc   To test the minFontSize > maxFontSize, overflow = TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ModifierTextStyleTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ModifierTextStyleTest_0100 start');
       let strJson = getInspectorByKey('modifierDefaultTextStyle');

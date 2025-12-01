@@ -40,12 +40,12 @@ export default function builtinsProxyTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsProxyTest0100
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0100
-     * @tc.name builtinsProxyTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -60,12 +60,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0200
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0200
-     * @tc.name builtinsProxyTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -80,12 +80,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0300
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0300
-     * @tc.name builtinsProxyTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -102,12 +102,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0400
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0400
-     * @tc.name builtinsProxyTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -124,12 +124,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0500
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0500
-     * @tc.name builtinsProxyTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -145,12 +145,12 @@ export default function builtinsProxyTest() {
       Done()
     })
     /**
+     * @tc.name   builtinsProxyTest0600
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0600
-     * @tc.name builtinsProxyTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -167,12 +167,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0700
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0700
-     * @tc.name builtinsProxyTest0700
-     * @tc.desc test [1,2,3,4,5]splice(-2,1);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1,2,3,4,5]splice(-2,1);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -189,12 +189,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0800
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0800
-     * @tc.name builtinsProxyTest0800
-     * @tc.desc test [1,2,3,4,5]splice(1, 0,undefined);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1,2,3,4,5]splice(1, 0,undefined);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -211,12 +211,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest0900
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_0900
-     * @tc.name builtinsProxyTest0900
-     * @tc.desc test [1, 2, 3, 4, 5]splice(1, 0, null);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3, 4, 5]splice(1, 0, null);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -233,12 +233,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1000
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1000
-     * @tc.name builtinsProxyTest1000
-     * @tc.desc test [1,2,3]splice(0, 3);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1,2,3]splice(0, 3);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -255,12 +255,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1100
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1100
-     * @tc.name builtinsProxyTest1100
-     * @tc.desc test [1, 2, 3]splice(1, 0, 'a', 'b');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0, 'a', 'b');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -277,12 +277,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1200
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1200
-     * @tc.name builtinsProxyTest1200
-     * @tc.desc test [1, 2, 3]splice(1, 0, '#','$');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0, '#','$');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -299,12 +299,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1300
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1300
-     * @tc.name builtinsProxyTest1300
-     * @tc.desc test [1, 2, 3]splice(1, 0,undefined,'$');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0,undefined,'$');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -321,12 +321,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1400
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1400
-     * @tc.name builtinsProxyTest1400
-     * @tc.desc test [1, 2, 3]splice(1, 0,'€', '©');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0,'€', '©');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -343,12 +343,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1500
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1500
-     * @tc.name builtinsProxyTest1500
-     * @tc.desc test [1, 2, 3]splice(1, 0,'\udc04', '\ud83d');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0,'\udc04', '\ud83d');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -365,12 +365,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1600
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1600
-     * @tc.name builtinsProxyTest1600
-     * @tc.desc test [1, 2, 3]splice(1, 0,'\a', '\b');
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0,'\a', '\b');
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -387,12 +387,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1700
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1700
-     * @tc.name builtinsProxyTest1700
-     * @tc.desc test [1, 2, 3]splice(1, 0,Math.floor(1.5), NaN);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0,Math.floor(1.5), NaN);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {
@@ -410,12 +410,12 @@ export default function builtinsProxyTest() {
     })
 
     /**
+     * @tc.name   builtinsProxyTest1800
      * @tc.number SUB_BUILTINS_ARRAY_SPLICE_TEST_1800
-     * @tc.name builtinsProxyTest1800
-     * @tc.desc test [1, 2, 3]splice(1, 0,Number.EPSILON, 0xcafebabe);
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test [1, 2, 3]splice(1, 0,Number.EPSILON, 0xcafebabe);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsProxyTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
       interface User {

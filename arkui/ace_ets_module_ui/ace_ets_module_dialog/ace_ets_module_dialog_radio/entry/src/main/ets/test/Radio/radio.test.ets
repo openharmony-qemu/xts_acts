@@ -48,12 +48,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0100
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0100 START');
@@ -82,12 +82,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0200
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0200
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0200 START');
@@ -116,12 +116,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0300
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0300
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0300
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0300
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0300 START');
@@ -150,12 +150,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0400
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0400
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0400
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0400
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0400 START');
@@ -184,12 +184,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0500
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0500
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0500
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0500
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0500 START');
@@ -218,12 +218,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0600
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0600
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0600
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0600
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0600 START');
@@ -252,12 +252,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0700
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0700
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0700
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0700
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0700 START');
@@ -286,12 +286,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0800
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0800
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0800
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0800
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0800 START');
@@ -320,12 +320,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0900
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_0900
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_0900
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_0900
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_0900 START');
@@ -354,12 +354,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_1000
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_1000
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_1000
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_1000
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1000 START');
@@ -388,12 +388,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_1100
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_1100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_1100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_1100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1100 START');
@@ -422,12 +422,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_1200
-     * @tc.name: ArkUX_Stage_Radio_CheckedBackgroundColor_1200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_CheckedBackgroundColor_1200
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_CheckedBackgroundColor_1200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_CheckedBackgroundColor_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_CheckedBackgroundColor_1200 START');
@@ -456,12 +456,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0100
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0100 START');
@@ -490,12 +490,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0200
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0200
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0200 START');
@@ -524,12 +524,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0300
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0300
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0300
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0300
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0300 START');
@@ -558,12 +558,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0400
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0400
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0400
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0400
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0400 START');
@@ -592,12 +592,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0500
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0500
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0500
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0500
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0500 START');
@@ -626,12 +626,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0600
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0600
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0600
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0600
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0600 START');
@@ -660,12 +660,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0700
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0700
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0700
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0700
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0700 START');
@@ -694,12 +694,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0800
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0800
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0800
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0800
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0800 START');
@@ -728,12 +728,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0900
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_0900
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_0900
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_0900
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_0900 START');
@@ -762,12 +762,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_1000
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_1000
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_1000
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_1000
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1000 START');
@@ -796,12 +796,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_1100
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_1100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_1100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_1100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1100 START');
@@ -830,12 +830,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_1200
-     * @tc.name: ArkUX_Stage_Radio_UncheckedBorderColor_1200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_UncheckedBorderColor_1200
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_UncheckedBorderColor_1200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_UncheckedBorderColor_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_UncheckedBorderColor_1200 START');
@@ -864,12 +864,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0100
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0100 START');
@@ -897,12 +897,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0200
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0200
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0200 START');
@@ -930,12 +930,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0300
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0300
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0300
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0300
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0300 START');
@@ -963,12 +963,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0400
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0400
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0400
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0400
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0400 START');
@@ -996,12 +996,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0500
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0500
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0500
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0500
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0500 START');
@@ -1029,12 +1029,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0600
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0600
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0600
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0600
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0600 START');
@@ -1062,12 +1062,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0700
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0700
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0700
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0700
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0700 START');
@@ -1095,12 +1095,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0800
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0800
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0800
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0800
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0800 START');
@@ -1128,12 +1128,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0900
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_0900
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_0900
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_0900
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_0900 START');
@@ -1161,12 +1161,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_1000
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_1000
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_1000
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_1000
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_1000 START');
@@ -1194,12 +1194,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_1100
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_1100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_1100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_1100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_1100 START');
@@ -1227,12 +1227,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_1200
-     * @tc.name: ArkUX_Stage_Radio_IndicatorColor_1200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_IndicatorColor_1200
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_IndicatorColor_1200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_IndicatorColor_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_IndicatorColor_1200 START');
@@ -1260,12 +1260,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_Color_0100
-     * @tc.name: ArkUX_Stage_Radio_Color_0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_Color_0100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_Color_0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_Color_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_Color_0100 START');
@@ -1295,12 +1295,12 @@ export default function radioTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Stage_Radio_0100
-     * @tc.name: ArkUX_Stage_Radio_0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Stage_Radio_0100
+     * @tc.number SUB_ARKUI_API_ArkUX_Stage_Radio_0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Radio_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Radio_0100 START');

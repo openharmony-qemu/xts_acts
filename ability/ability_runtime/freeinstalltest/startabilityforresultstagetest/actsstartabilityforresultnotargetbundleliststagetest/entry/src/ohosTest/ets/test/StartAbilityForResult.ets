@@ -66,11 +66,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_2500
-     * @tc.name: startAbilityForResult: don't add targetBundleList, app already installed, start hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_2500
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_2500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_2500", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_2500-------------");

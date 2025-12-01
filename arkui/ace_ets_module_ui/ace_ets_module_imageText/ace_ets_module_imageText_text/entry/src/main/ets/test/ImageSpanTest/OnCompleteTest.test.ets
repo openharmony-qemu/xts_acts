@@ -45,12 +45,12 @@ export default function OnCompleteTest() {
       console.info("OnCompleteTest after each called");
     });
     /**
-     * @tc.number    onComplete_0100
-     * @tc.name      onComplete_0100
-     * @tc.desc      onComplete:event.loadingStatus
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   onComplete_0100
+     * @tc.number onComplete_0100
+     * @tc.desc   onComplete:event.loadingStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onComplete_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[onComplete_0100] START');
@@ -66,12 +66,12 @@ export default function OnCompleteTest() {
 
 
     /**
-     * @tc.number    onComplete_0200
-     * @tc.name      onComplete_0200
-     * @tc.desc      onComplete:event.contentWidth
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   onComplete_0200
+     * @tc.number onComplete_0200
+     * @tc.desc   onComplete:event.contentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onComplete_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[onComplete_0200] START');
@@ -87,12 +87,12 @@ export default function OnCompleteTest() {
 
 
     /**
-     * @tc.number    onComplete_0300
-     * @tc.name      onComplete_0300
-     * @tc.desc      onComplete:event.contentHeight
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   onComplete_0300
+     * @tc.number onComplete_0300
+     * @tc.desc   onComplete:event.contentHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onComplete_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[onComplete_0300] START');
@@ -107,12 +107,12 @@ export default function OnCompleteTest() {
 
 
     /**
-     * @tc.number    onComplete_0400
-     * @tc.name      onComplete_0400
-     * @tc.desc      onComplete:event.contentOffsetX
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   onComplete_0400
+     * @tc.number onComplete_0400
+     * @tc.desc   onComplete:event.contentOffsetX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onComplete_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[onComplete_0400] START');
@@ -127,12 +127,12 @@ export default function OnCompleteTest() {
 
 
     /**
-     * @tc.number    onComplete_0500
-     * @tc.name      onComplete_0500
-     * @tc.desc      onComplete:event.contentOffsetY
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   onComplete_0500
+     * @tc.number onComplete_0500
+     * @tc.desc   onComplete:event.contentOffsetY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onComplete_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[onComplete_0500] START');

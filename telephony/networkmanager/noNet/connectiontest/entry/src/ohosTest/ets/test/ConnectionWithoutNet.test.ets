@@ -38,12 +38,12 @@ export default function ConnectionWithoutNetTest() {
   describe('ConnectionWithoutNetTest', () => {
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0100
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0100
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0100
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0100
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0100';
@@ -87,12 +87,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0200
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0200
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0200
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0200
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0200';
@@ -136,12 +136,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0300
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0300
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0300
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0300
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0300';
@@ -178,12 +178,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0400
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0400
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0400
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0400
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0400';
@@ -220,12 +220,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0500
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0500
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0500
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0500
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0500';
@@ -269,12 +269,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0600
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0600
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0600
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0600
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0600';
@@ -318,12 +318,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0700
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0700
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0700
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0700
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0700';
@@ -366,12 +366,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0800
-     * @tc.name   : testNetworkMgrConnectionBindSocketWithoutNet0800
-     * @tc.desc   : Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionBindSocketWithoutNet0800
+     * @tc.number SUB_NetworkMgr_Connection_BindSocket_WithoutNet_0800
+     * @tc.desc   Bind TCPSocket or UDPSocket to the current network.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionBindSocketWithoutNet0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionBindSocketWithoutNet0800';
@@ -414,12 +414,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNet_0400
-     * @tc.name       : testNetConnectionHasDefaultNet0400
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetConnectionHasDefaultNet0400
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNet_0400
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetConnectionHasDefaultNet0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetConnectionHasDefaultNet0400";
@@ -447,12 +447,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNet_0700
-     * @tc.name       : testNetConnectionHasDefaultNet0700
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetConnectionHasDefaultNet0700
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNet_0700
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetConnectionHasDefaultNet0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetConnectionHasDefaultNet0700";
@@ -478,12 +478,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNetSync_0400
-     * @tc.name       : testNetConnectionHasDefaultNetSync0400
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetConnectionHasDefaultNetSync0400
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNetSync_0400
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetConnectionHasDefaultNetSync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetConnectionHasDefaultNetSync0400";
@@ -502,12 +502,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0400
-     * @tc.name       : testNetConnectionGetDefaultNetCallback0400
-     * @tc.desc       : test obtain the default activated data network and use the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetConnectionGetDefaultNetCallback0400
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0400
+     * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetConnectionGetDefaultNetCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetConnectionGetDefaultNetCallback0400";
@@ -534,12 +534,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0200
-     * @tc.name       : testNetConnectionGetDefaultNetPromise0200
-     * @tc.desc       : test obtain the default activated data network and use Promise as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetConnectionGetDefaultNetPromise0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0200
+     * @tc.desc   test obtain the default activated data network and use Promise as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetConnectionGetDefaultNetPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetConnectionGetDefaultNetPromise0200";
@@ -565,12 +565,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNetSync_0200
-     * @tc.name       : testNetworkMgrConnectionGetDefaultNetSync0200
-     * @tc.desc       : test use synchronization method to obtain default activated data network
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetSync0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSync_0200
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultNetSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetSync0200";
@@ -589,12 +589,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAppNet_0300
-     * @tc.name       : testNetworkMgrConnectionGetAppNet0300
-     * @tc.desc       : Obtain network information bound to the app and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetAppNet0300
+     * @tc.number SUB_NetworkMgr_ConnectionGetAppNet_0300
+     * @tc.desc   Obtain network information bound to the app and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetAppNet0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAppNet0300";
@@ -623,12 +623,12 @@ export default function ConnectionWithoutNetTest() {
 
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAppNet_0700
-     * @tc.name       : testNetworkMgrConnectionGetAppNet0700
-     * @tc.desc       : Obtain network information bound to the app and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetAppNet0700
+     * @tc.number SUB_NetworkMgr_ConnectionGetAppNet_0700
+     * @tc.desc   Obtain network information bound to the app and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetAppNet0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAppNet0700";
@@ -654,12 +654,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAppNetSync_0300
-     * @tc.name       : testNetworkMgrConnectionGetAppNetSync0300
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetAppNetSync0300
+     * @tc.number SUB_NetworkMgr_ConnectionGetAppNetSync_0300
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAppNetSync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAppNetSync0300";
@@ -679,12 +679,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNets_0300
-     * @tc.name       : testNetworkMgrConnectionGetAllNets0300
-     * @tc.desc       : Obtain a list of all connected networks and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Functio
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetAllNets0300
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_0300
+     * @tc.desc   Obtain a list of all connected networks and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetAllNets0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAllNets0300";
@@ -712,12 +712,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNets_0800
-     * @tc.name       : testNetworkMgrConnectionGetAllNets0800
-     * @tc.desc       : Obtain a list of all connected networks and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetAllNets0800
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_0800
+     * @tc.desc   Obtain a list of all connected networks and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetAllNets0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAllNets0800";
@@ -743,12 +743,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNetsSync_0400
-     * @tc.name       : testNetworkMgrConnectionGetAllNetsSync0400
-     * @tc.desc       : Use synchronization method to obtain a list of all connected networks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetAllNetsSync0400
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNetsSync_0400
+     * @tc.desc   Use synchronization method to obtain a list of all connected networks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNetsSync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAllNetsSync0400";
@@ -768,12 +768,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0400
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties0400
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties0400
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0400
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetConnectionProperties0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties0400";
@@ -808,12 +808,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0500
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties0500
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties0500
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0500
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetConnectionProperties0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties0500";
@@ -846,12 +846,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0400
-     * @tc.name       : testNetworkMgrConnectionGetConnectionPropertiesSync0400
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync0400
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0400
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesSync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync0400";
@@ -872,12 +872,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0400
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities0400
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities0400
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0400
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetNetCapabilities0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities0400";
@@ -912,12 +912,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0500
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities0500
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities0500
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0500
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities0500";
@@ -950,12 +950,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0400
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilitiesSync0400
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync0400
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0400
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesSync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync0400";
@@ -976,12 +976,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetConnected_0200
-     * @tc.name       : testNetworkMgrConnectionReportNetConnected0200
-     * @tc.desc       : Report to network management that the network is available
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionReportNetConnected0200
+     * @tc.number SUB_NetworkMgr_Connection_ReportNetConnected_0200
+     * @tc.desc   Report to network management that the network is available
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionReportNetConnected0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionReportNetConnected0200";
@@ -1016,12 +1016,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetConnected_0300
-     * @tc.name       : testNetworkMgrConnectionReportNetConnected0300
-     * @tc.desc       : Report to network management that the network is available
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionReportNetConnected0300
+     * @tc.number SUB_NetworkMgr_Connection_ReportNetConnected_0300
+     * @tc.desc   Report to network management that the network is available
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionReportNetConnected0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionReportNetConnected0300";
@@ -1054,12 +1054,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetDisconnected_0200
-     * @tc.name       : testNetworkMgrConnectionReportNetDisconnected0200
-     * @tc.desc       : Report the network to network management as unavailable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionReportNetDisconnected0200
+     * @tc.number SUB_NetworkMgr_Connection_ReportNetDisconnected_0200
+     * @tc.desc   Report the network to network management as unavailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionReportNetDisconnected0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionReportNetDisconnected0200";
@@ -1094,12 +1094,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ReportNetDisconnected_1100
-     * @tc.name       : testNetworkMgrConnectionReportNetDisconnected1100
-     * @tc.desc       : Report the network to network management as unavailable
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionReportNetDisconnected1100
+     * @tc.number SUB_NetworkMgr_Connection_ReportNetDisconnected_1100
+     * @tc.desc   Report the network to network management as unavailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionReportNetDisconnected1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionReportNetDisconnected1100";
@@ -1132,12 +1132,12 @@ export default function ConnectionWithoutNetTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_On_0400
-     * @tc.name       : testNetworkMgrConnectionOn0400
-     * @tc.desc       : Subscription network connection information change events.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionOn0400
+     * @tc.number SUB_NetworkMgr_Connection_On_0400
+     * @tc.desc   Subscription network connection information change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionOn0400";

@@ -47,14 +47,14 @@ export default function Text3JsunitTest() {
       console.info("Text3Jsunit after each called");
     });
 	let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)    
-    /**
-     * @tc.number    SUB_ACE_testText_0100
-     * @tc.name      testText_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
-     */
+ /**
+  * @tc.name   testText_0100
+  * @tc.number SUB_ACE_testText_0100
+  * @tc.desc   set api
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testText_0100', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0100 START');
       let strJson = getInspectorByKey('textText3Jsunit');
@@ -66,12 +66,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0200
-     * @tc.name      testText_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0200
+     * @tc.number SUB_ACE_testText_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0200', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0200 START');
@@ -83,12 +83,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0300
-     * @tc.name      testText_0300
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0300
+     * @tc.number SUB_ACE_testText_0300
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0300', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0300 START');
@@ -116,12 +116,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0400
-     * @tc.name      testText_0400
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0400
+     * @tc.number SUB_ACE_testText_0400
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0400', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0400 START');
@@ -134,12 +134,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0500
-     * @tc.name      testText_0500
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0500
+     * @tc.number SUB_ACE_testText_0500
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0500', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0500 START');
@@ -167,12 +167,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0600
-     * @tc.name      testText_0600
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0600
+     * @tc.number SUB_ACE_testText_0600
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0600', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0600 START');
@@ -185,12 +185,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0700
-     * @tc.name      testText_0700
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0700
+     * @tc.number SUB_ACE_testText_0700
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0700', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0700 START');
@@ -217,12 +217,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0800
-     * @tc.name      testText_0800
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0800
+     * @tc.number SUB_ACE_testText_0800
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0800', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0800 START');
@@ -235,12 +235,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_0900
-     * @tc.name      testText_0900
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_0900
+     * @tc.number SUB_ACE_testText_0900
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_0900', Level.LEVEL2, async (done: Function) => {
       console.info('testText_0900 START');
@@ -268,12 +268,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_1000
-     * @tc.name      testText_1000
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_1000
+     * @tc.number SUB_ACE_testText_1000
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_1000', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1000 START');
@@ -290,12 +290,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_1200
-     * @tc.name      testText_1200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_1200
+     * @tc.number SUB_ACE_testText_1200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_1200', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1200 START');
@@ -325,12 +325,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_1300
-     * @tc.name      testText_1300
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_1300
+     * @tc.number SUB_ACE_testText_1300
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_1300', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1300 START');
@@ -361,12 +361,12 @@ export default function Text3JsunitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_testText_1400
-     * @tc.name      testText_1400
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   testText_1400
+     * @tc.number SUB_ACE_testText_1400
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testText_1400', Level.LEVEL2, async (done: Function) => {
       console.info('testText_1400 START');

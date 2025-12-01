@@ -42,12 +42,12 @@ export default function navDestinationJsunit() {
     });
 
     /**
+     * @tc.name   testNavDestination
      * @tc.number testNavDestination
-     * @tc.name Test the properties of components
-     * @tc.desc Set hideTitleBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set hideTitleBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavDestination', Level.LEVEL0, async (done: Function) => {
       console.info('[testNavDestination] START');
@@ -61,12 +61,12 @@ export default function navDestinationJsunit() {
     });
 
     /**
+     * @tc.name   testNavDestination_01
      * @tc.number testNavDestination_01
-     * @tc.name Test the properties of components
-     * @tc.desc Change hideTitleBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change hideTitleBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavDestination_01', Level.LEVEL0, async (done: Function) => {
       console.info('testNavDestination_01 START');

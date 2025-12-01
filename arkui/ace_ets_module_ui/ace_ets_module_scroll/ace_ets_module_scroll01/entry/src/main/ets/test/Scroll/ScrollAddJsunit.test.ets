@@ -50,13 +50,13 @@ export default function ScrollAddJsunit() {
       }
     });
 
-    /*
-     * @tc.number    apiCommponentAddJsunit_0400
-     * @tc.name      ScrollAddJsunit_0400
-     * @tc.desc      Test Scroll onScrollText
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ScrollAddJsunit_0400
+     * @tc.number apiCommponentAddJsunit_0400
+     * @tc.desc   Test Scroll onScrollText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollAddJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ScrollAddJsunit_0400 START');

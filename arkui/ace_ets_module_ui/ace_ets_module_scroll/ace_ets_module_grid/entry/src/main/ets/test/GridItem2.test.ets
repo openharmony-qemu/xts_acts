@@ -55,12 +55,12 @@ export default function GridItem2Jsunit() {
     });
 
     /**
+     * @tc.name   GridItemTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0340
-     * @tc.name GridItemTest001
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridItemTest001', Level.LEVEL1, async () => {
       console.info('GridItemTest001 START');

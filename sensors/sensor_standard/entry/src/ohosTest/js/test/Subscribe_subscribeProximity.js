@@ -50,10 +50,13 @@ describe("SensorJsTest_sensor_33", function () {
         console.info('afterEach caled')
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_SubscribeProximity_JSTest_0010
-     * @tc.name:subscribeProximity_SensorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeProximity_SensorJsTest001
+     * @tc.number SUB_SensorsSystem_SubscribeProximity_JSTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeProximity_SensorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------subscribeProximity_SensorJsTest001---------------------------');
@@ -73,10 +76,13 @@ describe("SensorJsTest_sensor_33", function () {
         }, 1000);
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_SubscribeProximity_JSTest_0020
-     * @tc.name: subscribeProximity_SensorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeProximity_SensorJsTest002
+     * @tc.number SUB_SensorsSystem_SubscribeProximity_JSTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeProximity_SensorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info('----------------------subscribeProximity_SensorJsTest002---------------------------');
@@ -106,10 +112,13 @@ describe("SensorJsTest_sensor_33", function () {
         }, 1000);
     })
 
-     /*
-     * @tc.number:SUB_SensorsSystem_SubscribeProximity_JSTest_0030
-     * @tc.name: subscribeProximity_SensorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
+    /**
+     * @tc.name   subscribeProximity_SensorJsTest003
+     * @tc.number SUB_SensorsSystem_SubscribeProximity_JSTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("subscribeProximity_SensorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info('----------------------subscribeProximity_SensorJsTest003---------------------------');

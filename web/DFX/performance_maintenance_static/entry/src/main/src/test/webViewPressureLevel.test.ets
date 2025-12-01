@@ -54,14 +54,14 @@ export default function ActsAceWebviewPressureLevel(){
       console.info('web beforeEach start');
     })
 
-    /*
-    *@tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0001
-    *@tc.name testWebviewPressureLevelModerateStatic
-    *@tc.desc test testWebviewPressureLevelModerate
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level 3
-    */
+    /**
+     * @tc.name   testWebviewPressureLevelModerateStatic
+     * @tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0001
+     * @tc.desc   test testWebviewPressureLevelModerate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebviewPressureLevelModerateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
         await Utils.msSleep(3000);
@@ -78,14 +78,14 @@ export default function ActsAceWebviewPressureLevel(){
         done();
     })
 
-    /*
-    *@tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0002
-    *@tc.name testWebviewPressureLevelCriticalStatic
-    *@tc.desc test testWebviewPressureLevelCritical
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level 3
-    */
+    /**
+     * @tc.name   testWebviewPressureLevelCriticalStatic
+     * @tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0002
+     * @tc.desc   test testWebviewPressureLevelCritical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWebviewPressureLevelCriticalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);

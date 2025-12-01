@@ -54,12 +54,12 @@ export default function listJsunit1() {
     });
 
     /**
+     * @tc.name   listTest001
      * @tc.number listTest001
-     * @tc.name listTest001
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listTest001', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ List TestCase 1 START ++++++++++++++++');

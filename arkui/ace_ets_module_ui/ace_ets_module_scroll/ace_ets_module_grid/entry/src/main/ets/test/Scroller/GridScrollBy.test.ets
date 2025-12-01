@@ -58,13 +58,13 @@ export default function GridScrollBy() {
       console.info("scrollBy after each called");
     });
 
-    /*
-     * @tc.number    GridScrollBy_0001
-     * @tc.name      GridScrollBy_0001
-     * @tc.desc      Clicking on the scrollBy(0) component does not slide
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollBy_0001
+     * @tc.number GridScrollBy_0001
+     * @tc.desc   Clicking on the scrollBy(0) component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollBy_0001',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0000] START');
@@ -94,13 +94,13 @@ export default function GridScrollBy() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollBy_0002
-     * @tc.name  : GridScrollBy_0002
-     * @tc.desc  : Click scrollBy(1500) and slide down 1500vp
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollBy_0002
+     * @tc.number GridScrollBy_0002
+     * @tc.desc   Click scrollBy(1500) and slide down 1500vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollBy_0002',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0002] START');
@@ -127,14 +127,14 @@ export default function GridScrollBy() {
     });
 
 
-    /* *
-     * @tc.number: GridScrollBy_0003
-     * @tc.name  : GridScrollBy_0003
-     * @tc.desc  : Click scrollBy(-150) and swipe up 150vp
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-    */
+    /**
+     * @tc.name   GridScrollBy_0003
+     * @tc.number GridScrollBy_0003
+     * @tc.desc   Click scrollBy(-150) and swipe up 150vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollBy_0003',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0003] START');
       await CommonFunc.sleep(1000);
@@ -157,14 +157,14 @@ export default function GridScrollBy() {
       console.info('[GridScrollBy_0003] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollBy_0004
-     * @tc.name  :  GridScrollBy_0004
-     * @tc.desc  : Click scrollBy(150px) and slide down 150px
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-    */
+    /**
+     * @tc.name   GridScrollBy_0004
+     * @tc.number GridScrollBy_0004
+     * @tc.desc   Click scrollBy(150px) and slide down 150px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('GridScrollBy_0004',  Level.LEVEL4, async (done: Function) => {
       console.info('[GridScrollBy_0004] START');
       await CommonFunc.sleep(1000);
@@ -187,14 +187,14 @@ export default function GridScrollBy() {
       console.info('[GridScrollBy_0004] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollBy_0005
-     * @tc.name  : GridScrollBy_0005
-     * @tc.desc  : Click scrollBy(150) and slide down 150
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-   */
+    /**
+     * @tc.name   GridScrollBy_0005
+     * @tc.number GridScrollBy_0005
+     * @tc.desc   Click scrollBy(150) and slide down 150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollBy_0005',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0005] START');
       await CommonFunc.sleep(1000);
@@ -219,14 +219,14 @@ export default function GridScrollBy() {
       done();
     });
     
-    /* *
-     * @tc.number: GridScrollBy_0006
-     * @tc.name  : GridScrollBy_0006
-     * @tc.desc  : Click on the scrollBy(50%) component without sliding
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-   */
+    /**
+     * @tc.name   GridScrollBy_0006
+     * @tc.number GridScrollBy_0006
+     * @tc.desc   Click on the scrollBy(50%) component without sliding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollBy_0006',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0060] START');
       await CommonFunc.sleep(1000);
@@ -251,13 +251,13 @@ export default function GridScrollBy() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollBy_0007
-     * @tc.name  : GridScrollBy_0007
-     * @tc.desc  : Click on the scrollBy('aa50%') component without sliding
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollBy_0007
+     * @tc.number GridScrollBy_0007
+     * @tc.desc   Click on the scrollBy('aa50%') component without sliding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollBy_0007',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0070] START');
@@ -282,13 +282,13 @@ export default function GridScrollBy() {
       console.info('[GridScrollBy_0070] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollBy_0008
-     * @tc.name  : GridScrollBy_0008
-     * @tc.desc  : Clicking on the scrollBy('aa') component does not slide
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollBy_0008
+     * @tc.number GridScrollBy_0008
+     * @tc.desc   Clicking on the scrollBy('aa') component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollBy_0008',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0080] START');
@@ -313,13 +313,13 @@ export default function GridScrollBy() {
       console.info('[GridScrollBy_0080] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollBy_0009
-     * @tc.name  : GridScrollBy_0009
-     * @tc.desc  : Clicking on the scrollBy(undefined) component does not slide
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollBy_0009
+     * @tc.number GridScrollBy_0009
+     * @tc.desc   Clicking on the scrollBy(undefined) component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollBy_0009',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollBy_0090] START');

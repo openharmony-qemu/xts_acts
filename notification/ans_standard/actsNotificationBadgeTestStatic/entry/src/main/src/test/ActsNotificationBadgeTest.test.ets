@@ -23,9 +23,12 @@ export default function ActsNotificationBadgeTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
 
     /**
-     * @tc.number  Sub_Notification_Ans_Corner_SetNum_Static_0900
-     * @tc.name  Sub_Notification_Ans_Corner_SetNum_Static_0900
-     * @tc.desc  verify the callback function of setBadgeNumber
+     * @tc.name   Sub_Notification_Ans_Corner_SetNum_Static_0900
+     * @tc.number Sub_Notification_Ans_Corner_SetNum_Static_0900
+     * @tc.desc   verify the callback function of setBadgeNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -53,9 +56,12 @@ export default function ActsNotificationBadgeTest() {
     })
 
     /**
+     * @tc.name   Sub_Notification_Ans_Corner_SetNum_Static_1000
      * @tc.number Sub_Notification_Ans_Corner_SetNum_Static_1000
-     * @tc.name Sub_Notification_Ans_Corner_SetNum_Static_1000
-     * @tc.desc verify the promise function of setBadgeNumber
+     * @tc.desc   verify the promise function of setBadgeNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let count: int = 0;

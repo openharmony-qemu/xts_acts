@@ -106,12 +106,12 @@ export default function builtinsGenericsActTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsGenericsActTest0100
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0100
-     * @tc.name builtinsGenericsActTest0100
-     * @tc.desc test Generic classes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic classes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0100';
@@ -149,12 +149,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0200
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0200
-     * @tc.name builtinsGenericsActTest0200
-     * @tc.desc test Generics as interfaces
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generics as interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0200';
@@ -193,12 +193,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0300
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0300
-     * @tc.name builtinsGenericsActTest0300
-     * @tc.desc test Generics as type aliases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generics as type aliases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0300';
@@ -214,12 +214,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0400
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0400
-     * @tc.name builtinsGenericsActTest0400
-     * @tc.desc test Generic methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0400';
@@ -237,12 +237,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0500
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0500
-     * @tc.name builtinsGenericsActTest0500
-     * @tc.desc test Generic methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0500';
@@ -256,12 +256,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0600
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0600
-     * @tc.name builtinsGenericsActTest0600
-     * @tc.desc test Generic function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0600';
@@ -277,12 +277,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0700
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0700
-     * @tc.name builtinsGenericsActTest0700
-     * @tc.desc test Generic function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0700';
@@ -300,12 +300,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest0800
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0800
-     * @tc.name builtinsGenericsActTest0800
-     * @tc.desc test Generic function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0800';
@@ -323,12 +323,12 @@ export default function builtinsGenericsActTest() {
       Done();
     })
     /**
+     * @tc.name   builtinsGenericsActTest0900
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_0900
-     * @tc.name builtinsGenericsActTest0900
-     * @tc.desc test Generic classes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic classes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest0900';
@@ -355,12 +355,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1000
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1000
-     * @tc.name builtinsGenericsActTest1000
-     * @tc.desc test Classes with multiple generic parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Classes with multiple generic parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1000';
@@ -395,12 +395,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1100
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1100
-     * @tc.name builtinsGenericsActTest1100
-     * @tc.desc test Generic class inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic class inheritance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1100';
@@ -433,12 +433,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1200
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1200
-     * @tc.name builtinsGenericsActTest1200
-     * @tc.desc test Generic classes with default values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic classes with default values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1200';
@@ -473,12 +473,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1300
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1300
-     * @tc.name builtinsGenericsActTest1300
-     * @tc.desc test Interfaces for multiple generic parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Interfaces for multiple generic parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1300';
@@ -533,12 +533,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1400
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1400
-     * @tc.name builtinsGenericsActTest1400
-     * @tc.desc test Generic interface inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic interface inheritance
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1400';
@@ -583,12 +583,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1500
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1500
-     * @tc.name builtinsGenericsActTest1500
-     * @tc.desc test Generic interfaces with default values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic interfaces with default values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1500';
@@ -632,12 +632,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1600
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1600
-     * @tc.name builtinsGenericsActTest1600
-     * @tc.desc test Generic interfaces and functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic interfaces and functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1600';
@@ -663,13 +663,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1700
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1700
-     * @tc.name builtinsGenericsActTest1700
-     * @tc.desc test Simple generic type aliases
-     typescript
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Simple generic type aliases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1700';
@@ -701,13 +700,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1800
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1800
-     * @tc.name builtinsGenericsActTest1800
-     * @tc.desc test Type aliases for multiple generic parameters
-     typescript
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Type aliases for multiple generic parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1800';
@@ -751,12 +749,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest1900
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_1900
-     * @tc.name builtinsGenericsActTest1900
-     * @tc.desc test Generic type aliases and functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic type aliases and functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest1900';
@@ -771,12 +769,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2000
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2000
-     * @tc.name builtinsGenericsActTest2000
-     * @tc.desc test Generic type aliases and objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic type aliases and objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2000';
@@ -810,12 +808,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2100
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2100
-     * @tc.name builtinsGenericsActTest2100
-     * @tc.desc test Generic type aliases and nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic type aliases and nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2100';
@@ -846,12 +844,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2200
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2200
-     * @tc.name builtinsGenericsActTest2200
-     * @tc.desc test Generic methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2200';
@@ -871,12 +869,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2300
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2300
-     * @tc.name builtinsGenericsActTest2300
-     * @tc.desc test Functions with multiple generic parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Functions with multiple generic parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2300';
@@ -888,12 +886,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2400
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2400
-     * @tc.name builtinsGenericsActTest2400
-     * @tc.desc test Generic functions and conditional filtering
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic functions and conditional filtering
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2400';
@@ -905,12 +903,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2500
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2500
-     * @tc.name builtinsGenericsActTest2500
-     * @tc.desc test Simple generic lambda expressions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Simple generic lambda expressions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2500';
@@ -925,12 +923,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2600
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2600
-     * @tc.name builtinsGenericsActTest2600
-     * @tc.desc test Simple generic lambda expressionsLambda expressions for multiple generic parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Simple generic lambda expressionsLambda expressions for multiple generic parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2600';
@@ -945,12 +943,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2700
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2700
-     * @tc.name builtinsGenericsActTest2700
-     * @tc.desc test Generic Lambda expressions and arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic Lambda expressions and arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2700';
@@ -965,12 +963,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2800
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2800
-     * @tc.name builtinsGenericsActTest2800
-     * @tc.desc test Generic Lambda Expressions vs. Conditional Filtering
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic Lambda Expressions vs. Conditional Filtering
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2800';
@@ -983,12 +981,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest2900
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_2900
-     * @tc.name builtinsGenericsActTest2900
-     * @tc.desc test Generic Lambda Expressions and Mappings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic Lambda Expressions and Mappings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest2900';
@@ -1001,12 +999,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest3000
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_3000
-     * @tc.name builtinsGenericsActTest3000
-     * @tc.desc test Generic Lambda Expressions vs. Lookups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic Lambda Expressions vs. Lookups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest3000';
@@ -1019,12 +1017,12 @@ export default function builtinsGenericsActTest() {
     })
 
     /**
+     * @tc.name   builtinsGenericsActTest3100
      * @tc.number SUB_BUILTINS_GENERICS_ACT_TEST_3100
-     * @tc.name builtinsGenericsActTest3100
-     * @tc.desc test Generic Lambda Expressions vs. Lookups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Generic Lambda Expressions vs. Lookups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsGenericsActTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsGenericsActTest3100';

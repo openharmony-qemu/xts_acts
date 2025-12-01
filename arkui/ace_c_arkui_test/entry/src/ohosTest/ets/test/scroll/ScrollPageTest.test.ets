@@ -26,14 +26,14 @@ export default function scrollPageTest() {
       await Utils.pushPage(`scroll/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAEG_0100
-    * @tc.name       : testScrollPage001
-    * @tc.desc       : testing Page for Scroll with 1
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollPage001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAEG_0100
+     * @tc.desc   testing Page for Scroll with 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollPage001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('scrollPageTestButtonUp')
       await Utils.sleep(2000)
@@ -41,14 +41,14 @@ export default function scrollPageTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_PAEG_0200
-    * @tc.name       : testScrollPage002
-    * @tc.desc       : testing Page for Scroll with 0
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollPage002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_PAEG_0200
+     * @tc.desc   testing Page for Scroll with 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollPage002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('scrollPageTestButtonDown')
       await Utils.sleep(2000)

@@ -43,12 +43,14 @@ export default function search_bottom() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_search_bottom_001
-    * @tc.name  : testSearch
-    * @tc.desc  : Click to trigger the keyboard when search is at the bottom
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   search_bottom_001
+     * @tc.number SUB_ACE_TS_COMPONENT_search_bottom_001
+     * @tc.desc   Click to trigger the keyboard when search is at the bottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('search_bottom_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[search_bottom_001] START');

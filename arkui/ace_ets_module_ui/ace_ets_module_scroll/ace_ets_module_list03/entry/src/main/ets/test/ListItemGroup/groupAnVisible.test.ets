@@ -46,12 +46,12 @@ export default function groupAnVisible() {
     });
 
     /**
-     * @tc.number    groupAnVisible_001
-     * @tc.name      groupAnVisible_0100
-     * @tc.desc      ListItemGroup sets explicit and implicit settings, and calls the ScrollPage interface.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   groupAnVisible_0100
+     * @tc.number groupAnVisible_001
+     * @tc.desc   ListItemGroup sets explicit and implicit settings, and calls the ScrollPage interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('groupAnVisible_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[groupAnVisible_0100] START');

@@ -54,14 +54,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("gestureMode after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_fillModeText_0100
-    * @tc.name       : fillModeText_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   fillModeText_0100
+     * @tc.number SUB_ARKUI_fillModeText_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('fillModeText_0100', Level.LEVEL0, async (done: Function) => {
       console.info('fillModeText_0100 START');
       let strJson: string = getInspectorByKey('gestureMode');

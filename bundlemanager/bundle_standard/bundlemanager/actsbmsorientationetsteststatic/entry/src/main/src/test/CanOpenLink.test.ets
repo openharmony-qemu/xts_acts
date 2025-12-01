@@ -28,9 +28,12 @@ export default function canOpenLink() {
   describe('canOpenLink', () => {
 
     /**
-     * @tc.number  SUB_BMS_CANOPENLINK_static_0030
-     * @tc.name    canOpenLinkNotInQuerySchemes_static
-     * @tc.desc    The scheme of the specified link is not in the querySchemes.
+     * @tc.name   canOpenLinkNotInQuerySchemes_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0030
+     * @tc.desc   The scheme of the specified link is not in the querySchemes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('canOpenLinkNotInQuerySchemes_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -45,9 +48,12 @@ export default function canOpenLink() {
     });
 
     /**
-     * @tc.number  SUB_BMS_CANOPENLINK_static_0040
-     * @tc.name    canOpenLinkInvalidLink_static
-     * @tc.desc    The specified link is invalid.
+     * @tc.name   canOpenLinkInvalidLink_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0040
+     * @tc.desc   The specified link is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('canOpenLinkInvalidLink_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -63,9 +69,12 @@ export default function canOpenLink() {
 
 
     /**
-     * @tc.number  SUB_BMS_CANOPENLINK_static_0070
-     * @tc.name    canOpenLinkEmptyParam_static
-     * @tc.desc    The parameter is incorrect.
+     * @tc.name   canOpenLinkEmptyParam_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0070
+     * @tc.desc   The parameter is incorrect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('canOpenLinkEmptyParam_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {

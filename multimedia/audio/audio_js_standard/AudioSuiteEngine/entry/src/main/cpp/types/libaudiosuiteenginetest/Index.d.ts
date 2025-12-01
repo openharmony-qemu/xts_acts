@@ -15,3 +15,21 @@
 
 export const AudioSuiteEngineCreateTest_0001: () => number;
 export const AudioSuiteEngineCreateTest_0002: () => number;
+export const AudioSuiteEngineCreateTest_0003: () => number;
+export const AudioSuiteEngineCreateTest_0004: () => number;
+export const AudioSuiteEngineCreateTest_0005: () => number;
+export const AudioSuiteEngineDestroyTest_0001: () => number;
+export const AudioSuiteEngineDestroyTest_0002: () => number;
+export const AudioSuiteEngineDestroyTest_0003: () => number;
+export const AudioSuiteNodeBuilderSetNodeTypeTest_0001: () => number;
+export const AudioSuiteNodeBuilderSetNodeTypeTest_0002: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0001: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0002: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0003: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0004: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0005: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0006: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0007: () => number;
+export const AudioSuiteNodeBuilderSetFormatTest_0008: () => number;
+export const InputNodeRequestDataCallbackTest_0001: () => number;
+export const InputNodeRequestDataCallbackTest_0002: () => number;

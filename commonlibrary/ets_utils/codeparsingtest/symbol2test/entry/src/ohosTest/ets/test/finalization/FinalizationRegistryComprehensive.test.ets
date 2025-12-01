@@ -46,12 +46,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   ConstructorRegisterGCCallbackTest001
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_001
-     * @tc.name ConstructorRegisterGCCallbackTest001
-     * @tc.desc Comprehensive: Constructor + register + GC (callback triggers with heldValue)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Constructor + register + GC (callback triggers with heldValue)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ConstructorRegisterGCCallbackTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test001_ConstructorRegisterGCCallback();
@@ -59,12 +59,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RegisterUnregisterGCTest002
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_002
-     * @tc.name RegisterUnregisterGCTest002
-     * @tc.desc Comprehensive: Register + unregister + GC (callback not triggered after unregister)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Register + unregister + GC (callback not triggered after unregister)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegisterUnregisterGCTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test002_RegisterUnregisterGC();
@@ -72,12 +72,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   StrongReferenceHeldValueGCTest003
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_003
-     * @tc.name StrongReferenceHeldValueGCTest003
-     * @tc.desc Comprehensive: Strong reference to heldValue (accessible after GC)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Strong reference to heldValue (accessible after GC)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StrongReferenceHeldValueGCTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test003_StrongReferenceHeldValueGC();
@@ -85,12 +85,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MultipleRegisterSameTargetGCTest004
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_004
-     * @tc.name MultipleRegisterSameTargetGCTest004
-     * @tc.desc Comprehensive: Multiple register same target + GC (last heldValue effective)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Multiple register same target + GC (last heldValue effective)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleRegisterSameTargetGCTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test004_MultipleRegisterSameTargetGC();
@@ -98,12 +98,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   SymbolTargetTokenUnregisterGCTest005
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_005
-     * @tc.name SymbolTargetTokenUnregisterGCTest005
-     * @tc.desc Comprehensive: Symbol target + Symbol token + unregister + GC
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Symbol target + Symbol token + unregister + GC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolTargetTokenUnregisterGCTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test005_SymbolTargetTokenUnregisterGC();
@@ -111,12 +111,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NoTokenRegisterGCTest006
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_006
-     * @tc.name NoTokenRegisterGCTest006
-     * @tc.desc Comprehensive: Register without token + GC (callback triggers, cannot unregister)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Register without token + GC (callback triggers, cannot unregister)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NoTokenRegisterGCTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test006_NoTokenRegisterGC();
@@ -124,12 +124,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CircularReferenceTargetGCTest007
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_007
-     * @tc.name CircularReferenceTargetGCTest007
-     * @tc.desc Comprehensive: Circular reference target + GC (target recyclable)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Circular reference target + GC (target recyclable)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CircularReferenceTargetGCTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test007_CircularReferenceTargetGC();
@@ -137,12 +137,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MultipleInstancesGCTest008
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_008
-     * @tc.name MultipleInstancesGCTest008
-     * @tc.desc Comprehensive: Multiple instances + register + GC (independent callbacks)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Multiple instances + register + GC (independent callbacks)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleInstancesGCTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test008_MultipleInstancesGC();
@@ -150,12 +150,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   TargetLifecycleEndGCTest009
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_009
-     * @tc.name TargetLifecycleEndGCTest009
-     * @tc.desc Comprehensive: Target lifecycle end + GC (original target recycled)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Target lifecycle end + GC (original target recycled)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TargetLifecycleEndGCTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test009_TargetLifecycleEndGC();
@@ -163,12 +163,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   FrozenTargetRegisterGCTest010
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_010
-     * @tc.name FrozenTargetRegisterGCTest010
-     * @tc.desc Comprehensive: Frozen object target + register + GC (callback triggers)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Frozen object target + register + GC (callback triggers)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenTargetRegisterGCTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test010_FrozenTargetRegisterGC();
@@ -176,12 +176,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MultipleTargetsSameTokenUnregisterGCTest011
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_011
-     * @tc.name MultipleTargetsSameTokenUnregisterGCTest011
-     * @tc.desc Comprehensive: Multiple targets + same token + unregister + GC (no trigger)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Multiple targets + same token + unregister + GC (no trigger)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleTargetsSameTokenUnregisterGCTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test011_MultipleTargetsSameTokenUnregisterGC();
@@ -189,12 +189,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsNullRegisterGCTest012
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_012
-     * @tc.name HeldValueAsNullRegisterGCTest012
-     * @tc.desc Comprehensive: HeldValue as null (≠target) + register + GC (receives null)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: HeldValue as null (≠target) + register + GC (receives null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsNullRegisterGCTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test012_HeldValueAsNullRegisterGC();
@@ -202,12 +202,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ClassInstanceTargetRegisterGCTest013
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_013
-     * @tc.name ClassInstanceTargetRegisterGCTest013
-     * @tc.desc Comprehensive: Class instance target + register + GC (recyclable)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Class instance target + register + GC (recyclable)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClassInstanceTargetRegisterGCTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test013_ClassInstanceTargetRegisterGC();
@@ -215,12 +215,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RegisterUnregisterReregisterGCTest014
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_014
-     * @tc.name RegisterUnregisterReregisterGCTest014
-     * @tc.desc Comprehensive: Register + unregister + reregister + GC (triggers)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Register + unregister + reregister + GC (triggers)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegisterUnregisterReregisterGCTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test014_RegisterUnregisterReregisterGC();
@@ -228,12 +228,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsNonRegisteredSymbolGCTest015
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_015
-     * @tc.name HeldValueAsNonRegisteredSymbolGCTest015
-     * @tc.desc Comprehensive: HeldValue as non-registered Symbol + GC (receives Symbol)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: HeldValue as non-registered Symbol + GC (receives Symbol)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsNonRegisteredSymbolGCTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test015_HeldValueAsNonRegisteredSymbolGC();
@@ -241,12 +241,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MultipleRoundRegisterUnregisterGCTest016
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_016
-     * @tc.name MultipleRoundRegisterUnregisterGCTest016
-     * @tc.desc Comprehensive: Multiple rounds register-unregister + GC (no trigger)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Multiple rounds register-unregister + GC (no trigger)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleRoundRegisterUnregisterGCTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test016_MultipleRoundRegisterUnregisterGC();
@@ -254,12 +254,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   WeakSetTargetRegisterGCTest017
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_017
-     * @tc.name WeakSetTargetRegisterGCTest017
-     * @tc.desc Comprehensive: WeakSet instance target + register + GC (triggers)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: WeakSet instance target + register + GC (triggers)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakSetTargetRegisterGCTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test017_WeakSetTargetRegisterGC();
@@ -267,12 +267,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CallbackModifyExternalVarGCTest018
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_018
-     * @tc.name CallbackModifyExternalVarGCTest018
-     * @tc.desc Comprehensive: Callback modifies external variable + GC (var updated)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Callback modifies external variable + GC (var updated)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CallbackModifyExternalVarGCTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test018_CallbackModifyExternalVarGC();
@@ -280,12 +280,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   DifferentTypeTargetsSameRegistryGCTest019
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_019
-     * @tc.name DifferentTypeTargetsSameRegistryGCTest019
-     * @tc.desc Comprehensive: Different type targets + same registry + GC (independent triggers)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Different type targets + same registry + GC (independent triggers)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DifferentTypeTargetsSameRegistryGCTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test019_DifferentTypeTargetsSameRegistryGC();
@@ -293,12 +293,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ClassInstanceTokenUnregisterGCTest020
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_020
-     * @tc.name ClassInstanceTokenUnregisterGCTest020
-     * @tc.desc Comprehensive: Class instance token + unregister + GC (no trigger)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Comprehensive: Class instance token + unregister + GC (no trigger)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ClassInstanceTokenUnregisterGCTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test020_ClassInstanceTokenUnregisterGC();
@@ -306,12 +306,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ProxyTargetRegisterGCTest021
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_021
-     * @tc.name ProxyTargetRegisterGCTest021
-     * @tc.desc 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ProxyTargetRegisterGCTest021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ProxyTargetRegisterGCTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test021_ProxyTargetRegisterGC();
@@ -319,12 +319,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsResolvedPromiseGCTest022
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_022
-     * @tc.name ProxyTargetRegisterGCTest022
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsResolvedPromiseGCTest022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsResolvedPromiseGCTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test022_HeldValueAsResolvedPromiseGC();
@@ -332,12 +332,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   SealedTargetRegisterGCTest023
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_023
-     * @tc.name ProxyTargetRegisterGCTest023
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SealedTargetRegisterGCTest023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SealedTargetRegisterGCTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test023_SealedTargetRegisterGC();
@@ -345,12 +345,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ProxyTokenUnregisterGCTest024
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_024
-     * @tc.name ProxyTargetRegisterGCTest024
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ProxyTokenUnregisterGCTest024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ProxyTokenUnregisterGCTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test024_ProxyTokenUnregisterGC();
@@ -360,12 +360,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   UnregisterEarlyTokenForSameTargetGCTest026
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_026
-     * @tc.name ProxyTargetRegisterGCTest026
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   UnregisterEarlyTokenForSameTargetGCTest026
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UnregisterEarlyTokenForSameTargetGCTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test026_UnregisterEarlyTokenForSameTargetGC();
@@ -373,12 +373,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ErrorInstanceTargetRegisterGCTest027
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_027
-     * @tc.name ProxyTargetRegisterGCTest027
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ErrorInstanceTargetRegisterGCTest027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ErrorInstanceTargetRegisterGCTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test027_ErrorInstanceTargetRegisterGC();
@@ -388,12 +388,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   ErrorInstanceTokenUnregisterGCTest029
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_029
-     * @tc.name ProxyTargetRegisterGCTest029
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ErrorInstanceTokenUnregisterGCTest029
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ErrorInstanceTokenUnregisterGCTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test029_ErrorInstanceTokenUnregisterGC();
@@ -401,12 +401,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   SetInstanceTargetRegisterGCTest030
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_030
-     * @tc.name ProxyTargetRegisterGCTest030
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SetInstanceTargetRegisterGCTest030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetInstanceTargetRegisterGCTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test030_SetInstanceTargetRegisterGC();
@@ -414,12 +414,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsBigIntGCTest031
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_031
-     * @tc.name ProxyTargetRegisterGCTest031
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsBigIntGCTest031
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsBigIntGCTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test031_HeldValueAsBigIntGC();
@@ -429,12 +429,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   HeldValueAsNaNGCTest034
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_034
-     * @tc.name ProxyTargetRegisterGCTest034
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsNaNGCTest034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsNaNGCTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test034_HeldValueAsNaNGCC();
@@ -442,12 +442,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RegExpInstanceTargetRegisterGCTest035
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_035
-     * @tc.name ProxyTargetRegisterGCTest035
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RegExpInstanceTargetRegisterGCTest035
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpInstanceTargetRegisterGCTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test035_RegExpInstanceTargetRegisterGC();
@@ -455,12 +455,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CallbackThrowsErrorGCTest036
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_036
-     * @tc.name ProxyTargetRegisterGCTest036
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   CallbackThrowsErrorGCTest036
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CallbackThrowsErrorGCTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test036_CallbackThrowsErrorGC();
@@ -468,12 +468,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsInfinityGCTest037
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_037
-     * @tc.name ProxyTargetRegisterGCTest037
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsInfinityGCTest037
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsInfinityGCTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test037_HeldValueAsInfinityGC();
@@ -481,12 +481,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NestedFrozenTargetRegisterGCTest038
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_038
-     * @tc.name ProxyTargetRegisterGCTest038
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NestedFrozenTargetRegisterGCTest038
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NestedFrozenTargetRegisterGCTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test038_NestedFrozenTargetRegisterGC();
@@ -494,12 +494,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NestedSealedTokenUnregisterGCTest039
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_039
-     * @tc.name ProxyTargetRegisterGCTest039
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NestedSealedTokenUnregisterGCTest039
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NestedSealedTokenUnregisterGCTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test039_NestedSealedTokenUnregisterGC();
@@ -507,12 +507,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsNestedObjectGCTest040
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_040
-     * @tc.name ProxyTargetRegisterGCTest040
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsNestedObjectGCTest040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsNestedObjectGCTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test040_HeldValueAsNestedObjectGC();
@@ -520,12 +520,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RejectedPromiseTargetRegisterGCTest041
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_041
-     * @tc.name ProxyTargetRegisterGCTest041
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RejectedPromiseTargetRegisterGCTest041
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RejectedPromiseTargetRegisterGCTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test041_RejectedPromiseTargetRegisterGC();
@@ -533,12 +533,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ResolvedPromiseTokenUnregisterGCTest042
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_042
-     * @tc.name ProxyTargetRegisterGCTest042
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ResolvedPromiseTokenUnregisterGCTest042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ResolvedPromiseTokenUnregisterGCTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test042_ResolvedPromiseTokenUnregisterGC();
@@ -546,12 +546,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsCircularObjectGCTest043
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_043
-     * @tc.name ProxyTargetRegisterGCTest043
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsCircularObjectGCTest043
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsCircularObjectGCTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test043_HeldValueAsCircularObjectGC();
@@ -561,12 +561,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   HeldValueAsParamFunctionGCTest046
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_046
-     * @tc.name ProxyTargetRegisterGCTest046
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsParamFunctionGCTest046
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsParamFunctionGCTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test046_HeldValueAsParamFunctionGC();
@@ -577,12 +577,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   MultipleRegistriesSameTokenUnregisterGCTest049
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_049
-     * @tc.name ProxyTargetRegisterGCTest049
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   MultipleRegistriesSameTokenUnregisterGCTest049
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleRegistriesSameTokenUnregisterGCTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test049_MultipleRegistriesSameTokenUnregisterGC();
@@ -590,12 +590,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsUndefinedGCTest050
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_050
-     * @tc.name ProxyTargetRegisterGCTest050
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsUndefinedGCTest050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsUndefinedGCTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test050_HeldValueAsUndefinedGC();
@@ -606,12 +606,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   HeldValueAsRegisteredSymbolGCTest053
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_053
-     * @tc.name ProxyTargetRegisterGCTest053
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsRegisteredSymbolGCTest053
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsRegisteredSymbolGCTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test053_HeldValueAsRegisteredSymbolGC();
@@ -621,12 +621,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   TargetReferencedByWeakMapThenReleasedGCTest055
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_055
-     * @tc.name ProxyTargetRegisterGCTest055
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   TargetReferencedByWeakMapThenReleasedGCTest055
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TargetReferencedByWeakMapThenReleasedGCTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test055_TargetReferencedByWeakMapThenReleasedGC();
@@ -634,12 +634,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueReferencedByWeakSetGCTest056
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_056
-     * @tc.name ProxyTargetRegisterGCTest056
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueReferencedByWeakSetGCTest056
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueReferencedByWeakSetGCTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test056_HeldValueReferencedByWeakSetGC();
@@ -647,12 +647,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   TokenDeepModifiedPropertiesUnregisterGCTest057
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_057
-     * @tc.name ProxyTargetRegisterGCTest057
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   TokenDeepModifiedPropertiesUnregisterGCTest057
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TokenDeepModifiedPropertiesUnregisterGCTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test057_TokenDeepModifiedPropertiesUnregisterGC();
@@ -660,12 +660,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueReplacePrototypeChainGCTest058
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_058
-     * @tc.name ProxyTargetRegisterGCTest058
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueReplacePrototypeChainGCTest058
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueReplacePrototypeChainGCTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test058_HeldValueReplacePrototypeChainGC();
@@ -673,12 +673,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NonExtensibleTargetRegisterGCTest059
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_059
-     * @tc.name ProxyTargetRegisterGCTest059
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NonExtensibleTargetRegisterGCTest059
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonExtensibleTargetRegisterGCTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test059_NonExtensibleTargetRegisterGC();
@@ -686,12 +686,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NonExtensibleTokenUnregisterGCTest060
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_060
-     * @tc.name ProxyTargetRegisterGCTest060
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NonExtensibleTokenUnregisterGCTest060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonExtensibleTokenUnregisterGCTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test060_NonExtensibleTokenUnregisterGC();
@@ -699,12 +699,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MultipleTargetsSequentialReleaseGCTest061
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_061
-     * @tc.name ProxyTargetRegisterGCTest061
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   MultipleTargetsSequentialReleaseGCTest061
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultipleTargetsSequentialReleaseGCTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test061_MultipleTargetsSequentialReleaseGC();
@@ -714,12 +714,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   Delayed20msUnregisterGCTest064
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_064
-     * @tc.name ProxyTargetRegisterGCTest064
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Delayed20msUnregisterGCTest064
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Delayed20msUnregisterGCTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test064_Delayed20msUnregisterGC();
@@ -729,12 +729,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   ComplexIntlDateTimeFormatTargetRegisterGCTest068
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_068
-     * @tc.name ProxyTargetRegisterGCTest068
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ComplexIntlDateTimeFormatTargetRegisterGCTest068
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ComplexIntlDateTimeFormatTargetRegisterGCTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test068_ComplexIntlDateTimeFormatTargetRegisterGC();
@@ -744,12 +744,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   ComplexIntlCollatorTokenUnregisterGCTest070
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_070
-     * @tc.name ProxyTargetRegisterGCTest070
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ComplexIntlCollatorTokenUnregisterGCTest070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ComplexIntlCollatorTokenUnregisterGCTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test070_ComplexIntlCollatorTokenUnregisterGC();
@@ -757,12 +757,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MultiLangIntlPluralRulesTargetRegisterGCTest071
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_071
-     * @tc.name ProxyTargetRegisterGCTest071
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   MultiLangIntlPluralRulesTargetRegisterGCTest071
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultiLangIntlPluralRulesTargetRegisterGCTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test071_MultiLangIntlPluralRulesTargetRegisterGC();
@@ -771,12 +771,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   MultiFormatIntlListFormatTokenUnregisterGCTest073
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_073
-     * @tc.name ProxyTargetRegisterGCTest073
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   MultiFormatIntlListFormatTokenUnregisterGCTest073
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MultiFormatIntlListFormatTokenUnregisterGCTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test073_MultiFormatIntlListFormatTokenUnregisterGC();
@@ -784,12 +784,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   LargeUint16ArrayTargetRegisterGCTest074
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_074
-     * @tc.name ProxyTargetRegisterGCTest074
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   LargeUint16ArrayTargetRegisterGCTest074
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('LargeUint16ArrayTargetRegisterGCTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test074_LargeUint16ArrayTargetRegisterGC();
@@ -797,12 +797,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsFilledInt32ArrayGCTest075
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_075
-     * @tc.name ProxyTargetRegisterGCTest075
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsFilledInt32ArrayGCTest075
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsFilledInt32ArrayGCTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test075_HeldValueAsFilledInt32ArrayGC();
@@ -810,12 +810,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RandomDataUint32ArrayTokenUnregisterGCTest076
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_076
-     * @tc.name ProxyTargetRegisterGCTest076
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RandomDataUint32ArrayTokenUnregisterGCTest076
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RandomDataUint32ArrayTokenUnregisterGCTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test076_RandomDataUint32ArrayTokenUnregisterGC();
@@ -823,12 +823,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   PrecisionFloat32ArrayTargetRegisterGCTest077
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_077
-     * @tc.name ProxyTargetRegisterGCTest077
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   PrecisionFloat32ArrayTargetRegisterGCTest077
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PrecisionFloat32ArrayTargetRegisterGCTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test077_PrecisionFloat32ArrayTargetRegisterGC();
@@ -836,12 +836,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsBigUint64ArrayWithLargeNumbersGCTest078
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_078
-     * @tc.name ProxyTargetRegisterGCTest078
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsBigUint64ArrayWithLargeNumbersGCTest078
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsBigUint64ArrayWithLargeNumbersGCTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test078_HeldValueAsBigUint64ArrayWithLargeNumbersGC();
@@ -849,12 +849,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   BigInt64ArrayWithPosNegTokenUnregisterGCTest079
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_079
-     * @tc.name ProxyTargetRegisterGCTest079
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   BigInt64ArrayWithPosNegTokenUnregisterGCTest079
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BigInt64ArrayWithPosNegTokenUnregisterGCTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test079_BigInt64ArrayWithPosNegTokenUnregisterGC();
@@ -862,12 +862,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ArrayBufferWithSharedDataTargetRegisterGCTest080
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_080
-     * @tc.name ProxyTargetRegisterGCTest080
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ArrayBufferWithSharedDataTargetRegisterGCTest080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayBufferWithSharedDataTargetRegisterGCTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test080_ArrayBufferWithSharedDataTargetRegisterGC();
@@ -875,12 +875,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsSharedArrayBufferWithAtomicsGCTest081
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_081
-     * @tc.name ProxyTargetRegisterGCTest081
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsSharedArrayBufferWithAtomicsGCTest081
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsSharedArrayBufferWithAtomicsGCTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test081_HeldValueAsSharedArrayBufferWithAtomicsGC();
@@ -888,12 +888,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ArrayBufferWithMultiViewTokenUnregisterGCTest082
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_082
-     * @tc.name ProxyTargetRegisterGCTest082
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ArrayBufferWithMultiViewTokenUnregisterGCTest082
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayBufferWithMultiViewTokenUnregisterGCTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test082_ArrayBufferWithMultiViewTokenUnregisterGC();
@@ -901,12 +901,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ProxyMapWithInterceptorTargetRegisterGCTest083
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_083
-     * @tc.name ProxyTargetRegisterGCTest083
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ProxyMapWithInterceptorTargetRegisterGCTest083
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ProxyMapWithInterceptorTargetRegisterGCTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test083_ProxyMapWithInterceptorTargetRegisterGC();
@@ -915,12 +915,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   UnregisterMiddleTokenForSameTargetGCTest086
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_086
-     * @tc.name ProxyTargetRegisterGCTest086
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   UnregisterMiddleTokenForSameTargetGCTest086
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UnregisterMiddleTokenForSameTargetGCTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test086_UnregisterMiddleTokenForSameTargetGC();
@@ -928,12 +928,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsFunctionWithClosureGCTest087
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_087
-     * @tc.name ProxyTargetRegisterGCTest087
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsFunctionWithClosureGCTest087
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsFunctionWithClosureGCTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test087_HeldValueAsFunctionWithClosureGC();
@@ -941,12 +941,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CustomPrototypeChainTargetRegisterGCTest088
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_088
-     * @tc.name ProxyTargetRegisterGCTest088
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   CustomPrototypeChainTargetRegisterGCTest088
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomPrototypeChainTargetRegisterGCTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test088_CustomPrototypeChainTargetRegisterGC();
@@ -954,12 +954,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   TokenWithModifiedMethodUnregisterGCTest089
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_089
-     * @tc.name ProxyTargetRegisterGCTest089
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   TokenWithModifiedMethodUnregisterGCTest089
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TokenWithModifiedMethodUnregisterGCTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test089_TokenWithModifiedMethodUnregisterGC();
@@ -967,12 +967,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsWeakSetWithMultiObjectsGCTest090
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_090
-     * @tc.name ProxyTargetRegisterGCTest090
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsWeakSetWithMultiObjectsGCTest090
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsWeakSetWithMultiObjectsGCTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test090_HeldValueAsWeakSetWithMultiObjectsGC();
@@ -980,12 +980,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   AggregateErrorWithMultiErrorTypesTargetRegisterGCTest091
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_091
-     * @tc.name ProxyTargetRegisterGCTest091
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   AggregateErrorWithMultiErrorTypesTargetRegisterGCTest091
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AggregateErrorWithMultiErrorTypesTargetRegisterGCTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test091_AggregateErrorWithMultiErrorTypesTargetRegisterGC();
@@ -993,12 +993,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ReferenceErrorTokenWithModifiedPropsUnregisterGCTest092
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_092
-     * @tc.name ProxyTargetRegisterGCTest092
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ReferenceErrorTokenWithModifiedPropsUnregisterGCTest092
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ReferenceErrorTokenWithModifiedPropsUnregisterGCTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test092_ReferenceErrorTokenWithModifiedPropsUnregisterGC();
@@ -1006,12 +1006,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsDateWithModifiedTimeGCTest093
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_093
-     * @tc.name ProxyTargetRegisterGCTest093
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsDateWithModifiedTimeGCTest093
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsDateWithModifiedTimeGCTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test093_HeldValueAsDateWithModifiedTimeGC();
@@ -1019,12 +1019,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RegExpWithMULTILINECaseInsensitiveTargetRegisterGCTest094
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_094
-     * @tc.name ProxyTargetRegisterGCTest094
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RegExpWithMULTILINECaseInsensitiveTargetRegisterGCTest094
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpWithMULTILINECaseInsensitiveTargetRegisterGCTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test094_RegExpWithMULTILINECaseInsensitiveTargetRegisterGC();
@@ -1032,12 +1032,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   SetWithRemovedElementsTokenUnregisterGCTest095
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_095
-     * @tc.name ProxyTargetRegisterGCTest095
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SetWithRemovedElementsTokenUnregisterGCTest095
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetWithRemovedElementsTokenUnregisterGCTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test095_SetWithRemovedElementsTokenUnregisterGC();
@@ -1045,12 +1045,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsMapWithModifiedEntriesGCTest096
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_096
-     * @tc.name ProxyTargetRegisterGCTest096
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsMapWithModifiedEntriesGCTest096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsMapWithModifiedEntriesGCTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test096_HeldValueAsMapWithModifiedEntriesGC();
@@ -1058,12 +1058,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   WeakMapWithRemovedKeysTargetRegisterGCTest097
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_097
-     * @tc.name ProxyTargetRegisterGCTest097
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMapWithRemovedKeysTargetRegisterGCTest097
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMapWithRemovedKeysTargetRegisterGCTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test097_WeakMapWithRemovedKeysTargetRegisterGC();
@@ -1071,12 +1071,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NonGlobalSymbolTokenUnregisterGCTest098
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_098
-     * @tc.name ProxyTargetRegisterGCTest098
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NonGlobalSymbolTokenUnregisterGCTest098
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonGlobalSymbolTokenUnregisterGCTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test098_NonGlobalSymbolTokenUnregisterGC();
@@ -1084,12 +1084,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsArrowFunctionWithDefaultParamsGCTest099
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_099
-     * @tc.name ProxyTargetRegisterGCTest099
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsArrowFunctionWithDefaultParamsGCTest099
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsArrowFunctionWithDefaultParamsGCTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test099_HeldValueAsArrowFunctionWithDefaultParamsGC();
@@ -1097,12 +1097,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   DynamicMultiMethodObjectTargetRegisterGCTest100
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_100
-     * @tc.name ProxyTargetRegisterGCTest100
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   DynamicMultiMethodObjectTargetRegisterGCTest100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DynamicMultiMethodObjectTargetRegisterGCTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test100_DynamicMultiMethodObjectTargetRegisterGC();
@@ -1110,12 +1110,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   FrozenObjectTokenUnregisterGCTest101
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_101
-     * @tc.name ProxyTargetRegisterGCTest101
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   FrozenObjectTokenUnregisterGCTest101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FrozenObjectTokenUnregisterGCTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test101_FrozenObjectTokenUnregisterGC();
@@ -1123,12 +1123,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsComplexCircularObjectGCTest102
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_102
-     * @tc.name ProxyTargetRegisterGCTest102
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsComplexCircularObjectGCTest102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsComplexCircularObjectGCTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test102_HeldValueAsComplexCircularObjectGC();
@@ -1136,12 +1136,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ObjectWithGetterSetterTargetRegisterGCTest103
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_103
-     * @tc.name ProxyTargetRegisterGCTest103
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ObjectWithGetterSetterTargetRegisterGCTest103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectWithGetterSetterTargetRegisterGCTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test103_ObjectWithGetterSetterTargetRegisterGC();
@@ -1149,12 +1149,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CustomClassWithStaticMethodTokenUnregisterGCTest104
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_104
-     * @tc.name ProxyTargetRegisterGCTest104
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   CustomClassWithStaticMethodTokenUnregisterGCTest104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomClassWithStaticMethodTokenUnregisterGCTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test104_CustomClassWithStaticMethodTokenUnregisterGC();
@@ -1162,12 +1162,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsRejectedPromiseErrorGCTest105
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_105
-     * @tc.name ProxyTargetRegisterGCTest105
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsRejectedPromiseErrorGCTest105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsRejectedPromiseErrorGCTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test105_HeldValueAsRejectedPromiseErrorGC();
@@ -1175,12 +1175,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NestedArrayWithMixedValuesTargetRegisterGCTest106
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_106
-     * @tc.name ProxyTargetRegisterGCTest106
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NestedArrayWithMixedValuesTargetRegisterGCTest106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NestedArrayWithMixedValuesTargetRegisterGCTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test106_NestedArrayWithMixedValuesTargetRegisterGC();
@@ -1188,12 +1188,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RegExpWithGlobalFlagUsedTokenUnregisterGCTest107
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_107
-     * @tc.name ProxyTargetRegisterGCTest107
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RegExpWithGlobalFlagUsedTokenUnregisterGCTest107
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpWithGlobalFlagUsedTokenUnregisterGCTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test107_RegExpWithGlobalFlagUsedTokenUnregisterGC();
@@ -1201,12 +1201,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsCustomClassSingletonGCTest108
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_108
-     * @tc.name ProxyTargetRegisterGCTest108
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsCustomClassSingletonGCTest108
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsCustomClassSingletonGCTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test108_HeldValueAsCustomClassSingletonGC();
@@ -1214,12 +1214,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ObjectMethodWithClosureTargetRegisterGCTest109
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_109
-     * @tc.name ProxyTargetRegisterGCTest109
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ObjectMethodWithClosureTargetRegisterGCTest109
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectMethodWithClosureTargetRegisterGCTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test109_ObjectMethodWithClosureTargetRegisterGC();
@@ -1227,12 +1227,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   UTCDateTokenUnregisterGCTest110
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_110
-     * @tc.name ProxyTargetRegisterGCTest110
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   UTCDateTokenUnregisterGCTest110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UTCDateTokenUnregisterGCTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test110_UTCDateTokenUnregisterGC();
@@ -1240,12 +1240,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsSetWithSymbolAndObjectsGCTest111
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_111
-     * @tc.name ProxyTargetRegisterGCTest111
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsSetWithSymbolAndObjectsGCTest111
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsSetWithSymbolAndObjectsGCTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test111_HeldValueAsSetWithSymbolAndObjectsGC();
@@ -1253,12 +1253,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MapWithDateKeysTargetRegisterGCTest112
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_112
-     * @tc.name ProxyTargetRegisterGCTest112
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   MapWithDateKeysTargetRegisterGCTest112
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapWithDateKeysTargetRegisterGCTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test112_MapWithDateKeysTargetRegisterGC();
@@ -1266,12 +1266,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   WeakSetWithCustomClassInstancesTokenUnregisterGCTest113
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_113
-     * @tc.name ProxyTargetRegisterGCTest113
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSetWithCustomClassInstancesTokenUnregisterGCTest113
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakSetWithCustomClassInstancesTokenUnregisterGCTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test113_WeakSetWithCustomClassInstancesTokenUnregisterGC();
@@ -1279,12 +1279,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsFunctionWithRestParamsGCTest114
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_114
-     * @tc.name ProxyTargetRegisterGCTest114
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsFunctionWithRestParamsGCTest114
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsFunctionWithRestParamsGCTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test114_HeldValueAsFunctionWithRestParamsGC();
@@ -1292,12 +1292,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   NonExtensibleAndSealedTargetRegisterGCTest115
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_115
-     * @tc.name ProxyTargetRegisterGCTest115
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   NonExtensibleAndSealedTargetRegisterGCTest115
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NonExtensibleAndSealedTargetRegisterGCTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test115_NonExtensibleAndSealedTargetRegisterGC();
@@ -1305,12 +1305,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsBoundFunctionGCTest116
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_116
-     * @tc.name ProxyTargetRegisterGCTest116
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsBoundFunctionGCTest116
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsBoundFunctionGCTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test116_HeldValueAsBoundFunctionGC();
@@ -1318,12 +1318,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CustomErrorClassInstanceTargetRegisterGCTest117
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_117
-     * @tc.name ProxyTargetRegisterGCTest117
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   CustomErrorClassInstanceTargetRegisterGCTest117
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomErrorClassInstanceTargetRegisterGCTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test117_CustomErrorClassInstanceTargetRegisterGC();
@@ -1332,12 +1332,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   HeldValueAsClassPrivateMethodViaClosureGCTest119
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_119
-     * @tc.name ProxyTargetRegisterGCTest119
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsClassPrivateMethodViaClosureGCTest119
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsClassPrivateMethodViaClosureGCTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test119_HeldValueAsClassPrivateMethodViaClosureGC();
@@ -1345,12 +1345,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   FlattenedNestedArrayTargetRegisterGCTest120
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_120
-     * @tc.name ProxyTargetRegisterGCTest120
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   FlattenedNestedArrayTargetRegisterGCTest120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FlattenedNestedArrayTargetRegisterGCTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test120_FlattenedNestedArrayTargetRegisterGC();
@@ -1358,12 +1358,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   WeakMapWithCustomClassKeysTokenUnregisterGCTest121
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_121
-     * @tc.name ProxyTargetRegisterGCTest121
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMapWithCustomClassKeysTokenUnregisterGCTest121
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMapWithCustomClassKeysTokenUnregisterGCTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test121_WeakMapWithCustomClassKeysTokenUnregisterGC();
@@ -1371,12 +1371,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsLargeBigIntGCTest122
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_122
-     * @tc.name ProxyTargetRegisterGCTest122
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsLargeBigIntGCTest122
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsLargeBigIntGCTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test122_HeldValueAsLargeBigIntGC();
@@ -1384,12 +1384,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   FilledFixedValueArrayTargetRegisterGCTest123
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_123
-     * @tc.name ProxyTargetRegisterGCTest123
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   FilledFixedValueArrayTargetRegisterGCTest123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('FilledFixedValueArrayTargetRegisterGCTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test123_FilledFixedValueArrayTargetRegisterGC();
@@ -1397,12 +1397,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ObjectWithSymbolPropertiesTokenUnregisterGCTest124
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_124
-     * @tc.name ProxyTargetRegisterGCTest124
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ObjectWithSymbolPropertiesTokenUnregisterGCTest124
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectWithSymbolPropertiesTokenUnregisterGCTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test124_ObjectWithSymbolPropertiesTokenUnregisterGC();
@@ -1410,12 +1410,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsPromiseFinallyBoundFunctionGCTest125
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_125
-     * @tc.name ProxyTargetRegisterGCTest125
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsPromiseFinallyBoundFunctionGCTest125
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsPromiseFinallyBoundFunctionGCTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test125_HeldValueAsPromiseFinallyBoundFunctionGC();
@@ -1423,12 +1423,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   InheritedMapCustomClassInstanceTargetRegisterGCTest126
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_126
-     * @tc.name ProxyTargetRegisterGCTest126
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   InheritedMapCustomClassInstanceTargetRegisterGCTest126
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedMapCustomClassInstanceTargetRegisterGCTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test126_InheritedMapCustomClassInstanceTargetRegisterGC();
@@ -1436,12 +1436,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   RegExpUnicodeComplexPatternTokenUnregisterGCTest127
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_127
-     * @tc.name ProxyTargetRegisterGCTest127
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RegExpUnicodeComplexPatternTokenUnregisterGCTest127
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RegExpUnicodeComplexPatternTokenUnregisterGCTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test127_RegExpUnicodeComplexPatternTokenUnregisterGC();
@@ -1449,12 +1449,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsFilteredArrayGCTest128
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_128
-     * @tc.name ProxyTargetRegisterGCTest128
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsFilteredArrayGCTest128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsFilteredArrayGCTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test128_HeldValueAsFilteredArrayGC();
@@ -1462,12 +1462,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   CustomClassWithStaticPropertiesTargetRegisterGCTest129
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_129
-     * @tc.name ProxyTargetRegisterGCTest129
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   CustomClassWithStaticPropertiesTargetRegisterGCTest129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomClassWithStaticPropertiesTargetRegisterGCTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test129_CustomClassWithStaticPropertiesTargetRegisterGC();
@@ -1475,12 +1475,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   WeakSetWithErrorInstancesTokenUnregisterGCTest130
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_130
-     * @tc.name ProxyTargetRegisterGCTest130
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakSetWithErrorInstancesTokenUnregisterGCTest130
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakSetWithErrorInstancesTokenUnregisterGCTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test130_WeakSetWithErrorInstancesTokenUnregisterGC();
@@ -1488,12 +1488,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsMappedArrayGCTest131
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_131
-     * @tc.name ProxyTargetRegisterGCTest131
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsMappedArrayGCTest131
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsMappedArrayGCTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test131_HeldValueAsMappedArrayGC();
@@ -1501,12 +1501,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ArrayOfDateObjectsTargetRegisterGCTest132
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_132
-     * @tc.name ProxyTargetRegisterGCTest132
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ArrayOfDateObjectsTargetRegisterGCTest132
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayOfDateObjectsTargetRegisterGCTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test132_ArrayOfDateObjectsTargetRegisterGC();
@@ -1514,24 +1514,24 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   MapWithBigIntKeysTokenUnregisterGCTest133
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_133
-     * @tc.name ProxyTargetRegisterGCTest133
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   MapWithBigIntKeysTokenUnregisterGCTest133
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapWithBigIntKeysTokenUnregisterGCTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test133_MapWithBigIntKeysTokenUnregisterGC();
       expect(result).assertEqual("Test Passed: MapWithBigIntKeysTokenUnregisterGCTest133");
     });
     /**
+     * @tc.name   HeldValueAsReducedArrayResultGCTest134
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_134
-     * @tc.name ProxyTargetRegisterGCTest134
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsReducedArrayResultGCTest134
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsReducedArrayResultGCTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test134_HeldValueAsReducedArrayResultGC();
@@ -1539,12 +1539,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   InheritedClassWithPrivateFieldsTargetRegisterGCTest135
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_135
-     * @tc.name ProxyTargetRegisterGCTest135
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   InheritedClassWithPrivateFieldsTargetRegisterGCTest135
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InheritedClassWithPrivateFieldsTargetRegisterGCTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test135_InheritedClassWithPrivateFieldsTargetRegisterGC();
@@ -1552,12 +1552,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   SetWithBigIntSymbolMixedTokenUnregisterGCTest136
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_136
-     * @tc.name ProxyTargetRegisterGCTest136
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SetWithBigIntSymbolMixedTokenUnregisterGCTest136
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetWithBigIntSymbolMixedTokenUnregisterGCTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test136_SetWithBigIntSymbolMixedTokenUnregisterGC();
@@ -1565,12 +1565,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsFunctionCallBoundContextGCTest137
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_137
-     * @tc.name ProxyTargetRegisterGCTest137
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsFunctionCallBoundContextGCTest137
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsFunctionCallBoundContextGCTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test137_HeldValueAsFunctionCallBoundContextGC();
@@ -1578,12 +1578,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   SortedArrayTargetRegisterGCTest138
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_138
-     * @tc.name ProxyTargetRegisterGCTest138
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SortedArrayTargetRegisterGCTest138
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SortedArrayTargetRegisterGCTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test138_SortedArrayTargetRegisterGC();
@@ -1591,12 +1591,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   ArrayWithPrototypeMethodsTokenUnregisterGCTest139
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_139
-     * @tc.name ProxyTargetRegisterGCTest139
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ArrayWithPrototypeMethodsTokenUnregisterGCTest139
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayWithPrototypeMethodsTokenUnregisterGCTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test139_ArrayWithPrototypeMethodsTokenUnregisterGC();
@@ -1604,12 +1604,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsCustomIteratorGCTest140
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_140
-     * @tc.name ProxyTargetRegisterGCTest140
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsCustomIteratorGCTest140
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsCustomIteratorGCTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test140_HeldValueAsCustomIteratorGC();
@@ -1618,12 +1618,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   WeakMapWithDateKeysTokenUnregisterGCTest142
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_142
-     * @tc.name ProxyTargetRegisterGCTest142
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   WeakMapWithDateKeysTokenUnregisterGCTest142
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WeakMapWithDateKeysTokenUnregisterGCTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test142_WeakMapWithDateKeysTokenUnregisterGC();
@@ -1631,12 +1631,12 @@ export default function finalizationRegistryComprehensiveTest() {
     });
 
     /**
+     * @tc.name   HeldValueAsArrayJoinedStringGCTest143
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_143
-     * @tc.name ProxyTargetRegisterGCTest143
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   HeldValueAsArrayJoinedStringGCTest143
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HeldValueAsArrayJoinedStringGCTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test143_HeldValueAsArrayJoinedStringGC();
@@ -1646,12 +1646,12 @@ export default function finalizationRegistryComprehensiveTest() {
 
 
     /**
+     * @tc.name   SetWithDateObjectsTokenUnregisterGCTest145
      * @tc.number SUB_FINALIZATION_REGISTRY_COMPREHENSIVE_TEST_145
-     * @tc.name ProxyTargetRegisterGCTest145
-     * @tc.desc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SetWithDateObjectsTokenUnregisterGCTest145
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetWithDateObjectsTokenUnregisterGCTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await FinalizationRegistryComprehensiveUtils.test145_SetWithDateObjectsTokenUnregisterGC();

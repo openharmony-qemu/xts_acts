@@ -85,7 +85,6 @@ export default function PasteboartdCopyJsAPITest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0100
      * @tc.desc   Verify the properties of the Text type
@@ -129,7 +128,6 @@ export default function PasteboartdCopyJsAPITest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0200
      * @tc.desc   Verify the properties of the PlainText type
@@ -176,7 +174,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0300
      * @tc.desc   Verify the properties of the Hyperlink type
@@ -223,7 +220,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0400
      * @tc.desc   Verify the properties of the HTML type
@@ -270,7 +266,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0500
      * @tc.desc   Verify the properties of the File type
@@ -315,7 +310,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0600
      * @tc.desc   Verify the properties of the Folder type
@@ -362,7 +356,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0700
      * @tc.desc   Verify the properties of the Image type
@@ -409,7 +402,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0800
      * @tc.desc   Verify the properties of the Video type
@@ -454,7 +446,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_0900
      * @tc.desc   Verify the properties of the Audio type
@@ -499,7 +490,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1000
      * @tc.desc   Verify the properties of the SystemDefinedRecord type
@@ -545,7 +535,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1100
      * @tc.desc   Verify the properties of the SystemDefinedForm type
@@ -601,7 +590,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1200
      * @tc.desc   Verify the properties of the SystemDefinedAppItem type
@@ -659,7 +647,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1300
      * @tc.desc   Verify the properties of the ApplicationDefinedRecord type
@@ -699,7 +686,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1400
      * @tc.desc   Verify the properties of the OPENHARMONY_PIXEL_MAP type
@@ -750,7 +736,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1500
      * @tc.desc   Verify the properties of the OPENHARMONY_WANT type
@@ -791,7 +776,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1600
      * @tc.desc   setUnifiedDataSync and getUnifiedData
@@ -841,7 +825,6 @@ export default function PasteboartdCopyJsAPITest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1700
      * @tc.desc   setUnifiedData and getUnifiedDataSync
@@ -890,7 +873,6 @@ export default function PasteboartdCopyJsAPITest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800
      * @tc.number SUB_Pasteboard_Local_SDK_Copy_JsApiTest_1800
      * @tc.desc   setUnifiedDataSync and getUnifiedDataSync

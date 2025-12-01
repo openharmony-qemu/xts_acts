@@ -53,12 +53,14 @@ export default function NavigationMode01Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationMode01Jsunit_0100
-    * @tc.name  : NavigationMode01Jsunit_0100
-    * @tc.desc  : Navigation: The width of the parent component of Navigation is less than 600 vp. The width of the parent component of Navigation is dynamically changed to be greater than or equal to 600 vp.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationMode01Jsunit_0100
+     * @tc.number NavigationMode01Jsunit_0100
+     * @tc.desc   Navigation: The width of the parent component of Navigation is less than 600 vp. The width of the parent component of Navigation is dynamically changed to be greater than or equal to 600 vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode01Jsunit_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationMode01Jsunit_0100 START')
       await CommonFunc.sleep(1000);

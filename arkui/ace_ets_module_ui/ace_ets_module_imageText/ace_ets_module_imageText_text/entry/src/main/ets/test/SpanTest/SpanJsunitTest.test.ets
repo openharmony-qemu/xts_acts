@@ -57,9 +57,12 @@ export default function SpanJsunitTest() {
       console.info("SpanJsunit after each called");
     });
     /**
+     * @tc.name   testGetSpanAttr010
      * @tc.number SUB_ACE_BASIC_ETS_API_1080
-     * @tc.name testGetSpanAttr010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSpanAttr010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetSpanAttr1 START');
@@ -81,9 +84,12 @@ export default function SpanJsunitTest() {
     });
 
     /**
+     * @tc.name   testGetSpanAttr020
      * @tc.number SUB_ACE_BASIC_ETS_API_1090
-     * @tc.name testGetSpanAttr020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSpanAttr020', Level.LEVEL1, async (done: Function) => {
       console.info('testGetSpanAttr2 START');
@@ -99,9 +105,12 @@ export default function SpanJsunitTest() {
     });
 
     /**
+     * @tc.name   testGetSpanAttr030
      * @tc.number SUB_ACE_BASIC_ETS_API_1100
-     * @tc.name testGetSpanAttr030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSpanAttr030', Level.LEVEL1, async (done: Function) => {
       console.info('testGetSpanAttr3 START');

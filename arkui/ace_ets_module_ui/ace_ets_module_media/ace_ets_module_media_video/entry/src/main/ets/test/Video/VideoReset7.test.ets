@@ -47,13 +47,13 @@ export default function VideoReset7() {
       console.info("VideoReset7 after each called");
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_VideoReset7_0100
-     * @tc.name: VideoReset7_0100
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 2
-     * @tc.type : Video
-     * @tc.size : VideoTest
+    /**
+     * @tc.name   VideoReset7_0100
+     * @tc.number SUB_ARKUI_API_VideoReset7_0100
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VideoReset7_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[VideoReset7_0100] START');

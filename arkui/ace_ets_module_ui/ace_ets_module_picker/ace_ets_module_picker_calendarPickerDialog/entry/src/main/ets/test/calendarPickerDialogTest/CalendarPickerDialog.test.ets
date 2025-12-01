@@ -45,13 +45,13 @@ export default function CalendarPickerDialogTest() {
       console.info("CalendarPickerDialog after each called");
     });
 
-    /*
+    /**
+     * @tc.name   CalendarPickerDialog_001
      * @tc.number CalendarPickerDialog_001
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('CalendarPickerDialog_001', Level.LEVEL3, async (done: Function) => {
       console.info('[CalendarPickerDialog_001] START');

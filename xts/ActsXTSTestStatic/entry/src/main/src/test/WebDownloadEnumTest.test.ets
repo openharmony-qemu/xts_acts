@@ -51,7 +51,6 @@ export default function webDownloadEnumTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic001
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0100
      * @tc.desc   test the value of WebDownloadErrorCode.ERROR_UNKNOWN is 0
@@ -72,7 +71,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic002
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0200
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_FAILED is 1
@@ -93,7 +91,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic003
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0300
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_ACCESS_DENIED is 2
@@ -114,7 +111,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic004
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0400
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_NO_SPACE is 3
@@ -135,7 +131,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic005
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0500
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_NAME_TOO_LONG is 5
@@ -156,7 +151,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic006
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0600
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_TOO_LARGE is 6
@@ -177,7 +171,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic007
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0700
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_TRANSIENT_ERROR is 10
@@ -198,7 +191,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic008
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0800
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_BLOCKED is 11
@@ -219,7 +211,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic009
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0900
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_TOO_SHORT is 13
@@ -240,7 +231,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic010
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1000
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_HASH_MISMATCH is 14
@@ -261,7 +251,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic011
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1100
      * @tc.desc   test the value of WebDownloadErrorCode.FILE_SAME_AS_SOURCE is 15
@@ -282,7 +271,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic012
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1200
      * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_FAILED is 20
@@ -303,7 +291,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic013
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1300
      * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_TIMEOUT is 21
@@ -324,7 +311,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic014
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1400
      * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_DISCONNECTED is 22
@@ -345,7 +331,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic015
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1500
      * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_SERVER_DOWN is 23
@@ -366,7 +351,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic016
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1600
      * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_INVALID_REQUEST is 24
@@ -387,7 +371,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic017
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1700
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_FAILED is 30
@@ -408,7 +391,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic018
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1800
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_NO_RANGE is 31
@@ -429,7 +411,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic019
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1900
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_BAD_CONTENT is 33
@@ -450,7 +431,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic020
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2000
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_UNAUTHORIZED is 34
@@ -471,7 +451,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic021
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2100
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_CERT_PROBLEM is 35
@@ -492,7 +471,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic022
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2200
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_FORBIDDEN is 36
@@ -513,7 +491,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic023
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2300
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_UNREACHABLE is 37
@@ -534,7 +511,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic024
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2400
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH is 38
@@ -555,7 +531,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic025
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2500
      * @tc.desc   test the value of WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT is 39
@@ -576,7 +551,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic026
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2600
      * @tc.desc   test the value of WebDownloadErrorCode.USER_CANCELED is 40
@@ -597,7 +571,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic027
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2700
      * @tc.desc   test the value of WebDownloadErrorCode.USER_SHUTDOWN is 41
@@ -618,7 +591,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic028
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2800
      * @tc.desc   test the value of WebDownloadErrorCode.CRASH is 50
@@ -639,7 +611,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic029
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2900
      * @tc.desc   test the value of WebDownloadState.IN_PROGRESS is 0
@@ -660,7 +631,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic030
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3000
      * @tc.desc   test the value of WebDownloadState.COMPLETED is 1
@@ -681,7 +651,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic031
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3100
      * @tc.desc   test the value of WebDownloadState.CANCELED is 2
@@ -702,7 +671,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic032
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3200
      * @tc.desc   test the value of WebDownloadState.INTERRUPTED is 3
@@ -723,7 +691,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic033
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3300
      * @tc.desc   test the value of WebDownloadState.PENDING is 4
@@ -744,7 +711,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic034
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3400
      * @tc.desc   test the value of WebDownloadState.PAUSED is 5
@@ -765,7 +731,6 @@ export default function webDownloadEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testWebDownloadEnumStatic035
      * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3500
      * @tc.desc   test the value of WebDownloadState.UNKNOWN is 6
@@ -785,7 +750,6 @@ export default function webDownloadEnumTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   emitonSwitchNextPage
      * @tc.number SUB_WEB_EMITONSWITCHNEXTPAGE_0100
      * @tc.desc   test emitonSwitchNextPage

@@ -56,14 +56,14 @@ export default function onGetIrregular7Jsunit() {
       done();
     });
 
-    /* *
-      * @tc.number: onGetIrregular7Jsunit_0001
-      * @tc.name  : onGetIrregular7Jsunit_0001
-      * @tc.desc  : onGetIrregular[1,2], rowsTemplate layout case supports column 1, row by row layout
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   onGetIrregular7Jsunit_0001
+     * @tc.number onGetIrregular7Jsunit_0001
+     * @tc.desc   onGetIrregular[1,2], rowsTemplate layout case supports column 1, row by row layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregular7Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[onGetIrregular7Jsunit_0001] START');
       await CommonFunc.sleep(1000);

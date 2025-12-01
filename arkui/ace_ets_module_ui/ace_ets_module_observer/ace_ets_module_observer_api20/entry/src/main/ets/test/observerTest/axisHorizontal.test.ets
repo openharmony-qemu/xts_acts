@@ -43,12 +43,12 @@ export default function axisHorizontal() {
     });
 
     /**
-     * @tc.number    axisHorizontal_001
-     * @tc.name      axisHorizontal_0100
-     * @tc.desc      ScrollEvent info axis.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   axisHorizontal_0100
+     * @tc.number axisHorizontal_001
+     * @tc.desc   ScrollEvent info axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('axisHorizontal_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[axisHorizontal_0100] START');

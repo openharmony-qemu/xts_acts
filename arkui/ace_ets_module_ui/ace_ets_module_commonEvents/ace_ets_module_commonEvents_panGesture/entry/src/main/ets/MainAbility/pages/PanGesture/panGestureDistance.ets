@@ -60,7 +60,7 @@ struct distance {
         Text("distance1:" + this.getDis1).key('distance1')
         Text("map:" + this.getmap).key('map')
         Text("map:" + this.getmap).key('modifierMap')
-      }
+      }.margin({ top: '10%' })
 
       Row()
         .id('getDistance')

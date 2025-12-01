@@ -27,12 +27,12 @@ export default function sendfileNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE_0100
-     * @tc.name       : testMuslSendfileSendfile001
-     * @tc.desc       : test sendfile
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslSendfileSendfile001
+     * @tc.number SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE_0100
+     * @tc.desc   test sendfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSendfileSendfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -55,12 +55,12 @@ export default function sendfileNdkTest() {
     });
 
       /**
-       * @tc.number     : SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE_0200
-       * @tc.name       : testMuslSendfileSendfile002
-       * @tc.desc       : test sendfile
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
+       * @tc.name   testMuslSendfileSendfile002
+       * @tc.number SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE_0200
+       * @tc.desc   test sendfile
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testMuslSendfileSendfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let result:number = sendfile.sendfile(0);
@@ -69,12 +69,12 @@ export default function sendfileNdkTest() {
       });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE64_0100
-     * @tc.name       : testMuslSendfileSendfile64001
-     * @tc.desc       : test sendfile64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslSendfileSendfile64001
+     * @tc.number SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE64_0100
+     * @tc.desc   test sendfile64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSendfileSendfile64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = sendfile.sendfile64(1);
@@ -83,12 +83,12 @@ export default function sendfileNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE64_0200
-     * @tc.name       : testMuslSendfileSendfile64002
-     * @tc.desc       : test sendfile64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslSendfileSendfile64002
+     * @tc.number SUB_THIRDPARTY_MUSL_SENDFILE_SENDFILE64_0200
+     * @tc.desc   test sendfile64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSendfileSendfile64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = sendfile.sendfile64(0);

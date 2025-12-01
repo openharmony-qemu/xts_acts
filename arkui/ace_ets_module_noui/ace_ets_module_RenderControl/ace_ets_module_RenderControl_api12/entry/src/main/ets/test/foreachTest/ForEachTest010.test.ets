@@ -46,12 +46,12 @@ export default function ForEachTest010() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TS_COMPONENT_FOREACH_010
-     * @tc.name      ForEachTest010_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ForEachTest010_001
+     * @tc.number SUB_ACE_TS_COMPONENT_FOREACH_010
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ForEachTest010_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ForEachTest010_001] START');
@@ -75,12 +75,12 @@ export default function ForEachTest010() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_TS_COMPONENT_FOREACH_013
-     * @tc.name      ForEachTest010_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ForEachTest010_002
+     * @tc.number SUB_ACE_TS_COMPONENT_FOREACH_013
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ForEachTest010_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ForEachTest010_002] START');

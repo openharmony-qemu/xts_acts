@@ -26,37 +26,37 @@ export default function textAreaShowKeyboardOnFocusTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SHOW_KEYBOARD_ON_FOCUS_0001
-     * @tc.name: testTextAreaShowKeyboardOnFocus001
-     * @tc.desc: testing showkeyboardonfocus for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaShowKeyboardOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SHOW_KEYBOARD_ON_FOCUS_0001
+     * @tc.desc   testing showkeyboardonfocus for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaShowKeyboardOnFocus001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaShowKeyboardOnFocus001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SHOW_KEYBOARD_ON_FOCUS_0002
-     * @tc.name: testTextAreaShowKeyboardOnFocus002
-     * @tc.desc: testing showkeyboardonfocus for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaShowKeyboardOnFocus002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SHOW_KEYBOARD_ON_FOCUS_0002
+     * @tc.desc   testing showkeyboardonfocus for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaShowKeyboardOnFocus002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaShowKeyboardOnFocus002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_SHOW_KEYBOARD_ON_FOCUS_0003
-     * @tc.name: testTextAreaShowKeyboardOnFocus003
-     * @tc.desc: testing showkeyboardonfocus for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaShowKeyboardOnFocus003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_SHOW_KEYBOARD_ON_FOCUS_0003
+     * @tc.desc   testing showkeyboardonfocus for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaShowKeyboardOnFocus003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaShowKeyboardOnFocus003()).assertEqual(0)

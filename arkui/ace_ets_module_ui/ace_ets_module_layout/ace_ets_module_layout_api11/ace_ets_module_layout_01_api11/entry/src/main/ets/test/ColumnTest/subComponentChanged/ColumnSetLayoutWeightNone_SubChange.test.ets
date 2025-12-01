@@ -45,9 +45,12 @@ export default function ColumnSetLayoutWeightNone_SubChange() {
     });
 
     /**
-     * @tc.number    SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1600
-     * @tc.name      testColumnSetLayoutWeightWithRateThreeTwoZero
-     * @tc.desc      Subcomponents set layout weight(3-2-0) attribute.
+     * @tc.name   testColumnSetLayoutWeightWithRateThreeTwoZero
+     * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1600
+     * @tc.desc   Subcomponents set layout weight(3-2-0) attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetLayoutWeightWithRateThreeTwoZero',  Level.LEVEL0, async () => {
       console.info('new testColumnSetLayoutWeightWithRateThreeTwoZero START');

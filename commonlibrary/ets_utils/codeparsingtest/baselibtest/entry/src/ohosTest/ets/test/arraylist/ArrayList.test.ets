@@ -43,12 +43,12 @@ export default function ArrayListTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_LENGTH_0100
-     * @tc.name      : testArrayListLength0001
-     * @tc.desc      : Testing ArrayList length is ok
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArrayListLength0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_LENGTH_0100
+     * @tc.desc   Testing ArrayList length is ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayListLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testArrayListLength0001';
@@ -62,12 +62,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONSTRUCTOR_0100
-     * @tc.name      : testArrayListConstructor0001
-     * @tc.desc      : Testing ArrayList constructor support dataType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArrayListConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONSTRUCTOR_0100
+     * @tc.desc   Testing ArrayList constructor support dataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayListConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testArrayListConstructor0001';
@@ -83,12 +83,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0100
-     * @tc.name      : testArrayListAdd0001
-     * @tc.desc      : Testing ArrayList Add different dataType data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArrayListAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0100
+     * @tc.desc   Testing ArrayList Add different dataType data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testArrayListAdd0001';
@@ -117,12 +117,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0200
-     * @tc.name      : testArrayListAdd0002
-     * @tc.desc      : Testing ArrayList add special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArrayListAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0200
+     * @tc.desc   Testing ArrayList add special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayListAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testArrayListAdd0002';
@@ -143,12 +143,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0100
-     * @tc.name      : testArrayListInsert0001
-     * @tc.desc      : Testing ArrayList insert data in start and end
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArrayListInsert0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0100
+     * @tc.desc   Testing ArrayList insert data in start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayListInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testArrayListInsert0001';
@@ -170,12 +170,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0200
-     * @tc.name      : testArrayListInsert0002
-     * @tc.desc      : Testing ArrayList insert special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArrayListInsert0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0200
+     * @tc.desc   Testing ArrayList insert special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArrayListInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testArrayListInsert0002';
@@ -200,12 +200,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_HAS_0100
-     * @tc.name      : testArrayListHas0001
-     * @tc.desc      : Testing ArrayList check has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_HAS_0100
+     * @tc.desc   Testing ArrayList check has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListHas0001';
@@ -272,12 +272,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETINDEXOF_0100
-     * @tc.name      : testArrayListGetIndexOf0001
-     * @tc.desc      : Testing ArrayList getIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETINDEXOF_0100
+     * @tc.desc   Testing ArrayList getIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListGetIndexOf0001';
@@ -319,12 +319,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETLASTINDEXOF_0100
-     * @tc.name      : testArrayListGetLastIndexOf0001
-     * @tc.desc      : Testing ArrayList getLastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETLASTINDEXOF_0100
+     * @tc.desc   Testing ArrayList getLastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListGetLastIndexOf0001';
@@ -366,12 +366,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0100
-     * @tc.name      : testArrayListRemoveByIndexOf0001
-     * @tc.desc      : Testing ArrayList removeByIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0100
+     * @tc.desc   Testing ArrayList removeByIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListRemoveByIndexOf0001';
@@ -410,12 +410,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0200
-     * @tc.name      : testArrayListRemoveByIndexOf0002
-     * @tc.desc      : Testing ArrayList removeByIndex -2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0200
+     * @tc.desc   Testing ArrayList removeByIndex -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testArrayListRemoveByIndexOf0002"
@@ -448,12 +448,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0300
-     * @tc.name      : testArrayListRemoveByIndexOf0003
-     * @tc.desc      : Testing ArrayList removeByIndex index > arrayList.length -1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0300
+     * @tc.desc   Testing ArrayList removeByIndex index > arrayList.length -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListRemoveByIndexOf0003'
@@ -485,12 +485,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0100
-     * @tc.name      : testArrayListRemove0001
-     * @tc.desc      : Testing ArrayList remove same data and check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0100
+     * @tc.desc   Testing ArrayList remove same data and check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListRemove0001';
@@ -541,12 +541,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0200
-     * @tc.name      : testArrayListRemove0002
-     * @tc.desc      : Testing ArrayList removeByIndex same data and check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0200
+     * @tc.desc   Testing ArrayList removeByIndex same data and check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListRemove0002';
@@ -597,12 +597,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0100
-     * @tc.name      : testArrayListRemoveByRange0001
-     * @tc.desc      : Testing ArrayList removeByRange fromIndex == toIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByRange0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0100
+     * @tc.desc   Testing ArrayList removeByRange fromIndex == toIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByRange0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListRemoveByRange0001';
@@ -634,12 +634,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0200
-     * @tc.name      : testArrayListRemoveByRange0002
-     * @tc.desc      : Testing ArrayList removeByRange toIndex is Math.floor(arrayList.length)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByRange0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0200
+     * @tc.desc   Testing ArrayList removeByRange toIndex is Math.floor(arrayList.length)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByRange0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListRemoveByRange0002';
@@ -672,12 +672,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0100
-     * @tc.name      : testArrayListReplaceAllElement0001
-     * @tc.desc      : Testing ArrayList replaceAllElement add same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElement0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0100
+     * @tc.desc   Testing ArrayList replaceAllElement add same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListReplaceAllElement0001';
@@ -702,12 +702,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0200
-     * @tc.name      : testArrayListReplaceAllElement0002
-     * @tc.desc      : Testing ArrayList replaceAllElement insert new string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElement0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0200
+     * @tc.desc   Testing ArrayList replaceAllElement insert new string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListReplaceAllElement0002';
@@ -747,12 +747,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
-     * @tc.name      : testArrayListForEach0001
-     * @tc.desc      : Testing ArrayList forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
+     * @tc.desc   Testing ArrayList forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListForEach0001';
@@ -785,12 +785,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0100
-     * @tc.name      : testArrayListSort0001
-     * @tc.desc      : Testing ArrayList sort by Ascending Order
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0100
+     * @tc.desc   Testing ArrayList sort by Ascending Order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSort0001';
@@ -814,12 +814,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0200
-     * @tc.name      : testArrayListSort0002
-     * @tc.desc      : Testing ArrayList sort by Descending Order
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0200
+     * @tc.desc   Testing ArrayList sort by Descending Order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSort0002';
@@ -843,12 +843,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0300
-     * @tc.name      : testArrayListSort0003
-     * @tc.desc      : Testing ArrayList sort insert string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0300
+     * @tc.desc   Testing ArrayList sort insert string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSort0003';
@@ -874,12 +874,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0400
-     * @tc.name      : testArrayListSort0004
-     * @tc.desc      : Testing ArrayList sort insert 'A'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0400
+     * @tc.desc   Testing ArrayList sort insert 'A'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSort0004';
@@ -905,12 +905,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SUBARRAYLIST_0100
-     * @tc.name      : testArrayListSubArrayList0001
-     * @tc.desc      : Testing ArrayList subArrayList
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSubArrayList0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SUBARRAYLIST_0100
+     * @tc.desc   Testing ArrayList subArrayList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSubArrayList0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSubArrayList0001';
@@ -935,12 +935,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLEAR_0100
-     * @tc.name      : testArrayListClear0001
-     * @tc.desc      : Testing ArrayList insert->add->subArrayList->clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLEAR_0100
+     * @tc.desc   Testing ArrayList insert->add->subArrayList->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListClear0001';
@@ -959,12 +959,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0100
-     * @tc.name      : testArrayListClone0001
-     * @tc.desc      : Testing ArrayList insert->add->subArrayList->clone
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListClone0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0100
+     * @tc.desc   Testing ArrayList insert->add->subArrayList->clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListClone0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListClone0001';
@@ -983,12 +983,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0200
-     * @tc.name      : testArrayListClone0002
-     * @tc.desc      : Testing ArrayList insert->add->subArrayList->clear->clone
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListClone0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0200
+     * @tc.desc   Testing ArrayList insert->add->subArrayList->clear->clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListClone0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListClone0002';
@@ -1008,12 +1008,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0100
-     * @tc.name      : testArrayListGetCapacity0001
-     * @tc.desc      : Testing ArrayList insert->add->remove->subArrayList->getCapacity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetCapacity0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0100
+     * @tc.desc   Testing ArrayList insert->add->remove->subArrayList->getCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetCapacity0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListGetCapacity0001';
@@ -1035,12 +1035,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0200
-     * @tc.name      : testArrayListGetCapacity0002
-     * @tc.desc      : Testing ArrayList insert->add->remove->subArrayList->clear->getCapacity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetCapacity0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0200
+     * @tc.desc   Testing ArrayList insert->add->remove->subArrayList->clear->getCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetCapacity0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListGetCapacity0002';
@@ -1063,12 +1063,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0100
-     * @tc.name      : testArrayListConvertToArray0001
-     * @tc.desc      : Testing ArrayList convertToArray filter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListConvertToArray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0100
+     * @tc.desc   Testing ArrayList convertToArray filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListConvertToArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListConvertToArray0001';
@@ -1097,12 +1097,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0200
-     * @tc.name      : testArrayListConvertToArray0002
-     * @tc.desc      : Testing ArrayList convertToArray fill
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListConvertToArray0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0200
+     * @tc.desc   Testing ArrayList convertToArray fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListConvertToArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListConvertToArray0002';
@@ -1141,12 +1141,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0100
-     * @tc.name      : testArrayListIsEmpty0001
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListIsEmpty0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0100
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListIsEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListIsEmpty0001';
@@ -1160,12 +1160,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0200
-     * @tc.name      : testArrayListIsEmpty0002
-     * @tc.desc      : Testing ArrayList isEmpty has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListIsEmpty0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0200
+     * @tc.desc   Testing ArrayList isEmpty has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListIsEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListIsEmpty0002';
@@ -1196,12 +1196,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0300
-     * @tc.name      : testArrayListIsEmpty0003
-     * @tc.desc      : Testing ArrayList isEmpty clear->isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListIsEmpty0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0300
+     * @tc.desc   Testing ArrayList isEmpty clear->isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListIsEmpty0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListIsEmpty0003';
@@ -1232,12 +1232,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_ITERATOR_0100
-     * @tc.name      : testArrayListSymbolIterator0001
-     * @tc.desc      : Testing ArrayList Symbol.iterator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_ITERATOR_0100
+     * @tc.desc   Testing ArrayList Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSymbolIterator0001';
@@ -1272,12 +1272,12 @@ export default function ArrayListTest() {
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0100
-     * @tc.name      : testArrayListReplaceAllElements0001
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0100
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListReplaceAllElements0001';
@@ -1298,12 +1298,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0200
-     * @tc.name      : testArrayListReplaceAllElements0002
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0200
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListReplaceAllElements0002';
@@ -1325,12 +1325,12 @@ export default function ArrayListTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
-     * @tc.name      : testArrayListReplaceAllElements0003
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListReplaceAllElements0003';
@@ -1353,12 +1353,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
-     * @tc.name      : testArrayListReplaceAllElements0003
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListReplaceAllElements0004';
@@ -1385,12 +1385,12 @@ export default function ArrayListTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0200
-     * @tc.name      : testArrayListForEach0002
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0200
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListForEach0002';
@@ -1415,12 +1415,12 @@ export default function ArrayListTest() {
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
-     * @tc.name      : testArrayListForEach0003
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListForEach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListForEach0003';
@@ -1447,12 +1447,12 @@ export default function ArrayListTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_0200
-     * @tc.name      : testArrayListSymbol0002
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSymbol0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_0200
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSymbol0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testArrayListSymbol0002';

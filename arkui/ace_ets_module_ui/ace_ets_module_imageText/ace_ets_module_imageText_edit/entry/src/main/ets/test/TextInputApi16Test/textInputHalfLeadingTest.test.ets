@@ -45,14 +45,14 @@ export default function textInputHalfLeadingTest() {
       console.info("textInputHalfLeadingTest after each called");
     });
 
-    /*
-    * @tc.number       textInputHalfLeadingTest0001
-    * @tc.name         textInputHalfLeadingTest0001
-    * @tc.desc         Test textInputHalfLeadingTest Normal value :true
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textInputHalfLeadingTest0001
+     * @tc.number textInputHalfLeadingTest0001
+     * @tc.desc   Test textInputHalfLeadingTest Normal value :true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputHalfLeadingTest0001',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('textInputHalfLeadingTest textInputHalfLeadingTest0001 START');
@@ -64,13 +64,13 @@ export default function textInputHalfLeadingTest() {
       console.info("[textInputHalfLeadingTest0001] end");
     });
 	
- 	 /*
-    * @tc.number       textInputHalfLeadingTest0002
-    * @tc.name         textInputHalfLeadingTest0002
-    * @tc.desc         Test textInputHalfLeadingTest Normal value :false
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textInputHalfLeadingTest0002
+     * @tc.number textInputHalfLeadingTest0002
+     * @tc.desc   Test textInputHalfLeadingTest Normal value :false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputHalfLeadingTest0002',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -83,14 +83,14 @@ export default function textInputHalfLeadingTest() {
         console.info("[textInputHalfLeadingTest0002] end");
     });
 	
-  	/*
-    * @tc.number       textInputHalfLeadingTest0003
-    * @tc.name         textInputHalfLeadingTest0003
-    * @tc.desc         Test textInputHalfLeadingTest abnormal value :undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textInputHalfLeadingTest0003
+     * @tc.number textInputHalfLeadingTest0003
+     * @tc.desc   Test textInputHalfLeadingTest abnormal value :undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputHalfLeadingTest0003',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('textInputHalfLeadingTest textInputHalfLeadingTest0003 START');
@@ -102,14 +102,14 @@ export default function textInputHalfLeadingTest() {
       console.info("[textInputHalfLeadingTest0003] end");
     });
 	
-   /*
-    * @tc.number       textInputHalfLeadingTest0004
-    * @tc.name         textInputHalfLeadingTest0004
-    * @tc.desc         Test textInputHalfLeadingTest abnormal value :null
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textInputHalfLeadingTest0004
+     * @tc.number textInputHalfLeadingTest0004
+     * @tc.desc   Test textInputHalfLeadingTest abnormal value :null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputHalfLeadingTest0004',  Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('textInputHalfLeadingTest textInputHalfLeadingTest0004 START');

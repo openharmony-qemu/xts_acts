@@ -41,13 +41,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0100
      * @tc.number ImageObjectRepeatTest_0100
-     * @tc.name ImageObjectRepeatTest_0100
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0100 START');
@@ -70,13 +70,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0200
      * @tc.number ImageObjectRepeatTest_0200
-     * @tc.name ImageObjectRepeatTest_0200
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0200 START');
@@ -120,13 +120,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0300
      * @tc.number ImageObjectRepeatTest_0300
-     * @tc.name ImageObjectRepeatTest_0300
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0300 START');
@@ -143,13 +143,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0400
      * @tc.number ImageObjectRepeatTest_0400
-     * @tc.name ImageObjectRepeatTest_0400
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0400 START');
@@ -211,13 +211,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0500
      * @tc.number ImageObjectRepeatTest_0500
-     * @tc.name ImageObjectRepeatTest_0500
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0500 START');
@@ -234,13 +234,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0600
      * @tc.number ImageObjectRepeatTest_0600
-     * @tc.name ImageObjectRepeatTest_0600
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0600 START');
@@ -284,13 +284,13 @@ export default function ImageObjectRepeatTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageObjectRepeatTest_0700
      * @tc.number ImageObjectRepeatTest_0700
-     * @tc.name ImageObjectRepeatTest_0700
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageObjectRepeatTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ImageObjectRepeatTest_0700 START');

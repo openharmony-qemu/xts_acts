@@ -45,13 +45,13 @@ export default function DatePickerDialogButtonStyleTest() {
       console.info('DatePickerDialogButtonStyleTest after each called');
     });
     
-    /*
-     * @tc.number: DatePickerDialogButtonStyleTest_001
-     * @tc.name  : testBack
-     * @tc.desc  : Return specified page by index value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   DatePickerDialogButtonStyleTest_001
+     * @tc.number DatePickerDialogButtonStyleTest_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('DatePickerDialogButtonStyleTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[DatePickerDialogButtonStyleTest_001] START');

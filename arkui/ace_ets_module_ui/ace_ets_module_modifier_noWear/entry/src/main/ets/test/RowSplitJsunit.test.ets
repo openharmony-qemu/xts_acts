@@ -40,12 +40,12 @@ export default function rowSplitJsunit() {
     });
 
     /**
+     * @tc.name   rowSplitTest_0001
      * @tc.number rowSplitTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set resizeable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set resizeable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rowSplitTest_0001', Level.LEVEL0, async (done: Function) => {
       let strJsonNew = getInspectorByKey('rowSplit');
@@ -57,12 +57,12 @@ export default function rowSplitJsunit() {
     });
 
     /**
+     * @tc.name   rowSplitTest_0002
      * @tc.number rowSplitTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Change resizeable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change resizeable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rowSplitTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('rowSplitTest_0002 START');

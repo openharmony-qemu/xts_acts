@@ -43,6 +43,14 @@ export default function textPickerJsunit() {
       console.info("textPickerDialog after each called");
     })
 
+    /**
+     * @tc.name   testTextPickerDialog0100
+     * @tc.number testTextPickerDialog0100
+     * @tc.desc   testTextPickerDialog0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTextPickerDialog0100', Level.LEVEL2, async (done: Function) => {
       console.info('[testTextPickerDialog0100] START');
       await Utils.sleep(1000);
@@ -53,6 +61,14 @@ export default function textPickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testTextPickerDialog0200
+     * @tc.number testTextPickerDialog0200
+     * @tc.desc   testTextPickerDialog0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTextPickerDialog0200', Level.LEVEL2, async (done: Function) => {
       console.info('[testTextPickerDialog0200] START');
       await Utils.sleep(1000);

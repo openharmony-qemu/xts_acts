@@ -45,12 +45,12 @@ export default function GridItemJsunit() {
       done();
     });
     /**
-     * @tc.number     GridItemJsunit_0100
-     * @tc.name       Test GridItemJsunit_0100
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0100
+     * @tc.number GridItemJsunit_0100
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the GridItem component
@@ -74,12 +74,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0200
-     * @tc.name       Test GridItemJsunit_0200
-     * @tc.desc       Test Modify GridItem attribute value
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0200
+     * @tc.number GridItemJsunit_0200
+     * @tc.desc   Test Modify GridItem attribute value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component GridItem
@@ -112,12 +112,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0300
-     * @tc.name       Test GridItemJsunit_0300
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0300
+     * @tc.number GridItemJsunit_0300
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component gridItem
@@ -154,12 +154,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0400
-     * @tc.name       Test GridItemJsunit_0400
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0400
+     * @tc.number GridItemJsunit_0400
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify the function of onSelect of GridItem component 
@@ -179,12 +179,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0500
-     * @tc.name       Test GridItemJsunit_0500
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0500
+     * @tc.number GridItemJsunit_0500
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       // Verify the columnsTemplate of Grid component
@@ -200,12 +200,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0600
-     * @tc.name       Test GridItemJsunit_0600
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0600
+     * @tc.number GridItemJsunit_0600
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // Verify the rowsTemplate of Grid component 
@@ -221,12 +221,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0700
-     * @tc.name       Test GridItemJsunit_0700
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0700
+     * @tc.number GridItemJsunit_0700
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Verify the columnsGap of Grid component 
@@ -243,12 +243,12 @@ export default function GridItemJsunit() {
     });
 
     /**
-     * @tc.number     GridItemJsunit_0800
-     * @tc.name       Test GridItemJsunit_0800
-     * @tc.desc       Test Get GridItem attribute
-     * @tc.level      Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridItemJsunit_0800
+     * @tc.number GridItemJsunit_0800
+     * @tc.desc   Test Get GridItem attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridItemJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Verify the rowsGap of Grid component 

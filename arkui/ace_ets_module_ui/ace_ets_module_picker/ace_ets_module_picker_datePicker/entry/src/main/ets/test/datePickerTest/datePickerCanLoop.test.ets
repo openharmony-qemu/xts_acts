@@ -43,12 +43,12 @@ export default function DatePickerCanLoopTest() {
     });
 
     /**
-     * @tc.number: DatePickerCanLoopTest_0100
-     * @tc.name  : DatePickerCanLoopTest_0100
-     * @tc.desc  : To test the canLoop true
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerCanLoopTest_0100
+     * @tc.number DatePickerCanLoopTest_0100
+     * @tc.desc   To test the canLoop true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerCanLoopTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerCanLoopTest_0100 START');
@@ -67,12 +67,12 @@ export default function DatePickerCanLoopTest() {
     });
 
     /**
-     * @tc.number: DatePickerCanLoopTest_0200
-     * @tc.name  : DatePickerCanLoopTest_0200
-     * @tc.desc  : To test the canLoop false
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerCanLoopTest_0200
+     * @tc.number DatePickerCanLoopTest_0200
+     * @tc.desc   To test the canLoop false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerCanLoopTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerCanLoopTest_0200 START');
@@ -91,12 +91,12 @@ export default function DatePickerCanLoopTest() {
     });
 
     /**
-     * @tc.number: DatePickerCanLoopTest_0300
-     * @tc.name  : DatePickerCanLoopTest_0300
-     * @tc.desc  : To test the canLoop null
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerCanLoopTest_0300
+     * @tc.number DatePickerCanLoopTest_0300
+     * @tc.desc   To test the canLoop null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerCanLoopTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerCanLoopTest_0300 START');
@@ -115,12 +115,12 @@ export default function DatePickerCanLoopTest() {
     });
 
     /**
-     * @tc.number: DatePickerCanLoopTest_0400
-     * @tc.name  : DatePickerCanLoopTest_0400
-     * @tc.desc  : To test the canLoop undefined
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   DatePickerCanLoopTest_0400
+     * @tc.number DatePickerCanLoopTest_0400
+     * @tc.desc   To test the canLoop undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerCanLoopTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('DatePickerCanLoopTest_0400 START');

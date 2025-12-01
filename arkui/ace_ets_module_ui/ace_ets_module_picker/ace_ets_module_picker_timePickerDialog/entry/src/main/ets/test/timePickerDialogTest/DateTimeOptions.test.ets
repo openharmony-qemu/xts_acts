@@ -42,11 +42,13 @@ export default function DateTimeOptionsTest() {
       done();
     });
 
-    /*
-     * @tc.number: DateTimeOptions_0100
-     * @tc.name  : DateTimeOptions_0100
-     * @tc.desc  : To test that the Provide decorator supports union types.
-     * @tc.level : Level 2
+    /**
+     * @tc.name   DateTimeOptions_0100
+     * @tc.number DateTimeOptions_0100
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DateTimeOptions_0100', Level.LEVEL2, async (done: Function) => {
       console.info('DateTimeOptions_0100 START');

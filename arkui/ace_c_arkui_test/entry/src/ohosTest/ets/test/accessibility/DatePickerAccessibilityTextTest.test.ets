@@ -26,26 +26,26 @@ export default function datePickerAccessibilityTextTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYTEXT_0100
-     * @tc.name       : testDatePickerAccessibilityText001
-     * @tc.desc       : testing accessibilityText for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerAccessibilityText001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYTEXT_0100
+     * @tc.desc   testing accessibilityText for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerAccessibilityText001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerAccessibilityText001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYTEXT_0200
-     * @tc.name       : testDatePickerAccessibilityText002
-     * @tc.desc       : testing accessibilityText for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerAccessibilityText002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ACCESSIBILITYTEXT_0200
+     * @tc.desc   testing accessibilityText for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerAccessibilityText002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerAccessibilityText002()).assertEqual(0)

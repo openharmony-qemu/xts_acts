@@ -45,12 +45,12 @@ export default function graphicImagePixelMap2() {
     })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0100
-     * @tc.name     graphicImagePixelMap2_static_0100
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0100
+     * @tc.number graphicImagePixelMap2_static_0100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -102,12 +102,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0200
-     * @tc.name     graphicImagePixelMap2_static_0200
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0200
+     * @tc.number graphicImagePixelMap2_static_0200
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -149,12 +149,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0300
-     * @tc.name     graphicImagePixelMap2_static_0300
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0300
+     * @tc.number graphicImagePixelMap2_static_0300
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -175,12 +175,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0400
-     * @tc.name     graphicImagePixelMap2_static_0400
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0400
+     * @tc.number graphicImagePixelMap2_static_0400
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -198,12 +198,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0500
-     * @tc.name     graphicImagePixelMap2_static_0500
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0500
+     * @tc.number graphicImagePixelMap2_static_0500
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -220,12 +220,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0600
-     * @tc.name     graphicImagePixelMap2_static_0600
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0600
+     * @tc.number graphicImagePixelMap2_static_0600
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -242,12 +242,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0700
-     * @tc.name     graphicImagePixelMap2_static_0700
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0700
+     * @tc.number graphicImagePixelMap2_static_0700
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -265,12 +265,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0800
-     * @tc.name     graphicImagePixelMap2_static_0800
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0800
+     * @tc.number graphicImagePixelMap2_static_0800
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -296,12 +296,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_0900
-     * @tc.name     graphicImagePixelMap2_static_0900
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_0900
+     * @tc.number graphicImagePixelMap2_static_0900
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -324,12 +324,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_1000
-     * @tc.name     graphicImagePixelMap2_static_1000
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_1000
+     * @tc.number graphicImagePixelMap2_static_1000
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_1100
-     * @tc.name     graphicImagePixelMap2_static_1100
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_1100
+     * @tc.number graphicImagePixelMap2_static_1100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -385,12 +385,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_1200
-     * @tc.name     graphicImagePixelMap2_static_1200
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_1200
+     * @tc.number graphicImagePixelMap2_static_1200
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -421,12 +421,12 @@ export default function graphicImagePixelMap2() {
       })
 
     /**
-     * @tc.number   graphicImagePixelMap2_static_1300
-     * @tc.name     graphicImagePixelMap2_static_1300
-     * @tc.desc     image API ArkTS1.2
-     * @tc.size     SmallTest
-     * @tc.type     Function
-     * @tc.level    Level0
+     * @tc.name   graphicImagePixelMap2_static_1300
+     * @tc.number graphicImagePixelMap2_static_1300
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicImagePixelMap2_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

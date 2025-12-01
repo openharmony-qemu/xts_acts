@@ -46,13 +46,13 @@ export default function SearchJsunitInfTest() {
       await CommonFunc.sleep(2000);
       console.info("SearchJsunitInfTest after each called");
     });
-    /*
-     * @tc.number       testSearch001
-     * @tc.name         testSearch001
-     * @tc.desc         acesearchOnCutEtsTest0001
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch001
+     * @tc.number testSearch001
+     * @tc.desc   acesearchOnCutEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch001', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch001] START');
@@ -63,13 +63,13 @@ export default function SearchJsunitInfTest() {
       expect(obj.$attrs.searchButton).assertEqual('10');
       done();
     });
-    /*
-     * @tc.number       testSearch002
-     * @tc.name         testSearch002
-     * @tc.desc         acesearchOnCutEtsTest0001
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch002
+     * @tc.number testSearch002
+     * @tc.desc   acesearchOnCutEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch002', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch002] START');
@@ -97,13 +97,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch003
-     * @tc.name   :testSearch003
-     * @tc.desc   :set max length 19, get backend max length property
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch003
+     * @tc.number testSearch003
+     * @tc.desc   set max length 19, get backend max length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch003', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch003] START');
@@ -115,13 +115,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch004
-     * @tc.name   :testSearch004
-     * @tc.desc   :set max length 0, get backend max length property
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch004
+     * @tc.number testSearch004
+     * @tc.desc   set max length 0, get backend max length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch004', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch004] START');
@@ -149,13 +149,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch005
-     * @tc.name   :testSearch005
-     * @tc.desc   :set max length 0, get backend max length property
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch005
+     * @tc.number testSearch005
+     * @tc.desc   set max length 0, get backend max length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch005', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch005] START');
@@ -183,13 +183,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch006
-     * @tc.name   :testSearch006
-     * @tc.desc   :set max length 1000000, get backend max length property
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch006
+     * @tc.number testSearch006
+     * @tc.desc   set max length 1000000, get backend max length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch006', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch006] START');
@@ -217,13 +217,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch007
-     * @tc.name   :testSearch007
-     * @tc.desc   :set max length illeggal value, get backend max length property
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch007
+     * @tc.number testSearch007
+     * @tc.desc   set max length illeggal value, get backend max length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch007', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch007] START');
@@ -251,13 +251,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch008
-     * @tc.name   :testSearch008
-     * @tc.desc   :set max length illeggal value, get backend max length property
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch008
+     * @tc.number testSearch008
+     * @tc.desc   set max length illeggal value, get backend max length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch008', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch008] START');
@@ -285,13 +285,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch009
-     * @tc.name   :testSearch009
-     * @tc.desc   :get default copy options
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch009
+     * @tc.number testSearch009
+     * @tc.desc   get default copy options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch009', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch009] START');
@@ -303,13 +303,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch0010
-     * @tc.name   :testSearch0010
-     * @tc.desc   :get default copy options
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch0010
+     * @tc.number testSearch0010
+     * @tc.desc   get default copy options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch0010', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch0010] START');
@@ -337,13 +337,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch0011
-     * @tc.name   :testSearch0011
-     * @tc.desc   :get CopyOptions.CROSS_DEVICE
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch0011
+     * @tc.number testSearch0011
+     * @tc.desc   get CopyOptions.CROSS_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch0011', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch0011] START');
@@ -371,13 +371,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch099
-     * @tc.name   :testSearch099
-     * @tc.desc   :expect caretOffset index 0 when text is null
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch099
+     * @tc.number testSearch099
+     * @tc.desc   expect caretOffset index 0 when text is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch099', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch099] START');
@@ -393,13 +393,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch100
-     * @tc.name   :testSearch100
-     * @tc.desc   :expect caretOffset index 9 when text length is 9
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch100
+     * @tc.number testSearch100
+     * @tc.desc   expect caretOffset index 9 when text length is 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch100', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch100] START');
@@ -431,13 +431,13 @@ export default function SearchJsunitInfTest() {
       done();
     });
 
-    /*
-     * @tc.number :testSearch101
-     * @tc.name   :testSearch101
-     * @tc.desc   :expect caretOffset index max length.
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testSearch101
+     * @tc.number testSearch101
+     * @tc.desc   expect caretOffset index max length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSearch101', Level.LEVEL0, async (done: Function) => {
       console.info('[testSearch101] START');

@@ -49,11 +49,14 @@ export default function webViewOnErrorReceive03Jsunit() {
             done()
         })
 
-        /*
-        *tc.number SUB_ACE_BASIC_ETS_API_ONERRORRECEIVE_0300
-        *tc.name testOnErrorReceive03
-        *tc.desc test api onErrorReceive  by load 'https://wrong.host.badssl.com/'
-        */
+        /**
+         * @tc.name   testOnErrorReceive03
+         * @tc.number SUB_ACE_BASIC_ETS_API_ONERRORRECEIVE_0300
+         * @tc.desc   test api onErrorReceive  by load 'https://wrong.host.badssl.com/'
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testOnErrorReceive03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
             let errorIfo = 'ERR_CERT_COMMON_NAME_INVALID';
             let errorCode = -200;

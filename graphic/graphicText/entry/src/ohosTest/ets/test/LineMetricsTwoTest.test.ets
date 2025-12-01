@@ -33,15 +33,15 @@ export default function LineMetricsTwoTest() {
       done();
     });
 
-    /**
-     * @tc.number    : SUB_BASIC_XTS_GRAPHICTEXT_API_0100
-     * @tc.name      : testLineMetricsTest_2
-     * @tc.desc      : api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
-     */
 
+    /**
+     * @tc.name   testLineMetricsTest_0100
+     * @tc.number testLineMetricsTest_0100
+     * @tc.desc   testLineMetricsTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLineMetricsTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let msg = "====testLineMetricsTest_2===="
       console.info('testLineMetricsTest_2 START');
@@ -87,12 +87,12 @@ export default function LineMetricsTwoTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_XTS_GRAPHICTEXT_API_0100
-     * @tc.name      : testLineMetricsTest_0100
-     * @tc.desc      : runMetrics and LineMetrics
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testLineMetricsTest_0100
+     * @tc.number SUB_BASIC_XTS_GRAPHICTEXT_API_0100
+     * @tc.desc   runMetrics and LineMetrics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineMetricsTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0100===="
@@ -129,12 +129,12 @@ export default function LineMetricsTwoTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_XTS_GRAPHICTEXT_API_0200
-     * @tc.name      : testLineMetricsTest_0200
-     * @tc.desc      : test maxCharWidth
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testLineMetricsTest_0200
+     * @tc.number SUB_BASIC_XTS_GRAPHICTEXT_API_0200
+     * @tc.desc   test maxCharWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineMetricsTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0200===="
@@ -151,12 +151,12 @@ export default function LineMetricsTwoTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_XTS_GRAPHICTEXT_API_0300
-     * @tc.name      : testLineMetricsTest_0300
-     * @tc.desc      : api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testLineMetricsTest_0300
+     * @tc.number SUB_BASIC_XTS_GRAPHICTEXT_API_0300
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineMetricsTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0300===="
@@ -175,12 +175,12 @@ export default function LineMetricsTwoTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_XTS_GRAPHICTEXT_API_0400
-     * @tc.name      : testLineMetricsTest_0400
-     * @tc.desc      : api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testLineMetricsTest_0400
+     * @tc.number SUB_BASIC_XTS_GRAPHICTEXT_API_0400
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineMetricsTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0400===="

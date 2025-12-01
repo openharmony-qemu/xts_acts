@@ -47,12 +47,12 @@ function financial1(x: number | string, y: number) {
 export default function NumberTest() {
   describe('numberTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0100
-     * @tc.name       : testNumberExpo0001
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNumberExpo0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0100
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberExpo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testNumberExpo0001";
@@ -65,12 +65,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0200
-     * @tc.name       : testNumberExpo0002
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNumberExpo0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0200
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberExpo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testNumberExpo0002";
@@ -83,12 +83,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0300
-     * @tc.name       : testNumberExpo0003
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNumberExpo0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0300
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberExpo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testNumberExpo0003";
@@ -101,12 +101,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0400
-     * @tc.name       : testNumberExpo0004
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNumberExpo0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0400
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberExpo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testNumberExpo0004";
@@ -119,12 +119,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0500
-     * @tc.name       : testNumberExpo0005
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNumberExpo0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0500
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNumberExpo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testNumberExpo0005";
@@ -137,12 +137,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0600
-     * @tc.name       : testNumberExpo0006
-     * @tc.desc       : Test the function of the Interface toExponential().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0600
+     * @tc.desc   Test the function of the Interface toExponential().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0006";
@@ -155,12 +155,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0700
-     * @tc.name       : testNumberExpo0007
-     * @tc.desc       : Test the function of the toExponential function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0700
+     * @tc.desc   Test the function of the toExponential function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0007";
@@ -174,12 +174,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0800
-     * @tc.name       : testNumberExpo0008
-     * @tc.desc       : Test the function of the toExponential function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0800
+     * @tc.desc   Test the function of the toExponential function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0008";
@@ -192,12 +192,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0900
-     * @tc.name       : testNumberExpo0009
-     * @tc.desc       : Test the function of the toExponential function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_0900
+     * @tc.desc   Test the function of the toExponential function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0009";
@@ -210,12 +210,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1000
-     * @tc.name       : testNumberExpo0010
-     * @tc.desc       : Test the function of the toExponential function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1000
+     * @tc.desc   Test the function of the toExponential function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0010";
@@ -228,12 +228,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1100
-     * @tc.name       : testNumberExpo0011
-     * @tc.desc       : Test the function of the toExponential function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1100
+     * @tc.desc   Test the function of the toExponential function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0011";
@@ -246,12 +246,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1200
-     * @tc.name       : testNumberExpo0012
-     * @tc.desc       : Test the function of the toExponential function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberExpo0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1200
+     * @tc.desc   Test the function of the toExponential function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberExpo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberExpo0012";
@@ -264,12 +264,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1300
-     * @tc.name       : testNumberFinancial0001
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1300
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0001";
@@ -283,12 +283,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1400
-     * @tc.name       : testNumberFinancial0002
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1400
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0002";
@@ -302,12 +302,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1500
-     * @tc.name       : testNumberFinancial0003
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1500
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0003";
@@ -321,12 +321,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1600
-     * @tc.name       : testNumberFinancial0004
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1600
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0004";
@@ -340,12 +340,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1700
-     * @tc.name       : testNumberFinancial0005
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1700
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0005";
@@ -359,12 +359,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1800
-     * @tc.name       : testNumberFinancial0006
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1800
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0006";
@@ -378,12 +378,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1900
-     * @tc.name       : testNumberFinancial0007
-     * @tc.desc       : Test the function of the  Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_1900
+     * @tc.desc   Test the function of the  Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0007";
@@ -397,12 +397,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2000
-     * @tc.name       : testNumberFinancial0008
-     * @tc.desc       : Test the function of the interfaceFinancial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2000
+     * @tc.desc   Test the function of the interfaceFinancial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0008";
@@ -415,12 +415,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2100
-     * @tc.name       : testNumberFinancial0009
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2100
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0009";
@@ -433,12 +433,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2200
-     * @tc.name       : testNumberFinancial0010
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2200
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0010";
@@ -451,12 +451,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2300
-     * @tc.name       : testNumberFinancial0011
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2300
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0011";
@@ -469,12 +469,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2400
-     * @tc.name       : testNumberFinancial0011
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2400
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberFinancial0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0012";
@@ -487,12 +487,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2500
-     * @tc.name       : testNumberFinancial0012
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2500
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNumberFinancial0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0013";
@@ -505,12 +505,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2600
-     * @tc.name       : testNumberFinancial0013
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2600
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNumberFinancial0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0014";
@@ -523,12 +523,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2700
-     * @tc.name       : testNumberFinancial0014
-     * @tc.desc       : Test the function of the Financial.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberFinancial0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2700
+     * @tc.desc   Test the function of the Financial.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNumberFinancial0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberFinancial0015";
@@ -541,12 +541,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2800
-     * @tc.name       : testNUMBER0001
-     * @tc.desc       : Test the function of the ToFixed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNUMBER0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2800
+     * @tc.desc   Test the function of the ToFixed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNUMBER0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNUMBER0001";
@@ -558,12 +558,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2900
-     * @tc.name       : testNUMBER0002
-     * @tc.desc       : Test the function of the ToFixed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNUMBER0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_2900
+     * @tc.desc   Test the function of the ToFixed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNUMBER0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNUMBER0002";
@@ -576,12 +576,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3000
-     * @tc.name       : testNUMBER0003
-     * @tc.desc       : Test the function of the ToFixed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNUMBER0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3000
+     * @tc.desc   Test the function of the ToFixed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNUMBER0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNUMBER0003";
@@ -593,12 +593,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3100
-     * @tc.name       : testNumberArabic0001
-     * @tc.desc       : Test the function of the eArabic.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberArabic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3100
+     * @tc.desc   Test the function of the eArabic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberArabic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberArabic0001'
@@ -612,12 +612,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3200
-     * @tc.name       : testNumberArabic0002
-     * @tc.desc       : Test the function of the Interface set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberArabic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3200
+     * @tc.desc   Test the function of the Interface set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberArabic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberArabic0002';
@@ -630,12 +630,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3300
-     * @tc.name       : testNumberArabic0003
-     * @tc.desc       : Test the function of the Interface set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberArabic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3300
+     * @tc.desc   Test the function of the Interface set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberArabic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberArabic0003';
@@ -647,12 +647,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3400
-     * @tc.name       : testNumberArabic0004
-     * @tc.desc       : Test the function of the Interface set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberArabic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3400
+     * @tc.desc   Test the function of the Interface set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberArabic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberArabic0004'
@@ -665,12 +665,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3500
-     * @tc.name       : testNumberToLocaleString0001
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3500
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToLocaleString0001';
@@ -683,12 +683,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3600
-     * @tc.name       : testNumberToLocaleString0002
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3600
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToLocaleString0002';
@@ -701,12 +701,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3700
-     * @tc.name       : testNumberToLocaleString0004
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3700
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToLocaleString0004';
@@ -719,12 +719,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3800
-     * @tc.name       : testNumberToLocaleString0005
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3800
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToLocaleString0005';
@@ -737,12 +737,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3900
-     * @tc.name       : testNumberToLocaleString0006
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_3900
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToLocaleString0006';
@@ -756,12 +756,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4000
-     * @tc.name       : testNumberToLocaleString0003
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4000
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToLocaleString0008";
@@ -775,12 +775,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4100
-     * @tc.name       : testNumberToLocaleString0004
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4100
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToLocaleString0009";
@@ -794,12 +794,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4200
-     * @tc.name       : testNumberToLocaleString0005
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4200
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToLocaleString0010";
@@ -813,12 +813,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4300
-     * @tc.name       : testNumberToLocaleString0006
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4300
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToLocaleString0011";
@@ -834,12 +834,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4400
-     * @tc.name       : testNumberToLocaleString0007
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4400
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToLocaleString0012";
@@ -855,12 +855,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4500
-     * @tc.name       : testNumberToLocaleString0008
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToLocaleString0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4500
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToLocaleString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToLocaleString0013";
@@ -876,12 +876,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4600
-     * @tc.name       : testNumbertoPrecision0001
-     * @tc.desc       : Test the function of the Interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumbertoPrecision0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4600
+     * @tc.desc   Test the function of the Interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumbertoPrecision0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumbertoPrecision0001';
@@ -896,12 +896,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4700
-     * @tc.name       : testNumbertoPrecision0002
-     * @tc.desc       : Test the function of the Interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumbertoPrecision0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4700
+     * @tc.desc   Test the function of the Interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumbertoPrecision0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumbertoPrecision0002';
@@ -916,12 +916,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4800
-     * @tc.name       : testNumbertoPrecision0003
-     * @tc.desc       : Test the function of the Interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumbertoPrecision0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4800
+     * @tc.desc   Test the function of the Interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumbertoPrecision0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumbertoPrecision0003';
@@ -936,12 +936,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4900
-     * @tc.name       : testNumbertoPrecision0004
-     * @tc.desc       : Test the function of the Interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumbertoPrecision0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4900
+     * @tc.desc   Test the function of the Interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumbertoPrecision0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumbertoPrecision0004';
@@ -956,12 +956,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5000
-     * @tc.name       : testNumbertoPrecision0005
-     * @tc.desc       : Test the function of the Interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumbertoPrecision0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5000
+     * @tc.desc   Test the function of the Interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumbertoPrecision0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumbertoPrecision0005';
@@ -976,12 +976,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5100
-     * @tc.name       : testNumbertoPrecision0006
-     * @tc.desc       : Test the function of the Interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumbertoPrecision0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5100
+     * @tc.desc   Test the function of the Interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumbertoPrecision0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumbertoPrecision0006';
@@ -996,12 +996,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5200
-     * @tc.name       : testNumberToPrecision0007
-     * @tc.desc       : Test the function of the interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToPrecision0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5200
+     * @tc.desc   Test the function of the interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToPrecision0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToPrecision0007';
@@ -1017,12 +1017,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5300
-     * @tc.name       : testNumberToPrecision0008
-     * @tc.desc       : Test the function of the interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToPrecision0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5300
+     * @tc.desc   Test the function of the interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToPrecision0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToPrecision0008';
@@ -1037,12 +1037,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5400
-     * @tc.name       : testNumberToPrecision0009
-     * @tc.desc       : Test the function of the interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToPrecision0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5400
+     * @tc.desc   Test the function of the interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToPrecision0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToPrecision0009';
@@ -1058,12 +1058,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5500
-     * @tc.name       : testNumberToPrecision0010
-     * @tc.desc       : Test the function of the interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToPrecision0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5500
+     * @tc.desc   Test the function of the interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToPrecision0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToPrecision0010';
@@ -1079,12 +1079,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5600
-     * @tc.name       : testNumberToPrecision0011
-     * @tc.desc       : Test the function of the interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToPrecision0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5600
+     * @tc.desc   Test the function of the interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToPrecision0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToPrecision0011';
@@ -1099,12 +1099,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5700
-     * @tc.name       : testNumberToPrecision0012
-     * @tc.desc       : Test the function of the interface toPrecision().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToPrecision0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5700
+     * @tc.desc   Test the function of the interface toPrecision().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToPrecision0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToPrecision0012';
@@ -1119,12 +1119,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5800
-     * @tc.name       : testNumberToString0001
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5800
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testNumberToString0001';
@@ -1142,12 +1142,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5900
-     * @tc.name       : testNumberToString0002
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_5900
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0002";
@@ -1166,12 +1166,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6000
-     * @tc.name       : testNumberToString0003
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6000
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0003";
@@ -1190,12 +1190,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6100
-     * @tc.name       : testNumberToString0004
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6100
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0004";
@@ -1214,12 +1214,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6200
-     * @tc.name       : testNumberToString0005
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6200
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0005";
@@ -1238,12 +1238,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6300
-     * @tc.name       : testNumberToString0006
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6300
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0006";
@@ -1262,12 +1262,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6400
-     * @tc.name       : testNumberToString0007
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6400
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0007";
@@ -1281,12 +1281,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6500
-     * @tc.name       : testNumberToString0008
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6500
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0008";
@@ -1300,12 +1300,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6600
-     * @tc.name       : testNumberToString0010
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6600
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0010";
@@ -1319,12 +1319,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6700
-     * @tc.name       : testNumberToString0011
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6700
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0011";
@@ -1337,12 +1337,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6800
-     * @tc.name       : testNumberToString0012
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6800
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0012";
@@ -1355,12 +1355,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6900
-     * @tc.name       : testNumberToString0013
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_6900
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0013";
@@ -1373,12 +1373,12 @@ export default function NumberTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_7000
-     * @tc.name       : testNumberToString0014
-     * @tc.desc       : Test the function of the interface toString().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNumberToString0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_7000
+     * @tc.desc   Test the function of the interface toString().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNumberToString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNumberToString0014";

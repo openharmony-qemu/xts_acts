@@ -45,13 +45,13 @@ export default function DatePickerDialogAppearTextTest() {
       console.info("DatePickerDialogAppearTextTest after each called");
     });
 
-    /*
-     * @tc.number    DatePickerDialogAppearTextTest001
-     * @tc.name      DatePickerDialogAppearTextTest001
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   DatePickerDialogAppearTextTest001
+     * @tc.number DatePickerDialogAppearTextTest001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('DatePickerDialogAppearTextTest001', Level.LEVEL3, async (done: Function) => {
       console.info('[DatePickerDialogAppearTextTest001] START');

@@ -45,13 +45,13 @@ export default function shapeClippingJsunit() {
       console.info('shapeClipping after each called');
     });
 
-    /*
-     * @tc.number testShapeClipping001
+    /**
      * @tc.name   testShapeClipping001
+     * @tc.number testShapeClipping001
      * @tc.desc   Image test
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testShapeClipping001', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping001] START');
@@ -66,13 +66,13 @@ export default function shapeClippingJsunit() {
       done();
     });
 
-    /*
-     * @tc.number testShapeClipping002
+    /**
      * @tc.name   testShapeClipping002
+     * @tc.number testShapeClipping002
      * @tc.desc   Image test
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testShapeClipping002', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping002] START');
@@ -86,13 +86,13 @@ export default function shapeClippingJsunit() {
       done();
     });
 
-    /*
-     * @tc.number testShapeClipping003
+    /**
      * @tc.name   testShapeClipping003
+     * @tc.number testShapeClipping003
      * @tc.desc   Image test
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testShapeClipping003', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping003] START');
@@ -122,13 +122,13 @@ export default function shapeClippingJsunit() {
       done();
     });
 
-    /*
-     * @tc.number testShapeClipping004
+    /**
      * @tc.name   testShapeClipping004
+     * @tc.number testShapeClipping004
      * @tc.desc   Image test
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testShapeClipping004', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping004] START');

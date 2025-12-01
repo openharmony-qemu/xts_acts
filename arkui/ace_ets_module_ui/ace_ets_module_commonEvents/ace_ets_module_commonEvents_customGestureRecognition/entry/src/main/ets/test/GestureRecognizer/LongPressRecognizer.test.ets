@@ -47,11 +47,13 @@ export default function LongPressRecognizerTest() {
     });
 
     /**
-    * @tc.number :SUB_LongPressRecognizer_0100
-    * @tc.name  : LongPressRecognizer_0100
-    * @tc.desc  : To test whether LongPressRecognizer is effective.
-    * @tc.level : Level 0
-    */
+     * @tc.name   LongPressRecognizer_0100
+     * @tc.number SUB_LongPressRecognizer_0100
+     * @tc.desc   To test whether LongPressRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LongPressRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('LongPressRecognizer_0100 START');

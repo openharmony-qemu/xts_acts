@@ -48,12 +48,12 @@ export default function IsDisposedContentTest() {
     });
 
     /**
-     * @tc.number    IsDisposedContentTest_0100
-     * @tc.name      IsDisposedContentTest_0100
-     * @tc.desc      ReactiveComponentContent IsDisposedContentTest
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IsDisposedNodeTest_0100
+     * @tc.number IsDisposedContentTest_0100
+     * @tc.desc   ReactiveComponentContent IsDisposedContentTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsDisposedNodeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsDisposedNodeTest_0100 START');

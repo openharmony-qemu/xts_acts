@@ -43,12 +43,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0100
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -66,12 +66,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0200
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -90,12 +90,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0300
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -113,12 +113,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0400
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0400
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0400
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0400
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -136,12 +136,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0500
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0500
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0500
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0500
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetAdd_Test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -159,12 +159,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0100
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -184,12 +184,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0200
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -209,12 +209,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0300
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_AssetRemove_Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -234,12 +234,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0100
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -259,12 +259,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0200
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -284,12 +284,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0300
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Update_Test_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -309,12 +309,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Query_Test_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Query_Test_0100
-     * @tc.desc     test ASSET_NOT_FOUND error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Query_Test_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Query_Test_0100
+     * @tc.desc   test ASSET_NOT_FOUND error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Query_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -334,12 +334,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0100
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -357,12 +357,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0200
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -380,12 +380,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0300
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_TagType_Test_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -403,12 +403,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0100
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -426,12 +426,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0200
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -449,12 +449,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0300
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -472,12 +472,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0400
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0400
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0400
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0400
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -495,12 +495,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0500
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0500
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0500
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0500
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -518,12 +518,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0600
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0600
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0600
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0600
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -541,12 +541,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0700
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0700
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0700
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0700
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -564,12 +564,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0800
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0800
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0800
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0800
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -587,12 +587,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0900
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0900
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0900
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0900
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -610,12 +610,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1000
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1000
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1000
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1000
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -633,12 +633,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1100
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1100
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -656,12 +656,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1200
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1200
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -679,12 +679,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1300
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1300
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -702,12 +702,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1400
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1400
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1400
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1400
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -725,12 +725,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1500
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1500
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1500
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1500
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -748,12 +748,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1600
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1600
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1600
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1600
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -771,12 +771,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1700
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1700
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1700
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1700
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -794,12 +794,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1800
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1800
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1800
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1800
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -817,12 +817,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1900
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1900
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1900
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1900
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -840,12 +840,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_2000
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_2000
-     * @tc.desc     test error cases
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_2000
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_2000
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Tag_Test_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -863,12 +863,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0100
-     * @tc.desc     test ASSET_PERMISSION_DENIED error code
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0100
+     * @tc.desc   test ASSET_PERMISSION_DENIED error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -886,12 +886,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0200
-     * @tc.desc     test ASSET_DUPLICATED error code
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0200
+     * @tc.desc   test ASSET_DUPLICATED error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -910,12 +910,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0300
-     * @tc.desc     test ASSET_ACCESS_DENIED error code
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0300
+     * @tc.desc   test ASSET_ACCESS_DENIED error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -933,12 +933,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0400
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0400
-     * @tc.desc     test ASSET_IPC_ERROR error code
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0400
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0400
+     * @tc.desc   test ASSET_IPC_ERROR error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_ResultCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -956,12 +956,12 @@ export default function AssetStoreKitTest() {
       })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0100
-     * @tc.desc     test error code enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0100
+     * @tc.desc   test error code enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -979,12 +979,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0200
-     * @tc.desc     test error code enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0200
+     * @tc.desc   test error code enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1002,12 +1002,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0300
-     * @tc.desc     test ASSET_AUTH_TYPE_NONE enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0300
+     * @tc.desc   test ASSET_AUTH_TYPE_NONE enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1025,12 +1025,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0400
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0400
-     * @tc.desc     test ASSET_SYNC_TYPE_NEVER enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0400
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0400
+     * @tc.desc   test ASSET_SYNC_TYPE_NEVER enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1048,12 +1048,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0500
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0500
-     * @tc.desc     test ASSET_SYNC_TYPE_THIS_DEVICE enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0500
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0500
+     * @tc.desc   test ASSET_SYNC_TYPE_THIS_DEVICE enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1071,12 +1071,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0600
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0600
-     * @tc.desc     test ASSET_SYNC_TYPE_TRUSTED_DEVICE enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0600
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0600
+     * @tc.desc   test ASSET_SYNC_TYPE_TRUSTED_DEVICE enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1094,12 +1094,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0700
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0700
-     * @tc.desc     test ASSET_SYNC_TYPE_TRUSTED_ACCOUNT enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0700
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0700
+     * @tc.desc   test ASSET_SYNC_TYPE_TRUSTED_ACCOUNT enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1117,12 +1117,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0800
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0800
-     * @tc.desc     test ASSET_WRAP_TYPE_NEVER enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0800
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0800
+     * @tc.desc   test ASSET_WRAP_TYPE_NEVER enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1140,12 +1140,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0900
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0900
-     * @tc.desc     test ASSET_WRAP_TYPE_TRUSTED_ACCOUNT enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0900
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0900
+     * @tc.desc   test ASSET_WRAP_TYPE_TRUSTED_ACCOUNT enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1163,12 +1163,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1000
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1000
-     * @tc.desc     test ASSET_CONFLICT_OVERWRITE enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1000
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1000
+     * @tc.desc   test ASSET_CONFLICT_OVERWRITE enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1186,12 +1186,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1100
-     * @tc.desc     test ASSET_CONFLICT_THROW_ERROR enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1100
+     * @tc.desc   test ASSET_CONFLICT_THROW_ERROR enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1209,12 +1209,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1200
-     * @tc.desc     test ASSET_NEED_SYNC enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1200
+     * @tc.desc   test ASSET_NEED_SYNC enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1232,12 +1232,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1300
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1300
-     * @tc.desc     test ASSET_NEED_LOGOUT enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1300
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1300
+     * @tc.desc   test ASSET_NEED_LOGOUT enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_Ablity_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1254,14 +1254,14 @@ export default function AssetStoreKitTest() {
         }
     })
 
-    /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_RstCode_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_RstCode_0100
-     * @tc.desc     test ASSET_RETURN_ATTRIBUTES enum
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
-     */
+     /**
+      * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_RstCode_0100
+      * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_RstCode_0100
+      * @tc.desc   test ASSET_RETURN_ATTRIBUTES enum
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_Security_DataSecurity_AssetStore_Asset_RstCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         let caseName: string = 'SUB_Security_DataSecurity_AssetStore_Asset_RstCode_0100';
@@ -1278,12 +1278,12 @@ export default function AssetStoreKitTest() {
     })
 
     /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0100
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0100
-     * @tc.desc     cover Asset_Result 'count' member
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0100
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0100
+     * @tc.desc   cover Asset_Result 'count' member
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1300,13 +1300,13 @@ export default function AssetStoreKitTest() {
         }
       })
 
-      /**
-     * @tc.number   SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0200
-     * @tc.name     SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0200
-     * @tc.desc     cover Asset_Result 'attrs' member
-     * @tc.size     Medium
-     * @tc.type     Func
-     * @tc.level    Level3
+    /**
+     * @tc.name   SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0200
+     * @tc.number SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0200
+     * @tc.desc   cover Asset_Result 'attrs' member
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_AssetStore_Asset_ResultMember_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

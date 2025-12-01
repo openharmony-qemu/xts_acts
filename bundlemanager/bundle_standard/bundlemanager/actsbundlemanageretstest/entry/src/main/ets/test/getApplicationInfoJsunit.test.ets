@@ -55,10 +55,12 @@ export default function applicationBundleJsunit() {
 
       
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_3480
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0100_002
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3480
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(TAG_TEST_0100_002, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -76,10 +78,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_3500
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0100_003
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3500
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it(TAG_TEST_0100_003, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -99,10 +103,12 @@ export default function applicationBundleJsunit() {
 
 
         /**
-         * @tc.number: bundle_getApplicationInfo_test_0200_002
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0200_002
+         * @tc.number bundle_getApplicationInfo_test_0200_002
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it(TAG_TEST_0200_002, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -120,10 +126,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: bundle_getApplicationInfo_test_0200_003
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0200_003
+         * @tc.number bundle_getApplicationInfo_test_0200_003
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it(TAG_TEST_0200_003, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -142,10 +150,12 @@ export default function applicationBundleJsunit() {
 
 
         /**
-         * @tc.number: bundle_getApplicationInfo_test_0600_002
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level 0
+         * @tc.name   TAG_TEST_0600_002
+         * @tc.number bundle_getApplicationInfo_test_0600_002
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it(TAG_TEST_0600_002, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -165,9 +175,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_0440
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface
+         * @tc.name   Sub_Bms_Framework_Query_AppInfo_0440
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_0440
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Bms_Framework_Query_AppInfo_0440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -193,9 +206,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_0460
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface
+         * @tc.name   Sub_Bms_Framework_Query_AppInfo_0460
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_0460
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Bms_Framework_Query_AppInfo_0460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
           await Bundle.getApplicationInfo(BUNDLE_OTHER, FLAG_DEFAULT).then((data) => {
@@ -213,9 +229,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_0480
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface
+         * @tc.name   Sub_Bms_Framework_Query_AppInfo_0480
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_0480
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_AppInfo_0480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let startTime = await Utils.getNowTime();
@@ -237,9 +256,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_0520
-         * @tc.name: getApplicationInfo : Obtains based on a given bundle name.
-         * @tc.desc: Check the return value of the interface
+         * @tc.name   Sub_Bms_Framework_Query_AppInfo_0520
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_0520
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_AppInfo_0520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             await Bundle.getApplicationInfo('', FLAG_DEFAULT).then((data) => {
@@ -271,10 +293,13 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-        * @tc.number: Sub_Bms_Framework_Query_AppInfo_8400
-        * @tc.name: getApplicationInfoNoMetaData
-        * @tc.desc: Check the return value of the interface
-        */
+         * @tc.name   getApplicationInfoNoMetaData
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_8400
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('getApplicationInfoNoMetaData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await Bundle.getApplicationInfo(BUNDLE_OTHER, FLAG_DEFAULT ,userId).then((data) => {
                 getApplicationInfoSuccessOther_METADATA(data);
@@ -291,9 +316,12 @@ export default function applicationBundleJsunit() {
         });
 
         /**
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_8300
-         * @tc.name: getApplicationInfoNotExistBundleName
-         * @tc.desc: Check the return value of the interface
+         * @tc.name   getApplicationInfoNotExistBundleName
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_8300
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('getApplicationInfoNotExistBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
           await Bundle.getApplicationInfo(BUNDLE_NOTEXIST, FLAG_DEFAULT, userId).then((data) => {

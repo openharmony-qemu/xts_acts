@@ -42,12 +42,12 @@ export default function SearchTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeApi12Test_0010
-     * @tc.name      SearchTypeApi12Test_0010
-     * @tc.desc      test the type of Search: SearchType.NUMBER_DECIMAL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeApi12Test_0010
+     * @tc.number SUB_ACE_SearchTypeApi12Test_0010
+     * @tc.desc   test the type of Search: SearchType.NUMBER_DECIMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeApi12Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi12Test_0010] START');
@@ -60,12 +60,12 @@ export default function SearchTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeApi12Test_0020
-     * @tc.name      SearchTypeApi12Test_0020
-     * @tc.desc      test the type of Search: SearchType.URL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeApi12Test_0020
+     * @tc.number SUB_ACE_SearchTypeApi12Test_0020
+     * @tc.desc   test the type of Search: SearchType.URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeApi12Test_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi12Test_0020] START');
@@ -78,12 +78,12 @@ export default function SearchTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeApi12Test_0030
-     * @tc.name      SearchTypeApi12Test_0030
-     * @tc.desc      test the type of Search: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeApi12Test_0030
+     * @tc.number SUB_ACE_SearchTypeApi12Test_0030
+     * @tc.desc   test the type of Search: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeApi12Test_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi12Test_0030] START');
@@ -96,12 +96,12 @@ export default function SearchTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeApi12Test_0040
-     * @tc.name      SearchTypeApi12Test_0040
-     * @tc.desc      test the type of Search: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeApi12Test_0040
+     * @tc.number SUB_ACE_SearchTypeApi12Test_0040
+     * @tc.desc   test the type of Search: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeApi12Test_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi12Test_0040] START');

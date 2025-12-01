@@ -46,12 +46,12 @@ export default function QRCodeJsunitTest() {
       console.info("QRCodeJsunitTest after each called");
     });
     /**
-     * @tc.number:      test_qrCode_001
-     * @tc.name:        test_qrCode_001
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   test_qrCode_001
+     * @tc.number test_qrCode_001
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_001] START');
@@ -64,13 +64,13 @@ export default function QRCodeJsunitTest() {
       expect(JSON.parse(strJson).$attrs.color).assertEqual('#FF0000FF');
       done();
     });
-     /**
-     * @tc.number:      test_qrCode_002
-     * @tc.name:        test_qrCode_002
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   test_qrCode_002
+     * @tc.number test_qrCode_002
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_002] START');
@@ -99,13 +99,13 @@ export default function QRCodeJsunitTest() {
       expect(JSON.parse(strJson).$attrs.color).assertEqual('#FFFFB6C1');
       done();
     });
-     /**
-     * @tc.number:      test_qrCode_003
-     * @tc.name:        test_qrCode_003
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   test_qrCode_003
+     * @tc.number test_qrCode_003
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_003] START');
@@ -134,13 +134,13 @@ export default function QRCodeJsunitTest() {
       expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual('#FFFFB6C1');
       done();
     });
-     /**
-     * @tc.number:      test_qrCode_004
-     * @tc.name:        test_qrCode_004
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   test_qrCode_004
+     * @tc.number test_qrCode_004
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_004', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_004] START');
@@ -173,13 +173,13 @@ export default function QRCodeJsunitTest() {
       }
       done();
     });
-     /**
-     * @tc.number:      test_qrCode_005
-     * @tc.name:        test_qrCode_005
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   test_qrCode_005
+     * @tc.number test_qrCode_005
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_005', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_005] START');
@@ -205,13 +205,13 @@ export default function QRCodeJsunitTest() {
       expect(JSON.parse(strJson).$attrs.color).assertEqual('#FF00014C');
       done();
     });
-     /**
-     * @tc.number:      test_qrCode_006
-     * @tc.name:        test_qrCode_006
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   test_qrCode_006
+     * @tc.number test_qrCode_006
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_006', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_006] START');
@@ -247,13 +247,13 @@ export default function QRCodeJsunitTest() {
       }
       done();
     });
-     /**
-     * @tc.number:      test_qrCode_007
-     * @tc.name:        test_qrCode_007
-     * @tc.desc:        test qrCode
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   test_qrCode_007
+     * @tc.number test_qrCode_007
+     * @tc.desc   test qrCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_007', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_007] START');

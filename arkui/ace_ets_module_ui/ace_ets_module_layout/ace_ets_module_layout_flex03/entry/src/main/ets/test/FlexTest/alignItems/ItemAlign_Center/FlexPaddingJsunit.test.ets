@@ -47,9 +47,12 @@ export default function flexPadding_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterParentSetPadding
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0300
-     * @tc.name testFlexItemAlignCenterParentSetPadding
-     * @tc.desc Parent component set paddding,subcomponent does not exceed the parent component.
+     * @tc.desc   Parent component set paddding,subcomponent does not exceed the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterParentSetPadding',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterParentSetPadding START');

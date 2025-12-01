@@ -40,12 +40,12 @@ export default function builtinsArrayFlatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayFlatTest1001
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0100
-     * @tc.name builtinsArrayFlatTest1001
-     * @tc.desc test worker error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test worker error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayFlatTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = [1, [2, 3], 4];
@@ -54,12 +54,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1002
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0200
-     * @tc.name builtinsArrayFlatTest1002
-     * @tc.desc Verify flat method returns original array when no nesting exists
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify flat method returns original array when no nesting exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -68,12 +68,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1003
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0300
-     * @tc.name builtinsArrayFlatTest1003
-     * @tc.desc Verify flat method with depth=1 on multi-level nested array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify flat method with depth=1 on multi-level nested array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3, 4], 5], 6];
@@ -82,12 +82,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1004
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0400
-     * @tc.name builtinsArrayFlatTest1004
-     * @tc.desc Verify full flattening with depth=2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify full flattening with depth=2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3, 4], 5], 6];
@@ -95,12 +95,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1005
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0500
-     * @tc.name builtinsArrayFlatTest1005
-     * @tc.desc Verify no flattening with depth=0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify no flattening with depth=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3], 4];
@@ -108,12 +108,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1006
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0600
-     * @tc.name builtinsArrayFlatTest1006
-     * @tc.desc Verify handling of sparse arrays (empty slots)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of sparse arrays (empty slots)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, , 3];
@@ -121,12 +121,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1007
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0700
-     * @tc.name builtinsArrayFlatTest1007
-     * @tc.desc Verify flattening nested sparse arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify flattening nested sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [, 3], 4];
@@ -134,12 +134,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1008
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0800
-     * @tc.name builtinsArrayFlatTest1008
-     * @tc.desc Verify handling of mixed element types (number + string)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of mixed element types (number + string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3], 'hello'];
@@ -147,12 +147,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1009
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0900
-     * @tc.name builtinsArrayFlatTest1009
-     * @tc.desc Verify deep flattening with mixed data types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify deep flattening with mixed data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3, 'a']], 4];
@@ -160,24 +160,24 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1010
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1000
-     * @tc.name builtinsArrayFlatTest1010
-     * @tc.desc Verify empty array returns empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify empty array returns empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect([].flat().length).assertEqual(0);
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1011
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1100
-     * @tc.name builtinsArrayFlatTest1011
-     * @tc.desc Verify flattening of nested empty arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify flattening of nested empty arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[], [1], [2]];
@@ -185,12 +185,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1012
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1200
-     * @tc.name builtinsArrayFlatTest1012
-     * @tc.desc Verify no flattening with depth=0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify no flattening with depth=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3], 4];
@@ -198,12 +198,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1013
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1300
-     * @tc.name builtinsArrayFlatTest1013
-     * @tc.desc Verify handling of null and undefined values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of null and undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [null, [undefined, 3]];
@@ -211,12 +211,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1014
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1400
-     * @tc.name builtinsArrayFlatTest1014
-     * @tc.desc Verify objects are not flattened
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify objects are not flattened
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FlatObj = {
@@ -227,12 +227,12 @@ export default function builtinsArrayFlatTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFlatTest1015
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1500
-     * @tc.name builtinsArrayFlatTest1015
-     * @tc.desc Verify handling of edge case numeric parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify handling of edge case numeric parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testArray = [1, [2, [3, [4]]], 5];

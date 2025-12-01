@@ -29,13 +29,13 @@ export default function lazyForEachInsertItemTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_INSERTITEM_0100
-     * @tc.name       : testLazyForEachInsertItem001
-     * @tc.desc       : testing insertItem for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachInsertItem001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_INSERTITEM_0100
+     * @tc.desc   testing insertItem for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachInsertItem001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachInsertItemTest`)
@@ -45,13 +45,13 @@ export default function lazyForEachInsertItemTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_INSERTITEM_0200
-     * @tc.name       : testLazyForEachInsertItem002
-     * @tc.desc       : testing insertItem for lazyForEach with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachInsertItem002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_INSERTITEM_0200
+     * @tc.desc   testing insertItem for lazyForEach with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachInsertItem002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachInsertItem002()).assertEqual(0)

@@ -45,14 +45,14 @@ export default function ButtonAlignTest() {
     afterEach(async () => {
     });
 
-    /**
-     * @tc.number: SUB_ARKUI_API_ButtonAlignTest_0100
-     * @tc.name: ButtonAlignTest_0100
-     * @tc.desc: CommonCustomAPI 
-     * @tc.level: Level 1
-     * @tc.type : CommonCustom
-     * @tc.size : CommonCustomTest
-     */
+     /**
+      * @tc.name   ButtonAlignTest_0100
+      * @tc.number SUB_ARKUI_API_ButtonAlignTest_0100
+      * @tc.desc   CommonCustomAPI
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('ButtonAlignTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ButtonAlignTest_0100] START');
       console.info('[ButtonAlignTest_0100] START000');

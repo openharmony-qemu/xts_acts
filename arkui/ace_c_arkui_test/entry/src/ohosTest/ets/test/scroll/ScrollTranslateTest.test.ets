@@ -26,52 +26,52 @@ export default function scrollTranslateTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0100
-     * @tc.name       : testScrollTranslate001
-     * @tc.desc       : testing translate for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollTranslate001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0100
+     * @tc.desc   testing translate for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollTranslate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollTranslate001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0200
-     * @tc.name       : testScrollTranslate002
-     * @tc.desc       : testing translate for scroll with big value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollTranslate002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0200
+     * @tc.desc   testing translate for scroll with big value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollTranslate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollTranslate002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0300
-     * @tc.name       : testScrollTranslate003
-     * @tc.desc       : testing translate for scroll with overlapping value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollTranslate003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0300
+     * @tc.desc   testing translate for scroll with overlapping value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollTranslate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollTranslate003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0400
-     * @tc.name       : testScrollTranslate004
-     * @tc.desc       : testing translate for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollTranslate004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_TRANSLATE_0400
+     * @tc.desc   testing translate for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollTranslate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollTranslate004()).assertEqual(0)

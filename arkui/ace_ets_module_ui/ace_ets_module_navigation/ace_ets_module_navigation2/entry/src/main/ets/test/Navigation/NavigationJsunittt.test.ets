@@ -46,10 +46,12 @@ export default function navigationJsunittt() {
     });
 
     /**
-     * @tc.number    testNavigation_100
-     * @tc.name      testNavigation_100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   testNavigation_100
+     * @tc.number testNavigation_100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavigation_100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_100] START');
@@ -63,10 +65,12 @@ export default function navigationJsunittt() {
     });
 
     /**
-     * @tc.number    testNavigation_200
-     * @tc.name      testNavigation_200
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   testNavigation_200
+     * @tc.number testNavigation_200
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavigation_200',  Level.LEVEL0, async  (done:Function) =>{
       console.info('testNavigation_200 START');
@@ -91,10 +95,12 @@ export default function navigationJsunittt() {
     });
 
     /**
-     * @tc.number    testNavigation_300
-     * @tc.name      testNavigation_300
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   testNavigation_300
+     * @tc.number testNavigation_300
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavigation_300',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_300] START');
@@ -108,10 +114,12 @@ export default function navigationJsunittt() {
     });
 
     /**
-     * @tc.number    testNavigation_400
-     * @tc.name      testNavigation_400
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   testNavigation_400
+     * @tc.number testNavigation_400
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavigation_400',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_400] START');

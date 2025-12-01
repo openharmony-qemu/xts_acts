@@ -83,7 +83,6 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_Sta_0002
          * @tc.number Communication_WiFi_XTS_Sta_0002
          * @tc.desc   Test getScanInfos promise and callback API functionality.
@@ -126,7 +125,6 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_Sta_0021
          * @tc.number Communication_WiFi_XTS_Sta_0021
          * @tc.desc   Test getSignalLevel API functionality..
@@ -177,7 +175,6 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_Sta_0017
          * @tc.number Communication_WiFi_XTS_Sta_0017
          * @tc.desc   Test getCountryCode API function.
@@ -195,7 +192,6 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_Sta_0020
          * @tc.number Communication_WiFi_XTS_Sta_0020
          * @tc.desc   Test FeatureSupported API function.
@@ -240,7 +236,6 @@ export default function actsWifiFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_XTS_Sta_0004
          * @tc.number Communication_WiFi_XTS_Sta_0004
          * @tc.desc   Test Test getLinkedInfo and getIpInfo  information.

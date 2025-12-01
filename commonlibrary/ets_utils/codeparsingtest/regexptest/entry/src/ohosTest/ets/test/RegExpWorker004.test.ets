@@ -34,12 +34,12 @@ export default function RegExpWorkerTest004() {
     })
 
     /**
+     * @tc.name   testRegSearch0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_WORKER_0001
-     * @tc.name testRegSearch0001
-     * @tc.desc Use simple regex to find the first match and return the index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use simple regex to find the first match and return the index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegSearch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let workerInstance = new worker.ThreadWorker('../workers/Worker004.ets');
@@ -54,12 +54,12 @@ export default function RegExpWorkerTest004() {
     });
 
     /**
+     * @tc.name   testRegSearch0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_WORKER_0002
-     * @tc.name testRegSearch0002
-     * @tc.desc Use regex to search for a non-existing match, should return -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use regex to search for a non-existing match, should return -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegSearch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let workerInstance = new worker.ThreadWorker('../workers/Worker004.ets');

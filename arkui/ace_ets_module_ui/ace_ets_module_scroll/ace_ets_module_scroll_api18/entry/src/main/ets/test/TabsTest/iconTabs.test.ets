@@ -43,12 +43,12 @@ export default function iconTabs() {
     });
 
     /**
-     * @tc.number    iconTabs_001
-     * @tc.name      iconTabs_0100
-     * @tc.desc      Set the image and text content in the Tabs.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   iconTabs_0100
+     * @tc.number iconTabs_001
+     * @tc.desc   Set the image and text content in the Tabs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('iconTabs_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[iconTabs_0100] START');

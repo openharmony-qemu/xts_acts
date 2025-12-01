@@ -44,12 +44,12 @@ export default function ToggleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleJsunit_0100
-     * @tc.name: ToggleJsunit_0100
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleJsunit_0100
+     * @tc.number SUB_ARKUI_API_ToggleJsunit_0100
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of Toggle component
@@ -79,12 +79,12 @@ export default function ToggleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleJsunit_0200
-     * @tc.name: ToggleJsunit_0200
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleJsunit_0200
+     * @tc.number SUB_ARKUI_API_ToggleJsunit_0200
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Verify switch function of Toggle component
@@ -111,12 +111,12 @@ export default function ToggleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleJsunit_0300
-     * @tc.name: ToggleJsunit_0300
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleJsunit_0300
+     * @tc.number SUB_ARKUI_API_ToggleJsunit_0300
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Verify checkbox function of Toggle component
@@ -141,12 +141,12 @@ export default function ToggleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleJsunit_0400
-     * @tc.name: ToggleJsunit_0400
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleJsunit_0400
+     * @tc.number SUB_ARKUI_API_ToggleJsunit_0400
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleJsunit_0400', Level.LEVEL2, async (done: Function) => {
       // Verify button function of Toggle component
@@ -170,12 +170,12 @@ export default function ToggleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleJsunit_0500
-     * @tc.name: ToggleJsunit_0500
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleJsunit_0500
+     * @tc.number SUB_ARKUI_API_ToggleJsunit_0500
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleJsunit_0500', Level.LEVEL2, async (done: Function) => {
       // Modify the attribute of Toggle component
@@ -211,12 +211,12 @@ export default function ToggleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleJsunit_0600
-     * @tc.name: ToggleJsunit_0600
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleJsunit_0600
+     * @tc.number SUB_ARKUI_API_ToggleJsunit_0600
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleJsunit_0600', Level.LEVEL2, async (done: Function) => {
       // Illegal modification of properties of Toggle component

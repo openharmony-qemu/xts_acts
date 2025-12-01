@@ -42,12 +42,12 @@ export default function offsetRemain() {
     });
 
     /**
-     * @tc.number    offsetRemain_0100
-     * @tc.name      offsetRemain_0100
-     * @tc.desc      frameNode: offsetRemainToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   offsetRemain_0100
+     * @tc.number offsetRemain_0100
+     * @tc.desc   frameNode: offsetRemainToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('offsetRemain_0100', Level.LEVEL2, async (done: Function) => {
       console.info('offsetRemain_0100 START');

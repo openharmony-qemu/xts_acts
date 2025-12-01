@@ -55,6 +55,14 @@ export default function CombinationState6Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   CombinationState6Jsunit_0100
+     * @tc.number CombinationState6Jsunit_0100
+     * @tc.desc   CombinationState6Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState6Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0100] START');
@@ -67,6 +75,14 @@ export default function CombinationState6Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   CombinationState6Jsunit_0200
+     * @tc.number CombinationState6Jsunit_0200
+     * @tc.desc   CombinationState6Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState6Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0200] START');
@@ -79,6 +95,14 @@ export default function CombinationState6Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   CombinationState6Jsunit_0300
+     * @tc.number CombinationState6Jsunit_0300
+     * @tc.desc   CombinationState6Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState6Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0300] START');
@@ -91,6 +115,14 @@ export default function CombinationState6Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   CombinationState6Jsunit_0500
+     * @tc.number CombinationState6Jsunit_0500
+     * @tc.desc   CombinationState6Jsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState6Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0500] START');

@@ -62,10 +62,13 @@ export default function webViewSrollableJsunit() {
       }
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_001
-     *tc.name bindSelectionMenuType01
-     *tc.desic test bindSelectionMenuType01 interface when choose callback mode.
+    /**
+     * @tc.name   bindSelectionMenuType01
+     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_001
+     * @tc.desc   bindSelectionMenuType01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindSelectionMenuType01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType01", EVENT_ID_SET_SUITE_KEY)
@@ -75,10 +78,13 @@ export default function webViewSrollableJsunit() {
       await Utils.waitForExist(() => isReturn, "bindSelectionMenuType01" + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_002
-     *tc.name bindSelectionMenuType02
-     *tc.desic test bindSelectionMenuType02 interface when choose callback mode.
+    /**
+     * @tc.name   bindSelectionMenuType02
+     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_002
+     * @tc.desc   bindSelectionMenuType02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindSelectionMenuType02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType02", EVENT_ID_SET_SUITE_KEY)
@@ -89,10 +95,13 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /** 
-     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+    /**
      * @tc.name   bindSelectionMenuType03
-     * @tc.desc  test bindSelectionMenuType03 interface when choose callback mode.
+     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+     * @tc.desc   test bindSelectionMenuType03 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindSelectionMenuType03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("bindSelectionMenuType03", EVENT_ID_SET_SUITE_KEY)

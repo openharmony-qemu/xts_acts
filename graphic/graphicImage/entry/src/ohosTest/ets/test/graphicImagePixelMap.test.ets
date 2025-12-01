@@ -28,13 +28,12 @@ export default function graphicImagePixelMapTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_029
-     * @tc.name      : testCreatePixelMapFromSurfaceSync_receiver
-     * @tc.desc      :  1.create ImageReceiver
-                        2.createPixelMapFromSurfaceSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreatePixelMapFromSurfaceSync_receiver
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_029
+     * @tc.desc   1.create ImageReceiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreatePixelMapFromSurfaceSync_receiver", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -61,13 +60,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_030
-     * @tc.name      : testSetTransferDetached_1
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetTransferDetached
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetTransferDetached_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_030
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetTransferDetached_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = '=====testSetTransferDetached_1====='
@@ -108,13 +106,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_031
-     * @tc.name      : testSetTransferDetached_2
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetTransferDetached
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetTransferDetached_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_031
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetTransferDetached_2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = '=====testSetTransferDetached_2====='
@@ -155,12 +152,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_032
-     * @tc.name      : testHdrMetadataKey_enum
-     * @tc.desc      : test Detection Enumeration Values
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testHdrMetadataKey_enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_032
+     * @tc.desc   test Detection Enumeration Values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHdrMetadataKey_enum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testHdrMetadataKey_enum====='
@@ -185,12 +182,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_033
-     * @tc.name      : testHdrMetadataType_enum
-     * @tc.desc      : test Detection Enumeration Values
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testHdrMetadataType_enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_033
+     * @tc.desc   test Detection Enumeration Values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHdrMetadataType_enum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testHdrMetadataType_enum====='
@@ -215,13 +212,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_034
-     * @tc.name      : testSetMetadata_1
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetMetadata
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMetadata_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_034
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetMetadata_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testSetMetadata_1====='
@@ -288,13 +284,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_035
-     * @tc.name      : testSetMetadata_2
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetMetadata
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMetadata_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_035
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetMetadata_2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testSetMetadata_2====='
@@ -374,13 +369,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_036
-     * @tc.name      : testAntiAliasingLevel_enum
-     * @tc.desc      :  1.create PixelMap
-                        2.scale the pixelMap by three parameter, key is AntiAliasingLevel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testAntiAliasingLevel_enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_036
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testAntiAliasingLevel_enum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testAntiAliasingLevel_enum====='
@@ -404,13 +398,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_037
-     * @tc.name      : testAntiAliasingLevel
-     * @tc.desc      :  1.create PixelMap
-                        2.scale the pixelMap by three parameter, key is AntiAliasingLevel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testAntiAliasingLevel
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_037
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testAntiAliasingLevel", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testAntiAliasingLevel====='
@@ -437,13 +430,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_038
-     * @tc.name      : testGetMetadata
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetMetadata
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetMetadata
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_038
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetMetadata", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testGetMetadata====='
@@ -532,14 +524,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_038
-     * @tc.name      : testGetMetadata_2
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetMetadata
-                        3.use getMetadata
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetMetadata_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_038
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetMetadata_2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testGetMetadata_2====='
@@ -605,14 +595,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_038
-     * @tc.name      : testGetMetadata_3
-     * @tc.desc      :  1.create PixelMap
-                        2.use SetMetadata
-                        3.use getMetadata
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetMetadata_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_038
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetMetadata_3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testGetMetadata_3====='
@@ -678,14 +666,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_039
-     * @tc.name      : testSetMemoryNameSync_1
-     * @tc.desc      :  1.create PixelMap
-                        2.create name
-                        3.use setMemoryNameSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMemoryNameSync_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_039
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetMemoryNameSync_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testSetMemoryNameSync_1====='
@@ -751,14 +737,12 @@ export default function graphicImagePixelMapTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_040
-     * @tc.name      : testSetMemoryNameSync_2
-     * @tc.desc      :  1.create PixelMap
-                        2.create name
-                        3.use setMemoryNameSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMemoryNameSync_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_040
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetMemoryNameSync_2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testSetMemoryNameSync_2====='
@@ -815,14 +799,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_041
-     * @tc.name      : testSetMemoryNameSync_3
-     * @tc.desc      :  1.create PixelMap
-                        2.create name
-                        3.use setMemoryNameSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMemoryNameSync_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_041
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetMemoryNameSync_3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testSetMemoryNameSync_3====='
@@ -890,14 +872,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_042
-     * @tc.name      : testSetMemoryNameSync_4
-     * @tc.desc      :  1.create PixelMap
-                        2.create name
-                        3.use setMemoryNameSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetMemoryNameSync_4
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_042
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSetMemoryNameSync_4", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testSetMemoryNameSync_4====='
@@ -965,12 +945,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_043
-     * @tc.name      : testASTC_4
-     * @tc.desc      : ASTC_4x4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testASTC_4
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_043
+     * @tc.desc   ASTC_4x4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testASTC_4", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testASTC_4====='
@@ -989,13 +969,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_044
-     * @tc.name      : testARGB_8888
-     * @tc.desc      :  1.create color/opts
-                        2.create PixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testARGB_8888
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_044
+     * @tc.desc   1.create color/opts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testARGB_8888", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testARGB_8888====='
@@ -1014,14 +993,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_045
-     * @tc.name      : testCreateScaledPixelMap
-     * @tc.desc      :  1.create PixelMap
-                        2.create scaleX/scaleY
-                        3.use createScaledPixelMap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateScaledPixelMap
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_045
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateScaledPixelMap", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testCreateScaledPixelMap====='
@@ -1051,14 +1028,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_046
-     * @tc.name      : testCreateScaledPixelMapSync
-     * @tc.desc      :  1.create PixelMap
-                        2.create scaleX/scaleY
-                        3.use createScaledPixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateScaledPixelMapSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_046
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateScaledPixelMapSync", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testCreateScaledPixelMapSync====='
@@ -1083,12 +1058,12 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number     testCloneSync
-     * @tc.name       testCloneSync
-     * @tc.desc       test cloneSync method
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   testCloneSync
+     * @tc.number testCloneSync
+     * @tc.desc   test cloneSync method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCloneSync", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
       let msg = '=====testCloneSync====='

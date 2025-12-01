@@ -56,12 +56,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4200
-     * @tc.name      : Test one ability open two different abilitys and terminateSelfWithResult
-     * @tc.desc      : StartAbilityForResult two different abilitys in different haps, then terminateSelfWithResult with want and resultcode
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4200
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4200
+     * @tc.desc   StartAbilityForResult two different abilitys in different haps, then terminateSelfWithResult with want and resultcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4200';
@@ -153,12 +153,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4300
-     * @tc.name      : Test one ability open by two different abilitys and terminateSelfWithResult
-     * @tc.desc      : StartAbilityForResult by two different abilitys, then terminateSelfWithResult by final one
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4300
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4300
+     * @tc.desc   StartAbilityForResult by two different abilitys, then terminateSelfWithResult by final one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4300';
@@ -256,12 +256,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4600
-     * @tc.name      : Test ability1 open ability2 then ability2 terminateSelfWithResult
-     * @tc.desc      : Ability1 StartAbilityForResult ability2, then ability2 terminateSelfWithResult with want and resultcode
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4600
+     * @tc.desc   Ability1 StartAbilityForResult ability2, then ability2 terminateSelfWithResult with want and resultcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4600';
@@ -329,12 +329,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4700
-     * @tc.name      : Test ability1 open ability2 then ability2 open ability3
-     * @tc.desc      : Ability1 StartAbilityForResult ability2, ability2 StartAbilityForResult ability3,then ability2 and ability3 terminateSelfWithResult
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4700
+     * @tc.desc   Ability1 StartAbilityForResult ability2, ability2 StartAbilityForResult ability3,then ability2 and ability3 terminateSelfWithResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_4700';
@@ -412,12 +412,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
-     * @tc.name      : Test ability1 open ability2 then ability2 open ability3
-     * @tc.desc      : Ability1 StartAbilityForResult ability2, ability2 StartAbilityForResult ability3,then ability2 and ability3 terminateSelf
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000
+     * @tc.desc   Ability1 StartAbilityForResult ability2, ability2 StartAbilityForResult ability3,then ability2 and ability3 terminateSelf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000';
@@ -519,12 +519,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6600
-     * @tc.name      : Test ability1 open ability2 then ability2 open ability3 in same hap
-     * @tc.desc      : In same hap, Ability1 StartAbilityForResult ability2, ability2 StartAbilityForResult ability3,then ability2 and ability3 terminateSelfWithResult
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6600
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6600
+     * @tc.desc   In same hap, Ability1 StartAbilityForResult ability2, ability2 StartAbilityForResult ability3,then ability2 and ability3 terminateSelfWithResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6600';
@@ -598,12 +598,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6700
-     * @tc.name      : Test ability1 open ability2 then ability2 terminateSelfWithResult in same hap
-     * @tc.desc      : In same hap, Ability1 StartAbilityForResult ability2, then ability2 terminateSelfWithResult with want and resultcode
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6700
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6700
+     * @tc.desc   In same hap, Ability1 StartAbilityForResult ability2, then ability2 terminateSelfWithResult with want and resultcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6700';
@@ -672,12 +672,12 @@ export default function abilityTest2() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6800
-     * @tc.name      : Test ability1 open ability2 then ability2 terminateSelfWithResult in same app different hap
-     * @tc.desc      : In same app different hap, Ability1 StartAbilityForResult ability2, then ability2 terminateSelfWithResult with want and resultcode
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6800
+     * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6800
+     * @tc.desc   In same app different hap, Ability1 StartAbilityForResult ability2, then ability2 terminateSelfWithResult with want and resultcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_6800';

@@ -47,12 +47,12 @@ export default function builtinsArrayBufferLikeTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayBufferLikeTest1001
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_LIKE_TEST_1001
-     * @tc.name buildinsArrayBufferLikeTest1001
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayBufferLikeTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -63,12 +63,12 @@ export default function builtinsArrayBufferLikeTest() {
       })
 
     /**
+     * @tc.name   buildinsArrayBufferLikeTest1002
      * @tc.number SUB_BUILDINS_ARRAYBUFFER_LIKE_TEST_1002
-     * @tc.name buildinsArrayBufferLikeTest1002
-     * @tc.desc test builtins
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test builtins
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayBufferLikeTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

@@ -43,12 +43,12 @@ export default function cachedShowFlow() {
     });
 
     /**
-     * @tc.number    cachedShowFlow_001
-     * @tc.name      cachedShowFlow_0100
-     * @tc.desc      Set the number of FlowItems to be preloaded and display preloading nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowFlow_0100
+     * @tc.number cachedShowFlow_001
+     * @tc.desc   Set the number of FlowItems to be preloaded and display preloading nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('cachedShowFlow_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[cachedShowFlow_0100] START');
@@ -66,12 +66,12 @@ export default function cachedShowFlow() {
     });
 
     /**
-     * @tc.number    cachedShowFlow_002
-     * @tc.name      cachedShowFlow_0200
-     * @tc.desc      Do not crop sub components, and do not display preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowFlow_0200
+     * @tc.number cachedShowFlow_002
+     * @tc.desc   Do not crop sub components, and do not display preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('cachedShowFlow_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[cachedShowFlow_0200] START');
@@ -101,12 +101,12 @@ export default function cachedShowFlow() {
     });
 
     /**
-     * @tc.number    cachedShowFlow_003
-     * @tc.name      cachedShowFlow_0300
-     * @tc.desc      Crop sub components without displaying preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowFlow_0300
+     * @tc.number cachedShowFlow_003
+     * @tc.desc   Crop sub components without displaying preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('cachedShowFlow_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[cachedShowFlow_0300] START');
@@ -136,12 +136,12 @@ export default function cachedShowFlow() {
     });
 
     /**
-     * @tc.number    cachedShowFlow_004
-     * @tc.name      cachedShowFlow_0400
-     * @tc.desc      Configure to display preloaded nodes and crop sub components.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowFlow_0400
+     * @tc.number cachedShowFlow_004
+     * @tc.desc   Configure to display preloaded nodes and crop sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('cachedShowFlow_0400', Level.LEVEL3, async (done: Function) => {
       console.info('[cachedShowFlow_0400] START');
@@ -176,12 +176,12 @@ export default function cachedShowFlow() {
     });
 
     /**
-     * @tc.number    cachedShowFlow_005
-     * @tc.name      cachedShowFlow_0500
-     * @tc.desc      Do not crop the sub components, configure the property parameter 'show' as null.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowFlow_0500
+     * @tc.number cachedShowFlow_005
+     * @tc.desc   Do not crop the sub components, configure the property parameter 'show' as null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('cachedShowFlow_0500', Level.LEVEL3, async (done: Function) => {
       console.info('[cachedShowFlow_0500] START');
@@ -211,12 +211,12 @@ export default function cachedShowFlow() {
     });
 
     /**
-     * @tc.number    cachedShowFlow_006
-     * @tc.name      cachedShowFlow_0600
-     * @tc.desc      Do not crop the sub components, configure the property parameter 'show' as undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowFlow_0600
+     * @tc.number cachedShowFlow_006
+     * @tc.desc   Do not crop the sub components, configure the property parameter 'show' as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('cachedShowFlow_0600', Level.LEVEL3, async (done: Function) => {
       console.info('[cachedShowFlow_0600] START');

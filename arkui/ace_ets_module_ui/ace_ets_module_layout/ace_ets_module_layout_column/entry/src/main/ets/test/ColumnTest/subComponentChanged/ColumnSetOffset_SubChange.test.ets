@@ -47,9 +47,12 @@ export default function ColumnSetOffset_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSubcomponentSetOffset
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1300
-     * @tc.name testColumnSubcomponentSetOffset
-     * @tc.desc The first subcomponent set offset attribute.
+     * @tc.desc   The first subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSubcomponentSetOffset',  Level.LEVEL0, async () => {
       console.info('new testColumnSubcomponentSetOffset START');

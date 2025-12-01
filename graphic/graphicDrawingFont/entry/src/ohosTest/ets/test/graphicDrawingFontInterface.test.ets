@@ -33,12 +33,12 @@ export default function graphicDrawingFontInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWINGFONT_JS_API_002
-     * @tc.name      : testSetScaleX
-     * @tc.desc      : Lets you set the scale of the glyph object on the x axis.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetScaleX
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWINGFONT_JS_API_002
+     * @tc.desc   Lets you set the scale of the glyph object on the x axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetScaleX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " ====testSetScaleX==== "
@@ -62,12 +62,12 @@ export default function graphicDrawingFontInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWINGFONT_JS_API_002
-     * @tc.name      : testSetSkewX
-     * @tc.desc      : Lets you set the skew scale of the glyph object on the x axis.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSkewX
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWINGFONT_JS_API_002
+     * @tc.desc   Lets you set the skew scale of the glyph object on the x axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSkewX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " ====testSetSkewX==== "

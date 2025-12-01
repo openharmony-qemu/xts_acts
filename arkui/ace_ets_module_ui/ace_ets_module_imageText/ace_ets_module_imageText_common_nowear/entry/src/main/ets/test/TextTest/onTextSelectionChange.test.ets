@@ -46,14 +46,14 @@ export default function OnTextSelectionChangeTest() {
       console.info("OnTextSelectionChangeTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_UI_COMPONENT_TEXT_ONTEXTSELECTIONCHANGE_0010
-    * @tc.name         OnTextSelectionChangeTest_0010
-    * @tc.desc         test Text OnTextSelectionChange: Mouse box selection
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   OnTextSelectionChangeTest_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_ONTEXTSELECTIONCHANGE_0010
+     * @tc.desc   test Text OnTextSelectionChange: Mouse box selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OnTextSelectionChangeTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[OnTextSelectionChangeTest_0010] START');
       let driver: Driver = Driver.create();
@@ -75,14 +75,14 @@ export default function OnTextSelectionChangeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_UI_COMPONENT_TEXT_ONTEXTSELECTIONCHANGE_0020
-    * @tc.name         OnTextSelectionChangeTest_0020
-    * @tc.desc         test Text OnTextSelectionChange: Press shift and arrow keys to select
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   OnTextSelectionChangeTest_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_ONTEXTSELECTIONCHANGE_0020
+     * @tc.desc   test Text OnTextSelectionChange: Press shift and arrow keys to select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OnTextSelectionChangeTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[OnTextSelectionChangeTest_0020] START');
       let driver: Driver = Driver.create();
@@ -110,14 +110,14 @@ export default function OnTextSelectionChangeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_UI_COMPONENT_TEXT_ONTEXTSELECTIONCHANGE_0030
-    * @tc.name         OnTextSelectionChangeTest_0030
-    * @tc.desc         test Text OnTextSelectionChange: Shortcut key shift and mouse selection
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   OnTextSelectionChangeTest_0030
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_ONTEXTSELECTIONCHANGE_0030
+     * @tc.desc   test Text OnTextSelectionChange: Shortcut key shift and mouse selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OnTextSelectionChangeTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[OnTextSelectionChangeTest_0030] START');
       let driver: Driver = Driver.create();

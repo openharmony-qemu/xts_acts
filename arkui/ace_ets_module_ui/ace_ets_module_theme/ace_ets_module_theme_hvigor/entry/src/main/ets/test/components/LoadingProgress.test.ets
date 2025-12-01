@@ -69,13 +69,13 @@ export default function loadingProgressThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsloadingProgressThemeColors_0100
-      * @tc.name      : ActsloadingProgressThemeColors_0100
-      * @tc.desc      : Check system colors values of TextClock component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLoadingProgressThemeColors_0100
+     * @tc.number ActsloadingProgressThemeColors_0100
+     * @tc.desc   Check system colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsLoadingProgressThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsloadingProgressThemeColors_0100`
       console.info(`${SUITE} ${CASE} START`)
@@ -87,13 +87,13 @@ export default function loadingProgressThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-      * @tc.number    : ActsLoadingProgressThemeColors_0200
-      * @tc.name      : ActsLoadingProgressThemeColors_0200
-      * @tc.desc      : Check custom colors values of TextClock component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLoadingProgressThemeColors_0200
+     * @tc.number ActsLoadingProgressThemeColors_0200
+     * @tc.desc   Check custom colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsLoadingProgressThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsLoadingProgressThemeColors_0200`
       console.info(`${SUITE} ${CASE} START`);
@@ -106,14 +106,13 @@ export default function loadingProgressThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-      * @tc.number    : ActsLoadingProgressThemeColors_0300
-      * @tc.name      : ActsLoadingProgressThemeColors_0300
-      * @tc.desc      : Check custom colors values of TextClock component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsLoadingProgressThemeColors_0300
+     * @tc.number ActsLoadingProgressThemeColors_0300
+     * @tc.desc   Check custom colors values of TextClock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsLoadingProgressThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsLoadingProgressThemeColors_0300`
       console.info(`${SUITE} ${CASE} START`)

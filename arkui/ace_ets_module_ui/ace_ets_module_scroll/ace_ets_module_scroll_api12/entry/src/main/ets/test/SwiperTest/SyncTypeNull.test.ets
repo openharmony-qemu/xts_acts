@@ -47,12 +47,12 @@ export default function SyncTypeNull() {
     });
 
     /**
-     * @tc.number    SyncTypeNull_001
-     * @tc.name      SyncTypeNull_0100
-     * @tc.desc      Set SwinperDynamicSyncSceneType null.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   SyncTypeNull_0100
+     * @tc.number SyncTypeNull_001
+     * @tc.desc   Set SwinperDynamicSyncSceneType null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SyncTypeNull_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[SyncTypeNull_0100] START');

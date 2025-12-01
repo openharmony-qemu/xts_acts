@@ -55,12 +55,12 @@ export default function GridCaseJsunit() {
     });
 
     /**
+     * @tc.name   GridCaseJsunit_0100
      * @tc.number SUB_ACE_BASIC_ETS_API_0350
-     * @tc.name gridItemTest001
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridCaseJsunit_0100', Level.LEVEL1, async () => {
       console.info('GridCaseJsunit_0100 START');

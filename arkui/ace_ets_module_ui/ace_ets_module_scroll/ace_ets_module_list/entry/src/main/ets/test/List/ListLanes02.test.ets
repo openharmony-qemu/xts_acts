@@ -42,14 +42,14 @@ export default function ListLanes02() {
       done();
     });
 
-      /* *
-       * @tc.number: ListLanes02_001
-       * @tc.name  : ListLanes02_001
-       * @tc.desc  : set gutter to 10 and listDirection to Axis.Vertical
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
-       */
+    /**
+     * @tc.name   ListLanes02_001
+     * @tc.number ListLanes02_001
+     * @tc.desc   set gutter to 10 and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes02_001',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes02_001] START');

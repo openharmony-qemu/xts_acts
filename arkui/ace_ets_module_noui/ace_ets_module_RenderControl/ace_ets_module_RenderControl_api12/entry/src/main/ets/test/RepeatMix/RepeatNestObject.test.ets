@@ -59,12 +59,12 @@ export default function RepeatNestObject() {
     });
 
     /**
+     * @tc.name   RepeatNestObject_001
      * @tc.number RepeatNestObject_001
-     * @tc.name RepeatNestObject_001
-     * @tc.desc Test RepeatNestObject component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatNestObject component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatNestObject_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatNestObject_001] START');

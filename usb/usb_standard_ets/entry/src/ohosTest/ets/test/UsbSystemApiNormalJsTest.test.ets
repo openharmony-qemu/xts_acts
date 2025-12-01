@@ -41,7 +41,6 @@ export default function UsbSystemApiNormalJsTest() {
   
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbAddDeviceAccessRightNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0100
      * @tc.desc   addDeviceAccessRight Interface testing
@@ -77,7 +76,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFunctionsFromStringNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0200
      * @tc.desc   getFunctionsFromString Interface testing
@@ -101,7 +99,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetStringFromFunctionsNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0300
      * @tc.desc   getStringFromFunctions Interface testing
@@ -125,7 +122,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetDeviceFunctionsNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0400
      * @tc.desc   setDeviceFunctions Interface testing
@@ -150,7 +146,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetDeviceFunctionsNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0500
      * @tc.desc   getDeviceFunctions Interface testing
@@ -173,7 +168,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetPortListNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0600
      * @tc.desc   getPortList Interface testing
@@ -195,7 +189,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetPortSupportModesNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0700
      * @tc.desc   getPortSupportModes Interface testing
@@ -219,7 +212,6 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetPortRoleTypesNormalApp001
      * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0800
      * @tc.desc   setPortRoleTypes Interface testing

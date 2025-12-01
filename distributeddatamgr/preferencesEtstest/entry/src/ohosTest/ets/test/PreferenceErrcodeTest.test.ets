@@ -50,7 +50,6 @@ export default function preferencesErrcodeTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferenceClearErrTest0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsErrApiCallbackTest_0100
      * @tc.desc   mPreference.clear()
@@ -77,7 +76,6 @@ export default function preferencesErrcodeTest() {
       }
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferenceOnErrTest0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsErrApiCallbackTest_0200
      * @tc.desc   mPreference.On() interface test
@@ -106,7 +104,6 @@ export default function preferencesErrcodeTest() {
       }
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferenceOffErrTest0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsErrApiCallbackTest_0300
      * @tc.desc   mPreference.Off() interface test

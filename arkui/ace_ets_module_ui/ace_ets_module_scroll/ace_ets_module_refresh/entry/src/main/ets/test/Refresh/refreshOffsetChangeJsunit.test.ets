@@ -47,13 +47,13 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-    * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0100
-    * @tc.name  : refreshOffsetChangeJsunit_0100
-    * @tc.desc  : Add refreshOffset and pullToRefresh interfaces.
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   refreshOffsetChangeJsunit_0100
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0100
+     * @tc.desc   Add refreshOffset and pullToRefresh interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('refreshOffsetChangeJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0100 START');
       await CommonFunc.sleep(1000);
@@ -67,12 +67,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0200
-     * @tc.name  : refreshOffsetChangeJsunit_0200
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0200
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0200
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0200 START');
@@ -97,12 +97,12 @@ export default function refreshOffsetChangeJsunit() {
     });
     
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0300
-     * @tc.name  : refreshOffsetChangeJsunit_0300
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0300
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0300
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0300 START');
@@ -127,12 +127,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0400
-     * @tc.name  : refreshOffsetChangeJsunit_0400
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0400
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0400
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0400 START');
@@ -169,12 +169,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0500
-     * @tc.name  : refreshOffsetChangeJsunit_0500
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0500
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0500
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0500 START');
@@ -199,12 +199,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0600
-     * @tc.name  : refreshOffsetChangeJsunit_0600
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0600
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0600
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0600 START');
@@ -229,12 +229,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0700
-     * @tc.name  : refreshOffsetChangeJsunit_0700
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0700
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0700
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0700 START');
@@ -265,12 +265,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0800
-     * @tc.name  : refreshOffsetChangeJsunit_0800
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0800
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0800
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0800 START');
@@ -301,12 +301,12 @@ export default function refreshOffsetChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_REFRESH_REFRESHOFFSET_0900
-     * @tc.name  : refreshOffsetChangeJsunit_0900
-     * @tc.desc  : trigger onOffsetChange callback.
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshOffsetChangeJsunit_0900
+     * @tc.number SUB_ACE_REFRESH_REFRESHOFFSET_0900
+     * @tc.desc   trigger onOffsetChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshOffsetChangeJsunit_0900', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0900 START');

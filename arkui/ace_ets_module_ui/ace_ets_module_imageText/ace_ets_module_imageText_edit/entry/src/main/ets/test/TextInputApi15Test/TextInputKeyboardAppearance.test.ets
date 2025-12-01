@@ -42,12 +42,12 @@ export default function TextInputKeyboardAppearanceTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_TextInput_KeyboardAppearanceTest_0010
-     * @tc.name      TextInputKeyboardAppearanceTest_0010
-     * @tc.desc      set textInput KeyboardAppearance: NONE_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   TextInputKeyboardAppearanceTest_0010
+     * @tc.number SUB_ACE_TextInput_KeyboardAppearanceTest_0010
+     * @tc.desc   set textInput KeyboardAppearance: NONE_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputKeyboardAppearanceTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputKeyboardAppearanceTest_0010] START');
@@ -61,12 +61,12 @@ export default function TextInputKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInput_KeyboardAppearanceTest_0020
-     * @tc.name      TextInputKeyboardAppearanceTest_0020
-     * @tc.desc      set textInput KeyboardAppearance: IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputKeyboardAppearanceTest_0020
+     * @tc.number SUB_ACE_TextInput_KeyboardAppearanceTest_0020
+     * @tc.desc   set textInput KeyboardAppearance: IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputKeyboardAppearanceTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputKeyboardAppearanceTest_0020] START');
@@ -80,12 +80,12 @@ export default function TextInputKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInput_KeyboardAppearanceTest_0030
-     * @tc.name      TextInputKeyboardAppearanceTest_0030
-     * @tc.desc      set textInput KeyboardAppearance: LIGHT_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputKeyboardAppearanceTest_0030
+     * @tc.number SUB_ACE_TextInput_KeyboardAppearanceTest_0030
+     * @tc.desc   set textInput KeyboardAppearance: LIGHT_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputKeyboardAppearanceTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputKeyboardAppearanceTest_0030] START');
@@ -99,12 +99,12 @@ export default function TextInputKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInput_KeyboardAppearanceTest_0040
-     * @tc.name      TextInputKeyboardAppearanceTest_0040
-     * @tc.desc      set textInput KeyboardAppearance: DARK_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputKeyboardAppearanceTest_0040
+     * @tc.number SUB_ACE_TextInput_KeyboardAppearanceTest_0040
+     * @tc.desc   set textInput KeyboardAppearance: DARK_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputKeyboardAppearanceTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputKeyboardAppearanceTest_0040] START');
@@ -118,12 +118,12 @@ export default function TextInputKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInput_KeyboardAppearanceTest_0050
-     * @tc.name      TextInputKeyboardAppearanceTest_0050
-     * @tc.desc      test default value about textInput KeyboardAppearance: NONE_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputKeyboardAppearanceTest_0050
+     * @tc.number SUB_ACE_TextInput_KeyboardAppearanceTest_0050
+     * @tc.desc   test default value about textInput KeyboardAppearance: NONE_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputKeyboardAppearanceTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputKeyboardAppearanceTest_0050] START');
@@ -137,12 +137,12 @@ export default function TextInputKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInput_KeyboardAppearanceTest_0060
-     * @tc.name      TextInputKeyboardAppearanceTest_0060
-     * @tc.desc      test Illegal value about textInput KeyboardAppearance: UNDEFINED
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputKeyboardAppearanceTest_0060
+     * @tc.number SUB_ACE_TextInput_KeyboardAppearanceTest_0060
+     * @tc.desc   test Illegal value about textInput KeyboardAppearance: UNDEFINED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputKeyboardAppearanceTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputKeyboardAppearanceTest_0060] START');

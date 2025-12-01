@@ -46,10 +46,12 @@ export default function menu() {
     });
 
     /**
-     * @tc.number       menu_001
-     * @tc.name         menu_001
-     * @tc.desc        menu test
-     * @tc.level       Level 2
+     * @tc.name   menu_001
+     * @tc.number menu_001
+     * @tc.desc   menu test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menu_001', Level.LEVEL2, async (done: Function) => {
       console.info('[menu_001] START');

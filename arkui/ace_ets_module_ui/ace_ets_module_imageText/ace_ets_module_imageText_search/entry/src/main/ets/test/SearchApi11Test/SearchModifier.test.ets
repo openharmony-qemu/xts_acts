@@ -42,12 +42,12 @@ export default function SearchModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchModifierTest_0010
-     * @tc.name      SearchModifierTest_0010
-     * @tc.desc      test SearchModifier: fontSize
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchModifierTest_0010
+     * @tc.number SUB_ACE_SearchModifierTest_0010
+     * @tc.desc   test SearchModifier: fontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SearchModifierTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('SearchModifierTest_0010 START');
@@ -62,12 +62,12 @@ export default function SearchModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchModifierTest_0020
-     * @tc.name      SearchModifierTest_0020
-     * @tc.desc      test type of SearchInstance: undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchModifierTest_0020
+     * @tc.number SUB_ACE_SearchModifierTest_0020
+     * @tc.desc   test type of SearchInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SearchModifierTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('SearchModifierTest_0020 START');

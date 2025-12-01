@@ -73,7 +73,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -104,7 +104,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -137,7 +137,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -170,7 +170,7 @@ export default function formHostTest() {
         expect().assertFail();
         done();
       } catch (error: BusinessError) {
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
       }
@@ -210,7 +210,7 @@ export default function formHostTest() {
       } catch (error: Error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
         expect(code).assertEqual(202);
         done();
       }
@@ -236,7 +236,7 @@ export default function formHostTest() {
       } catch (error: Error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
-        hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
+        hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
         expect(code).assertEqual(202);
         done();
       }
@@ -244,9 +244,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: AddFormWithPromiseStaticTest001
-     * @tc.name: AddFormWithPromiseStaticTest001
-     * @tc.desc: check AddFormWithPromise
+     * @tc.name   AddFormWithPromiseStaticTest001
+     * @tc.number AddFormWithPromiseStaticTest001
+     * @tc.desc   check AddFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AddFormWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AddFormWithPromiseStaticTest001 start');
@@ -261,9 +264,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: AddFormWithPromiseStaticTest002
-     * @tc.name: AddFormWithPromiseStaticTest002
-     * @tc.desc: check AddFormWithPromise
+     * @tc.name   AddFormWithPromiseStaticTest002
+     * @tc.number AddFormWithPromiseStaticTest002
+     * @tc.desc   check AddFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AddFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AddFormWithPromiseStaticTest002 start');
@@ -278,9 +284,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DeleteFormWithCallbackStaticTest001
-     * @tc.name: DeleteFormWithCallbackStaticTest001
-     * @tc.desc: check DeleteFormWithCallback
+     * @tc.name   DeleteFormWithCallbackStaticTest001
+     * @tc.number DeleteFormWithCallbackStaticTest001
+     * @tc.desc   check DeleteFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteFormWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 start');
@@ -290,15 +299,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.DeleteFormWithCallback);
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest001 end');
     })
 
     /**
-     * @tc.number: DeleteFormWithCallbackStaticTest002
-     * @tc.name: DeleteFormWithCallbackStaticTest002
-     * @tc.desc: check DeleteFormWithCallback
+     * @tc.name   DeleteFormWithCallbackStaticTest002
+     * @tc.number DeleteFormWithCallbackStaticTest002
+     * @tc.desc   check DeleteFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteFormWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteFormWithCallbackStaticTest002 start');
@@ -313,9 +324,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DeleteFormWithPromiseStaticTest001
-     * @tc.name: DeleteFormWithPromiseStaticTest001
-     * @tc.desc: check DeleteFormWithPromise
+     * @tc.name   DeleteFormWithPromiseStaticTest001
+     * @tc.number DeleteFormWithPromiseStaticTest001
+     * @tc.desc   check DeleteFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteFormWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 start');
@@ -325,15 +339,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.DeleteFormWithPromise);
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: DeleteFormWithPromiseStaticTest002
-     * @tc.name: DeleteFormWithPromiseStaticTest002
-     * @tc.desc: check DeleteFormWithPromise
+     * @tc.name   DeleteFormWithPromiseStaticTest002
+     * @tc.number DeleteFormWithPromiseStaticTest002
+     * @tc.desc   check DeleteFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteFormWithPromiseStaticTest002 start');
@@ -348,9 +364,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ReleaseFormWithPromiseStaticTest001
-     * @tc.name: ReleaseFormWithPromiseStaticTest001
-     * @tc.desc: check ReleaseFormWithPromise
+     * @tc.name   ReleaseFormWithPromiseStaticTest001
+     * @tc.number ReleaseFormWithPromiseStaticTest001
+     * @tc.desc   check ReleaseFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ReleaseFormWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithPromiseStaticTest001 start');
@@ -365,9 +384,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ReleaseFormWithPromiseStaticTest002
-     * @tc.name: ReleaseFormWithPromiseStaticTest002
-     * @tc.desc: check ReleaseFormWithPromise
+     * @tc.name   ReleaseFormWithPromiseStaticTest002
+     * @tc.number ReleaseFormWithPromiseStaticTest002
+     * @tc.desc   check ReleaseFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ReleaseFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithPromiseStaticTest002 start');
@@ -382,9 +404,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ReleaseFormWithCacheCallbackStaticTest001
-     * @tc.name: ReleaseFormWithCacheCallbackStaticTest001
-     * @tc.desc: check ReleaseFormWithCacheCallback
+     * @tc.name   ReleaseFormWithCacheCallbackStaticTest001
+     * @tc.number ReleaseFormWithCacheCallbackStaticTest001
+     * @tc.desc   check ReleaseFormWithCacheCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ReleaseFormWithCacheCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCacheCallbackStaticTest001 start');
@@ -399,9 +424,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ReleaseFormWithCacheCallbackStaticTest002
-     * @tc.name: ReleaseFormWithCacheCallbackStaticTest002
-     * @tc.desc: check ReleaseFormWithCacheCallback
+     * @tc.name   ReleaseFormWithCacheCallbackStaticTest002
+     * @tc.number ReleaseFormWithCacheCallbackStaticTest002
+     * @tc.desc   check ReleaseFormWithCacheCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ReleaseFormWithCacheCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCacheCallbackStaticTest002 start');
@@ -416,9 +444,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ReleaseFormWithCallbackStaticTest001
-     * @tc.name: ReleaseFormWithCallbackStaticTest001
-     * @tc.desc: check ReleaseFormWithCallback
+     * @tc.name   ReleaseFormWithCallbackStaticTest001
+     * @tc.number ReleaseFormWithCallbackStaticTest001
+     * @tc.desc   check ReleaseFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ReleaseFormWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCallbackStaticTest001 start');
@@ -433,9 +464,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ReleaseFormWithCallbackStaticTest002
-     * @tc.name: ReleaseFormWithCallbackStaticTest002
-     * @tc.desc: check ReleaseFormWithCallback
+     * @tc.name   ReleaseFormWithCallbackStaticTest002
+     * @tc.number ReleaseFormWithCallbackStaticTest002
+     * @tc.desc   check ReleaseFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ReleaseFormWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ReleaseFormWithCallbackStaticTest002 start');
@@ -450,10 +484,13 @@ export default function formHostTest() {
     })
 
     /**
-    * @tc.number: RequestFormWithPromiseStaticTest001
-    * @tc.name: RequestFormWithPromiseStaticTest001
-    * @tc.desc: check RequestFormWithPromise
-    */
+     * @tc.name   RequestFormWithPromiseStaticTest001
+     * @tc.number RequestFormWithPromiseStaticTest001
+     * @tc.desc   check RequestFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("RequestFormWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestFormWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.RequestFormWithPromise), (eventData: emitter.EventData) => {
@@ -467,9 +504,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RequestFormWithPromiseStaticTest002
-     * @tc.name: RequestFormWithPromiseStaticTest002
-     * @tc.desc: check RequestFormWithPromise
+     * @tc.name   RequestFormWithPromiseStaticTest002
+     * @tc.number RequestFormWithPromiseStaticTest002
+     * @tc.desc   check RequestFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestFormWithPromiseStaticTest002 start');
@@ -484,9 +524,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RequestFormWithCallbackStaticTest001
-     * @tc.name: RequestFormWithCallbackStaticTest001
-     * @tc.desc: check RequestFormWithCallback
+     * @tc.name   RequestFormWithCallbackStaticTest001
+     * @tc.number RequestFormWithCallbackStaticTest001
+     * @tc.desc   check RequestFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestFormWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestFormWithCallbackStaticTest001 start');
@@ -501,9 +544,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RequestFormWithCallbackStaticTest002
-     * @tc.name: RequestFormWithCallbackStaticTest002
-     * @tc.desc: check RequestFormWithCallback
+     * @tc.name   RequestFormWithCallbackStaticTest002
+     * @tc.number RequestFormWithCallbackStaticTest002
+     * @tc.desc   check RequestFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestFormWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestFormWithCallbackStaticTest002 start');
@@ -518,9 +564,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RequestFormWithParamsPromiseStaticTest001
-     * @tc.name: RequestFormWithParamsPromiseStaticTest001
-     * @tc.desc: check RequestFormWithParamsPromise
+     * @tc.name   RequestFormWithParamsPromiseStaticTest001
+     * @tc.number RequestFormWithParamsPromiseStaticTest001
+     * @tc.desc   check RequestFormWithParamsPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestFormWithParamsPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestFormWithParamsPromiseStaticTest001 start');
@@ -535,9 +584,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RequestFormWithParamsPromiseStaticTest002
-     * @tc.name: RequestFormWithParamsPromiseStaticTest002
-     * @tc.desc: check RequestFormWithParamsPromise
+     * @tc.name   RequestFormWithParamsPromiseStaticTest002
+     * @tc.number RequestFormWithParamsPromiseStaticTest002
+     * @tc.desc   check RequestFormWithParamsPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestFormWithParamsPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RequestFormWithParamsPromiseStaticTest002 start');
@@ -552,9 +604,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: CastToNormalFormWithCallbackStaticTest001
-     * @tc.name: CastToNormalFormWithCallbackStaticTest001
-     * @tc.desc: check CastToNormalFormWithCallback
+     * @tc.name   CastToNormalFormWithCallbackStaticTest001
+     * @tc.number CastToNormalFormWithCallbackStaticTest001
+     * @tc.desc   check CastToNormalFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("CastToNormalFormWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithCallbackStaticTest001 start');
@@ -569,9 +624,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: CastToNormalFormWithCallbackStaticTest002
-     * @tc.name: CastToNormalFormWithCallbackStaticTest002
-     * @tc.desc: check CastToNormalFormWithCallback
+     * @tc.name   CastToNormalFormWithCallbackStaticTest002
+     * @tc.number CastToNormalFormWithCallbackStaticTest002
+     * @tc.desc   check CastToNormalFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("CastToNormalFormWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithCallbackStaticTest002 start');
@@ -586,9 +644,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: CastToNormalFormWithPromiseStaticTest001
-     * @tc.name: CastToNormalFormWithPromiseStaticTest001
-     * @tc.desc: check CastToNormalFormWithPromise
+     * @tc.name   CastToNormalFormWithPromiseStaticTest001
+     * @tc.number CastToNormalFormWithPromiseStaticTest001
+     * @tc.desc   check CastToNormalFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("CastToNormalFormWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithPromiseStaticTest001 start');
@@ -603,9 +664,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: CastToNormalFormWithPromiseStaticTest002
-     * @tc.name: CastToNormalFormWithPromiseStaticTest002
-     * @tc.desc: check CastToNormalFormWithPromise
+     * @tc.name   CastToNormalFormWithPromiseStaticTest002
+     * @tc.number CastToNormalFormWithPromiseStaticTest002
+     * @tc.desc   check CastToNormalFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("CastToNormalFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'CastToNormalFormWithPromiseStaticTest002 start');
@@ -620,9 +684,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyVisibleFormsWithPromiseStaticTest001
-     * @tc.name: NotifyVisibleFormsWithPromiseStaticTest001
-     * @tc.desc: check NotifyVisibleFormsWithPromise
+     * @tc.name   NotifyVisibleFormsWithPromiseStaticTest001
+     * @tc.number NotifyVisibleFormsWithPromiseStaticTest001
+     * @tc.desc   check NotifyVisibleFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyVisibleFormsWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithPromiseStaticTest001 start');
@@ -637,10 +704,13 @@ export default function formHostTest() {
     })
 
     /**
- * @tc.number: NotifyVisibleFormsWithPromiseStaticTest002
- * @tc.name: NotifyVisibleFormsWithPromiseStaticTest002
- * @tc.desc: check NotifyVisibleFormsWithPromise
- */
+     * @tc.name   NotifyVisibleFormsWithPromiseStaticTest002
+     * @tc.number NotifyVisibleFormsWithPromiseStaticTest002
+     * @tc.desc   check NotifyVisibleFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("NotifyVisibleFormsWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithPromiseStaticTest002 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyVisibleFormsWithPromise), (eventData: emitter.EventData) => {
@@ -655,9 +725,12 @@ export default function formHostTest() {
 
 
     /**
-     * @tc.number: NotifyVisibleFormsWithCallbackStaticTest001
-     * @tc.name: NotifyVisibleFormsWithCallbackStaticTest001
-     * @tc.desc: check NotifyVisibleFormsWithCallback
+     * @tc.name   NotifyVisibleFormsWithCallbackStaticTest001
+     * @tc.number NotifyVisibleFormsWithCallbackStaticTest001
+     * @tc.desc   check NotifyVisibleFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyVisibleFormsWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithCallbackStaticTest001 start');
@@ -672,9 +745,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyVisibleFormsWithCallbackStaticTest002
-     * @tc.name: NotifyVisibleFormsWithCallbackStaticTest002
-     * @tc.desc: check NotifyVisibleFormsWithCallback
+     * @tc.name   NotifyVisibleFormsWithCallbackStaticTest002
+     * @tc.number NotifyVisibleFormsWithCallbackStaticTest002
+     * @tc.desc   check NotifyVisibleFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyVisibleFormsWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyVisibleFormsWithCallbackStaticTest002 start');
@@ -689,9 +765,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyInvisibleFormsWithPromiseStaticTest001
-     * @tc.name: NotifyInvisibleFormsWithPromiseStaticTest001
-     * @tc.desc: check NotifyInvisibleFormsWithPromise
+     * @tc.name   NotifyInvisibleFormsWithPromiseStaticTest001
+     * @tc.number NotifyInvisibleFormsWithPromiseStaticTest001
+     * @tc.desc   check NotifyInvisibleFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyInvisibleFormsWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithPromiseStaticTest001 start');
@@ -706,9 +785,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyInvisibleFormsWithPromiseStaticTest002
-     * @tc.name: NotifyInvisibleFormsWithPromiseStaticTest002
-     * @tc.desc: check NotifyInvisibleFormsWithPromise
+     * @tc.name   NotifyInvisibleFormsWithPromiseStaticTest002
+     * @tc.number NotifyInvisibleFormsWithPromiseStaticTest002
+     * @tc.desc   check NotifyInvisibleFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyInvisibleFormsWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithPromiseStaticTest002 start');
@@ -723,9 +805,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyInvisibleFormsWithCallbackStaticTest001
-     * @tc.name: NotifyInvisibleFormsWithCallbackStaticTest001
-     * @tc.desc: check NotifyInvisibleFormsWithCallback
+     * @tc.name   NotifyInvisibleFormsWithCallbackStaticTest001
+     * @tc.number NotifyInvisibleFormsWithCallbackStaticTest001
+     * @tc.desc   check NotifyInvisibleFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyInvisibleFormsWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithCallbackStaticTest001 start');
@@ -740,9 +825,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyInvisibleFormsWithCallbackStaticTest002
-     * @tc.name: NotifyInvisibleFormsWithCallbackStaticTest002
-     * @tc.desc: check NotifyInvisibleFormsWithCallback
+     * @tc.name   NotifyInvisibleFormsWithCallbackStaticTest002
+     * @tc.number NotifyInvisibleFormsWithCallbackStaticTest002
+     * @tc.desc   check NotifyInvisibleFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyInvisibleFormsWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyInvisibleFormsWithCallbackStaticTest002 start');
@@ -757,9 +845,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: EnableFormsUpdateWithCallbackStaticTest001
-     * @tc.name: EnableFormsUpdateWithCallbackStaticTest001
-     * @tc.desc: check EnableFormsUpdateWithCallback
+     * @tc.name   EnableFormsUpdateWithCallbackStaticTest001
+     * @tc.number EnableFormsUpdateWithCallbackStaticTest001
+     * @tc.desc   check EnableFormsUpdateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("EnableFormsUpdateWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithCallbackStaticTest001 start');
@@ -774,9 +865,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: EnableFormsUpdateWithCallbackStaticTest002
-     * @tc.name: EnableFormsUpdateWithCallbackStaticTest002
-     * @tc.desc: check EnableFormsUpdateWithCallback
+     * @tc.name   EnableFormsUpdateWithCallbackStaticTest002
+     * @tc.number EnableFormsUpdateWithCallbackStaticTest002
+     * @tc.desc   check EnableFormsUpdateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("EnableFormsUpdateWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithCallbackStaticTest002 start');
@@ -791,9 +885,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: EnableFormsUpdateWithPromiseStaticTest001
-     * @tc.name: EnableFormsUpdateWithPromiseStaticTest001
-     * @tc.desc: check EnableFormsUpdateWithPromise
+     * @tc.name   EnableFormsUpdateWithPromiseStaticTest001
+     * @tc.number EnableFormsUpdateWithPromiseStaticTest001
+     * @tc.desc   check EnableFormsUpdateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("EnableFormsUpdateWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithPromiseStaticTest001 start');
@@ -808,9 +905,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: EnableFormsUpdateWithPromiseStaticTest002
-     * @tc.name: EnableFormsUpdateWithPromiseStaticTest002
-     * @tc.desc: check EnableFormsUpdateWithPromise
+     * @tc.name   EnableFormsUpdateWithPromiseStaticTest002
+     * @tc.number EnableFormsUpdateWithPromiseStaticTest002
+     * @tc.desc   check EnableFormsUpdateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("EnableFormsUpdateWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'EnableFormsUpdateWithPromiseStaticTest002 start');
@@ -825,9 +925,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DisableFormsUpdateWithPromiseStaticTest001
-     * @tc.name: DisableFormsUpdateWithPromiseStaticTest001
-     * @tc.desc: check DisableFormsUpdateWithPromise
+     * @tc.name   DisableFormsUpdateWithPromiseStaticTest001
+     * @tc.number DisableFormsUpdateWithPromiseStaticTest001
+     * @tc.desc   check DisableFormsUpdateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DisableFormsUpdateWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithPromiseStaticTest001 start');
@@ -842,9 +945,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DisableFormsUpdateWithPromiseStaticTest002
-     * @tc.name: DisableFormsUpdateWithPromiseStaticTest002
-     * @tc.desc: check DisableFormsUpdateWithPromise
+     * @tc.name   DisableFormsUpdateWithPromiseStaticTest002
+     * @tc.number DisableFormsUpdateWithPromiseStaticTest002
+     * @tc.desc   check DisableFormsUpdateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DisableFormsUpdateWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithPromiseStaticTest002 start');
@@ -859,9 +965,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DisableFormsUpdateWithCallbackStaticTest001
-     * @tc.name: DisableFormsUpdateWithCallbackStaticTest001
-     * @tc.desc: check DisableFormsUpdateWithCallback
+     * @tc.name   DisableFormsUpdateWithCallbackStaticTest001
+     * @tc.number DisableFormsUpdateWithCallbackStaticTest001
+     * @tc.desc   check DisableFormsUpdateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DisableFormsUpdateWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithCallbackStaticTest001 start');
@@ -876,9 +985,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DisableFormsUpdateWithCallbackStaticTest002
-     * @tc.name: DisableFormsUpdateWithCallbackStaticTest002
-     * @tc.desc: check DisableFormsUpdateWithCallback
+     * @tc.name   DisableFormsUpdateWithCallbackStaticTest002
+     * @tc.number DisableFormsUpdateWithCallbackStaticTest002
+     * @tc.desc   check DisableFormsUpdateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DisableFormsUpdateWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DisableFormsUpdateWithCallbackStaticTest002 start');
@@ -893,9 +1005,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: IsSystemReadyWithCallbackStaticTest001
-     * @tc.name: IsSystemReadyWithCallbackStaticTest001
-     * @tc.desc: check IsSystemReadyWithCallback
+     * @tc.name   IsSystemReadyWithCallbackStaticTest001
+     * @tc.number IsSystemReadyWithCallbackStaticTest001
+     * @tc.desc   check IsSystemReadyWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("IsSystemReadyWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'IsSystemReadyWithCallbackStaticTest001 start');
@@ -910,9 +1025,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: IsSystemReadyWithPromiseStaticTest001
-     * @tc.name: IsSystemReadyWithPromiseStaticTest001
-     * @tc.desc: check IsSystemReadyWithPromise
+     * @tc.name   IsSystemReadyWithPromiseStaticTest001
+     * @tc.number IsSystemReadyWithPromiseStaticTest001
+     * @tc.desc   check IsSystemReadyWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("IsSystemReadyWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'IsSystemReadyWithPromiseStaticTest001 start');
@@ -927,9 +1045,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetAllFormsInfoWithPromiseStaticTest001
-     * @tc.name: GetAllFormsInfoWithPromiseStaticTest001
-     * @tc.desc: check GetAllFormsInfoWithPromise
+     * @tc.name   GetAllFormsInfoWithPromiseStaticTest001
+     * @tc.number GetAllFormsInfoWithPromiseStaticTest001
+     * @tc.desc   check GetAllFormsInfoWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetAllFormsInfoWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithPromiseStaticTest001 start');
@@ -944,9 +1065,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetAllFormsInfoWithCallbackStaticTest001
-     * @tc.name: GetAllFormsInfoWithCallbackStaticTest001
-     * @tc.desc: check GetAllFormsInfoWithCallback
+     * @tc.name   GetAllFormsInfoWithCallbackStaticTest001
+     * @tc.number GetAllFormsInfoWithCallbackStaticTest001
+     * @tc.desc   check GetAllFormsInfoWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetAllFormsInfoWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetAllFormsInfoWithCallbackStaticTest001 start');
@@ -961,9 +1085,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithFilterPromiseStaticTest001
-     * @tc.name: GetFormsInfoWithFilterPromiseStaticTest001
-     * @tc.desc: check GetFormsInfoWithFilterPromise
+     * @tc.name   GetFormsInfoWithFilterPromiseStaticTest001
+     * @tc.number GetFormsInfoWithFilterPromiseStaticTest001
+     * @tc.desc   check GetFormsInfoWithFilterPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithFilterPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithFilterPromiseStaticTest001 start');
@@ -978,9 +1105,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithBundleModuleCallbackStaticTest001
-     * @tc.name: GetFormsInfoWithBundleModuleCallbackStaticTest001
-     * @tc.desc: check GetFormsInfoWithBundleModuleCallback
+     * @tc.name   GetFormsInfoWithBundleModuleCallbackStaticTest001
+     * @tc.number GetFormsInfoWithBundleModuleCallbackStaticTest001
+     * @tc.desc   check GetFormsInfoWithBundleModuleCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithBundleModuleCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModuleCallbackStaticTest001 start');
@@ -995,9 +1125,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithBundleModuleCallbackStaticTest002
-     * @tc.name: GetFormsInfoWithBundleModuleCallbackStaticTest002
-     * @tc.desc: check GetFormsInfoWithBundleModuleCallback
+     * @tc.name   GetFormsInfoWithBundleModuleCallbackStaticTest002
+     * @tc.number GetFormsInfoWithBundleModuleCallbackStaticTest002
+     * @tc.desc   check GetFormsInfoWithBundleModuleCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithBundleModuleCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModuleCallbackStaticTest002 start');
@@ -1012,9 +1145,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithBundleModulePromiseStaticTest001
-     * @tc.name: GetFormsInfoWithBundleModulePromiseStaticTest001
-     * @tc.desc: check GetFormsInfoWithBundleModulePromise
+     * @tc.name   GetFormsInfoWithBundleModulePromiseStaticTest001
+     * @tc.number GetFormsInfoWithBundleModulePromiseStaticTest001
+     * @tc.desc   check GetFormsInfoWithBundleModulePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithBundleModulePromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModulePromiseStaticTest001 start');
@@ -1029,9 +1165,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithBundleModulePromiseStaticTest002
-     * @tc.name: GetFormsInfoWithBundleModulePromiseStaticTest002
-     * @tc.desc: check GetFormsInfoWithBundleModulePromise
+     * @tc.name   GetFormsInfoWithBundleModulePromiseStaticTest002
+     * @tc.number GetFormsInfoWithBundleModulePromiseStaticTest002
+     * @tc.desc   check GetFormsInfoWithBundleModulePromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithBundleModulePromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleModulePromiseStaticTest002 start');
@@ -1046,9 +1185,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithBundleCallbackStaticTest001
-     * @tc.name: GetFormsInfoWithBundleCallbackStaticTest001
-     * @tc.desc: check GetFormsInfoWithBundleCallback
+     * @tc.name   GetFormsInfoWithBundleCallbackStaticTest001
+     * @tc.number GetFormsInfoWithBundleCallbackStaticTest001
+     * @tc.desc   check GetFormsInfoWithBundleCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithBundleCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleCallbackStaticTest001 start');
@@ -1063,9 +1205,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: GetFormsInfoWithBundleCallbackStaticTest002
-     * @tc.name: GetFormsInfoWithBundleCallbackStaticTest002
-     * @tc.desc: check GetFormsInfoWithBundleCallback
+     * @tc.name   GetFormsInfoWithBundleCallbackStaticTest002
+     * @tc.number GetFormsInfoWithBundleCallbackStaticTest002
+     * @tc.desc   check GetFormsInfoWithBundleCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormsInfoWithBundleCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'GetFormsInfoWithBundleCallbackStaticTest002 start');
@@ -1081,9 +1226,12 @@ export default function formHostTest() {
 
 
     /**
-     * @tc.number: SetRouterProxyWithPromiseStaticTest001
-     * @tc.name: SetRouterProxyWithPromiseStaticTest001
-     * @tc.desc: check SetRouterProxyWithPromise
+     * @tc.name   SetRouterProxyWithPromiseStaticTest001
+     * @tc.number SetRouterProxyWithPromiseStaticTest001
+     * @tc.desc   check SetRouterProxyWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetRouterProxyWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 start');
@@ -1093,15 +1241,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithPromise);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: SetRouterProxyWithPromiseStaticTest002
-     * @tc.name: SetRouterProxyWithPromiseStaticTest002
-     * @tc.desc: check SetRouterProxyWithPromise
+     * @tc.name   SetRouterProxyWithPromiseStaticTest002
+     * @tc.number SetRouterProxyWithPromiseStaticTest002
+     * @tc.desc   check SetRouterProxyWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetRouterProxyWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 start');
@@ -1111,15 +1261,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithPromise, true);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest002 end');
     })
 
     /**
-     * @tc.number: SetRouterProxyWithCallbackStaticTest001
-     * @tc.name: SetRouterProxyWithCallbackStaticTest001
-     * @tc.desc: check SetRouterProxyWithCallback
+     * @tc.name   SetRouterProxyWithCallbackStaticTest001
+     * @tc.number SetRouterProxyWithCallbackStaticTest001
+     * @tc.desc   check SetRouterProxyWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetRouterProxyWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 start');
@@ -1129,15 +1281,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithCallback);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 end');
     })
 
     /**
-     * @tc.number: SetRouterProxyWithCallbackStaticTest002
-     * @tc.name: SetRouterProxyWithCallbackStaticTest002
-     * @tc.desc: check SetRouterProxyWithCallback
+     * @tc.name   SetRouterProxyWithCallbackStaticTest002
+     * @tc.number SetRouterProxyWithCallbackStaticTest002
+     * @tc.desc   check SetRouterProxyWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetRouterProxyWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 start');
@@ -1147,15 +1301,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetRouterProxyWithCallback, true);
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest002 end');
     })
 
     /**
-     * @tc.number: ClearRouterProxyWithCallbackStaticTest001
-     * @tc.name: ClearRouterProxyWithCallbackStaticTest001
-     * @tc.desc: check ClearRouterProxyWithCallback
+     * @tc.name   ClearRouterProxyWithCallbackStaticTest001
+     * @tc.number ClearRouterProxyWithCallbackStaticTest001
+     * @tc.desc   check ClearRouterProxyWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ClearRouterProxyWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithCallbackStaticTest001 start');
@@ -1170,9 +1326,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ClearRouterProxyWithCallbackStaticTest002
-     * @tc.name: ClearRouterProxyWithCallbackStaticTest002
-     * @tc.desc: check ClearRouterProxyWithCallback
+     * @tc.name   ClearRouterProxyWithCallbackStaticTest002
+     * @tc.number ClearRouterProxyWithCallbackStaticTest002
+     * @tc.desc   check ClearRouterProxyWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ClearRouterProxyWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithCallbackStaticTest002 start');
@@ -1187,9 +1346,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ClearRouterProxyWithPromiseStaticTest001
-     * @tc.name: ClearRouterProxyWithPromiseStaticTest001
-     * @tc.desc: check ClearRouterProxyWithPromise
+     * @tc.name   ClearRouterProxyWithPromiseStaticTest001
+     * @tc.number ClearRouterProxyWithPromiseStaticTest001
+     * @tc.desc   check ClearRouterProxyWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ClearRouterProxyWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithPromiseStaticTest001 start');
@@ -1204,9 +1366,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ClearRouterProxyWithPromiseStaticTest002
-     * @tc.name: ClearRouterProxyWithPromiseStaticTest002
-     * @tc.desc: check ClearRouterProxyWithPromise
+     * @tc.name   ClearRouterProxyWithPromiseStaticTest002
+     * @tc.number ClearRouterProxyWithPromiseStaticTest002
+     * @tc.desc   check ClearRouterProxyWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ClearRouterProxyWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ClearRouterProxyWithPromiseStaticTest002 start');
@@ -1221,9 +1386,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DeleteInvalidFormsWithPromiseStaticTest001
-     * @tc.name: DeleteInvalidFormsWithPromiseStaticTest001
-     * @tc.desc: check DeleteInvalidFormsWithPromise
+     * @tc.name   DeleteInvalidFormsWithPromiseStaticTest001
+     * @tc.number DeleteInvalidFormsWithPromiseStaticTest001
+     * @tc.desc   check DeleteInvalidFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteInvalidFormsWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithPromiseStaticTest001 start');
@@ -1238,9 +1406,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DeleteInvalidFormsWithPromiseStaticTest002
-     * @tc.name: DeleteInvalidFormsWithPromiseStaticTest002
-     * @tc.desc: check DeleteInvalidFormsWithPromise
+     * @tc.name   DeleteInvalidFormsWithPromiseStaticTest002
+     * @tc.number DeleteInvalidFormsWithPromiseStaticTest002
+     * @tc.desc   check DeleteInvalidFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteInvalidFormsWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithPromiseStaticTest002 start');
@@ -1255,9 +1426,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DeleteInvalidFormsWithCallbackStaticTest001
-     * @tc.name: DeleteInvalidFormsWithCallbackStaticTest001
-     * @tc.desc: check DeleteInvalidFormsWithCallback
+     * @tc.name   DeleteInvalidFormsWithCallbackStaticTest001
+     * @tc.number DeleteInvalidFormsWithCallbackStaticTest001
+     * @tc.desc   check DeleteInvalidFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteInvalidFormsWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithCallbackStaticTest001 start');
@@ -1272,9 +1446,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: DeleteInvalidFormsWithCallbackStaticTest002
-     * @tc.name: DeleteInvalidFormsWithCallbackStaticTest002
-     * @tc.desc: check DeleteInvalidFormsWithCallback
+     * @tc.name   DeleteInvalidFormsWithCallbackStaticTest002
+     * @tc.number DeleteInvalidFormsWithCallbackStaticTest002
+     * @tc.desc   check DeleteInvalidFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeleteInvalidFormsWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'DeleteInvalidFormsWithCallbackStaticTest002 start');
@@ -1289,9 +1466,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: AcquireFormStateWithPromiseStaticTest001
-     * @tc.name: AcquireFormStateWithPromiseStaticTest001
-     * @tc.desc: check AcquireFormStateWithPromise
+     * @tc.name   AcquireFormStateWithPromiseStaticTest001
+     * @tc.number AcquireFormStateWithPromiseStaticTest001
+     * @tc.desc   check AcquireFormStateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormStateWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest001 start');
@@ -1301,15 +1481,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithPromise);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: AcquireFormStateWithPromiseStaticTest002
-     * @tc.name: AcquireFormStateWithPromiseStaticTest002
-     * @tc.desc: check AcquireFormStateWithPromise
+     * @tc.name   AcquireFormStateWithPromiseStaticTest002
+     * @tc.number AcquireFormStateWithPromiseStaticTest002
+     * @tc.desc   check AcquireFormStateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormStateWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest002 start');
@@ -1319,15 +1501,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithPromise, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithPromiseStaticTest002 end');
     })
 
     /**
-     * @tc.number: OnFormUninstallWithoutStringStaticTest001
-     * @tc.name: OnFormUninstallWithoutStringStaticTest001
-     * @tc.desc: check OnFormUninstallWithoutStringStaticTest001
+     * @tc.name   OnFormUninstallWithoutStringStaticTest001
+     * @tc.number OnFormUninstallWithoutStringStaticTest001
+     * @tc.desc   check OnFormUninstallWithoutStringStaticTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("OnFormUninstallWithoutStringStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 start');
@@ -1337,16 +1521,18 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.OnFormUninstallWithoutString);
       hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutStringStaticTest001 end');
     })
 
     /**
- * @tc.number: AcquireFormStateWithCallbackStaticTest001
- * @tc.name: AcquireFormStateWithCallbackStaticTest001
- * @tc.desc: check AcquireFormStateWithCallback
- */
+     * @tc.name   AcquireFormStateWithCallbackStaticTest001
+     * @tc.number AcquireFormStateWithCallbackStaticTest001
+     * @tc.desc   check AcquireFormStateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("AcquireFormStateWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.AcquireFormStateWithCallback), (eventData: emitter.EventData) => {
@@ -1355,15 +1541,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithCallback);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest001 end');
     })
 
     /**
-     * @tc.number: OffFormUninstallWithoutStringStaticTest001
-     * @tc.name: OffFormUninstallWithoutStringStaticTest001
-     * @tc.desc: check OffFormUninstallWithoutStringStaticTest001
+     * @tc.name   OffFormUninstallWithoutStringStaticTest001
+     * @tc.number OffFormUninstallWithoutStringStaticTest001
+     * @tc.desc   check OffFormUninstallWithoutStringStaticTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("OffFormUninstallWithoutStringStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 start');
@@ -1373,15 +1561,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.OffFormUninstallWithoutString);
       hilog.info(DOMAIN, TAG, 'OffFormUninstallWithoutStringStaticTest001 end');
     })
 
     /**
-     * @tc.number: AcquireFormStateWithCallbackStaticTest002
-     * @tc.name: AcquireFormStateWithCallbackStaticTest002
-     * @tc.desc: check AcquireFormStateWithCallback
+     * @tc.name   AcquireFormStateWithCallbackStaticTest002
+     * @tc.number AcquireFormStateWithCallbackStaticTest002
+     * @tc.desc   check AcquireFormStateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormStateWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest002 start');
@@ -1391,15 +1581,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormStateWithCallback, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormStateWithCallbackStaticTest002 end');
     })
 
     /**
-     * @tc.number: NotifyFormsVisibleWithCallbackStaticTest001
-     * @tc.name: NotifyFormsVisibleWithCallbackStaticTest001
-     * @tc.desc: check NotifyFormsVisibleWithCallback
+     * @tc.name   NotifyFormsVisibleWithCallbackStaticTest001
+     * @tc.number NotifyFormsVisibleWithCallbackStaticTest001
+     * @tc.desc   check NotifyFormsVisibleWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsVisibleWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithCallbackStaticTest001 start');
@@ -1414,9 +1606,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyFormsVisibleWithCallbackStaticTest002
-     * @tc.name: NotifyFormsVisibleWithCallbackStaticTest002
-     * @tc.desc: check NotifyFormsVisibleWithCallback
+     * @tc.name   NotifyFormsVisibleWithCallbackStaticTest002
+     * @tc.number NotifyFormsVisibleWithCallbackStaticTest002
+     * @tc.desc   check NotifyFormsVisibleWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsVisibleWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithCallbackStaticTest002 start');
@@ -1431,9 +1626,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyFormsVisibleWithPromiseStaticTest001
-     * @tc.name: NotifyFormsVisibleWithPromiseStaticTest001
-     * @tc.desc: check NotifyFormsVisibleWithPromise
+     * @tc.name   NotifyFormsVisibleWithPromiseStaticTest001
+     * @tc.number NotifyFormsVisibleWithPromiseStaticTest001
+     * @tc.desc   check NotifyFormsVisibleWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsVisibleWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithPromiseStaticTest001 start');
@@ -1448,9 +1646,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyFormsVisibleWithPromiseStaticTest002
-     * @tc.name: NotifyFormsVisibleWithPromiseStaticTest002
-     * @tc.desc: check NotifyFormsVisibleWithPromise
+     * @tc.name   NotifyFormsVisibleWithPromiseStaticTest002
+     * @tc.number NotifyFormsVisibleWithPromiseStaticTest002
+     * @tc.desc   check NotifyFormsVisibleWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsVisibleWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsVisibleWithPromiseStaticTest002 start');
@@ -1465,10 +1666,13 @@ export default function formHostTest() {
     })
 
     /**
-      * @tc.number: NotifyFormsEnableUpdateWithPromiseStaticTest001
-      * @tc.name: NotifyFormsEnableUpdateWithPromiseStaticTest001
-      * @tc.desc: check NotifyFormsEnableUpdateWithPromise
-      */
+     * @tc.name   NotifyFormsEnableUpdateWithPromiseStaticTest001
+     * @tc.number NotifyFormsEnableUpdateWithPromiseStaticTest001
+     * @tc.desc   check NotifyFormsEnableUpdateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("NotifyFormsEnableUpdateWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyFormsEnableUpdateWithPromise), (eventData: emitter.EventData) => {
@@ -1482,10 +1686,13 @@ export default function formHostTest() {
     })
 
     /**
-      * @tc.number: NotifyFormsEnableUpdateWithPromiseStaticTest002
-      * @tc.name: NotifyFormsEnableUpdateWithPromiseStaticTest002
-      * @tc.desc: check NotifyFormsEnableUpdateWithPromise
-      */
+     * @tc.name   NotifyFormsEnableUpdateWithPromiseStaticTest002
+     * @tc.number NotifyFormsEnableUpdateWithPromiseStaticTest002
+     * @tc.desc   check NotifyFormsEnableUpdateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("NotifyFormsEnableUpdateWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithPromiseStaticTest002 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.NotifyFormsEnableUpdateWithPromise), (eventData: emitter.EventData) => {
@@ -1499,9 +1706,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyFormsEnableUpdateWithCallbackStaticTest001
-     * @tc.name: NotifyFormsEnableUpdateWithCallbackStaticTest001
-     * @tc.desc: check NotifyFormsEnableUpdateWithCallback
+     * @tc.name   NotifyFormsEnableUpdateWithCallbackStaticTest001
+     * @tc.number NotifyFormsEnableUpdateWithCallbackStaticTest001
+     * @tc.desc   check NotifyFormsEnableUpdateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsEnableUpdateWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithCallbackStaticTest001 start');
@@ -1516,9 +1726,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: NotifyFormsEnableUpdateWithCallbackStaticTest002
-     * @tc.name: NotifyFormsEnableUpdateWithCallbackStaticTest002
-     * @tc.desc: check NotifyFormsEnableUpdateWithCallback
+     * @tc.name   NotifyFormsEnableUpdateWithCallbackStaticTest002
+     * @tc.number NotifyFormsEnableUpdateWithCallbackStaticTest002
+     * @tc.desc   check NotifyFormsEnableUpdateWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsEnableUpdateWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsEnableUpdateWithCallbackStaticTest002 start');
@@ -1533,9 +1746,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: ShareFormWithPromiseStaticTest001
-     * @tc.name: ShareFormWithPromiseStaticTest001
-     * @tc.desc: check ShareFormWithPromise
+     * @tc.name   ShareFormWithPromiseStaticTest001
+     * @tc.number ShareFormWithPromiseStaticTest001
+     * @tc.desc   check ShareFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ShareFormWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest001 start');
@@ -1545,15 +1761,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithPromise);
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: ShareFormWithPromiseStaticTest002
-     * @tc.name: ShareFormWithPromiseStaticTest002
-     * @tc.desc: check ShareFormWithPromise
+     * @tc.name   ShareFormWithPromiseStaticTest002
+     * @tc.number ShareFormWithPromiseStaticTest002
+     * @tc.desc   check ShareFormWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ShareFormWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest002 start');
@@ -1563,15 +1781,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithPromise, true);
       hilog.info(DOMAIN, TAG, 'ShareFormWithPromiseStaticTest002 end');
     })
 
     /**
-     * @tc.number: ShareFormWithCallbackStaticTest001
-     * @tc.name: ShareFormWithCallbackStaticTest001
-     * @tc.desc: check ShareFormWithCallback
+     * @tc.name   ShareFormWithCallbackStaticTest001
+     * @tc.number ShareFormWithCallbackStaticTest001
+     * @tc.desc   check ShareFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ShareFormWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest001 start');
@@ -1581,15 +1801,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithCallback);
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest001 end');
     })
 
     /**
-     * @tc.number: ShareFormWithCallbackStaticTest002
-     * @tc.name: ShareFormWithCallbackStaticTest002
-     * @tc.desc: check ShareFormWithCallback
+     * @tc.name   ShareFormWithCallbackStaticTest002
+     * @tc.number ShareFormWithCallbackStaticTest002
+     * @tc.desc   check ShareFormWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ShareFormWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest002 start');
@@ -1599,15 +1821,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.ShareFormWithCallback, true);
       hilog.info(DOMAIN, TAG, 'ShareFormWithCallbackStaticTest002 end');
     })
 
     /**
-     * @tc.number: NotifyFormsPrivacyProtectedWithCallbackStaticTest001
-     * @tc.name: NotifyFormsPrivacyProtectedWithCallbackStaticTest001
-     * @tc.desc: check NotifyFormsPrivacyProtectedWithCallback
+     * @tc.name   NotifyFormsPrivacyProtectedWithCallbackStaticTest001
+     * @tc.number NotifyFormsPrivacyProtectedWithCallbackStaticTest001
+     * @tc.desc   check NotifyFormsPrivacyProtectedWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsPrivacyProtectedWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest001 start');
@@ -1617,15 +1841,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithCallback);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest001 end');
     })
 
     /**
-     * @tc.number: NotifyFormsPrivacyProtectedWithCallbackStaticTest002
-     * @tc.name: NotifyFormsPrivacyProtectedWithCallbackStaticTest002
-     * @tc.desc: check NotifyFormsPrivacyProtectedWithCallback
+     * @tc.name   NotifyFormsPrivacyProtectedWithCallbackStaticTest002
+     * @tc.number NotifyFormsPrivacyProtectedWithCallbackStaticTest002
+     * @tc.desc   check NotifyFormsPrivacyProtectedWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsPrivacyProtectedWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest002 start');
@@ -1635,15 +1861,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithCallback, true);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithCallbackStaticTest002 end');
     })
 
     /**
-     * @tc.number: NotifyFormsPrivacyProtectedWithPromiseStaticTest001
-     * @tc.name: NotifyFormsPrivacyProtectedWithPromiseStaticTest001
-     * @tc.desc: check NotifyFormsPrivacyProtectedWithPromise
+     * @tc.name   NotifyFormsPrivacyProtectedWithPromiseStaticTest001
+     * @tc.number NotifyFormsPrivacyProtectedWithPromiseStaticTest001
+     * @tc.desc   check NotifyFormsPrivacyProtectedWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsPrivacyProtectedWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest001 start');
@@ -1653,15 +1881,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithPromise);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: NotifyFormsPrivacyProtectedWithPromiseStaticTest002
-     * @tc.name: NotifyFormsPrivacyProtectedWithPromiseStaticTest002
-     * @tc.desc: check NotifyFormsPrivacyProtectedWithPromise
+     * @tc.name   NotifyFormsPrivacyProtectedWithPromiseStaticTest002
+     * @tc.number NotifyFormsPrivacyProtectedWithPromiseStaticTest002
+     * @tc.desc   check NotifyFormsPrivacyProtectedWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("NotifyFormsPrivacyProtectedWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest002 start');
@@ -1671,15 +1901,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.NotifyFormsPrivacyProtectedWithPromise, true);
       hilog.info(DOMAIN, TAG, 'NotifyFormsPrivacyProtectedWithPromiseStaticTest002 end');
     })
 
     /**
-     * @tc.number: AcquireFormDataWithCallbackStaticTest001
-     * @tc.name: AcquireFormDataWithCallbackStaticTest001
-     * @tc.desc: check AcquireFormDataWithCallback
+     * @tc.name   AcquireFormDataWithCallbackStaticTest001
+     * @tc.number AcquireFormDataWithCallbackStaticTest001
+     * @tc.desc   check AcquireFormDataWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormDataWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 start');
@@ -1689,15 +1921,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithCallback);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest001 end');
     })
 
     /**
-     * @tc.number: AcquireFormDataWithCallbackStaticTest002
-     * @tc.name: AcquireFormDataWithCallbackStaticTest002
-     * @tc.desc: check AcquireFormDataWithCallback
+     * @tc.name   AcquireFormDataWithCallbackStaticTest002
+     * @tc.number AcquireFormDataWithCallbackStaticTest002
+     * @tc.desc   check AcquireFormDataWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormDataWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest002 start');
@@ -1707,15 +1941,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithCallback, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithCallbackStaticTest002 end');
     })
 
     /**
-     * @tc.number: AcquireFormDataWithPromiseStaticTest001
-     * @tc.name: AcquireFormDataWithPromiseStaticTest001
-     * @tc.desc: check AcquireFormDataWithPromise
+     * @tc.name   AcquireFormDataWithPromiseStaticTest001
+     * @tc.number AcquireFormDataWithPromiseStaticTest001
+     * @tc.desc   check AcquireFormDataWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormDataWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 start');
@@ -1725,15 +1961,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithPromise);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: AcquireFormDataWithPromiseStaticTest002
-     * @tc.name: AcquireFormDataWithPromiseStaticTest002
-     * @tc.desc: check AcquireFormDataWithPromise
+     * @tc.name   AcquireFormDataWithPromiseStaticTest002
+     * @tc.number AcquireFormDataWithPromiseStaticTest002
+     * @tc.desc   check AcquireFormDataWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("AcquireFormDataWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest002 start');
@@ -1743,16 +1981,18 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.AcquireFormDataWithPromise, true);
       hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromiseStaticTest002 end');
     })
 
 
     /**
-     * @tc.number: SetPublishFormResultStaticTest001
-     * @tc.name: SetPublishFormResultStaticTest001
-     * @tc.desc: check SetPublishFormResult
+     * @tc.name   SetPublishFormResultStaticTest001
+     * @tc.number SetPublishFormResultStaticTest001
+     * @tc.desc   check SetPublishFormResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetPublishFormResultStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 start');
@@ -1762,15 +2002,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetPublishFormResult);
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest001 end');
     })
 
     /**
-     * @tc.number: SetPublishFormResultStaticTest002
-     * @tc.name: SetPublishFormResultStaticTest002
-     * @tc.desc: check SetPublishFormResult
+     * @tc.name   SetPublishFormResultStaticTest002
+     * @tc.number SetPublishFormResultStaticTest002
+     * @tc.desc   check SetPublishFormResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetPublishFormResultStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest002 start');
@@ -1780,15 +2022,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest002 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.SetPublishFormResult, true);
       hilog.info(DOMAIN, TAG, 'SetPublishFormResultStaticTest002 end');
     })
 
     /**
-     * @tc.number: SetFormsRecyclableWithPromiseStaticTest001
-     * @tc.name: SetFormsRecyclableWithPromiseStaticTest001
-     * @tc.desc: check SetFormsRecyclableWithPromise
+     * @tc.name   SetFormsRecyclableWithPromiseStaticTest001
+     * @tc.number SetFormsRecyclableWithPromiseStaticTest001
+     * @tc.desc   check SetFormsRecyclableWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetFormsRecyclableWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithPromiseStaticTest001 start');
@@ -1803,9 +2047,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: SetFormsRecyclableWithPromiseStaticTest002
-     * @tc.name: SetFormsRecyclableWithPromiseStaticTest002
-     * @tc.desc: check SetFormsRecyclableWithPromise
+     * @tc.name   SetFormsRecyclableWithPromiseStaticTest002
+     * @tc.number SetFormsRecyclableWithPromiseStaticTest002
+     * @tc.desc   check SetFormsRecyclableWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetFormsRecyclableWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithPromiseStaticTest002 start');
@@ -1820,9 +2067,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: SetFormsRecyclableWithCallbackStaticTest001
-     * @tc.name: SetFormsRecyclableWithCallbackStaticTest001
-     * @tc.desc: check SetFormsRecyclableWithCallback
+     * @tc.name   SetFormsRecyclableWithCallbackStaticTest001
+     * @tc.number SetFormsRecyclableWithCallbackStaticTest001
+     * @tc.desc   check SetFormsRecyclableWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetFormsRecyclableWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithCallbackStaticTest001 start');
@@ -1837,9 +2087,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: SetFormsRecyclableWithCallbackStaticTest002
-     * @tc.name: SetFormsRecyclableWithCallbackStaticTest002
-     * @tc.desc: check SetFormsRecyclableWithCallback
+     * @tc.name   SetFormsRecyclableWithCallbackStaticTest002
+     * @tc.number SetFormsRecyclableWithCallbackStaticTest002
+     * @tc.desc   check SetFormsRecyclableWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SetFormsRecyclableWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'SetFormsRecyclableWithCallbackStaticTest002 start');
@@ -1854,9 +2107,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RecycleFormsWithPromiseStaticTest001
-     * @tc.name: RecycleFormsWithPromiseStaticTest001
-     * @tc.desc: check RecycleFormsWithPromise
+     * @tc.name   RecycleFormsWithPromiseStaticTest001
+     * @tc.number RecycleFormsWithPromiseStaticTest001
+     * @tc.desc   check RecycleFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RecycleFormsWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RecycleFormsWithPromiseStaticTest001 start');
@@ -1871,9 +2127,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RecycleFormsWithPromiseStaticTest002
-     * @tc.name: RecycleFormsWithPromiseStaticTest002
-     * @tc.desc: check RecycleFormsWithPromise
+     * @tc.name   RecycleFormsWithPromiseStaticTest002
+     * @tc.number RecycleFormsWithPromiseStaticTest002
+     * @tc.desc   check RecycleFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RecycleFormsWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RecycleFormsWithPromiseStaticTest002 start');
@@ -1888,9 +2147,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RecoverFormsWithPromiseStaticTest001
-     * @tc.name: RecoverFormsWithPromiseStaticTest001
-     * @tc.desc: check RecoverFormsWithPromise
+     * @tc.name   RecoverFormsWithPromiseStaticTest001
+     * @tc.number RecoverFormsWithPromiseStaticTest001
+     * @tc.desc   check RecoverFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RecoverFormsWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithPromiseStaticTest001 start');
@@ -1905,9 +2167,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RecoverFormsWithPromiseStaticTest002
-     * @tc.name: RecoverFormsWithPromiseStaticTest002
-     * @tc.desc: check RecoverFormsWithPromise
+     * @tc.name   RecoverFormsWithPromiseStaticTest002
+     * @tc.number RecoverFormsWithPromiseStaticTest002
+     * @tc.desc   check RecoverFormsWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RecoverFormsWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithPromiseStaticTest002 start');
@@ -1922,9 +2187,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RecoverFormsWithCallbackStaticTest001
-     * @tc.name: RecoverFormsWithCallbackStaticTest001
-     * @tc.desc: check RecoverFormsWithCallback
+     * @tc.name   RecoverFormsWithCallbackStaticTest001
+     * @tc.number RecoverFormsWithCallbackStaticTest001
+     * @tc.desc   check RecoverFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RecoverFormsWithCallbackStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithCallbackStaticTest001 start');
@@ -1939,9 +2207,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: RecoverFormsWithCallbackStaticTest002
-     * @tc.name: RecoverFormsWithCallbackStaticTest002
-     * @tc.desc: check RecoverFormsWithCallback
+     * @tc.name   RecoverFormsWithCallbackStaticTest002
+     * @tc.number RecoverFormsWithCallbackStaticTest002
+     * @tc.desc   check RecoverFormsWithCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RecoverFormsWithCallbackStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'RecoverFormsWithCallbackStaticTest002 start');
@@ -1956,9 +2227,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: UpdateFormLocationStaticTest001
-     * @tc.name: UpdateFormLocationStaticTest001
-     * @tc.desc: check UpdateFormLocation
+     * @tc.name   UpdateFormLocationStaticTest001
+     * @tc.number UpdateFormLocationStaticTest001
+     * @tc.desc   check UpdateFormLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("UpdateFormLocationStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormLocationStaticTest001 start');
@@ -1973,9 +2247,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: UpdateFormLocationStaticTest002
-     * @tc.name: UpdateFormLocationStaticTest002
-     * @tc.desc: check UpdateFormLocation
+     * @tc.name   UpdateFormLocationStaticTest002
+     * @tc.number UpdateFormLocationStaticTest002
+     * @tc.desc   check UpdateFormLocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("UpdateFormLocationStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormLocationStaticTest002 start');
@@ -1990,9 +2267,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: UpdateFormLockedStateWithPromiseStaticTest001
-     * @tc.name: UpdateFormLockedStateWithPromiseStaticTest001
-     * @tc.desc: check UpdateFormLockedStateWithPromise
+     * @tc.name   UpdateFormLockedStateWithPromiseStaticTest001
+     * @tc.number UpdateFormLockedStateWithPromiseStaticTest001
+     * @tc.desc   check UpdateFormLockedStateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("UpdateFormLockedStateWithPromiseStaticTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 start');
@@ -2002,15 +2282,17 @@ export default function formHostTest() {
         done();
       })
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 emitting for finished event');
-      expect(BOOL_TRUE).assertTrue();
-      done();
+      formHostTestController.emitStart(EventIdMap.UpdateFormLockedStateWithPromise);
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest001 end');
     })
 
     /**
-     * @tc.number: UpdateFormLockedStateWithPromiseStaticTest002
-     * @tc.name: UpdateFormLockedStateWithPromiseStaticTest002
-     * @tc.desc: check UpdateFormLockedStateWithPromise
+     * @tc.name   UpdateFormLockedStateWithPromiseStaticTest002
+     * @tc.number UpdateFormLockedStateWithPromiseStaticTest002
+     * @tc.desc   check UpdateFormLockedStateWithPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("UpdateFormLockedStateWithPromiseStaticTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromiseStaticTest002 start');

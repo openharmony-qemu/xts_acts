@@ -30,12 +30,12 @@ export default function ArkUIKeyCodeNdkTest() {
       done();
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_UNKNOWN_0100
-     * @tc.name    : testGetArkUIKeyCodeEventUnknown0100
-     * @tc.desc    : testing ARKUI_KEYCODE_UNKNOWN interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetArkUIKeyCodeEventUnknown0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_UNKNOWN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_UNKNOWN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetArkUIKeyCodeEventUnknown0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -54,12 +54,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FN_0100
-     * @tc.name    : testARKUIKEYCODEFN0100
-     * @tc.desc    : testing ARKUI_KEYCODE_FN interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEFN0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_FN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEFN0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -78,12 +78,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_VOLUME_UP_0100
-     * @tc.name    : testArkUIKeycodeVolumeUp0100
-     * @tc.desc    : testing ARKUI_KEYCODE_VOLUME_UP_0100 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeVolumeUp0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_VOLUME_UP_0100
+     * @tc.desc   testing ARKUI_KEYCODE_VOLUME_UP_0100 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeVolumeUp0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -103,12 +103,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_VOLUME_DOWN_0100
-     * @tc.name    : testArkUIKeyCodeVolumeDown0100
-     * @tc.desc    : testing ARKUI_KEYCODE_VOLUME_DOWN interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeVolumeDown0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_VOLUME_DOWN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_VOLUME_DOWN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeVolumeDown0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -134,6 +134,14 @@ export default function ArkUIKeyCodeNdkTest() {
     //  * @tc.size    : MediumTest
     //  * @tc.type    : Function
     //  */
+    /**
+     * @tc.name   testArkUIKeyCodePower0100
+     * @tc.number testArkUIKeyCodePower0100
+     * @tc.desc   testArkUIKeyCodePower0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArkUIKeyCodePower0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -151,12 +159,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CAMERA_0100
-     * @tc.name    : testArkUIKeyCodeCamera0100
-     * @tc.desc    : testing ARKUI_KEYCODE_CAMERA interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeCamera0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CAMERA_0100
+     * @tc.desc   testing ARKUI_KEYCODE_CAMERA interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeCamera0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -175,12 +183,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_VOLUME_MUTE_0100
-     * @tc.name    : testArkUIKeyCodeVolumeMute0100
-     * @tc.desc    : testing ARKUI_KEYCODE_VOLUME_MUTE interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeVolumeMute0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_VOLUME_MUTE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_VOLUME_MUTE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeVolumeMute0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -199,12 +207,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MUTE_0100
-     * @tc.name    : testArkUIKeyCodeMute0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MUTE_0100 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeMute0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MUTE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MUTE_0100 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeMute0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -223,12 +231,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BRIGHTNESS_UP_0100
-     * @tc.name    : testArkUIKeyCodeBrightnessUp0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BRIGHTNESS_UP interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeBrightnessUp0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BRIGHTNESS_UP_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BRIGHTNESS_UP interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeBrightnessUp0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -247,12 +255,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BRIGHTNESS_DOWN_0100
-     * @tc.name    : testArkUIKeyCodeBrightnessDown0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BRIGHTNESS_DOWN interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeBrightnessDown0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BRIGHTNESS_DOWN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BRIGHTNESS_DOWN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeBrightnessDown0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -271,12 +279,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_0_0100
-     * @tc.name    : testArkUIKeyCode0_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_0 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode0_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_0_0100
+     * @tc.desc   testing ARKUI_KEYCODE_0 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode0_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -295,12 +303,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_1_0100
-     * @tc.name    : testArkUIKeyCode1_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_1 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode1_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_1_0100
+     * @tc.desc   testing ARKUI_KEYCODE_1 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode1_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -319,12 +327,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_2_0100
-     * @tc.name    : testArkUIKeyCode2_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_2 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode2_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_2_0100
+     * @tc.desc   testing ARKUI_KEYCODE_2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode2_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -343,12 +351,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_3_0100
-     * @tc.name    : testArkUIKeyCode3_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_3 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode3_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_3_0100
+     * @tc.desc   testing ARKUI_KEYCODE_3 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode3_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -367,12 +375,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_4_0100
-     * @tc.name    : testArkUIKeyCode4_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_4 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode4_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_4_0100
+     * @tc.desc   testing ARKUI_KEYCODE_4 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode4_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -391,12 +399,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_5_0100
-     * @tc.name    : testArkUIKeyCode5_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_5 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode5_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_5_0100
+     * @tc.desc   testing ARKUI_KEYCODE_5 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode5_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -415,12 +423,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_6_0100
-     * @tc.name    : testArkUIKeyCode6_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_6 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode6_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_6_0100
+     * @tc.desc   testing ARKUI_KEYCODE_6 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode6_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -439,12 +447,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_7_0100
-     * @tc.name    : testArkUIKeyCode7_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_7 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode7_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_7_0100
+     * @tc.desc   testing ARKUI_KEYCODE_7 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode7_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -463,12 +471,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_8_0100
-     * @tc.name    : testArkUIKeyCode8_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_8 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode8_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_8_0100
+     * @tc.desc   testing ARKUI_KEYCODE_8 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode8_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -487,12 +495,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_9_0100
-     * @tc.name    : testArkUIKeyCode9_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_9 interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCode9_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_9_0100
+     * @tc.desc   testing ARKUI_KEYCODE_9 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCode9_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -511,12 +519,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_STAR_0100
-     * @tc.name    : testArkUIKeyCodeStar0100
-     * @tc.desc    : testing ARKUI_KEYCODE_STAR interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeStar0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_STAR_0100
+     * @tc.desc   testing ARKUI_KEYCODE_STAR interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeStar0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -535,12 +543,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_POUND_0100
-     * @tc.name    : testArkUIKeyCodePound0100
-     * @tc.desc    : testing ARKUI_KEYCODE_POUND interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodePound0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_POUND_0100
+     * @tc.desc   testing ARKUI_KEYCODE_POUND interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodePound0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -559,12 +567,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_UP_0100
-     * @tc.name    : testArkUIKeyCodeDpadUp0100
-     * @tc.desc    : testing ARKUI_KEYCODE_DPAD_UP interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeDpadUp0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_UP_0100
+     * @tc.desc   testing ARKUI_KEYCODE_DPAD_UP interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeDpadUp0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -583,12 +591,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_DOWN_0100
-     * @tc.name    : testArkUIKeyCodeDpadDown0100
-     * @tc.desc    : testing ARKUI_KEYCODE_DPAD_DOWN interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeDpadDown0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_DOWN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_DPAD_DOWN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeDpadDown0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -607,12 +615,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_LEFT_0100
-     * @tc.name    : testArkUIKeyCodeDpadLeft0100
-     * @tc.desc    : testing ARKUI_KEYCODE_DPAD_LEFT interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeDpadLeft0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_LEFT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_DPAD_LEFT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeDpadLeft0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -631,12 +639,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_RIGHT_0100
-     * @tc.name    : testArkUIKeyCodeDpadRight0100
-     * @tc.desc    : testing ARKUI_KEYCODE_DPAD_RIGHT interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeDpadRight0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_RIGHT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_DPAD_RIGHT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeDpadRight0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -655,12 +663,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_CENTER_0100
-     * @tc.name    : testArkUIKeyCodeDpadCenter0100
-     * @tc.desc    : testing ARKUI_KEYCODE_DPAD_CENTER interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeDpadCenter0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_DPAD_CENTER_0100
+     * @tc.desc   testing ARKUI_KEYCODE_DPAD_CENTER interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyCodeDpadCenter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -679,12 +687,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_A_0100
-     * @tc.name    : testArkUIKeycodeA0100
-     * @tc.desc    : testing ARKUI_KEYCODE_A interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeA0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_A_0100
+     * @tc.desc   testing ARKUI_KEYCODE_A interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeA0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -703,12 +711,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_B_0100
-     * @tc.name    : testArkUIKeycodeB0100
-     * @tc.desc    : testing ARKUI_KEYCODE_B interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeB0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_B_0100
+     * @tc.desc   testing ARKUI_KEYCODE_B interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeB0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -727,12 +735,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_C_0100
-     * @tc.name    : testArkUIKeycodeC0100
-     * @tc.desc    : testing ARKUI_KEYCODE_C interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeC0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_C_0100
+     * @tc.desc   testing ARKUI_KEYCODE_C interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -751,12 +759,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_D_0100
-     * @tc.name    : testArkUIKeycodeD0100
-     * @tc.desc    : testing ARKUI_KEYCODE_D interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeD0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_D_0100
+     * @tc.desc   testing ARKUI_KEYCODE_D interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeD0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -775,12 +783,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_E_0100
-     * @tc.name    : testArkUIKeycodeE0100
-     * @tc.desc    : testing ARKUI_KEYCODE_E interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_E_0100
+     * @tc.desc   testing ARKUI_KEYCODE_E interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -799,12 +807,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F_0100
-     * @tc.name    : testArkUIKeycodeF0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeF0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeF0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -823,12 +831,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_G_0100
-     * @tc.name    : testArkUIKeycodeG0100
-     * @tc.desc    : testing ARKUI_KEYCODE_G interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeG0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_G_0100
+     * @tc.desc   testing ARKUI_KEYCODE_G interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeG0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -847,12 +855,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_H_0100
-     * @tc.name    : testArkUIKeycodeH0100
-     * @tc.desc    : testing ARKUI_KEYCODE_H interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeH0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_H_0100
+     * @tc.desc   testing ARKUI_KEYCODE_H interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeH0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -871,12 +879,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_I_0100
-     * @tc.name    : testArkUIKeycodeI0100
-     * @tc.desc    : testing ARKUI_KEYCODE_I interface
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeycodeI0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_I_0100
+     * @tc.desc   testing ARKUI_KEYCODE_I interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeycodeI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -895,12 +903,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_J_0100
-     * @tc.name    : testArkuiKeycodeJ0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_J are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeJ0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_J_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_J are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeJ0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -920,12 +928,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_K_0100
-     * @tc.name    : testArkuiKeycodeK0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_K are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeK0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_K_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_K are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeK0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -944,12 +952,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_L_0100
-     * @tc.name    : testArkuiKeycodeL0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_L are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeL0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_L_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_L are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -968,12 +976,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_M_0100
-     * @tc.name    : testArkuiKeycodeM0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_M are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeM0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_M_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_M are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeM0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -992,12 +1000,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_N_0100
-     * @tc.name    : testArkuiKeycodeN0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_N are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeN0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_N_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_N are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeN0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1016,12 +1024,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_O_0100
-     * @tc.name    : testArkuiKeycodeO0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_O are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeO0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_O_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_O are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeO0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1040,12 +1048,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_P_0100
-     * @tc.name    : testArkuiKeycodeP0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_P are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeP0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_P_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_P are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1064,12 +1072,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_Q_0100
-     * @tc.name    : testArkuiKeycodeQ0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_Q are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeQ0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_Q_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_Q are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeQ0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1088,12 +1096,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_R_0100
-     * @tc.name    : testArkuiKeycodeR0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_R are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeR0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_R_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_R are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1112,12 +1120,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_S_0100
-     * @tc.name    : testArkuiKeycodeS0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_S are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeS0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_S_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_S are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeS0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1136,12 +1144,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_T_0100
-     * @tc.name    : testArkuiKeycodeT0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_T are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeT0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_T_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_T are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1160,12 +1168,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_U_0100
-     * @tc.name    : testArkuiKeycodeU0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_U are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeU0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_U_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_U are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeU0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1184,12 +1192,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_V_0100
-     * @tc.name    : testArkuiKeycodeV0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_V are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeV0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_V_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_V are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeV0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1208,12 +1216,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_W_0100
-     * @tc.name    : testArkuiKeycodeW0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_W are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeW0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_W_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_W are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeW0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1232,12 +1240,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_X_0100
-     * @tc.name    : testArkuiKeycodeX0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_X are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeX0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_X_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_X are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeX0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1256,12 +1264,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_Y_0100
-     * @tc.name    : testArkuiKeycodeY0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_Y are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeY0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_Y_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_Y are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeY0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1280,12 +1288,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_Z_0100
-     * @tc.name    : testArkuiKeycodeZ0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_Z are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeZ0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_Z_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_Z are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeZ0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1304,12 +1312,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_COMMA_0100
-     * @tc.name    : testArkuiKeycodeComma0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_COMMA are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeComma0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_COMMA_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_COMMA are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeComma0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1328,12 +1336,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_PERIOD_0100
-     * @tc.name    : testArkuiKeycodePeriod0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_PERIOD are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodePeriod0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_PERIOD_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_PERIOD are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodePeriod0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1352,12 +1360,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ALT_LEFT_0100
-     * @tc.name    : testArkuiKeycodeAltLeft0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_ALT_LEFT are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeAltLeft0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ALT_LEFT_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_ALT_LEFT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeAltLeft0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1376,12 +1384,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ALT_RIGHT_0100
-     * @tc.name    : testArkuiKeycodeAltRight0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_ALT_RIGHT are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeAltRight0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ALT_RIGHT_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_ALT_RIGHT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeAltRight0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1400,12 +1408,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SHIFT_LEFT_0100
-     * @tc.name    : testArkuiKeycodeShiftLeft0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_SHIFT_LEFT are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeShiftLeft0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SHIFT_LEFT_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_SHIFT_LEFT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeShiftLeft0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1424,12 +1432,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SHIFT_RIGHT_0100
-     * @tc.name    : testArkuiKeycodeShiftRight0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_SHIFT_RIGHT are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeShiftRight0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SHIFT_RIGHT_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_SHIFT_RIGHT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeShiftRight0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1448,12 +1456,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_TAB_0100
-     * @tc.name    : testArkuiKeycodeTab0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_TAB are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeTab0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_TAB_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_TAB are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeTab0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1472,12 +1480,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SPACE_0100
-     * @tc.name    : testArkuiKeycodeSpace0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_SPACE are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeSpace0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SPACE_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_SPACE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeSpace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1496,12 +1504,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SYM_0100
-     * @tc.name    : testArkuiKeycodeSym0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_SYM are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeSym0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_SYM_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_SYM are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeSym0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1520,12 +1528,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_EXPLORER_0100
-     * @tc.name    : testArkuiKeycodeExplorer0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_EXPLORER are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeExplorer0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_EXPLORER_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_EXPLORER are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeExplorer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1544,12 +1552,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ENVELOPE_0100
-     * @tc.name    : testArkuiKeycodeEnvelope0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_ENVELOPE are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeEnvelope0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ENVELOPE_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_ENVELOPE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeEnvelope0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1568,12 +1576,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ENTER_0100
-     * @tc.name    : testArkuiKeycodeEnter0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_ENTER are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeEnter0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_ENTER_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_ENTER are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeEnter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1592,12 +1600,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_DEL_0100
-     * @tc.name    : testArkuiKeycodeDel0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_DEL are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeDel0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_DEL_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_DEL are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeDel0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1616,12 +1624,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_GRAVE_0100
-     * @tc.name    : testArkuiKeycodeGrave0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_GRAVE are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeGrave0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_GRAVE_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_GRAVE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeGrave0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1640,12 +1648,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_MINUS_0100
-     * @tc.name    : testArkuiKeycodeMinus0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_MINUS are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeMinus0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_MINUS_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_MINUS are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeMinus0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1664,12 +1672,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_EQUALS_0100
-     * @tc.name    : testArkuiKeycodeEquals0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_EQUALS are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeEquals0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_EQUALS_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_EQUALS are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeEquals0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1688,12 +1696,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_LEFT_BRACKET_0100
-     * @tc.name    : testArkuiKeycodeLeftBracket0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_LEFT_BRACKET are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeLeftBracket0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_LEFT_BRACKET_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_LEFT_BRACKET are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeLeftBracket0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1712,12 +1720,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_RIGHT_BRACKET_0100
-     * @tc.name    : testArkuiKeycodeRightBracket0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_RIGHT_BRACKET are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeRightBracket0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_RIGHT_BRACKET_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_RIGHT_BRACKET are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeRightBracket0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1736,12 +1744,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_BACKSLASH_0100
-     * @tc.name    : testArkuiKeycodeBacksLash0100
-     * @tc.desc    : Test whether the key ARKUI_KEYCODE_BACKSLASH are working properly.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeycodeBacksLash0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEYCODE_BACKSLASH_0100
+     * @tc.desc   Test whether the key ARKUI_KEYCODE_BACKSLASH are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkuiKeycodeBacksLash0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1760,12 +1768,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SEMICOLON_0100
-     * @tc.name    : testARKUIKEYCODESEMICOLON_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_SEMICOLON interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODESEMICOLON_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SEMICOLON_0100
+     * @tc.desc   testing ARKUI_KEYCODE_SEMICOLON interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODESEMICOLON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1784,12 +1792,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_APOSTROPHE_0100
-     * @tc.name    : testARKUIKEYCODEAPOSTROPHE_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_APOSTROPHE interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEAPOSTROPHE_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_APOSTROPHE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_APOSTROPHE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEAPOSTROPHE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1808,12 +1816,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SLASH_0100
-     * @tc.name    : testARKUIKEYCODESLASH_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_SLASH interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODESLASH_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SLASH_0100
+     * @tc.desc   testing ARKUI_KEYCODE_SLASH interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODESLASH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1832,12 +1840,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_AT_0100
-     * @tc.name    : testARKUIKEYCODEAT_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_AT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEAT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_AT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_AT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEAT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1856,12 +1864,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_PLUS_0100
-     * @tc.name    : testARKUIKEYCODEPLUS_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_PLU interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEPLUS_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_PLUS_0100
+     * @tc.desc   testing ARKUI_KEYCODE_PLU interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEPLUS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1880,12 +1888,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MENU_0100
-     * @tc.name    : testARKUIKEYCODEMENU_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MENU interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMENU_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MENU_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MENU interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMENU_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1904,12 +1912,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_PAGE_UP_0100
-     * @tc.name    : testARKUIKEYCODEPAGEUP_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_PAGE_UP interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEPAGEUP_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_PAGE_UP_0100
+     * @tc.desc   testing ARKUI_KEYCODE_PAGE_UP interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEPAGEUP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1928,12 +1936,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_PAGE_DOWN_0100
-     * @tc.name    : testARKUIKEYCODEPAGEDOWN_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_PAGE_DOWN interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEPAGEDOWN_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_PAGE_DOWN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_PAGE_DOWN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEPAGEDOWN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1952,12 +1960,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_ESCAPE_0100
-     * @tc.name    : testARKUIKEYCODEESCAPE_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_ESCAPE interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEESCAPE_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_ESCAPE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_ESCAPE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEESCAPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1976,12 +1984,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FORWARD_DEL_0100
-     * @tc.name    : testARKUIKEYCODEFORWARDDEL_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_FORWARD_DEL interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEFORWARDDEL_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FORWARD_DEL_0100
+     * @tc.desc   testing ARKUI_KEYCODE_FORWARD_DEL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEFORWARDDEL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2000,12 +2008,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CTRL_LEFT_0100
-     * @tc.name    : testARKUIKEYCODECTRLLEFT_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_CTRL_LEFT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODECTRLLEFT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CTRL_LEFT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_CTRL_LEFT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODECTRLLEFT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2024,12 +2032,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CTRL_RIGHT_0100
-     * @tc.name    : testARKUIKEYCODECTRLRIGHT_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_CTRL_RIGHT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODECTRLRIGHT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CTRL_RIGHT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_CTRL_RIGHT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODECTRLRIGHT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2048,12 +2056,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CAPS_LOCK_0100
-     * @tc.name    : testARKUIKEYCODECAPSLOCK_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_CAPS_LOCK interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODECAPSLOCK_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_CAPS_LOCK_0100
+     * @tc.desc   testing ARKUI_KEYCODE_CAPS_LOCK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODECAPSLOCK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2072,12 +2080,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SCROLL_LOCK_0100
-     * @tc.name    : testARKUIKEYCODESCROLLLOCK_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_SCROLL_LOCK interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODESCROLLLOCK_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SCROLL_LOCK_0100
+     * @tc.desc   testing ARKUI_KEYCODE_SCROLL_LOCK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODESCROLLLOCK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2096,12 +2104,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_LEFT_0100
-     * @tc.name    : testARKUIKEYCODEMETALEFT_0100
-     * @tc.desc    : testing SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_LEFT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMETALEFT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_LEFT_0100
+     * @tc.desc   testing SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_LEFT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMETALEFT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2120,12 +2128,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_RIGHT_0100
-     * @tc.name    : testARKUIKEYCODEMETARIGHT_0100
-     * @tc.desc    : testing SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_RIGHT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMETARIGHT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_RIGHT_0100
+     * @tc.desc   testing SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_META_RIGHT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMETARIGHT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2144,12 +2152,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FUNCTION_0100
-     * @tc.name    : testARKUIKEYCODEFUNCTION_0100
-     * @tc.desc    : testing SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FUNCTION interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEFUNCTION_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FUNCTION_0100
+     * @tc.desc   testing SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FUNCTION interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEFUNCTION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2168,12 +2176,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SYSRQ_0100
-     * @tc.name    : testARKUIKEYCODESYSRQ_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_SYSRQ interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODESYSRQ_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_SYSRQ_0100
+     * @tc.desc   testing ARKUI_KEYCODE_SYSRQ interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODESYSRQ_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2192,12 +2200,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BREAK_0100
-     * @tc.name    : testARKUIKEYCODEBREAK_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BREAK interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEBREAK_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BREAK_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BREAK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEBREAK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2216,12 +2224,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MOVE_HOME_0100
-     * @tc.name    : testARKUIKEYCODEMOVEHOME_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MOVE_HOME interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMOVEHOME_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MOVE_HOME_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MOVE_HOME interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMOVEHOME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2240,12 +2248,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MOVE_END_0100
-     * @tc.name    : testARKUIKEYCODEMOVEEND_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MOVE_END interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMOVEEND_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MOVE_END_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MOVE_END interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMOVEEND_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2264,12 +2272,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_INSERT_0100
-     * @tc.name    : testARKUIKEYCODEINSERT_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_INSERT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEINSERT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_INSERT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_INSERT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEINSERT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2288,12 +2296,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FORWARD_0100
-     * @tc.name    : testARKUIKEYCODEFORWARD_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_FORWARD interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEFORWARD_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_FORWARD_0100
+     * @tc.desc   testing ARKUI_KEYCODE_FORWARD interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEFORWARD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2312,12 +2320,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_PLAY_0100
-     * @tc.name    : testARKUIKEYCODEMEDIAPLAY_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MEDIA_PLAY interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMEDIAPLAY_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_PLAY_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MEDIA_PLAY interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMEDIAPLAY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2336,12 +2344,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_PAUSE_0100
-     * @tc.name    : testARKUIKEYCODEMEDIAPAUSE_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MEDIA_PAUSE interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMEDIAPAUSE_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_PAUSE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MEDIA_PAUSE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMEDIAPAUSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2360,12 +2368,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_CLOSE_0100
-     * @tc.name    : testARKUIKEYCODEMEDIACLOSE_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MEDIA_CLOSE interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMEDIACLOSE_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_CLOSE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MEDIA_CLOSE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMEDIACLOSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2384,12 +2392,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_EJECT_0100
-     * @tc.name    : testARKUIKEYCODEMEDIAEJECT_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MEDIA_EJECT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMEDIAEJECT_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_EJECT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MEDIA_EJECT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMEDIAEJECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2408,12 +2416,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_RECORD_0100
-     * @tc.name    : testARKUIKEYCODEMEDIARECORD_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_MEDIA_RECORD interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEMEDIARECORD_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_MEDIA_RECORD_0100
+     * @tc.desc   testing ARKUI_KEYCODE_MEDIA_RECORD interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEMEDIARECORD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2432,12 +2440,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F1_0100
-     * @tc.name    : testARKUIKEYCODEF1_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F1 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF1_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F1_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F1 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF1_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2456,12 +2464,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F2_0100
-     * @tc.name    : testARKUIKEYCODEF2_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F2 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF2_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F2_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF2_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2480,12 +2488,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F3_0100
-     * @tc.name    : testARKUIKEYCODEF3_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F3 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF3_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F3_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F3 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF3_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2504,12 +2512,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F4_0100
-     * @tc.name    : testARKUIKEYCODEF4_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F4 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF4_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F4_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F4 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF4_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2528,12 +2536,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F5_0100
-     * @tc.name    : testARKUIKEYCODEF5_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F5 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF5_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F5_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F5 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF5_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2552,12 +2560,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F6_0100
-     * @tc.name    : testARKUIKEYCODEF6_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F6 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF6_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F6_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F6 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF6_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2576,12 +2584,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F7_0100
-     * @tc.name    : testARKUIKEYCODEF7_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F7 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF7_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F7_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F7 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF7_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2600,12 +2608,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F8_0100
-     * @tc.name    : testARKUIKEYCODEF8_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F8 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF8_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F8_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F8 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF8_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2624,12 +2632,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F9_0100
-     * @tc.name    : testARKUIKEYCODEF9_0100
-     * @tc.desc    : testing ARKUI_KEYCODE_F9 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testARKUIKEYCODEF9_0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F9_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F9 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testARKUIKEYCODEF9_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2648,12 +2656,12 @@ export default function ArkUIKeyCodeNdkTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F10_0100
-     * @tc.name    : testArkuiKeyCodeF100100
-     * @tc.desc    : Test ARKUI_KEYCODE_F10 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkuiKeyCodeF100100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F10_0100
+     * @tc.desc   Test ARKUI_KEYCODE_F10 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkuiKeyCodeF100100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2673,12 +2681,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F11_0100
-     * @tc.name    : testArkUIKeyCodeF110100
-     * @tc.desc    : testing ARKUI_KEYCODE_F11 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeF110100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F11_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F11 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeF110100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2698,12 +2706,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F12_0100
-     * @tc.name    : testArkUIKeyCodeF120100
-     * @tc.desc    : testing ARKUI_KEYCODE_F12 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeF120100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_F12_0100
+     * @tc.desc   testing ARKUI_KEYCODE_F12 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeF120100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2723,12 +2731,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUM_LOCK_0100
-     * @tc.name    : testArkUIKeyCodeNumLock0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUM_LOCK interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumLock0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUM_LOCK_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUM_LOCK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2748,12 +2756,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_0_0100
-     * @tc.name    : testArkUIKeyCodeNumpad00100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_0 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad00100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_0_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_0 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad00100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2773,12 +2781,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_1_0100
-     * @tc.name    : testArkUIKeyCodeNumpad10100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_1 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad10100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_1_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_1 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2798,12 +2806,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_2_0100
-     * @tc.name    : testArkUIKeyCodeNumpad20100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_2 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad20100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_2_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2823,12 +2831,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_3_0100
-     * @tc.name    : testArkUIKeyCodeNumpad30100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_3 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad30100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_3_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_3 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2848,12 +2856,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_4_0100
-     * @tc.name    : testArkUIKeyCodeNumpad40100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_4 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad40100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_4_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_4 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad40100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2873,12 +2881,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_5_0100
-     * @tc.name    : testArkUIKeyCodeNumpad50100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_5 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad50100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_5_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_5 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad50100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2898,12 +2906,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_6_0100
-     * @tc.name    : testArkUIKeyCodeNumpad60100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_6 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad60100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_6_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_6 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad60100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2923,12 +2931,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_7_0100
-     * @tc.name    : testArkUIKeyCodeNumpad70100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_7 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad70100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_7_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_7 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad70100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2948,12 +2956,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_8_0100
-     * @tc.name    : testArkUIKeyCodeNumpad80100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_8 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad80100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_8_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_8 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad80100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2973,12 +2981,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_9_0100
-     * @tc.name    : testArkUIKeyCodeNumpad90100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_9 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpad90100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_9_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_9 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpad90100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -2998,12 +3006,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_DIVIDE_0100
-     * @tc.name    : testArkUIKeyCodeNumpadDivide0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_DIVIDE interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadDivide0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_DIVIDE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_DIVIDE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadDivide0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3023,12 +3031,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_MULTIPLY_0100
-     * @tc.name    : testArkUIKeyCodeNumpadMultiply0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_MULTIPLY interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadMultiply0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_MULTIPLY_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_MULTIPLY interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadMultiply0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3048,12 +3056,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_SUBTRACT_0100
-     * @tc.name    : testArkUIKeyCodeNumpadSubtract0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_SUBTRACT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadSubtract0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_SUBTRACT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_SUBTRACT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadSubtract0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3073,12 +3081,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_ADD_0100
-     * @tc.name    : testArkUIKeyCodeNumpadAdd0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_ADD interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadAdd0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_ADD_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_ADD interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadAdd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3098,12 +3106,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_DOT_0100
-     * @tc.name    : testArkUIKeyCodeNumpadDot0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_DOT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadDot0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_DOT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_DOT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadDot0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3123,12 +3131,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_COMMA_0100
-     * @tc.name    : testArkUIKeyCodeNumpadComma0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_COMMA interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadComma0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_COMMA_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_COMMA interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadComma0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3148,12 +3156,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_ENTER_0100
-     * @tc.name    : testArkUIKeyCodeNumpadEnter0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_ENTER interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadEnter0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_ENTER_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_ENTER interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadEnter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3173,12 +3181,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_EQUALS_0100
-     * @tc.name    : testArkUIKeyCodeNumpadEquals0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_EQUALS interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadEquals0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_EQUALS_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_EQUALS interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadEquals0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3198,12 +3206,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_LEFT_PAREN_0100
-     * @tc.name    : testArkUIKeyCodeNumpadLeftParen0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_LEFT_PAREN interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadLeftParen0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_LEFT_PAREN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_LEFT_PAREN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadLeftParen0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3223,12 +3231,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_RIGHT_PAREN_0100
-     * @tc.name    : testArkUIKeyCodeNumpadRightParen0100
-     * @tc.desc    : testing ARKUI_KEYCODE_NUMPAD_RIGHT_PAREN interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeNumpadRightParen0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_NUMPAD_RIGHT_PAREN_0100
+     * @tc.desc   testing ARKUI_KEYCODE_NUMPAD_RIGHT_PAREN interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeNumpadRightParen0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3248,12 +3256,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_A_0100
-     * @tc.name    : testArkUIKeyCodeButtonA0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_A interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonA0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_A_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_A interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonA0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3273,12 +3281,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_B_0100
-     * @tc.name    : testArkUIKeyCodeButtonB0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_B interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonB0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_B_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_B interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonB0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3298,12 +3306,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_X_0100
-     * @tc.name    : testArkUIKeyCodeButtonX0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_X interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonX0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_X_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_X interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonX0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3323,12 +3331,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_Y_0100
-     * @tc.name    : testArkUIKeyCodeButtonY0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_Y interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonY0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_Y_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_Y interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonY0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3348,12 +3356,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_L1_0100
-     * @tc.name    : testArkUIKeyCodeButtonL10100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_L1 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonL10100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_L1_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_L1 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonL10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3373,12 +3381,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_R1_0100
-     * @tc.name    : testArkUIKeyCodeButtonR10100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_R1 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonR10100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_R1_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_R1 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonR10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3398,12 +3406,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_L2_0100
-     * @tc.name    : testArkUIKeyCodeButtonL20100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_L2 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonL20100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_L2_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_L2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonL20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3423,12 +3431,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_R2_0100
-     * @tc.name    : testArkUIKeyCodeButtonR20100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_R2 interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonR20100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_R2_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_R2 interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonR20100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3448,12 +3456,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_SELECT_0100
-     * @tc.name    : testArkUIKeyCodeButtonSelect0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_SELECT interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonSelect0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_SELECT_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_SELECT interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonSelect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3473,12 +3481,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_START_0100
-     * @tc.name    : testArkUIKeyCodeButtonStart0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_START interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonStart0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_START_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_START interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonStart0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3498,12 +3506,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_MODE_0100
-     * @tc.name    : testArkUIKeyCodeButtonMode0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_MODE interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonMode0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_MODE_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_MODE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3523,12 +3531,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_THUMBL_0100
-     * @tc.name    : testArkUIKeyCodeButtonThumbl0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_THUMBL interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonThumbl0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_THUMBL_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_THUMBL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonThumbl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -3548,12 +3556,12 @@ export default function ArkUIKeyCodeNdkTest() {
       })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_THUMBR_0100
-     * @tc.name    : testArkUIKeyCodeButtonThumbr0100
-     * @tc.desc    : testing ARKUI_KEYCODE_BUTTON_THUMBR interface
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyCodeButtonThumbr0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_KEYCODE_BUTTON_THUMBR_0100
+     * @tc.desc   testing ARKUI_KEYCODE_BUTTON_THUMBR interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArkUIKeyCodeButtonThumbr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

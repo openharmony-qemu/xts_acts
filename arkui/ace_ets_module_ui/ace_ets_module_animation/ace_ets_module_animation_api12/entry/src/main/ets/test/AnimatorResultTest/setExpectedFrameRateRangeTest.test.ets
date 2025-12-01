@@ -57,12 +57,12 @@ export default function setExpectedFrameRateRangeTest() {
       console.info("setExpectedFrameRateRangeTest after each called");
     });
     /**
+     * @tc.name   setExpectedFrameRateRangeTest_001
      * @tc.number setExpectedFrameRateRangeTest_001
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setExpectedFrameRateRangeTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[setExpectedFrameRateRangeTest_001] START');

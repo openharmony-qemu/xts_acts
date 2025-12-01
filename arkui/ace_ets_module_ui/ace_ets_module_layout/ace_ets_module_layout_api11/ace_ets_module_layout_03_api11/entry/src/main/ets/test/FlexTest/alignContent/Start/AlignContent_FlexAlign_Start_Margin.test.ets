@@ -50,12 +50,15 @@ export default function AlignContent_FlexAlign_Start_Margin() {
       console.info("AlignContent_FlexAlign_Start_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_0500
-     * @tc.name testAlignContentStartFlexMarginSatisfy
-     * @tc.desc Set the margin for the flex component.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexMarginSatisfy
+     * @tc.number testAlignContentStartFlexMarginSatisfy
+     * @tc.desc   testAlignContentStartFlexMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexMarginSatisfy START');
       let strJson = getInspectorByKey('AlignContentFlexStartMargin_flex');

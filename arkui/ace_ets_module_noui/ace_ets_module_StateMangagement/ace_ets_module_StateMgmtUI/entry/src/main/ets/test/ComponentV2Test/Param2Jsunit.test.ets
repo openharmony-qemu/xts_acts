@@ -46,12 +46,12 @@ export default function Param2Jsunit() {
     });
 
     /**
-     * @tc.number    Param2Jsunit_001
-     * @tc.name      Param2Jsunit_001
-     * @tc.desc      @Param has local initial values
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   Param2Jsunit_001
+     * @tc.number Param2Jsunit_001
+     * @tc.desc   @Param has local initial values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Param2Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Param2Jsunit_001] START');

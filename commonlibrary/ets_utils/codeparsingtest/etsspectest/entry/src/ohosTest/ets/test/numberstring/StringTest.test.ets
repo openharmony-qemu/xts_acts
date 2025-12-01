@@ -39,12 +39,12 @@ export default function stringTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   StringTest0001
      * @tc.number SUB_BUILDINS_STRING_TEST_0001
-     * @tc.name StringTest0001
-     * @tc.desc Verify that the type of string created with single quotes is string
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that the type of string created with single quotes is string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'test';
@@ -52,12 +52,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0002
      * @tc.number SUB_BUILDINS_STRING_TEST_0002
-     * @tc.name StringTest0002
-     * @tc.desc Verify that the type of string created with double quotes is string
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that the type of string created with double quotes is string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = "test";
@@ -65,12 +65,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0003
      * @tc.number SUB_BUILDINS_STRING_TEST_0003
-     * @tc.name StringTest0003
-     * @tc.desc Verify that the type of string created with template literals is string
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that the type of string created with template literals is string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = `test`;
@@ -78,12 +78,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0004
      * @tc.number SUB_BUILDINS_STRING_TEST_0004
-     * @tc.name StringTest0004
-     * @tc.desc Verify that the type of object created with new String() is object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that the type of object created with new String() is object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const strObj = new String('test');
@@ -91,12 +91,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0005
      * @tc.number SUB_BUILDINS_STRING_TEST_0005
-     * @tc.name StringTest0005
-     * @tc.desc Verify that the length property returns the correct length
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   Verify that the length property returns the correct length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello';
@@ -104,12 +104,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0006
      * @tc.number SUB_BUILDINS_STRING_TEST_0006
-     * @tc.name StringTest0006
-     * @tc.desc Verify that the length of an empty string is 0
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   Verify that the length of an empty string is 0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = '';
@@ -117,12 +117,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0007
      * @tc.number SUB_BUILDINS_STRING_TEST_0007
-     * @tc.name StringTest0007
-     * @tc.desc Verify that charAt method returns the correct character
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that charAt method returns the correct character
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello';
@@ -130,12 +130,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0008
      * @tc.number SUB_BUILDINS_STRING_TEST_0008
-     * @tc.name StringTest0008
-     * @tc.desc Verify that charAt returns empty string when index is out of range
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that charAt returns empty string when index is out of range
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello';
@@ -143,12 +143,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0009
      * @tc.number SUB_BUILDINS_STRING_TEST_0009
-     * @tc.name StringTest0009
-     * @tc.desc Verify that index access returns the correct character
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that index access returns the correct character
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str: string = 'hello';
@@ -156,12 +156,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0010
      * @tc.number SUB_BUILDINS_STRING_TEST_0010
-     * @tc.name StringTest0010
-     * @tc.desc Verify that + operator concatenates strings correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that + operator concatenates strings correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str1 = 'hello';
@@ -170,12 +170,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0011
      * @tc.number SUB_BUILDINS_STRING_TEST_0011
-     * @tc.name StringTest0011
-     * @tc.desc Verify that concat method concatenates strings correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that concat method concatenates strings correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello'.concat(' ', 'world');
@@ -183,12 +183,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0012
      * @tc.number SUB_BUILDINS_STRING_TEST_0012
-     * @tc.name StringTest0012
-     * @tc.desc Verify that slice method extracts substring correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that slice method extracts substring correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'abcdef'.slice(1, 4);
@@ -196,12 +196,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0013
      * @tc.number SUB_BUILDINS_STRING_TEST_0013
-     * @tc.name StringTest0013
-     * @tc.desc Verify that substring method extracts substring correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that substring method extracts substring correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const str = 'abcdef'.substring(1, 4);
@@ -209,12 +209,12 @@ export default function stringTest() {
     });
 
     /**
+     * @tc.name   StringTest0014
      * @tc.number SUB_BUILDINS_STRING_TEST_0014
-     * @tc.name StringTest0014
-     * @tc.desc Verify that indexOf method returns correct index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that indexOf method returns correct index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world';
@@ -222,12 +222,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0015
      * @tc.number SUB_BUILDINS_STRING_TEST_0015
-     * @tc.name StringTest0015
-     * @tc.desc Verify that indexOf returns -1 when substring not found
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that indexOf returns -1 when substring not found
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello';
@@ -235,12 +235,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0016
      * @tc.number SUB_BUILDINS_STRING_TEST_0016
-     * @tc.name StringTest0016
-     * @tc.desc Verify that lastIndexOf returns correct last occurrence index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that lastIndexOf returns correct last occurrence index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world';
@@ -248,12 +248,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0017
      * @tc.number SUB_BUILDINS_STRING_TEST_0017
-     * @tc.name StringTest0017
-     * @tc.desc Verify that includes method correctly identifies containment
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that includes method correctly identifies containment
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world';
@@ -261,12 +261,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0018
      * @tc.number SUB_BUILDINS_STRING_TEST_0018
-     * @tc.name StringTest0018
-     * @tc.desc Verify that startsWith method correctly identifies prefix
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that startsWith method correctly identifies prefix
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world';
@@ -274,12 +274,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0019
      * @tc.number SUB_BUILDINS_STRING_TEST_0019
-     * @tc.name StringTest0019
-     * @tc.desc Verify that endsWith method correctly identifies suffix
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that endsWith method correctly identifies suffix
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world';
@@ -287,24 +287,24 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0020
      * @tc.number SUB_BUILDINS_STRING_TEST_0020
-     * @tc.name StringTest0020
-     * @tc.desc Verify that replace method replaces substring correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace method replaces substring correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world'.replace('world', 'there');
         expect(str).assertEqual('hello there');
       });
     /**
+     * @tc.name   StringTest0021
      * @tc.number SUB_BUILDINS_STRING_TEST_0021
-     * @tc.name StringTest0021
-     * @tc.desc Verify that replace method with global flag replaces all occurrences
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace method with global flag replaces all occurrences
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello world'.replace(/o/g, '0');
@@ -312,12 +312,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0022
      * @tc.number SUB_BUILDINS_STRING_TEST_0022
-     * @tc.name StringTest0022
-     * @tc.desc Verify that toUpperCase converts string to uppercase
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that toUpperCase converts string to uppercase
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'hello'.toUpperCase();
@@ -325,12 +325,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0023
      * @tc.number SUB_BUILDINS_STRING_TEST_0023
-     * @tc.name StringTest0023
-     * @tc.desc Verify that toLowerCase converts string to lowercase
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that toLowerCase converts string to lowercase
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'HELLO'.toLowerCase();
@@ -338,12 +338,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0024
      * @tc.number SUB_BUILDINS_STRING_TEST_0024
-     * @tc.name StringTest0024
-     * @tc.desc Verify that trim removes whitespace from both ends
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that trim removes whitespace from both ends
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = '  hello  '.trim();
@@ -351,12 +351,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0025
      * @tc.number SUB_BUILDINS_STRING_TEST_0025
-     * @tc.name StringTest0025
-     * @tc.desc Verify that trimStart removes leading whitespace
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that trimStart removes leading whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = '  hello  '.trimStart();
@@ -364,12 +364,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0026
      * @tc.number SUB_BUILDINS_STRING_TEST_0026
-     * @tc.name StringTest0026
-     * @tc.desc Verify that trimEnd removes trailing whitespace
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that trimEnd removes trailing whitespace
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = '  hello  '.trimEnd();
@@ -377,12 +377,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0027
      * @tc.number SUB_BUILDINS_STRING_TEST_0027
-     * @tc.name StringTest0027
-     * @tc.desc Verify that split method splits string into array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that split method splits string into array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const arr = 'a,b,c'.split(',');
@@ -390,12 +390,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0028
      * @tc.number SUB_BUILDINS_STRING_TEST_0028
-     * @tc.name StringTest0028
-     * @tc.desc Verify that split with limit parameter works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with limit parameter works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const arr = 'a,b,c,d'.split(',', 2);
@@ -403,12 +403,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0029
      * @tc.number SUB_BUILDINS_STRING_TEST_0029
-     * @tc.name StringTest0029
-     * @tc.desc Verify that split with empty string splits into characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with empty string splits into characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const arr = 'test'.split('');
@@ -416,12 +416,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0030
      * @tc.number SUB_BUILDINS_STRING_TEST_0030
-     * @tc.name StringTest0030
-     * @tc.desc Verify that substr method extracts substring with length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that substr method extracts substring with length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'abcdef'.substr(1, 3);
@@ -429,12 +429,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0031
      * @tc.number SUB_BUILDINS_STRING_TEST_0031
-     * @tc.name StringTest0031
-     * @tc.desc Verify that slice with negative start works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that slice with negative start works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -443,12 +443,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0032
      * @tc.number SUB_BUILDINS_STRING_TEST_0032
-     * @tc.name StringTest0032
-     * @tc.desc Verify that slice with negative end works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that slice with negative end works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -457,12 +457,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0033
      * @tc.number SUB_BUILDINS_STRING_TEST_0033
-     * @tc.name StringTest0033
-     * @tc.desc Verify that substr with negative start works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that substr with negative start works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -471,12 +471,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0034
      * @tc.number SUB_BUILDINS_STRING_TEST_0034
-     * @tc.name StringTest0034
-     * @tc.desc Verify that includes with position parameter works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that includes with position parameter works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -485,12 +485,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0035
      * @tc.number SUB_BUILDINS_STRING_TEST_0035
-     * @tc.name StringTest0035
-     * @tc.desc Verify that startsWith with position parameter works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that startsWith with position parameter works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -499,12 +499,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0036
      * @tc.number SUB_BUILDINS_STRING_TEST_0036
-     * @tc.name StringTest0036
-     * @tc.desc Verify that endsWith with length parameter works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that endsWith with length parameter works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -513,12 +513,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0037
      * @tc.number SUB_BUILDINS_STRING_TEST_0037
-     * @tc.name StringTest0037
-     * @tc.desc Verify that indexOf with fromIndex works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that indexOf with fromIndex works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -527,12 +527,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0038
      * @tc.number SUB_BUILDINS_STRING_TEST_0038
-     * @tc.name StringTest0038
-     * @tc.desc Verify that lastIndexOf with fromIndex works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that lastIndexOf with fromIndex works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -541,12 +541,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0039
      * @tc.number SUB_BUILDINS_STRING_TEST_0039
-     * @tc.name StringTest0039
-     * @tc.desc Verify that replace with regex groups works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with regex groups works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -555,12 +555,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0040
      * @tc.number SUB_BUILDINS_STRING_TEST_0040
-     * @tc.name StringTest0040
-     * @tc.desc Verify that replace with function works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with function works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -569,12 +569,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0041
      * @tc.number SUB_BUILDINS_STRING_TEST_0041
-     * @tc.name StringTest0041
-     * @tc.desc Verify that split with regex works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with regex works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -583,12 +583,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0042
      * @tc.number SUB_BUILDINS_STRING_TEST_0042
-     * @tc.name StringTest0042
-     * @tc.desc Verify that split handles consecutive separators correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that split handles consecutive separators correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -597,12 +597,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0043
      * @tc.number SUB_BUILDINS_STRING_TEST_0043
-     * @tc.name StringTest0043
-     * @tc.desc Verify that string with escape characters has correct length
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with escape characters has correct length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -611,12 +611,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0044
      * @tc.number SUB_BUILDINS_STRING_TEST_0044
-     * @tc.name StringTest0044
-     * @tc.desc Verify that string with Unicode escape is correct
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with Unicode escape is correct
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -625,12 +625,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0045
      * @tc.number SUB_BUILDINS_STRING_TEST_0045
-     * @tc.name StringTest0045
-     * @tc.desc Verify that string with emoji has correct length
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with emoji has correct length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -638,12 +638,12 @@ export default function stringTest() {
         expect(str.length).assertEqual(2);
       });
     /**
+     * @tc.name   StringTest0047
      * @tc.number SUB_BUILDINS_STRING_TEST_0047
-     * @tc.name StringTest0047
-     * @tc.desc Verify that template string with expressions works correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that template string with expressions works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -653,12 +653,12 @@ export default function stringTest() {
       });
 
     /**
+     * @tc.name   StringTest0048
      * @tc.number SUB_BUILDINS_STRING_TEST_0048
-     * @tc.name StringTest0048
-     * @tc.desc Verify that template string preserves line breaks
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   Verify that template string preserves line breaks
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -668,12 +668,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0049
      * @tc.number SUB_BUILDINS_STRING_TEST_0049
-     * @tc.name StringTest0049
-     * @tc.desc Verify that localeCompare sorts strings correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that localeCompare sorts strings correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -683,12 +683,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0050
      * @tc.number SUB_BUILDINS_STRING_TEST_0050
-     * @tc.name StringTest0050
-     * @tc.desc Verify that Number conversion works for numeric strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify that Number conversion works for numeric strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -696,12 +696,12 @@ line2`;
         expect(num).assertEqual(123);
       });
     /**
+     * @tc.name   StringTest0051
      * @tc.number SUB_BUILDINS_STRING_TEST_0051
-     * @tc.name StringTest0051
-     * @tc.desc Verify that Number conversion returns NaN for non-numeric strings
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that Number conversion returns NaN for non-numeric strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -710,12 +710,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0052
      * @tc.number SUB_BUILDINS_STRING_TEST_0052
-     * @tc.name StringTest0052
-     * @tc.desc Verify that parseInt works correctly with string input
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that parseInt works correctly with string input
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -724,12 +724,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0053
      * @tc.number SUB_BUILDINS_STRING_TEST_0053
-     * @tc.name StringTest0053
-     * @tc.desc Verify that parseFloat works correctly with string input
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that parseFloat works correctly with string input
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -738,12 +738,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0054
      * @tc.number SUB_BUILDINS_STRING_TEST_0054
-     * @tc.name StringTest0054
-     * @tc.desc Verify that String.fromCharCode creates correct string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that String.fromCharCode creates correct string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -752,12 +752,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0055
      * @tc.number SUB_BUILDINS_STRING_TEST_0055
-     * @tc.name StringTest0055
-     * @tc.desc Verify that charCodeAt returns correct Unicode value
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that charCodeAt returns correct Unicode value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -766,12 +766,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0056
      * @tc.number SUB_BUILDINS_STRING_TEST_0056
-     * @tc.name StringTest0056
-     * @tc.desc Verify that codePointAt returns correct code point for emoji
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that codePointAt returns correct code point for emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -780,12 +780,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0057
      * @tc.number SUB_BUILDINS_STRING_TEST_0057
-     * @tc.name StringTest0057
-     * @tc.desc Verify that repeat method creates correct repeated string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that repeat method creates correct repeated string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -794,12 +794,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0058
      * @tc.number SUB_BUILDINS_STRING_TEST_0058
-     * @tc.name StringTest0058
-     * @tc.desc Verify that repeat with 0 returns empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that repeat with 0 returns empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -808,12 +808,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0059
      * @tc.number SUB_BUILDINS_STRING_TEST_0059
-     * @tc.name StringTest0059
-     * @tc.desc Verify that padStart adds padding correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padStart adds padding correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -822,12 +822,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0060
      * @tc.number SUB_BUILDINS_STRING_TEST_0060
-     * @tc.name StringTest0060
-     * @tc.desc Verify that padEnd adds padding correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padEnd adds padding correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -836,12 +836,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0061
      * @tc.number SUB_BUILDINS_STRING_TEST_0061
-     * @tc.name StringTest0061
-     * @tc.desc Verify that padStart doesn't pad if string is longer than target length
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padStart doesn't pad if string is longer than target length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -850,12 +850,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0062
      * @tc.number SUB_BUILDINS_STRING_TEST_0062
-     * @tc.name StringTest0062
-     * @tc.desc Verify that localeCompare with options works for accented characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that localeCompare with options works for accented characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -865,12 +865,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0063
      * @tc.number SUB_BUILDINS_STRING_TEST_0063
-     * @tc.name StringTest0063
-     * @tc.desc Verify that string concatenation with number works correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string concatenation with number works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -879,12 +879,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0064
      * @tc.number SUB_BUILDINS_STRING_TEST_0064
-     * @tc.name StringTest0064
-     * @tc.desc Verify that string comparison with === works correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string comparison with === works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const result = 'hello' === 'hello';
@@ -892,12 +892,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0065
      * @tc.number SUB_BUILDINS_STRING_TEST_0065
-     * @tc.name StringTest0065
-     * @tc.desc Verify that string comparison with == works with type coercion
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string comparison with == works with type coercion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -906,12 +906,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0066
      * @tc.number SUB_BUILDINS_STRING_TEST_0066
-     * @tc.name StringTest0066
-     * @tc.desc Verify that string with mixed quotes is handled correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with mixed quotes is handled correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'He said "Hello"';
@@ -919,12 +919,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0067
      * @tc.number SUB_BUILDINS_STRING_TEST_0067
-     * @tc.name StringTest0067
-     * @tc.desc Verify that string with escaped quotes is handled correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with escaped quotes is handled correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = "He said 'Hello'";
@@ -932,12 +932,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0068
      * @tc.number SUB_BUILDINS_STRING_TEST_0068
-     * @tc.name StringTest0068
-     * @tc.desc Verify that very long string is handled correctly
-     * @tc.size LargeTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that very long string is handled correctly
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0068', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1,
       () => {
@@ -946,12 +946,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0069
      * @tc.number SUB_BUILDINS_STRING_TEST_0069
-     * @tc.name StringTest0069
-     * @tc.desc Verify that split on empty string with empty string returns empty array
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split on empty string with empty string returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -960,12 +960,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0070
      * @tc.number SUB_BUILDINS_STRING_TEST_0070
-     * @tc.name StringTest0070
-     * @tc.desc Verify that match method works with regex
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that match method works with regex
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -974,12 +974,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0071
      * @tc.number SUB_BUILDINS_STRING_TEST_0071
-     * @tc.name StringTest0071
-     * @tc.desc Verify that search method returns correct index
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that search method returns correct index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -988,12 +988,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0072
      * @tc.number SUB_BUILDINS_STRING_TEST_0072
-     * @tc.name StringTest0072
-     * @tc.desc Verify that replace with case-insensitive flag works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with case-insensitive flag works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1003,12 +1003,12 @@ line2`;
 
 
     /**
+     * @tc.name   StringTest0074
      * @tc.number SUB_BUILDINS_STRING_TEST_0074
-     * @tc.name StringTest0074
-     * @tc.desc Verify that null converted to string is 'null'
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that null converted to string is 'null'
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1017,12 +1017,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0075
      * @tc.number SUB_BUILDINS_STRING_TEST_0075
-     * @tc.name StringTest0075
-     * @tc.desc Verify that undefined converted to string is 'undefined'
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that undefined converted to string is 'undefined'
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1031,12 +1031,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0076
      * @tc.number SUB_BUILDINS_STRING_TEST_0076
-     * @tc.name StringTest0076
-     * @tc.desc Verify that boolean true converted to string is 'true'
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that boolean true converted to string is 'true'
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1045,12 +1045,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0077
      * @tc.number SUB_BUILDINS_STRING_TEST_0077
-     * @tc.name StringTest0077
-     * @tc.desc Verify that object converted to string is '[object Object]'
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that object converted to string is '[object Object]'
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1059,12 +1059,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0078
      * @tc.number SUB_BUILDINS_STRING_TEST_0078
-     * @tc.name StringTest0078
-     * @tc.desc Verify that array converted to string joins elements
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that array converted to string joins elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1073,12 +1073,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0079
      * @tc.number SUB_BUILDINS_STRING_TEST_0079
-     * @tc.name StringTest0079
-     * @tc.desc Verify that date object converted to string works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that date object converted to string works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1088,12 +1088,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0081
      * @tc.number SUB_BUILDINS_STRING_TEST_0081
-     * @tc.name StringTest0081
-     * @tc.desc Verify that split with empty string on multi-character string works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with empty string on multi-character string works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1102,12 +1102,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0082
      * @tc.number SUB_BUILDINS_STRING_TEST_0082
-     * @tc.name StringTest0082
-     * @tc.desc Verify that split with comma separator works on csv-like string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with comma separator works on csv-like string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1116,12 +1116,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0083
      * @tc.number SUB_BUILDINS_STRING_TEST_0083
-     * @tc.name StringTest0083
-     * @tc.desc Verify that split with limit parameter stops at specified count
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with limit parameter stops at specified count
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1130,12 +1130,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0084
      * @tc.number SUB_BUILDINS_STRING_TEST_0084
-     * @tc.name StringTest0084
-     * @tc.desc Verify that match returns correct array for regex with groups
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that match returns correct array for regex with groups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1144,12 +1144,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0085
      * @tc.number SUB_BUILDINS_STRING_TEST_0085
-     * @tc.name StringTest0085
-     * @tc.desc Verify that split handles regex with capture groups
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split handles regex with capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1158,12 +1158,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0086
      * @tc.number SUB_BUILDINS_STRING_TEST_0086
-     * @tc.name StringTest0086
-     * @tc.desc Verify that Array.from converts string to correct array
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that Array.from converts string to correct array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1172,12 +1172,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0088
      * @tc.number SUB_BUILDINS_STRING_TEST_0088
-     * @tc.name StringTest0088
-     * @tc.desc Verify that split with whitespace regex works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with whitespace regex works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1186,12 +1186,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0089
      * @tc.number SUB_BUILDINS_STRING_TEST_0089
-     * @tc.name StringTest0089
-     * @tc.desc Verify that split handles trailing empty strings correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split handles trailing empty strings correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1200,12 +1200,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0090
      * @tc.number SUB_BUILDINS_STRING_TEST_0090
-     * @tc.name StringTest0090
-     * @tc.desc Verify that getOwnPropertyNames returns correct properties for string object
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that getOwnPropertyNames returns correct properties for string object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1215,12 +1215,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0091
      * @tc.number SUB_BUILDINS_STRING_TEST_0091
-     * @tc.name StringTest0091
-     * @tc.desc Verify that string with zero-width characters is handled correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with zero-width characters is handled correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1230,12 +1230,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0092
      * @tc.number SUB_BUILDINS_STRING_TEST_0092
-     * @tc.name StringTest0092
-     * @tc.desc Verify that normalize method returns correct normalized string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that normalize method returns correct normalized string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1246,12 +1246,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0093
      * @tc.number SUB_BUILDINS_STRING_TEST_0093
-     * @tc.name StringTest0093
-     * @tc.desc Verify that split with empty string on empty string returns empty array
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with empty string on empty string returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1260,12 +1260,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0094
      * @tc.number SUB_BUILDINS_STRING_TEST_0094
-     * @tc.name StringTest0094
-     * @tc.desc Verify that matchAll returns correct iterator results
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that matchAll returns correct iterator results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1276,12 +1276,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0096
      * @tc.number SUB_BUILDINS_STRING_TEST_0096
-     * @tc.name StringTest0096
-     * @tc.desc Verify that split with regex lookahead works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with regex lookahead works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1290,12 +1290,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0097
      * @tc.number SUB_BUILDINS_STRING_TEST_0097
-     * @tc.name StringTest0097
-     * @tc.desc Verify that string with combining characters has correct length
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that string with combining characters has correct length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1304,12 +1304,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0098
      * @tc.number SUB_BUILDINS_STRING_TEST_0098
-     * @tc.name StringTest0098
-     * @tc.desc Verify that split with numeric separator works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with numeric separator works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1318,12 +1318,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0099
      * @tc.number SUB_BUILDINS_STRING_TEST_0099
-     * @tc.name StringTest0099
-     * @tc.desc Verify that Object.keys returns correct indices for string object
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that Object.keys returns correct indices for string object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1333,12 +1333,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0100
      * @tc.number SUB_BUILDINS_STRING_TEST_0100
-     * @tc.name StringTest0100
-     * @tc.desc Verify that split with backslash separator works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with backslash separator works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1347,12 +1347,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0101
      * @tc.number SUB_BUILDINS_STRING_TEST_0101
-     * @tc.name StringTest0101
-     * @tc.desc Verify that trim works with non-breaking spaces
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that trim works with non-breaking spaces
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1361,12 +1361,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0102
      * @tc.number SUB_BUILDINS_STRING_TEST_0102
-     * @tc.name StringTest0102
-     * @tc.desc Verify that replace with empty string replacement works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with empty string replacement works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1375,12 +1375,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0103
      * @tc.number SUB_BUILDINS_STRING_TEST_0103
-     * @tc.name StringTest0103
-     * @tc.desc Verify that toLocaleUpperCase works for special characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that toLocaleUpperCase works for special characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1389,12 +1389,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0104
      * @tc.number SUB_BUILDINS_STRING_TEST_0104
-     * @tc.name StringTest0104
-     * @tc.desc Verify that toLocaleLowerCase works for special characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that toLocaleLowerCase works for special characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1403,12 +1403,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0105
      * @tc.number SUB_BUILDINS_STRING_TEST_0105
-     * @tc.name StringTest0105
-     * @tc.desc Verify that includes returns false for non-existent substring
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that includes returns false for non-existent substring
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const result = 'hello'.includes('xyz');
@@ -1416,12 +1416,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0106
      * @tc.number SUB_BUILDINS_STRING_TEST_0106
-     * @tc.name StringTest0106
-     * @tc.desc Verify that startsWith returns false for incorrect prefix
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that startsWith returns false for incorrect prefix
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const result = 'hello'.startsWith('helo');
@@ -1429,12 +1429,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0107
      * @tc.number SUB_BUILDINS_STRING_TEST_0107
-     * @tc.name StringTest0107
-     * @tc.desc Verify that endsWith returns false for incorrect suffix
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that endsWith returns false for incorrect suffix
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const result = 'hello'.endsWith('elo');
@@ -1442,12 +1442,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0108
      * @tc.number SUB_BUILDINS_STRING_TEST_0108
-     * @tc.name StringTest0108
-     * @tc.desc Verify that repeat with large count works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that repeat with large count works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1456,12 +1456,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0109
      * @tc.number SUB_BUILDINS_STRING_TEST_0109
-     * @tc.name StringTest0109
-     * @tc.desc Verify that padStart uses space as default padding
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padStart uses space as default padding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1470,12 +1470,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0110
      * @tc.number SUB_BUILDINS_STRING_TEST_0110
-     * @tc.name StringTest0110
-     * @tc.desc Verify that padEnd uses space as default padding
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padEnd uses space as default padding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1484,12 +1484,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0111
      * @tc.number SUB_BUILDINS_STRING_TEST_0111
-     * @tc.name StringTest0111
-     * @tc.desc Verify that padStart truncates padding string if necessary
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padStart truncates padding string if necessary
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1498,12 +1498,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0112
      * @tc.number SUB_BUILDINS_STRING_TEST_0112
-     * @tc.name StringTest0112
-     * @tc.desc Verify that padEnd truncates padding string if necessary
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padEnd truncates padding string if necessary
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1512,12 +1512,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0113
      * @tc.number SUB_BUILDINS_STRING_TEST_0113
-     * @tc.name StringTest0113
-     * @tc.desc Verify that search returns -1 for non-matching regex
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that search returns -1 for non-matching regex
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1526,12 +1526,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0114
      * @tc.number SUB_BUILDINS_STRING_TEST_0114
-     * @tc.name StringTest0114
-     * @tc.desc Verify that match returns null for non-matching regex
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that match returns null for non-matching regex
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1540,12 +1540,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0115
      * @tc.number SUB_BUILDINS_STRING_TEST_0115
-     * @tc.name StringTest0115
-     * @tc.desc Verify that replace with non-string replacement converts correctly
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with non-string replacement converts correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1554,12 +1554,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0116
      * @tc.number SUB_BUILDINS_STRING_TEST_0116
-     * @tc.name StringTest0116
-     * @tc.desc Verify that String.fromCodePoint creates correct string for emoji
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that String.fromCodePoint creates correct string for emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1568,12 +1568,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0117
      * @tc.number SUB_BUILDINS_STRING_TEST_0117
-     * @tc.name StringTest0117
-     * @tc.desc Verify that normalize with NFC form works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that normalize with NFC form works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1583,12 +1583,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0118
      * @tc.number SUB_BUILDINS_STRING_TEST_0118
-     * @tc.name StringTest0118
-     * @tc.desc Verify that normalize with NFD form works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that normalize with NFD form works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1598,12 +1598,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0119
      * @tc.number SUB_BUILDINS_STRING_TEST_0119
-     * @tc.name StringTest0119
-     * @tc.desc Verify that matchAll returns empty iterator for no matches
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that matchAll returns empty iterator for no matches
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1613,12 +1613,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0120
      * @tc.number SUB_BUILDINS_STRING_TEST_0120
-     * @tc.name StringTest0120
-     * @tc.desc Verify that split with empty separator on long string works
-     * @tc.size LargeTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with empty separator on long string works
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0120', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1,
       () => {
@@ -1628,12 +1628,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0121
      * @tc.number SUB_BUILDINS_STRING_TEST_0121
-     * @tc.name StringTest0121
-     * @tc.desc Verify that charAt returns empty string for empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that charAt returns empty string for empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const result = ''.charAt(0);
@@ -1641,12 +1641,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0122
      * @tc.number SUB_BUILDINS_STRING_TEST_0122
-     * @tc.name StringTest0122
-     * @tc.desc Verify that charCodeAt returns NaN for empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that charCodeAt returns NaN for empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1655,12 +1655,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0123
      * @tc.number SUB_BUILDINS_STRING_TEST_0123
-     * @tc.name StringTest0123
-     * @tc.desc Verify that codePointAt returns undefined for empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that codePointAt returns undefined for empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1669,12 +1669,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0124
      * @tc.number SUB_BUILDINS_STRING_TEST_0124
-     * @tc.name StringTest0124
-     * @tc.desc Verify that concat with multiple arguments works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that concat with multiple arguments works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const str = 'a'.concat('b', 'c', 'd');
@@ -1682,12 +1682,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0125
      * @tc.number SUB_BUILDINS_STRING_TEST_0125
-     * @tc.name StringTest0125
-     * @tc.desc Verify that concat with non-string arguments converts them
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that concat with non-string arguments converts them
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1696,12 +1696,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0126
      * @tc.number SUB_BUILDINS_STRING_TEST_0126
-     * @tc.name StringTest0126
-     * @tc.desc Verify that slice with start equal to end returns empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that slice with start equal to end returns empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1710,12 +1710,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0127
      * @tc.number SUB_BUILDINS_STRING_TEST_0127
-     * @tc.name StringTest0127
-     * @tc.desc Verify that substring with start equal to end returns empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that substring with start equal to end returns empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1724,12 +1724,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0128
      * @tc.number SUB_BUILDINS_STRING_TEST_0128
-     * @tc.name StringTest0128
-     * @tc.desc Verify that substr with zero length returns empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that substr with zero length returns empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1738,12 +1738,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0129
      * @tc.number SUB_BUILDINS_STRING_TEST_0129
-     * @tc.name StringTest0129
-     * @tc.desc Verify that indexOf with fromIndex larger than string length returns -1
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that indexOf with fromIndex larger than string length returns -1
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1752,12 +1752,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0130
      * @tc.number SUB_BUILDINS_STRING_TEST_0130
-     * @tc.name StringTest0130
-     * @tc.desc Verify that lastIndexOf with fromIndex negative returns -1 for non-existent substring
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that lastIndexOf with fromIndex negative returns -1 for non-existent substring
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1766,12 +1766,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0131
      * @tc.number SUB_BUILDINS_STRING_TEST_0131
-     * @tc.name StringTest0131
-     * @tc.desc Verify that includes with position larger than string length returns false
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that includes with position larger than string length returns false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1780,12 +1780,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0132
      * @tc.number SUB_BUILDINS_STRING_TEST_0132
-     * @tc.name StringTest0132
-     * @tc.desc Verify that startsWith with position larger than string length returns false
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that startsWith with position larger than string length returns false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1794,12 +1794,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0133
      * @tc.number SUB_BUILDINS_STRING_TEST_0133
-     * @tc.name StringTest0133
-     * @tc.desc Verify that endsWith with length 0 returns true only for empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that endsWith with length 0 returns true only for empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1810,12 +1810,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0134
      * @tc.number SUB_BUILDINS_STRING_TEST_0134
-     * @tc.name StringTest0134
-     * @tc.desc Verify that replace with regex and empty string removes matches
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with regex and empty string removes matches
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1824,12 +1824,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0135
      * @tc.number SUB_BUILDINS_STRING_TEST_0135
-     * @tc.name StringTest0135
-     * @tc.desc Verify that toUpperCase preserves non-alphabetic characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that toUpperCase preserves non-alphabetic characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1838,12 +1838,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0136
      * @tc.number SUB_BUILDINS_STRING_TEST_0136
-     * @tc.name StringTest0136
-     * @tc.desc Verify that toLowerCase preserves non-alphabetic characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that toLowerCase preserves non-alphabetic characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1852,12 +1852,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0137
      * @tc.number SUB_BUILDINS_STRING_TEST_0137
-     * @tc.name StringTest0137
-     * @tc.desc Verify that trim with only whitespace returns empty string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that trim with only whitespace returns empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1865,12 +1865,12 @@ line2`;
         expect(str).assertEqual('');
       });
     /**
+     * @tc.name   StringTest0139
      * @tc.number SUB_BUILDINS_STRING_TEST_0139
-     * @tc.name StringTest0139
-     * @tc.desc Verify that repeat with negative number throws error
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that repeat with negative number throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1884,12 +1884,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0140
      * @tc.number SUB_BUILDINS_STRING_TEST_0140
-     * @tc.name StringTest0140
-     * @tc.desc verify that padStart with negative target length returns original string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   verify that padStart with negative target length returns original string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1898,12 +1898,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0141
      * @tc.number SUB_BUILDINS_STRING_TEST_0141
-     * @tc.name StringTest0141
-     * @tc.desc Verify that padEnd with negative target length returns original string
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padEnd with negative target length returns original string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1912,12 +1912,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0142
      * @tc.number SUB_BUILDINS_STRING_TEST_0142
-     * @tc.name StringTest0142
-     * @tc.desc Verify that match with global flag returns all matches
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that match with global flag returns all matches
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1926,12 +1926,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0143
      * @tc.number SUB_BUILDINS_STRING_TEST_0143
-     * @tc.name StringTest0143
-     * @tc.desc Verify that match with case-insensitive flag works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that match with case-insensitive flag works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1940,12 +1940,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0144
      * @tc.number SUB_BUILDINS_STRING_TEST_0144
-     * @tc.name StringTest0144
-     * @tc.desc Verify that search with case-insensitive flag works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that search with case-insensitive flag works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1954,12 +1954,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0145
      * @tc.number SUB_BUILDINS_STRING_TEST_0145
-     * @tc.name StringTest0145
-     * @tc.desc Verify that split with empty string and limit 0 returns empty array
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with empty string and limit 0 returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1968,12 +1968,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0146
      * @tc.number SUB_BUILDINS_STRING_TEST_0146
-     * @tc.name StringTest0146
-     * @tc.desc Verify that fromCharCode handles multiple code points
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that fromCharCode handles multiple code points
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1982,12 +1982,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0147
      * @tc.number SUB_BUILDINS_STRING_TEST_0147
-     * @tc.name StringTest0147
-     * @tc.desc Verify that charCodeAt returns correct value for high-order characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that charCodeAt returns correct value for high-order characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -1996,12 +1996,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0148
      * @tc.number SUB_BUILDINS_STRING_TEST_0148
-     * @tc.name StringTest0148
-     * @tc.desc Verify that localeCompare returns 0 for equal strings
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that localeCompare returns 0 for equal strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2010,12 +2010,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0149
      * @tc.number SUB_BUILDINS_STRING_TEST_0149
-     * @tc.name StringTest0149
-     * @tc.desc Verify that localeCompare returns positive number when string comes after
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that localeCompare returns positive number when string comes after
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2024,12 +2024,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0150
      * @tc.number SUB_BUILDINS_STRING_TEST_0150
-     * @tc.name StringTest0150
-     * @tc.desc Verify that replace with $& inserts matched substring
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with $& inserts matched substring
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2038,12 +2038,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0151
      * @tc.number SUB_BUILDINS_STRING_TEST_0151
-     * @tc.name StringTest0151
-     * @tc.desc Verify that replace with $` inserts substring before match
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with $` inserts substring before match
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2052,12 +2052,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0152
      * @tc.number SUB_BUILDINS_STRING_TEST_0152
-     * @tc.name StringTest0152
-     * @tc.desc Verify that replace with $' inserts substring after match
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with $' inserts substring after match
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2066,12 +2066,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0153
      * @tc.number SUB_BUILDINS_STRING_TEST_0153
-     * @tc.name StringTest0153
-     * @tc.desc Verify that replace with $$ inserts dollar sign
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that replace with $$ inserts dollar sign
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2080,12 +2080,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0154
      * @tc.number SUB_BUILDINS_STRING_TEST_0154
-     * @tc.name StringTest0154
-     * @tc.desc Verify that split with regex and limit works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with regex and limit works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2094,12 +2094,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0155
      * @tc.number SUB_BUILDINS_STRING_TEST_0155
-     * @tc.name StringTest0155
-     * @tc.desc Verify that toLocaleUpperCase uses default locale when not specified
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that toLocaleUpperCase uses default locale when not specified
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2109,12 +2109,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0156
      * @tc.number SUB_BUILDINS_STRING_TEST_0156
-     * @tc.name StringTest0156
-     * @tc.desc Verify that codePointAt returns correct value for supplementary characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that codePointAt returns correct value for supplementary characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2123,12 +2123,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0157
      * @tc.number SUB_BUILDINS_STRING_TEST_0157
-     * @tc.name StringTest0157
-     * @tc.desc Verify that fromCodePoint handles supplementary characters
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that fromCodePoint handles supplementary characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2137,12 +2137,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0158
      * @tc.number SUB_BUILDINS_STRING_TEST_0158
-     * @tc.name StringTest0158
-     * @tc.desc Verify that repeat with Infinity throws error
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that repeat with Infinity throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2156,12 +2156,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0159
      * @tc.number SUB_BUILDINS_STRING_TEST_0159
-     * @tc.name StringTest0159
-     * @tc.desc Verify that padStart with large target length works
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that padStart with large target length works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2170,12 +2170,12 @@ line2`;
       });
 
     /**
+     * @tc.name   StringTest0160
      * @tc.number SUB_BUILDINS_STRING_TEST_0160
-     * @tc.name StringTest0160
-     * @tc.desc Verify that split with empty string on emoji returns correct array
-     * @tc.size SmallTest
-     * @tc.type FUNCTION
-     * @tc.level Level 1
+     * @tc.desc   Verify that split with empty string on emoji returns correct array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2184,12 +2184,12 @@ line2`;
         expect(arr.length).assertEqual(6);
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0161
-     @tc.name StringTest0161
-     @tc.desc Verify that split with emoji and limit works correctly
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0161
+     * @tc.number SUB_BUILDINS_STRING_TEST_0161
+     * @tc.desc   Verify that split with emoji and limit works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2197,12 +2197,12 @@ line2`;
         expect(arr.toString()).assertEqual(['😊', '👍'].toString());
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0162
-     @tc.name StringTest0162
-     @tc.desc Verify that includes works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0162
+     * @tc.number SUB_BUILDINS_STRING_TEST_0162
+     * @tc.desc   Verify that includes works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2210,12 +2210,12 @@ line2`;
         expect(result).assertTrue();
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0163
-     @tc.name StringTest0163
-     @tc.desc Verify that startsWith works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0163
+     * @tc.number SUB_BUILDINS_STRING_TEST_0163
+     * @tc.desc   Verify that startsWith works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2223,12 +2223,12 @@ line2`;
         expect(result).assertTrue();
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0164
-     @tc.name StringTest0164
-     @tc.desc Verify that endsWith works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0164
+     * @tc.number SUB_BUILDINS_STRING_TEST_0164
+     * @tc.desc   Verify that endsWith works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2236,12 +2236,12 @@ line2`;
         expect(result).assertTrue();
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0165
-     @tc.name StringTest0165
-     @tc.desc Verify that indexOf works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0165
+     * @tc.number SUB_BUILDINS_STRING_TEST_0165
+     * @tc.desc   Verify that indexOf works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2249,12 +2249,12 @@ line2`;
         expect(index).assertEqual(4);
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0166
-     @tc.name StringTest0166
-     @tc.desc Verify that lastIndexOf works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0166
+     * @tc.number SUB_BUILDINS_STRING_TEST_0166
+     * @tc.desc   Verify that lastIndexOf works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2262,12 +2262,12 @@ line2`;
         expect(index).assertEqual(4);
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0167
-     @tc.name StringTest0167
-     @tc.desc Verify that replace works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0167
+     * @tc.number SUB_BUILDINS_STRING_TEST_0167
+     * @tc.desc   Verify that replace works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2275,12 +2275,12 @@ line2`;
         expect(str).assertEqual('Hello 👍');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0168
-     @tc.name StringTest0168
-     @tc.desc Verify that concat works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0168
+     * @tc.number SUB_BUILDINS_STRING_TEST_0168
+     * @tc.desc   Verify that concat works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2288,12 +2288,12 @@ line2`;
         expect(str).assertEqual('Hello 😊');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0169
-     @tc.name StringTest0169
-     @tc.desc Verify that slice works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0169
+     * @tc.number SUB_BUILDINS_STRING_TEST_0169
+     * @tc.desc   Verify that slice works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2301,12 +2301,12 @@ line2`;
         expect(str).assertEqual('😊B');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0170
-     @tc.name StringTest0170
-     @tc.desc Verify that substring works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0170
+     * @tc.number SUB_BUILDINS_STRING_TEST_0170
+     * @tc.desc   Verify that substring works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2314,12 +2314,12 @@ line2`;
         expect(str).assertEqual('😊B');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0171
-     @tc.name StringTest0171
-     @tc.desc Verify that substr works with emoji
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0171
+     * @tc.number SUB_BUILDINS_STRING_TEST_0171
+     * @tc.desc   Verify that substr works with emoji
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2327,12 +2327,12 @@ line2`;
         expect(str).assertEqual('😊B');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0172
-     @tc.name StringTest0172
-     @tc.desc Verify that toUpperCase works with accented characters
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0172
+     * @tc.number SUB_BUILDINS_STRING_TEST_0172
+     * @tc.desc   Verify that toUpperCase works with accented characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2340,12 +2340,12 @@ line2`;
         expect(str).assertEqual('CAFÉ À LA CARTE');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0173
-     @tc.name StringTest0173
-     @tc.desc Verify that toLowerCase works with accented characters
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0173
+     * @tc.number SUB_BUILDINS_STRING_TEST_0173
+     * @tc.desc   Verify that toLowerCase works with accented characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2353,12 +2353,12 @@ line2`;
         expect(str).assertEqual('café à la carte');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0174
-     @tc.name StringTest0174
-     @tc.desc Verify that trimStart works with non-breaking spaces
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0174
+     * @tc.number SUB_BUILDINS_STRING_TEST_0174
+     * @tc.desc   Verify that trimStart works with non-breaking spaces
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2366,12 +2366,12 @@ line2`;
         expect(str).assertEqual('test');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0175
-     @tc.name StringTest0175
-     @tc.desc Verify that trimEnd works with non-breaking spaces
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0175
+     * @tc.number SUB_BUILDINS_STRING_TEST_0175
+     * @tc.desc   Verify that trimEnd works with non-breaking spaces
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2379,12 +2379,12 @@ line2`;
         expect(str).assertEqual('test');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0176
-     @tc.name StringTest0176
-     @tc.desc Verify that repeat works with multi-character strings
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0176
+     * @tc.number SUB_BUILDINS_STRING_TEST_0176
+     * @tc.desc   Verify that repeat works with multi-character strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2392,12 +2392,12 @@ line2`;
         expect(str).assertEqual('ababababab');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0177
-     @tc.name StringTest0177
-     @tc.desc Verify that padStart works with multi-character padding
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0177
+     * @tc.number SUB_BUILDINS_STRING_TEST_0177
+     * @tc.desc   Verify that padStart works with multi-character padding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2405,12 +2405,12 @@ line2`;
         expect(str).assertEqual('ababx');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0178
-     @tc.name StringTest0178
-     @tc.desc Verify that padEnd works with multi-character padding
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0178
+     * @tc.number SUB_BUILDINS_STRING_TEST_0178
+     * @tc.desc   Verify that padEnd works with multi-character padding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2418,12 +2418,12 @@ line2`;
         expect(str).assertEqual('xabab');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0179
-     @tc.name StringTest0179
-     @tc.desc Verify that matchAll returns correct groups
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0179
+     * @tc.number SUB_BUILDINS_STRING_TEST_0179
+     * @tc.desc   Verify that matchAll returns correct groups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2433,12 +2433,12 @@ line2`;
         expect(groups.toString()).assertEqual(['a1', 'b2', 'c3'].toString());
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0180
-     @tc.name StringTest0180
-     @tc.desc Verify that normalize with NFKC form works for compatibility characters
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0180
+     * @tc.number SUB_BUILDINS_STRING_TEST_0180
+     * @tc.desc   Verify that normalize with NFKC form works for compatibility characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2446,12 +2446,12 @@ line2`;
         expect(str.normalize('NFKC')).assertEqual('1');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0181
-     @tc.name StringTest0181
-     @tc.desc Verify that split with line breaks works
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0181
+     * @tc.number SUB_BUILDINS_STRING_TEST_0181
+     * @tc.desc   Verify that split with line breaks works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0181', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2461,12 +2461,12 @@ line2`;
       });
 
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0183
-     @tc.name StringTest0183
-     @tc.desc Verify that localeCompare with numeric option works
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0183
+     * @tc.number SUB_BUILDINS_STRING_TEST_0183
+     * @tc.desc   Verify that localeCompare with numeric option works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0183', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2475,12 +2475,12 @@ line2`;
 
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0184
-     @tc.name StringTest0184
-     @tc.desc Verify that String.fromCodePoint handles multiple code points
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0184
+     * @tc.number SUB_BUILDINS_STRING_TEST_0184
+     * @tc.desc   Verify that String.fromCodePoint handles multiple code points
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0184', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2488,12 +2488,12 @@ line2`;
         expect(str).assertEqual('A 😀');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0185
-     @tc.name StringTest0185
-     @tc.desc Verify that codePointAt returns correct values for multiple code points
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0185
+     * @tc.number SUB_BUILDINS_STRING_TEST_0185
+     * @tc.desc   Verify that codePointAt returns correct values for multiple code points
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0185', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2502,12 +2502,12 @@ line2`;
         expect(codes.toString()).assertEqual([65, 128512, 66].toString());
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0186
-     @tc.name StringTest0186
-     @tc.desc Verify that very long string concatenation works
-     @tc.size LargeTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0186
+     * @tc.number SUB_BUILDINS_STRING_TEST_0186
+     * @tc.desc   Verify that very long string concatenation works
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0186', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1,
       () => {
@@ -2516,12 +2516,12 @@ line2`;
         expect(str.length).assertEqual(5000);
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0187
-     @tc.name StringTest0187
-     @tc.desc Verify that replace with global and case-insensitive flags works
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0187
+     * @tc.number SUB_BUILDINS_STRING_TEST_0187
+     * @tc.desc   Verify that replace with global and case-insensitive flags works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0187', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2529,12 +2529,12 @@ line2`;
         expect(str).assertEqual('hi hi hi');
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0188
-     @tc.name StringTest0188
-     @tc.desc Verify that split with empty string on string with zero-width joiners works
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0188
+     * @tc.number SUB_BUILDINS_STRING_TEST_0188
+     * @tc.desc   Verify that split with empty string on string with zero-width joiners works
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0188', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -2544,12 +2544,12 @@ line2`;
 
       });
     /**
-     @tc.number SUB_BUILDINS_STRING_TEST_0189
-     @tc.name StringTest0189
-     @tc.desc Verify that includes works with case sensitivity
-     @tc.size SmallTest
-     @tc.type FUNCTION
-     @tc.level Level 1
+     * @tc.name   StringTest0189
+     * @tc.number SUB_BUILDINS_STRING_TEST_0189
+     * @tc.desc   Verify that includes works with case sensitivity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('StringTest0189', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const result = 'Hello'.includes('h');

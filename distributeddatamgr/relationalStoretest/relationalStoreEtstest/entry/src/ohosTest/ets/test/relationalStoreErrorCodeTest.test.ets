@@ -109,7 +109,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "*************Unit Test end*************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10000
      * @tc.desc   getRows errcode is 401
@@ -136,7 +135,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode001 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10100
      * @tc.desc   offsetAs errcode is 401
@@ -164,7 +162,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode002 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10200
      * @tc.desc   on errcode is 401
@@ -186,7 +183,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode004 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10300
      * @tc.desc   off errcode is 401
@@ -209,7 +205,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10400
      * @tc.desc   off_statistics errcode is 401
@@ -231,7 +226,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode006 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10500
      * @tc.desc   transaction.querySql rrcode is 401
@@ -256,7 +250,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10600
      * @tc.desc   transaction.execute rrcode is 401
@@ -291,7 +284,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode008 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10700
      * @tc.desc   transaction.executeSync errcode is 401
@@ -326,7 +318,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode009 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10800
      * @tc.desc   transaction.executeSync errcode is 801
@@ -362,7 +353,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10900
      * @tc.desc   transaction.execute errcode is 801
@@ -397,7 +387,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode011 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11000
      * @tc.desc   getColumnNamee errcode is 14800014
@@ -425,7 +414,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11100
      * @tc.desc   getAssets errcode is 14800032
@@ -455,7 +443,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode013 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11200
      * @tc.desc   getAssets errcode is 14800033
@@ -485,7 +472,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode014 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11300
      * @tc.desc   isColumnNull errcode is 14800032
@@ -524,7 +510,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode015 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11400
      * @tc.desc   isColumnNull errcode is 14800033
@@ -563,7 +548,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode016 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11500
      * @tc.desc   transaction.querySqlSync errcode is 401
@@ -588,7 +572,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode017 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11600
      * @tc.desc   rdbStore.querySync errcode is 401
@@ -610,7 +593,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode018 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11700
      * @tc.desc   rdbStore.querySql errcode is 401
@@ -635,7 +617,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11800
      * @tc.desc   rdbStore.querySql errcode is 401
@@ -657,7 +638,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode020 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11900
      * @tc.desc   rdbStore.cloudSync errcode is 801
@@ -681,7 +661,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode022 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12000
      * @tc.desc   rdbStore.remoteQuery errcode is 401
@@ -705,7 +684,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode023 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode024
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12100
      * @tc.desc   rdbStore.remoteQuery errcode is 401
@@ -742,7 +720,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode024 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12200
      * @tc.desc   rdbStore.getModifyTime errcode is 401
@@ -763,7 +740,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode025 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12300
      * @tc.desc   rdbStore.update errcode is 401
@@ -786,7 +762,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode026 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12400
      * @tc.desc   transaction.update errcode is 14800027
@@ -827,7 +802,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode027 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12500
      * @tc.desc   rdbStore.update errcode is 401
@@ -862,7 +836,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode028 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12600
      * @tc.desc   rdbStore.insertSync errcode is 14800021
@@ -891,7 +864,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12700
      * @tc.desc   rdbStore.insertSync errcode is 14800021
@@ -921,7 +893,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12800
      * @tc.desc   rdbStore.insert errcode is 401
@@ -950,7 +921,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12900
      * @tc.desc   rdbStore.setDistributedTables callback errcode is 401
@@ -979,7 +949,6 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13000
      * @tc.desc   rdbStore.setDistributedTables promise errcode is 401
@@ -1006,7 +975,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode033 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13100
      * @tc.desc   rdbStore.setDistributedTables  errcode is 401
@@ -1031,7 +999,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode034 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13200
      * @tc.desc   rdbStore.setDistributedTables  errcode is 801
@@ -1055,7 +1022,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode035 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13300
      * @tc.desc   rdbStore.setDistributedTables  errcode is 801
@@ -1079,7 +1045,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode036 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13400
      * @tc.desc   rdbStore.setDistributedTables  errcode is 801
@@ -1103,7 +1068,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode037 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode038
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13500
      * @tc.desc   rdbStore.setDistributedTables  errcode is 801
@@ -1128,7 +1092,6 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode038 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   errcode039
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13600
      * @tc.desc   rdbStore.executeSql  errcode is 401

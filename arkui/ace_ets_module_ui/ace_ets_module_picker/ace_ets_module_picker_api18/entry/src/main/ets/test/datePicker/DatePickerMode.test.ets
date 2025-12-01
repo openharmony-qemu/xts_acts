@@ -40,13 +40,13 @@ export default function datePickerMode() {
     });
 
     /**
-    * @tc.number    DatePicker0100
-    * @tc.name      DatePicker0100
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   DatePicker0100
+     * @tc.number DatePicker0100
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0100', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0100';
@@ -61,13 +61,13 @@ export default function datePickerMode() {
     });
 
     /**
-    * @tc.number    DatePicker0200
-    * @tc.name      DatePicker0200
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   DatePicker0200
+     * @tc.number DatePicker0200
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0200', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0200';
@@ -82,13 +82,13 @@ export default function datePickerMode() {
     });
 
     /**
-    * @tc.number    DatePicker0300
-    * @tc.name      DatePicker0300
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   DatePicker0300
+     * @tc.number DatePicker0300
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0300', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0300';
@@ -103,13 +103,13 @@ export default function datePickerMode() {
     });
 
     /**
-    * @tc.number    DatePicker0400
-    * @tc.name      DatePicker0400
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   DatePicker0400
+     * @tc.number DatePicker0400
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0400', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0400';
@@ -124,13 +124,13 @@ export default function datePickerMode() {
     });
 
     /**
-    * @tc.number    DatePicker0500
-    * @tc.name      DatePicker0500
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   DatePicker0500
+     * @tc.number DatePicker0500
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0500', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0500';
@@ -145,13 +145,13 @@ export default function datePickerMode() {
     });
 
     /**
-   * @tc.number    DatePicker0600
-   * @tc.name      DatePicker0600
-   * @tc.desc      createDatePickerModeToWindow
-   * @tc.level:    Level 2
-   * @tc.type :
-   * @tc.size :
-   */
+     * @tc.name   DatePicker0600
+     * @tc.number DatePicker0600
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0600', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0600';
@@ -166,13 +166,13 @@ export default function datePickerMode() {
     });
 
     /**
-    * @tc.number    DatePicker0700
-    * @tc.name      DatePicker0700
-    * @tc.desc      createDatePickerModeToWindow
-    * @tc.level:    Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   DatePicker0700
+     * @tc.number DatePicker0700
+     * @tc.desc   createDatePickerModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker0700', Level.LEVEL1, async (done: Function) => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker0700';

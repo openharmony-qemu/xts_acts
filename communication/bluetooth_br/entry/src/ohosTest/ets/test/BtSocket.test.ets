@@ -142,7 +142,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0100
          * @tc.desc   Test  SppListen api10
@@ -176,7 +175,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0200
          * @tc.desc   Test SppAccept api10
@@ -212,7 +210,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0300
          * @tc.desc   Test SppConnect api10
@@ -253,7 +250,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0400
          * @tc.desc   Test On and Off api10
@@ -291,7 +287,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0800
          * @tc.desc   Test On and Off api10
@@ -329,7 +324,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0500
          * @tc.desc   Test sppCloseServerSocket api10 by callback.
@@ -362,7 +356,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0600
          * @tc.desc   Test sppCloseClientSocket api10 by callback.
@@ -399,7 +392,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0700
          * @tc.desc   Test sppWrite api10
@@ -439,7 +431,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0900
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_0900
          * @tc.desc   Test SppConnect api10
@@ -471,7 +462,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1000
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1000
          * @tc.desc   Test sppCloseServerSocket api10 by callback.
@@ -490,7 +480,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1100
          * @tc.desc   Test sppWriteAsync api18
@@ -519,7 +508,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1200
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1200
          * @tc.desc   Test sppReadAsync api18
@@ -546,7 +534,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1300
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1300
          * @tc.desc   Test getDeviceId api17
@@ -567,7 +554,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1400
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1400
          * @tc.desc   Test getL2capPsm api20
@@ -588,7 +574,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1500
          * @tc.desc   Test SppType api20
@@ -615,7 +600,6 @@ export default function btSocketTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1600
          * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1600
          * @tc.desc   Test psm api20
@@ -645,63 +629,66 @@ export default function btSocketTest() {
         })
 
         /**
-         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100
-         * @tc.desc 20251113API22用例覆盖 getMaxReceiveDataSize 1-1.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100
+         * @tc.desc   20251113API22用例覆盖 getMaxReceiveDataSize 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
-        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let clientSocket = 0;
                 let return_max_receive = bluetooth.getMaxReceiveDataSize(clientSocket);
                 console.info('[bluetooth_js]:getMaxReceiveDataSize success, result:' + JSON.stringify(return_max_receive));
+                expect().assertFail();
             } catch (error) {
-                console.error(`[bt_arkts]getMaxTransmitDataSize 0200 is failed, code is ${error.code}, message is ${error.message}`);
+                console.error(`[bt_arkts]getMaxReceiveDataSize is failed, code is ${error.code}, message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
             }
             done();
         })
 
         /**
-         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200
-         * @tc.desc 20251113API22用例覆盖 getMaxTransmitDataSize 1-1.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_0100
+         * @tc.desc   20251113API22用例覆盖 getMaxTransmitDataSize 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
-        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_TransmitDataSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let clientSocket = 1;
                 let return_max_transmit = bluetooth.getMaxTransmitDataSize(clientSocket);
                 console.info('[bluetooth_js]:getMaxTransmitDataSize success, result:' + JSON.stringify(return_max_transmit));
+                expect().assertFail();
             } catch (error) {
-                console.error(`[bt_arkts]getMaxTransmitDataSize 0200 is failed, code is ${error.code}, message is ${error.message}`);
+                console.error(`[bt_arkts]getMaxTransmitDataSize is failed, code is ${error.code}, message is ${error.message}`);
                 expect(Number(error.code)).assertEqual(401);
             }
             done();
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100
-         * @tc.desc 20251113API22用例覆盖 isConnected 2-1.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   20251113API22用例覆盖 isConnected 返回值为布尔值.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let clientSocket = 1;
                 let return_boolean = bluetooth.isConnected(clientSocket);
                 console.info('[bluetooth_js]:isConnected success, result_boolean is:' + JSON.stringify(return_boolean));
+                expect(return_boolean).assertFalse();
             } catch (error) {
                 console.error(`[bt_arkts]isConnected 0100 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801) {
                     console.info('[bluetooth_js]isConnected is not support');
-                    expect(true).assertTrue();
+                    expect(Number(error.code)).assertEqual(801);
                 } else {
                     console.info("isConnected: errCode:" + error.code + ",errMessage:" + error.message);
                     expect(Number(error.code)).assertEqual(401);
@@ -709,27 +696,6 @@ export default function btSocketTest() {
             }
             done();
         })
-
-        /**
-         * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
-         * @tc.name SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200
-         * @tc.desc 20251113API22用例覆盖 isConnected 2-2.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
-         */
-        it('SUB_COMMUNICATION_BLUETOOTH_SOCKET_ISCONNECTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-            try {
-                let clientSocket = 2;
-                let return_boolean = bluetooth.isConnected(clientSocket);
-                console.info('[bluetooth_js]isConnected success, result_boolean is:' + JSON.stringify(return_boolean));
-                expect(return_boolean).assertFalse();
-            } catch (error) {
-                console.error(`[bt_arkts]isConnected 0200 is failed, code is ${error.code}, message is ${error.message}`);
-                expect(Number(error.code)).assertEqual(401);
-            }
-            done();
-        })
-
+		
     })
 }

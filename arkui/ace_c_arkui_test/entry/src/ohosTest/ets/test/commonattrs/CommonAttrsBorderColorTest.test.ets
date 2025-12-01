@@ -26,26 +26,26 @@ export default function commonAttrsBorderColorTest() {
       done();
     });
 
-    /*
- * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERCOLOR_0100
- * @tc.name       : testCommonAttrsBorderColor001
- * @tc.desc       : testing borderColor for commonAttrs with normal value
- * @tc.size       : MediumTest
- * @tc.type       : Function
- * @tc.level      : Level1
- */
+    /**
+     * @tc.name   testCommonAttrsBorderColor001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERCOLOR_0100
+     * @tc.desc   testing borderColor for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonAttrsBorderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERCOLOR_0200
-     * @tc.name       : testCommonAttrsBorderColor002
-     * @tc.desc       : testing borderColor for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderColor002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERCOLOR_0200
+     * @tc.desc   testing borderColor for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderColor002()).assertEqual(0)

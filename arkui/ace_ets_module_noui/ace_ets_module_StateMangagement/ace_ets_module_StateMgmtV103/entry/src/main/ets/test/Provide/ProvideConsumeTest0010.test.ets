@@ -46,12 +46,12 @@ export default function ProvideConsumeTest0010() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PROVIDE_CONSUME_0010
-     * @tc.name      ProvideConsumeTest0010_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   ProvideConsumeTest0010_001
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDE_CONSUME_0010
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ProvideConsumeTest0010_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideConsumeTest0010_001] START');

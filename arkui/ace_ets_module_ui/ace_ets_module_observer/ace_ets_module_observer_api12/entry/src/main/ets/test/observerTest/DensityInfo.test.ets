@@ -43,12 +43,12 @@ export default function DensityInfoTest() {
       done();
     });
     /**
-     * @tc.number    DensityInfoTest_0100
-     * @tc.name      DensityInfoTest_0100
-     * @tc.desc      test the api of DensityInfo
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DensityInfoTest_0100
+     * @tc.number DensityInfoTest_0100
+     * @tc.desc   test the api of DensityInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DensityInfoTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DensityInfoTest_0100 START');

@@ -45,16 +45,16 @@ export default function getDragController() {
       done();
     });
 
+
+
     /**
-     * @tc.number    SUB_ACE_getDragController_0100
-     * @tc.name      getDragController_0100
-     * @tc.desc      getDragController api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getDragController_0100
+     * @tc.number getDragController_0100
+     * @tc.desc   getDragController_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('getDragController_0100', Level.LEVEL0, async  (done: Function) => {
       console.info('getDragController_0100 START');
       let driver = await Driver.create()

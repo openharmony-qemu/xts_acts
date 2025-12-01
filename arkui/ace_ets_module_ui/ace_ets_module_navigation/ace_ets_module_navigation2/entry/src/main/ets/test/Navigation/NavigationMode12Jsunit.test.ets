@@ -39,12 +39,14 @@ export default function NavigationMode12Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationMode12Jsunit_0100
-    * @tc.name  : NavigationMode12Jsunit_0100
-    * @tc.desc  : When NavigationMode is set to Auto, double columns are displayed for Auto, and the mode is dynamically switched to split mode.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationMode12Jsunit_0100
+     * @tc.number NavigationMode12Jsunit_0100
+     * @tc.desc   When NavigationMode is set to Auto, double columns are displayed for Auto, and the mode is dynamically switched to split mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode12Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

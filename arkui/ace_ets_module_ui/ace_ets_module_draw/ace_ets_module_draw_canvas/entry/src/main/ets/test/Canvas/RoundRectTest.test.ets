@@ -41,12 +41,12 @@ export default function RoundRectTest() {
     });
     
     /**
-     * @tc.number: SUB_ARKUI_API_RoundRectTest_0100
-     * @tc.name: RoundRectTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   RoundRectTest_0100
+     * @tc.number SUB_ARKUI_API_RoundRectTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RoundRectTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RoundRectTest_0100] START');

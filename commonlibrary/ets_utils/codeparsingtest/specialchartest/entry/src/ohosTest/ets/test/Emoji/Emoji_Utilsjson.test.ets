@@ -38,12 +38,12 @@ export default function demoEmojiUtilJsonTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0100
-     * @tc.name       : testparseEmoji0001
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\ude0a.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testparseEmoji0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0100
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\ude0a.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testparseEmoji0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testparseEmoji0001";
@@ -60,12 +60,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0200
-     * @tc.name       : testparseEmoji0002
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\udc64.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testparseEmoji0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0200
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc64.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testparseEmoji0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testparseEmoji0002";
@@ -82,12 +82,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0300
-     * @tc.name       : testparseEmoji0003
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\udc6b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testparseEmoji0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0300
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc6b.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testparseEmoji0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testparseEmoji0003";
@@ -104,12 +104,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0400
-     * @tc.name       : testparseEmoji0004
-     * @tc.desc       : Test the Utils interface parse with input emoji \u260e.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testparseEmoji0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0400
+     * @tc.desc   Test the Utils interface parse with input emoji \u260e.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testparseEmoji0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testparseEmoji0004";
@@ -126,12 +126,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0500
-     * @tc.name       : testparseEmoji0005
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\udc79.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0500
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc79.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0005";
@@ -148,12 +148,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0600
-     * @tc.name       : testparseEmoji0006
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\udd5b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0600
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udd5b.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0006";
@@ -170,12 +170,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0700
-     * @tc.name       : testparseEmoji0007
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83c\udf4f.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0700
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83c\udf4f.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0007";
@@ -192,12 +192,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0800
-     * @tc.name       : testparseEmoji0008
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\udd03.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0800
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udd03.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0008";
@@ -214,12 +214,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0900
-     * @tc.name       : testparseEmoji0009
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83c\udf41.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_0900
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83c\udf41.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0009";
@@ -236,12 +236,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1000
-     * @tc.name       : testparseEmoji0010
-     * @tc.desc       : Test the Utils interface parse with input emoji \u2666.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1000
+     * @tc.desc   Test the Utils interface parse with input emoji \u2666.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0010";
@@ -258,12 +258,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1100
-     * @tc.name       : testparseEmoji0011
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83d\udc48.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1100
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83d\udc48.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0011";
@@ -280,12 +280,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1200
-     * @tc.name       : testparseEmoji0012
-     * @tc.desc       : Test the Utils interface parse with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testparseEmoji0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_EMOJI_1200
+     * @tc.desc   Test the Utils interface parse with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testparseEmoji0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testparseEmoji0012";
@@ -302,12 +302,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1300
-     * @tc.name       : testUtilJsonRemoveEmoji0001
-     * @tc.desc       : Test the function of the Interface emoji  😊  \ud83d\ude0a.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1300
+     * @tc.desc   Test the function of the Interface emoji  😊  \ud83d\ude0a.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0001";
@@ -323,12 +323,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1400
-     * @tc.name       : testUtilJsonRemoveEmoji0002
-     * @tc.desc       : Test the function of the Interface emoji  👤  \ud83d\udc64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1400
+     * @tc.desc   Test the function of the Interface emoji  👤  \ud83d\udc64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0002";
@@ -344,12 +344,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1500
-     * @tc.name       : testUtilJsonRemoveEmoji0003
-     * @tc.desc       : Test the function of the Interface emoji  👫  \ud83d\udc6b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1500
+     * @tc.desc   Test the function of the Interface emoji  👫  \ud83d\udc6b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0003";
@@ -365,12 +365,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1600
-     * @tc.name       : testUtilJsonRemoveEmoji0004
-     * @tc.desc       : Test the function of the Interface emoji  ☎  \u260e
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1600
+     * @tc.desc   Test the function of the Interface emoji  ☎  \u260e
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0004";
@@ -386,12 +386,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1700
-     * @tc.name       : testUtilJsonRemoveEmoji0005
-     * @tc.desc       : Test the function of the Interface emoji  👹  \ud83d\udc79
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1700
+     * @tc.desc   Test the function of the Interface emoji  👹  \ud83d\udc79
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0005";
@@ -407,12 +407,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1800
-     * @tc.name       : testUtilJsonRemoveEmoji0006
-     * @tc.desc       : Test the function of the Interface emoji  🕛  \ud83d\udd5b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1800
+     * @tc.desc   Test the function of the Interface emoji  🕛  \ud83d\udd5b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0006";
@@ -428,12 +428,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1900
-     * @tc.name       : testUtilJsonRemoveEmoji0007
-     * @tc.desc       : Test the function of the Interface emoji  🍏  \ud83c\udf4f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_1900
+     * @tc.desc   Test the function of the Interface emoji  🍏  \ud83c\udf4f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0007";
@@ -449,12 +449,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2000
-     * @tc.name       : testUtilJsonRemoveEmoji0008
-     * @tc.desc       : Test the function of the Interface emoji  🔃  \ud83d\udd03
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2000
+     * @tc.desc   Test the function of the Interface emoji  🔃  \ud83d\udd03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0008";
@@ -470,12 +470,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2100
-     * @tc.name       : testUtilJsonRemoveEmoji0009
-     * @tc.desc       : Test the function of the Interface emoji  🍁  \ud83c\udf41
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2100
+     * @tc.desc   Test the function of the Interface emoji  🍁  \ud83c\udf41
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0009";
@@ -491,12 +491,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2200
-     * @tc.name       : testUtilJsonRemoveEmoji0010
-     * @tc.desc       : Test the function of the Interface emoji  ♦   \u2666
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2200
+     * @tc.desc   Test the function of the Interface emoji  ♦   \u2666
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0010";
@@ -512,12 +512,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2300
-     * @tc.name       : testUtilJsonRemoveEmoji0011
-     * @tc.desc       : Test the function of the Interface emoji  👈  \ud83d\udc48
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2300
+     * @tc.desc   Test the function of the Interface emoji  👈  \ud83d\udc48
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0011";
@@ -533,12 +533,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2400
-     * @tc.name       : testUtilJsonRemoveEmoji0012
-     * @tc.desc       : Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonRemoveEmoji0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonRemove_Emoji_2400
+     * @tc.desc   Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonRemoveEmoji0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonRemoveEmoji0012";
@@ -553,12 +553,12 @@ export default function demoEmojiUtilJsonTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2500
-     * @tc.name       : testUtilJsonHasEmoji0001
-     * @tc.desc       : Test the function of the Interface emoji  😊  \ud83d\ude0a.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2500
+     * @tc.desc   Test the function of the Interface emoji  😊  \ud83d\ude0a.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0001";
@@ -573,12 +573,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2600
-     * @tc.name       : testUtilJsonHasEmoji0002
-     * @tc.desc       : Test the function of the Interface emoji  👤  \ud83d\udc64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2600
+     * @tc.desc   Test the function of the Interface emoji  👤  \ud83d\udc64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0002";
@@ -593,12 +593,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2700
-     * @tc.name       : testUtilJsonHasEmoji0003
-     * @tc.desc       : Test the function of the Interface emoji  👫  \ud83d\udc6b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2700
+     * @tc.desc   Test the function of the Interface emoji  👫  \ud83d\udc6b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0003";
@@ -613,12 +613,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2800
-     * @tc.name       : testUtilJsonHasEmoji0004
-     * @tc.desc       : Test the function of the Interface emoji  ☎  \u260e
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2800
+     * @tc.desc   Test the function of the Interface emoji  ☎  \u260e
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0004";
@@ -633,12 +633,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2900
-     * @tc.name       : testUtilJsonHasEmoji0005
-     * @tc.desc       : Test the function of the Interface emoji  👹  \ud83d\udc79
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_2900
+     * @tc.desc   Test the function of the Interface emoji  👹  \ud83d\udc79
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0005";
@@ -653,12 +653,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3000
-     * @tc.name       : testUtilJsonHasEmoji0006
-     * @tc.desc       : Test the function of the Interface emoji  🕛  \ud83d\udd5b
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3000
+     * @tc.desc   Test the function of the Interface emoji  🕛  \ud83d\udd5b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0006";
@@ -673,12 +673,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3100
-     * @tc.name       : testUtilJsonHasEmoji0007
-     * @tc.desc       : Test the function of the Interface emoji  🍏  \ud83c\udf4f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3100
+     * @tc.desc   Test the function of the Interface emoji  🍏  \ud83c\udf4f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0007";
@@ -693,12 +693,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3200
-     * @tc.name       : testUtilJsonHasEmoji0008
-     * @tc.desc       : Test the function of the Interface emoji  🔃  \ud83d\udd03
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3200
+     * @tc.desc   Test the function of the Interface emoji  🔃  \ud83d\udd03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0008";
@@ -713,12 +713,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3300
-     * @tc.name       : testUtilJsonHasEmoji0009
-     * @tc.desc       : Test the function of the Interface emoji  🍁  \ud83c\udf41
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3300
+     * @tc.desc   Test the function of the Interface emoji  🍁  \ud83c\udf41
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0009";
@@ -733,12 +733,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3400
-     * @tc.name       : testUtilJsonHasEmoji0010
-     * @tc.desc       : Test the function of the Interface emoji  ♦   \u2666
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3400
+     * @tc.desc   Test the function of the Interface emoji  ♦   \u2666
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0010";
@@ -753,12 +753,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3500
-     * @tc.name       : testUtilJsonHasEmoji0011
-     * @tc.desc       : Test the function of the Interface emoji  👈  \ud83d\udc48
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3500
+     * @tc.desc   Test the function of the Interface emoji  👈  \ud83d\udc48
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0011";
@@ -773,12 +773,12 @@ export default function demoEmojiUtilJsonTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3600
-     * @tc.name       : testUtilJsonHasEmoji0012
-     * @tc.desc       : Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilJsonHasEmoji0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UtilJsonHas_Emoji_3600
+     * @tc.desc   Test the function of the Interface emoji  🤼‍♂️ \ud83e\udd3c\u200d\u2642\ufe0f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUtilJsonHasEmoji0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUtilJsonHasEmoji0012";

@@ -37,13 +37,13 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpHttpProtocolTest() {
   describe("HttpHttpProtocolTest", () => {
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0100
-     * @tc.name  :  testHttpProtocolHTTP0100
-     * @tc.desc  :  test HttpProtocol.HTTP1_1
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0100
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0100
+     * @tc.desc   test HttpProtocol.HTTP1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0100";
@@ -82,13 +82,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0200
-     * @tc.name  :  testHttpProtocolHTTP0200
-     * @tc.desc  :  test HttpProtocol.HTTP1_1
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0200
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0200
+     * @tc.desc   test HttpProtocol.HTTP1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0200";
@@ -124,13 +124,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0300
-     * @tc.name  :  testHttpProtocolHTTP0300
-     * @tc.desc  :  test HttpProtocol.HTTP2
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0300
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0300
+     * @tc.desc   test HttpProtocol.HTTP2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0300";
@@ -169,13 +169,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0400
-     * @tc.name  :  testHttpProtocolHTTP0400
-     * @tc.desc  :  test HttpProtocol.HTTP2
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0400
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0400
+     * @tc.desc   test HttpProtocol.HTTP2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0400";
@@ -211,13 +211,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0500
-     * @tc.name  :  testHttpProtocolHTTP0500
-     * @tc.desc  :  test HttpProtocol.HTTP3
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0500
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0500
+     * @tc.desc   test HttpProtocol.HTTP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0500";
@@ -256,13 +256,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0600
-     * @tc.name  :  testHttpProtocolHTTP0600
-     * @tc.desc  :  test HttpProtocol.HTTP3
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0600
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0600
+     * @tc.desc   test HttpProtocol.HTTP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0600";
@@ -298,14 +298,14 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0700
-    * @tc.name  :  testHttpProtocolHTTP0700
-    * @tc.desc  :  test HttpProtocol.HTTP1_1
-    * @tc.size  :  smallTest
-    * @tc.type  :  Function
-    * @tc.level :  level 2
-    */
+    /**
+     * @tc.name   testHttpProtocolHTTP0700
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0700
+     * @tc.desc   test HttpProtocol.HTTP1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHttpProtocolHTTP0700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0700";
       console.info(`${caseName} test Start`);
@@ -343,13 +343,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0800
-     * @tc.name  :  testHttpProtocolHTTP0800
-     * @tc.desc  :  test HttpProtocol.HTTP1_1
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0800
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0800
+     * @tc.desc   test HttpProtocol.HTTP1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0800";
@@ -385,13 +385,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_0900
-     * @tc.name  :  testHttpProtocolHTTP0900
-     * @tc.desc  :  test HttpProtocol.HTTP2
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP0900
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_0900
+     * @tc.desc   test HttpProtocol.HTTP2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP0900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP0900";
@@ -430,13 +430,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_1000
-     * @tc.name  :  testHttpProtocolHTTP1000
-     * @tc.desc  :  test HttpProtocol.HTTP2
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP1000
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_1000
+     * @tc.desc   test HttpProtocol.HTTP2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP1000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP1000";
@@ -472,13 +472,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_1100
-     * @tc.name  :  testHttpProtocolHTTP1100
-     * @tc.desc  :  test HttpProtocol.HTTP3
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP1100
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_1100
+     * @tc.desc   test HttpProtocol.HTTP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP1100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP1100";
@@ -517,13 +517,13 @@ export default function HttpHttpProtocolTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpProtocol_1200
-     * @tc.name  :  testHttpProtocolHTTP1200
-     * @tc.desc  :  test HttpProtocol.HTTP3
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpProtocolHTTP1200
+     * @tc.number SUB_NetworkMgr_Http_HttpProtocol_1200
+     * @tc.desc   test HttpProtocol.HTTP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpProtocolHTTP1200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       const caseName: string = "testHttpProtocolHTTP1200";

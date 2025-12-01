@@ -43,7 +43,6 @@ export default function nfcControllerTest() {
         })
         hilog.info(domain, tag, '%{public}s', 'describe start11');
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_static_0100
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0100
          * @tc.desc   Check whether the NFC function is enabled.
@@ -67,7 +66,6 @@ export default function nfcControllerTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_static_0200
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0200
          * @tc.desc   SUB_COMMUNICATION_NFC_Cont_static_0200
@@ -86,7 +84,6 @@ export default function nfcControllerTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_static_0300
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0300
          * @tc.desc   SUB_COMMUNICATION_NFC_Cont_static_0300
@@ -100,7 +97,6 @@ export default function nfcControllerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_static_0600
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0600
          * @tc.desc   SUB_COMMUNICATION_NFC_Cont_static_0600
@@ -120,7 +116,6 @@ export default function nfcControllerTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_static_0700
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0700
          * @tc.desc   SUB_COMMUNICATION_NFC_Cont_static_0700
@@ -151,7 +146,6 @@ export default function nfcControllerTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_COMMUNICATION_NFC_Cont_static_0800
          * @tc.number SUB_COMMUNICATION_NFC_Cont_static_0800
          * @tc.desc   SUB_COMMUNICATION_NFC_Cont_static_0800

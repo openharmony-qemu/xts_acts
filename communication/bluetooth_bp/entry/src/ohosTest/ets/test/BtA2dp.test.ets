@@ -116,7 +116,6 @@ describe('btA2dpTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0100
      * @tc.desc   Test getPlayingState api10.
@@ -141,7 +140,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0200
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0200
       * @tc.desc   Test PlayingState api10.
@@ -165,7 +163,6 @@ describe('btA2dpTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_0300
      * @tc.desc   Test createA2dpSrcProfile
@@ -191,7 +188,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0100
       * @tc.desc   Test CodecType api11.
@@ -232,7 +228,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0200
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0200
       * @tc.desc   Test CodecChannelMode api11.
@@ -261,7 +256,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0300
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0300
       * @tc.desc   Test CodecBitsPerSample api11.
@@ -294,7 +288,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0400
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0400
       * @tc.desc   Test CodecSampleRate api11.
@@ -339,7 +332,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0500
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0500
       * @tc.desc   Test CodecBitRate api19.
@@ -401,7 +393,6 @@ describe('btA2dpTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0600
       * @tc.number SUB_COMMUNICATION_BLUETOOTHA2DP_CONSTANT_0600
       * @tc.desc   Test CodecFrameLength api19.

@@ -52,7 +52,6 @@ describe('rdbStoreTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_0900
      * @tc.desc   rdb store getRdbStore test
@@ -76,7 +75,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1000
      * @tc.desc   rdb store getRdbStore and create table
@@ -104,7 +102,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1100
      * @tc.desc   rdb store getRdbStore with wrong path
@@ -135,7 +132,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1200
      * @tc.desc   rdb store deleteRdbStore
@@ -157,7 +153,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1300
      * @tc.desc   rdb store deleteRdbStore
@@ -180,7 +175,6 @@ describe('rdbStoreTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testRdbStore0006
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1400
       * @tc.desc   rdb store getRdbStore test
@@ -209,7 +203,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1500
      * @tc.desc   rdb store getRdbStore test
@@ -238,7 +231,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1600
      * @tc.desc   rdb store deleteRdbStore test
@@ -260,7 +252,6 @@ describe('rdbStoreTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStore0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBTransactionJsAPITest_1700
      * @tc.desc   rdb store deleteRdbStore test

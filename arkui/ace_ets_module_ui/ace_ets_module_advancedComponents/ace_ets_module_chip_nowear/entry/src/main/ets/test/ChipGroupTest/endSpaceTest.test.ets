@@ -41,12 +41,12 @@ export default function endSpaceTest() {
     });
 
     /**
-     * @tc.number    endSpaceTest_0100
-     * @tc.name      endSpaceTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   endSpaceTest_0100
+     * @tc.number endSpaceTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('endSpaceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('endSpaceTest_0100 end');

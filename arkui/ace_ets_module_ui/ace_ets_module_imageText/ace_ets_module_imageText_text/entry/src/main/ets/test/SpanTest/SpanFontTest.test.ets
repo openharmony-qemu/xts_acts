@@ -54,13 +54,13 @@ export default function SpanFontTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0100
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0100
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0100
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0100
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0100 START');
@@ -84,12 +84,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0200
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0200
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0200
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0200
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0200 START');
@@ -113,12 +113,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0300
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0300
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0300
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0300
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0300 START');
@@ -142,12 +142,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0400
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0400
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0400
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0400
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0400 START');
@@ -171,12 +171,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0500
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0500
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0500
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0500
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0500 START');
@@ -200,12 +200,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0600
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0600
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0600
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0600
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0600 START');
@@ -229,12 +229,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0700
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0700
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0700
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0700
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0700 START');
@@ -258,12 +258,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0800
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0800
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0800
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0800
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0800 START');
@@ -287,12 +287,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_0900
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_0900
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_0900
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_0900
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_0900 START');
@@ -316,12 +316,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_1000
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_1000
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_1000
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_1000
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_1000 START');
@@ -345,12 +345,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_1100
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_1100
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_1100
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_1100
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_1100 START');
@@ -374,12 +374,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontWeight_1200
-     * @tc.name      ArkUX_Stage_Span_Font_FontWeight_1200
-     * @tc.desc      set Span_Font_FontWeight
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontWeight_1200
+     * @tc.number ArkUX_Stage_Span_Font_FontWeight_1200
+     * @tc.desc   set Span_Font_FontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontWeight_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontWeight_1200 START');
@@ -403,12 +403,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0100
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0100
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0100
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0100
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0100 START');
@@ -432,12 +432,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0200
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0200
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0200
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0200
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0200 START');
@@ -461,12 +461,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0300
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0300
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0300
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0300
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0300 START');
@@ -490,12 +490,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0400
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0400
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0400
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0400
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0400 START');
@@ -519,12 +519,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0500
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0500
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0500
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0500
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0500 START');
@@ -548,12 +548,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0600
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0600
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0600
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0600
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0600 START');
@@ -577,12 +577,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0700
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0700
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0700
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0700
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0700 START');
@@ -606,12 +606,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0800
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0800
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0800
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0800
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0800 START');
@@ -635,12 +635,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_0900
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_0900
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_0900
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_0900
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_0900 START');
@@ -664,12 +664,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontSize_1000
-     * @tc.name      ArkUX_Stage_Span_Font_FontSize_1000
-     * @tc.desc      set Span_Font_FontSize
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontSize_1000
+     * @tc.number ArkUX_Stage_Span_Font_FontSize_1000
+     * @tc.desc   set Span_Font_FontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontSize_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontSize_1000 START');
@@ -693,12 +693,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontStyle_0100
-     * @tc.name      ArkUX_Stage_Span_Font_FontStyle_0100
-     * @tc.desc      set Span_Font_FontStyle
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontStyle_0100
+     * @tc.number ArkUX_Stage_Span_Font_FontStyle_0100
+     * @tc.desc   set Span_Font_FontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontStyle_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontStyle_0100 START');
@@ -722,12 +722,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontStyle_0200
-     * @tc.name      ArkUX_Stage_Span_Font_FontStyle_0200
-     * @tc.desc      set Span_Font_FontStyle
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontStyle_0200
+     * @tc.number ArkUX_Stage_Span_Font_FontStyle_0200
+     * @tc.desc   set Span_Font_FontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontStyle_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontStyle_0200 START');
@@ -751,12 +751,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontStyle_0300
-     * @tc.name      ArkUX_Stage_Span_Font_FontStyle_0300
-     * @tc.desc      set Span_Font_FontStyle
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontStyle_0300
+     * @tc.number ArkUX_Stage_Span_Font_FontStyle_0300
+     * @tc.desc   set Span_Font_FontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontStyle_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontStyle_0300 START');
@@ -780,12 +780,12 @@ export default function SpanFontTest() {
       }, 500)
     }); 
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontStyle_0400
-     * @tc.name      ArkUX_Stage_Span_Font_FontStyle_0400
-     * @tc.desc      set Span_Font_FontStyle
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontStyle_0400
+     * @tc.number ArkUX_Stage_Span_Font_FontStyle_0400
+     * @tc.desc   set Span_Font_FontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontStyle_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontStyle_0400 START');
@@ -809,12 +809,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontStyle_0500
-     * @tc.name      ArkUX_Stage_Span_Font_FontStyle_0500
-     * @tc.desc      set Span_Font_FontStyle
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontStyle_0500
+     * @tc.number ArkUX_Stage_Span_Font_FontStyle_0500
+     * @tc.desc   set Span_Font_FontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontStyle_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontStyle_0500 START');
@@ -838,12 +838,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontStyle_0600
-     * @tc.name      ArkUX_Stage_Span_Font_FontStyle_0600
-     * @tc.desc      set Span_Font_FontStyle
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontStyle_0600
+     * @tc.number ArkUX_Stage_Span_Font_FontStyle_0600
+     * @tc.desc   set Span_Font_FontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontStyle_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontStyle_0600 START');
@@ -867,12 +867,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0100
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0100
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0100
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0100
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0100 START');
@@ -896,12 +896,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0200
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0200
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0200
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0200
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0200 START');
@@ -925,12 +925,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0300
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0300
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0300
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0300
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0300 START');
@@ -954,12 +954,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0400
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0400
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0400
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0400
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0400 START');
@@ -983,12 +983,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0500
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0500
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0500
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0500
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0500 START');
@@ -1012,12 +1012,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0600
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0600
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0600
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0600
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0600 START');
@@ -1041,12 +1041,12 @@ export default function SpanFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Stage_Span_Font_FontFamily_0700
-     * @tc.name      ArkUX_Stage_Span_Font_FontFamily_0700
-     * @tc.desc      set Span_Font_FontFamily
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Stage_Span_Font_FontFamily_0700
+     * @tc.number ArkUX_Stage_Span_Font_FontFamily_0700
+     * @tc.desc   set Span_Font_FontFamily
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Span_Font_FontFamily_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Span_Font_FontFamily_0700 START');

@@ -26,37 +26,37 @@ export default function textInputMinFontSizeTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MIN_FONT_SIZE_0001
-     * @tc.name: testTextInputMinFontSize001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMinFontSize001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MIN_FONT_SIZE_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMinFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMinFontSize001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MIN_FONT_SIZE_0002
-     * @tc.name: testTextInputMinFontSize002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMinFontSize002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MIN_FONT_SIZE_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMinFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMinFontSize002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_MIN_FONT_SIZE_0003
-     * @tc.name: testTextInputMinFontSize003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputMinFontSize003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_MIN_FONT_SIZE_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputMinFontSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputMinFontSize003()).assertEqual(0)

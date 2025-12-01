@@ -27,12 +27,12 @@ export default function LRUCatchTest() {
       sleep(20);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0100
-     * @tc.name       : testLRUCachePutKey0001
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLRUCachePutKey0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0100
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLRUCachePutKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testLRUCachePutKey0001";
@@ -48,12 +48,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0200
-     * @tc.name       : testLRUCachePutKey0002
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLRUCachePutKey0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0200
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLRUCachePutKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testLRUCachePutKey0002";
@@ -69,12 +69,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0300
-     * @tc.name       : testLRUCachePutKey0003
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLRUCachePutKey0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0300
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLRUCachePutKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testLRUCachePutKey0003";
@@ -90,12 +90,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0400
-     * @tc.name       : testLRUCachePutKey0004
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLRUCachePutKey0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0400
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLRUCachePutKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testLRUCachePutKey0004";
@@ -111,12 +111,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0500
-     * @tc.name       : testLRUCachePutKey0005
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLRUCachePutKey0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0500
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLRUCachePutKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testLRUCachePutKey0005";
@@ -132,12 +132,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0600
-     * @tc.name       : testLRUCachePutConstructor0001
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0600
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0001";
@@ -157,12 +157,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0700
-     * @tc.name       : testLRUCachePutConstructor0002
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0700
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0002";
@@ -188,12 +188,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0800
-     * @tc.name       : testLRUCachePutConstructor0003
-     * @tc.desc       : Test the functionality of the put method in the LRU Cache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0800
+     * @tc.desc   Test the functionality of the put method in the LRU Cache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0003";
@@ -220,12 +220,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0900
-     * @tc.name       : testLRUCachePutConstructor0004
-     * @tc.desc       : Test the function of the constructor function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0900
+     * @tc.desc   Test the function of the constructor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0004";
@@ -241,12 +241,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1000
-     * @tc.name       : testLRUCachePutConstructor0005
-     * @tc.desc       : Test the function of the constructor function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1000
+     * @tc.desc   Test the function of the constructor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0005";
@@ -261,12 +261,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1100
-     * @tc.name       : testLRUCachePutConstructor0006
-     * @tc.desc       : Test put method with key=NaN.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1100
+     * @tc.desc   Test put method with key=NaN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0006";
@@ -281,12 +281,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1200
-     * @tc.name       : testLRUCachePutConstructor0007
-     * @tc.desc       : Test the function of the constructor function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1200
+     * @tc.desc   Test the function of the constructor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0007";
@@ -301,12 +301,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1300
-     * @tc.name       : testLRUCachePutConstructor0008
-     * @tc.desc       : Test the function of the constructor function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1300
+     * @tc.desc   Test the function of the constructor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0008";
@@ -321,12 +321,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1400
-     * @tc.name       : testLRUCachePutConstructor0009
-     * @tc.desc       : Test the function of the constructor function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCachePutConstructor0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1400
+     * @tc.desc   Test the function of the constructor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCachePutConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCachePutConstructor0009";
@@ -340,12 +340,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1500
-     * @tc.name       : testConstructor0001
-     * @tc.desc       : Test the functionality of the LRUCache() interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1500
+     * @tc.desc   Test the functionality of the LRUCache() interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testConstructor0001";
@@ -358,12 +358,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1600
-     * @tc.name       : testConstructor0002
-     * @tc.desc       : Test the functionality of the LRUCache() interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1600
+     * @tc.desc   Test the functionality of the LRUCache() interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testConstructor0002";
@@ -376,12 +376,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1700
-     * @tc.name       : testConstructor0003
-     * @tc.desc       : Test the functionality of the LRUCache() interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1700
+     * @tc.desc   Test the functionality of the LRUCache() interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testConstructor0003";
@@ -394,12 +394,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1800
-     * @tc.name       : testConstructor0004
-     * @tc.desc       : Test the functionality of the LRUCache() interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1800
+     * @tc.desc   Test the functionality of the LRUCache() interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testConstructor0004";
@@ -413,12 +413,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1900
-     * @tc.name       : testConstructor0005
-     * @tc.desc       : Test the functionality of the LRUCache() interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1900
+     * @tc.desc   Test the functionality of the LRUCache() interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testConstructor0005";
@@ -431,12 +431,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2000
-     * @tc.name       : testConstructor0006
-     * @tc.desc       : Test the functionality of the LRUCache() interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2000
+     * @tc.desc   Test the functionality of the LRUCache() interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testConstructor0006";
@@ -449,12 +449,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2100
-     * @tc.name       : testLRUCacheUpdateCapacity0001
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2100
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0001";
@@ -468,12 +468,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2200
-     * @tc.name       : testLRUCacheUpdateCapacity0002
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2200
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0002";
@@ -487,12 +487,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2300
-     * @tc.name       : testLRUCacheUpdateCapacity0003
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2300
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0003";
@@ -506,12 +506,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2400
-     * @tc.name       : testLRUCacheUpdateCapacity0004
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2400
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0004";
@@ -525,12 +525,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2500
-     * @tc.name       : testLRUCacheUpdateCapacity0005
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2500
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0005";
@@ -544,12 +544,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2600
-     * @tc.name       : testLRUCacheUpdateCapacity0006
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2600
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0006";
@@ -563,12 +563,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2700
-     * @tc.name       : testLRUCacheUpdateCapacity0007
-     * @tc.desc       : Test the function of the UpdateCapacity
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2700
+     * @tc.desc   Test the function of the UpdateCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLRUCacheUpdateCapacity0007';
@@ -582,12 +582,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2800
-     * @tc.name       : testLRUCacheUpdateCapacity0008
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity (100.11).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2800
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity (100.11).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0008";
@@ -601,12 +601,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2900
-     * @tc.name       : testLRUCacheUpdateCapacity0009
-     * @tc.desc       : Test the function of the  UpdateCapacity
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2900
+     * @tc.desc   Test the function of the  UpdateCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLRUCacheUpdateCapacity0009';
@@ -620,12 +620,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3000
-     * @tc.name       : testLRUCacheUpdateCapacity0010
-     * @tc.desc       : Test the function of the UpdateCapacity
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3000
+     * @tc.desc   Test the function of the UpdateCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLRUCacheUpdateCapacity0010';
@@ -639,12 +639,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3100
-     * @tc.name       : testLRUCacheUpdateCapacity0011
-     * @tc.desc       : Test the function of the updateCapacity method with invalid capacity (100.11).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3100
+     * @tc.desc   Test the function of the updateCapacity method with invalid capacity (100.11).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0011";
@@ -658,12 +658,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3200
-     * @tc.name       : testLRUCacheUpdateCapacity0012
-     * @tc.desc       : Verify updateCapacity with NaN triggers 401 error
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheUpdateCapacity0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3200
+     * @tc.desc   Verify updateCapacity with NaN triggers 401 error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheUpdateCapacity0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheUpdateCapacity0012";
@@ -677,12 +677,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3300
-     * @tc.name       : testToString0001
-     * @tc.desc       : Test the toString method of LRUCache with custom maxSize.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testToString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3300
+     * @tc.desc   Test the toString method of LRUCache with custom maxSize.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testToString0001";
@@ -699,12 +699,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3400
-     * @tc.name       : testGetCapacity0001
-     * @tc.desc       : Verify maximum capacity with constructor parameter 2147483647
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetCapacity0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3400
+     * @tc.desc   Verify maximum capacity with constructor parameter 2147483647
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetCapacity0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetCapacity0001";
@@ -720,12 +720,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3500
-     * @tc.name       : testLRUCacheGetCapacity0001
-     * @tc.desc       : Test the function of the interface GetCapacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetCapacity0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3500
+     * @tc.desc   Test the function of the interface GetCapacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetCapacity0001";
@@ -742,12 +742,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3600
-     * @tc.name       : testLRUCacheGetCapacity0002
-     * @tc.desc       : Test the function of the interface getCapacity.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetCapacity0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3600
+     * @tc.desc   Test the function of the interface getCapacity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCapacity0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetCapacity0002";
@@ -764,12 +764,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3700
-     * @tc.name       : testLRUCacheGetCreateCount0001
-     * @tc.desc       : Test the function of the interface getCreateCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetCreateCount0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3700
+     * @tc.desc   Test the function of the interface getCreateCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetCreateCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetCreateCount0001";
@@ -797,12 +797,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3800
-     * @tc.name       :  testLRUCacheGetMissCount0001
-     * @tc.desc       : Test the function of the interface GetMissCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3800
+     * @tc.desc   Test the function of the interface GetMissCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0001";
@@ -820,12 +820,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3900
-     * @tc.name       : testLRUCacheGetMissCount0002
-     * @tc.desc       : Test the function of the interface GetMissCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3900
+     * @tc.desc   Test the function of the interface GetMissCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0002";
@@ -848,12 +848,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4000
-     * @tc.name       : testLRUCacheGetMissCount0003
-     * @tc.desc       : Test the function of the LRUCache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4000
+     * @tc.desc   Test the function of the LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0003";
@@ -874,12 +874,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4100
-     * @tc.name       : testLRUCacheGetMissCount0005
-     * @tc.desc       : Test the function of the getMissCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4100
+     * @tc.desc   Test the function of the getMissCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0005";
@@ -899,12 +899,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4200
-     * @tc.name       : testLRUCacheGetMissCount0006
-     * @tc.desc       : Test the function of the getMissCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4200
+     * @tc.desc   Test the function of the getMissCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0006";
@@ -924,12 +924,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4300
-     * @tc.name       : testLRUCacheGetMissCount0007
-     * @tc.desc       : Test the function of the getMissCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4300
+     * @tc.desc   Test the function of the getMissCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0007";
@@ -955,12 +955,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4400
-     * @tc.name       : testLRUCacheGetMissCount0008
-     * @tc.desc       : Test the function of the getMissCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4400
+     * @tc.desc   Test the function of the getMissCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0008";
@@ -979,12 +979,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4500
-     * @tc.name       : testLRUCacheGetMissCount0009
-     * @tc.desc       : Test the function of the getMissCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4500
+     * @tc.desc   Test the function of the getMissCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0009";
@@ -1001,12 +1001,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4600
-     * @tc.name       : testLRUCacheGetMissCount0010
-     * @tc.desc       : Test the function of the getMissCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMissCount0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4600
+     * @tc.desc   Test the function of the getMissCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMissCount0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMissCount0010";
@@ -1023,12 +1023,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4700
-     * @tc.name       : testLRUCacheConstructor0001
-     * @tc.desc       : Test the functionality of the LRUCache constructor and basic put operations.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4700
+     * @tc.desc   Test the functionality of the LRUCache constructor and basic put operations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0001";
@@ -1047,12 +1047,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4800
-     * @tc.name       : testLRUCacheConstructor0002
-     * @tc.desc       : Test the functionality of iterating over cache entries using entries method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4800
+     * @tc.desc   Test the functionality of iterating over cache entries using entries method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0002";
@@ -1087,12 +1087,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4900
-     * @tc.name       : testLRUCacheConstructor0003
-     * @tc.desc       : Test LRU cache capacity modification
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4900
+     * @tc.desc   Test LRU cache capacity modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0003";
@@ -1115,12 +1115,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5000
-     * @tc.name       : testLRUCacheConstructor0004
-     * @tc.desc       : Test the functionality of getting all existing keys using get method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5000
+     * @tc.desc   Test the functionality of getting all existing keys using get method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0004";
@@ -1140,12 +1140,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5100
-     * @tc.name       : testLRUCacheConstructor0005
-     * @tc.desc       : Test the functionality of removing all existing keys using remove method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5100
+     * @tc.desc   Test the functionality of removing all existing keys using remove method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0005";
@@ -1167,12 +1167,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5200
-     * @tc.name       : testLRUCacheConstructor0006
-     * @tc.desc       : Test the functionality of putting the same key multiple times and verify that only the latest value is retained.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5200
+     * @tc.desc   Test the functionality of putting the same key multiple times and verify that only the latest value is retained.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0006";
@@ -1191,12 +1191,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5300
-     * @tc.name       : testConstructor0001
-     * @tc.desc       : Test the function of the constrctor function.
-     * @tc.size s     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5300
+     * @tc.desc   Test the function of the constrctor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0007";
@@ -1221,12 +1221,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5400
-     * @tc.name       : testLRUCacheConstructor0008
-     * @tc.desc       : Test getting all keys from LRUCache.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheConstructor0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5400
+     * @tc.desc   Test getting all keys from LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheConstructor0008";
@@ -1271,12 +1271,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5500
-     * @tc.name       : testLRUCacheGetMatchCount0001
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5500
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0001";
@@ -1294,12 +1294,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5600
-     * @tc.name       : testLRUCacheGetMatchCount0002
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5600
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0002";
@@ -1320,12 +1320,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5700
-     * @tc.name       : testLRUCacheGetMatchCount0003
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5700
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0003";
@@ -1347,12 +1347,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5800
-     * @tc.name       : testLRUCacheGetMatchCount0004
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5800
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0004";
@@ -1373,12 +1373,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5900
-     * @tc.name       : testLRUCacheGetMatchCount0005
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5900
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0005";
@@ -1399,12 +1399,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6000
-     * @tc.name       : testLRUCacheGetMatchCount0006
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6000
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0006";
@@ -1425,12 +1425,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6100
-     * @tc.name       : testLRUCacheGetMatchCount0007
-     * @tc.desc       : Test the function of the interface getMatchCount.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6100
+     * @tc.desc   Test the function of the interface getMatchCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = " testLRUCacheGetMatchCount0007";
@@ -1448,12 +1448,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6200
-     * @tc.name       : testLRUCacheGetMatchCount0008
-     * @tc.desc       : Test the function of the getMatchCount function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6200
+     * @tc.desc   Test the function of the getMatchCount function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0008";
@@ -1470,12 +1470,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6300
-     * @tc.name       : testLRUCacheGetMatchCount0009
-     * @tc.desc       : Test the function of the Interface LRUCache.getMatchCount().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetMatchCount0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6300
+     * @tc.desc   Test the function of the Interface LRUCache.getMatchCount().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetMatchCount0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetMatchCount0009";
@@ -1496,12 +1496,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6400
-     * @tc.name       : testLRUCacheGetPutCount0001
-     * @tc.desc       : Test the function of the Interface LRUCache.getPutCount().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetPutCount0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6400
+     * @tc.desc   Test the function of the Interface LRUCache.getPutCount().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetPutCount0001";
@@ -1519,12 +1519,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6500
-     * @tc.name       : testLRUCacheGetPutCount0002
-     * @tc.desc       : Test the function of the Interface LRUCache.getPutCount().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetPutCount0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6500
+     * @tc.desc   Test the function of the Interface LRUCache.getPutCount().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetPutCount0002";
@@ -1542,12 +1542,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6600
-     * @tc.name       : testLRUCacheGetPutCount0003
-     * @tc.desc       : Test the function of the Interface LRUCache.getPutCount() without constructor parameters
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetPutCount0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6600
+     * @tc.desc   Test the function of the Interface LRUCache.getPutCount() without constructor parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetPutCount0003";
@@ -1568,12 +1568,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6700
-     * @tc.name       : testLRUCacheGetPutCount0004
-     * @tc.desc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGetPutCount0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6700
+     * @tc.desc   testLRUCacheGetPutCount0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGetPutCount0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGetPutCount0004";
@@ -1596,12 +1596,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6800
-     * @tc.name       : testLRUCacheGet0001
-     * @tc.desc       : Test the function of the Interface LRUCache.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6800
+     * @tc.desc   Test the function of the Interface LRUCache.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGet0001";
@@ -1616,12 +1616,12 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6900
-     * @tc.name       : testLRUCacheGet0002
-     * @tc.desc       : Test the function of the Interface LRUCache.get().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLRUCacheGet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6900
+     * @tc.desc   Test the function of the Interface LRUCache.get().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLRUCacheGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheGet0002";
@@ -1636,13 +1636,13 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7000
-     * @tc.name       : testLRUCacheRemove0001
-     * @tc.desc       : Test the function of the interface Remove.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     **/
+     * @tc.name   testLRUCacheRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7000
+     * @tc.desc   Test the function of the interface Remove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLRUCacheRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheRemove0001";
       try {
@@ -1656,13 +1656,13 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7100
-     * @tc.name       : testLRUCacheRemove0002
-     * @tc.desc       : Test the function of the interface Set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     **/
+     * @tc.name   testLRUCacheRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7100
+     * @tc.desc   Test the function of the interface Set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLRUCacheRemove0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const tga = 'testLRUCacheRemove0002';
       try {
@@ -1679,13 +1679,13 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7200
-     * @tc.name       : testLRUCachecontains0001
-     * @tc.desc       : Test the function of the interface contains.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     **/
+     * @tc.name   testLRUCachecontains0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7200
+     * @tc.desc   Test the function of the interface contains.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLRUCachecontains0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLRUCachecontains0001';
       try {
@@ -1699,13 +1699,13 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7300
-     * @tc.name       : testLRUCachecontains0002
-     * @tc.desc       : Test the function of the interface contains.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     **/
+     * @tc.name   testLRUCachecontains0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7300
+     * @tc.desc   Test the function of the interface contains.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLRUCachecontains0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testLRUCachecontains0002';
       try {
@@ -1719,13 +1719,13 @@ export default function LRUCatchTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CREATEDEFAULT_7400
-     * @tc.name       : testLRUCacheCreateDefault0001
-     * @tc.desc       : Test the behavior of createDefault interface when input is NaN.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     **/
+     * @tc.name   testLRUCacheCreateDefault0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEDEFAULT_7400
+     * @tc.desc   Test the behavior of createDefault interface when input is NaN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLRUCacheCreateDefault0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheCreateDefault0001";
       try {
@@ -1741,13 +1741,13 @@ export default function LRUCatchTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7500
-     * @tc.name       : testLRUCacheCreateDefault0002
-     * @tc.desc       : Test createDefault function with NaN input parameter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     **/
+     * @tc.name   testLRUCacheCreateDefault0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7500
+     * @tc.desc   Test createDefault function with NaN input parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLRUCacheCreateDefault0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLRUCacheCreateDefault0002";
       try {

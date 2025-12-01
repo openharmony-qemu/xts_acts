@@ -26,10 +26,13 @@ const ERROR_CODE801 = 801;
 
 export default function actsGetLauncherAbilityInfo2Test() {
   describe('ActsGetLauncherAbilityInfo2Test', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_1200
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_1200
-     * @tc.desc: Test getLauncherAbilityInfoSync with permission denied return errcode 201.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_1200
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_1200
+     * @tc.desc   Test getLauncherAbilityInfoSync with permission denied return errcode 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_GetLauncherAbilityInfoSync_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

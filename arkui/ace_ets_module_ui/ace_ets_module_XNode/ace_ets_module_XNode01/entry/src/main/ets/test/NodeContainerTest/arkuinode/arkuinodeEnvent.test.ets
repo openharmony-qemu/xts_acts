@@ -43,12 +43,12 @@ export default function arkuiNodeEventTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_arkuinodeEvent0100
-     * @tc.name      testarkuinodeevent_0100
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   arkuinodeevent_0100
+     * @tc.number SUB_ACE_arkuinodeEvent0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('arkuinodeevent_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[arkuinodeevent_0100] START');
@@ -69,12 +69,12 @@ export default function arkuiNodeEventTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_arkuinodeEvent0200
-     * @tc.name      testarkuinodeevent_0200
-     * @tc.desc      test postTouchEvent
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   arkuinodeevent_0200
+     * @tc.number SUB_ACE_arkuinodeEvent0200
+     * @tc.desc   test postTouchEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('arkuinodeevent_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[arkuinodeevent_0200] START');

@@ -141,7 +141,6 @@ export default function inputMethodTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0100
      * @tc.number SUB_inputMethod_IMF_setPreview_0100
      * @tc.desc   Function test
@@ -178,7 +177,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0200
      * @tc.number SUB_inputMethod_IMF_setPreview_0200
      * @tc.desc   Function test
@@ -227,7 +225,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0300
      * @tc.number SUB_inputMethod_IMF_setPreview_0300
      * @tc.desc   Function test
@@ -272,7 +269,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0400
      * @tc.number SUB_inputMethod_IMF_setPreview_0400
      * @tc.desc   Function test
@@ -314,7 +310,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0500
      * @tc.number SUB_inputMethod_IMF_setPreview_0500
      * @tc.desc   Function test
@@ -363,7 +358,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0600
      * @tc.number SUB_inputMethod_IMF_setPreview_0600
      * @tc.desc   Function test
@@ -409,7 +403,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0700
      * @tc.number SUB_inputMethod_IMF_setPreview_0700
      * @tc.desc   Function test
@@ -449,7 +442,6 @@ export default function inputMethodTest() {
     }) 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0800
      * @tc.number SUB_inputMethod_IMF_setPreview_0800
      * @tc.desc   Function test
@@ -486,7 +478,6 @@ export default function inputMethodTest() {
     }) 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_0900
      * @tc.number SUB_inputMethod_IMF_setPreview_0900
      * @tc.desc   Function test
@@ -523,7 +514,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_1000
      * @tc.number SUB_inputMethod_IMF_setPreview_1000
      * @tc.desc   Function test
@@ -550,7 +540,6 @@ export default function inputMethodTest() {
     })  
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_1100
      * @tc.number SUB_inputMethod_IMF_setPreview_1100
      * @tc.desc   Function test
@@ -577,7 +566,6 @@ export default function inputMethodTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_1200
      * @tc.number SUB_inputMethod_IMF_setPreview_1200
      * @tc.desc   Function test
@@ -611,7 +599,6 @@ export default function inputMethodTest() {
     })  
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_1300
      * @tc.number SUB_inputMethod_IMF_setPreview_1300
      * @tc.desc   Function test
@@ -645,7 +632,6 @@ export default function inputMethodTest() {
     })  
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_inputMethod_IMF_setPreview_1700
      * @tc.number SUB_inputMethod_IMF_setPreview_1700
      * @tc.desc   Function test

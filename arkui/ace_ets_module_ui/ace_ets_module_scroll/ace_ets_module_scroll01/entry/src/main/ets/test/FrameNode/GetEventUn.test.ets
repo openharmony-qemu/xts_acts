@@ -42,12 +42,12 @@ export default function GetEventUn() {
     });
 
     /**
-     * @tc.number    GetEventUn_001
-     * @tc.name      GetEventUn_0100
-     * @tc.desc      Set undefined for the typeNode.getEvent.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   GetEventUn_0100
+     * @tc.number GetEventUn_001
+     * @tc.desc   Set undefined for the typeNode.getEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetEventUn_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[GetEventUn_0100] START');

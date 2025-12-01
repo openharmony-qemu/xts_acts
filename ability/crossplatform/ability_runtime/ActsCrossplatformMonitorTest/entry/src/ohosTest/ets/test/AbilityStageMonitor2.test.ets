@@ -38,13 +38,13 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
-         * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0100
-         * @tc.name Phase2_AbilityStageMonitor_0100
-         * @tc.desc Verify that StageMonitor listens to the abilitystage CallBack after the abilitystage starts
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0100
+     * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0100
+     * @tc.desc   Verify that StageMonitor listens to the abilitystage CallBack after the abilitystage starts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PHASE2_ABILITY_STAGE_MONITOR_0100', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassista');
       console.log("PHASE2_ABILITY_STAGE_MONITOR_0100 :start");
@@ -70,12 +70,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0200
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0200
-     * @tc.name Phase2_AbilityStageMonitor_0200
-     * @tc.desc Verify that StageMonitor listens to the abilitystage (wait plus timeout) CallBack after the abilitystage starts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that StageMonitor listens to the abilitystage (wait plus timeout) CallBack after the abilitystage starts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0200', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassistb');
@@ -101,12 +101,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0300
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0300
-     * @tc.name Phase2_AbilityStageMonitor_0300
-     * @tc.desc Verify that StageMonitor listens for the abilitystage Promise after the abilitystage starts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that StageMonitor listens for the abilitystage Promise after the abilitystage starts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0300', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassistc');
@@ -138,12 +138,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0400
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0400
-     * @tc.name Phase2_AbilityStageMonitor_0400
-     * @tc.desc Verify that StageMonitor listens for the abilitystage(wait plus timeout) Promise after the abilitystage starts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that StageMonitor listens for the abilitystage(wait plus timeout) Promise after the abilitystage starts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0400', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassistd');
@@ -166,12 +166,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0500
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0500
-     * @tc.name Phase2_AbilityStageMonitor_0500
-     * @tc.desc After verifying that the StageMonitor add is removed again, starting the abilitystage cannot listen to the abilitystage CallBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying that the StageMonitor add is removed again, starting the abilitystage cannot listen to the abilitystage CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0500', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassista');
@@ -211,12 +211,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0600
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0600
-     * @tc.name Phase2_AbilityStageMonitor_0600
-     * @tc.desc After verifying that the StageMonitor add is removed again, starting the abilitystage cannot listen to the abilitystage promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying that the StageMonitor add is removed again, starting the abilitystage cannot listen to the abilitystage promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0600', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassistb');
@@ -253,12 +253,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0700
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0700
-     * @tc.name Phase2_AbilityStageMonitor_0700
-     * @tc.desc After verifying that the StageMonitor wait is removed again, go to start the abilitystage and cannot listen to the abilitystage CallBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying that the StageMonitor wait is removed again, go to start the abilitystage and cannot listen to the abilitystage CallBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0700', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassistc');
@@ -290,12 +290,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0800
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0800
-     * @tc.name Phase2_AbilityStageMonitor_0800
-     * @tc.desc After verifying that the StageMonitor wait is removed again, starting the abilitystage cannot listen to the abilitystage promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   After verifying that the StageMonitor wait is removed again, starting the abilitystage cannot listen to the abilitystage promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0800', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassistd');
@@ -325,12 +325,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_0900
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_0900
-     * @tc.name Phase2_AbilityStageMonitor_0900
-     * @tc.desc Verify that the moduleName of the StageMonitor wait incoming error cannot listen to the abilitystage promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that the moduleName of the StageMonitor wait incoming error cannot listen to the abilitystage promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_0900', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'feature_error');
@@ -350,12 +350,12 @@ export default function AbilityStageMonitor2Test() {
     })
 
     /**
+     * @tc.name   PHASE2_ABILITY_STAGE_MONITOR_1000
      * @tc.number PHASE2_ABILITY_STAGE_MONITOR_1000
-     * @tc.name Phase2_AbilityStageMonitor_1000
-     * @tc.desc srcEntrance that verifies that StageMonitor wait incoming errors cannot listen to abilitystage promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   srcEntrance that verifies that StageMonitor wait incoming errors cannot listen to abilitystage promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHASE2_ABILITY_STAGE_MONITOR_1000', Level.LEVEL0, async  (done:Function) => {
       const want = factoryWant('com.example.delegatortest', 'MainAbility', 'featureassista');

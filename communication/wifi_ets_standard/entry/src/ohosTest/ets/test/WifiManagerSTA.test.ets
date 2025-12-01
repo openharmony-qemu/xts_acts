@@ -70,7 +70,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.desc   Test enableWifi Sync API functionality.
@@ -105,7 +104,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.desc   Test isMeteredHotspot Sync API functionality.
@@ -128,7 +126,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.desc   Test isHotspotActive Sync API functionality.
@@ -153,7 +150,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0038
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0038
          * @tc.desc   Test getDeviceMacAddress Sync API functionality.
@@ -179,7 +175,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0039
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0039
          * @tc.desc   Test getMultiLinkedInfo Sync API functionality.
@@ -204,7 +199,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0040
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0040
          * @tc.desc   Test getLinkedInfoSync Sync API functionality.
@@ -232,7 +226,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0041
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0041
          * @tc.desc   Test WifiLinkType Sync API functionality.
@@ -269,7 +262,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0044
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0044
          * @tc.desc   Test connectToNetwork Sync API functionality.
@@ -289,7 +281,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0045
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0045
          * @tc.desc   Test removeDevice Sync API functionality.
@@ -309,7 +300,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0046
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0046
          * @tc.desc   Test DisableWifi Sync API functionality.
@@ -357,7 +347,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_StartScan_0001
          * @tc.number SUB_Communication_WiFi_XTS_StartScan_0001
          * @tc.desc   Test startScan Sync API21 functionality
@@ -382,7 +371,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   Communication_WiFi_XTS_IsWifiActive_0001
          * @tc.number Communication_WiFi_XTS_IsWifiActive_0001
          * @tc.desc   Test isWifiActive Sync API functionality result

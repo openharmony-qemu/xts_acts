@@ -54,12 +54,12 @@ export default function RichEditorBreak004() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_0003
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_0003
-     * @tc.desc  : Add textSpan and set wordBreak attribute -1 to test RichEditor WordBreak
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 4
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_0003
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_0003
+     * @tc.desc   Add textSpan and set wordBreak attribute -1 to test RichEditor WordBreak
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_0003 START');

@@ -57,14 +57,14 @@ describe('bundlestate_test', function() {
 		console.info('afterEach caled')
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0024
-     * @tc.name: merge_024.
-     * @tc.desc: Execute merge with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   merge_024
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0024
+  * @tc.desc   Execute merge with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('merge_024', Level.LEVEL0, function(done) {
 		console.info('bundle merge_024 start');
 		let toMerge02 = {
@@ -91,14 +91,14 @@ describe('bundlestate_test', function() {
 		console.info('merge_024 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0025
-     * @tc.name: merge_025.
-     * @tc.desc: Execute merge with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   merge_025
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0025
+  * @tc.desc   Execute merge with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('merge_025', Level.LEVEL0, function(done) {
 		console.info('bundle merge_025 start');
 		let toMerge03 = {
@@ -125,14 +125,14 @@ describe('bundlestate_test', function() {
 		console.info('merge_025 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_0026
-     * @tc.name: merge_026.
-     * @tc.desc: Execute merge with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   merge_026
+  * @tc.number SUB_INTELLITV_JS_0026
+  * @tc.desc   Execute merge with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('merge_026', Level.LEVEL0, function(done) {
 		console.info('bundle merge_026 start');
 		try {
@@ -147,14 +147,14 @@ describe('bundlestate_test', function() {
 		console.info('merge_026 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_0027
-     * @tc.name: merge_027.
-     * @tc.desc: Execute merge with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   merge_027
+  * @tc.number SUB_INTELLITV_JS_0027
+  * @tc.desc   Execute merge with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('merge_027', Level.LEVEL0, function(done) {
 		console.info('bundle merge_027 start');
 		try {
@@ -169,14 +169,14 @@ describe('bundlestate_test', function() {
 		console.info('merge_027 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_0028
-     * @tc.name: merge_028.
-     * @tc.desc: Execute merge with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   merge_028
+  * @tc.number SUB_INTELLITV_JS_0028
+  * @tc.desc   Execute merge with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('merge_028', Level.LEVEL0, function(done) {
 		console.info('bundle merge_028 start');
 		try {
@@ -191,14 +191,14 @@ describe('bundlestate_test', function() {
 		console.info('merge_028 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0052
-     * @tc.name: isIdleState_052.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_052
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0052
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_052', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_052 start');
 		bundlestate.isIdleState(bundleName, (err, res) => {
@@ -218,14 +218,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_052 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0053
-     * @tc.name: isIdleState_053.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_053
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0053
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_053', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_053 start');
 		let bundleName02 = 'ohos.plrdtest.resourceschedule'
@@ -242,14 +242,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_053 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0054
-     * @tc.name: isIdleState_054.
-     * @tc.desc: Execute isIdleState with promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_054
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0054
+  * @tc.desc   Execute isIdleState with promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_054', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_054 start');
 		bundlestate.isIdleState(bundleNames).then((data) => {
@@ -268,14 +268,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_054 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0055
-     * @tc.name: isIdleState_055.
-     * @tc.desc: Execute isIdleState with promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_055
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0055
+  * @tc.desc   Execute isIdleState with promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_055', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_055 start');
 		let bundleName31 = 'ohos.plrdtest.resourceschedule'
@@ -290,14 +290,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_055 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0056
-     * @tc.name: isIdleState_056.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_056
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0056
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_056', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_056 start');
 		bundlestate.isIdleState(123, (err, data) => {
@@ -313,14 +313,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_056 end');
 	})
 
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0062
-     * @tc.name: isIdleState_062.
-     * @tc.desc: Execute isIdleState with Promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_062
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0062
+  * @tc.desc   Execute isIdleState with Promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_062', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_062 start');
 		bundlestate.isIdleState(123).then((res) => {
@@ -334,14 +334,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_062 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0057
-     * @tc.name: isIdleState_057.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_057
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0057
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_057', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_057 start');
 		bundlestate.isIdleState(null, (err, data) => {
@@ -357,14 +357,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_057 end');
 	})
 
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0063
-     * @tc.name: isIdleState_063.
-     * @tc.desc: Execute isIdleState with Promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_063
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0063
+  * @tc.desc   Execute isIdleState with Promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_063', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_063 start');
 		bundlestate.isIdleState(null).then((res) => {
@@ -378,14 +378,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_063 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0058
-     * @tc.name: isIdleState_058.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_058
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0058
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_058', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_058 start');
 		bundlestate.isIdleState(true, (err, data) => {
@@ -401,14 +401,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_058 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0059
-     * @tc.name: isIdleState_059.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_059
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0059
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_059', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_059 start');
 		bundlestate.isIdleState(false, (err, data) => {
@@ -424,14 +424,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_059 end');
 	})
 
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0064
-     * @tc.name: isIdleState_064.
-     * @tc.desc: Execute isIdleState with Promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_064
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0064
+  * @tc.desc   Execute isIdleState with Promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_064', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_064 start');
 		bundlestate.isIdleState(false).then((res) => {
@@ -445,14 +445,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_064 end');
 	})
 	
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0060
-     * @tc.name: isIdleState_060.
-     * @tc.desc: Execute isIdleState with callback.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_060
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0060
+  * @tc.desc   Execute isIdleState with callback.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_060', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_060 start');
 		bundlestate.isIdleState('', (err, data) => {
@@ -468,14 +468,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_060 end');
 	})
 
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_0061
-     * @tc.name: isIdleState_061.
-     * @tc.desc: Execute isIdleState with Promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_061
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_0061
+  * @tc.desc   Execute isIdleState with Promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_061', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_061 start');
 		bundlestate.isIdleState('').then((res) => {
@@ -489,14 +489,14 @@ describe('bundlestate_test', function() {
 		console.info('isIdleState_061 end');
 	})
 
-	/*
-	 * @tc.number: SUB_INTELLITV_JS_BUNDLE_065
-     * @tc.name: isIdleState_065.
-     * @tc.desc: Execute isIdleState with Promise.
-	 * @tc.size: MEDIUM
-     * @tc.type: Function
-     * @tc.level: level 0
-     */
+ /**
+  * @tc.name   isIdleState_065
+  * @tc.number SUB_INTELLITV_JS_BUNDLE_065
+  * @tc.desc   Execute isIdleState with Promise.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('isIdleState_065', Level.LEVEL0, async function(done) {
 		console.info('isIdleState_065 start');
 		bundlestate.isIdleState(true).then((res) => {

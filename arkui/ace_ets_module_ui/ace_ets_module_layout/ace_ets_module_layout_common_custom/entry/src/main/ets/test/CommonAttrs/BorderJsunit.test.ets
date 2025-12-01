@@ -46,12 +46,12 @@ export default function borderJsunit() {
     });
 
     /**
-     * @tc.number testBorder_0100
      * @tc.name   testBorder_0100
+     * @tc.number testBorder_0100
      * @tc.desc   test borderWidth
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBorder_0100', Level.LEVEL1, async (done: Function) => {
       console.info('testBorder_0100 START');
@@ -65,12 +65,12 @@ export default function borderJsunit() {
     });
 
     /**
-     * @tc.number testBorder_0200
      * @tc.name   testBorder_0200
+     * @tc.number testBorder_0200
      * @tc.desc   test borderColor
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBorder_0200', Level.LEVEL1, async (done: Function) => {
       console.info('testBorder_0200 START');
@@ -84,12 +84,12 @@ export default function borderJsunit() {
     });
 
     /**
-     * @tc.number testBorder_0300
      * @tc.name   testBorder_0300
+     * @tc.number testBorder_0300
      * @tc.desc   test borderRadius
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBorder_0300', Level.LEVEL1, async (done: Function) => {
       console.info('testBorder_0300 START');

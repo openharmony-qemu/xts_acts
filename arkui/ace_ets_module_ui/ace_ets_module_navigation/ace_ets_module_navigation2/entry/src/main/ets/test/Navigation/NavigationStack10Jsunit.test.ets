@@ -55,11 +55,13 @@ export default function NavigationStack10Jsunit() {
     });
 
     /**
-    * @tc.number: NavigationStack10Jsunit_0200
-    * @tc.name  : NavigationStack10Jsunit_0200
-    * @tc.desc  : Use NavPathStack getAllPathName return empty array
-    * @tc.level : Level 3
-    */
+     * @tc.name   NavigationStack10Jsunit_0200
+     * @tc.number NavigationStack10Jsunit_0200
+     * @tc.desc   Use NavPathStack getAllPathName return empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack10Jsunit_0200',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -76,12 +78,14 @@ export default function NavigationStack10Jsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: NavigationStack10Jsunit_0100
-    * @tc.name  : NavigationStack10Jsunit_0100
-    * @tc.desc  : Use NavPathStack but empty content
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack10Jsunit_0100
+     * @tc.number NavigationStack10Jsunit_0100
+     * @tc.desc   Use NavPathStack but empty content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack10Jsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

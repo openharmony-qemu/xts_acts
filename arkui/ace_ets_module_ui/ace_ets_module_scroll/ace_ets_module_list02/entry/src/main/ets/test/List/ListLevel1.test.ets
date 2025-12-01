@@ -44,11 +44,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0100
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0100
+     * @tc.number SUB_ACE_listLevel1Test_0100
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listLevel1Test_0100] START');
@@ -67,11 +68,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0200
-     * @tc.desc      test divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0200
+     * @tc.number SUB_ACE_listLevel1Test_0200
+     * @tc.desc   test divider startMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0200', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0200] START');
@@ -100,11 +102,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0300
-     * @tc.desc      test divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0300
+     * @tc.number SUB_ACE_listLevel1Test_0300
+     * @tc.desc   test divider startMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0300', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0300] START');
@@ -133,11 +136,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0400
-     * @tc.desc      test divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0400
+     * @tc.number SUB_ACE_listLevel1Test_0400
+     * @tc.desc   test divider startMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0400', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0400] START');
@@ -166,11 +170,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0500
-     * @tc.desc      test divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0500
+     * @tc.number SUB_ACE_listLevel1Test_0500
+     * @tc.desc   test divider endMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0500', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0500] START');
@@ -199,11 +204,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0600
-     * @tc.desc      test divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0600
+     * @tc.number SUB_ACE_listLevel1Test_0600
+     * @tc.desc   test divider endMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0600', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0600] START');
@@ -232,11 +238,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0700
-     * @tc.desc      test divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0700
+     * @tc.number SUB_ACE_listLevel1Test_0700
+     * @tc.desc   test divider endMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0700', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0700] START');
@@ -265,11 +272,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0800
-     * @tc.desc      test divider startMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0800
+     * @tc.number SUB_ACE_listLevel1Test_0800
+     * @tc.desc   test divider startMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0800', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0800] START');
@@ -298,11 +306,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_0900
-     * @tc.desc      test divider endMargin
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_0900
+     * @tc.number SUB_ACE_listLevel1Test_0900
+     * @tc.desc   test divider endMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_0900', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_0900] START');
@@ -331,11 +340,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1000
-     * @tc.desc      test contentStartOffset/contentEndOffset
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1000
+     * @tc.number SUB_ACE_listLevel1Test_1000
+     * @tc.desc   test contentStartOffset/contentEndOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1000', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1000] START');
@@ -366,11 +376,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1100
-     * @tc.desc      test contentEndOffset/padding
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1100
+     * @tc.number SUB_ACE_listLevel1Test_1100
+     * @tc.desc   test contentEndOffset/padding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1100', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1100] START');
@@ -401,11 +412,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1200
-     * @tc.desc      test contentStartOffset/contentEndOffset
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1200
+     * @tc.number SUB_ACE_listLevel1Test_1200
+     * @tc.desc   test contentStartOffset/contentEndOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1200', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1200] START');
@@ -436,11 +448,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1300
-     * @tc.desc      test contentStartOffset
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1300
+     * @tc.number SUB_ACE_listLevel1Test_1300
+     * @tc.desc   test contentStartOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1300', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1300] START');
@@ -486,11 +499,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1400
-     * @tc.desc      test contentStartOffset/contentEndOffset and currentOffset
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1400
+     * @tc.number SUB_ACE_listLevel1Test_1400
+     * @tc.desc   test contentStartOffset/contentEndOffset and currentOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1400', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1400] START');
@@ -533,11 +547,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1500
-     * @tc.desc      test ListItem swipeAction
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1500
+     * @tc.number SUB_ACE_listLevel1Test_1500
+     * @tc.desc   test ListItem swipeAction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1500', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1500] START');
@@ -577,11 +592,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1600
-     * @tc.desc      test ListItem swipeAction
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1600
+     * @tc.number SUB_ACE_listLevel1Test_1600
+     * @tc.desc   test ListItem swipeAction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1600', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1600] START');
@@ -621,11 +637,12 @@ export default function listLevel1Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_listLevel1Test_1700
-     * @tc.desc      test ListItem swipeAction
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   listLevel1Test_1700
+     * @tc.number SUB_ACE_listLevel1Test_1700
+     * @tc.desc   test ListItem swipeAction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLevel1Test_1700', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1700] START');

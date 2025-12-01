@@ -26,39 +26,39 @@ export default function scrollScaleTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCALE_0100
-     * @tc.name       : testScrollScale001
-     * @tc.desc       : testing scale for scroll with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollScale001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCALE_0100
+     * @tc.desc   testing scale for scroll with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScale001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCALE_0200
-     * @tc.name       : testScrollScale002
-     * @tc.desc       : testing scale for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollScale002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCALE_0200
+     * @tc.desc   testing scale for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScale002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCALE_0300
-     * @tc.name       : testScrollScale003
-     * @tc.desc       : testing scale for scroll with overlapping value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollScale003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCALE_0300
+     * @tc.desc   testing scale for scroll with overlapping value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollScale003()).assertEqual(0)

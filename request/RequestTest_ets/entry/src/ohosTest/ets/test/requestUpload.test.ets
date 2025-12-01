@@ -90,12 +90,12 @@ export default function requestUploadJSUnit() {
     };
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_0001
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0001
+     * @tc.number SUB_REQUEST_UPLOAD_API_0001
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0001 is starting-----------------------");
@@ -117,12 +117,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_0002
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0002
+     * @tc.number SUB_REQUEST_UPLOAD_API_0002
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0002 is starting-----------------------");
@@ -144,12 +144,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_0003
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0003
+     * @tc.number SUB_REQUEST_UPLOAD_API_0003
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0003', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0003 is starting-----------------------");
@@ -171,12 +171,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_0004
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0004
+     * @tc.number SUB_REQUEST_UPLOAD_API_0004
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0004', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0004 is starting-----------------------");
@@ -198,12 +198,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_0005
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0005
+     * @tc.number SUB_REQUEST_UPLOAD_API_0005
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0005', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0005 is starting-----------------------");
@@ -227,12 +227,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_0006
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0006
+     * @tc.number SUB_REQUEST_UPLOAD_API_0006
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0006', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0006 is starting-----------------------");
@@ -264,12 +264,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_CALLBACK_0001
-     * @tc.name      Test requestUploadTest type = TIMER_TYPE_REALTIME
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_REQUEST_UPLOAD_API_CALLBACK_0001
+     * @tc.number SUB_REQUEST_UPLOAD_API_CALLBACK_0001
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_CALLBACK_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_CALLBACK_0001 is starting-----------------------");
@@ -300,12 +300,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    : SUB_REQUEST_UPLOAD_API_PROMISE_0001
-     * @tc.name      : Use getEntries get the value by mixing the string key
-     * @tc.desc      : Mixed strings value can be obtained correctly
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_REQUEST_UPLOAD_API_PROMISE_0001
+     * @tc.number SUB_REQUEST_UPLOAD_API_PROMISE_0001
+     * @tc.desc   Mixed strings value can be obtained correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_PROMISE_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_PROMISE_0001 is starting-----------------------");
@@ -336,12 +336,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    : SUB_REQUEST_UPLOAD_API_0007
-     * @tc.name      : Use getEntries get the value by mixing the string key
-     * @tc.desc      : Mixed strings value can be obtained correctly
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0007
+     * @tc.number SUB_REQUEST_UPLOAD_API_0007
+     * @tc.desc   Mixed strings value can be obtained correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_0007', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0007 is starting-----------------------");
@@ -373,12 +373,12 @@ export default function requestUploadJSUnit() {
 
 
     /**
-     * @tc.number    : SUB_REQUEST_UPLOAD_API_0008
-     * @tc.name      : Use getEntries get the value by mixing the string key
-     * @tc.desc      : Mixed strings value can be obtained correctly
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_REQUEST_UPLOAD_API_0008
+     * @tc.number SUB_REQUEST_UPLOAD_API_0008
+     * @tc.desc   Mixed strings value can be obtained correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_REQUEST_UPLOAD_API_0008', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_0008 is starting-----------------------");

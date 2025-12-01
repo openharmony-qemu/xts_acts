@@ -26,15 +26,15 @@ export default function dragEventGetDragSourceTest() {
       done();
     })
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_OH_ARKUI_DRAGEVENT_GETDRAGSOURCE_0100
-   * @tc.name       : dragEventGetDragSource001
-   * @tc.desc       : testing dragEvent getDragSource and isRemote
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   dragEventGetDragSource001
+   * @tc.number dragEventGetDragSource001
+   * @tc.desc   dragEventGetDragSource001
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('dragEventGetDragSource001', Level.LEVEL1, async (done: Function) => {
     console.info('dragEventGetDragSource001 START');
     let PAGE_TAG = 'dragEventGetDragSource';

@@ -53,14 +53,14 @@ export default function webTwoJsunit() {
       await Utils.msSleep(2000);
     })
 
-    /*
-    * @tc.number      : SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_002
-    * @tc.name        : onDownloadFailed
-    * @tc.desc        : ets allow the Web access overview mode
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   onDownloadFailed
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_002
+     * @tc.desc   ets allow the Web access overview mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('onDownloadFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonDownloadFailed', 10)

@@ -55,14 +55,14 @@ done();
       console.info("gestureSetDirection after each called");
     });
 
-    /*
-    * @tc.number     : testgestureSetDirection0001
-    * @tc.name       : testgestureSetDirection0001
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testgestureSetDirection0001
+     * @tc.number testgestureSetDirection0001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgestureSetDirection0001', Level.LEVEL0, async () => {
       console.info('gestureSetDirection testgestureSetDirection0001 START');
       await Utils.sleep(2000);
@@ -84,14 +84,14 @@ done();
 
     });
 
-    /*
-    * @tc.number     : testgestureSetDistance0002
-    * @tc.name       : testgestureSetDistance0002
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testgestureSetDistance0002
+     * @tc.number testgestureSetDistance0002
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgestureSetDistance0002', Level.LEVEL0, async () => {
       console.info('gestureSetDistance testgestureSetDistance0002 START');
       await Utils.sleep(2000);
@@ -113,14 +113,14 @@ done();
 
     });
 
-    /*
-    * @tc.number     : testgestureSetFingers0003
-    * @tc.name       : testgestureSetFingers0003
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testgestureSetFingers0003
+     * @tc.number testgestureSetFingers0003
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgestureSetFingers0003', Level.LEVEL0, async () => {
       console.info('gestureSetFingers testgestureSetFingers0003 START');
       await Utils.sleep(2000);

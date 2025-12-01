@@ -40,12 +40,12 @@ export default function maskFilterTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_0100
-     * @tc.name      : testCreateBlurMaskFilterNormal
-     * @tc.desc      : Test for testCreateBlurMaskFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCreateBlurMaskFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_0100
+     * @tc.desc   Test for testCreateBlurMaskFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateBlurMaskFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCreateBlurMaskFilterNormal';
@@ -71,12 +71,12 @@ export default function maskFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_0101
-     * @tc.name      : testCreateBlurMaskFilterNull
-     * @tc.desc      : Test for testCreateBlurMaskFilterNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateBlurMaskFilterNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_0101
+     * @tc.desc   Test for testCreateBlurMaskFilterNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateBlurMaskFilterNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCreateBlurMaskFilterNull';
@@ -115,12 +115,12 @@ export default function maskFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_0103
-     * @tc.name      : testCreateBlurMaskFilterMultipleCalls
-     * @tc.desc      : Test for testCreateBlurMaskFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateBlurMaskFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MASKFILTER_0103
+     * @tc.desc   Test for testCreateBlurMaskFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateBlurMaskFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCreateBlurMaskFilterMultipleCalls';

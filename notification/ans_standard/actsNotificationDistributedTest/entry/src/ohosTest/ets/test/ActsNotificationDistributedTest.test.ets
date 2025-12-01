@@ -21,11 +21,14 @@ export default function ActsNotificationDistributedTest() {
         let TAG = 'SUB_NOTIFICATION_ANS_IS_DISTRIBUTED_ENABLED_TEST ===>'
         console.info(TAG + 'SUB_NOTIFICATION_ANS_IS_DISTRIBUTED_ENABLED_TEST START')
 
-        /*
-        * @tc.number    : Sub_Notification_Ans_Enable_SetEnable_5000
-        * @tc.name      : function isDistributedEnabled(callback: AsyncCallback<boolean>): void
-        * @tc.desc      : Obtains whether the device supports distributed notification
-        */    
+        /**
+         * @tc.name   Sub_Notification_Ans_Enable_SetEnable_5000
+         * @tc.number Sub_Notification_Ans_Enable_SetEnable_5000
+         * @tc.desc   Obtains whether the device supports distributed notification
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Sub_Notification_Ans_Enable_SetEnable_5000', Level.LEVEL0, async (done:Function) => {
           console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_5000 START`)
           notification.isDistributedEnabled((err, data) => {
@@ -43,11 +46,14 @@ export default function ActsNotificationDistributedTest() {
         })
 
     
-        /*
-        * @tc.number    : Sub_Notification_Ans_Enable_SetEnable_5100
-        * @tc.name      : function isDistributedEnabled(): Promise<boolean>
-        * @tc.desc      : Obtains whether the device supports distributed notification
-        */
+        /**
+         * @tc.name   Sub_Notification_Ans_Enable_SetEnable_5100
+         * @tc.number Sub_Notification_Ans_Enable_SetEnable_5100
+         * @tc.desc   Obtains whether the device supports distributed notification
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Sub_Notification_Ans_Enable_SetEnable_5100', Level.LEVEL0, async (done:Function) => {
           console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_5100 START`)
           notification.isDistributedEnabled().then((data) => {

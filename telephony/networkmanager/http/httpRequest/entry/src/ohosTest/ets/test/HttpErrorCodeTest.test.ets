@@ -46,13 +46,13 @@ let serverAuthentication: http.ServerAuthentication ={
 
 export default function HttpErrorCodeTest() {
   describe('HttpErrorCodeTest',  () => {
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0100
-     * @tc.name  :  testHttpRequestMethodErrorCode0100
-     * @tc.desc  :  test http request(url, callback) with request error code 2300003
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0100
+     * @tc.desc   test http request(url, callback) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0100";
@@ -81,13 +81,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0200
-     * @tc.name  :  testHttpRequestMethodErrorCode0200
-     * @tc.desc  :  test http request(url, options, callback) with request error code 2300003
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0200
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0200
+     * @tc.desc   test http request(url, options, callback) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0200";
@@ -117,13 +117,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0300
-     * @tc.name  :  testHttpRequestMethodErrorCode0300
-     * @tc.desc  :  test http request(url, options, Promise) with request error code 2300003
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0300
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0300
+     * @tc.desc   test http request(url, options, Promise) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0300";
@@ -158,13 +158,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0400
-     * @tc.name  :  testHttpRequestMethodErrorCode0400
-     * @tc.desc  :  test http requestInStream(url, callback) with request error code 2300003
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0400
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0400
+     * @tc.desc   test http requestInStream(url, callback) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0400";
@@ -194,13 +194,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0500
-     * @tc.name  :  testNetworkMgrHttpRequestMethodErrorCode0500
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300003
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 0
+    /**
+     * @tc.name   testNetworkMgrHttpRequestMethodErrorCode0500
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0500
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpRequestMethodErrorCode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestMethodErrorCode0500";
@@ -230,13 +230,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0600
-     * @tc.name  :  testHttpRequestMethodErrorCode0600
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300003
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0600
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0600
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 2300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0600";
@@ -271,13 +271,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0700
-     * @tc.name  :  testHttpRequestMethodErrorCode0700
-     * @tc.desc  :  test http request(url, callback) with request error code 2300001
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0700
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0700
+     * @tc.desc   test http request(url, callback) with request error code 2300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0700";
@@ -306,13 +306,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0800
-     * @tc.name  :  testHttpRequestMethodErrorCode0800
-     * @tc.desc  :  test http request(url, options, callback) with request error code 2300001
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0800
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0800
+     * @tc.desc   test http request(url, options, callback) with request error code 2300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0800";
@@ -342,13 +342,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0900
-     * @tc.name  :  testHttpRequestMethodErrorCode0900
-     * @tc.desc  :  test http request(url, options, Promise) with request error code 2300001
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode0900
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0900
+     * @tc.desc   test http request(url, options, Promise) with request error code 2300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode0900";
@@ -383,13 +383,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1000
-     * @tc.name  :  testHttpRequestMethodErrorCode1000
-     * @tc.desc  :  test http requestInStream(url, callback) with request error code 2300001
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1000
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1000
+     * @tc.desc   test http requestInStream(url, callback) with request error code 2300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1000";
@@ -419,13 +419,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1100
-     * @tc.name  :  testHttpRequestMethodErrorCode1100
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300001
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1100
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1100";
@@ -455,13 +455,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1200
-     * @tc.name  :  testHttpRequestMethodErrorCode1200
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300001
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1200
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1200
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 2300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1200";
@@ -496,13 +496,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1300
-     * @tc.name  :  testHttpRequestMethodErrorCode1300
-     * @tc.desc  :  test http request(url, options, Promise) with request error code 2300005
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1300
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1300
+     * @tc.desc   test http request(url, options, Promise) with request error code 2300005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1300";
@@ -544,13 +544,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1400
-     * @tc.name  :  testHttpRequestMethodErrorCode1400
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300005
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1400
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1400
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1400";
@@ -587,13 +587,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1500
-     * @tc.name  :  testHttpRequestMethodErrorCode1500
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300005
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1500
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1500
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 2300005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1500";
@@ -633,13 +633,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1600
-     * @tc.name  :  testHttpRequestMethodErrorCode1600
-     * @tc.desc  :  test http request(url, callback) with request error code 2300007
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1600
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1600
+     * @tc.desc   test http request(url, callback) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1600";
@@ -668,13 +668,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1700
-     * @tc.name  :  testHttpRequestMethodErrorCode1700
-     * @tc.desc  :  test http request(url, options, callback) with request error code 2300007
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1700
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1700
+     * @tc.desc   test http request(url, options, callback) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testHttpRequestMethodErrorCode1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1700";
@@ -704,13 +704,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1800
-     * @tc.name  :  testHttpRequestMethodErrorCode1800
-     * @tc.desc  :  test http request(url, options, Promise) with request error code 2300007
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1800
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1800
+     * @tc.desc   test http request(url, options, Promise) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1800";
@@ -745,13 +745,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1900
-     * @tc.name  :  testHttpRequestMethodErrorCode1900
-     * @tc.desc  :  test http requestInStream(url, callback) with request error code 2300007
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode1900
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_1900
+     * @tc.desc   test http requestInStream(url, callback) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode1900";
@@ -781,13 +781,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2000
-     * @tc.name  :  testHttpRequestMethodErrorCode2000
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300007
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2000
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2000
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2000";
@@ -817,13 +817,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2100
-     * @tc.name  :  testHttpRequestMethodErrorCode2100
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300007
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2100
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 2300007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2100";
@@ -858,13 +858,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2200
-     * @tc.name  :  testHttpRequestMethodErrorCode2200
-     * @tc.desc  :  test http request(url, options, Promise) with request error code 401
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2200
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2200
+     * @tc.desc   test http request(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2200";
@@ -899,13 +899,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2300
-     * @tc.name  :  testHttpRequestMethodErrorCode2300
-     * @tc.desc  :  test http requestInStream(url, callback) with request error code 401
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2300
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2300
+     * @tc.desc   test http requestInStream(url, callback) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2300";
@@ -935,13 +935,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2400
-     * @tc.name  :  testHttpRequestMethodErrorCode2400
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 401
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2400
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2400
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2400";
@@ -971,13 +971,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2500
-     * @tc.name  :  testHttpRequestMethodErrorCode2500
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 401
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2500
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2500
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2500";
@@ -1012,13 +1012,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2600
-     * @tc.name  :  testHttpRequestMethodErrorCode2600
-     * @tc.desc  :  test http requestInStream(url, callback) with request error code 2300023
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2600
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2600
+     * @tc.desc   test http requestInStream(url, callback) with request error code 2300023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2600";
@@ -1054,13 +1054,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2700
-     * @tc.name  :  testHttpRequestMethodErrorCode2700
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300023
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode2700
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_2700
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode2700";
@@ -1096,13 +1096,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3000
-     * @tc.name  :  testHttpRequestMethodErrorCode3000
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300028
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3000
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3000
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3000";
@@ -1141,13 +1141,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3100
-     * @tc.name  :  testHttpRequestMethodErrorCode3100
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300028
-     * @tc.size  :  MEDIUMTEST
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3100
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3100
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 2300028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3100";
@@ -1185,12 +1185,12 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest3200
-     * @tc.desc   : Test HttpRequestOptions property.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest3200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3200
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOptionsTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest3200';
@@ -1235,12 +1235,12 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3300
-     * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest3300
-     * @tc.desc   : Test HttpRequestOptions property.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest3300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3300
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOptionsTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest3300';
@@ -1284,12 +1284,12 @@ export default function HttpErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3400
-     * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest3400
-     * @tc.desc   : Test HttpRequestOptions property.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest3400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3400
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOptionsTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest3400';
@@ -1332,13 +1332,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName}---End `);
     });
     
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3500
-     * @tc.name  :  testHttpRequestMethodErrorCode3500
-     * @tc.desc  :  test http request(url, options, callback) with request error code 2300060
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3500
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3500
+     * @tc.desc   test http request(url, options, callback) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3500";
@@ -1368,13 +1368,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3600
-     * @tc.name  :  testHttpRequestMethodErrorCode3600
-     * @tc.desc  :  test http request(url, options, Promise) with request error code 2300060
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3600
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3600
+     * @tc.desc   test http request(url, options, Promise) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3600";
@@ -1409,13 +1409,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3700
-     * @tc.name  :  testHttpRequestMethodErrorCode3700
-     * @tc.desc  :  test http requestInStream(url, callback) with request error code 2300060
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3700
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3700
+     * @tc.desc   test http requestInStream(url, callback) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3700";
@@ -1445,13 +1445,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3800
-     * @tc.name  :  testHttpRequestMethodErrorCode3800
-     * @tc.desc  :  test http requestInStream(url, options, callback) with request error code 2300060
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3800
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3800
+     * @tc.desc   test http requestInStream(url, options, callback) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3800";
@@ -1481,13 +1481,13 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3900
-     * @tc.name  :  testHttpRequestMethodErrorCode3900
-     * @tc.desc  :  test http requestInStream(url, options, Promise) with request error code 2300060
-     * @tc.size  :  smallTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode3900
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_3900
+     * @tc.desc   test http requestInStream(url, options, Promise) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHttpRequestMethodErrorCode3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode3900";
@@ -1522,14 +1522,14 @@ export default function HttpErrorCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4000
-    * @tc.name  :  testHttpRequestMethodErrorCode4000
-    * @tc.desc  :  test http request(url, callback) with request error code 2300060
-    * @tc.size  :  smallTest
-    * @tc.type  :  Function
-    * @tc.level :  level 3
-    */
+    /**
+     * @tc.name   testHttpRequestMethodErrorCode4000
+     * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4000
+     * @tc.desc   test http request(url, callback) with request error code 2300060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHttpRequestMethodErrorCode4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testHttpRequestMethodErrorCode4000";
       console.info(`${caseName} test Start`);

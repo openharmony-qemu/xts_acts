@@ -47,14 +47,14 @@ export default function textInputUnderlineColorTest() {
       console.info("TextInputUnderlineColor after each called");
     })
 
-    /* *
-    * @tc.number: textInputUnderlineColor_0100
-    * @tc.name  : textInputUnderlineColor_0100
-    * @tc.desc  : set the underlineColor property value.
-    * @tc.level : Level 0
-    * @tc.type : Function
-    * @tc.size : MediumTest
-    */
+    /**
+     * @tc.name   textInputUnderlineColor_0100
+     * @tc.number textInputUnderlineColor_0100
+     * @tc.desc   set the underlineColor property value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputUnderlineColor_0100',  Level.LEVEL0, async  (done:Function) =>{
       let tagName = 'textInputUnderlineColor_0100';
       console.info('[' + tagName + '] START============================');
@@ -70,14 +70,14 @@ export default function textInputUnderlineColorTest() {
       done();
     });
 
-    /*
-    * @tc.number: textInputUnderlineColor_0200
-    * @tc.name  : textInputUnderlineColor_0200
-    * @tc.desc  : set the underlineColor property value.
-    * @tc.level : Level 0
-    * @tc.type : Function
-    * @tc.size : MediumTest
-    */
+    /**
+     * @tc.name   textInputUnderlineColor_0200
+     * @tc.number textInputUnderlineColor_0200
+     * @tc.desc   set the underlineColor property value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputUnderlineColor_0200',  Level.LEVEL0, async  (done:Function) =>{
       let tagName = 'textInputUnderlineColor_0200';
       console.info('[' + tagName + '] START============================');
@@ -93,14 +93,14 @@ export default function textInputUnderlineColorTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textInputUnderlineColor_0300
-    * @tc.name  : textInputUnderlineColor_0300
-    * @tc.desc  : set the underlineColor property value.
-    * @tc.level : Level 0
-    * @tc.type : Function
-    * @tc.size : MediumTest
-    */
+    /**
+     * @tc.name   textInputUnderlineColor_0300
+     * @tc.number textInputUnderlineColor_0300
+     * @tc.desc   set the underlineColor property value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputUnderlineColor_0300',  Level.LEVEL0, async  (done:Function) =>{
       let tagName = 'textInputUnderlineColor_0300';
       console.info('[' + tagName + '] START============================');
@@ -116,14 +116,14 @@ export default function textInputUnderlineColorTest() {
       done();
     });
 
-    /* *
-    * @tc.number: textInputUnderlineColor_0400
-    * @tc.name  : textInputUnderlineColor_0400
-    * @tc.desc  : set the underlineColor property value.
-    * @tc.level : Level 0
-    * @tc.type : Function
-    * @tc.size : MediumTest
-    */
+    /**
+     * @tc.name   textInputUnderlineColor_0400
+     * @tc.number textInputUnderlineColor_0400
+     * @tc.desc   set the underlineColor property value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputUnderlineColor_0400',  Level.LEVEL0, async  (done:Function) =>{
       let tagName = 'ArkUI_textInputUnderlineColor_0400';
       console.info('[' + tagName + '] START============================');

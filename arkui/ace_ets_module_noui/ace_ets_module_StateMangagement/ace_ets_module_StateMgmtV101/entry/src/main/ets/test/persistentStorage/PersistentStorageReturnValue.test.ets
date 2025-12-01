@@ -47,12 +47,12 @@ export default function PersistentStorageReturnValue() {
 
 
     /**
-     * @tc.number    PersistentStorageReturnValue_002
-     * @tc.name      PersistentStorageReturnValue_002
-     * @tc.desc      all keys in PersistentStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   PersistentStorageReturnValue_002
+     * @tc.number PersistentStorageReturnValue_002
+     * @tc.desc   all keys in PersistentStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PersistentStorageReturnValue_002', Level.LEVEL0, async (done: Function) => {
       console.info('[PersistentStorageReturnValue_002] START');
@@ -71,12 +71,12 @@ export default function PersistentStorageReturnValue() {
     });
 
     /**
-     * @tc.number    PersistentStorageReturnValue_003
-     * @tc.name      PersistentStorageReturnValue_003
-     * @tc.desc      all keys in PersistentStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   PersistentStorageReturnValue_003
+     * @tc.number PersistentStorageReturnValue_003
+     * @tc.desc   all keys in PersistentStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PersistentStorageReturnValue_003', Level.LEVEL0, async (done: Function) => {
       console.info('[PersistentStorageReturnValue_003] START');

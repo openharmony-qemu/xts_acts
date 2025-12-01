@@ -47,10 +47,12 @@ export default function pageRouteTest() {
     })
 
     /**
-     * @tc.number    testOnPageHide01
-     * @tc.name      testOnPageHide01
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   testOnPageHide01
+     * @tc.number testOnPageHide01
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnPageHide01',  Level.LEVEL0, async () => {
       console.info('[testOnPageHide01] START');

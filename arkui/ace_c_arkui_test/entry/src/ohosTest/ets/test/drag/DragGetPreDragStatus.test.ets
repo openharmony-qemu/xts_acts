@@ -28,13 +28,13 @@ export default function DragGetPreDragStatusTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragGetPreDragStatus_0100
-     * @tc.name       : DragGetPreDragStatusTest001
-     * @tc.desc       : testing GetPreDragStatus DragEvent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragGetPreDragStatusTest001
+     * @tc.number SUB_ARKUI_CAPI_DragGetPreDragStatus_0100
+     * @tc.desc   testing GetPreDragStatus DragEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragGetPreDragStatusTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragGetPreDragStatusTest001 START');

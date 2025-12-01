@@ -48,14 +48,14 @@ export default function sourceTypeJsunit() {
       console.info("sourceType after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_sourceTypeTest_0100
-    * @tc.name       : sourceTypeTest_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   sourceTypeTest_0100
+     * @tc.number SUB_ARKUI_CAPI_sourceTypeTest_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sourceTypeTest_0100', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000)
 

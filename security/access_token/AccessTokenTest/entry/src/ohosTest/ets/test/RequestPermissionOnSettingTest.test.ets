@@ -36,12 +36,12 @@ export default function RequestPermissionOnSettingTest() {
 
 
     /**
+     * @tc.name   Test_requestPermissionOnSetting_001
      * @tc.number Test_requestPermissionOnSetting_001
-     * @tc.name Test_requestPermissionOnSetting_001
-     * @tc.desc test requestPermissionOnSetting result is nonempty.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test requestPermissionOnSetting result is nonempty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_requestPermissionOnSetting_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(domain,tag,"Test_requestPermissionOnSetting_001 start ");
@@ -112,12 +112,12 @@ export default function RequestPermissionOnSettingTest() {
     })
 
     /**
+     * @tc.name   Test_getSelfPermissionStatus_007
      * @tc.number Test_getSelfPermissionStatus_007
-     * @tc.name Test_getSelfPermissionStatus_007
-     * @tc.desc test getSelfPermissionStatus result is DENIED.
-     * @tc.level: Level3
-     * @tc.size: MediumTest
-     * @tc.type: Function
+     * @tc.desc   test getSelfPermissionStatus result is DENIED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Test_getSelfPermissionStatus_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(domain, tag, "Test_getSelfPermissionStatus_007 start");

@@ -77,14 +77,14 @@ export default function webForceEnableZoomJsunit() {
       done();
     })
 
-    /** 
-    * @tc.number     SUB_WEB_WEBFORCEENABLEZOOM_0100
-    * @tc.name       emitWebForceEnableZoom001
-    * @tc.desc       emitWebForceEnableZoom001
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level 0
-    */
+    /**
+     * @tc.name   emitWebForceEnableZoom001
+     * @tc.number SUB_WEB_WEBFORCEENABLEZOOM_0100
+     * @tc.desc   emitWebForceEnableZoom001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitWebForceEnableZoom001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitWebForceEnableZoom001";
       Utils.emitEvent(emitKey, 10);

@@ -24,11 +24,13 @@ export default function abilityTest() {
     afterEach(() => {})
     afterAll(() => {})
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_HookAbility_0700
-     * @tc.name    Only allow DelegatorAbility to call the method once
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HookAbility_0700
+     * @tc.number SUB_Ability_AbilityRuntime_HookAbility_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_HookAbility_0700', Level.LEVEL3, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_HookAbility_0700';
@@ -48,11 +50,13 @@ export default function abilityTest() {
       hilog.info(0x0000, TAG, '%{public}s', '--end');
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_HookAbility_0800
-     * @tc.name    The API can be called only when the ability is running in the foreground
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HookAbility_0800
+     * @tc.number SUB_Ability_AbilityRuntime_HookAbility_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_HookAbility_0800', Level.LEVEL3, (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_HookAbility_0800';

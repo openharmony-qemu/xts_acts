@@ -26,78 +26,78 @@ export default function stackOpacityTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_OPACITY_0100
-     * @tc.name       : testStackOpacity001
-     * @tc.desc       : testing opacity for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackOpacity001
+     * @tc.number SUB_ARKUI_CAPI_STACK_OPACITY_0100
+     * @tc.desc   testing opacity for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackOpacity001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackOpacity001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_OPACITY_0200
-     * @tc.name       : testStackOpacity002
-     * @tc.desc       : testing opacity for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackOpacity002
+     * @tc.number SUB_ARKUI_CAPI_STACK_OPACITY_0200
+     * @tc.desc   testing opacity for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackOpacity002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackOpacity002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_OPACITY_0300
-     * @tc.name       : testStackOpacity003
-     * @tc.desc       : testing opacity for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackOpacity003
+     * @tc.number SUB_ARKUI_CAPI_STACK_OPACITY_0300
+     * @tc.desc   testing opacity for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackOpacity003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackOpacity003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_OPACITY_0400
-     * @tc.name       : testStackOpacity004
-     * @tc.desc       : testing opacity for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackOpacity004
+     * @tc.number SUB_ARKUI_CAPI_STACK_OPACITY_0400
+     * @tc.desc   testing opacity for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackOpacity004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackOpacity004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_OPACITY_0500
-     * @tc.name       : testStackOpacity005
-     * @tc.desc       : testing opacity for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackOpacity005
+     * @tc.number SUB_ARKUI_CAPI_STACK_OPACITY_0500
+     * @tc.desc   testing opacity for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackOpacity005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackOpacity005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_OPACITY_0600
-     * @tc.name       : testStackOpacity006
-     * @tc.desc       : testing opacity for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackOpacity006
+     * @tc.number SUB_ARKUI_CAPI_STACK_OPACITY_0600
+     * @tc.desc   testing opacity for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackOpacity006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackOpacity006()).assertEqual(0)

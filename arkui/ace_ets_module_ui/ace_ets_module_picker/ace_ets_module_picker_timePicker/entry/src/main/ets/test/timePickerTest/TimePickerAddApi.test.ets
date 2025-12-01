@@ -41,13 +41,13 @@ export default function TimePickerAddApi() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TimePickerAddApi_0010
-     * @tc.name       : TimePickerAddApi_001
-     * @tc.desc       : TimePicker Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TimePickerAddApi_001
+     * @tc.number SUB_ACE_UI_COMPONENT_TimePickerAddApi_0010
+     * @tc.desc   TimePicker Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TimePickerAddApi_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TimePickerAddApi_001] START');
@@ -74,13 +74,13 @@ export default function TimePickerAddApi() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TimePickerAddApi_0020
-     * @tc.name       : TimePickerAddApi_002
-     * @tc.desc       : TimePicker Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TimePickerAddApi_002
+     * @tc.number SUB_ACE_UI_COMPONENT_TimePickerAddApi_0020
+     * @tc.desc   TimePicker Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TimePickerAddApi_002', Level.LEVEL3, async (done: Function) => {
       console.info('[TimePickerAddApi_001] START');

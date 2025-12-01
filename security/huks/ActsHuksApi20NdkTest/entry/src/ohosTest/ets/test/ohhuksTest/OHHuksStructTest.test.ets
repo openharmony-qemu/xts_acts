@@ -23,12 +23,12 @@ export default function OHHuksStructTest() {
     });
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Result_0100
-     * @tc.name    testGetOHHuksResult0100
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksResult0100
+     * @tc.number SUB_SECURITY_OH_Huks_Result_0100
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -46,12 +46,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Result_0200
-     * @tc.name    testGetOHHuksResult0200
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksResult0200
+     * @tc.number SUB_SECURITY_OH_Huks_Result_0200
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -69,12 +69,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_ParamSet_0100
-     * @tc.name    testGetOHHuksParamSet0100
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParamSet0100
+     * @tc.number SUB_SECURITY_OH_Huks_ParamSet_0100
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParamSet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -92,12 +92,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_ParamSet_0200
-     * @tc.name    testGetOHHuksParamSet0200
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParamSet0200
+     * @tc.number SUB_SECURITY_OH_Huks_ParamSet_0200
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParamSet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -115,12 +115,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Param_0100
-     * @tc.name    testGetOHHuksParam0100
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParam0100
+     * @tc.number SUB_SECURITY_OH_Huks_Param_0100
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -138,12 +138,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Param_0200
-     * @tc.name    testGetOHHuksParam0200
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParam0200
+     * @tc.number SUB_SECURITY_OH_Huks_Param_0200
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParam0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -161,12 +161,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Param_0300
-     * @tc.name    testGetOHHuksParam0300
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParam0300
+     * @tc.number SUB_SECURITY_OH_Huks_Param_0300
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParam0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -184,12 +184,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Param_0400
-     * @tc.name    testGetOHHuksParam0400
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParam0400
+     * @tc.number SUB_SECURITY_OH_Huks_Param_0400
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParam0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -207,12 +207,12 @@ export default function OHHuksStructTest() {
       })
 
     /**
-     * @tc.number  SUB_SECURITY_OH_Huks_Param_0500
-     * @tc.name    testGetOHHuksParam0500
-     * @tc.desc    overriding struct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   testGetOHHuksParam0500
+     * @tc.number SUB_SECURITY_OH_Huks_Param_0500
+     * @tc.desc   overriding struct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOHHuksParam0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

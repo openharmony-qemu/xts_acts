@@ -42,12 +42,12 @@ export default function TrackSetTest() {
       done();
     });
     /**
-     * @tc.number    TrackSet
-     * @tc.name      TrackSetTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TrackSetTest_0100
+     * @tc.number TrackSet
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TrackSetTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('TrackSetTest_0100 START');

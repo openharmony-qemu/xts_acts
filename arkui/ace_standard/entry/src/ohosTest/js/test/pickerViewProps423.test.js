@@ -81,9 +81,12 @@ export default function pickerViewPropsJsTest423() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewForPropThree', Level.LEVEL0, async function(done) {
             console.info('testPickerViewForPropThree START');

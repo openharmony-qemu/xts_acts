@@ -46,15 +46,15 @@ export default function TextAreaNodeTest() {
       await CommonFunc.sleep(1000);
       console.info("textAreaNode after each called");
     })
-    /**
-     * @tc.number textAreaNode0100
-     * @tc.name Test the FontSize property of the textArea component
-     * @tc.desc set the FontSize property value is  TextAlign.Center
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
 
+    /**
+     * @tc.name   textAreaNode0100
+     * @tc.number textAreaNode0100
+     * @tc.desc   textAreaNode0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaNode0100', Level.LEVEL0, async (done: Function) => {
 
       let tagName = 'textAreaNode0100';
@@ -71,15 +71,15 @@ export default function TextAreaNodeTest() {
       done();
     });
 
-    /**
-     * @tc.number textAreaNode0200
-     * @tc.name Test the FontStyle property of the textArea component
-     * @tc.desc set the FontStyle property value is  TextAlign.Center
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
   
+    /**
+     * @tc.name   textAreaNode0200
+     * @tc.number textAreaNode0200
+     * @tc.desc   textAreaNode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaNode0200', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaNode0200';
       console.info('[' + tagName + '] START============================');
@@ -92,15 +92,15 @@ export default function TextAreaNodeTest() {
       done();
     });
 
-    /**
-     * @tc.number textAreaNode0300
-     * @tc.name Test the TextAlign property of the textArea component
-     * @tc.desc set the TextAlign property value is  TextAlign.Center
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
     
+    /**
+     * @tc.name   textAreaNode0300
+     * @tc.number textAreaNode0300
+     * @tc.desc   textAreaNode0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaNode0300', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaNode0300';
       console.info('[' + tagName + '] START============================');

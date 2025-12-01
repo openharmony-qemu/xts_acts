@@ -51,7 +51,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutStringArray0131
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0800
          * @tc.desc   put StringArray promise interface test
@@ -75,7 +74,6 @@ export default function preferencesPromiseTest(){
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutNumberArray0132
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0700
          * @tc.desc   put NumberArray promise interface test
@@ -99,7 +97,6 @@ export default function preferencesPromiseTest(){
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutBoolArray0133
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0600
          * @tc.desc   put BoolArray promise interface test
@@ -123,7 +120,6 @@ export default function preferencesPromiseTest(){
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesGetAll0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1000
          * @tc.desc   getAll promise interface test
@@ -171,7 +167,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesClear0011
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2100
          * @tc.desc   clear promise interface test
@@ -193,7 +188,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0031
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0900
          * @tc.desc   has string interface test
@@ -213,7 +207,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0032
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1700
          * @tc.desc   has int interface test
@@ -234,7 +227,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0033
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1500
          * @tc.desc   has float interface test
@@ -254,7 +246,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0034
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1300
          * @tc.desc   has boolean interface test
@@ -274,7 +265,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0035
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1800
          * @tc.desc   has long interface test
@@ -295,7 +285,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0036
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2600
          * @tc.desc   has long interface test
@@ -315,7 +304,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesHasKey0037
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2700
          * @tc.desc   has long interface test
@@ -335,7 +323,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesGetDefValue0061
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1100
          * @tc.desc   get string promise interface test
@@ -355,7 +342,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesGetFloat0071
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1400
          * @tc.desc   get float promise interface test
@@ -376,7 +362,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesGetInt0081
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1600
          * @tc.desc   get int promise interface test
@@ -397,7 +382,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesGetLong0091
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1900
          * @tc.desc   get long promise interface test
@@ -418,7 +402,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   tesPreferencesGetString101
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2000
          * @tc.desc   get String promise interface test
@@ -440,7 +423,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutBoolean0121
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0100
          * @tc.desc   put boolean promise interface test
@@ -460,7 +442,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutFloat0131
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0200
          * @tc.desc   put float promise interface test
@@ -480,7 +461,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutInt0141
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0300
          * @tc.desc   put int promise interface test
@@ -500,7 +480,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutLong0151
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0400
          * @tc.desc   put long promise interface test
@@ -519,7 +498,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutString0161
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_0500
          * @tc.desc   put String promise interface test
@@ -538,7 +516,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesGetDefValue00162
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1200
          * @tc.desc   get string promise interface test
@@ -559,7 +536,6 @@ export default function preferencesPromiseTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutBigIntPromise0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2200
          * @tc.desc   get string promise interface test
@@ -581,7 +557,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutBigIntPromise0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2300
          * @tc.desc   get string promise interface test
@@ -603,7 +578,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutBigIntPromise0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2400
          * @tc.desc   get string promise interface test
@@ -625,7 +599,6 @@ export default function preferencesPromiseTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testPreferencesPutBigIntPromise0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2500
          * @tc.desc   get string promise interface test

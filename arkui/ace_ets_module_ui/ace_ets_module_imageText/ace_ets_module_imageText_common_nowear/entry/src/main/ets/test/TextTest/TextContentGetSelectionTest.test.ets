@@ -46,13 +46,13 @@ export default function TextContentGetSelectionTest() {
       console.info("TextContentGetSelectionTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         TextContentGetSelectionTest0001
-    * @tc.desc        The TextArea get Selection
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   TextContentGetSelectionTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   The TextArea get Selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextContentGetSelectionTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -80,13 +80,13 @@ export default function TextContentGetSelectionTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         TextContentGetSelectionTest0002
-    * @tc.desc        The Search get Selection
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   TextContentGetSelectionTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   The Search get Selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextContentGetSelectionTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -114,13 +114,13 @@ export default function TextContentGetSelectionTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         TextContentGetSelectionTest0003
-    * @tc.desc        The TextInput get Selection
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   TextContentGetSelectionTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   The TextInput get Selection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextContentGetSelectionTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

@@ -47,9 +47,12 @@ export default function webgl2_sampler() {
             hilog.info(0x0000, 'testTag', '%{public}s', 'webgl1_test_01 end');
         });
         /**
+         * @tc.name   webgl2_test_createSampler
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0001
-         * @tc.name webgl2_test_createSampler
-         * @tc.desc Test createSampler.
+         * @tc.desc   Test createSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_createSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_createSampler] createSampler");
@@ -72,9 +75,12 @@ export default function webgl2_sampler() {
             finish(gl.isSampler(sampler));
         }
         /**
+         * @tc.name   webgl2_test_deleteSampler
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0002
-         * @tc.name webgl2_test_deleteSampler
-         * @tc.desc Test deleteSampler.
+         * @tc.desc   Test deleteSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteSampler] deleteSampler");
@@ -90,9 +96,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteSampler_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0003
-         * @tc.name webgl2_test_deleteSampler_1
-         * @tc.desc Test deleteSampler.
+         * @tc.desc   Test deleteSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteSampler_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteSampler] deleteSampler");
@@ -105,9 +114,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_deleteSampler_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0004
-         * @tc.name webgl2_test_deleteSampler_2
-         * @tc.desc Test deleteSampler.
+         * @tc.desc   Test deleteSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_deleteSampler_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_deleteSampler] deleteSampler");
@@ -127,9 +139,12 @@ export default function webgl2_sampler() {
             gl.deleteSampler(sampler);
         }
         /**
+         * @tc.name   webgl2_test_isSampler
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0005
-         * @tc.name webgl2_test_isSampler
-         * @tc.desc Test isSampler.
+         * @tc.desc   Test isSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isSampler] isSampler");
@@ -145,9 +160,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isSampler_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0006
-         * @tc.name webgl2_test_isSampler_1
-         * @tc.desc Test isSampler.
+         * @tc.desc   Test isSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isSampler_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isSampler] isSampler");
@@ -160,9 +178,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_isSampler_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0007
-         * @tc.name webgl2_test_isSampler_2
-         * @tc.desc Test isSampler.
+         * @tc.desc   Test isSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_isSampler_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_isSampler] isSampler");
@@ -186,9 +207,12 @@ export default function webgl2_sampler() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_bindSampler
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0008
-         * @tc.name webgl2_test_bindSampler
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -211,9 +235,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0009
-         * @tc.name webgl2_test_bindSampler_1
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -227,9 +254,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0010
-         * @tc.name webgl2_test_bindSampler_2
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -243,9 +273,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0011
-         * @tc.name webgl2_test_bindSampler_3
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -259,9 +292,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0012
-         * @tc.name webgl2_test_bindSampler_4
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -275,9 +311,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0013
-         * @tc.name webgl2_test_bindSampler_5
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -291,9 +330,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0014
-         * @tc.name webgl2_test_bindSampler_6
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -307,9 +349,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0015
-         * @tc.name webgl2_test_bindSampler_7
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -323,9 +368,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0016
-         * @tc.name webgl2_test_bindSampler_8
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -339,9 +387,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0017
-         * @tc.name webgl2_test_bindSampler_9
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -355,9 +406,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_10
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0018
-         * @tc.name webgl2_test_bindSampler_10
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -371,9 +425,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_bindSampler_11
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0019
-         * @tc.name webgl2_test_bindSampler_11
-         * @tc.desc Test bindSampler.
+         * @tc.desc   Test bindSampler.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_bindSampler_11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_bindSampler] bindSampler");
@@ -398,9 +455,12 @@ export default function webgl2_sampler() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_samplerParameteri
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0020
-         * @tc.name webgl2_test_samplerParameteri
-         * @tc.desc Test samplerParameteri.
+         * @tc.desc   Test samplerParameteri.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameteri', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_samplerParameteri] samplerParameteri");
@@ -420,9 +480,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_samplerParameteri_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0021
-         * @tc.name webgl2_test_samplerParameteri_1
-         * @tc.desc Test samplerParameteri.
+         * @tc.desc   Test samplerParameteri.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameteri_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -437,9 +500,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_samplerParameteri_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0022
-         * @tc.name webgl2_test_samplerParameteri_2
-         * @tc.desc Test samplerParameteri.
+         * @tc.desc   Test samplerParameteri.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameteri_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -454,9 +520,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_samplerParameteri_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0023
-         * @tc.name webgl2_test_samplerParameteri_3
-         * @tc.desc Test samplerParameteri.
+         * @tc.desc   Test samplerParameteri.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameteri_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -482,9 +551,12 @@ export default function webgl2_sampler() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_samplerParameterf
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0024
-         * @tc.name webgl2_test_samplerParameterf
-         * @tc.desc Test samplerParameterf.
+         * @tc.desc   Test samplerParameterf.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameterf', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgl2test [webgl2_test_samplerParameterf] samplerParameterf");
@@ -504,9 +576,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_samplerParameterf_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0025
-         * @tc.name webgl2_test_samplerParameterf_1
-         * @tc.desc Test samplerParameterf.
+         * @tc.desc   Test samplerParameterf.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameterf_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -521,9 +596,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_samplerParameterf_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0026
-         * @tc.name webgl2_test_samplerParameterf_2
-         * @tc.desc Test samplerParameterf.
+         * @tc.desc   Test samplerParameterf.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameterf_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -538,9 +616,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_samplerParameterf_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0027
-         * @tc.name webgl2_test_samplerParameterf_3
-         * @tc.desc Test samplerParameterf.
+         * @tc.desc   Test samplerParameterf.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_samplerParameterf_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -566,9 +647,12 @@ export default function webgl2_sampler() {
             gl.deleteTexture(texture);
         }
         /**
+         * @tc.name   webgl2_test_getSamplerParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0028
-         * @tc.name webgl2_test_getSamplerParameter
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -589,9 +673,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0029
-         * @tc.name webgl2_test_getSamplerParameter_1
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -606,9 +693,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0030
-         * @tc.name webgl2_test_getSamplerParameter_2
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -623,9 +713,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0031
-         * @tc.name webgl2_test_getSamplerParameter_3
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -640,9 +733,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0032
-         * @tc.name webgl2_test_getSamplerParameter_4
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -657,9 +753,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0033
-         * @tc.name webgl2_test_getSamplerParameter_5
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -674,9 +773,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0034
-         * @tc.name webgl2_test_getSamplerParameter_6
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -691,9 +793,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0035
-         * @tc.name webgl2_test_getSamplerParameter_7
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -708,9 +813,12 @@ export default function webgl2_sampler() {
             done();
         });
         /**
+         * @tc.name   webgl2_test_getSamplerParameter_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_SAMPLER_0036
-         * @tc.name webgl2_test_getSamplerParameter_8
-         * @tc.desc Test getSamplerParameter.
+         * @tc.desc   Test getSamplerParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl2_test_getSamplerParameter_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {

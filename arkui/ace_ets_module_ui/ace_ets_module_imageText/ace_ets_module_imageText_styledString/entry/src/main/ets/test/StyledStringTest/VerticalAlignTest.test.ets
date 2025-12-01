@@ -43,12 +43,12 @@ export default function VerticalAlignTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_VerticalAlignTest_0010
-     * @tc.name      VerticalAlignTest_0010
-     * @tc.desc      set ImageAttachment VerticalAlign: ImageSpanAlignment.BASELINE
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   VerticalAlignTest_0010
+     * @tc.number SUB_ACE_VerticalAlignTest_0010
+     * @tc.desc   set ImageAttachment VerticalAlign: ImageSpanAlignment.BASELINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VerticalAlignTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[VerticalAlignTest_0010] START');
@@ -69,12 +69,12 @@ export default function VerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_VerticalAlignTest_0020
-     * @tc.name      VerticalAlignTest_0020
-     * @tc.desc      set ImageAttachment VerticalAlign: ImageSpanAlignment.TOP
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   VerticalAlignTest_0020
+     * @tc.number SUB_ACE_VerticalAlignTest_0020
+     * @tc.desc   set ImageAttachment VerticalAlign: ImageSpanAlignment.TOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VerticalAlignTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[VerticalAlignTest_0020] START');
@@ -98,12 +98,12 @@ export default function VerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_VerticalAlignTest_0030
-     * @tc.name      VerticalAlignTest_0030
-     * @tc.desc      test ImageAttachment VerticalAlign: ImageSpanAlignment.CENTER
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   VerticalAlignTest_0030
+     * @tc.number SUB_ACE_VerticalAlignTest_0030
+     * @tc.desc   test ImageAttachment VerticalAlign: ImageSpanAlignment.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VerticalAlignTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[VerticalAlignTest_0030] START');
@@ -127,12 +127,12 @@ export default function VerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_VerticalAlignTest_0040
-     * @tc.name      VerticalAlignTest_0040
-     * @tc.desc      test ImageAttachment verticalAlign: ImageSpanAlignment.BOTTOM
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   VerticalAlignTest_0040
+     * @tc.number SUB_ACE_VerticalAlignTest_0040
+     * @tc.desc   test ImageAttachment verticalAlign: ImageSpanAlignment.BOTTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VerticalAlignTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[VerticalAlignTest_0040] START');

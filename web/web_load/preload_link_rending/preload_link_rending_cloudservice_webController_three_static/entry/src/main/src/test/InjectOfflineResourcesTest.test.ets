@@ -56,14 +56,14 @@ export default function InjectOfflineResourcesTest() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0100
-    * @tc.name       : testInjectOfflineResourcesStatic001
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testInjectOfflineResourcesStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0100
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInjectOfflineResourcesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -75,14 +75,14 @@ export default function InjectOfflineResourcesTest() {
         await Utils.msSleep(4000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0200
-    * @tc.name       : testInjectOfflineResourcesStatic002
-    * @tc.desc       : test injectOfflineResources
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testInjectOfflineResourcesStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0200
+     * @tc.desc   test injectOfflineResources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInjectOfflineResourcesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testInjectOfflineResources002", 10)
@@ -93,14 +93,14 @@ export default function InjectOfflineResourcesTest() {
         await Utils.msSleep(2000);
         done();
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0100
-    * @tc.name       : testOfflineResourceTypeStatic001
-    * @tc.desc       : test OfflineResourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testOfflineResourceTypeStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0100
+     * @tc.desc   test OfflineResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOfflineResourceTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testOfflineResourceType001", 10)

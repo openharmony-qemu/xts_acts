@@ -58,12 +58,12 @@ export default function V1ToV2() {
       console.info("V1ToV2 after each called");
     });
     /**
+     * @tc.name   v1Tov2_001
      * @tc.number v1Tov2_001
-     * @tc.name v1Tov2_001
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_001', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_001] START');
@@ -75,12 +75,12 @@ export default function V1ToV2() {
       done();
     })
     /**
+     * @tc.name   v1Tov2_002
      * @tc.number v1Tov2_002
-     * @tc.name v1Tov2_002
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_002', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_002] START');
@@ -92,12 +92,12 @@ export default function V1ToV2() {
       done();
     })
     /**
+     * @tc.name   v1Tov2_003
      * @tc.number v1Tov2_003
-     * @tc.name v1Tov2_003
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_003', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_003] START');
@@ -109,12 +109,12 @@ export default function V1ToV2() {
       done();
     })
     /**
+     * @tc.name   v1Tov2_004
      * @tc.number v1Tov2_004
-     * @tc.name v1Tov2_004
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_004', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_004] START');
@@ -125,13 +125,13 @@ export default function V1ToV2() {
       console.info('[v1Tov2_004] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_005
      * @tc.number v1Tov2_005
-     * @tc.name v1Tov2_005
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_005', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_005] START');
@@ -142,13 +142,13 @@ export default function V1ToV2() {
       console.info('[v1Tov2_005] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_006
      * @tc.number v1Tov2_006
-     * @tc.name v1Tov2_006
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_006', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_006] START');
@@ -159,13 +159,13 @@ export default function V1ToV2() {
       console.info('[v1Tov2_006] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_007
      * @tc.number v1Tov2_007
-     * @tc.name v1Tov2_007
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_007', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_007] START');
@@ -176,13 +176,13 @@ export default function V1ToV2() {
       console.info('[v1Tov2_007] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_008
      * @tc.number v1Tov2_008
-     * @tc.name v1Tov2_008
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('v1Tov2_008', Level.LEVEL0, async (done: Function) => {
       console.info('[v1Tov2_008] START');

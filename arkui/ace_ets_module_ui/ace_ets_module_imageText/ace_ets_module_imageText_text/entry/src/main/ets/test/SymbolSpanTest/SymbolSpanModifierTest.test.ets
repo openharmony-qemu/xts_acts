@@ -42,12 +42,12 @@ export default function SymbolSpanModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolSpanModifierTest_0010
-     * @tc.name      SymbolSpanModifierTest_0010
-     * @tc.desc      test SymbolSpanModifier: fontSize
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolSpanModifierTest_0010
+     * @tc.number SUB_ACE_SymbolSpanModifierTest_0010
+     * @tc.desc   test SymbolSpanModifier: fontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SymbolSpanModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('SymbolSpanModifierTest_0010 START');
@@ -61,12 +61,12 @@ export default function SymbolSpanModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SymbolSpanModifierTest_0020
-     * @tc.name      SymbolSpanModifierTest_0020
-     * @tc.desc      test type of SymbolSpanInstance: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SymbolSpanModifierTest_0020
+     * @tc.number SUB_ACE_SymbolSpanModifierTest_0020
+     * @tc.desc   test type of SymbolSpanInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SymbolSpanModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('SymbolSpanModifierTest_0020 START');

@@ -57,14 +57,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("longPressGesture after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_testLongPressGesture01
-    * @tc.name       : testLongPressGesture01
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testLongPressGesture01
+     * @tc.number SUB_ARKUI_testLongPressGesture01
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLongPressGesture01', Level.LEVEL0, async (done: Function) => {
       console.info('[testLongPressGesture01] START');
       await CommonFunc.sleep(1000);
@@ -89,14 +89,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_testLongPressGesture02
-    * @tc.name       : testLongPressGesture02
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testLongPressGesture02
+     * @tc.number SUB_ARKUI_testLongPressGesture02
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLongPressGesture02', Level.LEVEL0, async (done: Function) => {
       console.info('[testLongPressGesture02] START');
       await CommonFunc.sleep(1000);

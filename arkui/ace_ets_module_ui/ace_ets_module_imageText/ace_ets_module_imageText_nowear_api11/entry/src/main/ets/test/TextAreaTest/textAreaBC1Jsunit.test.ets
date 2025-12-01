@@ -42,12 +42,14 @@ export default function textAreaBC1Jsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_011
-    * @tc.name  : textAreaBC1Jsunit_0100
-    * @tc.desc  : Move the cursor out of the TextArea component
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_011
+     * @tc.desc   Move the cursor out of the TextArea component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0100', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0100 START');
       let driver = await UiDriver.create()
@@ -66,12 +68,14 @@ export default function textAreaBC1Jsunit() {
       expect(objt.$attrs.content).assertEqual('Nodoing');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_005
-   * @tc.name  : textAreaBC1Jsunit_0200
-   * @tc.desc  : In the TextArea, delete and add the text content verification effect in the TextArea
-   * @tc.level : Level 3
-   */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_005
+     * @tc.desc   In the TextArea, delete and add the text content verification effect in the TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0200', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0200 START');
       let driver = UiDriver.create();
@@ -101,12 +105,14 @@ export default function textAreaBC1Jsunit() {
       expect(objt1.$attrs.content).assertEqual('doing');
       done();
     });
-    /* *
-  * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_004
-  * @tc.name  : textAreaBC1Jsunit_0300
-  * @tc.desc  : Set the text color and text size
-  * @tc.level : Level 3
-  */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_004
+     * @tc.desc   Set the text color and text size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0300', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0300 START');
       let driver = UiDriver.create();
@@ -140,12 +146,14 @@ export default function textAreaBC1Jsunit() {
       expect(objtw.$attrs.content).assertEqual('doing');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_008
-    * @tc.name  : textAreaBC1Jsunit_0400
-    * @tc.desc  : Activate the handle inside the textArea component to verify the effect
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_008
+     * @tc.desc   Activate the handle inside the textArea component to verify the effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0400', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0400 START');
       let driver = await UiDriver.create()
@@ -167,12 +175,14 @@ export default function textAreaBC1Jsunit() {
       expect(objt.$attrs.content).assertEqual('doing');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_001
-    * @tc.name  : textAreaBC1Jsunit_0500
-    * @tc.desc  : View the default in the TextArea component
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0500
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_001
+     * @tc.desc   View the default in the TextArea component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0500', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0500 START');
       let driver = await UiDriver.create()
@@ -187,12 +197,14 @@ export default function textAreaBC1Jsunit() {
       expect(objt.$attrs.content).assertEqual('doing');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_003；SUB_ACE_TS_COMPONENT_SR000HTP2G_006；
-    * @tc.name  : textAreaBC1Jsunit_0600
-    * @tc.desc  : Raise the handle in the TextArea component and copy and paste the text
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0600
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_003；SUB_ACE_TS_COMPONENT_SR000HTP2G_006；
+     * @tc.desc   Raise the handle in the TextArea component and copy and paste the text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0600', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0600 START');
       await CommonFunc.sleep(1000);
@@ -241,12 +253,14 @@ export default function textAreaBC1Jsunit() {
       expect(text1).assertEqual('paste');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_003
-    * @tc.name  : textAreaBC1Jsunit_0700
-    * @tc.desc  : Cut text in the TextArea component
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0700
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_003
+     * @tc.desc   Cut text in the TextArea component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0700', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0700 START');
       await CommonFunc.sleep(1000);
@@ -280,12 +294,14 @@ export default function textAreaBC1Jsunit() {
       expect(text).assertEqual('cut');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_002
-    * @tc.name  : textAreaBC1Jsunit_0800
-    * @tc.desc  : Move position within the textArea by hand keyboard and mouse in the TextArea component
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0800
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_002
+     * @tc.desc   Move position within the textArea by hand keyboard and mouse in the TextArea component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textAreaBC1Jsunit_0800', Level.LEVEL2, async (done: Function) => {
       let driver = await UiDriver.create()
       let text = await driver.findComponent(BY.key('textArea1'));
@@ -305,12 +321,14 @@ export default function textAreaBC1Jsunit() {
       expect(objt.$attrs.content).assertEqual('doing');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2G_012
-   * @tc.name  : textAreaBC1Jsunit_0800
-   * @tc.desc  : Move position inside the textArea by hand keyboard and mouse outside the TextArea component
-   * @tc.level : Level 3
-   */
+    /**
+     * @tc.name   textAreaBC1Jsunit_0900
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2G_012
+     * @tc.desc   Move position inside the textArea by hand keyboard and mouse outside the TextArea component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textAreaBC1Jsunit_0900', Level.LEVEL3, async (done: Function) => {
       let driver = await UiDriver.create()
       let text = await driver.findComponent(BY.key('textArea2'));

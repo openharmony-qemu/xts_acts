@@ -99,7 +99,6 @@ describe("DeviceManagerJsTest", function () {
     const SERVICE_NOT_BOUND = 26300003
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0100
      * @tc.desc   verify queryDevice result
@@ -130,7 +129,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0200
      * @tc.desc   verify queryDevice no param result
@@ -156,7 +154,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices004
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_2000
      * @tc.desc   verify queryDevice param is 12345
@@ -181,7 +178,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testQueryDevices005
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_2100
      * @tc.desc   verify queryDevice errcode 22900001
@@ -206,7 +202,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesCallBack001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0300
      * @tc.desc   verify bindDevice invalid param
@@ -239,7 +234,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesCallBack002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0400
      * @tc.desc   verify bindDevice any device
@@ -272,7 +266,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDeviceDriverCallBack001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0500
      * @tc.desc   verify bindDeviceDriver any device
@@ -305,7 +298,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDeviceDriverCallBack002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1700
      * @tc.desc   verify bindDeviceDriver param is string
@@ -338,7 +330,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesPromise001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0600
      * @tc.desc   verify bindDevice invalid param count
@@ -366,7 +357,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesPromise002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0700
      * @tc.desc   verify bindDevice invalid param
@@ -394,7 +384,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesPromise003
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0800
      * @tc.desc   verify bindDevice invalid param
@@ -422,7 +411,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesPromise004
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0900
      * @tc.desc   verify bindDevice promise
@@ -457,7 +445,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDevicesPromise005
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1000
      * @tc.desc   verify bindDevice promise
@@ -492,7 +479,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   testBindDeviceDriverPromise001
       * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1100
       * @tc.desc   verify bindDeviceDriver promise
@@ -532,7 +518,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDeviceDriverPromise002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1800
      * @tc.desc   verify bindDeviceDriver promise
@@ -567,7 +552,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBindDeviceDriverPromise003
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1900
      * @tc.desc   verify bindDeviceDriver promise
@@ -602,7 +586,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   testUnbindDevicesCallBack001
       * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1200
       * @tc.desc   verify unbindDevice any device
@@ -631,7 +614,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUnbindDevicesCallBack002
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1300
      * @tc.desc   verify unbindDevice any device
@@ -660,7 +642,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   testUnbindDevicesPromise001
       * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1400
       * @tc.desc   verify unbindDevice invalid param
@@ -688,7 +669,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:58
       * @tc.name   testUnbindDevicesPromise002
       * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1500
       * @tc.desc   verify unbindDevice promise
@@ -721,7 +701,6 @@ describe("DeviceManagerJsTest", function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_bindDriverWithDeviceId_001
      * @tc.number SUB_Driver_Ext_Mchanism_0100
      * @tc.desc   verify bindDriverWithDeviceId invalid param count
@@ -742,7 +721,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_bindDriverWithDeviceId_002
      * @tc.number SUB_Driver_Ext_Mchanism_0200
      * @tc.desc   verify bindDriverWithDeviceId invalid param
@@ -763,7 +741,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_bindDriverWithDeviceId_003
      * @tc.number SUB_Driver_Ext_Mchanism_0300
      * @tc.desc   verify bindDriverWithDeviceId invalid param
@@ -784,7 +761,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_bindDriverWithDeviceId_004
      * @tc.number SUB_Driver_Ext_Mchanism_0400
      * @tc.desc   verify bindDriverWithDeviceId promise
@@ -814,7 +790,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_bindDriverWithDeviceId_005
      * @tc.number SUB_Driver_Ext_Mchanism_0500
      * @tc.desc   verify bindDriverWithDeviceId promise
@@ -844,7 +819,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_unbindDriverWithDeviceId_001
      * @tc.number SUB_Driver_Ext_Mchanism_0600
      * @tc.desc   verify unbindDriverWithDeviceId invalid param
@@ -865,7 +839,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_unbindDriverWithDeviceId_002
      * @tc.number SUB_Driver_Ext_Mchanism_0700
      * @tc.desc   verify unbindDriverWithDeviceId promise
@@ -892,7 +865,6 @@ describe("DeviceManagerJsTest", function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   DeviceManager_unbindDriverWithDeviceId_003
      * @tc.number SUB_Driver_Ext_Mchanism_0800
      * @tc.desc   verify unbindDriverWithDeviceId promise

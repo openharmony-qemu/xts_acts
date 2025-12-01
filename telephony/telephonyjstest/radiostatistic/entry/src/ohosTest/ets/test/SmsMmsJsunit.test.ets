@@ -26,13 +26,14 @@ export default function smsUiJsunit() {
     ];
 
 
-    /*
-   * @tc.number  Telephony_SmsMms_createMessage_Async_0100
-   * @tc.name    Call interface CreateMessage,
-   *             pass in the PDU(rawArray) in line with the coding specification, the specification is 3GPP,
-   *             shortMessage Don't empty
-   * @tc.desc    Function test
-   */
+    /**
+     * @tc.name   Telephony_SmsMms_createMessage_Async_0100
+     * @tc.number Telephony_SmsMms_createMessage_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Telephony_SmsMms_createMessage_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       sms.createMessage(rawArray, '3gpp', (err, shortMessage) => {
         if (err) {
@@ -68,12 +69,13 @@ export default function smsUiJsunit() {
       });
     });
 
-    /*
-     * @tc.number  Telephony_SmsMms_createMessage_Async_0300
-     * @tc.name    testCreateMessage_0300
-     * @tc.desc    Call interface CreateMessage,
-     *             pass in the PDU(rawArray) in line with the coding specification, the specification is 3GPP,
-     *             shortMessage Don't empty
+    /**
+     * @tc.name   Telephony_SmsMms_createMessage_Promise_0100
+     * @tc.number Telephony_SmsMms_createMessage_Async_0300
+     * @tc.desc   Call interface CreateMessage,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_SmsMms_createMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       sms.createMessage(rawArray, '3gpp').then(shortMessage => {
@@ -96,11 +98,14 @@ export default function smsUiJsunit() {
       });
     });
 
-    /*
-   * @tc.number  Telephony_SmsMms_getSendSmsResult_Async_0100
-   * @tc.name
-   * @tc.desc    Function test
-   */
+    /**
+     * @tc.name   Telephony_SmsMms_getSendSmsResult_Async_0100
+     * @tc.number Telephony_SmsMms_getSendSmsResult_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Telephony_SmsMms_getSendSmsResult_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(sms.SendSmsResult.SEND_SMS_SUCCESS == 0).assertTrue();
       expect(sms.SendSmsResult.SEND_SMS_FAILURE_UNKNOWN == 1).assertTrue();
@@ -109,11 +114,14 @@ export default function smsUiJsunit() {
       done();
     });
 
-    /*
-   * @tc.number  Telephony_SmsMms_ShortMessageClass_Async_0100
-   * @tc.name
-   * @tc.desc    Function test
-   */
+    /**
+     * @tc.name   Telephony_SmsMms_ShortMessageClass_Async_0100
+     * @tc.number Telephony_SmsMms_ShortMessageClass_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Telephony_SmsMms_ShortMessageClass_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(sms.ShortMessageClass.UNKNOWN == 0).assertTrue();
       expect(sms.ShortMessageClass.INSTANT_MESSAGE == 1).assertTrue();
@@ -124,9 +132,12 @@ export default function smsUiJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_Sms_getDefaultSmsSimId_CallBack_0100
      * @tc.number Telephony_Sms_getDefaultSmsSimId_CallBack_0100
-     * @tc.name Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sms_getDefaultSmsSimId_CallBack_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sms_getDefaultSmsSimId_CallBack_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'Telephony_Sms_getDefaultSmsSimId_CallBack_0100';
@@ -160,9 +171,12 @@ export default function smsUiJsunit() {
       })
     });
     /**
+     * @tc.name   Telephony_Sms_getDefaultSmsSimId_Promise_0100
      * @tc.number Telephony_Sms_getDefaultSmsSimId_Promise_0100
-     * @tc.name Test getOpName interface
-     * @tc.desc
+     * @tc.desc   Telephony_Sms_getDefaultSmsSimId_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Telephony_Sms_getDefaultSmsSimId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'Telephony_Sms_getDefaultSmsSimId_Promise_0100';

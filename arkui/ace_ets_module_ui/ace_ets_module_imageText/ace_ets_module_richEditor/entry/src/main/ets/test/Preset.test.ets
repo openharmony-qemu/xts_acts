@@ -45,14 +45,14 @@ export default function PresetTest() {
       console.info("PresetTest after each called");
     });
 
-  /*
-    * @tc.number       PresetTest0001
-    * @tc.name         PresetTest0001
-    * @tc.desc         preset about xiaoyi dialog
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
-    */
+    /**
+     * @tc.name   PresetTest0001
+     * @tc.number PresetTest0001
+     * @tc.desc   preset about xiaoyi dialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PresetTest0001',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       if (globalThis.winLeft == 0) {
@@ -69,6 +69,11 @@ export default function PresetTest() {
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
         await button1?.click();
+        await CommonFunc.sleep(500);
+
+        let button2 = await driver.findComponent(ON.text('完成'));
+        await CommonFunc.sleep(500);
+        await button2?.click();
         await CommonFunc.sleep(500);
 
         await textArea1.longClick();

@@ -47,12 +47,12 @@ export default function DataView16Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   DataView16Test001
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0100
-     * @tc.name DataView16Test001
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer1 = new ArrayBuffer(8);
@@ -62,12 +62,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test002
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0200
-     * @tc.name DataView16Test002
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer2 = new ArrayBuffer(8);
@@ -77,12 +77,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test003
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0300
-     * @tc.name DataView16Test003
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer3 = new ArrayBuffer(8);
@@ -93,12 +93,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test004
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0400
-     * @tc.name DataView16Test004
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer4 = new ArrayBuffer(8);
@@ -108,12 +108,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test005
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0500
-     * @tc.name DataView16Test005
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer5 = new ArrayBuffer(8);
@@ -123,12 +123,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test006
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0600
-     * @tc.name DataView16Test006
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer6 = new ArrayBuffer(8);
@@ -139,12 +139,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test007
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0700
-     * @tc.name DataView16Test007
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer7 = new ArrayBuffer(8);
@@ -155,12 +155,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test008
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0800
-     * @tc.name DataView16Test008
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer8 = new ArrayBuffer(8);
@@ -170,12 +170,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test009
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_0900
-     * @tc.name DataView16Test009
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer9 = new ArrayBuffer(8);
@@ -185,12 +185,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test010
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1000
-     * @tc.name DataView16Test010
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer10 = new ArrayBuffer(8);
@@ -200,12 +200,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test011
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1100
-     * @tc.name DataView16Test011
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer11 = new ArrayBuffer(8);
@@ -215,12 +215,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test012
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1200
-     * @tc.name DataView16Test012
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer12 = new ArrayBuffer(8);
@@ -230,12 +230,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test013
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1300
-     * @tc.name DataView16Test013
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer13 = new ArrayBuffer(8);
@@ -245,12 +245,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test014
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1400
-     * @tc.name DataView16Test014
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer14 = new ArrayBuffer(8);
@@ -260,12 +260,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test015
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1500
-     * @tc.name DataView16Test015
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer15 = new ArrayBuffer(8);
@@ -275,12 +275,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test016
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1600
-     * @tc.name DataView16Test016
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer16 = new ArrayBuffer(8);
@@ -290,12 +290,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test017
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1700
-     * @tc.name DataView16Test017
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer17 = new ArrayBuffer(8);
@@ -305,12 +305,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test018
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1800
-     * @tc.name DataView16Test018
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer18 = new ArrayBuffer(8);
@@ -320,12 +320,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test019
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_1900
-     * @tc.name DataView16Test019
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer19 = new ArrayBuffer(8);
@@ -335,12 +335,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test020
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2000
-     * @tc.name DataView16Test020
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer20 = new ArrayBuffer(8);
@@ -350,12 +350,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test021
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2100
-     * @tc.name DataView16Test021
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer21 = new ArrayBuffer(8);
@@ -365,12 +365,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test022
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2200
-     * @tc.name DataView16Test022
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer22 = new ArrayBuffer(8);
@@ -380,12 +380,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test023
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2300
-     * @tc.name DataView16Test023
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer23 = new ArrayBuffer(8);
@@ -395,12 +395,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test024
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2400
-     * @tc.name DataView16Test024
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer24 = new ArrayBuffer(8);
@@ -410,12 +410,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test025
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2500
-     * @tc.name DataView16Test025
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer25 = new ArrayBuffer(8);
@@ -425,12 +425,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test026
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2600
-     * @tc.name DataView16Test026
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer26 = new ArrayBuffer(8);
@@ -440,12 +440,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test027
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2700
-     * @tc.name DataView16Test027
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer27 = new ArrayBuffer(8);
@@ -455,12 +455,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test028
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_2800
-     * @tc.name DataView16Test028
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer28 = new ArrayBuffer(8);
@@ -471,12 +471,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test037
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_3700
-     * @tc.name DataView16Test037
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer37 = new ArrayBuffer(8);
@@ -486,12 +486,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test038
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_3800
-     * @tc.name DataView16Test038
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer38 = new ArrayBuffer(16);
@@ -501,12 +501,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test039
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_3900
-     * @tc.name DataView16Test039
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer39 = new ArrayBuffer(16);
@@ -518,12 +518,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test040
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4000
-     * @tc.name DataView16Test040
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer40 = new ArrayBuffer(8);
@@ -534,12 +534,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test041
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4100
-     * @tc.name DataView16Test041
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer41 = new ArrayBuffer(8);
@@ -549,12 +549,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test042
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4200
-     * @tc.name DataView16Test042
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer42 = new ArrayBuffer(8);
@@ -564,12 +564,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test043
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4300
-     * @tc.name DataView16Test043
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer43 = new ArrayBuffer(8);
@@ -579,12 +579,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test044
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4400
-     * @tc.name DataView16Test044
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer44 = new ArrayBuffer(8);
@@ -595,12 +595,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test045
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4500
-     * @tc.name DataView16Test045
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer45 = new ArrayBuffer(8);
@@ -610,12 +610,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test046
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4600
-     * @tc.name DataView16Test046
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer46 = new ArrayBuffer(8);
@@ -625,12 +625,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test047
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4700
-     * @tc.name DataView16Test047
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer47 = new ArrayBuffer(8);
@@ -640,12 +640,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test048
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4800
-     * @tc.name DataView16Test048
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer48 = new ArrayBuffer(8);
@@ -655,12 +655,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test049
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_4900
-     * @tc.name DataView16Test049
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer49 = new ArrayBuffer(8);
@@ -671,12 +671,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test050
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5000
-     * @tc.name DataView16Test050
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer50 = new ArrayBuffer(8);
@@ -687,12 +687,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test051
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5100
-     * @tc.name DataView16Test051
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer51 = new ArrayBuffer(8);
@@ -703,12 +703,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test052
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5200
-     * @tc.name DataView16Test052
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer52 = new ArrayBuffer(8);
@@ -718,12 +718,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test053
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5300
-     * @tc.name DataView16Test053
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer53 = new ArrayBuffer(8);
@@ -734,12 +734,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test054
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5400
-     * @tc.name DataView16Test054
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer54 = new ArrayBuffer(8);
@@ -749,12 +749,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test055
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5500
-     * @tc.name DataView16Test055
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer55 = new ArrayBuffer(8);
@@ -766,12 +766,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test056
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_5600
-     * @tc.name DataView16Test056
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer56 = new ArrayBuffer(8);
@@ -781,12 +781,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test061
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6100
-     * @tc.name DataView16Test061
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer61 = new ArrayBuffer(8);
@@ -797,12 +797,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test062
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6200
-     * @tc.name DataView16Test062
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer62 = new ArrayBuffer(8);
@@ -813,12 +813,12 @@ export default function DataView16Test() {
 
     });
     /**
+     * @tc.name   DataView16Test063
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6300
-     * @tc.name DataView16Test063
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer63 = new ArrayBuffer(8);
@@ -829,12 +829,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test064
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6400
-     * @tc.name DataView16Test064
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer64 = new ArrayBuffer(8);
@@ -845,12 +845,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test065
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6500
-     * @tc.name DataView16Test065
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer65 = new ArrayBuffer(8);
@@ -861,12 +861,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test066
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6600
-     * @tc.name DataView16Test066
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer66 = new ArrayBuffer(8);
@@ -876,12 +876,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test067
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6700
-     * @tc.name DataView16Test067
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 67. 写入 Number.EPSILON * 2
@@ -893,12 +893,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test068
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6800
-     * @tc.name DataView16Test068
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // 68. 写入 1 - Number.EPSILON
@@ -910,12 +910,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test069
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_6900
-     * @tc.name DataView16Test069
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer69 = new ArrayBuffer(8);
@@ -925,12 +925,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test070
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7000
-     * @tc.name DataView16Test070
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer70 = new ArrayBuffer(8);
@@ -940,12 +940,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test071
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7100
-     * @tc.name DataView16Test071
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer71 = new ArrayBuffer(8);
@@ -955,12 +955,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test072
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7200
-     * @tc.name DataView16Test072
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer72 = new ArrayBuffer(8);
@@ -970,12 +970,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test073
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7300
-     * @tc.name DataView16Test073
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer73 = new ArrayBuffer(8);
@@ -986,12 +986,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test074
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7400
-     * @tc.name DataView16Test074
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer74 = new ArrayBuffer(8);
@@ -1001,12 +1001,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test075
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7500
-     * @tc.name DataView16Test075
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer75 = new ArrayBuffer(8);
@@ -1016,12 +1016,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test076
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7600
-     * @tc.name DataView16Test076
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer76 = new ArrayBuffer(8);
@@ -1032,12 +1032,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test077
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7700
-     * @tc.name DataView16Test077
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer77 = new ArrayBuffer(8);
@@ -1047,12 +1047,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test078
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7800
-     * @tc.name DataView16Test078
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer78 = new ArrayBuffer(8);
@@ -1063,12 +1063,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test079
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_7900
-     * @tc.name DataView16Test079
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer79 = new ArrayBuffer(8);
@@ -1079,12 +1079,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test083
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8300
-     * @tc.name DataView16Test083
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer83 = new ArrayBuffer(8);
@@ -1094,12 +1094,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test084
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8400
-     * @tc.name DataView16Test084
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer84 = new ArrayBuffer(8);
@@ -1109,12 +1109,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test085
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8500
-     * @tc.name DataView16Test085
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer85 = new ArrayBuffer(8);
@@ -1124,12 +1124,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test086
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8600
-     * @tc.name DataView16Test086
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer86 = new ArrayBuffer(8);
@@ -1139,12 +1139,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test087
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8700
-     * @tc.name DataView16Test087
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer87 = new ArrayBuffer(8);
@@ -1155,12 +1155,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test088
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8800
-     * @tc.name DataView16Test088
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer88 = new ArrayBuffer(8);
@@ -1170,12 +1170,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test089
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_8900
-     * @tc.name DataView16Test089
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer89 = new ArrayBuffer(8);
@@ -1185,12 +1185,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test090
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9000
-     * @tc.name DataView16Test090
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer90 = new ArrayBuffer(8);
@@ -1200,12 +1200,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test091
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9100
-     * @tc.name DataView16Test091
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer91 = new ArrayBuffer(8);
@@ -1216,12 +1216,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test092
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9200
-     * @tc.name DataView16Test092
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer92 = new ArrayBuffer(8);
@@ -1232,12 +1232,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test093
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9300
-     * @tc.name DataView16Test093
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer93 = new ArrayBuffer(8);
@@ -1248,12 +1248,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test094
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9400
-     * @tc.name DataView16Test094
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer94 = new ArrayBuffer(8);
@@ -1264,12 +1264,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test095
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9500
-     * @tc.name DataView16Test095
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer95 = new ArrayBuffer(8);
@@ -1280,48 +1280,48 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test096
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9600
-     * @tc.name DataView16Test096
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test096()).assertEqual(true);
     });
 
     /**
+     * @tc.name   DataView16Test097
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9700
-     * @tc.name DataView16Test097
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test097()).assertEqual(true);
     });
 
     /**
+     * @tc.name   DataView16Test098
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9800
-     * @tc.name DataView16Test098
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test098()).assertEqual(99.99);
     });
 
     /**
+     * @tc.name   DataView16Test099
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_9900
-     * @tc.name DataView16Test099
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer99 = new ArrayBuffer(8);
@@ -1332,12 +1332,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test100
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10000
-     * @tc.name DataView16Test100
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer100 = new ArrayBuffer(8);
@@ -1348,24 +1348,24 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test102
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10200
-     * @tc.name DataView16Test102
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test0102()).assertEqual(66.66);
     });
 
     /**
+     * @tc.name   DataView16Test103
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10300
-     * @tc.name DataView16Test103
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer103 = new ArrayBuffer(8);
@@ -1376,24 +1376,24 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test104
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10400
-     * @tc.name DataView16Test104
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test104()).assertEqual(true);
     });
 
     /**
+     * @tc.name   DataView16Test105
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10500
-     * @tc.name DataView16Test105
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer105 = new ArrayBuffer(8);
@@ -1404,12 +1404,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test106
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10600
-     * @tc.name DataView16Test106
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer106 = new ArrayBuffer(8);
@@ -1420,12 +1420,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test107
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10700
-     * @tc.name DataView16Test107
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer107 = new ArrayBuffer(8);
@@ -1436,12 +1436,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test108
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10800
-     * @tc.name DataView16Test108
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer108 = new ArrayBuffer(8);
@@ -1452,12 +1452,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test109
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_10900
-     * @tc.name DataView16Test109
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer109 = new ArrayBuffer(8);
@@ -1468,12 +1468,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test110
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_11000
-     * @tc.name DataView16Test110
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer110 = new ArrayBuffer(8);
@@ -1484,12 +1484,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test114
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_11400
-     * @tc.name DataView16Test114
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer114 = new ArrayBuffer(8);
@@ -1500,12 +1500,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test115
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_11500
-     * @tc.name DataView16Test115
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer115 = new ArrayBuffer(8);
@@ -1516,12 +1516,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test116
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_11600
-     * @tc.name DataView16Test116
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer116 = new ArrayBuffer(8);
@@ -1532,12 +1532,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test117
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_11700
-     * @tc.name DataView16Test117
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer117 = new ArrayBuffer(8);
@@ -1548,12 +1548,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test118
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_11800
-     * @tc.name DataView16Test118
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer118 = new ArrayBuffer(8);
@@ -1564,12 +1564,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test120
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12000
-     * @tc.name DataView16Test120
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer120 = new ArrayBuffer(8);
@@ -1580,24 +1580,24 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test121
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12100
-     * @tc.name DataView16Test121
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test121()).assertEqual(1.1);
     });
 
     /**
+     * @tc.name   DataView16Test122
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12200
-     * @tc.name DataView16Test122
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer122 = new ArrayBuffer(8);
@@ -1608,36 +1608,36 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test123
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12300
-     * @tc.name DataView16Test123
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test123()).assertEqual(7.77);
     });
 
     /**
+     * @tc.name   DataView16Test124
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12400
-     * @tc.name DataView16Test124
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test124()).assertEqual(8.88);
     });
 
     /**
+     * @tc.name   DataView16Test125
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12500
-     * @tc.name DataView16Test125
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer125 = new ArrayBuffer(8);
@@ -1648,24 +1648,24 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test126
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12600
-     * @tc.name DataView16Test126
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test126()).assertEqual(10.10);
     });
 
     /**
+     * @tc.name   DataView16Test127
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12700
-     * @tc.name DataView16Test127
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer127 = new ArrayBuffer(8);
@@ -1683,84 +1683,84 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test128
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12800
-     * @tc.name DataView16Test128
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test128()).assertEqual(12.12);
     });
 
     /**
+     * @tc.name   DataView16Test129
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_12900
-     * @tc.name DataView16Test129
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test129()).assertEqual(13.13);
     });
 
     /**
+     * @tc.name   DataView16Test130
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13000
-     * @tc.name DataView16Test130
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test130()).assertEqual(14.14);
     });
 
     /**
+     * @tc.name   DataView16Test131
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13100
-     * @tc.name DataView16Test131
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test131()).assertEqual(15.15);
     });
 
     /**
+     * @tc.name   DataView16Test132
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13200
-     * @tc.name DataView16Test132
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test132()).assertEqual(16.16);
     });
 
     /**
+     * @tc.name   DataView16Test133
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13300
-     * @tc.name DataView16Test133
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test133()).assertEqual(17.17);
     });
 
     /**
+     * @tc.name   DataView16Test134
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13400
-     * @tc.name DataView16Test134
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer134 = new ArrayBuffer(8);
@@ -1771,12 +1771,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test135
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13500
-     * @tc.name DataView16Test135
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer135 = new ArrayBuffer(8);
@@ -1787,24 +1787,24 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test136
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13600
-     * @tc.name DataView16Test136
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(DataView16.DataView16Test136()).assertEqual(true);
     });
 
     /**
+     * @tc.name   DataView16Test137
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13700
-     * @tc.name DataView16Test137
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer137 = new ArrayBuffer(8);
@@ -1815,12 +1815,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test138
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13800
-     * @tc.name DataView16Test138
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer138 = new ArrayBuffer(8);
@@ -1831,12 +1831,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test139
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_13900
-     * @tc.name DataView16Test139
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer139 = new ArrayBuffer(8);
@@ -1847,12 +1847,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test140
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14000
-     * @tc.name DataView16Test140
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer140 = new ArrayBuffer(8);
@@ -1863,12 +1863,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test141
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14100
-     * @tc.name DataView16Test141
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer141 = new ArrayBuffer(8);
@@ -1879,12 +1879,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test142
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14200
-     * @tc.name DataView16Test142
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer142 = new ArrayBuffer(8);
@@ -1895,12 +1895,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test143
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14300
-     * @tc.name DataView16Test143
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer143 = new ArrayBuffer(8);
@@ -1911,12 +1911,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test144
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14400
-     * @tc.name DataView16Test144
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer144 = new ArrayBuffer(8);
@@ -1927,12 +1927,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test145
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14500
-     * @tc.name DataView16Test145
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer145 = new ArrayBuffer(8);
@@ -1942,12 +1942,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test146
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14600
-     * @tc.name DataView16Test146
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer146 = new ArrayBuffer(8);
@@ -1957,12 +1957,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test147
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14700
-     * @tc.name DataView16Test147
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer147 = new ArrayBuffer(8);
@@ -1972,12 +1972,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test148
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14800
-     * @tc.name DataView16Test148
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer148 = new ArrayBuffer(8);
@@ -1987,12 +1987,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test149
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_14900
-     * @tc.name DataView16Test149
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer149 = new ArrayBuffer(8);
@@ -2002,12 +2002,12 @@ export default function DataView16Test() {
     });
 
     /**
+     * @tc.name   DataView16Test150
      * @tc.number SUB_BUILTINS_DATAVIEW16_TEST_15000
-     * @tc.name DataView16Test150
-     * @tc.desc test DataView setFloat64
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test DataView setFloat64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DataView16Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer150 = new ArrayBuffer(8);

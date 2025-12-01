@@ -97,7 +97,6 @@ describe('rdbEncryptTest', function () {
         console.info(TAG + "*************Unit Test Begin*************")
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest_0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBEncryptJsAPITest_0100
          * @tc.desc   RDB create encrypt db test
@@ -118,7 +117,6 @@ describe('rdbEncryptTest', function () {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest_0020
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBEncryptJsAPITest_0200
          * @tc.desc   RDB create unencrypted db test
@@ -142,7 +140,6 @@ describe('rdbEncryptTest', function () {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest_0030
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBEncryptJsAPITest_0300
          * @tc.desc   RDB Encrypt function test
@@ -176,7 +173,6 @@ describe('rdbEncryptTest', function () {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:51
           * @tc.name   RdbEncryptTest_0040
           * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBEncryptJsAPITest_0400
           * @tc.desc   RDB Encrypt function test
@@ -201,7 +197,6 @@ describe('rdbEncryptTest', function () {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest_0050
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBEncryptJsAPITest_0500
          * @tc.desc   RDB Encrypt function test

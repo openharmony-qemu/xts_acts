@@ -27,12 +27,12 @@ function init(size: number): string {
 export default function ConsoleTest() {
   describe('ConsoleTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0100
-     * @tc.name       : testLoadNativeModule001
-     * @tc.desc       : Test LoadNativeModule.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0100
+     * @tc.desc   Test LoadNativeModule.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -46,12 +46,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0200
-     * @tc.name       : testLoadNativeModule002
-     * @tc.desc       : Test LoadNativeModule.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0200
+     * @tc.desc   Test LoadNativeModule.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -65,12 +65,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0300
-     * @tc.name       : testLoadNativeModule003
-     * @tc.desc       : Test LoadNativeModule.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0300
+     * @tc.desc   Test LoadNativeModule.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -82,15 +82,15 @@ export default function ConsoleTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0400
-     * @tc.name       : testLoadNativeModule004
-     * @tc.desc       : Test LoadNativeModule.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testLoadNativeModule004
+     * @tc.number testLoadNativeModule004
+     * @tc.desc   testLoadNativeModule004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLoadNativeModule004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let flag = loadNativeModule("");
@@ -101,12 +101,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0500
-     * @tc.name       : testLoadNativeModule005
-     * @tc.desc       : Test LoadNativeModule.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0500
+     * @tc.desc   Test LoadNativeModule.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -118,12 +118,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0600
-     * @tc.name       : testLoadNativeModule006
-     * @tc.desc       : Test LoadNativeModule.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0600
+     * @tc.desc   Test LoadNativeModule.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -136,12 +136,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0700
-     * @tc.name       : testLoadNativeModule007
-     * @tc.desc       : Test LoadNativeModule with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0700
+     * @tc.desc   Test LoadNativeModule with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -153,12 +153,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0800
-     * @tc.name       : testLoadNativeModule008
-     * @tc.desc       : Test LoadNativeModule with bell character.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0800
+     * @tc.desc   Test LoadNativeModule with bell character.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -171,12 +171,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0900
-     * @tc.name       : testLoadNativeModule009
-     * @tc.desc       : Test LoadNativeModule with backspace.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0900
+     * @tc.desc   Test LoadNativeModule with backspace.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -189,12 +189,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1000
-     * @tc.name       : testLoadNativeModule010
-     * @tc.desc       : Test LoadNativeModule with form feed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1000
+     * @tc.desc   Test LoadNativeModule with form feed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -207,12 +207,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1100
-     * @tc.name       : testLoadNativeModule011
-     * @tc.desc       : Test LoadNativeModule with newline.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1100
+     * @tc.desc   Test LoadNativeModule with newline.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -225,12 +225,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1200
-     * @tc.name       : testLoadNativeModule012
-     * @tc.desc       : Test LoadNativeModule with carriage return.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLoadNativeModule012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1200
+     * @tc.desc   Test LoadNativeModule with carriage return.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLoadNativeModule012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -243,12 +243,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1300
-     * @tc.name       : testLoadNativeModule013
-     * @tc.desc       : Test LoadNativeModule with horizontal tab.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1300
+     * @tc.desc   Test LoadNativeModule with horizontal tab.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -261,12 +261,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1400
-     * @tc.name       : testLoadNativeModule014
-     * @tc.desc       : Test LoadNativeModule with vertical tab.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1400
+     * @tc.desc   Test LoadNativeModule with vertical tab.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -279,12 +279,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1500
-     * @tc.name       : testLoadNativeModule015
-     * @tc.desc       : Test LoadNativeModule with backslash.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1500
+     * @tc.desc   Test LoadNativeModule with backslash.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -297,12 +297,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1600
-     * @tc.name       : testLoadNativeModule016
-     * @tc.desc       : Test LoadNativeModule with single quote.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1600
+     * @tc.desc   Test LoadNativeModule with single quote.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -315,12 +315,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1700
-     * @tc.name       : testLoadNativeModule017
-     * @tc.desc       : Test LoadNativeModule with double quote.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1700
+     * @tc.desc   Test LoadNativeModule with double quote.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -333,12 +333,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1800
-     * @tc.name       : testLoadNativeModule018
-     * @tc.desc       : Test LoadNativeModule with question mark.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1800
+     * @tc.desc   Test LoadNativeModule with question mark.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -351,12 +351,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1900
-     * @tc.name       : testLoadNativeModule019
-     * @tc.desc       : Test LoadNativeModule with null character.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1900
+     * @tc.desc   Test LoadNativeModule with null character.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -369,12 +369,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2000
-     * @tc.name       : testLoadNativeModule020
-     * @tc.desc       : Test LoadNativeModule with octal number.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2000
+     * @tc.desc   Test LoadNativeModule with octal number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -387,12 +387,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2100
-     * @tc.name       : testLoadNativeModule021
-     * @tc.desc       : Test LoadNativeModule with hexadecimal number.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2100
+     * @tc.desc   Test LoadNativeModule with hexadecimal number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -405,12 +405,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2200
-     * @tc.name       : testLoadNativeModule022
-     * @tc.desc       : Test LoadNativeModule with pointing up emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2200
+     * @tc.desc   Test LoadNativeModule with pointing up emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -423,12 +423,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2300
-     * @tc.name       : testLoadNativeModule023
-     * @tc.desc       : Test LoadNativeModule with angry face emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2300
+     * @tc.desc   Test LoadNativeModule with angry face emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -441,12 +441,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2400
-     * @tc.name       : testLoadNativeModule024
-     * @tc.desc       : Test LoadNativeModule with eyes emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2400
+     * @tc.desc   Test LoadNativeModule with eyes emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -459,12 +459,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2500
-     * @tc.name       : testLoadNativeModule025
-     * @tc.desc       : Test LoadNativeModule with 100 points emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2500
+     * @tc.desc   Test LoadNativeModule with 100 points emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -477,12 +477,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2600
-     * @tc.name       : testLoadNativeModule026
-     * @tc.desc       : Test LoadNativeModule with Santa Claus emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2600
+     * @tc.desc   Test LoadNativeModule with Santa Claus emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -495,12 +495,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2700
-     * @tc.name       : testLoadNativeModule027
-     * @tc.desc       : Test LoadNativeModule with cat face with wry smile emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2700
+     * @tc.desc   Test LoadNativeModule with cat face with wry smile emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -513,12 +513,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2800
-     * @tc.name       : testLoadNativeModule028
-     * @tc.desc       : Test LoadNativeModule with wrench emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2800
+     * @tc.desc   Test LoadNativeModule with wrench emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -531,12 +531,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2900
-     * @tc.name       : testLoadNativeModule029
-     * @tc.desc       : Test LoadNativeModule with haircut emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2900
+     * @tc.desc   Test LoadNativeModule with haircut emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -549,12 +549,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3000
-     * @tc.name       : testLoadNativeModule030
-     * @tc.desc       : Test LoadNativeModule with men wrestling emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3000
+     * @tc.desc   Test LoadNativeModule with men wrestling emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -567,12 +567,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3100
-     * @tc.name       : testLoadNativeModule031
-     * @tc.desc       : Test LoadNativeModule with oil drum emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3100
+     * @tc.desc   Test LoadNativeModule with oil drum emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -585,12 +585,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3200
-     * @tc.name       : testLoadNativeModule032
-     * @tc.desc       : Test LoadNativeModule with mahjong tile red dragon emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3200
+     * @tc.desc   Test LoadNativeModule with mahjong tile red dragon emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -603,12 +603,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3300
-     * @tc.name       : testLoadNativeModule033
-     * @tc.desc       : Test LoadNativeModule with black flag emoji.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3300
+     * @tc.desc   Test LoadNativeModule with black flag emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -621,12 +621,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3400
-     * @tc.name       : testLoadNativeModule034
-     * @tc.desc       : Test LoadNativeModule with custom initialization.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3400
+     * @tc.desc   Test LoadNativeModule with custom initialization.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -638,12 +638,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3500
-     * @tc.name       : testLoadNativeModule035
-     * @tc.desc       : Test LoadNativeModule with object string manipulation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3500
+     * @tc.desc   Test LoadNativeModule with object string manipulation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -657,12 +657,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3600
-     * @tc.name       : testLoadNativeModule036
-     * @tc.desc       : Test LoadNativeModule with \ud83c.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3600
+     * @tc.desc   Test LoadNativeModule with \ud83c.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -674,12 +674,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3700
-     * @tc.name       : testLoadNativeModule037
-     * @tc.desc       : Test LoadNativeModule with \u200d\u2642.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLoadNativeModule037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3700
+     * @tc.desc   Test LoadNativeModule with \u200d\u2642.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadNativeModule037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -691,12 +691,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3800
-     * @tc.name       : testConsole038
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3800
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -714,12 +714,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3900
-     * @tc.name       : testConsole039
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3900
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -737,12 +737,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4000
-     * @tc.name       : testConsole040
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4000
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -760,12 +760,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4100
-     * @tc.name       : testConsole041
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4100
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -783,12 +783,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4200
-     * @tc.name       : testConsole042
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4200
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -806,12 +806,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4300
-     * @tc.name       : testConsole043
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4300
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -830,12 +830,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4400
-     * @tc.name       : testConsole044
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4400
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -851,12 +851,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4500
-     * @tc.name       : testConsole045
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4500
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -872,12 +872,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4600
-     * @tc.name       : testConsole046
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4600
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -893,12 +893,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
-     * @tc.name       : testConsole047
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -914,12 +914,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
-     * @tc.name       : testConsole048
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -935,12 +935,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4900
-     * @tc.name       : testConsole049
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4900
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -957,12 +957,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5000
-     * @tc.name       : testConsole050
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5000
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -973,12 +973,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5100
-     * @tc.name       : testConsole051
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5100
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -994,12 +994,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5200
-     * @tc.name       : testConsole052
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5200
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1015,12 +1015,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
-     * @tc.name       : testConsole053
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1036,12 +1036,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
-     * @tc.name       : testConsole053
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1057,12 +1057,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5500
-     * @tc.name       : testConsole055
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5500
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1078,12 +1078,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5600
-     * @tc.name       : testConsole056
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5600
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1099,12 +1099,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
-     * @tc.name       : testConsole057
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1115,12 +1115,12 @@ export default function ConsoleTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
-     * @tc.name       : testConsole058
-     * @tc.desc       : Test Console.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConsole058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
+     * @tc.desc   Test Console.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConsole058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -1131,12 +1131,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0100
-     * @tc.name       : testAssert0001
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0100
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0001';
@@ -1149,12 +1149,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0200
-     * @tc.name       : testAssert0002
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0200
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0002';
@@ -1167,12 +1167,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0300
-     * @tc.name       : testAssert0003
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0300
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0003';
@@ -1185,12 +1185,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0400
-     * @tc.name       : testAssert0004
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0400
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0004';
@@ -1203,12 +1203,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0500
-     * @tc.name       : testAssert0005
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0500
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0005';
@@ -1221,12 +1221,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0600
-     * @tc.name       : testAssert0006
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0600
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0006';
@@ -1239,12 +1239,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0700
-     * @tc.name       : testAssert0007
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0700
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0007';
@@ -1258,12 +1258,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0800
-     * @tc.name       : testAssert0008
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0800
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0008';
@@ -1276,12 +1276,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0900
-     * @tc.name       : testAssert0009
-     * @tc.desc       : Test the function of the interface Assert.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAssert0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0900
+     * @tc.desc   Test the function of the interface Assert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAssert0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testAssert0009'
@@ -1294,12 +1294,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0900
-     * @tc.name       : testCount0001
-     * @tc.desc       : Test the function of the interface Count.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCount0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0900
+     * @tc.desc   Test the function of the interface Count.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCount0001';
@@ -1312,12 +1312,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
-     * @tc.name       : testCount0002
-     * @tc.desc       : Test the function of the interface Count.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCount0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
+     * @tc.desc   Test the function of the interface Count.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCount0002';
@@ -1330,12 +1330,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1100
-     * @tc.name       : testCount0003
-     * @tc.desc       : Test the function of the interface Count.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCount0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1100
+     * @tc.desc   Test the function of the interface Count.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCount0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCount0003';
@@ -1351,12 +1351,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1200
-     * @tc.name       : testCount0004
-     * @tc.desc       : Test the function of the interface Count.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCount0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1200
+     * @tc.desc   Test the function of the interface Count.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCount0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCount0004';
@@ -1371,12 +1371,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1300
-     * @tc.name       : testCountReset0001
-     * @tc.desc       : Test the function of the interface CountReset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCountReset0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1300
+     * @tc.desc   Test the function of the interface CountReset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCountReset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCountReset0001';
@@ -1391,12 +1391,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1400
-     * @tc.name       : testCountReset0002
-     * @tc.desc       : Test the function of the interface CountReset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCountReset0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1400
+     * @tc.desc   Test the function of the interface CountReset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCountReset0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCountReset0002';
@@ -1411,12 +1411,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1500
-     * @tc.name       : testCountReset0003
-     * @tc.desc       : Test the function of the interface CountReset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCountReset0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1500
+     * @tc.desc   Test the function of the interface CountReset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCountReset0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testCountReset0003';
@@ -1436,12 +1436,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1600
-     * @tc.name       : testDir0001
-     * @tc.desc       : Test the function of the interface Dir.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDir0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1600
+     * @tc.desc   Test the function of the interface Dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDir0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDir0001';
@@ -1459,12 +1459,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1700
-     * @tc.name       : testDir0002
-     * @tc.desc       : Test the function of the interface Dir.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDir0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1700
+     * @tc.desc   Test the function of the interface Dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDir0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDir0002';
@@ -1478,12 +1478,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1800
-     * @tc.name       : testDir0003
-     * @tc.desc       : Test the function of the interface Dir.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDir0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1800
+     * @tc.desc   Test the function of the interface Dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDir0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDir0003';
@@ -1497,12 +1497,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1900
-     * @tc.name       : testDir0004
-     * @tc.desc       : Test the function of the interface Dir.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDir0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1900
+     * @tc.desc   Test the function of the interface Dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDir0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDir0004';
@@ -1519,12 +1519,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2000
-     * @tc.name       : testDir0005
-     * @tc.desc       : Test the function of the interface Dir.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDir0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2000
+     * @tc.desc   Test the function of the interface Dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDir0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDir0005';
@@ -1538,12 +1538,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2100
-     * @tc.name       : testDir0006
-     * @tc.desc       : Test the function of the interface Dir.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDir0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2100
+     * @tc.desc   Test the function of the interface Dir.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDir0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDir0006';
@@ -1557,12 +1557,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2200
-     * @tc.name       : testTable0001
-     * @tc.desc       : Test the function of the interface Table.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTable0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2200
+     * @tc.desc   Test the function of the interface Table.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTable0001';
@@ -1575,12 +1575,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2300
-     * @tc.name       : testTable0002
-     * @tc.desc       : Test the function of the interface Table.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTable0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2300
+     * @tc.desc   Test the function of the interface Table.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTable0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTable0002';
@@ -1597,12 +1597,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2400
-     * @tc.name       : testTable0003
-     * @tc.desc       : Test the function of the interface Table.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTable0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2400
+     * @tc.desc   Test the function of the interface Table.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTable0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTable0003';
@@ -1621,12 +1621,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2500
-     * @tc.name       : testTable0004
-     * @tc.desc       : Test the function of the interface Table.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTable0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2500
+     * @tc.desc   Test the function of the interface Table.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTable0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTable0004';
@@ -1645,12 +1645,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2500
-     * @tc.name       : testTime0001
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2500
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0001';
@@ -1663,12 +1663,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2600
-     * @tc.name       : testTime0002
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2600
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0002';
@@ -1681,12 +1681,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2700
-     * @tc.name       : testTime0003
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2700
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0003';
@@ -1699,12 +1699,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2800
-     * @tc.name       : testTime0004
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2800
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0004';
@@ -1717,12 +1717,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2900
-     * @tc.name       : testTime0005
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2900
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0005';
@@ -1735,12 +1735,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3000
-     * @tc.name       : testTime0006
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3000
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0006';
@@ -1753,12 +1753,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3100
-     * @tc.name       : testTime0007
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3100
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0007';
@@ -1771,12 +1771,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3200
-     * @tc.name       : testTime0008
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3200
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0008';
@@ -1790,12 +1790,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
-     * @tc.name       : testTime0009
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0008';
@@ -1809,12 +1809,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
-     * @tc.name       : testTime0010
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0010';
@@ -1828,12 +1828,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3400
-     * @tc.name       : testTime0011
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3400
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0011';
@@ -1847,12 +1847,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3500
-     * @tc.name       : testTime0012
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3500
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0012';
@@ -1866,12 +1866,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3600
-     * @tc.name       : testTime0013
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3600
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0013';
@@ -1885,12 +1885,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3700
-     * @tc.name       : testTime0014
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3700
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0014';
@@ -1904,12 +1904,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3800
-     * @tc.name       : testTime0015
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3800
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0015';
@@ -1923,12 +1923,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3900
-     * @tc.name       : testTime0016
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3900
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0016';
@@ -1942,12 +1942,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4000
-     * @tc.name       : testTime0017
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4000
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0017';
@@ -1961,12 +1961,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4100
-     * @tc.name       : testTime0018
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4100
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0018';
@@ -1980,12 +1980,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4200
-     * @tc.name       : testTime0019
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4200
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0019';
@@ -1999,12 +1999,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4300
-     * @tc.name       : testTime0020
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4300
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0020';
@@ -2018,12 +2018,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4400
-     * @tc.name       : testTime0021
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4400
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0021';
@@ -2037,12 +2037,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4500
-     * @tc.name       : testTime0022
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4500
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0022';
@@ -2057,12 +2057,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4600
-     * @tc.name       : testTime0023
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4600
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0023';
@@ -2076,12 +2076,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
-     * @tc.name       : testTime0024
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0024';
@@ -2095,12 +2095,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4800
-     * @tc.name       : testTime0025
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTime0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4800
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTime0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTime0025';
@@ -2114,12 +2114,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4900
-     * @tc.name       : testTimeEnd0001
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4900
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0001';
@@ -2133,12 +2133,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5000
-     * @tc.name       : testTimeEnd0002
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTTimeEnd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5000
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTTimeEnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0002';
@@ -2152,12 +2152,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5100
-     * @tc.name       : testTimeEnd0003
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5100
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0003';
@@ -2171,12 +2171,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5200
-     * @tc.name       : testTimeEnd0004
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5200
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0004';
@@ -2190,12 +2190,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
-     * @tc.name       : testTimeEnd0005
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0005';
@@ -2209,12 +2209,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5400
-     * @tc.name       : testTimeEnd0006
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5400
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0006';
@@ -2228,12 +2228,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5500
-     * @tc.name       : testTimeEnd0007
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5500
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0007';
@@ -2247,12 +2247,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5600
-     * @tc.name       : testTimeEnd0008
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5600
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0008';
@@ -2267,12 +2267,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
-     * @tc.name       : testTimeEnd0009
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0008';
@@ -2287,12 +2287,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
-     * @tc.name       : testTimeEnd0010
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0010';
@@ -2307,12 +2307,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5900
-     * @tc.name       : testTimeEnd0011
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5900
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0011';
@@ -2327,12 +2327,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6000
-     * @tc.name       : testTimeEnd0012
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6000
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0012';
@@ -2347,12 +2347,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6100
-     * @tc.name       : testTimeEnd0013
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6100
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0013';
@@ -2367,12 +2367,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6200
-     * @tc.name       : testTimeEnd0014
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6200
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0014';
@@ -2387,12 +2387,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6300
-     * @tc.name       : testTimeEnd0015
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6300
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0015';
@@ -2407,12 +2407,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6400
-     * @tc.name       : testTimeEnd0016
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6400
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0016';
@@ -2427,12 +2427,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6500
-     * @tc.name       : testTimeEnd0017
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6500
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0017';
@@ -2447,12 +2447,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6700
-     * @tc.name       : testTimeEnd0018
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6700
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0018';
@@ -2467,12 +2467,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6800
-     * @tc.name       : testTimeEnd0019
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6800
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0019';
@@ -2487,12 +2487,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6900
-     * @tc.name       : testTimeEnd0020
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6900
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0020';
@@ -2507,12 +2507,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7000
-     * @tc.name       : testTimeEnd0021
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7000
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0021';
@@ -2527,12 +2527,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7100
-     * @tc.name       : testTimeEnd0022
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7100
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0022';
@@ -2548,12 +2548,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7200
-     * @tc.name       : testTimeEnd0023
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7200
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0023';
@@ -2568,12 +2568,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7300
-     * @tc.name       : testTimeEnd0024
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7300
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0024';
@@ -2588,12 +2588,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7400
-     * @tc.name       : testTimeEnd0025
-     * @tc.desc       : Test the function of the interface TimeEnd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeEnd0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7400
+     * @tc.desc   Test the function of the interface TimeEnd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeEnd0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0025';
@@ -2608,12 +2608,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7500
-     * @tc.name       : testTimeLog0001
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7500
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0001';
@@ -2629,12 +2629,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7600
-     * @tc.name       : testTimeLog0002
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7600
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0002';
@@ -2649,12 +2649,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7700
-     * @tc.name       : testTimeLog0003
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7700
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0003';
@@ -2670,12 +2670,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7800
-     * @tc.name       : testTimeLog0004
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7800
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0004';
@@ -2691,12 +2691,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7900
-     * @tc.name       : testTimeLog0005
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7900
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0005';
@@ -2712,12 +2712,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8000
-     * @tc.name       : testTimeLog0006
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8000
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0006';
@@ -2733,12 +2733,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8100
-     * @tc.name       : testTimeLog0007
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8100
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0007';
@@ -2754,12 +2754,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8200
-     * @tc.name       : testTimeLog0008
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8200
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0008';
@@ -2775,12 +2775,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8300
-     * @tc.name       : testTimeLog0009
-     * @tc.desc       : Test the function of the interface Time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8300
+     * @tc.desc   Test the function of the interface Time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0008';
@@ -2796,12 +2796,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8400
-     * @tc.name       : testTimeLog0010
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8400
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0010';
@@ -2817,12 +2817,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8500
-     * @tc.name       : testTimeLog0011
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8500
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0011';
@@ -2838,12 +2838,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8600
-     * @tc.name       : testTimeLog0012
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8600
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0012';
@@ -2859,12 +2859,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8700
-     * @tc.name       : testTimeLog0013
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8700
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0013';
@@ -2880,12 +2880,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8800
-     * @tc.name       : testTimeLog0014
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8800
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0014';
@@ -2901,12 +2901,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8900
-     * @tc.name       : testTimeLog0015
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8900
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0015';
@@ -2922,12 +2922,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9000
-     * @tc.name       : testTimeLog0016
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9000
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0016';
@@ -2943,12 +2943,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9100
-     * @tc.name       : testTimeLog0017
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9100
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0017';
@@ -2964,12 +2964,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9200
-     * @tc.name       : testTimeLog0018
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9200
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0018';
@@ -2985,12 +2985,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9300
-     * @tc.name       : testTimeLog0019
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9300
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0019';
@@ -3006,12 +3006,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9500
-     * @tc.name       : testTimeLog0020
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9500
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0020';
@@ -3027,12 +3027,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9600
-     * @tc.name       : testTimeLog0021
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9600
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0021';
@@ -3048,12 +3048,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9700
-     * @tc.name       : testTimeLog0022
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9700
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0022';
@@ -3070,12 +3070,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9800
-     * @tc.name       : testTimeLog0023
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9800
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0023';
@@ -3091,12 +3091,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9900
-     * @tc.name       : testTimeLog0024
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9900
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0024';
@@ -3112,12 +3112,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
-     * @tc.name       : testTimeLog0025
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0025';
@@ -3133,12 +3133,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1010
-     * @tc.name       : testTimeLog0026
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1010
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0026';
@@ -3160,12 +3160,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1020
-     * @tc.name       : testTimeLog0027
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1020
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0027';
@@ -3182,12 +3182,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1030
-     * @tc.name       : testTimeLog0028
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1030
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0028';
@@ -3205,12 +3205,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1040
-     * @tc.name       : testTimeLog0029
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1040
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0029';
@@ -3227,12 +3227,12 @@ export default function ConsoleTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1050
-     * @tc.name       : testTimeLog0030
-     * @tc.desc       : Test the function of the interface TimeLog.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTimeLog0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1050
+     * @tc.desc   Test the function of the interface TimeLog.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimeLog0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeLog0030';

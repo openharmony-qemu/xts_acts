@@ -26,52 +26,52 @@ export default function commonAttrsBorderWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0100
-     * @tc.name       : testCommonAttrsBorderWidth001
-     * @tc.desc       : testing borderWidth for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderWidth001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0100
+     * @tc.desc   testing borderWidth for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0200
-     * @tc.name       : testCommonAttrsBorderWidth002
-     * @tc.desc       : testing borderWidth for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderWidth002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0200
+     * @tc.desc   testing borderWidth for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0300
-     * @tc.name       : testCommonAttrsBorderWidth003
-     * @tc.desc       : testing borderWidth for commonAttrs with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCommonAttrsBorderWidth003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0300
+     * @tc.desc   testing borderWidth for commonAttrs with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderWidth003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0400
-     * @tc.name       : testCommonAttrsBorderWidth004
-     * @tc.desc       : testing borderWidth for commonAttrs with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCommonAttrsBorderWidth004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERWIDTH_0400
+     * @tc.desc   testing borderWidth for commonAttrs with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderWidth004()).assertEqual(0)

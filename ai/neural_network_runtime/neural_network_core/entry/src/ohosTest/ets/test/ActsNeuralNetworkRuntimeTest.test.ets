@@ -22,13 +22,13 @@ const OH_NN_INVALID_PARAMETER = 2;
 export default function ActsNeuralNetworkRuntimeTest() {
   describe('ActsNeuralNetworkRuntimeTest', () => {
 
-     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0100
-     * @tc.name    : NnrtTensorQuantParamSetScales001
-     * @tc.desc    : set scales on OH_NNQuantParam implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   NnrtTensorQuantParamSetScales001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0100
+     * @tc.desc   set scales on OH_NNQuantParam implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetScales001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -43,12 +43,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0200
-     * @tc.name    : NnrtTensorQuantParamSetScales002
-     * @tc.desc    : set scales on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetScales002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0200
+     * @tc.desc   set scales on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetScales002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -63,12 +63,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0300
-     * @tc.name    : NnrtTensorQuantParamSetScales003
-     * @tc.desc    : set  on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetScales003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0300
+     * @tc.desc   set  on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetScales003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -83,12 +83,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0400
-     * @tc.name    : NnrtTensorQuantParamSetScales004
-     * @tc.desc    : set scales on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetScales004
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETSCALES_0400
+     * @tc.desc   set scales on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetScales004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -103,12 +103,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0100
-     * @tc.name    : NnrtTensorQuantParamSetZeroPoints001
-     * @tc.desc    : set zero points on OH_NNQuantParam implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetZeroPoints001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0100
+     * @tc.desc   set zero points on OH_NNQuantParam implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetZeroPoints001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -123,12 +123,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0200
-     * @tc.name    : NnrtTensorQuantParamSetZeroPoints002
-     * @tc.desc    : set zero points on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetZeroPoints002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0200
+     * @tc.desc   set zero points on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetZeroPoints002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -143,12 +143,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0300
-     * @tc.name    : NnrtTensorQuantParamSetZeroPoints003
-     * @tc.desc    : set zero points on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetZeroPoints003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0300
+     * @tc.desc   set zero points on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetZeroPoints003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -163,12 +163,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0400
-     * @tc.name    : NnrtTensorQuantParamSetZeroPoints004
-     * @tc.desc    : set zero points on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetZeroPoints004
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETZEROPOINTS_0400
+     * @tc.desc   set zero points on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetZeroPoints004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -183,12 +183,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0100
-     * @tc.name    : NnrtTensorQuantParamSetNumBits001
-     * @tc.desc    : set number bits on OH_NNQuantParam implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetNumBits001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0100
+     * @tc.desc   set number bits on OH_NNQuantParam implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetNumBits001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -203,12 +203,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0200
-     * @tc.name    : NnrtTensorQuantParamSetNumBits002
-     * @tc.desc    : set number bits on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetNumBits002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0200
+     * @tc.desc   set number bits on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetNumBits002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -223,12 +223,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0300
-     * @tc.name    : NnrtTensorQuantParamSetNumBits003
-     * @tc.desc    : set number bits on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetNumBits003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0300
+     * @tc.desc   set number bits on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetNumBits003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -243,12 +243,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0400
-     * @tc.name    : NnrtTensorQuantParamSetNumBits004
-     * @tc.desc    : set number bits on OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamSetNumBits004
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMSETNUMBITS_0400
+     * @tc.desc   set number bits on OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamSetNumBits004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -263,12 +263,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMDESTROY_0100
-     * @tc.name    : NnrtTensorQuantParamDestroy001
-     * @tc.desc    : set number bits on OH_NNQuantParam implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamDestroy001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMDESTROY_0100
+     * @tc.desc   set number bits on OH_NNQuantParam implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -283,12 +283,12 @@ export default function ActsNeuralNetworkRuntimeTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_QUANTPARAMDESTROY_0200
-     * @tc.name    : NnrtTensorQuantParamDestroy002
-     * @tc.desc    : destroy a OH_NNQuantParam implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorQuantParamDestroy002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_QUANTPARAMDESTROY_0200
+     * @tc.desc   destroy a OH_NNQuantParam implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorQuantParamDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

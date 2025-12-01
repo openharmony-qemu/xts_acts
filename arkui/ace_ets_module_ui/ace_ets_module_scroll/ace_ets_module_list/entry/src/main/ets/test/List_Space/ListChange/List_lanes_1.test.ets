@@ -45,12 +45,12 @@ export default function List_lanes_1() {
     });
 
     /**
+     * @tc.name   testListLanesToOne
      * @tc.number SUB_ACE_LIST_LANES_TEST_0100
-     * @tc.name testListLanesToOne
-     * @tc.desc List parent component binds the lanes property lanes(1)
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   List parent component binds the lanes property lanes(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListLanesToOne',  Level.LEVEL0, async (done: Function) => {
       console.info('testListLanesToOne START');

@@ -41,14 +41,14 @@ export default function showDialogHoverMode(){
       }
       done();
     });
-    /* *
-    * @tc.number: showDialogHoverMode_0100
-    * @tc.name  : showDialogHoverMode_0100
-    * @tc.desc  : To test enableHoverMode(false) and hoverModeArea(default)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showDialogHoverMode_0100
+     * @tc.number showDialogHoverMode_0100
+     * @tc.desc   To test enableHoverMode(false) and hoverModeArea(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogHoverMode_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('showDialogHoverMode_0100 START');
       let driver = await Driver.create()
@@ -68,14 +68,14 @@ export default function showDialogHoverMode(){
       console.info('[showDialogHoverMode_0100] END');
       done();
     });
-    /* *
-    * @tc.number: showDialogHoverMode_0200
-    * @tc.name  : showDialogHoverMode_0200
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(default)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showDialogHoverMode_0200
+     * @tc.number showDialogHoverMode_0200
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogHoverMode_0200', Level.LEVEL0, async (done:Function) =>{
       console.info('showDialogHoverMode_0200 START');
       let driver = await Driver.create()
@@ -99,14 +99,14 @@ export default function showDialogHoverMode(){
       done();
     });
 
-    /* *
-   * @tc.number: showDialogHoverMode_0300
-   * @tc.name  : showDialogHoverMode_0300
-   * @tc.desc  : To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-   * @tc.level : Level 3
-   * @tc.type
-   * @tc.size
-   */
+    /**
+     * @tc.name   showDialogHoverMode_0300
+     * @tc.number showDialogHoverMode_0300
+     * @tc.desc   To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogHoverMode_0300', Level.LEVEL0, async (done:Function) =>{
       console.info('showDialogHoverMode_0300 START');
       let driver = await Driver.create()
@@ -130,14 +130,14 @@ export default function showDialogHoverMode(){
       done();
     });
 
-    /* *
-    * @tc.number: showDialogHoverMode_0400
-    * @tc.name  : showDialogHoverMode_0400
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showDialogHoverMode_0400
+     * @tc.number showDialogHoverMode_0400
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogHoverMode_0400', Level.LEVEL0, async (done:Function) =>{
       console.info('showDialogHoverMode_0400 START');
       let driver = await Driver.create()
@@ -164,14 +164,14 @@ export default function showDialogHoverMode(){
       done();
     });
 
-    /* *
-    * @tc.number: showDialogHoverMode_0500
-    * @tc.name  : showDialogHoverMode_0500
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showDialogHoverMode_0500
+     * @tc.number showDialogHoverMode_0500
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogHoverMode_0500', Level.LEVEL0, async (done:Function) =>{
       console.info('showDialogHoverMode_0500 START');
       let driver = await Driver.create()
@@ -200,14 +200,14 @@ export default function showDialogHoverMode(){
       console.info('[showDialogHoverMode_0500] END');
       done();
     });
-    /* *
-    * @tc.number: showDialogHoverMode_0600
-    * @tc.name  : showDialogHoverMode_0600
-    * @tc.desc  : To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   showDialogHoverMode_0600
+     * @tc.number showDialogHoverMode_0600
+     * @tc.desc   To test enableHoverMode(false) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogHoverMode_0600', Level.LEVEL0, async (done:Function) =>{
       console.info('showDialogHoverMode_0600 START');
       let driver = await Driver.create()

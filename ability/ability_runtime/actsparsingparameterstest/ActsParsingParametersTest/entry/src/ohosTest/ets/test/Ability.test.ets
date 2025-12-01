@@ -42,12 +42,14 @@ export default function abilityTest() {
         });
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0100
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0100
+     * @tc.number Acts_ParsingParameters_0100
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0100', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'aabbccdd\'')
@@ -62,12 +64,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0200
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0200
+     * @tc.number Acts_ParsingParameters_0200
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0200', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf abcd\'')
@@ -82,12 +86,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0300
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0300
+     * @tc.number Acts_ParsingParameters_0300
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0300', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profileabdc\'')
@@ -103,12 +109,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0400
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0400
+     * @tc.number Acts_ParsingParameters_0400
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0400', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'dumpheapabdc\'')
@@ -123,12 +131,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0500
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0500
+     * @tc.number Acts_ParsingParameters_0500
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0500', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf asdb1000\'')
@@ -143,12 +153,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0600
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0600
+     * @tc.number Acts_ParsingParameters_0600
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0600', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 1000asdb\'')
@@ -163,12 +175,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0700
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0700
+     * @tc.number Acts_ParsingParameters_0700
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0700', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperfasdb\'')
@@ -183,12 +197,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0800
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   SUB_AA_ACTS_ParsingParameters_0800
+     * @tc.number Acts_ParsingParameters_0800
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_ACTS_ParsingParameters_0800', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'dumpheap\'')
@@ -204,12 +220,14 @@ export default function abilityTest() {
     })
 
 
-    /*
-    * @tc.number  Acts_ParsingParameters_0900
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_0900
+     * @tc.number Acts_ParsingParameters_0900
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_0900', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile\'')
@@ -224,12 +242,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1000
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1000
+     * @tc.number Acts_ParsingParameters_1000
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1000', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -244,12 +264,14 @@ export default function abilityTest() {
       expect(res).assertContain('start ability successfully');
       done();
     })
-    /*
-    * @tc.number  Acts_ParsingParameters_1100
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1100
+     * @tc.number Acts_ParsingParameters_1100
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1100', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -265,12 +287,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1200
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1200
+     * @tc.number Acts_ParsingParameters_1200
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1200', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -286,12 +310,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1300
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1300
+     * @tc.number Acts_ParsingParameters_1300
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1300', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -307,12 +333,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1400
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1400
+     * @tc.number Acts_ParsingParameters_1400
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1400', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -328,12 +356,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1500
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1500
+     * @tc.number Acts_ParsingParameters_1500
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1500', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -349,12 +379,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1600
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1600
+     * @tc.number Acts_ParsingParameters_1600
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1600', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -370,12 +402,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1700
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1700
+     * @tc.number Acts_ParsingParameters_1700
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1700', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -391,12 +425,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1800
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1800
+     * @tc.number Acts_ParsingParameters_1800
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1800', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -412,12 +448,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_1900
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_1900
+     * @tc.number Acts_ParsingParameters_1900
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_1900', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 99\'')
@@ -432,12 +470,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_2000
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_2000
+     * @tc.number Acts_ParsingParameters_2000
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_2000', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 5001\'')
@@ -452,12 +492,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_2100
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_2100
+     * @tc.number Acts_ParsingParameters_2100
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_2100', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile jsperf 50000\'')
@@ -472,12 +514,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_2200
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_2200
+     * @tc.number Acts_ParsingParameters_2200
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_2200', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -493,12 +537,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_2300
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_2300
+     * @tc.number Acts_ParsingParameters_2300
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_2300', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await sleep(200);
@@ -514,12 +560,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_2400
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_2400
+     * @tc.number Acts_ParsingParameters_2400
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_2400', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'dumpheap abcd\'')
@@ -534,12 +582,14 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-    * @tc.number  Acts_ParsingParameters_2500
-    * @tc.name    Tuning parameter settings
-    * @tc.desc    Stage model parsing parameters
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   Acts_ParsingParameters_2500
+     * @tc.number Acts_ParsingParameters_2500
+     * @tc.desc   Stage model parsing parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ParsingParameters_2500', Level.LEVEL0, async (done: Function) => {
       let res: string = ""
       await abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsability -p \'profile abcd\'')

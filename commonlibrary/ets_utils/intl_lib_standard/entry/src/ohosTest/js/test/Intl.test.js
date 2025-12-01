@@ -20,39 +20,39 @@ describe('etsIntlFunTest', function () {
     var number = 123456.789;
     var vehicles = ['Motorcycle', 'Bus', 'Car'];
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_001
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_001
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_001
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var datefmt = new Intl.DateTimeFormat('en-GB');
         expect(datefmt !== null).assertTrue();
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_002
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_002
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_002
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var datefmt = new Intl.DateTimeFormat();
         expect(datefmt !== null).assertTrue();
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_003
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_003
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_003
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var newDate = new Date((24 * 60 * 60 * 1000) * (52 * 365 + 9 * 30 + 23));
         var options =
@@ -60,34 +60,34 @@ describe('etsIntlFunTest', function () {
                 hour: "2-digit", minute: "2-digit", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en-US", options).format;
         console.log("intlDateTimeFormatTest003::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
+        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_004
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_004
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_004
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options =
             { year: "2-digit", month: "2-digit", day: "2-digit",
                 hour: "2-digit", minute: "2-digit", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en", options).format;
         console.log("intlDateTimeFormatTest004::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
+        expect(intlObj(newDate)).assertEqual("10/08/22, 12:00 AM");
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_005
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_005
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_005
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options =
             { year: "numeric", month: "long", day: "numeric",
@@ -95,17 +95,17 @@ describe('etsIntlFunTest', function () {
             timeZoneName: "short", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat(["pt-BR", "pt-PT"], options).format;
         console.log("intlDateTimeFormatTest005::" + intlObj(newDate));
-        expect(intlObj(newDate)).assertEqual("8 de outubro de 2022 00:00 UTC");
+        expect(intlObj(newDate)).assertEqual("8 de outubro de 2022 às 00:00 UTC");
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_006
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_006
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_006
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var swissLocales = ["de-CH", "fr-CH", "it-CH", "rm-CH"];
         var options =
@@ -118,13 +118,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_007
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_007
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_007
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options =
             { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
@@ -134,13 +134,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_008
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_008
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_008
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("en-GB", options).format;
@@ -149,13 +149,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_009
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_009
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_009
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options =
             { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
@@ -165,13 +165,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_010
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_010
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_010
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options =
             { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
@@ -181,13 +181,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_011
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_011
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_011
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat(['ban', 'zh'], options).format;
@@ -196,13 +196,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_012
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_012
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_012
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat(['en', 'zh'], options).format;
@@ -211,13 +211,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_013
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_013
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_013
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat(['abc', 'ban'], options).format;
@@ -226,13 +226,13 @@ describe('etsIntlFunTest', function () {
     })
     
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_014
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_014
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_014
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
         var intlObj = new Intl.DateTimeFormat("zh-CN", options).format;
@@ -241,13 +241,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_015
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_015
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_015
+     * @tc.desc   The current function handles Intl DateTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric",
             hour: "2-digit", minute: "2-digit", timeZoneName: "short", timeZone: "UTC" };
@@ -258,14 +258,14 @@ describe('etsIntlFunTest', function () {
         expect(intlObj.resolvedOptions().timeZoneName).assertEqual('short');
     })
 
-    /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_018
-     * @tc.name      : testIntlDateTimeFormat
-     * @tc.desc      : The current function handles Intl DateTimeFormatToParts
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     /**
+      * @tc.name   SUB_ARK_ETS_INTL_DATETIMEFORMAT_018
+      * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_018
+      * @tc.desc   The current function handles Intl DateTimeFormatToParts
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SUB_ARK_ETS_INTL_DATETIMEFORMAT_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric",
             hour: "2-digit", minute: "2-digit", timeZoneName: "short", timeZone: "UTC", hour12: true };
@@ -279,13 +279,13 @@ describe('etsIntlFunTest', function () {
 
     console.log('*************IntlNumber*************');
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_001
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_001
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_001
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('zh');
         console.log("intlNumberFormatTest001::" + intlObj.format(number));
@@ -293,26 +293,26 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_002
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_002
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_002
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat();
         expect(intlObj !== null).assertTrue();
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_003
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_003
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_003
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('zh-u-nu-latn');
         console.log("intlNumberFormatTest003::" + intlObj.format(number));
@@ -320,13 +320,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_004
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_004
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_004
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('zh-u-nu-arab');
         console.log("intlNumberFormatTest004::" + intlObj.format(number));
@@ -334,13 +334,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_005
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_005
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_005
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('en');
         console.log("intlNumberFormatTest005::" + intlObj.format(number));
@@ -348,13 +348,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_006
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_006
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_006
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('en-u-nu-thai');
         console.log("intlNumberFormatTest006::" + intlObj.format(number));
@@ -362,13 +362,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_007
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_007
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_007
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('en-GB');
         console.log("intlNumberFormatTest007::" + intlObj.format(number));
@@ -376,13 +376,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_008
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_008
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_008
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('en-US');
         console.log("intlNumberFormatTest008::" + intlObj.format(number));
@@ -390,13 +390,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_009
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_009
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_009
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat('aa');
         console.log("intlNumberFormatTest009::" + intlObj.format(number));
@@ -404,13 +404,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_010
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_010
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_010
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat(['zh','en']);
         console.log("intlNumberFormatTest010::" + intlObj.format(number));
@@ -418,13 +418,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_011
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_011
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_011
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat(['en','aa']);
         console.log("intlNumberFormatTest011::" + intlObj.format(number));
@@ -432,13 +432,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_012
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_012
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_012
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat(['aa','bb']);
         console.log("intlNumberFormatTest012::" + intlObj.format(number));
@@ -446,13 +446,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_013
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_013
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_013
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat(['aa','bb','es']);
         console.log("intlNumberFormatTest013::" + intlObj.format(number));
@@ -460,13 +460,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_014
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_014
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_014
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var intlObj = new Intl.NumberFormat(['aa','it','bb']);
         console.log("intlNumberFormatTest014::" + intlObj.format(number));
@@ -474,13 +474,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_015
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_015
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_015
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var option = { style: 'decimal', notation: 'scientific' };
         var intlObj = new Intl.NumberFormat('en-GB', option);
@@ -491,13 +491,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_016
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_016
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_016
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var option = { style: 'currency', currency: 'EUR',
             currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always' };
@@ -513,13 +513,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_017
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_017
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_017
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var option =  { style: 'currency', currency: 'USD',
             currencyDisplay: 'code', currencySign: 'accounting', signDisplay: 'always' };
@@ -531,13 +531,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_018
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_018
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_018
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var option = { style: 'currency', currency: 'CNY',
             currencyDisplay: 'symbol', currencySign: 'accounting', signDisplay: 'always' };
@@ -547,13 +547,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_019
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_019
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_019
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var option = { style: 'currency', currency: 'JPY',
             currencyDisplay: 'narrowSymbol', currencySign: 'accounting', signDisplay: 'always' };
@@ -564,13 +564,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_NUMBERFORMAT_020
-     * @tc.name      : testIntlNumberFormat
-     * @tc.desc      : The current function handles Intl NumberFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_020
+     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_020
+     * @tc.desc   The current function handles Intl NumberFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_NUMBERFORMAT_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var option = { style: 'unit', unit: 'meter',
             unitDisplay: 'long', maximumFractionDigits: 2, minimumIntegerDigits: 7 };
@@ -584,13 +584,13 @@ describe('etsIntlFunTest', function () {
 
     console.log('*************Collator*************');
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_001
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_001
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_001
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator();
         var value = coll.compare('a', 'b');
@@ -599,13 +599,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_002
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_002
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_002
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator();
         var value = coll.compare('a', 'a');
@@ -614,13 +614,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_003
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_003
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_003
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator();
         var value = coll.compare('b', 'a');
@@ -629,13 +629,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_004
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_004
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_004
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh');
         var value = coll.compare('a', 'b');
@@ -644,13 +644,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_005
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_005
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_005
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'collation': 'eor'});
         var value = coll.compare('a', 'b');
@@ -660,13 +660,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_006
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_006
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_006
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'sensitivity': 'base'});
         var value = coll.compare('a', 'b');
@@ -676,13 +676,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_007
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_007
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_007
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'caseFirst': 'upper'});
         var value = coll.compare('a', 'b');
@@ -692,13 +692,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_008
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_008
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_008
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'numeric': true});
         var value = coll.compare('a', 'b');
@@ -708,13 +708,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_009
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_009
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_009
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'ignorePunctuation': true});
         var value = coll.compare('a', 'b');
@@ -724,13 +724,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_010
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_010
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_010
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'usage': 'sort'});
         var value = coll.compare('a', 'b');
@@ -740,13 +740,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_011
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_011
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_011
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'collation': 'eor', 'usage': 'sort'});
         var value = coll.compare('a', 'b');
@@ -757,13 +757,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_012
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_012
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_012
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'collation': 'eor', 'usage': 'sort'});
         var value = coll.compare('a', 'a');
@@ -774,13 +774,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_013
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_013
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_013
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'collation': 'eor', 'usage': 'sort',
             'ignorePunctuation': true });
@@ -793,13 +793,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_COLLATOR_014
-     * @tc.name      : testIntlCollator
-     * @tc.desc      : The current function handles Intl Collator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_COLLATOR_014
+     * @tc.number SUB_ARK_ETS_INTL_COLLATOR_014
+     * @tc.desc   The current function handles Intl Collator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_COLLATOR_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var coll = new Intl.Collator('zh', {'collation': 'eor', 'usage': 'sort',
             'ignorePunctuation': true, 'numeric': true });
@@ -814,13 +814,13 @@ describe('etsIntlFunTest', function () {
 
     console.log('*************PluralRules*************');
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_001
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_001
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_001
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules();
         var value = plur.select(0);
@@ -829,13 +829,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_002
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_002
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_002
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('zh');
         var value = plur.select(0);
@@ -844,13 +844,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_003
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_003
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_003
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('zh',  {'type': 'ordinal'});
         var value = plur.select(0);
@@ -859,13 +859,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_004
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_004
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_004
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('zh', {'localeMatcher': 'lookup'});
         var value = plur.select(0);
@@ -874,13 +874,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_005
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_005
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_005
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('zh', {'minimumIntegerDigits': 10});
         var value = plur.select(0);
@@ -889,13 +889,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_006
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_006
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_006
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('zh', {'minimumFractionDigits': 11});
         var value = plur.select(0);
@@ -904,13 +904,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_007
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_007
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_007
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('en-GB');
         var value = plur.select(0);
@@ -919,13 +919,13 @@ describe('etsIntlFunTest', function () {
     })
     
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_PLURALRULES_008
-     * @tc.name      : testIntlPluralRules
-     * @tc.desc      : The current function handles Intl PluralRules
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_PLURALRULES_008
+     * @tc.number SUB_ARK_ETS_INTL_PLURALRULES_008
+     * @tc.desc   The current function handles Intl PluralRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_PLURALRULES_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var plur = new Intl.PluralRules('en-GB', {'minimumFractionDigits': 11});
         var value = plur.select(0);
@@ -936,13 +936,13 @@ describe('etsIntlFunTest', function () {
 
     console.log('*************RelativeTimeFormat*************');
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_001
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_001
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_001
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat();
         var value = relativetimefmt.format(100, 'second');
@@ -951,13 +951,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_002
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_002
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_002
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en");
         var value = relativetimefmt.format(100, 'second');
@@ -966,13 +966,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_003
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_003
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_003
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh");
         var value = relativetimefmt.format(100, 'second');
@@ -981,13 +981,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_004
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_004
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_004
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en");
         var value = relativetimefmt.format(100, 'quarter');
@@ -996,13 +996,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_005
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_005
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_005
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en");
         var value = relativetimefmt.format(6, 'quarter');
@@ -1011,13 +1011,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_006
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_006
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_006
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh");
         var value = relativetimefmt.format(100, 'quarter');
@@ -1026,43 +1026,43 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_007
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_007
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_007
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(100, 'second');
         console.log('RelativeTimeFormatTest007 :' + value);
-        expect(value).assertEqual('in 100 sec.');
+        expect(value).assertEqual('in 100s');
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_008
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_008
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_008
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(-1, 'day');
         console.log('RelativeTimeFormatTest008 :' + value);
-        expect(value).assertEqual('1 day ago');
+        expect(value).assertEqual('1d ago');
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_009
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_009
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_009
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { style: "narrow" });
         var value = relativetimefmt.format(-1, 'day');
@@ -1071,28 +1071,28 @@ describe('etsIntlFunTest', function () {
     })
     
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_010
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_010
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_010
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { style: "narrow" });
         var value = relativetimefmt.format(2, 'day');
         console.log('RelativeTimeFormatTest010 :' + value);
-        expect(value).assertEqual('in 2 days');
+        expect(value).assertEqual('in 2d');
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_011
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_011
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_011
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { style: "narrow" });
         var value = relativetimefmt.format(2, 'day');
@@ -1101,13 +1101,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_012
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_012
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_012
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
         var value = relativetimefmt.format(2, 'day');
@@ -1116,13 +1116,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_013
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_013
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_013
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { numeric: "auto" });
         var value = relativetimefmt.format(2, 'day');
@@ -1131,13 +1131,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_014
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_014
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_014
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
         var value = relativetimefmt.format(-1, 'year');
@@ -1146,13 +1146,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_015
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_015
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_015
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { numeric: "auto" });
         var value = relativetimefmt.format(-1, 'year');
@@ -1161,13 +1161,13 @@ describe('etsIntlFunTest', function () {
     })
     
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_016
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_016
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_016
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
@@ -1180,13 +1180,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_017
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_017
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_017
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { numeric: "auto" });
         var value = relativetimefmt.format(-1, 'quarter');
@@ -1195,13 +1195,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_018
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_018
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_018
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "auto", style: 'short'});
         var value = relativetimefmt.format(-1, 'quarter');
@@ -1212,13 +1212,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_019
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_019
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_019
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "auto", style: 'short'});
         var value = relativetimefmt.format(1, 'quarter');
@@ -1229,13 +1229,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_020
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_020
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_020
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "auto", style: 'narrow'});
         var value = relativetimefmt.format(1, 'quarter');
@@ -1246,30 +1246,30 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_021
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_021
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_021
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "always", style: 'narrow'});
         var value = relativetimefmt.format(1, 'quarter');
         console.log('RelativeTimeFormatTest021 :' + value);
-        expect(value).assertEqual('in 1 qtr.');
+        expect(value).assertEqual('in 1q');
         expect(relativetimefmt.resolvedOptions().numeric).assertEqual('always');
         expect(relativetimefmt.resolvedOptions().style).assertEqual('narrow');
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_022
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_022
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_022
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { numeric: "always", style: 'narrow'});
         var value = relativetimefmt.format(1, 'quarter');
@@ -1280,13 +1280,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_023
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_023
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_023
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("en", { numeric: "always", style: 'long'});
         var value = relativetimefmt.format(1, 'quarter');
@@ -1297,13 +1297,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_024
-     * @tc.name      : testIntlRelativeTimeFormat
-     * @tc.desc      : The current function handles Intl RelativeTimeFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_024
+     * @tc.number SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_024
+     * @tc.desc   The current function handles Intl RelativeTimeFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_RELATIVETIMEFORMAT_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var relativetimefmt = new Intl.RelativeTimeFormat("zh", { numeric: "always", style: 'long'});
         var value = relativetimefmt.format(1, 'quarter');
@@ -1315,13 +1315,13 @@ describe('etsIntlFunTest', function () {
     
     console.log('*************ListFormat*************');
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_001
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_001
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_001
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat();
         var value = listform.format(vehicles);
@@ -1330,13 +1330,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_002
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_002
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_002
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh");
         var value = listform.format(vehicles);
@@ -1345,13 +1345,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_003
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_003
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_003
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en");
         var value = listform.format(vehicles);
@@ -1360,13 +1360,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_004
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_004
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_004
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh", {style: 'long'});
         var value = listform.format(vehicles);
@@ -1375,13 +1375,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_005
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_005
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_005
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh", {style: 'short'});
         var value = listform.format(vehicles);
@@ -1390,28 +1390,28 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_006
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_006
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_006
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh", {style: 'narrow'});
         var value = listform.format(vehicles);
         console.log('ListFormatTest006 :' + value);
-        expect(value).assertEqual('Motorcycle、Bus和Car');
+        expect(value).assertEqual('Motorcycle、Bus、Car');
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_007
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_007
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_007
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'long'});
         var value = listform.format(vehicles);
@@ -1420,13 +1420,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_008
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_008
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_008
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'short'});
         var value = listform.format(vehicles);
@@ -1435,13 +1435,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_009
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_009
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_009
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'narrow'});
         var value = listform.format(vehicles);
@@ -1450,13 +1450,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_010
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_010
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_010
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh", {style: 'long', type: 'conjunction' });
         var value = listform.format(vehicles);
@@ -1465,13 +1465,13 @@ describe('etsIntlFunTest', function () {
     })
     
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_011
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_011
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_011
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh", {style: 'long', type: 'disjunction' });
         var value = listform.format(vehicles);
@@ -1480,13 +1480,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_012
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_012
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_012
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("zh", {style: 'long', type: 'unit' });
         var value = listform.format(vehicles);
@@ -1495,13 +1495,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_013
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_013
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_013
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'short', type: 'conjunction' });
         var value = listform.format(vehicles);
@@ -1510,13 +1510,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_014
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_014
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_014
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'short', type: 'disjunction' });
         var value = listform.format(vehicles);
@@ -1525,13 +1525,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_015
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_015
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_015
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'short', type: 'unit' });
         var value = listform.format(vehicles);
@@ -1540,13 +1540,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_016
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_016
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_016
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'narrow', type: 'conjunction' });
         var value = listform.format(vehicles);
@@ -1557,13 +1557,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_017
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_017
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_017
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'narrow', type: 'disjunction' });
         var value = listform.format(vehicles);
@@ -1574,13 +1574,13 @@ describe('etsIntlFunTest', function () {
     })
 
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_LISTFORMAT_018
-     * @tc.name      : testIntlListFormat
-     * @tc.desc      : The current function handles Intl ListFormat
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   SUB_ARK_ETS_INTL_LISTFORMAT_018
+     * @tc.number SUB_ARK_ETS_INTL_LISTFORMAT_018
+     * @tc.desc   The current function handles Intl ListFormat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARK_ETS_INTL_LISTFORMAT_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var listform = new Intl.ListFormat("en", {style: 'narrow', type: 'unit' });
         var value = listform.format(vehicles);

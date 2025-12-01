@@ -28,12 +28,12 @@ export default function windowErrCode1300006() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
     })
     /**
-     * @tc.number     : testCreateWindowCallbackErrCode1300006_0100
-     * @tc.name       : testCreateWindowCallbackErrCode1300006_0100
-     * @tc.desc       : testCreateWindowCallbackErrCode1300006_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testCreateWindowCallbackErrCode1300006_0100
+     * @tc.number testCreateWindowCallbackErrCode1300006_0100
+     * @tc.desc   testCreateWindowCallbackErrCode1300006_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindowCallbackErrCode1300006_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testCreateWindowCallbackErrCode1300006_0100";
@@ -65,12 +65,12 @@ export default function windowErrCode1300006() {
       }
     })
     /**
-     * @tc.number     : testCreateWindowPromiseErrCode1300006_0100
-     * @tc.name       : testCreateWindowPromiseErrCode1300006_0100
-     * @tc.desc       : testCreateWindowPromiseErrCode1300006_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testCreateWindowPromiseErrCode1300006_0100
+     * @tc.number testCreateWindowPromiseErrCode1300006_0100
+     * @tc.desc   testCreateWindowPromiseErrCode1300006_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindowPromiseErrCode1300006_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testCreateWindowPromiseErrCode1300006_0100";

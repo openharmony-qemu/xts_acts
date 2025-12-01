@@ -29,14 +29,12 @@ export default function fileIOFileProperties() {
   describe('fileIO_file_properties', (): void => {
 
     /**
+     * @tc.name   fileIO_test_open_file_static_000
      * @tc.number SUB_BASIC_FM_FileAPI_FILE_0100
-     * @tc.name fileIO_test_open_file_static_000
-     * @tc.desc Test the properties of the File object.
-     * The File object is obtained through the open interface.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the properties of the File object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_file_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_open_file_static_000');
@@ -56,14 +54,12 @@ export default function fileIOFileProperties() {
     });
 
     /**
+     * @tc.name   fileIO_test_dup_file_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FILE_0200
-     * @tc.name fileIO_test_dup_file_static_001
-     * @tc.desc Test the properties of the File object.
-     * The File object is obtained through the dup interface.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the properties of the File object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_dup_file_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_dup_file_static_001');

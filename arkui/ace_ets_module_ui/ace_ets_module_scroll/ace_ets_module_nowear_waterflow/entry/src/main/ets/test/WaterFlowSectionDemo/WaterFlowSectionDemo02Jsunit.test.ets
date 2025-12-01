@@ -41,12 +41,12 @@ export default function WaterFlowSectionDemo02Jsunit() {
       done();
     });
     /**
-     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_WATERFLOW_SECTIONS_0010
      * @tc.name   WaterFlowSectionDemo02Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_WATERFLOW_SECTIONS_0010
      * @tc.desc   Set columnsTemplate to multiple columns and set Sections.
-     * @tc.level  3
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowSectionDemo02Jsunit_0100', Level.LEVEL3, async (done: Function) => {
       console.info('WaterFlowSectionDemo02Jsunit_0100 START');

@@ -66,12 +66,12 @@ export default function List_ListDirection() {
     });
 
     /**
+     * @tc.name   testListListDirectionAxisVertical
      * @tc.number SUB_ACE_LIST_LIDTDIRECTION_TEST_0100
-     * @tc.name testListListDirectionAxisVertical
-     * @tc.desc List parent component binding direction property and value set to Axis.Vertical
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   List parent component binding direction property and value set to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListListDirectionAxisVertical',  Level.LEVEL0, async (done: Function) => {
       console.info('testListListDirectionAxisVertical START');

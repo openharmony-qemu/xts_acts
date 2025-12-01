@@ -45,13 +45,13 @@ export default function canvas2Jsunit() {
       console.info("canvas2 after each called");
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_testTwoCanvas01
-     * @tc.name: testTwoCanvas01
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+    /**
+     * @tc.name   testTwoCanvas01
+     * @tc.number SUB_ARKUI_API_testTwoCanvas01
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTwoCanvas01', Level.LEVEL0, async (done: Function) => {
       console.info('[testTwoCanvas01] START');

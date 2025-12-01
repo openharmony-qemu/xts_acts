@@ -41,12 +41,14 @@ export default function UIfontTest() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_ArkUI_font_001
-       * @tc.name  : UIfont_001
-       * @tc.desc  : font fontDir test
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   UIfont_001
+     * @tc.number SUB_ACE_ArkUI_font_001
+     * @tc.desc   font fontDir test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('UIfont_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[UIfont_001] START');
@@ -67,12 +69,14 @@ export default function UIfontTest() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_ArkUI_font_002
-       * @tc.name  : UIfont_002
-       * @tc.desc  : font generic test
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   UIfont_002
+     * @tc.number SUB_ACE_ArkUI_font_002
+     * @tc.desc   font generic test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('UIfont_002', Level.LEVEL2, async (done: Function) => {
 
       console.info('[UIfont_002] START');
@@ -93,12 +97,14 @@ export default function UIfontTest() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_ArkUI_font_003
-       * @tc.name  : UIfont_003
-       * @tc.desc  : font fallbackGroups test
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   UIfont_003
+     * @tc.number SUB_ACE_ArkUI_font_003
+     * @tc.desc   font fallbackGroups test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('UIfont_003', Level.LEVEL2, async (done: Function) => {
 
       console.info('[UIfont_003] START');
@@ -119,12 +125,14 @@ export default function UIfontTest() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_ArkUI_font_004
-       * @tc.name  : UIfont_004
-       * @tc.desc  : font alias test
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   UIfont_004
+     * @tc.number SUB_ACE_ArkUI_font_004
+     * @tc.desc   font alias test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('UIfont_004', Level.LEVEL2, async (done: Function) => {
 
       console.info('[UIfont_004] START');

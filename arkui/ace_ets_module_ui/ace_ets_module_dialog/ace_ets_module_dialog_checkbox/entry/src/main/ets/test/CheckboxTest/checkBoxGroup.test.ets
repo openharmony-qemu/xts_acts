@@ -47,12 +47,12 @@ export default function checkBoxGroupPartJsunit() {
     });
 
     /**
-     * @tc.number testcheckBoxGroupPart0011
      * @tc.name   testcheckBoxGroupPart0011
+     * @tc.number testcheckBoxGroupPart0011
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcheckBoxGroupPart0011', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupPart testcheckBoxGroupPart0011 START');
@@ -74,12 +74,12 @@ export default function checkBoxGroupPartJsunit() {
     });
 
     /**
-     * @tc.number testcheckBoxGroup0001
      * @tc.name   testcheckBoxGroup0001
+     * @tc.number testcheckBoxGroup0001
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcheckBoxGroup0001', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroup testcheckBoxGroup0001 START');

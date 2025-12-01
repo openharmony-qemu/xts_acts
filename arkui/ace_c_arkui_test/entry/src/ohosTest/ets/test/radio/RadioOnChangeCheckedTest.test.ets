@@ -27,14 +27,14 @@ export default function radioOnChangeCheckedTest() {
       await Utils.pushPage(`radio/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_RADIO_CHECKED_0800
-    * @tc.name       : testRadioChecked008
-    * @tc.desc       : testing two radios checked in same group for radio with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRadioChecked008
+     * @tc.number SUB_ARKUI_CAPI_RADIO_CHECKED_0800
+     * @tc.desc   testing two radios checked in same group for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRadioChecked008', Level.LEVEL1, async (done: Function) => {
       let r1 = Utils.getComponentInfoByKey('OnChangeRadio').$attrs.checked;
       let r2 = Utils.getComponentInfoByKey('OnChangeRadio2').$attrs.checked;

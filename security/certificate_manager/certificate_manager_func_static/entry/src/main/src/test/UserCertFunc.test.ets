@@ -32,12 +32,12 @@ export default function userCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UserCertJsApi_getAllUserTrustedCertificates_Func_Static_0300
      * @tc.number SUB_Security_CertManager_UserCertJsApi_getAllUserTrustedCertificates_Func_Static_0300
-     * @tc.name SUB_Security_CertManager_UserCertJsApi_getAllUserTrustedCertificates_Func_Static_0300
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_UserCertJsApi_getAllUserTrustedCertificates_Func_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -54,12 +54,12 @@ export default function userCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_Static_0401
      * @tc.number SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_Static_0401
-     * @tc.name SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_Static_0401
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_Static_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -74,12 +74,12 @@ export default function userCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_SysCertJsApi_Func_Static_0900
      * @tc.number SUB_Security_CertManager_SysCertJsApi_Func_Static_0900
-     * @tc.name SUB_Security_CertManager_SysCertJsApi_Func_Static_0900
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_SysCertJsApi_Func_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {

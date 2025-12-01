@@ -42,12 +42,12 @@ export default function TextClockJsunit() {
     });
 
     /**
+     * @tc.name   TextClock_0100
      * @tc.number TextClock_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextClock_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[TextClock_0100] START');
@@ -62,12 +62,12 @@ export default function TextClockJsunit() {
     });
 
     /**
+     * @tc.name   TextClock_0200
      * @tc.number TextClock_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextClock_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[TextClock_0200] START');
@@ -81,12 +81,12 @@ export default function TextClockJsunit() {
     });
 
     /**
+     * @tc.name   TextClock_0300
      * @tc.number TextClock_0300
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextClock_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[TextClock_0300] START');
@@ -100,12 +100,12 @@ export default function TextClockJsunit() {
     });
 
     /**
+     * @tc.name   TextClock_0400
      * @tc.number TextClock_0400
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextClock_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[TextClock_0400] START');
@@ -120,12 +120,12 @@ export default function TextClockJsunit() {
     });
 
     /**
+     * @tc.name   TextClock_0500
      * @tc.number TextClock_0500
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextClock_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[TextClock_0500] START');
@@ -139,12 +139,12 @@ export default function TextClockJsunit() {
     });
 
     /**
+     * @tc.name   TextClock_0600
      * @tc.number TextClock_0600
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextClock_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[TextClock_0600] START');

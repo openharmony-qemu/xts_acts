@@ -43,13 +43,13 @@ export default function ImageSpanTest8() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_imageSpanTest8_0100
-     * @tc.name      imageSpanTest8_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   imageSpanTest8_0100
+     * @tc.number SUB_ACE_imageSpanTest8_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest8_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest8_0100 START');
@@ -63,12 +63,12 @@ export default function ImageSpanTest8() {
     });
 
     /**
-     * @tc.number    SUB_ACE_imageSpanTest8_0200
-     * @tc.name      imageSpanTest8_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   imageSpanTest8_0200
+     * @tc.number SUB_ACE_imageSpanTest8_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSpanTest8_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('imageSpanTest8_0200 START');

@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType} from 'deccjsunit/index'
 
 describe('testSuite01', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testSpec01
      * @tc.number testSpec01
      * @tc.desc   testSpec01
@@ -28,7 +27,6 @@ describe('testSuite01', function () {
         console.info('testSpec01......' + JSON.stringify(data))
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testSpec02
      * @tc.number testSpec02
      * @tc.desc   testSpec02

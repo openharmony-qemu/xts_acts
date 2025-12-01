@@ -57,12 +57,12 @@ export default function webDeviceServiceTest() {
 
 
         /**
-         * @tc.number     : SUB_WEB_DEVICESERVICE_ONPAGEBEGIN_0001
-         * @tc.name       : testGeolocationAccess_static
-         * @tc.desc       : test GeolocationAccess
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGeolocationAccess_static
+         * @tc.number SUB_WEB_DEVICESERVICE_ONPAGEBEGIN_0001
+         * @tc.desc   test GeolocationAccess
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testGeolocationAccess_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("GeolocationAccess", 10);
@@ -75,12 +75,12 @@ export default function webDeviceServiceTest() {
         })
 
         /**
-         * @tc.number     : SUB_WEB_DEVICESERVICE_ONPAGEBEGIN_0002
-         * @tc.name       : testOnGeolocationShow_static
-         * @tc.desc       : test OnGeolocationShow
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testOnGeolocationShow_static
+         * @tc.number SUB_WEB_DEVICESERVICE_ONPAGEBEGIN_0002
+         * @tc.desc   test OnGeolocationShow
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testOnGeolocationShow_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnGeolocationShow", 10);
@@ -94,12 +94,12 @@ export default function webDeviceServiceTest() {
 
 
         /**
-         * @tc.number     : SUB_WEB_DEVICESERVICE_ONPAGEBEGIN_0003
-         * @tc.name       : testGeoLocation_Constructor_static
-         * @tc.desc       : test Constructor
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   testGeoLocation_Constructor_static
+         * @tc.number SUB_WEB_DEVICESERVICE_ONPAGEBEGIN_0003
+         * @tc.desc   test Constructor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testGeoLocation_Constructor_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             Utils.emitEvent("Constructor", 10);

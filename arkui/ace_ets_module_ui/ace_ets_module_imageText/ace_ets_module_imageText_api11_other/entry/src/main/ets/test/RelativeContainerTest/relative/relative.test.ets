@@ -43,11 +43,12 @@ export default function relativeCTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_relativeCTest_0100
-     * @tc.desc      test basis
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   relativeCTest_0100
+     * @tc.number SUB_ACE_relativeCTest_0100
+     * @tc.desc   test basis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relativeCTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[relativeCTest_0100] START');

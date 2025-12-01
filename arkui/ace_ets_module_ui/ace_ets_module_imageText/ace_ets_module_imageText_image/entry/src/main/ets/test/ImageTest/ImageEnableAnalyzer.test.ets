@@ -44,13 +44,13 @@ export default function ImageEnableAnalyzerTest() {
       console.info("ImageEnableAnalyzerTest after each called");
     });
 
-    /*
-     * @tc.number: ImageEnableAnalyzerTest_001
-     * @tc.name  : ImageEnableAnalyzerTest_001
-     * @tc.desc  : enableAnalyzer test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageEnableAnalyzerTest_001
+     * @tc.number ImageEnableAnalyzerTest_001
+     * @tc.desc   enableAnalyzer test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageEnableAnalyzerTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageEnableAnalyzerTest_001] START');

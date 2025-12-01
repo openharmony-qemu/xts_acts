@@ -55,9 +55,12 @@ export default function badgeJsunit() {
     });
 
     /**
+     * @tc.name   testBadge010
      * @tc.number SUB_ACE_BASIC_ETS_API_0600
-     * @tc.name testBadge010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBadge010', Level.LEVEL0, async (done: Function) => {
       console.info('new Badge0 START');
@@ -86,9 +89,12 @@ export default function badgeJsunit() {
     });
 
     /**
+     * @tc.name   testBadge020
      * @tc.number SUB_ACE_BASIC_ETS_API_0610
-     * @tc.name testBadge020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBadge020', Level.LEVEL0, async (done: Function) => {
       console.info('new Badge1 START');
@@ -107,9 +113,12 @@ export default function badgeJsunit() {
     });
 
     /**
+     * @tc.name   testBadge030
      * @tc.number SUB_ACE_BASIC_ETS_API_0620
-     * @tc.name testBadge030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBadge030', Level.LEVEL0, async (done: Function) => {
       console.info('new Badge2 START');

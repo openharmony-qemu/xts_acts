@@ -23,6 +23,14 @@ export default function requirementRouterPageStateTest() {
 
     let PAGE_TAG = 'RequirementRouterPageStateTest';
 
+    /**
+     * @tc.name   testRequirementRouterPageState001
+     * @tc.number testRequirementRouterPageState001
+     * @tc.desc   testRequirementRouterPageState001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRequirementRouterPageState001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`requirement/${PAGE_TAG}`, done);
       let dataArray: number[][] = nativeRender.getRouterData();

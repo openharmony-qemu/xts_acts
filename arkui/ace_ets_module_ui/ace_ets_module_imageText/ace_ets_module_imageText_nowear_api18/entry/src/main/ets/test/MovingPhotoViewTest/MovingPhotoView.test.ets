@@ -56,12 +56,12 @@ export default function MovingPhotoViewTest() {
     });
 
     /**
+     * @tc.name   MovingPhotoViewTest_0120
      * @tc.number MovingPhotoViewTest_0120
-     * @tc.name MovingPhotoViewTest_0120
-     * @tc.desc test the api of MovingPhotoView: enableAnalyzer
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the api of MovingPhotoView: enableAnalyzer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MovingPhotoViewTest_0120', Level.LEVEL2, async (done: Function) => {
       console.info('MovingPhotoViewTest_0120 START');
@@ -78,12 +78,12 @@ export default function MovingPhotoViewTest() {
     });
 
     /**
+     * @tc.name   MovingPhotoViewTest_0130
      * @tc.number MovingPhotoViewTest_0130
-     * @tc.name MovingPhotoViewTest_0130
-     * @tc.desc test the api of MovingPhotoView: refresh
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the api of MovingPhotoView: refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MovingPhotoViewTest_0130', Level.LEVEL2, async (done: Function) => {
       console.info('MovingPhotoViewTest_0130 START');

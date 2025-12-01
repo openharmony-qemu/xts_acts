@@ -35,7 +35,6 @@ export default function MultimodalTouchNdkTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_QueryMaxTouchPoints_0100
      * @tc.number SUB_MMI_Input_Api_QueryMaxTouchPoints_0100
      * @tc.desc   OH_Input_QueryMaxTouchPoints Interface testing to set count as nullptr.
@@ -60,7 +59,6 @@ export default function MultimodalTouchNdkTest() {
     });    
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_QueryMaxTouchPoints_0200
      * @tc.number SUB_MMI_Input_Api_QueryMaxTouchPoints_0200
      * @tc.desc   OH_Input_QueryMaxTouchPoints Interface testing.
@@ -85,7 +83,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InjectTouchEventGlobal_0100
      * @tc.number SUB_MMI_Input_Api_InjectTouchEventGlobal_0100
      * @tc.desc   OH_Input_InjectTouchEventGlobal Interface testing to set globalX globalY as 100.
@@ -110,7 +107,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InjectTouchEventGlobal_0200
      * @tc.number SUB_MMI_Input_Api_InjectTouchEventGlobal_0200
      * @tc.desc   OH_Input_GetTouchEventGlobalX Interface testing to set globalX as 100.
@@ -135,7 +131,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InjectTouchEventGlobal_0300
      * @tc.number SUB_MMI_Input_Api_InjectTouchEventGlobal_0300
      * @tc.desc   OH_Input_GetTouchEventGlobalY Interface testing to set globalY as 100.
@@ -160,7 +155,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_AxisEventGlobal_0100
      * @tc.number SUB_MMI_Input_Api_AxisEventGlobal_0100
      * @tc.desc   OH_Input_GetAxisEventGlobalX Interface testing to set globalX as 100 .
@@ -185,7 +179,6 @@ export default function MultimodalTouchNdkTest() {
     });    
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_AxisEventGlobal_0200
      * @tc.number SUB_MMI_Input_Api_AxisEventGlobal_0200
      * @tc.desc   OH_Input_SetAxisEventGlobalY Interface testing to set globalY as 100.
@@ -210,7 +203,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GetKeyEventId_0100
      * @tc.number SUB_MMI_Input_Api_GetKeyEventId_0100
      * @tc.desc   OH_Input_GetKeyEventId Interface testing.
@@ -235,7 +227,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_AddKeyEventHook_0100
      * @tc.number SUB_MMI_Input_Api_AddKeyEventHook_0100
      * @tc.desc   OH_Input_AddKeyEventHook Interface testing.
@@ -260,7 +251,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_RemoveKeyEventHook_0100
      * @tc.number SUB_MMI_Input_Api_RemoveKeyEventHook_0100
      * @tc.desc   OH_Input_RemoveKeyEventHook Interface testing.
@@ -285,7 +275,6 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_DispatchToNextHandler_0100
      * @tc.number SUB_MMI_Input_Api_DispatchToNextHandler_0100
      * @tc.desc   OH_Input_DispatchToNextHandler Interface testing.

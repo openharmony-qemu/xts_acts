@@ -42,12 +42,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0100
-     * @tc.name      : testBrushSetColorNormal
-     * @tc.desc      : Test for testBrushSetColorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetColorNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0100
+     * @tc.desc   Test for testBrushSetColorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetColorNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetColorNormal';
@@ -72,12 +72,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0101
-     * @tc.name      : testBrushSetColorNull
-     * @tc.desc      : Test for testBrushSetColorNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColorNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0101
+     * @tc.desc   Test for testBrushSetColorNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColorNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColorNull';
@@ -120,12 +120,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0103
-     * @tc.name      : testBrushSetColorMultipleCalls
-     * @tc.desc      : Test for testBrushSetColorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0103
+     * @tc.desc   Test for testBrushSetColorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColorMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColorMultipleCalls';
@@ -148,12 +148,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0104
-     * @tc.name      : testBrushSetColorBoundaryValue
-     * @tc.desc      : Test for testBrushSetColorBoundaryValue.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColorBoundaryValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0104
+     * @tc.desc   Test for testBrushSetColorBoundaryValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColorBoundaryValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColorBoundaryValue';
@@ -196,12 +196,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0200
-     * @tc.name      : testBrushSetAntiAliasNormal
-     * @tc.desc      : Test for testBrushSetAntiAliasNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetAntiAliasNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0200
+     * @tc.desc   Test for testBrushSetAntiAliasNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetAntiAliasNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetAntiAliasNormal';
@@ -226,12 +226,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0201
-     * @tc.name      : testBrushSetAntiAliasNull
-     * @tc.desc      : Test for testBrushSetAntiAliasNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetAntiAliasNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0201
+     * @tc.desc   Test for testBrushSetAntiAliasNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAntiAliasNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAntiAliasNull';
@@ -256,12 +256,12 @@ export default function brushTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0203
-     * @tc.name      : testBrushSetAntiAliasMultipleCalls
-     * @tc.desc      : Test for testBrushSetAntiAliasMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetAntiAliasMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0203
+     * @tc.desc   Test for testBrushSetAntiAliasMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAntiAliasMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAntiAliasMultipleCalls';
@@ -279,12 +279,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0300
-     * @tc.name      : testBrushSetAlphaNormal
-     * @tc.desc      : Test for testBrushSetAlphaNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetAlphaNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0300
+     * @tc.desc   Test for testBrushSetAlphaNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetAlphaNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetAlphaNormal';
@@ -316,12 +316,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0301
-     * @tc.name      : testBrushSetAlphaNull
-     * @tc.desc      : Test for testBrushSetAlphaNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetAlphaNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0301
+     * @tc.desc   Test for testBrushSetAlphaNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAlphaNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAlphaNull';
@@ -345,12 +345,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0303
-     * @tc.name      : testBrushSetAlphaMultipleCalls
-     * @tc.desc      : Test for testBrushSetAlphaMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetAlphaMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0303
+     * @tc.desc   Test for testBrushSetAlphaMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAlphaMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAlphaMultipleCalls';
@@ -368,12 +368,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0400
-     * @tc.name      : testBrushSetColorFilterNormal
-     * @tc.desc      : Test for testBrushSetColorFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetColorFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0400
+     * @tc.desc   Test for testBrushSetColorFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetColorFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetColorFilterNormal';
@@ -388,12 +388,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0401
-     * @tc.name      : testBrushSetColorFilterNull
-     * @tc.desc      : Test for testBrushSetColorFilterNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColorFilterNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0401
+     * @tc.desc   Test for testBrushSetColorFilterNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColorFilterNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColorFilterNull';
@@ -417,12 +417,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0403
-     * @tc.name      : testBrushSetColorFilterMultipleCalls
-     * @tc.desc      : Test for testBrushSetColorFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColorFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0403
+     * @tc.desc   Test for testBrushSetColorFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColorFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColorFilterMultipleCalls';
@@ -439,12 +439,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0500
-     * @tc.name      : testBrushSetMaskFilterNormal
-     * @tc.desc      : Test for testBrushSetMaskFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetMaskFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0500
+     * @tc.desc   Test for testBrushSetMaskFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetMaskFilterNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetMaskFilterNormal';
@@ -459,12 +459,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0501
-     * @tc.name      : testBrushSetMaskFilterNull
-     * @tc.desc      : Test for testBrushSetMaskFilterNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetMaskFilterNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0501
+     * @tc.desc   Test for testBrushSetMaskFilterNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetMaskFilterNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetMaskFilterNull';
@@ -480,12 +480,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0503
-     * @tc.name      : testBrushSetMaskFilterMultipleCalls
-     * @tc.desc      : Test for testBrushSetMaskFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetMaskFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0503
+     * @tc.desc   Test for testBrushSetMaskFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetMaskFilterMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetMaskFilterMultipleCalls';
@@ -505,12 +505,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0600
-     * @tc.name      : testBrushSetShadowLayerNormal
-     * @tc.desc      : Test for testBrushSetShadowLayerNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetShadowLayerNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0600
+     * @tc.desc   Test for testBrushSetShadowLayerNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetShadowLayerNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetShadowLayerNormal';
@@ -527,12 +527,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0601
-     * @tc.name      : testBrushSetShadowLayerNull
-     * @tc.desc      : Test for testBrushSetShadowLayerNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetShadowLayerNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0601
+     * @tc.desc   Test for testBrushSetShadowLayerNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetShadowLayerNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetShadowLayerNull';
@@ -556,12 +556,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0603
-     * @tc.name      : testBrushSetShadowLayerMultipleCalls
-     * @tc.desc      : Test for testBrushSetShadowLayerMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetShadowLayerMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0603
+     * @tc.desc   Test for testBrushSetShadowLayerMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetShadowLayerMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetShadowLayerMultipleCalls';
@@ -589,12 +589,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0700
-     * @tc.name      : testBrushSetBlendModeNormal
-     * @tc.desc      : Test for testBrushSetBlendModeNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetBlendModeNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0700
+     * @tc.desc   Test for testBrushSetBlendModeNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetBlendModeNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetBlendModeNormal';
@@ -637,12 +637,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0701
-     * @tc.name      : testBrushSetBlendModeNull
-     * @tc.desc      : Test for testBrushSetBlendModeNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetBlendModeNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0701
+     * @tc.desc   Test for testBrushSetBlendModeNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetBlendModeNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetBlendModeNull';
@@ -666,12 +666,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0703
-     * @tc.name      : testBrushSetBlendModeMultipleCalls
-     * @tc.desc      : Test for testBrushSetBlendModeMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetBlendModeMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0703
+     * @tc.desc   Test for testBrushSetBlendModeMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetBlendModeMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetBlendModeMultipleCalls';
@@ -691,12 +691,12 @@ export default function brushTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0800
-     * @tc.name      : testBrushSetColor12Normal
-     * @tc.desc      : testBrushSetColor12Normal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetColor12Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0800
+     * @tc.desc   testBrushSetColor12Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetColor12Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testBrushSetColor12Normal';
@@ -712,12 +712,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0801
-     * @tc.name      : testBrushSetColor12Null
-     * @tc.desc      : testBrushSetColor12Null
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColor12Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0801
+     * @tc.desc   testBrushSetColor12Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColor12Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColor12Null';
@@ -788,12 +788,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0803
-     * @tc.name      : testBrushSetColor12MultipleCalls
-     * @tc.desc      : testBrushSetColor12MultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColor12MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0803
+     * @tc.desc   testBrushSetColor12MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColor12MultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColor12MultipleCalls';
@@ -810,12 +810,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0804
-     * @tc.name      : testBrushSetColor12BoundaryValue
-     * @tc.desc      : testBrushSetColor12BoundaryValue
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetColor12BoundaryValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0804
+     * @tc.desc   testBrushSetColor12BoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetColor12BoundaryValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetColor12BoundaryValue';
@@ -886,12 +886,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0900
-     * @tc.name      : testBrushSetImageFilterNormal
-     * @tc.desc      : Test for testBrushSetImageFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetImageFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0900
+     * @tc.desc   Test for testBrushSetImageFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetImageFilterNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushSetImageFilterNormal';
@@ -916,12 +916,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0901
-     * @tc.name      : testBrushSetImageFilterNull
-     * @tc.desc      : Test for testBrushSetImageFilterNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetImageFilterNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0901
+     * @tc.desc   Test for testBrushSetImageFilterNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetImageFilterNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushSetImageFilterNull';
@@ -937,12 +937,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0903
-     * @tc.name      : testBrushSetImageFilterMultipleCalls
-     * @tc.desc      : Test for testBrushSetImageFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetImageFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_0903
+     * @tc.desc   Test for testBrushSetImageFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetImageFilterMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushSetImageFilterMultipleCalls';
@@ -961,12 +961,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1000
-     * @tc.name      : testBrushGetColorFilterNormal
-     * @tc.desc      : Test for testBrushGetColorFilterNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushGetColorFilterNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1000
+     * @tc.desc   Test for testBrushGetColorFilterNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushGetColorFilterNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushGetColorFilterNormal';
@@ -983,12 +983,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1002
-     * @tc.name      : testBrushGetColorFilterMultipleCalls
-     * @tc.desc      : Test for testBrushGetColorFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushGetColorFilterMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1002
+     * @tc.desc   Test for testBrushGetColorFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushGetColorFilterMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushGetColorFilterMultipleCalls';
@@ -1006,12 +1006,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1100
-     * @tc.name      : testBrushConstructorNormal
-     * @tc.desc      : Test for testBrushConstructorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushConstructorNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1100
+     * @tc.desc   Test for testBrushConstructorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushConstructorNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushConstructorNormal';
@@ -1046,12 +1046,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1103
-     * @tc.name      : testBrushConstructorMultipleCalls
-     * @tc.desc      : Test for testBrushConstructorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushConstructorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1103
+     * @tc.desc   Test for testBrushConstructorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushConstructorMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushConstructorMultipleCalls';
@@ -1070,12 +1070,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1200
-     * @tc.name      : testBrushGetAlphaNormal
-     * @tc.desc      : Test for testBrushGetAlphaNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushGetAlphaNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1200
+     * @tc.desc   Test for testBrushGetAlphaNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushGetAlphaNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushGetAlphaNormal';
@@ -1112,12 +1112,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1202
-     * @tc.name      : testBrushGetAlphaMultipleCalls
-     * @tc.desc      : Test for testBrushGetAlphaMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushGetAlphaMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1202
+     * @tc.desc   Test for testBrushGetAlphaMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushGetAlphaMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushGetAlphaMultipleCalls';
@@ -1136,12 +1136,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1300
-     * @tc.name      : testBrushIsAntiAliasNormal
-     * @tc.desc      : Test for testBrushIsAntiAliasNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushIsAntiAliasNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1300
+     * @tc.desc   Test for testBrushIsAntiAliasNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushIsAntiAliasNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushIsAntiAliasNormal';
@@ -1178,12 +1178,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1302
-     * @tc.name      : testBrushIsAntiAliasMultipleCalls
-     * @tc.desc      : Test for testBrushIsAntiAliasMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushIsAntiAliasMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1302
+     * @tc.desc   Test for testBrushIsAntiAliasMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushIsAntiAliasMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushIsAntiAliasMultipleCalls';
@@ -1202,12 +1202,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1400
-     * @tc.name      : testBrushGetColorNormal
-     * @tc.desc      : Test for testBrushGetColorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushGetColorNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1400
+     * @tc.desc   Test for testBrushGetColorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushGetColorNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushGetColorNormal';
@@ -1250,12 +1250,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1402
-     * @tc.name      : testBrushGetColorMultipleCalls
-     * @tc.desc      : Test for testBrushGetColorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushGetColorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1402
+     * @tc.desc   Test for testBrushGetColorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushGetColorMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushGetColorMultipleCalls';
@@ -1274,12 +1274,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1500
-     * @tc.name      : testBrushSetShaderEffectNormal
-     * @tc.desc      : Test for testBrushSetShaderEffectNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetShaderEffectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1500
+     * @tc.desc   Test for testBrushSetShaderEffectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetShaderEffectNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushSetShaderEffectNormal';
@@ -1304,12 +1304,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1501
-     * @tc.name      : testBrushSetShaderEffectNull
-     * @tc.desc      : Test for testBrushSetShaderEffectNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetShaderEffectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1501
+     * @tc.desc   Test for testBrushSetShaderEffectNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetShaderEffectNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushSetShaderEffectNull';
@@ -1325,12 +1325,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1503
-     * @tc.name      : testBrushSetShaderEffectMultipleCalls
-     * @tc.desc      : Test for testBrushSetShaderEffectMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushSetShaderEffectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1503
+     * @tc.desc   Test for testBrushSetShaderEffectMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetShaderEffectMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushSetShaderEffectMultipleCalls';
@@ -1349,12 +1349,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1600
-     * @tc.name      : testBrushResetNormal
-     * @tc.desc      : Test for testBrushResetNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushResetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1600
+     * @tc.desc   Test for testBrushResetNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushResetNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushResetNormal';
@@ -1379,12 +1379,12 @@ export default function brushTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1602
-     * @tc.name      : testBrushResetMultipleCalls
-     * @tc.desc      : Test for testBrushResetMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testBrushResetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1602
+     * @tc.desc   Test for testBrushResetMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushResetMultipleCalls' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushResetMultipleCalls';
@@ -1401,12 +1401,12 @@ export default function brushTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1700
-     * @tc.name      : testBrushSetAndGetColor4fNormal
-     * @tc.desc      : Test for testBrushSetAndGetColor4fNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBrushSetAndGetColor4fNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1700
+     * @tc.desc   Test for testBrushSetAndGetColor4fNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBrushSetAndGetColor4fNormal' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushSetAndGetColor4fNormal';
@@ -1485,12 +1485,12 @@ export default function brushTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1701
-     * @tc.name      : testBrushSetAndGetColor4fNull
-     * @tc.desc      : testBrushSetAndGetColor4fNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testBrushSetAndGetColor4fNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1701
+     * @tc.desc   testBrushSetAndGetColor4fNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAndGetColor4fNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAndGetColor4fNull';
@@ -1522,12 +1522,12 @@ export default function brushTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1702
-     * @tc.name      : testBrushSetAndGetColor4fMultipleCalls
-     * @tc.desc      : testBrushSetAndGetColor4fMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testBrushSetAndGetColor4fMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1702
+     * @tc.desc   testBrushSetAndGetColor4fMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAndGetColor4fMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAndGetColor4fMultipleCalls';
@@ -1556,12 +1556,12 @@ export default function brushTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1703
-     * @tc.name      : testBrushSetAndGetColor4fBoundaryValue
-     * @tc.desc      : testBrushSetAndGetColor4fBoundaryValue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testBrushSetAndGetColor4fBoundaryValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_BRUSH_1703
+     * @tc.desc   testBrushSetAndGetColor4fBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBrushSetAndGetColor4fBoundaryValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetAndGetColor4fBoundaryValue';

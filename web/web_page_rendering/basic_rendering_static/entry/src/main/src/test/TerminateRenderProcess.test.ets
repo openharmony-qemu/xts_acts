@@ -39,10 +39,13 @@ export default function webviewTerminateRenderProcess() {
       console.info('webviewTerminateRenderProcess beforeEach start');
     })
 
-    /*
+    /**
+     * @tc.name   emitTerminateRenderProcessstatic0100
      * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0100
-     * @tc.name emitTerminateRenderProcessstatic0100
-     * @tc.desc terminateRenderProcess
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitTerminateRenderProcessstatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -54,10 +57,13 @@ export default function webviewTerminateRenderProcess() {
         await Utils.msSleep(10000);
         done();
       })
-    /*
+    /**
+     * @tc.name   emitTerminateRenderProcessstatic0200
      * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0200
-     * @tc.name emitTerminateRenderProcessstatic0200
-     * @tc.desc terminateRenderProcess
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitTerminateRenderProcessstatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -69,10 +75,13 @@ export default function webviewTerminateRenderProcess() {
         await Utils.msSleep(10000);
         done();
       })
-    /*
+    /**
+     * @tc.name   emitTerminateRenderProcessstatic0300
      * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0300
-     * @tc.name emitTerminateRenderProcessstatic0300
-     * @tc.desc terminateRenderProcess
+     * @tc.desc   terminateRenderProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitTerminateRenderProcessstatic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -85,10 +94,13 @@ export default function webviewTerminateRenderProcess() {
         done();
       })
 
-    /*
+    /**
+     * @tc.name   emitonSwitchNextPage
      * @tc.number SUB_ACE_BASIC_ETS_TERMINATERENDERPROCESS_API_0400
-     * @tc.name: emitonSwitchNextPage
-     * @tc.desc: PAGE_REDIRECT
+     * @tc.desc   PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

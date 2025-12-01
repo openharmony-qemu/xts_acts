@@ -23,13 +23,13 @@ export default function imageOnDownloadProgressTest() {
 
     let PAGE_TAG = 'ImageOnDownloadProgressTest';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ON_DOWNLOAD_PROGRESS_0100
-     * @tc.name       : testImageOnDownloadProgress001
-     * @tc.desc       : test image onDownloadProgress with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageOnDownloadProgress001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ON_DOWNLOAD_PROGRESS_0100
+     * @tc.desc   test image onDownloadProgress with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageOnDownloadProgress001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`image/${PAGE_TAG}`);

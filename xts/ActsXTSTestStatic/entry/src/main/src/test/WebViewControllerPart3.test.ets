@@ -49,7 +49,6 @@ export default function webViewControllerPart3Test() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testSetNetworkAvailableStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
      * @tc.desc   test setNetworkAvailable
@@ -70,7 +69,6 @@ export default function webViewControllerPart3Test() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testSetNetworkAvailableStatic002
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0200
      * @tc.desc   test setNetworkAvailable

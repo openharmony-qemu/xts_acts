@@ -26,26 +26,26 @@ export default function textInputDefaultFocusTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_DEFAULTFOCUS_0100
-     * @tc.name: testTextInputDefaultFocus001
-     * @tc.desc: testing defaultFocus for textInput with zero value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputDefaultFocus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_DEFAULTFOCUS_0100
+     * @tc.desc   testing defaultFocus for textInput with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputDefaultFocus001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputDefaultFocus001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_DEFAULTFOCUS_0200
-     * @tc.name: testTextInputDefaultFocus002
-     * @tc.desc: testing defaultFocus for textInput with one value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputDefaultFocus002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_DEFAULTFOCUS_0200
+     * @tc.desc   testing defaultFocus for textInput with one value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputDefaultFocus002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputDefaultFocus002()).assertEqual(0)

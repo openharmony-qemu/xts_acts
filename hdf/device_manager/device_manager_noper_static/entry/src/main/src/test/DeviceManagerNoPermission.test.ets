@@ -61,7 +61,6 @@ export default function PermissionTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   Permission_bindDriverWithDeviceId_001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0100
      * @tc.desc   verify permission of bindDriverWithDeviceId
@@ -93,7 +92,6 @@ export default function PermissionTest(){
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   Permission_unbindDriverWithDeviceId_001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0200
      * @tc.desc   verify permission of unbindDriverWithDeviceId
@@ -121,7 +119,6 @@ export default function PermissionTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   Permission_queryDevices_001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0300
      * @tc.desc   verify permission of queryDevices

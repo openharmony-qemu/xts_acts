@@ -19,7 +19,6 @@ export default function FieldNodeTest(){
 describe('FieldNodeTest', function() {
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_FIELDNODE_APPENDCHILD_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0600
      * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 001
@@ -52,7 +51,6 @@ describe('FieldNodeTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_FIELDNODE_APPENDCHILD_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0500
      * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 002
@@ -77,7 +75,6 @@ describe('FieldNodeTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_FIELDNODE_APPENDCHILD_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0400
      * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 003
@@ -99,7 +96,6 @@ describe('FieldNodeTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_FIELDNODE_TOJSON_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0100
      * @tc.desc   Test Js Api FieldNode.ToJson() testcase 001
@@ -121,7 +117,6 @@ describe('FieldNodeTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_FIELDNODE_TOJSON_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0200
      * @tc.desc   Test Js Api FieldNode.ToJson() testcase 002
@@ -143,7 +138,6 @@ describe('FieldNodeTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_FIELDNODE_TOJSON_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0300
      * @tc.desc   Test Js Api FieldNode.ToJson() testcase 003
@@ -165,7 +159,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_DEFAULT_0100
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0700
       * @tc.desc   Test Js Api FieldNode.default testcase 001
@@ -188,7 +181,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_NULLABLE_0100
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0800
       * @tc.desc   Test Js Api FieldNode.nullable testcase 001
@@ -211,7 +203,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_TYPE_0100
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_1400
       * @tc.desc   Test Js Api FieldNode.type testcase 001
@@ -234,7 +225,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_TYPE_0200
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_1300
       * @tc.desc   Test Js Api FieldNode.type testcase 002
@@ -257,7 +247,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_TYPE_0300
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_1200
       * @tc.desc   Test Js Api FieldNode.type testcase 003
@@ -280,7 +269,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_TYPE_0400
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_1000
       * @tc.desc   Test Js Api FieldNode.type testcase 004
@@ -303,7 +291,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_TYPE_0500
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_0900
       * @tc.desc   Test Js Api FieldNode.type testcase 005
@@ -326,7 +313,6 @@ describe('FieldNodeTest', function() {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:47
       * @tc.name   SUB_DDM_DKV_FIELDNODE_TYPE_0600
       * @tc.number SUB_DistributedData_KVStore_SDK_DisKVFieldNodeJsApiTest_1100
       * @tc.desc   Test Js Api FieldNode.type testcase 006

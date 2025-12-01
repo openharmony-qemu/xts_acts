@@ -57,13 +57,13 @@ export default function Storage12Jsunit() {
 
     //Size获取AppStorage中存在键值对的个数
     /**
-		 * @tc.number    Storage12Jsunit_0100
-		 * @tc.name      Storage12Jsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+     * @tc.name   Storage12Jsunit_0100
+     * @tc.number Storage12Jsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage12Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage12Jsunit_0100] START');
       let driver = await UiDriver.create()
@@ -78,14 +78,14 @@ export default function Storage12Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    Storage12Jsunit_0200
-		 * @tc.name      Storage12Jsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Storage12Jsunit_0200
+     * @tc.number Storage12Jsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage12Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage12Jsunit_0200] START');
       let driver = await UiDriver.create()
@@ -100,14 +100,14 @@ export default function Storage12Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    Storage12Jsunit_0300
-		 * @tc.name      Storage12Jsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Storage12Jsunit_0300
+     * @tc.number Storage12Jsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage12Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage12Jsunit_0300] START');
       let Storage12ContentJson = getInspectorByKey('Storage12Text1');

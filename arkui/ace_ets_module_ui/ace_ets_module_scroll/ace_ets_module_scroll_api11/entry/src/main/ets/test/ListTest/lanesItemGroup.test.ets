@@ -46,12 +46,12 @@ export default function lanesItemGroup() {
     });
 
     /**
-     * @tc.number    lanesItemGroup_001
-     * @tc.name      lanesItemGroup_0100
-     * @tc.desc      List component vertically arranged in multiple columns, jumps to the specified index.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   lanesItemGroup_0100
+     * @tc.number lanesItemGroup_001
+     * @tc.desc   List component vertically arranged in multiple columns, jumps to the specified index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('lanesItemGroup_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[lanesItemGroup_0100] START');

@@ -81,7 +81,6 @@ export default function relationalStoreHavingTest() {
       console.info(TAG + "*************Unit Test end*************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0100
      * @tc.desc   having success
@@ -111,7 +110,6 @@ export default function relationalStoreHavingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0200
      * @tc.desc   having success
@@ -140,7 +138,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving002 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0300
      * @tc.desc   having conditions is null
@@ -165,7 +162,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving003 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0400
      * @tc.desc   having errcode is 14800001
@@ -189,7 +185,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving004 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0500
      * @tc.desc   hvaing errcode is 14800001
@@ -213,7 +208,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving005 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0600
      * @tc.desc   having args is []
@@ -242,7 +236,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving006 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0700
      * @tc.desc   having args is null
@@ -271,7 +264,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving007 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0800
      * @tc.desc   having args is undefined
@@ -300,7 +292,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving008 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_0900
      * @tc.desc   having errcode is 14800001
@@ -325,7 +316,6 @@ export default function relationalStoreHavingTest() {
       console.log(TAG + "************* testHaving009 end   *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testHaving010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_havinsJsAPITest_1000
      * @tc.desc   having errcode is 14800021

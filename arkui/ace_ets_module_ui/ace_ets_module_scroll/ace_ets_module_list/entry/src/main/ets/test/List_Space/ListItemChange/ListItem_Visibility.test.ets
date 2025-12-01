@@ -65,12 +65,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilityFirstNone
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0100
-     * @tc.name testListItemVisibilityFirstNone
-     * @tc.desc ListItem subcomponent binding Visibility property,first None
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding Visibility property,first None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilityFirstNone',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilityFirstNone START');
@@ -129,12 +129,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilitySecondNone
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0200
-     * @tc.name testListItemVisibilitySecondNone
-     * @tc.desc ListItem subcomponent binding Visibility property,second None
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding Visibility property,second None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilitySecondNone',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilitySecondNone START');
@@ -193,12 +193,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilityFirstHidden
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0300
-     * @tc.name testListItemVisibilityFirstHidden
-     * @tc.desc ListItem subcomponent binding Visibility property,first Hidden
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding Visibility property,first Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilityFirstHidden',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilityFirstHidden START');
@@ -261,12 +261,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilityFirstVisibile
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0400
-     * @tc.name testListItemVisibilityFirstVisibile
-     * @tc.desc ListItem subcomponent binding Visibility property,first Visible
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding Visibility property,first Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilityFirstVisibile',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilityFirstVisibile START');

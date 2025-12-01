@@ -51,12 +51,12 @@ export default function abilityTest() {
 
 
     /**
+     * @tc.name   testPrefetchResource07
      * @tc.number Sub_WEB_PrefetchResource_0700
-     * @tc.name testPrefetchResource07
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchResource07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

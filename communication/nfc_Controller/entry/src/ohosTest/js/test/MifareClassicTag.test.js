@@ -70,7 +70,6 @@ export default function nfcMifareClassicTag() {
         })          
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0100
          * @tc.desc   Test authenticateSector api by callback.
@@ -110,7 +109,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.desc   Test authenticateSector api.
@@ -146,7 +144,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0300
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0300
          * @tc.desc   Test readSingleBlock api.
@@ -190,7 +187,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0400
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0400
          * @tc.desc   Test readSingleBlock api.
@@ -230,7 +226,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0500
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0500
          * @tc.desc   Test writeSingleBlock api.
@@ -270,7 +265,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.desc   Test writeSingleBlock api.
@@ -306,7 +300,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0700
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0700
          * @tc.desc   Test incrementBlock api.
@@ -348,7 +341,6 @@ export default function nfcMifareClassicTag() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0800
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0800
          * @tc.desc   SUB_Communication_NFC_mifareClassic_js_0800
@@ -385,7 +377,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0900
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0900
          * @tc.desc   Test decrementBlock api.
@@ -425,7 +416,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1000
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1000
          * @tc.desc   Test decrementBlock api.
@@ -462,7 +452,6 @@ export default function nfcMifareClassicTag() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1100
          * @tc.desc   SUB_Communication_NFC_mifareClassic_js_1100
@@ -501,7 +490,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1200
          * @tc.desc   Test transferToBlock api.
@@ -536,7 +524,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1300
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1300
          * @tc.desc   Test restoreFromBlock api.
@@ -575,7 +562,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1400
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1400
          * @tc.desc   Test restoreFromBlock api.
@@ -610,7 +596,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1500
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1500
          * @tc.desc   Test getSectorCount api.
@@ -635,7 +620,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1600
          * @tc.desc   Test getBlockCountInSector api.
@@ -661,7 +645,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1700
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1700
          * @tc.desc   Test getType api.
@@ -686,7 +669,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1800
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1800
          * @tc.desc   Test getTagSize api.
@@ -711,7 +693,6 @@ export default function nfcMifareClassicTag() {
         }) 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1900
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1900
          * @tc.desc   Test isEmulatedTag api.
@@ -741,7 +722,6 @@ export default function nfcMifareClassicTag() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_2000
          * @tc.number SUB_Communication_NFC_mifareClassic_js_2000
          * @tc.desc   Test getBlockIndex api.
@@ -767,7 +747,6 @@ export default function nfcMifareClassicTag() {
         })         
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_2100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_2100
          * @tc.desc   Test getSectorIndex api.

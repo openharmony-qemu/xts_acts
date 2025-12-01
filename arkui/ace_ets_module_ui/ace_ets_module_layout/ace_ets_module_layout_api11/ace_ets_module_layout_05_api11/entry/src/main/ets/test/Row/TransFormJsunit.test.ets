@@ -59,6 +59,14 @@ export default function transFormJsunit() {
       console.info("transFrom each called");
     });
 
+    /**
+     * @tc.name   testTransForm001
+     * @tc.number testTransForm001
+     * @tc.desc   testTransForm001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTransForm001',  Level.LEVEL0, async (done: Function) => {
       console.info('[testTransForm001] START');
       await Utils.sleep(1000);
@@ -74,6 +82,14 @@ export default function transFormJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testTransForm002
+     * @tc.number testTransForm002
+     * @tc.desc   testTransForm002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTransForm002',  Level.LEVEL0, async (done: Function) => {
       console.info('[testTransForm002] START');
       await Utils.sleep(1000);
@@ -112,6 +128,14 @@ export default function transFormJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testTransForm003
+     * @tc.number testTransForm003
+     * @tc.desc   testTransForm003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTransForm003',  Level.LEVEL0, async (done: Function) => {
       console.info('[testTransForm003] START');
       await Utils.sleep(1000);
@@ -123,6 +147,14 @@ export default function transFormJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testTransForm004
+     * @tc.number testTransForm004
+     * @tc.desc   testTransForm004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTransForm004',  Level.LEVEL0, async (done: Function) => {
       console.info('[testTransForm004] START');
       await Utils.sleep(1000);

@@ -37,14 +37,14 @@ let sleep = async (delay: number = 1000): Promise<void> => {
 export default function abilityTest() {
   describe('ActsWorkerMixTest', () => {
 
-    /**
-     * @tc.number     : SUB_Runtime_Mix_Create_Delete_threads_001
-     * @tc.name       : testWorkerMix100
-     * @tc.desc       : test worker total amount limited with error log
-     * @tc.size       : SmallTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
+      /**
+       * @tc.name   testWorkerMix001
+       * @tc.number SUB_Runtime_Mix_Create_Delete_threads_001
+       * @tc.desc   test worker total amount limited with error log
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('testWorkerMix001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         await abilityDelegator.startAbility({
           bundleName: PUBLISH_BUNDLE_NAME,

@@ -26,26 +26,26 @@ export default function textMinFontSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MINFONTSIZE_0100
-     * @tc.name       : testTextMinFontSize001
-     * @tc.desc       : testing minFontSize for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMinFontSize001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MINFONTSIZE_0100
+     * @tc.desc   testing minFontSize for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMinFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMinFontSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MINFONTSIZE_0200
-     * @tc.name       : testTextMinFontSize002
-     * @tc.desc       : testing minFontSize for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMinFontSize002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MINFONTSIZE_0200
+     * @tc.desc   testing minFontSize for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMinFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMinFontSize002()).assertEqual(0)

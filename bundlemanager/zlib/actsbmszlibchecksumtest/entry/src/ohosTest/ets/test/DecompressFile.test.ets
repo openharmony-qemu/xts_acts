@@ -28,11 +28,14 @@ export default function decompressFileTest() {
       infos = '/data/storage/el2/base/files' + objectone + objecttwo + objectthree;
     });
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0100
-     * @tc.name: acts_zlibDecompressFile_0100
-     * @tc.desc: decompressFile err code 900001
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0100
+     * @tc.number acts_zlibDecompressFile_0100
+     * @tc.desc   decompressFile err code 900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0100', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0100 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -65,11 +68,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0100 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0200
-     * @tc.name: acts_zlibDecompressFile_0200
-     * @tc.desc: decompressFile err code 900002
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0200
+     * @tc.number acts_zlibDecompressFile_0200
+     * @tc.desc   decompressFile err code 900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0200', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0200 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -102,11 +108,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0200 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0300
-     * @tc.name: acts_zlibDecompressFile_0300
-     * @tc.desc: decompressFile err code 900003
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0300
+     * @tc.number acts_zlibDecompressFile_0300
+     * @tc.desc   decompressFile err code 900003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0300', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0300 start==================');
       let inFile = '/data/storage/el2/base/files/test.7z';
@@ -148,11 +157,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0300 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_1000
-     * @tc.name: acts_zlibDecompressFile_1000
-     * @tc.desc: decompressFile err code 401 outFileDir params undefined
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1000
+     * @tc.number acts_zlibDecompressFile_1000
+     * @tc.desc   decompressFile err code 401 outFileDir params undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1000', Level.LEVEL2, async (done: Function) => {
 
 
@@ -203,11 +215,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1000 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_1300
-     * @tc.name: acts_zlibDecompressFile_1300
-     * @tc.desc: decompressFile err code 401 inFile params undefined
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1300
+     * @tc.number acts_zlibDecompressFile_1300
+     * @tc.desc   decompressFile err code 401 inFile params undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1300', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1300 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -256,11 +271,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1300 end==================');
     })
 
-/*
-     * @tc.number: acts_zlibDecompressFile_1400
-     * @tc.name: acts_zlibDecompressFile_1400
-     * @tc.desc: decompressFile err code 401 options params undefined
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1400
+     * @tc.number acts_zlibDecompressFile_1400
+     * @tc.desc   decompressFile err code 401 options params undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1400', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1400 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -292,11 +310,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1400 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_1200
-     * @tc.name: acts_zlibDecompressFile_1200
-     * @tc.desc: decompressFile err code 401 inFile params null
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1200
+     * @tc.number acts_zlibDecompressFile_1200
+     * @tc.desc   decompressFile err code 401 inFile params null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1200', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1200 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -345,11 +366,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1200 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_1500
-     * @tc.name: acts_zlibDecompressFile_1500
-     * @tc.desc: decompressFile err code 401 outFileDir params null
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1500
+     * @tc.number acts_zlibDecompressFile_1500
+     * @tc.desc   decompressFile err code 401 outFileDir params null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1500', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1500 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -398,11 +422,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1500 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_1600
-     * @tc.name: acts_zlibDecompressFile_1600
-     * @tc.desc: decompressFile err code 401 outFileDir params null
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1600
+     * @tc.number acts_zlibDecompressFile_1600
+     * @tc.desc   decompressFile err code 401 outFileDir params null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1600', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1600 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -434,11 +461,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1600 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0400
-     * @tc.name: acts_zlibDecompressFile_0400
-     * @tc.desc: decompressFile normal promise \
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0400
+     * @tc.number acts_zlibDecompressFile_0400
+     * @tc.desc   decompressFile normal promise \
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0400', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0400 start==================');
       let inFile = '/data/storage/el2/base/testfile.zip';
@@ -512,11 +542,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0400 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0500
-     * @tc.name: acts_zlibDecompressFile_0500
-     * @tc.desc: decompressFile normal callback \
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0500
+     * @tc.number acts_zlibDecompressFile_0500
+     * @tc.desc   decompressFile normal callback \
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0500', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0500 start==================');
       let inFile = '/data/storage/el2/base/testfile1.zip';
@@ -584,11 +617,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0500 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0600
-     * @tc.name: acts_zlibDecompressFile_0600
-     * @tc.desc: decompressFile normal pathSeparatorStrategy is 0
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0600
+     * @tc.number acts_zlibDecompressFile_0600
+     * @tc.desc   decompressFile normal pathSeparatorStrategy is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0600', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0600 start==================');
       let inFile = '/data/storage/el2/base/testfile2.zip';
@@ -662,11 +698,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0600 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0700
-     * @tc.name: acts_zlibDecompressFile_0700
-     * @tc.desc: decompressFile normal promise /
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0700
+     * @tc.number acts_zlibDecompressFile_0700
+     * @tc.desc   decompressFile normal promise /
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0700', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0700 start==================');
       let inFile = '/data/storage/el2/base/test.zip';
@@ -738,11 +777,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0700 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0800
-     * @tc.name: acts_zlibDecompressFile_0800
-     * @tc.desc: decompressFile normal callback /
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0800
+     * @tc.number acts_zlibDecompressFile_0800
+     * @tc.desc   decompressFile normal callback /
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0800', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0800 start==================');
       let inFile = '/data/storage/el2/base/test1.zip';
@@ -814,11 +856,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0800 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_0900
-     * @tc.name: acts_zlibDecompressFile_0900
-     * @tc.desc: decompressFile pathSeparatorStrategy is 0
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_0900
+     * @tc.number acts_zlibDecompressFile_0900
+     * @tc.desc   decompressFile pathSeparatorStrategy is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_0900', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0900 start==================');
       let inFile = '/data/storage/el2/base/test2.zip';
@@ -891,11 +936,14 @@ export default function decompressFileTest() {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_0900 end==================');
     })
 
-    /*
-     * @tc.number: acts_zlibDecompressFile_1100
-     * @tc.name: acts_zlibDecompressFile_1100
-     * @tc.desc: decompressFile do not pass optional parameters
-    */
+    /**
+     * @tc.name   acts_zlibDecompressFile_1100
+     * @tc.number acts_zlibDecompressFile_1100
+     * @tc.desc   decompressFile do not pass optional parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('acts_zlibDecompressFile_1100', Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'bmsTag', '==================acts_zlibDecompressFile_1100 start==================');
       let inFile = '/data/storage/el2/base/test3.zip';

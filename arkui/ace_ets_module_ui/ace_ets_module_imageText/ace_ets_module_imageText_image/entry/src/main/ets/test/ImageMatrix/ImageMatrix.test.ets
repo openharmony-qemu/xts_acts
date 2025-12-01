@@ -51,13 +51,13 @@ export default function ImageMatrixTest() {
       done();
     });
 
-    /*
-     * @tc.number ImageMatrixTest_0100
+    /**
      * @tc.name   ImageMatrixTest_0100
-     * @tc.desc   test the onKeyEvent api16 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.number ImageMatrixTest_0100
+     * @tc.desc   test the onKeyEvent api16 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageMatrixTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageMatrixTest_0100] START');

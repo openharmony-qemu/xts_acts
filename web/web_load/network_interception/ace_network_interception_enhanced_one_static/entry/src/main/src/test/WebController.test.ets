@@ -60,14 +60,14 @@ export default function webController() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_STOP_0100
-    * @tc.name       : testStopStatic001
-    * @tc.desc       : test stop
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testStopStatic001
+     * @tc.number SUB_WEB_STOP_0100
+     * @tc.desc   test stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testStopStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('testStop001', 10)

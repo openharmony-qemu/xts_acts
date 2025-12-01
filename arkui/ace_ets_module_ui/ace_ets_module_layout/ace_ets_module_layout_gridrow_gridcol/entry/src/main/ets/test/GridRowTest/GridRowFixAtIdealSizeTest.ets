@@ -45,6 +45,14 @@ export default function GridRowFixAtIdealSizeTest() {
     afterEach(async () => {
     });
     
+    /**
+     * @tc.name   GridRowFixAtIdealSizeTest_0100
+     * @tc.number GridRowFixAtIdealSizeTest_0100
+     * @tc.desc   GridRowFixAtIdealSizeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('GridRowFixAtIdealSizeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[GridRowFixAtIdealSizeTest_0100] START');
       let driver = await Driver.create()

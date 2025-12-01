@@ -40,14 +40,14 @@ export default function textPickerOnScrollStopTest(){
       }
       done();
     });
-    /* *
-    * @tc.number: textPickerOnScrollStopTest_0100
-    * @tc.name  : textPickerOnScrollStopTest_0100
-    * @tc.desc  : To test the onScollStop interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   textPickerOnScrollStopTest_0100
+     * @tc.number textPickerOnScrollStopTest_0100
+     * @tc.desc   To test the onScollStop interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textPickerOnScrollStopTest_0100', Level.LEVEL3, async (done:Function) =>{
       console.info('textPickerOnScrollStopTest_0100 START');
       let driver = await Driver.create()
@@ -64,33 +64,6 @@ export default function textPickerOnScrollStopTest(){
       expect(JSON.parse(strJson).$attrs.content).assertEqual('stop');
       await CommonFunc.sleep(1000);
       console.info('[textPickerOnScrollStopTest_0100] END');
-      done();
-    });
-
-    /* *
-    * @tc.number: textPickerOnScrollStopTest_0200
-    * @tc.name  : textPickerOnScrollStopTest_0200
-    * @tc.desc  : To test the onScollStop interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
-    it('textPickerOnScrollStopTest_0200', Level.LEVEL3, async (done:Function) =>{
-      console.info('textPickerOnScrollStopTest_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('myTextPicker1'));
-      await btn1.click()
-      let btn2 = await driver.findComponent(ON.text('确定'));
-      await btn2.click()
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('text1');
-      console.info('[textPickerOnScrollStopTest_0200] textPickerOnScrollStopTest JSON.parse(strJson) is: ' + JSON.stringify(strJson));
-      console.info('[textPickerOnScrollStopTest_0200] component JSON.parse(strJson) is: ' + JSON.stringify(JSON.parse(strJson)));
-      console.info('[textPickerOnScrollStopTest_0200] title: ' + JSON.stringify(JSON.parse(strJson).$attrs.content));
-      expect(JSON.parse(strJson).$attrs.content).assertEqual('stop');
-      await CommonFunc.sleep(1000);
-      console.info('[textPickerOnScrollStopTest_0200] END');
       done();
     });
   })

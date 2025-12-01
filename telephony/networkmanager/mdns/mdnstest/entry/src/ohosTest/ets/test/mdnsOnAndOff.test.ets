@@ -88,12 +88,12 @@ export default function NetworkManagerMdnsTest() {
 
 
     /**
-     * @tc.number:SUB_Telephony_NetManager_startSearchingMDNS_0100
-     * @tc.name  : testTelephonyNetManagerStartSearchingMDNS0100
-     * @tc.desc  : Subscribing to the Notification of Enabling the mDNS Service Listening Function
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.name   testTelephonyNetManagerStartSearchingMDNS0100
+     * @tc.number SUB_Telephony_NetManager_startSearchingMDNS_0100
+     * @tc.desc   Subscribing to the Notification of Enabling the mDNS Service Listening Function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyNetManagerStartSearchingMDNS0100', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL2 , async (done: Function) => {
       let caseName = 'testTelephonyNetManagerStartSearchingMDNS0100';
@@ -128,12 +128,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
-     * @tc.number:SUB_Telephony_NetManager_startSearchingMDNS_0200
-     * @tc.name  : testTelephonyNetManagerStartSearchingMDNS0200
-     * @tc.desc  : Disable the function of listening on the MDNS service.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.name   testTelephonyNetManagerStartSearchingMDNS0200
+     * @tc.number SUB_Telephony_NetManager_startSearchingMDNS_0200
+     * @tc.desc   Disable the function of listening on the MDNS service.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerStartSearchingMDNS0200', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL3 , async (done: Function) => {
       let caseName = 'testTelephonyNetManagerStartSearchingMDNS0200';
@@ -175,12 +175,12 @@ export default function NetworkManagerMdnsTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetManagerStopSearchingMDNS0100
      * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0100
-     * @tc.name  : testTelephonyNetManagerStopSearchingMDNS0100
-     * @tc.desc Subscribe to the notification of stopping listening on the MDNS service.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Subscribe to the notification of stopping listening on the MDNS service.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerStopSearchingMDNS0100', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerStopSearchingMDNS0100';
@@ -215,12 +215,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetManagerStopSearchingMDNS0200
      * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0200
-     * @tc.name  : testTelephonyNetManagerStopSearchingMDNS0200
-     * @tc.desc This interface is used to unsubscribe from the notification of stopping listening on the MDNS service.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   This interface is used to unsubscribe from the notification of stopping listening on the MDNS service.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerStopSearchingMDNS0200', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerStopSearchingMDNS0200';
@@ -263,12 +263,12 @@ export default function NetworkManagerMdnsTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceFound0100
      * @tc.number SUB_Telephony_NetManager_on_serviceFound_0100
-     * @tc.name testTelephonyNetManagerOnServiceFound0100
-     * @tc.desc Subscribe to notifications of MDNS service discovery.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Subscribe to notifications of MDNS service discovery.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerOnServiceFound0100', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerOnServiceFound0100';
@@ -304,12 +304,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceFound0200
      * @tc.number SUB_Telephony_NetManager_on_serviceFound_0200
-     * @tc.name testTelephonyNetManagerOnServiceFound0200
-     * @tc.desc Subscribe to notifications of MDNS service discovery.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Subscribe to notifications of MDNS service discovery.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerOnServiceFound0200', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerOnServiceFound0200';
@@ -349,12 +349,12 @@ export default function NetworkManagerMdnsTest() {
 
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceFound0300
      * @tc.number SUB_Telephony_NetManager_on_serviceFound_0300
-     * @tc.name testTelephonyNetManagerOnServiceFound0300
-     * @tc.desc Unsubscribe from notifications about MDNS service discovery.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Unsubscribe from notifications about MDNS service discovery.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerOnServiceFound0300', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerOnServiceFound0300';
@@ -394,12 +394,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceLost0100
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0100
-     * @tc.name testTelephonyNetManagerOnServiceLost0100
-     * @tc.desc Subscribe to the notification that the MDNS service is removed.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Subscribe to the notification that the MDNS service is removed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerOnServiceLost0100', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerOnServiceLost0100';
@@ -435,12 +435,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceLost0200
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0200
-     * @tc.name testTelephonyNetManagerOnServiceLost0200
-     * @tc.desc Subscribe to the notification that the MDNS service is removed.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Subscribe to the notification that the MDNS service is removed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerOnServiceLost0200', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerOnServiceLost0200';
@@ -476,12 +476,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceLost0300
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0300
-     * @tc.name testTelephonyNetManagerOnServiceLost0300
-     * @tc.desc This interface is used to unsubscribe from the notification that the MDNS service is removed.
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   This interface is used to unsubscribe from the notification that the MDNS service is removed.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNetManagerOnServiceLost0300', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'testTelephonyNetManagerOnServiceLost0300';
@@ -520,12 +520,12 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   SUB_Telephony_NetManager_MdnsError_0100
      * @tc.number SUB_Telephony_NetManager_MdnsError_0100
-     * @tc.name Test MdnsError enum
-     * @tc.desc  Function test
-     * @tc.size  : SMALLTEST
-     * @tc.type  : Function
-     * @tc.level : level 3
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Telephony_NetManager_MdnsError_0100', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
       let caseName = 'SUB_Telephony_NetManager_MdnsError_0100';

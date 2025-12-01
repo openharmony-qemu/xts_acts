@@ -40,12 +40,14 @@ export default function NavigationMode02Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationMode02Jsunit_0100
-    * @tc.name  : NavigationMode02Jsunit_0100
-    * @tc.desc  : Navigation. The width of the parent component of Navigation is greater than 600 vp. The width of the parent component of Navigation is dynamically changed to less than 600 vp.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationMode02Jsunit_0100
+     * @tc.number NavigationMode02Jsunit_0100
+     * @tc.desc   Navigation. The width of the parent component of Navigation is greater than 600 vp. The width of the parent component of Navigation is dynamically changed to less than 600 vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode02Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

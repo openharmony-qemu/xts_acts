@@ -29,13 +29,12 @@ export default function fileIORandomAccessFileClose() {
   describe('fileIO_randomAccessFile_close', (): void => {
 
     /**
+     * @tc.name   fileIO_randomaccessfile_close_sync_static_000
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_close_sync_static_0000
-     * @tc.name fileIO_randomaccessfile_close_sync_static_000
-     * @tc.desc Test close() interface. Close the RandomAccessFile object.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test close() interface. Close the RandomAccessFile object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_close_sync_static_000', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_close_sync_static_000');

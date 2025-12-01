@@ -41,12 +41,12 @@ export default function list() {
     })
 
     /**
+     * @tc.name   ListJsunit_0100
      * @tc.number ListJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0100] START');
@@ -60,12 +60,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0101
      * @tc.number ListJsunit_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0101] START');
@@ -79,12 +79,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0102
      * @tc.number ListJsunit_0102
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0102', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0102] START');
@@ -98,12 +98,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0103
      * @tc.number ListJsunit_0103
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0103', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0103] START');
@@ -117,12 +117,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0104
      * @tc.number ListJsunit_0104
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0104', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0104] START');
@@ -137,12 +137,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0105
      * @tc.number ListJsunit_0105
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0105', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0105] START');
@@ -157,12 +157,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0106
      * @tc.number ListJsunit_0106
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0106', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0106] START');
@@ -176,12 +176,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0107
      * @tc.number ListJsunit_0107
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0107', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0107] START');
@@ -195,12 +195,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0108
      * @tc.number ListJsunit_0108
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0108', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0108] START');
@@ -214,12 +214,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0109
      * @tc.number ListJsunit_0109
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0109', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0109] START');
@@ -233,12 +233,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0110
      * @tc.number ListJsunit_0110
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0110', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0110] START');
@@ -255,12 +255,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0111
      * @tc.number ListJsunit_0111
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0111', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0111] START');
@@ -274,12 +274,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0112
      * @tc.number ListJsunit_0112
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0112', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0112] START');
@@ -293,12 +293,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0113
      * @tc.number ListJsunit_0113
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0113', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0113] START');
@@ -312,12 +312,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0114
      * @tc.number ListJsunit_0114
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0114', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0114] START');
@@ -331,12 +331,12 @@ export default function list() {
     });
 
     /**
+     * @tc.name   ListJsunit_0115
      * @tc.number ListJsunit_0115
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0115', Level.LEVEL0, async (done: Function) => {
       console.info('[ListJsunit_0115] START');

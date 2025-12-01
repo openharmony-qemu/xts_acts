@@ -72,7 +72,6 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreOnsqliteErrorOccurred0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0100
      * @tc.desc   1.create db 2.close db 3.OnsqliteErrorOccurred
@@ -99,7 +98,6 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreOnsqliteErrorOccurred0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0200
      * @tc.desc   1.OnsqliteErrorOccurred 2.execute sql with SQLITE_ERROR
@@ -147,7 +145,6 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreOnsqliteErrorOccurred0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0300
      * @tc.desc   1.Insert data
@@ -200,7 +197,6 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreOnsqliteErrorOccurred0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0500
      * @tc.desc   1.Insert data
@@ -242,7 +238,6 @@ export default function rdbStoreSqliteErrorOccurredTest() {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0005 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreOnsqliteErrorOccurred0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0600
      * @tc.desc   1.create db 2.close db 3.OffsqliteErrorOccurred

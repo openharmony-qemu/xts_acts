@@ -37,13 +37,13 @@ export default function webViewObjectEmbed() {
       await Utils.msSleep(1000);
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_OBJECTEMBED_API_0001
-     * @tc.name       : testWebViewObjectEmbed_static_01
-     * @tc.desc       : test objectEmbed
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   testWebViewObjectEmbed_static_01
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0001
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewObjectEmbed_static_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewObjectEmbed01', 10)
@@ -55,13 +55,13 @@ export default function webViewObjectEmbed() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_WEB_OBJECTEMBED_API_0004
-     * @tc.name       : testWebViewObjectEmbed_static_04
-     * @tc.desc       : test objectEmbed
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   testWebViewObjectEmbed_static_04
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0004
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewObjectEmbed_static_04',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewObjectEmbed04', 10)

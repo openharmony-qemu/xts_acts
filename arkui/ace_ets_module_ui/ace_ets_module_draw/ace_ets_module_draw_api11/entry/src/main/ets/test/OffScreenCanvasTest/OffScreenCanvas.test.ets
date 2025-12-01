@@ -42,10 +42,13 @@ export default function OffScreenCanvasTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Canvas_API_OffScreenCanvas_0100
-     *tc.name   OffScreenCanvas support transferToImageBitmap and getContext
-     *tc.desc   OffScreenCanvas support transferToImageBitmap and getContext
+    /**
+     * @tc.name   ArkUI_Canvas_API_OffScreenCanvas_0100
+     * @tc.number ArkUI_Canvas_API_OffScreenCanvas_0100
+     * @tc.desc   OffScreenCanvas support transferToImageBitmap and getContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_API_OffScreenCanvas_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_API_OffScreenCanvas_0100'

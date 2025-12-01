@@ -58,13 +58,13 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
         done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NET_FRAMEURL_0100
-     *@tc.name testWebViewSdkTestMainFrameUrl
-     *@tc.desc test SdkTestMainFrameUrl
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkTestMainFrameUrl
+     * @tc.number SUB_ACE_WEB_NET_FRAMEURL_0100
+     * @tc.desc   test SdkTestMainFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkTestMainFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestMainFrameUrl"
@@ -77,13 +77,13 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_NET_FRAMEURL_0300
-     *@tc.name testWebViewSdkTestLoadUrlFrameUrl
-     *@tc.desc test SdkSchemeHandler_getRequestMethod
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkTestLoadUrlFrameUrl
+     * @tc.number SUB_ACE_WEB_NET_FRAMEURL_0300
+     * @tc.desc   test SdkSchemeHandler_getRequestMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkTestLoadUrlFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestLoadUrlFrameUrl"
@@ -96,13 +96,13 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_NET_FRAMEURL_0400
-     *@tc.name testWebViewSdkTestSubFrameUrl
-     *@tc.desc test SdkSchemeHandler_getReferrer
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkTestSubFrameUrl
+     * @tc.number SUB_ACE_WEB_NET_FRAMEURL_0400
+     * @tc.desc   test SdkSchemeHandler_getReferrer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkTestSubFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestSubFrameUrl"
@@ -114,13 +114,13 @@ export default function ActsAceWebViewSdkTestFrameUrl() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NET_FRAMEURL_0200
-     *@tc.name testWebViewSdkTestServiceWorkerFrameUrl
-     *@tc.desc test SdkSchemeHandler_getRequestUrl
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkTestServiceWorkerFrameUrl
+     * @tc.number SUB_ACE_WEB_NET_FRAMEURL_0200
+     * @tc.desc   test SdkSchemeHandler_getRequestUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkTestServiceWorkerFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkTestServiceWorkerFrameUrl"

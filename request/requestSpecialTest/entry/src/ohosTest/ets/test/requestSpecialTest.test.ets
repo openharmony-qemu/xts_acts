@@ -96,12 +96,12 @@ export default function requestSpecialUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Download_broadcastEvent_0200
      * @tc.number SUB_REQUEST_Download_broadcastEvent_0200
-     * @tc.name SUB_REQUEST_Download_broadcastEvent_0200
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Download_broadcastEvent_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Download_broadcastEvent_0200 is starting-----------------------");
@@ -169,13 +169,13 @@ export default function requestSpecialUnitTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_ErrorDetailed_0500
-     * @tc.name: SUB_Request_Agent_ErrorDetailed_0500
-     * @tc.desc: incorrect error of DNS
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_ErrorDetailed_0500
+     * @tc.number SUB_Request_Agent_ErrorDetailed_0500
+     * @tc.desc   incorrect error of DNS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_ErrorDetailed_0500', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_Request_Agent_ErrorDetailed_0500 is starting-----------------------');
@@ -212,11 +212,12 @@ export default function requestSpecialUnitTest() {
     });
 
     /**
+     * @tc.name   Download_Test_0300
      * @tc.number Download_Test_0300
-     * @tc.desc Called when the current download session fails.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   Called when the current download session fails.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Download_Test_0300', Level.LEVEL0, async (done: Function) => {
       console.info("====>---------------------Download_Test_0300 is starting---------------------");
@@ -265,13 +266,13 @@ export default function requestSpecialUnitTest() {
       })
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_CreateTaskErrorCode_Callback_0100
-     * @tc.name: SUB_Request_Agent_CreateTaskErrorCode_Callback_0100
-     * @tc.desc: create full tasks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_CreateTaskErrorCode_Callback_0100
+     * @tc.number SUB_Request_Agent_CreateTaskErrorCode_Callback_0100
+     * @tc.desc   create full tasks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_CreateTaskErrorCode_Callback_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0400 is starting-----------------------");
@@ -308,13 +309,13 @@ export default function requestSpecialUnitTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Request_Agent_CreateTaskErrorCode_promise_0100
-     * @tc.name: SUB_Request_Agent_CreateTaskErrorCode_promise_0100
-     * @tc.desc: create full tasks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   SUB_Request_Agent_CreateTaskErrorCode_promise_0100
+     * @tc.number SUB_Request_Agent_CreateTaskErrorCode_promise_0100
+     * @tc.desc   create full tasks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_CreateTaskErrorCode_promise_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0400 is starting-----------------------");
@@ -343,12 +344,12 @@ export default function requestSpecialUnitTest() {
     })
 
     /**
-     * @tc.number  SUB_Request_Download_on_faultOccur_0400
-     * @tc.name    SUB_Request_Download_on_faultOccur_0400
-     * @tc.desc    on faultOccur.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_on_faultOccur_0400
+     * @tc.number SUB_Request_Download_on_faultOccur_0400
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_on_faultOccur_0400', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_on_faultOccur_0400 is starting-----------------------");
@@ -380,12 +381,12 @@ export default function requestSpecialUnitTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Download_on_faultOccur_0700
-     * @tc.name    SUB_Request_Download_on_faultOccur_0700
-     * @tc.desc    on faultOccur.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    : Function
-     * @tc.level   : Level 2
+     * @tc.name   SUB_Request_Download_on_faultOccur_0700
+     * @tc.number SUB_Request_Download_on_faultOccur_0700
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_on_faultOccur_0700', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_on_faultOccur_0700 is starting-----------------------");
@@ -417,12 +418,12 @@ export default function requestSpecialUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Request_Download_on_wait_0500
-     * @tc.name      SUB_Request_Download_on_wait_0500
-     * @tc.desc      on wait.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Request_Download_on_wait_0500
+     * @tc.number SUB_Request_Download_on_wait_0500
+     * @tc.desc   on wait.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_on_wait_0500', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_on_wait_0500 is starting-----------------------");
@@ -461,12 +462,12 @@ export default function requestSpecialUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Request_Download_on_wait_0510
-     * @tc.name      SUB_Request_Download_on_wait_0510
-     * @tc.desc      Starts a download session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Request_Download_on_wait_0510
+     * @tc.number SUB_Request_Download_on_wait_0510
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Download_on_wait_0510', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_Request_Download_on_wait_0510 is starting-----------------------");

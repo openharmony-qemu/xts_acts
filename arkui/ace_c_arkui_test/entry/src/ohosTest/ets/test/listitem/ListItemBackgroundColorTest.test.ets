@@ -26,13 +26,13 @@ export default function listItemBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BACKGROUNDCOLOR_0100
-     * @tc.name       : testListItemBackgroundColor001
-     * @tc.desc       : testing backgroundColor for listItem with red value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for listItem with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBackgroundColor001()).assertEqual(0)

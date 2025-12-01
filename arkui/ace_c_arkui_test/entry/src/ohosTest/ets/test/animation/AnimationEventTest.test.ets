@@ -27,13 +27,13 @@ export default function animationEventTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATEOPTION_0100
-     * @tc.name       : testAnimateOption001
-     * @tc.desc       : testing animateTo with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimateOption001
+     * @tc.number SUB_ARKUI_CAPI_ANIMATEOPTION_0100
+     * @tc.desc   testing animateTo with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimateOption001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AnimateToTest';
@@ -47,13 +47,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1200
-     * @tc.name       : testKeyframeAnimateOption012
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_RegisterOnFinishCallback with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption012
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1200
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_RegisterOnFinishCallback with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption012', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'KeyframeRegisterOnFinishTest';
@@ -66,13 +66,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2300
-     * @tc.name       : testKeyframeAnimateOption023
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_RegisterOnEventCallback with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption023
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2300
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_RegisterOnEventCallback with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption023', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'KeyframeRegisterOnEventTest';
@@ -85,13 +85,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOROPTION_4700
-     * @tc.name       : testAnimatorOption047
-     * @tc.desc       : testing OH_ArkUI_AnimatorOption_RegisterOnFrameCallback with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorOption047
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOROPTION_4700
+     * @tc.desc   testing OH_ArkUI_AnimatorOption_RegisterOnFrameCallback with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorOption047', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AnimatorRegisterOnFrameTest';
@@ -106,13 +106,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOROPTION_5000
-     * @tc.name       : testAnimatorOption050
-     * @tc.desc       : testing OH_ArkUI_AnimatorOption_RegisterOnFinishCallback with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorOption050
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOROPTION_5000
+     * @tc.desc   testing OH_ArkUI_AnimatorOption_RegisterOnFinishCallback with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorOption050', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AnimatorRegisterOnFinishTest';
@@ -127,13 +127,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOROPTION_5300
-     * @tc.name       : testAnimatorOption053
-     * @tc.desc       : testing OH_ArkUI_AnimatorOption_RegisterOnCancelCallback with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorOption053
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOROPTION_5300
+     * @tc.desc   testing OH_ArkUI_AnimatorOption_RegisterOnCancelCallback with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorOption053', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AnimatorRegisterOnCancelTest';
@@ -148,13 +148,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOROPTION_5600
-     * @tc.name       : testAnimatorOption056
-     * @tc.desc       : testing OH_ArkUI_AnimatorOption_RegisterOnRepeatCallback with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorOption056
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOROPTION_5600
+     * @tc.desc   testing OH_ArkUI_AnimatorOption_RegisterOnRepeatCallback with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorOption056', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AnimatorRegisterOnRepeatTest';
@@ -167,13 +167,13 @@ export default function animationEventTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ANIMATOROPTION_6200
-     * @tc.name       : testAnimatorOption062
-     * @tc.desc       : testing OH_ArkUI_Animator_Reverse with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAnimatorOption062
+     * @tc.number SUB_ARKUI_CAPI_ANIMATOROPTION_6200
+     * @tc.desc   testing OH_ArkUI_Animator_Reverse with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnimatorOption062', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AnimatorReverseTest';

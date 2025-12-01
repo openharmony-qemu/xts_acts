@@ -56,10 +56,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   navigatorTest001
      * @tc.number navigatorTest001
-     * @tc.name navigatorTest001
-     * @tc.desc aceEtsTest
-     * @tc.level     Level 0
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('navigatorTest001',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Navigator TestCase 1 START ++++++++++++++++');
@@ -83,10 +85,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   navigatorTest002
      * @tc.number navigatorTest002
-     * @tc.name navigatorTest002
-     * @tc.desc aceEtsTest
-     * @tc.level     Level 0
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('navigatorTest002',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Navigator TestCase 2 START ++++++++++++++++');
@@ -102,10 +106,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   navigatorTest003
      * @tc.number navigatorTest003
-     * @tc.name navigatorTest003
-     * @tc.desc aceEtsTest
-     * @tc.level     Level 0
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('navigatorTest003',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Navigator TestCase 3 START ++++++++++++++++');

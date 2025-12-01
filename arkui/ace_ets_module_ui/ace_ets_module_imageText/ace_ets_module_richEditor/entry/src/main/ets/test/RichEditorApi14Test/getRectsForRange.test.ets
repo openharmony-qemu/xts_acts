@@ -43,12 +43,12 @@ export default function getRectsForRangeTest() {
     });
 
     /**
-     * @tc.number    getRectsForRangeTest_0010
-     * @tc.name      getRectsForRangeTest_0010
-     * @tc.desc      test_getRectsForRange
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getRectsForRangeTest_0010
+     * @tc.number getRectsForRangeTest_0010
+     * @tc.desc   test_getRectsForRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getRectsForRangeTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('getRectsForRangeTest_0010 START');
@@ -71,12 +71,12 @@ export default function getRectsForRangeTest() {
     });
 
     /**
-     * @tc.number    getRectsForRangeTest_0020
-     * @tc.name      getRectsForRangeTest_0020
-     * @tc.desc      test_getRectsForRange
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getRectsForRangeTest_0020
+     * @tc.number getRectsForRangeTest_0020
+     * @tc.desc   test_getRectsForRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getRectsForRangeTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('getRectsForRangeTest_0020 START');

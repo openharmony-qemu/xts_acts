@@ -164,10 +164,13 @@ void OH_Drawing_TypographyTest::PrepareCreateTextLine(const std::string& text)
     OH_Drawing_TypographyPaint(typography_, canvas_, position[0], position[1]);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest001
- * @tc.desc: test for creating TypographyStyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest001
+ * @tc.number OH_Drawing_TypographyTest001
+ * @tc.desc   test for creating TypographyStyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest001, Function | MediumTest | Level1)
 {
@@ -176,10 +179,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest001, Function | Med
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest002
- * @tc.desc: test for text direction
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest002
+ * @tc.number OH_Drawing_TypographyTest002
+ * @tc.desc   test for text direction
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest002, Function | MediumTest | Level1)
 {
@@ -192,10 +198,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest002, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->textDirection, TextDirection::LTR);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest003
- * @tc.desc: test for text alignment
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest003
+ * @tc.number OH_Drawing_TypographyTest003
+ * @tc.desc   test for text alignment
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest003, Function | MediumTest | Level1)
 {
@@ -216,10 +225,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest003, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->textAlign, TextAlign::LEFT);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest004
- * @tc.desc: test for max lines
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest004
+ * @tc.number OH_Drawing_TypographyTest004
+ * @tc.desc   test for max lines
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest004, Function | MediumTest | Level1)
 {
@@ -230,10 +242,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest004, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->maxLines, 200);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest005
- * @tc.desc: test for creating text style
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest005
+ * @tc.number OH_Drawing_TypographyTest005
+ * @tc.desc   test for creating text style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest005, Function | MediumTest | Level1)
 {
@@ -242,10 +257,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest005, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest006
- * @tc.desc: test for text color
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest006
+ * @tc.number OH_Drawing_TypographyTest006
+ * @tc.desc   test for text color
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest006, Function | MediumTest | Level1)
 {
@@ -261,10 +279,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest006, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->color, 0xFF0000FF);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest007
- * @tc.desc: test for font size
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest007
+ * @tc.number OH_Drawing_TypographyTest007
+ * @tc.desc   test for font size
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest007, Function | MediumTest | Level1)
 {
@@ -275,10 +296,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest007, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->fontSize, 40);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest008
- * @tc.desc: test for font weight
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest008
+ * @tc.number OH_Drawing_TypographyTest008
+ * @tc.desc   test for font weight
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest008, Function | MediumTest | Level1)
 {
@@ -305,10 +329,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest008, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->fontWeight, FontWeight::W400);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest009
- * @tc.desc: test for baseline location
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest009
+ * @tc.number OH_Drawing_TypographyTest009
+ * @tc.desc   test for baseline location
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest009, Function | MediumTest | Level1)
 {
@@ -321,10 +348,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest009, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->baseline, TextBaseline::ALPHABETIC);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest010
- * @tc.desc: test for text decoration
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest010
+ * @tc.number OH_Drawing_TypographyTest010
+ * @tc.desc   test for text decoration
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest010, Function | MediumTest | Level1)
 {
@@ -341,10 +371,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest010, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->decoration, TextDecoration::NONE);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest011
- * @tc.desc: test for text decoration color
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest011
+ * @tc.number OH_Drawing_TypographyTest011
+ * @tc.desc   test for text decoration color
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest011, Function | MediumTest | Level1)
 {
@@ -355,10 +388,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest011, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->decorationColor, 0xFFFF0000);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest012
- * @tc.desc: test for font height
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest012
+ * @tc.number OH_Drawing_TypographyTest012
+ * @tc.desc   test for font height
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest012, Function | MediumTest | Level1)
 {
@@ -367,10 +403,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest012, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->heightScale, 0.0);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest013
- * @tc.desc: test for font families
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest013
+ * @tc.number OH_Drawing_TypographyTest013
+ * @tc.desc   test for font families
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest013, Function | MediumTest | Level1)
 {
@@ -381,10 +420,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest013, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->fontFamilies, fontFamiliesResult);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest014
- * @tc.desc: test for font italic
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest014
+ * @tc.number OH_Drawing_TypographyTest014
+ * @tc.desc   test for font italic
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest014, Function | MediumTest | Level1)
 {
@@ -397,10 +439,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest014, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->fontStyle, FontStyle::NORMAL);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest015
- * @tc.desc: test for font locale
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest015
+ * @tc.number OH_Drawing_TypographyTest015
+ * @tc.desc   test for font locale
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest015, Function | MediumTest | Level1)
 {
@@ -409,10 +454,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest015, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->locale, "en");
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest016
- * @tc.desc: test for typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest016
+ * @tc.number OH_Drawing_TypographyTest016
+ * @tc.desc   test for typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest016, Function | MediumTest | Level1)
 {
@@ -467,10 +515,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest016, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest017
- * @tc.desc: test for break strategy
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest017
+ * @tc.number OH_Drawing_TypographyTest017
+ * @tc.desc   test for break strategy
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest017, Function | MediumTest | Level1)
 {
@@ -485,10 +536,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest017, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->breakStrategy, BreakStrategy::GREEDY);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest018
- * @tc.desc: test for word break type
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest018
+ * @tc.number OH_Drawing_TypographyTest018
+ * @tc.desc   test for word break type
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest018, Function | MediumTest | Level1)
 {
@@ -503,10 +557,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest018, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->wordBreakType, WordBreakType::BREAK_WORD);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest019
- * @tc.desc: test for ellipsis modal
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest019
+ * @tc.number OH_Drawing_TypographyTest019
+ * @tc.desc   test for ellipsis modal
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest019, Function | MediumTest | Level1)
 {
@@ -521,10 +578,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest019, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->ellipsisModal, EllipsisModal::TAIL);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest020
- * @tc.desc: test for decoration style
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest020
+ * @tc.number OH_Drawing_TypographyTest020
+ * @tc.desc   test for decoration style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest020, Function | MediumTest | Level1)
 {
@@ -543,10 +603,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest020, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->decorationStyle, TextDecorationStyle::SOLID);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest021
- * @tc.desc: test for decoration thickness scale
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest021
+ * @tc.number OH_Drawing_TypographyTest021
+ * @tc.desc   test for decoration thickness scale
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest021, Function | MediumTest | Level1)
 {
@@ -557,10 +620,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest021, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->decorationThicknessScale, 20);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest022
- * @tc.desc: test for letter spacing
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest022
+ * @tc.number OH_Drawing_TypographyTest022
+ * @tc.desc   test for letter spacing
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest022, Function | MediumTest | Level1)
 {
@@ -571,10 +637,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest022, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->letterSpacing, 20);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest023
- * @tc.desc: test for word spacing
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest023
+ * @tc.number OH_Drawing_TypographyTest023
+ * @tc.desc   test for word spacing
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest023, Function | MediumTest | Level1)
 {
@@ -585,10 +654,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest023, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->wordSpacing, 20);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest024
- * @tc.desc: test for ellipsis modal
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest024
+ * @tc.number OH_Drawing_TypographyTest024
+ * @tc.desc   test for ellipsis modal
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest024, Function | MediumTest | Level1)
 {
@@ -603,10 +675,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest024, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->ellipsisModal, EllipsisModal::TAIL);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest025
- * @tc.desc: test for set ellipsis
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest025
+ * @tc.number OH_Drawing_TypographyTest025
+ * @tc.desc   test for set ellipsis
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest025, Function | MediumTest | Level1)
 {
@@ -615,10 +690,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest025, Function | Med
     EXPECT_EQ(ConvertToOriginalText(txtStyle)->ellipsis, u"...");
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest026
- * @tc.desc: test for typography and txtStyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest026
+ * @tc.number OH_Drawing_TypographyTest026
+ * @tc.desc   test for typography and txtStyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest026, Function | MediumTest | Level1)
 {
@@ -669,10 +747,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest026, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest027
- * @tc.desc: test for getting line info for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest027
+ * @tc.number OH_Drawing_TypographyTest027
+ * @tc.desc   test for getting line info for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest027, Function | MediumTest | Level1)
 {
@@ -717,10 +798,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest027, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest028
- * @tc.desc: test for getting line info for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest028
+ * @tc.number OH_Drawing_TypographyTest028
+ * @tc.desc   test for getting line info for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest028, Function | MediumTest | Level1)
 {
@@ -730,10 +814,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest028, Function | Med
     OH_Drawing_DestroyTextShadow(nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest029
- * @tc.desc: test for font weight of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest029
+ * @tc.number OH_Drawing_TypographyTest029
+ * @tc.desc   test for font weight of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest029, Function | MediumTest | Level1)
 {
@@ -748,10 +835,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest029, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->fontWeight, FontWeight::W400);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest030
- * @tc.desc: test for font style of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest030
+ * @tc.number OH_Drawing_TypographyTest030
+ * @tc.desc   test for font style of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest030, Function | MediumTest | Level1)
 {
@@ -764,10 +854,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest030, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->fontStyle, FontStyle::NORMAL);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest031
- * @tc.desc: test for font family of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest031
+ * @tc.number OH_Drawing_TypographyTest031
+ * @tc.desc   test for font family of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest031, Function | MediumTest | Level1)
 {
@@ -776,10 +869,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest031, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)-> fontFamily, "monospace");
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest032
- * @tc.desc: test for font size of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest032
+ * @tc.number OH_Drawing_TypographyTest032
+ * @tc.desc   test for font size of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest032, Function | MediumTest | Level1)
 {
@@ -790,10 +886,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest032, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->fontSize, 40);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest033
- * @tc.desc: test for font height of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest033
+ * @tc.number OH_Drawing_TypographyTest033
+ * @tc.desc   test for font height of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest033, Function | MediumTest | Level1)
 {
@@ -802,10 +901,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest033, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->heightScale, 0.0);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest034
- * @tc.desc: test for font weight of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest034
+ * @tc.number OH_Drawing_TypographyTest034
+ * @tc.desc   test for font weight of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest034, Function | MediumTest | Level1)
 {
@@ -822,10 +924,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest034, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleFontWeight, FontWeight::W500);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest035
- * @tc.desc: test for font style of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest035
+ * @tc.number OH_Drawing_TypographyTest035
+ * @tc.desc   test for font style of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest035, Function | MediumTest | Level1)
 {
@@ -838,10 +943,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest035, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleFontStyle, FontStyle::NORMAL);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest036
- * @tc.desc: test for font families of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest036
+ * @tc.number OH_Drawing_TypographyTest036
+ * @tc.desc   test for font families of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest036, Function | MediumTest | Level1)
 {
@@ -852,10 +960,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest036, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleFontFamilies, fontFamiliesResult);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest037
- * @tc.desc: test for font size of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest037
+ * @tc.number OH_Drawing_TypographyTest037
+ * @tc.desc   test for font size of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest037, Function | MediumTest | Level1)
 {
@@ -866,10 +977,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest037, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleFontSize, 40);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest038
- * @tc.desc: test for font height of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest038
+ * @tc.number OH_Drawing_TypographyTest038
+ * @tc.desc   test for font height of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest038, Function | MediumTest | Level1)
 {
@@ -878,10 +992,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest038, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleHeightScale, 0.0);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest039
- * @tc.desc: test for spacing scale of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest039
+ * @tc.number OH_Drawing_TypographyTest039
+ * @tc.desc   test for spacing scale of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest039, Function | MediumTest | Level1)
 {
@@ -892,10 +1009,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest039, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleSpacingScale, 2.0);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest040
- * @tc.desc: test for line metrics for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest040
+ * @tc.number OH_Drawing_TypographyTest040
+ * @tc.desc   test for line metrics for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest040, Function | MediumTest | Level1)
 {
@@ -954,10 +1074,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest040, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest041
- * @tc.desc: test for font weight of line style for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest041
+ * @tc.number OH_Drawing_TypographyTest041
+ * @tc.desc   test for font weight of line style for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest041, Function | MediumTest | Level1)
 {
@@ -972,10 +1095,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest041, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->lineStyleFontWeight, FontWeight::W900);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest042
- * @tc.desc: test for text shadow for textstyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest042
+ * @tc.number OH_Drawing_TypographyTest042
+ * @tc.desc   test for text shadow for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest042, Function | MediumTest | Level1)
 {
@@ -1025,10 +1151,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest042, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest043
- * @tc.desc: test for effectiveAlignment, isLineUnlimited, isEllipsized for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest043
+ * @tc.number OH_Drawing_TypographyTest043
+ * @tc.desc   test for effectiveAlignment, isLineUnlimited, isEllipsized for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest043, Function | MediumTest | Level1)
 {
@@ -1080,10 +1209,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest043, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest044
- * @tc.desc: test for foreground brush for textstyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest044
+ * @tc.number OH_Drawing_TypographyTest044
+ * @tc.desc   test for foreground brush for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest044, Function | MediumTest | Level1)
 {
@@ -1132,10 +1264,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest044, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest045
- * @tc.desc: test for background brush for textstyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest045
+ * @tc.number OH_Drawing_TypographyTest045
+ * @tc.desc   test for background brush for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest045, Function | MediumTest | Level1)
 {
@@ -1184,10 +1319,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest045, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest046
- * @tc.desc: test for background pen for textstyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest046
+ * @tc.number OH_Drawing_TypographyTest046
+ * @tc.desc   test for background pen for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest046, Function | MediumTest | Level1)
 {
@@ -1236,10 +1374,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest046, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest047
- * @tc.desc: test for foreground pen for textstyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest047
+ * @tc.number OH_Drawing_TypographyTest047
+ * @tc.desc   test for foreground pen for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest047, Function | MediumTest | Level1)
 {
@@ -1288,10 +1429,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest047, Function | Med
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest048
- * @tc.desc: test for font weight for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest048
+ * @tc.number OH_Drawing_TypographyTest048
+ * @tc.desc   test for font weight for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest048, Function | MediumTest | Level1)
 {
@@ -1308,10 +1452,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest048, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->fontWeight, FontWeight::W900);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest049
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest049
+ * @tc.number OH_Drawing_TypographyTest049
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest049, Function | MediumTest | Level1)
 {
@@ -1326,10 +1473,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest049, Function | Med
 }
 
 
-/*
- * @tc.name: OH_Drawing_TypographyTest050
- * @tc.desc: test for getting numbers for textstyle
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest050
+ * @tc.number OH_Drawing_TypographyTest050
+ * @tc.desc   test for getting numbers for textstyle
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest050, Function | MediumTest | Level1)
 {
@@ -1377,10 +1527,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest050, Function | Med
     EXPECT_EQ(OH_Drawing_TextStyleGetLocale(nullptr) == nullptr, true);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest051
- * @tc.desc: test for getting line info for text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest051
+ * @tc.number OH_Drawing_TypographyTest051
+ * @tc.desc   test for getting line info for text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest051, Function | MediumTest | Level1)
 {
@@ -1423,10 +1576,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest051, Function | Med
     EXPECT_EQ(OH_Drawing_TextStyleGetBaselineShift(txtStyle), 1.5);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest052
- * @tc.desc: test for setting the mode of leading over and under text
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest052
+ * @tc.number OH_Drawing_TypographyTest052
+ * @tc.desc   test for setting the mode of leading over and under text
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest052, Function | MediumTest | Level1)
 {
@@ -1441,10 +1597,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest052, Function | Med
     EXPECT_EQ(ConvertToOriginalText(typoStyle)->textHeightBehavior, TextHeightBehavior::DISABLE_ALL);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest053
- * @tc.desc: test for getting the mode of leading over and under text
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest053
+ * @tc.number OH_Drawing_TypographyTest053
+ * @tc.desc   test for getting the mode of leading over and under text
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest053, Function | MediumTest | Level1)
 {
@@ -1460,10 +1619,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest053, Function | Med
     EXPECT_EQ(OH_Drawing_TypographyTextGetHeightBehavior(typoStyle) == TEXT_HEIGHT_DISABLE_ALL, true);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest054
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest054
+ * @tc.number OH_Drawing_TypographyTest054
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest054, Function | MediumTest | Level1)
 {
@@ -1487,10 +1649,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest054, Function | Med
     EXPECT_TRUE(typography == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest055
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest055
+ * @tc.number OH_Drawing_TypographyTest055
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest055, Function | MediumTest | Level1)
 {
@@ -1516,10 +1681,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest055, Function | Med
     EXPECT_TRUE(typography == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest056
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest056
+ * @tc.number OH_Drawing_TypographyTest056
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest056, Function | MediumTest | Level1)
 {
@@ -1546,10 +1714,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest056, Function | Med
     EXPECT_TRUE(typography == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest057
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest057
+ * @tc.number OH_Drawing_TypographyTest057
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest057, Function | MediumTest | Level1)
 {
@@ -1565,10 +1736,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest057, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest058
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest058
+ * @tc.number OH_Drawing_TypographyTest058
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest058, Function | MediumTest | Level1)
 {
@@ -1584,10 +1758,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest058, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest059
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest059
+ * @tc.number OH_Drawing_TypographyTest059
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest059, Function | MediumTest | Level1)
 {
@@ -1603,10 +1780,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest059, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest060
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest060
+ * @tc.number OH_Drawing_TypographyTest060
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest060, Function | MediumTest | Level1)
 {
@@ -1625,10 +1805,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest060, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest061
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest061
+ * @tc.number OH_Drawing_TypographyTest061
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest061, Function | MediumTest | Level1)
 {
@@ -1643,10 +1826,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest061, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest062
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest062
+ * @tc.number OH_Drawing_TypographyTest062
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest062, Function | MediumTest | Level1)
 {
@@ -1660,10 +1846,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest062, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest063
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest063
+ * @tc.number OH_Drawing_TypographyTest063
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest063, Function | MediumTest | Level1)
 {
@@ -1680,10 +1869,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest063, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest064
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest064
+ * @tc.number OH_Drawing_TypographyTest064
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest064, Function | MediumTest | Level1)
 {
@@ -1699,10 +1891,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest064, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest065
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest065
+ * @tc.number OH_Drawing_TypographyTest065
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest065, Function | MediumTest | Level1)
 {
@@ -1717,10 +1912,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest065, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest066
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest066
+ * @tc.number OH_Drawing_TypographyTest066
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest066, Function | MediumTest | Level1)
 {
@@ -1736,10 +1934,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest066, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest067
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest067
+ * @tc.number OH_Drawing_TypographyTest067
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest067, Function | MediumTest | Level1)
 {
@@ -1753,10 +1954,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest067, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest068
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest068
+ * @tc.number OH_Drawing_TypographyTest068
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest068, Function | MediumTest | Level1)
 {
@@ -1771,10 +1975,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest068, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest069
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest069
+ * @tc.number OH_Drawing_TypographyTest069
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest069, Function | MediumTest | Level1)
 {
@@ -1794,10 +2001,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest069, Function | Med
     EXPECT_TRUE(to == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest070
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest070
+ * @tc.number OH_Drawing_TypographyTest070
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest070, Function | MediumTest | Level1)
 {
@@ -1812,10 +2022,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest070, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest071
- * @tc.desc: test for halfleading, uselinestyle linestyleonly of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest071
+ * @tc.number OH_Drawing_TypographyTest071
+ * @tc.desc   test for halfleading, uselinestyle linestyleonly of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest071, Function | MediumTest | Level1)
 {
@@ -1831,10 +2044,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest071, Function | Med
     EXPECT_TRUE(typoStyle == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest072
- * @tc.desc: test for create and releases the memory occupied by system font configuration information
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest072
+ * @tc.number OH_Drawing_TypographyTest072
+ * @tc.desc   test for create and releases the memory occupied by system font configuration information
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest072, Function | MediumTest | Level1)
 {
@@ -1849,10 +2065,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest072, Function | Med
     configJsonInfo = nullptr;
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest073
- * @tc.desc: test for getting all font metrics array from current line
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest073
+ * @tc.number OH_Drawing_TypographyTest073
+ * @tc.desc   test for getting all font metrics array from current line
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest073, Function | MediumTest | Level1)
 {
@@ -1877,10 +2096,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest073, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest074
- * @tc.desc: test for getting and setting strut style
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest074
+ * @tc.number OH_Drawing_TypographyTest074
+ * @tc.desc   test for getting and setting strut style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest074, Function | MediumTest | Level1)
 {
@@ -1912,10 +2134,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest074, Function | Med
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest075
- * @tc.desc: test for the two TextStyle objects have matching properties
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest075
+ * @tc.number OH_Drawing_TypographyTest075
+ * @tc.desc   test for the two TextStyle objects have matching properties
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest075, Function | MediumTest | Level1)
 {
@@ -1932,10 +2157,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest075, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyleCompare);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest076
- * @tc.desc: test for sets and gets isPlaceholder for TextStyle objects
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest076
+ * @tc.number OH_Drawing_TypographyTest076
+ * @tc.desc   test for sets and gets isPlaceholder for TextStyle objects
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest076, Function | MediumTest | Level1)
 {
@@ -1949,10 +2177,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest076, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest077
- * @tc.desc: test for gets the typoStyle alignment mode and whether to enable text prompts
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest077
+ * @tc.number OH_Drawing_TypographyTest077
+ * @tc.desc   test for gets the typoStyle alignment mode and whether to enable text prompts
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest077, Function | MediumTest | Level1)
 {
@@ -1962,10 +2193,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest077, Function | Med
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest078
- * @tc.desc: test for strutstyle equals
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest078
+ * @tc.number OH_Drawing_TypographyTest078
+ * @tc.desc   test for strutstyle equals
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest078, Function | MediumTest | Level1)
 {
@@ -1985,10 +2219,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest078, Function | Med
     EXPECT_TRUE(to == nullptr);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest079
- * @tc.desc: test for setting the hinting of text typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest079
+ * @tc.number OH_Drawing_TypographyTest079
+ * @tc.desc   test for setting the hinting of text typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest079, Function | MediumTest | Level1)
 {
@@ -1998,10 +2235,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest079, Function | Med
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest080
- * @tc.desc: test for whether two TextStyle objects are equal
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest080
+ * @tc.number OH_Drawing_TypographyTest080
+ * @tc.desc   test for whether two TextStyle objects are equal
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest080, Function | MediumTest | Level1)
 {
@@ -2022,10 +2262,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest080, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyleCompare);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest081
- * @tc.desc: test for getting and setting text style
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest081
+ * @tc.number OH_Drawing_TypographyTest081
+ * @tc.desc   test for getting and setting text style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest081, Function | MediumTest | Level1)
 {
@@ -2044,10 +2287,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest081, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest082
- * @tc.desc: test for getting and setting typography style
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest082
+ * @tc.number OH_Drawing_TypographyTest082
+ * @tc.desc   test for getting and setting typography style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest082, Function | MediumTest | Level1)
 {
@@ -2066,10 +2312,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest082, Function | Med
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest083
- * @tc.desc: test for the font properties of two TextStyle objects are equal
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest083
+ * @tc.number OH_Drawing_TypographyTest083
+ * @tc.desc   test for the font properties of two TextStyle objects are equal
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest083, Function | MediumTest | Level1)
 {
@@ -2088,10 +2337,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest083, Function | Med
     OH_Drawing_DestroyTextStyle(txtStyleCompare);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest084
- * @tc.desc: test for BREAK_STRATEGY_GREEDY
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest084
+ * @tc.number OH_Drawing_TypographyTest084
+ * @tc.desc   test for BREAK_STRATEGY_GREEDY
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest084, Function | MediumTest | Level1)
 {
@@ -2114,10 +2366,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest084, Function | Med
     EXPECT_EQ(maxWidth, OH_Drawing_TypographyGetMaxWidth(typography));
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest085
- * @tc.desc: test for BREAK_STRATEGY_BALANCED
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest085
+ * @tc.number OH_Drawing_TypographyTest085
+ * @tc.desc   test for BREAK_STRATEGY_BALANCED
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest085, Function | MediumTest | Level1)
 {
@@ -2140,10 +2395,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest085, Function | Med
     EXPECT_EQ(maxWidth, OH_Drawing_TypographyGetMaxWidth(typography));
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest086
- * @tc.desc: test for BREAK_STRATEGY_HIGH_QUALITY
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest086
+ * @tc.number OH_Drawing_TypographyTest086
+ * @tc.desc   test for BREAK_STRATEGY_HIGH_QUALITY
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest086, Function | MediumTest | Level1)
 {
@@ -2166,10 +2424,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest086, Function | Med
     EXPECT_EQ(maxWidth, OH_Drawing_TypographyGetMaxWidth(typography));
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest102
- * @tc.desc: test for the font parser
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest102
+ * @tc.number OH_Drawing_TypographyTest102
+ * @tc.desc   test for the font parser
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest102, Function | MediumTest | Level1)
 {
@@ -2190,10 +2451,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest102, Function | Med
     OH_Drawing_DestroyFontParser(parser);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest103
- * @tc.desc: test arc text drawing
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest103
+ * @tc.number OH_Drawing_TypographyTest103
+ * @tc.desc   test arc text drawing
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest103, Function | MediumTest | Level1)
 {
@@ -2233,10 +2497,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest103, Function | Med
     OH_Drawing_CanvasDestroy(cCanvas);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest104
- * @tc.desc: test arc text offset
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest104
+ * @tc.number OH_Drawing_TypographyTest104
+ * @tc.desc   test arc text offset
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest104, Function | MediumTest | Level1)
 {
@@ -2276,10 +2543,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest104, Function | Med
     OH_Drawing_CanvasDestroy(cCanvas);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTest105
- * @tc.desc: test for the text box
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTest105
+ * @tc.number OH_Drawing_TypographyTest105
+ * @tc.desc   test for the text box
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest105, Function | MediumTest | Level1)
 {
@@ -2307,10 +2577,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest105, Function | Med
     OH_Drawing_TypographyGetLineWidth(typography, 1);
 }
 
-/*
- * @tc.name: OH_Drawing_TypographyTestWithIndent
- * @tc.desc: test for typography
- * @tc.type: FUNC
+/**
+ * @tc.name   OH_Drawing_TypographyTestWithIndent
+ * @tc.number OH_Drawing_TypographyTestWithIndent
+ * @tc.desc   test for typography
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTestWithIndent, Function | MediumTest | Level1)
 {
@@ -2364,10 +2637,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTestWithIndent, Functio
     OH_Drawing_DestroyTypographyHandler(handler);
 }
 
-/*
- * @tc.name: OHDrawingAddTextStyleDecoration001
- * @tc.desc: test for Add Text Style Decoration
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingAddTextStyleDecoration001
+ * @tc.number OHDrawingAddTextStyleDecoration001
+ * @tc.desc   test for Add Text Style Decoration
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OHDrawingAddTextStyleDecoration001, Function | MediumTest | Level1)
 {
@@ -2395,10 +2671,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingAddTextStyleDecoration001, Function
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
-/*
- * @tc.name: OHDrawingSetTypographyTextTab001
- * @tc.desc: test for Set Typography Text Tab
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingSetTypographyTextTab001
+ * @tc.number OHDrawingSetTypographyTextTab001
+ * @tc.desc   test for Set Typography Text Tab
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTypographyTextTab001, Function | MediumTest | Level1)
 {
@@ -2413,10 +2692,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTypographyTextTab001, Function |
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
-/*
- * @tc.name: OHDrawingTextLineEnumerateCaretOffsets001
- * @tc.desc: test for Text Line Enumerate Caret Offsets
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingTextLineEnumerateCaretOffsets001
+ * @tc.number OHDrawingTextLineEnumerateCaretOffsets001
+ * @tc.desc   test for Text Line Enumerate Caret Offsets
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, OHDrawingTextLineEnumerateCaretOffsets001, Function | MediumTest | Level1)
 {
@@ -2439,11 +2721,14 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingTextLineEnumerateCaretOffsets001, F
     OH_Drawing_DestroyTextLines(textLines);
 }
 
-/*
-* @tc.name: OHDrawingSetTextHighContrast001
-* @tc.desc: test for text high contrast mode
-* @tc.type: FUNC
-*/
+/**
+ * @tc.name   OHDrawingSetTextHighContrast001
+ * @tc.number OHDrawingSetTextHighContrast001
+ * @tc.desc   test for text high contrast mode
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTextHighContrast001, Function | MediumTest | Level1)
 {
     OH_Drawing_SetTextHighContrast(OH_Drawing_TextHighContrast::TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST);
@@ -2456,11 +2741,14 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTextHighContrast001, Function | 
     EXPECT_EQ(GetTextHighContrast(), OH_Drawing_TextHighContrast::TEXT_APP_ENABLE_HIGH_CONTRAST);
 }
 
-/*
-* @tc.name: OHDrawingSetTextHighContrast002
-* @tc.desc: test for text high contrast mode（Invalid）
-* @tc.type: FUNC
-*/
+/**
+ * @tc.name   OHDrawingSetTextHighContrast002
+ * @tc.number OHDrawingSetTextHighContrast002
+ * @tc.desc   test for text high contrast mode（Invalid）
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTextHighContrast002, Function | MediumTest | Level1)
 {
     uint32_t preValue = GetTextHighContrast();
@@ -2468,13 +2756,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTextHighContrast002, Function | 
     EXPECT_EQ(GetTextHighContrast(), preValue);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_DrawingUnregisterFont_001
- * @tc.name  : testOHDrawingUnregisterFont001
- * @tc.desc  : test for unregister font
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testOHDrawingUnregisterFont001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingUnregisterFont_001
+ * @tc.desc   test for unregister font
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, testOHDrawingUnregisterFont001, Function | MediumTest | Level1)
 {
@@ -2490,13 +2778,13 @@ HWTEST_F(OH_Drawing_TypographyTest, testOHDrawingUnregisterFont001, Function | M
     OH_Drawing_DestroyFontCollection(fontCollection);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_DrawingUnregisterFont_002
- * @tc.name  : testOHDrawingUnregisterFont002
- * @tc.desc  : test for unregister font
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 1
+/**
+ * @tc.name   testOHDrawingUnregisterFont002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingUnregisterFont_002
+ * @tc.desc   test for unregister font
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(OH_Drawing_TypographyTest, testOHDrawingUnregisterFont002, Function | MediumTest | Level1)
 {

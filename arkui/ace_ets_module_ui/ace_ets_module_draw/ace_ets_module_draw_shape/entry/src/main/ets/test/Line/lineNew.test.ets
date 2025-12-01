@@ -45,12 +45,12 @@ export default function lineNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testLineNew0001
-     * @tc.name: testLineNew0001
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   testLineNew0001
+     * @tc.number SUB_ARKUI_API_testLineNew0001
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNew0001', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0001 START');
@@ -65,12 +65,12 @@ export default function lineNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testLineNew0002
-     * @tc.name: testLineNew0002
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   testLineNew0002
+     * @tc.number SUB_ARKUI_API_testLineNew0002
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNew0002', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0002 START');
@@ -85,12 +85,12 @@ export default function lineNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testLineNew0005
-     * @tc.name: testLineNew0005
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   testLineNew0005
+     * @tc.number SUB_ARKUI_API_testLineNew0005
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNew0005', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0005 START');
@@ -105,12 +105,12 @@ export default function lineNewTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testLineNew0006
-     * @tc.name: testLineNew0006
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   testLineNew0006
+     * @tc.number SUB_ARKUI_API_testLineNew0006
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLineNew0006', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0006 START');

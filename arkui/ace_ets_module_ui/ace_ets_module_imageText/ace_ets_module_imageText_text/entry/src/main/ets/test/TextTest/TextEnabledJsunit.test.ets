@@ -43,12 +43,12 @@ export default function TextEnabledJsunit() {
       done();
     });
     /**
-     * @tc.number    textEnabledJsunit_0100
-     * @tc.name      textEnabledJsunit_0100
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textEnabledJsunit_0100
+     * @tc.number textEnabledJsunit_0100
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0100 START');
@@ -65,12 +65,12 @@ export default function TextEnabledJsunit() {
       done();
     });
     /**
-     * @tc.number    textEnabledJsunit_0200
-     * @tc.name      textEnabledJsunit_0200
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textEnabledJsunit_0200
+     * @tc.number textEnabledJsunit_0200
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textEnabledJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0200 START');
@@ -87,12 +87,12 @@ export default function TextEnabledJsunit() {
       done();
     });
     /**
-     * @tc.number    textEnabledJsunit_0300
-     * @tc.name      textEnabledJsunit_0300
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textEnabledJsunit_0300
+     * @tc.number textEnabledJsunit_0300
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textEnabledJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0300 START');
@@ -109,12 +109,12 @@ export default function TextEnabledJsunit() {
       done();
     });
     /**
-     * @tc.number    textEnabledJsunit_0400
-     * @tc.name      textEnabledJsunit_0400
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textEnabledJsunit_0400
+     * @tc.number textEnabledJsunit_0400
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textEnabledJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0400 START');
@@ -131,12 +131,12 @@ export default function TextEnabledJsunit() {
       done();
     });
     /**
-     * @tc.number    textEnabledJsunit_0500
-     * @tc.name      textEnabledJsunit_0500
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textEnabledJsunit_0500
+     * @tc.number textEnabledJsunit_0500
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textEnabledJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0500 START');
@@ -153,12 +153,12 @@ export default function TextEnabledJsunit() {
       done();
     });
     /**
-     * @tc.number    textEnabledJsunit_0600
-     * @tc.name      textEnabledJsunit_0600
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   textEnabledJsunit_0600
+     * @tc.number textEnabledJsunit_0600
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textEnabledJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('textEnabledJsunit_0600 START');

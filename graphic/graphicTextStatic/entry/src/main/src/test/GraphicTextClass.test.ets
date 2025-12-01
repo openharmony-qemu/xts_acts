@@ -38,12 +38,12 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number    : testLayoutSyncStatic
-     * @tc.name      : testLayoutSyncStatic
-     * @tc.desc      : To test Paragraph layoutSyncSync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLayoutSyncStatic
+     * @tc.number testLayoutSyncStatic
+     * @tc.desc   To test Paragraph layoutSyncSync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLayoutSyncStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -60,12 +60,65 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number    : testParagraphBuilder_AonstructorAndAddTextStatic
-     * @tc.name      : testParagraphBuilder_AonstructorAndAddTextStatic
-     * @tc.desc      : Constructs a ParagraphBuilder object and calls its methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testPaintStatic_02
+     * @tc.number testPaintStatic_02
+     * @tc.desc   To test Paragraph Paint interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const msg = 'testCanvasConstructorNormalStatic';
+        let canvas = new drawing.Canvas(pixel)
+        expect(true).assertTrue();
+        let paragraph: text.Paragraph = buildParagraph();
+        try {
+          paragraph.paint(canvas, 10, 10);
+          console.info(msg + 'canvasConstructor successed');
+          expect(true).assertTrue();
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   testPaintOnPathStatic_02
+     * @tc.number testPaintOnPathStatic_02
+     * @tc.desc   To test Paragraph Paint interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const msg = 'testCanvasConstructorNormalStatic';
+        let canvas = new drawing.Canvas(pixel)
+        expect(true).assertTrue();
+        let paragraph: text.Paragraph = buildParagraph();
+        let path = new drawing.Path();
+        try {
+          paragraph.paintOnPath(canvas, path, 0, 0);
+          console.info(msg + 'canvasConstructor successed');
+          expect(true).assertTrue();
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   testParagraphBuilder_AonstructorAndAddTextStatic
+     * @tc.number testParagraphBuilder_AonstructorAndAddTextStatic
+     * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParagraphBuilder_AonstructorAndAddTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -132,12 +185,12 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number    : testGetLongestLineStatic_01
-     * @tc.name      : testGetLongestLineStatic_01
-     * @tc.desc      : To test Paragraph GetLongestLine interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLongestLineStatic_01
+     * @tc.number testGetLongestLineStatic_01
+     * @tc.desc   To test Paragraph GetLongestLine interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLongestLineStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -155,12 +208,12 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number     testPlaceholderSpanStatic
-     * @tc.name       testPlaceholderSpanStatic
-     * @tc.desc       test for PlaceholderSpan
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   testPlaceholderSpanStatic
+     * @tc.number testPlaceholderSpanStatic
+     * @tc.desc   test for PlaceholderSpan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let msg = "testPlaceholderSpanStatic"
@@ -213,12 +266,12 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number     testLineTypesetStatic
-     * @tc.name       testLineTypesetStatic
-     * @tc.desc       test for LineTypeset
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   testLineTypesetStatic
+     * @tc.number testLineTypesetStatic
+     * @tc.desc   test for LineTypeset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let msg = "testLineTypesetStatic"
@@ -251,12 +304,12 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number     testLayoutStatic
-     * @tc.name       testLayoutStatic
-     * @tc.desc       test for Layout
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   testLayoutStatic
+     * @tc.number testLayoutStatic
+     * @tc.desc   test for Layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let msg = "testLayoutStatic"
@@ -283,12 +336,12 @@ export default function GraphicTextClass() {
     })
 
     /**
-     * @tc.number     testAddSymbolStatic
-     * @tc.name       testAddSymbolStatic
-     * @tc.desc       test for addSymbol
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   testAddSymbolStatic
+     * @tc.number testAddSymbolStatic
+     * @tc.desc   test for addSymbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -318,12 +371,12 @@ export default function GraphicTextClass() {
       })
 
     /**
-     * @tc.number     testGetFullNameStatic
-     * @tc.name       testGetFullNameStatic
-     * @tc.desc       test for Layout
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.name   testGetFullNameStatic
+     * @tc.number testGetFullNameStatic
+     * @tc.desc   test for Layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       () => {

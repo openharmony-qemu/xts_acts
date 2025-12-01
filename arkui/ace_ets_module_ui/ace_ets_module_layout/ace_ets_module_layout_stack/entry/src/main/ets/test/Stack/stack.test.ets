@@ -45,9 +45,12 @@ export default function stackAlignContentJsunit() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         teststackAlignContent0001
-     * @tc.desc         acestackAlignContentEtsTest0001
+     * @tc.name   teststackAlignContent0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   acestackAlignContentEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('teststackAlignContent0001', Level.LEVEL1, async () => {
       console.info('stackAlignContent teststackAlignContent0001 START');
@@ -62,9 +65,12 @@ export default function stackAlignContentJsunit() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         teststackAlignContent0002
-     * @tc.desc         acestackAlignContentEtsTest0002
+     * @tc.name   teststackAlignContent0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   acestackAlignContentEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('teststackAlignContent0002', Level.LEVEL1, async () => {
       console.info('stackAlignContent teststackAlignContent0002 START');

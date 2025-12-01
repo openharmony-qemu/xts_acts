@@ -54,12 +54,12 @@ export default function APIsetOnHoverTest() {
     });
 
     /**
+     * @tc.name   APIsetOnHoverTest_0100
      * @tc.number APIsetOnHoverTest_0100
-     * @tc.name APIsetOnHoverTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIsetOnHoverTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIsetOnHoverTest_0100 START');

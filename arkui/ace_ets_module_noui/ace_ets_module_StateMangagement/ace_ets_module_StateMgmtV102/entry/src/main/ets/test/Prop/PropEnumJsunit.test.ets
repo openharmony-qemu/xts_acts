@@ -64,14 +64,14 @@ export default function PropEnumJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-		/**
-		 * @tc.number    PropEnumJsunit_0200
-		 * @tc.name      PropEnumJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropEnumJsunit_0200
+     * @tc.number PropEnumJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropEnumJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropEnumJsunit_0200 START');
@@ -95,14 +95,14 @@ export default function PropEnumJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropEnumJsunit_0400
-		 * @tc.name      PropEnumJsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropEnumJsunit_0400
+     * @tc.number PropEnumJsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropEnumJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropEnumJsunit_0400 START');

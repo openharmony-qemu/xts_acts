@@ -46,10 +46,13 @@ export default function textInputTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0100
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   The component does not have a text parameter. Set the caretPosition property parameter to 3
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0100
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0100
+     * @tc.desc   The component does not have a text parameter. Set the caretPosition property parameter to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Badge_FontWeight_0100 START');
@@ -70,10 +73,13 @@ export default function textInputTest() {
       }, 5000)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0200
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Sets the caretPosition property parameter to 0
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0200
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0200
+     * @tc.desc   Sets the caretPosition property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0200 START');
@@ -94,10 +100,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0300
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Sets the caretPosition property parameter to 7
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0300
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0300
+     * @tc.desc   Sets the caretPosition property parameter to 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0300 START');
@@ -118,10 +127,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0400
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Sets the caretPosition property parameter to "7"
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0400
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0400
+     * @tc.desc   Sets the caretPosition property parameter to "7"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0400 START');
@@ -142,10 +154,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0500
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Sets the caretPosition property parameter to $r("app.string.textInput_Size_test")
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0500
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0500
+     * @tc.desc   Sets the caretPosition property parameter to $r("app.string.textInput_Size_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0400 START');
@@ -166,10 +181,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0600
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to exceed the existing text length by 100
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0600
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0600
+     * @tc.desc   Set the caretPosition property parameter to exceed the existing text length by 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0600 START');
@@ -192,10 +210,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0700
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to an outlier ""
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0700
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0700
+     * @tc.desc   Set the caretPosition property parameter to an outlier ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0700 START');
@@ -216,10 +237,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0800
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to an outlier -1
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0800
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0800
+     * @tc.desc   Set the caretPosition property parameter to an outlier -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0800 START');
@@ -240,10 +264,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_0900
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to an outlier null
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_0900
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_0900
+     * @tc.desc   Set the caretPosition property parameter to an outlier null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_0900 START');
@@ -264,10 +291,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_1000
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to an outlier undefined
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_1000
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_1000
+     * @tc.desc   Set the caretPosition property parameter to an outlier undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_1000 START');
@@ -288,10 +318,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_1100
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to 7 and set the caretPosition property parameter to 3 again
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_1100
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_1100
+     * @tc.desc   Set the caretPosition property parameter to 7 and set the caretPosition property parameter to 3 again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_1100 START');
@@ -313,11 +346,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_1200
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition property parameter to 7 and set the caretPosition property
-                parameter to undefined again
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_1200
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_1200
+     * @tc.desc   Set the caretPosition property parameter to 7 and set the caretPosition property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_1200 START');
@@ -339,10 +374,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_1300
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   Set the caretPosition attribute parameter to 7 and the generic position attribute to null
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_1300
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_1300
+     * @tc.desc   Set the caretPosition attribute parameter to 7 and the generic position attribute to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_1300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_1300 START');
@@ -363,10 +401,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretPosition_1400
-     *tc.name   Support modifying the cursor position change of TextInput component
-     *tc.desc   TextInput component text text overlength setting cursor position "70"
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretPosition_1400
+     * @tc.number ArkUX_Stage_TextInput_CaretPosition_1400
+     * @tc.desc   TextInput component text text overlength setting cursor position "70"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretPosition_1400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretPosition_1400 START');
@@ -387,10 +428,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0100
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to 0
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0100
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0100
+     * @tc.desc   Set the caretWidth property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0100 START');
@@ -412,10 +456,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0200
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to 7
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0200
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0200
+     * @tc.desc   Set the caretWidth property parameter to 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0200 START');
@@ -437,10 +484,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0300
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to "7vp"
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0300
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0300
+     * @tc.desc   Set the caretWidth property parameter to "7vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0300 START');
@@ -462,10 +512,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0400
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to $r("app.string.textInput_Size_test")
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0400
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0400
+     * @tc.desc   Set the caretWidth property parameter to $r("app.string.textInput_Size_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0400 START');
@@ -487,10 +540,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0500
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to outlier -1
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0500
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0500
+     * @tc.desc   Set the caretWidth property parameter to outlier -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0500 START');
@@ -512,10 +568,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0600
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to outlier ""
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0600
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0600
+     * @tc.desc   Set the caretWidth property parameter to outlier ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0600 START');
@@ -537,10 +596,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0700
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to outlier null
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0700
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0700
+     * @tc.desc   Set the caretWidth property parameter to outlier null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0700 START');
@@ -562,10 +624,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0800
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to outlier undefined
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0800
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0800
+     * @tc.desc   Set the caretWidth property parameter to outlier undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0800 START');
@@ -587,10 +652,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_0900
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to outlier "asff%6&"
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_0900
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_0900
+     * @tc.desc   Set the caretWidth property parameter to outlier "asff%6&"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_0900 START');
@@ -612,10 +680,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_1000
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to 7 and set the caretWidth property parameter to "2fp" again
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_1000
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_1000
+     * @tc.desc   Set the caretWidth property parameter to 7 and set the caretWidth property parameter to "2fp" again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_1000 START');
@@ -637,10 +708,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_1100
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to 7 and set the caretWidth property parameter to undefined again
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_1100
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_1100
+     * @tc.desc   Set the caretWidth property parameter to 7 and set the caretWidth property parameter to undefined again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_1100 START');
@@ -662,10 +736,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_CaretWidth_1200
-     *tc.name   Support modifying the cursor thickness of TextInput component
-     *tc.desc   Set the caretWidth property parameter to "7lpx" and the common property width property to null
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_CaretWidth_1200
+     * @tc.number ArkUX_Stage_TextInput_CaretWidth_1200
+     * @tc.desc   Set the caretWidth property parameter to "7lpx" and the common property width property to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_CaretWidth_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_CaretWidth_1200 START');
@@ -687,10 +764,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0100
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to 0x00ff00
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0100
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0100
+     * @tc.desc   Set the selectedColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0100 START');
@@ -711,10 +791,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0200
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to #fffd0000
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0200
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0200
+     * @tc.desc   Set the selectedColor property parameter to #fffd0000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0200 START');
@@ -735,10 +818,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0300
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to 'rgb(138,43,226)'
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0300
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0300
+     * @tc.desc   Set the selectedColor property parameter to 'rgb(138,43,226)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0300 START');
@@ -759,10 +845,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_040
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to Color.Pink
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0400
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_040
+     * @tc.desc   Set the selectedColor property parameter to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0400 START');
@@ -783,10 +872,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0500
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to $r("app.color.TextInput_Color")
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0500
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0500
+     * @tc.desc   Set the selectedColor property parameter to $r("app.color.TextInput_Color")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0500 START');
@@ -807,10 +899,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0600
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to an outlier ""
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0600
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0600
+     * @tc.desc   Set the selectedColor property parameter to an outlier ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0600 START');
@@ -831,10 +926,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0700
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to an outlier null
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0700
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0700
+     * @tc.desc   Set the selectedColor property parameter to an outlier null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0700 START');
@@ -855,10 +953,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0800
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to an outlier undefined
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0800
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0800
+     * @tc.desc   Set the selectedColor property parameter to an outlier undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0800 START');
@@ -879,11 +980,13 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-     *tc.number ArkUX_Stage_TextInput_selectedColor_0900
-     *tc.name   Support to modify the color of the selected base plate of the TextInput component
-     *tc.desc   Set the selectedColor property parameter to Color.Pink and
-     *          again set the selectedColor property parameter to "#FFFD0000".
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_0900
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_0900
+     * @tc.desc   Set the selectedColor property parameter to Color.Pink and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextInput_selectedColor_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_0900 START');
@@ -904,12 +1007,14 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-      *tc.number ArkUX_Stage_TextInput_selectedColor_1000
-      *tc.name   Support to modify the color of the selected base plate of the TextInput component
-      *tc.desc   Set the selectedColor property parameter to Color.Pink and
-      *          again set the selectedColor property parameter to the outlier undefined.
-      */
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_1000
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_1000
+     * @tc.desc   Set the selectedColor property parameter to Color.Pink and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_TextInput_selectedColor_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_1000 START');
       setTimeout(() => {
@@ -929,12 +1034,14 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-      *tc.number ArkUX_Stage_TextInput_selectedColor_1100
-      *tc.name   Support to modify the color of the selected base plate of the TextInput component
-      *tc.desc   Set the selectedColor property parameter to 0x00ff00 and
-      *          the universal property backgroundColor property to the outlier null
-      */
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_1100
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_1100
+     * @tc.desc   Set the selectedColor property parameter to 0x00ff00 and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_TextInput_selectedColor_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_1100 START');
       setTimeout(() => {
@@ -954,11 +1061,14 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-      *tc.number ArkUX_Stage_TextInput_selectedColor_1200
-      *tc.name   Combined test all new attributes of textinput component
-      *tc.desc   Set .selectedBackgroundColor(0x00ff00).width (7).caretPosition(4)
-      */
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_1200
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_1200
+     * @tc.desc   Set .selectedBackgroundColor(0x00ff00).width (7).caretPosition(4)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_TextInput_selectedColor_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_1200 START');
       setTimeout(() => {
@@ -985,11 +1095,14 @@ export default function textInputTest() {
       }, 500)
     });
 
-    /*
-      *tc.number ArkUX_Stage_TextInput_selectedColor_1300
-      *tc.name   Combined test all new attributes of textinput component
-      *tc.desc   Do not set new attributes
-      */
+    /**
+     * @tc.name   ArkUX_Stage_TextInput_selectedColor_1300
+     * @tc.number ArkUX_Stage_TextInput_selectedColor_1300
+     * @tc.desc   Do not set new attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_TextInput_selectedColor_1300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_TextInput_selectedColor_1300 START');
       setTimeout(() => {

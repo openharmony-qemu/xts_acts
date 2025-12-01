@@ -107,7 +107,6 @@ export default function UsbManagerEnumTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer001
      * @tc.number SUB_USB_HostMgr_JS_enum_0100
      * @tc.desc   enum UsbTransferStatus and UsbTransferFlags.
@@ -172,7 +171,6 @@ export default function UsbManagerEnumTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer002
      * @tc.number SUB_USB_HostMgr_JS_enum_0200
      * @tc.desc   enum TRANSFER_TYPE_ISOCHRONOUS.

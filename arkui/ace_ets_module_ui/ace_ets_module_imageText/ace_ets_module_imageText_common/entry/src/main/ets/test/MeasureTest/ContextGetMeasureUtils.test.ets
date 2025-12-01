@@ -42,14 +42,15 @@ export default function ContextGetMeasureUtils() {
       console.info("Context after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_UIContext_001
-     * @tc.name      Context_001
-     * @tc.desc      getMeasureUtils test
-     * @tc.level     Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   Context_001
+     * @tc.number Context_001
+     * @tc.desc   Context_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Context_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[Context_001] START');
 
@@ -66,14 +67,15 @@ export default function ContextGetMeasureUtils() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_TEXT_UIContext_002
-     * @tc.name      Context_002
-     * @tc.desc      getCursorController test
-     * @tc.level     Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   Context_002
+     * @tc.number Context_002
+     * @tc.desc   Context_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Context_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[Context_002] START');
 

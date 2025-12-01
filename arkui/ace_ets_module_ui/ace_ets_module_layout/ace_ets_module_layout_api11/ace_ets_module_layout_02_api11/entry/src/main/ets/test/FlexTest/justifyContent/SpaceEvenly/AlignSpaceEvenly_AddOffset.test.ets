@@ -47,9 +47,12 @@ export default function AlignSpaceEvenly_AddOffset() {
     });
 
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyTextOffset
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_0900
-     * @tc.name testFlexAlignSpaceEvenlyTextOffset
-     * @tc.desc The interface display of the component that sets the offset position when drawing
+     * @tc.desc   The interface display of the component that sets the offset position when drawing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyTextOffset',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyTextOffset] START');

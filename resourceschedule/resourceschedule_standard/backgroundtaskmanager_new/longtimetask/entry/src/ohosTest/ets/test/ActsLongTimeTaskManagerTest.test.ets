@@ -114,13 +114,13 @@ export default function LongTimeTaskManagerTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_001
-     * @tc.desc:Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_001
+     * @tc.desc   Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -177,13 +177,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_002
-     * @tc.desc:Test that the startBackgroundRunning function normal call with bgMode
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_002
+     * @tc.desc   Test that the startBackgroundRunning function normal call with bgMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -231,13 +231,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_002 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_003
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of USER_CANCEL
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_003
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of USER_CANCEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -250,13 +250,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_003 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_004
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_004
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -275,13 +275,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_004 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_005
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of USER_CANCEL_REMOVE_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_005
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_005
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of USER_CANCEL_REMOVE_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -300,13 +300,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_005 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_006
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_006
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_006
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -325,13 +325,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_006 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_007
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_007
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_007
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -350,13 +350,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_007 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_008
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_008
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_008
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -375,13 +375,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_008 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_009
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_009
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_009
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -400,13 +400,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_009 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_010
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_NOT_USE_LOCATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_010
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_010
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_NOT_USE_LOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -425,13 +425,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_010 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_011
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_NOT_USE_BLUETOOTH
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_011
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_011
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_NOT_USE_BLUETOOTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -450,13 +450,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_011 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_012
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_012
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_012
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -475,13 +475,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_012 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_013
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_USE_ILLEGALLY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_013
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_013
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskCancelReason of SYSTEM_CANCEL_USE_ILLEGALLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -500,13 +500,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_013 end---');
       })
       
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_014
-     * @tc.desc:Test that the on function normal call and off function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_014
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_014
+     * @tc.desc   Test that the on function normal call and off function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -567,13 +567,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_014 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_015
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of DATA_TRANSFER
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_015
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_015
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of DATA_TRANSFER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -592,13 +592,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_015 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_016
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_016
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of AUDIO_PLAYBACK
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_016
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_016
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of AUDIO_PLAYBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -617,13 +617,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_016 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_017
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_017
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of AUDIO_RECORDING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_017
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_017
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of AUDIO_RECORDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -642,13 +642,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_017 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_018
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_018
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of LOCATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_018
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_018
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of LOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -667,13 +667,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_018 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_019
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_019
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of BLUETOOTH_INTERACTION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_019
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_019
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of BLUETOOTH_INTERACTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -692,13 +692,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_019 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_020
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_020
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of MULTI_DEVICE_CONNECTION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_020
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_020
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of MULTI_DEVICE_CONNECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -717,13 +717,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_020 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_021
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_021
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of VOIP
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_021
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_021
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of VOIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -742,13 +742,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_021 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_022
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_022
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of TASK_KEEPING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_022
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_022
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of TASK_KEEPING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -767,13 +767,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_022 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_023
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_023
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_023
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_023
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -792,13 +792,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_023 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_024
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_024
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_024
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_024
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -818,13 +818,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_024 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_025
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_025
-     * @tc.desc:Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_025
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_025
+     * @tc.desc   Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -878,13 +878,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_025 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_026
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_026
-     * @tc.desc:Test that the getAllTransientTasks function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_026
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_026
+     * @tc.desc   Test that the getAllTransientTasks function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -955,13 +955,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_026 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_027
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_027
-     * @tc.desc:Test that the longtask suspend on function normal call and off function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_027
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_027
+     * @tc.desc   Test that the longtask suspend on function normal call and off function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1025,13 +1025,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_027 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_028
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_028
-     * @tc.desc:Test that the longtask active on function normal call and off function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_028
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_028
+     * @tc.desc   Test that the longtask active on function normal call and off function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1089,13 +1089,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_028 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_029
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_029
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_DATA_TRANSFER_LOW_SPEED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_029
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_029
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_DATA_TRANSFER_LOW_SPEED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1114,13 +1114,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_029 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_030
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_030
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_USE_AVSESSION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_030
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_030
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_USE_AVSESSION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1139,13 +1139,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_030 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_031
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_031
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_RUNNING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_031
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_031
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_PLAYBACK_NOT_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1164,13 +1164,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_031 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_032
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_032
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_RECORDING_NOT_RUNNING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_032
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_032
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_RECORDING_NOT_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1189,13 +1189,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_032 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_033
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_033
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_LOCATION_NOT_USED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_033
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_033
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_LOCATION_NOT_USED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1214,13 +1214,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_033 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_034
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_034
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_BLUETOOTH_NOT_USED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_034
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_034
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_BLUETOOTH_NOT_USED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1239,13 +1239,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_034 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_035
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_035
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_MULTI_DEVICE_NOT_USED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_035
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_035
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_MULTI_DEVICE_NOT_USED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1264,13 +1264,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_035 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_036
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_036
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_USED_ILLEGALLY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_036
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_036
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_USED_ILLEGALLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1289,13 +1289,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_036 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_037
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_037
-     * @tc.desc:Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_SYSTEM_LOAD_WARNING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_037
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_037
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_SYSTEM_LOAD_WARNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1314,13 +1314,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_037 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_038
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_038
-     * @tc.desc:Test that the backgroundTaskManager getTransientTaskInfo function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_038
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_038
+     * @tc.desc   Test that the backgroundTaskManager getTransientTaskInfo function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1346,13 +1346,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_038 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039
-     * @tc.desc:Test that the getAllTransientTasks function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039
+     * @tc.desc   Test that the getAllTransientTasks function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1426,13 +1426,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_040
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_040
-     * @tc.desc:Test that the getAllTransientTasks function with includeSuspended normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_040
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_040
+     * @tc.desc   Test that the getAllTransientTasks function with includeSuspended normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -1473,13 +1473,13 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_040 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_041
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_041
-     * @tc.desc:Test that the getAllTransientTasks function without includeSuspended normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_041
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_041
+     * @tc.desc   Test that the getAllTransientTasks function without includeSuspended normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

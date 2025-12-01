@@ -47,13 +47,13 @@ export default function ImageAltTest() {
       console.info('ImageAltTest after each called');
     });
 
-    /*
-     * @tc.number: image_altTest_0101
-     * @tc.name  : image_altTest_0101
-     * @tc.desc  : Test the alt interface to set normal values
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   image_altTest_0101
+     * @tc.number image_altTest_0101
+     * @tc.desc   Test the alt interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('image_altTest_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('image_altTest_0101 START');
@@ -70,13 +70,13 @@ export default function ImageAltTest() {
       done();
     });
 
-    /*
-     * @tc.number: image_altTest_0102
-     * @tc.name  : image_altTest_0102
-     * @tc.desc  : Test the alt interface to set undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   image_altTest_0102
+     * @tc.number image_altTest_0102
+     * @tc.desc   Test the alt interface to set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('image_altTest_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('image_altTest_0102 START');
@@ -93,13 +93,13 @@ export default function ImageAltTest() {
       done();
     });
 
-    /*
-     * @tc.number: image_altTest_0103
-     * @tc.name  : image_altTest_0103
-     * @tc.desc  : Test the alt interface to set null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   image_altTest_0103
+     * @tc.number image_altTest_0103
+     * @tc.desc   Test the alt interface to set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('image_altTest_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('image_altTest_0103 START');

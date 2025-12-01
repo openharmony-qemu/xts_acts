@@ -26,10 +26,13 @@ export default function ActsNotificationRequestTest() {
     let log = logGenerator(TAG);
     log('SUB_NOTIFICATION_ANS_REQUEST_TEST START');
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Notification_Request_0100
-     * @tc.name      : function requestEnableNotification(callback): void
-     * @tc.desc      : requestEnableNotification click allowed
+    /**
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_0900
+     * @tc.number Sub_Notification_Ans_Notification_Request_0100
+     * @tc.desc   requestEnableNotification click allowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ans_Publish_Publish_0900', Level.LEVEL1, async (done: () => void) => {
       let fn = async (resolve: () => void, reject: (arg1: Error) => void): Promise<void> => {

@@ -55,12 +55,14 @@ export default function VideoJsunit01() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000I46Q4_
-    * @tc.name  : VideoJsunit01_0100
-    * @tc.desc  : 测试onPrepared方法
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   VideoJsunit01_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000I46Q4_
+     * @tc.desc   测试onPrepared方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('VideoJsunit01_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[VideoJsunit01_0100] START');
       let driver = await UiDriver.create()
@@ -76,12 +78,14 @@ export default function VideoJsunit01() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000I46Q4_071；SUB_ACE_TS_COMPONENT_SR000I46Q4_072；SUB_ACE_TS_COMPONENT_SR000I46Q4_073；
-    * @tc.name  : VideoJsunit01_0200
-    * @tc.desc  : 测试onStart-onPause-onFinish-onUpdate方法
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   VideoJsunit01_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000I46Q4_071；SUB_ACE_TS_COMPONENT_SR000I46Q4_072；SUB_ACE_TS_COMPONENT_SR000I46Q4_073；
+     * @tc.desc   测试onStart-onPause-onFinish-onUpdate方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('VideoJsunit01_0200', Level.LEVEL3, async (done: Function) => {
       //      点击start按钮，测试onStart是否触发，测试onUpdate方法
       console.info('[VideoJsunit01_0200] START');

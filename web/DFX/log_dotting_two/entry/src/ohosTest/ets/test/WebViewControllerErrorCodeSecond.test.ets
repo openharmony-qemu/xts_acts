@@ -59,154 +59,154 @@ export default function webViewControllerErrorCodeSecond() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_LOADDATA_0100
-    * @tc.name       : testLoadDataFullParamsError001
-    * @tc.desc       : test loadData error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadDataFullParamsError001
+     * @tc.number SUB_WEB_ERRORCODE_LOADDATA_0100
+     * @tc.desc   test loadData error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadDataFullParamsError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadDataFullParamsError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testLoadDataFullParamsError001", '17100001', 115560, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ISINCOGNITOMODE_0100
-    * @tc.name       : testIsIncognitoModeError001
-    * @tc.desc       : test isIncognitoMode error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testIsIncognitoModeError001
+     * @tc.number SUB_WEB_ERRORCODE_ISINCOGNITOMODE_0100
+     * @tc.desc   test isIncognitoMode error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testIsIncognitoModeError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testIsIncognitoModeError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testIsIncognitoModeError001", '17100001', 115570, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-   * @tc.number     : SUB_WEB_ERRORCODE_GETLASTJAVASCRIPTPROXYCALLINGFRAMEURL_0100
-   * @tc.name       : testGetLastJavascriptProxyCallingFrameUrlError001
-   * @tc.desc       : test getLastJavascriptProxyCallingFrameUrl error
-   * @tc.size       : MEDIUM
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testGetLastJavascriptProxyCallingFrameUrlError001
+     * @tc.number SUB_WEB_ERRORCODE_GETLASTJAVASCRIPTPROXYCALLINGFRAMEURL_0100
+     * @tc.desc   test getLastJavascriptProxyCallingFrameUrl error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetLastJavascriptProxyCallingFrameUrlError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetLastJavascriptProxyCallingFrameUrlError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetLastJavascriptProxyCallingFrameUrlError001", '17100001', 115580, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_SETWEBSCHEMEHANDLER_0100
-    * @tc.name       : testSetWebSchemeHandlerError001
-    * @tc.desc       : test setWebSchemeHandler error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSetWebSchemeHandlerError001
+     * @tc.number SUB_WEB_ERRORCODE_SETWEBSCHEMEHANDLER_0100
+     * @tc.desc   test setWebSchemeHandler error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetWebSchemeHandlerError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSetWebSchemeHandlerError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetWebSchemeHandlerError001", '17100001', 115590, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ClEARWEBSCHEMEHANDLER_0100
-    * @tc.name       : testClearWebSchemeHandlerError001
-    * @tc.desc       : test clearWebSchemeHandler error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testClearWebSchemeHandlerError001
+     * @tc.number SUB_WEB_ERRORCODE_ClEARWEBSCHEMEHANDLER_0100
+     * @tc.desc   test clearWebSchemeHandler error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testClearWebSchemeHandlerError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testClearWebSchemeHandlerError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testClearWebSchemeHandlerError001", '17100001', 115600, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ENABLEINTELLIGENTTRACKINGPREVENTION_0100
-    * @tc.name       : testEnableIntelligentTrackingPreventionError001
-    * @tc.desc       : test enableIntelligentTrackingPrevention error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEnableIntelligentTrackingPreventionError001
+     * @tc.number SUB_WEB_ERRORCODE_ENABLEINTELLIGENTTRACKINGPREVENTION_0100
+     * @tc.desc   test enableIntelligentTrackingPrevention error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEnableIntelligentTrackingPreventionError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testEnableIntelligentTrackingPreventionError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testEnableIntelligentTrackingPreventionError001", '17100001', 115610, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ISINTELLIGENTTRACKINGPREVENTIONENABLED_0100
-    * @tc.name       : testIsIntelligentTrackingPreventionEnabled001
-    * @tc.desc       : test isIntelligentTrackingPreventionEnabled error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testIsIntelligentTrackingPreventionEnabled001
+     * @tc.number SUB_WEB_ERRORCODE_ISINTELLIGENTTRACKINGPREVENTIONENABLED_0100
+     * @tc.desc   test isIntelligentTrackingPreventionEnabled error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testIsIntelligentTrackingPreventionEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testIsIntelligentTrackingPreventionEnabled001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testIsIntelligentTrackingPreventionEnabled001", '17100001', 115620, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_REMOVEINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
-    * @tc.name       : testRemoveIntelligentTrackingPreventionBypassingListError001
-    * @tc.desc       : test removeIntelligentTrackingPreventionBypassingList error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRemoveIntelligentTrackingPreventionBypassingListError001
+     * @tc.number SUB_WEB_ERRORCODE_REMOVEINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
+     * @tc.desc   test removeIntelligentTrackingPreventionBypassingList error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRemoveIntelligentTrackingPreventionBypassingListError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", '401', 115630, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETDEFAULTUSERAGENT_0100
-    * @tc.name       : testGetDefaultUserAgent001
-    * @tc.desc       : test getDefaultUserAgent
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetDefaultUserAgent001
+     * @tc.number SUB_WEB_GETDEFAULTUSERAGENT_0100
+     * @tc.desc   test getDefaultUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetDefaultUserAgent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetDefaultUserAgent001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetDefaultUserAgent001", true, 115640, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ENABLEADSBLOCK_0100
-    * @tc.name       : testEnableAdsBlockError001
-    * @tc.desc       : test enableAdsBlock error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testEnableAdsBlockError001
+     * @tc.number SUB_WEB_ERRORCODE_ENABLEADSBLOCK_0100
+     * @tc.desc   test enableAdsBlock error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testEnableAdsBlockError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testEnableAdsBlockError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testEnableAdsBlockError001", '17100001', 115650, done);
       await Utils.waitAndClickComponent(driver, "WebViewControllerErrorCodeSecondButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_LOADURL_0100
-    * @tc.name       : testLoadUrlError001
-    * @tc.desc       : test loadUrl error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrlError001
+     * @tc.number SUB_WEB_ERRORCODE_LOADURL_0100
+     * @tc.desc   test loadUrl error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrlError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrlError001", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testLoadUrlError001", '17100002', 115660, done);

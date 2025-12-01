@@ -212,7 +212,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer006
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0700
      * @tc.desc   Negative test: bulk transfer, send data, error outEndpoint.address = 123
@@ -253,7 +252,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer007
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0800
      * @tc.desc   Negative test: bulk transfer, send data, error outEndpoint.number = 123
@@ -294,7 +292,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransfer008
      * @tc.number SUB_USB_HostManager_JS_TranCompatibility_0900
      * @tc.desc   Negative test: bulk transfer, send data, error outEndpoint.type = 123
@@ -335,7 +332,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface006
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2400
      * @tc.desc   Negative test: Get interface, USBInterface afferent error id
@@ -371,7 +367,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface007
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2500
      * @tc.desc   Negative test: Get interface, USBInterface afferent error protocol
@@ -407,7 +402,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface008
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2600
      * @tc.desc   Negative test: Get interface, USBInterface afferent error clazz
@@ -443,7 +437,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface009
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2700
      * @tc.desc   Negative test: Get interface, USBInterface afferent error name
@@ -479,7 +472,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterface010
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2800
      * @tc.desc   Negative test: Get interface, USBInterface afferent error subClass
@@ -515,7 +507,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterface001
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1600
      * @tc.desc   Negative test: release Interface, error Interface id
@@ -557,7 +548,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterface002
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1700
      * @tc.desc   Negative test: release Interface, error Interface name
@@ -596,7 +586,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterface003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1800
      * @tc.desc   Negative test: release Interface, error Interface clazz
@@ -634,7 +623,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterface004
      * @tc.number SUB_USB_HostManager_JS_Compatibility_1900
      * @tc.desc   Negative test: release Interface, error Interface protocol
@@ -672,7 +660,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterface005
      * @tc.number SUB_USB_HostManager_JS_Compatibility_2000
      * @tc.desc   Negative test: release Interface, error Interface subClass
@@ -710,7 +697,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_4200
      * @tc.desc   Negative test: Set device interface, Interface protocol error
@@ -744,7 +730,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface004
      * @tc.number SUB_USB_HostManager_JS_Compatibility_4300
      * @tc.desc   Negative test: Set device interface, Interface clazz error
@@ -778,7 +763,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface005
      * @tc.number SUB_USB_HostManager_JS_Compatibility_4400
      * @tc.desc   Negative test: Set device interface, Interface subClass error
@@ -812,7 +796,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterface006
      * @tc.number SUB_USB_HostManager_JS_Compatibility_4500
      * @tc.desc   Negative test: Set device interface, Interface name error
@@ -846,7 +829,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration003
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3700
      * @tc.desc   Negative test: Set Device Configuration, USBConfig name error
@@ -871,7 +853,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration004
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3800
      * @tc.desc   Negative test: Set Device Configuration, USBConfig name, id error
@@ -897,7 +878,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration005
      * @tc.number SUB_USB_HostManager_JS_Compatibility_3900
      * @tc.desc   Negative test: Set Device Configuration, USBConfig attributes error
@@ -922,7 +902,6 @@ export default function UsbDevicePipeTestEx() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfiguration006
      * @tc.number SUB_USB_HostManager_JS_Compatibility_4000
      * @tc.desc   Negative test: Set Device Configuration, USBConfig name interval(1-16) error

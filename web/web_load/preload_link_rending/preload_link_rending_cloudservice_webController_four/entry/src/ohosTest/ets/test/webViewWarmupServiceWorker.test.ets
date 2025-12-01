@@ -57,13 +57,13 @@ export default function ActsAceWebViewWarmupServiceWorker() {
         done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_WarmupServiceWorker_API_0001
-     *@tc.name testWebViewWarmupServiceWorker
-     *@tc.desc test WarmupServiceWorker
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewWarmupServiceWorker
+     * @tc.number SUB_ACE_WEB_WarmupServiceWorker_API_0001
+     * @tc.desc   test WarmupServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewWarmupServiceWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewWarmupServiceWorker", EVENT_ID_SET_EMIT_KEY);

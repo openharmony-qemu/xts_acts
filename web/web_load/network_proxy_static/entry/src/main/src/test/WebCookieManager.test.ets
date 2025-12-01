@@ -30,14 +30,14 @@ export default function webCookieManager() {
       console.info("webCookieManager beforeAll start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SAVECOOKIESYNC_0100
-    * @tc.name       : testSaveCookieSyncStatic001
-    * @tc.desc       : test saveCookieSync
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSaveCookieSyncStatic001
+     * @tc.number SUB_WEB_SAVECOOKIESYNC_0100
+     * @tc.desc   test saveCookieSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSaveCookieSyncStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(6000);
       Utils.emitEvent('testSaveCookieSync001', 10)
@@ -49,14 +49,14 @@ export default function webCookieManager() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_REMOVEALLCACHE_0100
-    * @tc.name       : testRemoveAllCacheStatic001
-    * @tc.desc       : test removeAllCache
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testRemoveAllCacheStatic001
+     * @tc.number SUB_WEB_REMOVEALLCACHE_0100
+     * @tc.desc   test removeAllCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRemoveAllCacheStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> =>  {
       await Utils.msSleep(2000);
       Utils.emitEvent('testRemoveAllCache001', 10)

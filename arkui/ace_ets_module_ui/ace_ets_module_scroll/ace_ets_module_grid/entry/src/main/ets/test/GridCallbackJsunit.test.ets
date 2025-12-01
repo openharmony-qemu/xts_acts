@@ -42,14 +42,14 @@ export default function GridCallbackJsunit() {
       done();
     });
 
-    /* *
-      * @tc.number: GridCallbackJsunit_1000
-      * @tc.name  : GridLayoutDirection_001
-      * @tc.desc  : Set Grid CallbackJsunit
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridCallbackJsunit_1000
+     * @tc.number GridCallbackJsunit_1000
+     * @tc.desc   Set Grid CallbackJsunit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridCallbackJsunit_1000',  Level.LEVEL2, async (done: Function) => {
       // Verify Neither rowsTemplate nor columnsTemplate is set
       console.info('[GridCallbackJsunit_1000] START');

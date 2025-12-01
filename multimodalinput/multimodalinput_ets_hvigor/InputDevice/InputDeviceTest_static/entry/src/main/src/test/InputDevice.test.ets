@@ -39,7 +39,6 @@ export default function InputDeviceTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0100
      * @tc.number SUB_MMI_Input_Api_InputDevice_0100
      * @tc.desc   Test KeyboardType.
@@ -68,7 +67,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0200
      * @tc.number SUB_MMI_Input_Api_InputDevice_0200
      * @tc.desc   Test FunctionKey.
@@ -92,7 +90,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0300
      * @tc.number SUB_MMI_Input_Api_InputDevice_0300
      * @tc.desc   Test callback getDeviceInfo interface to get information about a specified input device.
@@ -129,7 +126,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0400
      * @tc.number SUB_MMI_Input_Api_InputDevice_0400
      * @tc.desc   Test promise getDeviceInfo interface to get information about a specified input device.
@@ -183,7 +179,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0500
      * @tc.number SUB_MMI_Input_Api_InputDevice_0500
      * @tc.desc   Test callback getDeviceList interface to get the ID list of all input devices.
@@ -218,7 +213,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0600
      * @tc.number SUB_MMI_Input_Api_InputDevice_0600
      * @tc.desc   Test promise getDeviceList interface to get the ID list of all input devices.
@@ -246,7 +240,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0700
      * @tc.number SUB_MMI_Input_Api_InputDevice_0700
      * @tc.desc   Test inputDevice on interface
@@ -274,7 +267,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0800
      * @tc.number SUB_MMI_Input_Api_InputDevice_0800
      * @tc.desc   Test callback on and off interfaces to cancel the hot swap event for the specified input device.
@@ -311,7 +303,6 @@ export default function InputDeviceTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0900
      * @tc.number SUB_MMI_Input_Api_InputDevice_0900
      * @tc.desc   Test callback off interface to cancel the hot swap event for all input devices.

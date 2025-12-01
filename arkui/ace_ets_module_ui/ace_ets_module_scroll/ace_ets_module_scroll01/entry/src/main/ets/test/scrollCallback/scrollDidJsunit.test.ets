@@ -46,12 +46,12 @@ export default function scrollDidJsunit() {
     });
 
     /**
-     * @tc.number    scrollDidJsunit_0100
-     * @tc.name      scrollDidJsunit_001
-     * @tc.desc      The scroll component triggers the onDidScroll event
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollDidJsunit_0100
+     * @tc.number scrollDidJsunit_0100
+     * @tc.desc   The scroll component triggers the onDidScroll event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scrollDidJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[scrollDidJsunit_0100] START');

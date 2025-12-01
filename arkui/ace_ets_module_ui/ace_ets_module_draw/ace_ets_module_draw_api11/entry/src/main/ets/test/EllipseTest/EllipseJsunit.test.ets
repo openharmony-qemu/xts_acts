@@ -45,6 +45,14 @@ export default function ellipseJsunit() {
       console.info("ellipse after each called");
     });
 
+    /**
+     * @tc.name   testEllipse01
+     * @tc.number testEllipse01
+     * @tc.desc   testEllipse01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse01', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse01] START');
       await Utils.sleep(1000);
@@ -56,6 +64,14 @@ export default function ellipseJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testEllipse02
+     * @tc.number testEllipse02
+     * @tc.desc   testEllipse02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse02', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse02] START');
       try {
@@ -81,6 +97,14 @@ export default function ellipseJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testEllipse03
+     * @tc.number testEllipse03
+     * @tc.desc   testEllipse03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse03', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse03] START');
       try {
@@ -106,6 +130,14 @@ export default function ellipseJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testEllipse04
+     * @tc.number testEllipse04
+     * @tc.desc   testEllipse04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse04', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse04] START');
       try {
@@ -131,6 +163,14 @@ export default function ellipseJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testEllipse05
+     * @tc.number testEllipse05
+     * @tc.desc   testEllipse05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse05', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse05] START');
       try {
@@ -156,6 +196,14 @@ export default function ellipseJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testEllipse06
+     * @tc.number testEllipse06
+     * @tc.desc   testEllipse06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse06', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse06] START');
       try {
@@ -181,6 +229,14 @@ export default function ellipseJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testEllipse07
+     * @tc.number testEllipse07
+     * @tc.desc   testEllipse07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testEllipse07', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse07] START');
       try {

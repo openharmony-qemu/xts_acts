@@ -54,14 +54,14 @@ export default function GridScrollTo() {
       router.clear()
       console.info("Grid_scrollToIndex1 after each called");
     });
-    /* *
-     * @tc.number: GridScrollTo_0001
-     * @tc.name  : GridScrollTo_0001
-     * @tc.desc  : Y-axis slide 90
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-    */
+    /**
+     * @tc.name   GridScrollTo_0001
+     * @tc.number GridScrollTo_0001
+     * @tc.desc   Y-axis slide 90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollTo_0001',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0001] START');
       await CommonFunc.sleep(1000);
@@ -82,14 +82,14 @@ export default function GridScrollTo() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollTo_0002
-     * @tc.name  : GridScrollTo_0002
-     * @tc.desc  : The Y-axis and the X-axis slide to 0
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-    */
+    /**
+     * @tc.name   GridScrollTo_0002
+     * @tc.number GridScrollTo_0002
+     * @tc.desc   The Y-axis and the X-axis slide to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollTo_0002',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0002] START');
       await CommonFunc.sleep(1000);
@@ -110,13 +110,13 @@ export default function GridScrollTo() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollTo_0003
-     * @tc.name  : GridScrollTo_0003
-     * @tc.desc  : Neither the Y-axis nor the X-axis is sliding
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollTo_0003
+     * @tc.number GridScrollTo_0003
+     * @tc.desc   Neither the Y-axis nor the X-axis is sliding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollTo_0003',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0003] START');
@@ -138,13 +138,13 @@ export default function GridScrollTo() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollTo_0004
-     * @tc.name  : GridScrollTo_0004
-     * @tc.desc  : Y-axis slip 100%
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollTo_0004
+     * @tc.number GridScrollTo_0004
+     * @tc.desc   Y-axis slip 100%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollTo_0004',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0004] START');
@@ -166,13 +166,13 @@ export default function GridScrollTo() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollTo_0005
-     * @tc.name  : GridScrollTo_0005
-     * @tc.desc  : Y-axis slide 900
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollTo_0005
+     * @tc.number GridScrollTo_0005
+     * @tc.desc   Y-axis slide 900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollTo_0005',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0005] START');
@@ -193,13 +193,13 @@ export default function GridScrollTo() {
       console.info('[GridScrollTo_0005] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollTo_0006
-     * @tc.name  : GridScrollTo_0006
-     * @tc.desc  : Slide 270 on the Y-axis
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollTo_0006
+     * @tc.number GridScrollTo_0006
+     * @tc.desc   Slide 270 on the Y-axis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollTo_0006',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0006] START');
@@ -221,13 +221,13 @@ export default function GridScrollTo() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollTo_0007
-     * @tc.name  : GridScrollTo_0007
-     * @tc.desc  : Y-axis slide 'aa100%'
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollTo_0007
+     * @tc.number GridScrollTo_0007
+     * @tc.desc   Y-axis slide 'aa100%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollTo_0007',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0007] START');
@@ -248,14 +248,14 @@ export default function GridScrollTo() {
       console.info('[GridScrollTo_0007] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollTo_0008
-     * @tc.name  : GridScrollTo_0008
-     * @tc.desc  : Y-axis slide 'aa'
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
-    */
+    /**
+     * @tc.name   GridScrollTo_0008
+     * @tc.number GridScrollTo_0008
+     * @tc.desc   Y-axis slide 'aa'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollTo_0008',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0008] START');
       await CommonFunc.sleep(1000);
@@ -275,13 +275,13 @@ export default function GridScrollTo() {
       console.info('[GridScrollTo_0008] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollTo_0009
-     * @tc.name  : GridScrollTo_0009
-     * @tc.desc  : The Y-axis slides undefined
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollTo_0009
+     * @tc.number GridScrollTo_0009
+     * @tc.desc   The Y-axis slides undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollTo_0009',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollTo_0009] START');

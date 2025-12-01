@@ -46,12 +46,12 @@ export default function BuilderParam001() {
     });
 
     /**
-     * @tc.number    BuilderParam001
-     * @tc.name      BuilderParam001
-     * @tc.desc      Test  BuildParam
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   BuilderParam001
+     * @tc.number BuilderParam001
+     * @tc.desc   Test  BuildParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuilderParam001', Level.LEVEL0, async (done: Function) => {
       console.info('[BuilderParam001] START');

@@ -51,14 +51,14 @@ export default function httpAuthHandler() {
     });
 
 
-    /*
-* @tc.number     : SUB_WEB_HTTPAUTHHANDLER_CONFIRM_0100
-* @tc.name       : testHttpAuthHandlerConfirmStatic001
-* @tc.desc       : test HttpAuthHandler confirm
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 3
-*/
+    /**
+     * @tc.name   testHttpAuthHandlerConfirmStatic001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONFIRM_0100
+     * @tc.desc   test HttpAuthHandler confirm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHttpAuthHandlerConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -72,14 +72,14 @@ export default function httpAuthHandler() {
       })
 
 
-    /*
-* @tc.number     : SUB_WEB_HTTPAUTHHANDLER_CANCEL_0100
-* @tc.name       : testHttpAuthHandlerCanceStaticl001
-* @tc.desc       : test HttpAuthHandler cancel
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 3
-*/
+    /**
+     * @tc.name   testHttpAuthHandlerCancelStatic001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CANCEL_0100
+     * @tc.desc   test HttpAuthHandler cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHttpAuthHandlerCancelStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testHttpAuthHandlerCancel001", 10)
@@ -93,14 +93,14 @@ export default function httpAuthHandler() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_HTTPAUTHHANDLER_ISHTTPAUTHINFOSAVED_0100
-    * @tc.name       : testHttpAuthHandlerIsHttpAuthInfoSavedStatic001
-    * @tc.desc       : test HttpAuthHandler isHttpAuthInfoSaved
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testHttpAuthHandlerIsHttpAuthInfoSavedStatic001
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_ISHTTPAUTHINFOSAVED_0100
+     * @tc.desc   test HttpAuthHandler isHttpAuthInfoSaved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testHttpAuthHandlerIsHttpAuthInfoSavedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testHttpAuthHandlerIsHttpAuthInfoSaved001", 10)
@@ -111,14 +111,14 @@ export default function httpAuthHandler() {
       await Utils.msSleep(8000);
       done();
     })
-    /*
-* @tc.number     : SUB_WEB_EMITONSWITCHNEXTPAGE_0100
-* @tc.name       : testemitonSwitchNextPage
-* @tc.desc       : test emitonSwitchNextPage
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 3
-*/
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number SUB_WEB_EMITONSWITCHNEXTPAGE_0100
+     * @tc.desc   test emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

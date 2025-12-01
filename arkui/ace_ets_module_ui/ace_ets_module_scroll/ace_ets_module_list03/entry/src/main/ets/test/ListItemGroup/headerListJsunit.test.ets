@@ -46,12 +46,12 @@ export default function headerListJsunit() {
     });
 
     /**
-     * @tc.number    headerListJsunit_001
-     * @tc.name      headerListJsunit_001
-     * @tc.desc      Set Header/Footer through ComponentContent.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   headerListJsunit_0100
+     * @tc.number headerListJsunit_001
+     * @tc.desc   Set Header/Footer through ComponentContent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('headerListJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[headerListJsunit_0100] START');

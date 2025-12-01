@@ -41,11 +41,12 @@ export default function APIgetUIFontConfigJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_APIgetUIFontConfigJsunit_0100
-     * @tc.name      APIgetUIFontConfigJsunit_0100
-     * @tc.desc      styled_string test
-     * @tc.level     Level 1
-     * @tc.type
+     * @tc.name   APIgetUIFontConfigJsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_APIgetUIFontConfigJsunit_0100
+     * @tc.desc   styled_string test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIgetUIFontConfigJsunit_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);

@@ -61,12 +61,12 @@ export default function BuiltinsCharLiteralTest() {
     })
 
     /**
-     * @tc.number    : SUB_CHAR_LITERAL_TEST_0100
-     * @tc.name      : testCharSingle
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharSingle
+     * @tc.number SUB_CHAR_LITERAL_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharSingle', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -95,12 +95,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_CHAR_LITERAL_TEST_0200
-     * @tc.name      : testCharArray
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharArray
+     * @tc.number SUB_CHAR_LITERAL_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharArray', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -130,12 +130,12 @@ export default function BuiltinsCharLiteralTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0300
-     * @tc.name      : testCharInObj
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharInObj
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharInObj', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0400
-     * @tc.name      : testCharNestedArray
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharNestedArray
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharNestedArray', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -198,12 +198,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0500
-     * @tc.name      : testCharTernary
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharTernary
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharTernary', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -232,12 +232,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0600
-     * @tc.name      : testCharLogicAnd
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharLogicAnd
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharLogicAnd', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -266,12 +266,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0700
-     * @tc.name      : testCharSet
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharSet
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharSet', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -300,12 +300,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0800
-     * @tc.name      : testCharMap
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharMap
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharMap', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -334,12 +334,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0900
-     * @tc.name      : testCharConcat
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharConcat
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharConcat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -368,12 +368,12 @@ export default function BuiltinsCharLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_CHAR_1000
-     * @tc.name      : testCharToUpper
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCharToUpper
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHAR_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCharToUpper', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -58,12 +58,12 @@ export default function DecimalTest014() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST14_001
-     * @tc.name      : Decimal_toSignificantDigits_Func_001
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_001
+     * @tc.number DECIMAL_TEST14_001
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -87,12 +87,12 @@ export default function DecimalTest014() {
       test_toSignificantDigits_004('123460000', '123456789.12345678912346789');
     });
     /**
-     * @tc.number    : DECIMAL_TEST14_002
-     * @tc.name      : Decimal_toSignificantDigits_Func_002
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_002
+     * @tc.number DECIMAL_TEST14_002
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -122,12 +122,12 @@ export default function DecimalTest014() {
       test_toSignificantDigits_004('123450000', '123455000');
     });
     /**
-     * @tc.number    : DECIMAL_TEST14_003
-     * @tc.name      : Decimal_toSignificantDigits_Func_003
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_003
+     * @tc.number DECIMAL_TEST14_003
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -164,12 +164,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_004
-     * @tc.name      : Decimal_toSignificantDigits_Func_004
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_004
+     * @tc.number DECIMAL_TEST14_004
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -198,12 +198,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_005
-     * @tc.name      : Decimal_toSignificantDigits_Func_005
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_005
+     * @tc.number DECIMAL_TEST14_005
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -240,12 +240,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_006
-     * @tc.name      : Decimal_toSignificantDigits_Func_006
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_006
+     * @tc.number DECIMAL_TEST14_006
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -276,12 +276,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_007
-     * @tc.name      : Decimal_toSignificantDigits_Func_007
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_007
+     * @tc.number DECIMAL_TEST14_007
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -314,12 +314,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_008
-     * @tc.name      : Decimal_toSignificantDigits_Func_008
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_008
+     * @tc.number DECIMAL_TEST14_008
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -352,12 +352,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_009
-     * @tc.name      : Decimal_toSignificantDigits_Func_009
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_009
+     * @tc.number DECIMAL_TEST14_009
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -387,12 +387,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_010
-     * @tc.name      : Decimal_toSignificantDigits_Func_010
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_010
+     * @tc.number DECIMAL_TEST14_010
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -422,12 +422,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_011
-     * @tc.name      : Decimal_toSignificantDigits_Func_011
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_011
+     * @tc.number DECIMAL_TEST14_011
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -459,12 +459,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_012
-     * @tc.name      : Decimal_toSignificantDigits_Func_012
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_012
+     * @tc.number DECIMAL_TEST14_012
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -497,12 +497,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_013
-     * @tc.name      : Decimal_toSignificantDigits_Func_013
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_013
+     * @tc.number DECIMAL_TEST14_013
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -533,12 +533,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_014
-     * @tc.name      : Decimal_toSignificantDigits_Func_014
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_014
+     * @tc.number DECIMAL_TEST14_014
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -571,12 +571,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_015
-     * @tc.name      : Decimal_toSignificantDigits_Func_015
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_015
+     * @tc.number DECIMAL_TEST14_015
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -607,12 +607,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_016
-     * @tc.name      : Decimal_toSignificantDigits_Func_016
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_016
+     * @tc.number DECIMAL_TEST14_016
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -644,12 +644,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_017
-     * @tc.name      : Decimal_toSignificantDigits_Func_017
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_017
+     * @tc.number DECIMAL_TEST14_017
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -684,12 +684,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_018
-     * @tc.name      : Decimal_toSignificantDigits_Func_018
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_018
+     * @tc.number DECIMAL_TEST14_018
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -724,12 +724,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_019
-     * @tc.name      : Decimal_toSignificantDigits_Func_019
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_019
+     * @tc.number DECIMAL_TEST14_019
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -761,12 +761,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_020
-     * @tc.name      : Decimal_toSignificantDigits_Func_020
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_020
+     * @tc.number DECIMAL_TEST14_020
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -798,12 +798,12 @@ export default function DecimalTest014() {
       test_toSignificantDigits_003('13500654611668894713386183570622548.34241', '13500654611668894713386183570622548.34240861579', 40, 5);
     });
     /**
-     * @tc.number    : DECIMAL_TEST14_021
-     * @tc.name      : Decimal_toSignificantDigits_Func_021
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_021
+     * @tc.number DECIMAL_TEST14_021
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -836,12 +836,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_022
-     * @tc.name      : Decimal_toSignificantDigits_Func_022
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_022
+     * @tc.number DECIMAL_TEST14_022
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -873,12 +873,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_023
-     * @tc.name      : Decimal_toSignificantDigits_Func_023
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_023
+     * @tc.number DECIMAL_TEST14_023
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -905,12 +905,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_024
-     * @tc.name      : Decimal_toSignificantDigits_Func_024
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_024
+     * @tc.number DECIMAL_TEST14_024
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -935,12 +935,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_025
-     * @tc.name      : Decimal_toSignificantDigits_Func_025
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_025
+     * @tc.number DECIMAL_TEST14_025
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -964,12 +964,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_026
-     * @tc.name      : Decimal_toSignificantDigits_Func_026
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_026
+     * @tc.number DECIMAL_TEST14_026
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -993,12 +993,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_027
-     * @tc.name      : Decimal_toSignificantDigits_Func_027
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_027
+     * @tc.number DECIMAL_TEST14_027
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -1023,12 +1023,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_028
-     * @tc.name      : Decimal_toSignificantDigits_Func_028
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_028
+     * @tc.number DECIMAL_TEST14_028
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
         Decimal.set({
@@ -1058,12 +1058,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_029
-     * @tc.name      : Decimal_toSignificantDigits_Func_029
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_029
+     * @tc.number DECIMAL_TEST14_029
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
        Decimal.set({
@@ -1098,12 +1098,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_030
-     * @tc.name      : Decimal_toSignificantDigits_Func_030
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_030
+     * @tc.number DECIMAL_TEST14_030
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
        Decimal.set({
@@ -1139,12 +1139,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_031
-     * @tc.name      : Decimal_toSignificantDigits_Func_031
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_031
+     * @tc.number DECIMAL_TEST14_031
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
        Decimal.set({
@@ -1176,12 +1176,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_032
-     * @tc.name      : Decimal_toSignificantDigits_Func_032
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_032
+     * @tc.number DECIMAL_TEST14_032
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
        Decimal.set({
@@ -1210,12 +1210,12 @@ export default function DecimalTest014() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST14_033
-     * @tc.name      : Decimal_toSignificantDigits_Func_033
-     * @tc.desc      : Test toSignificantDigits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_toSignificantDigits_Func_033
+     * @tc.number DECIMAL_TEST14_033
+     * @tc.desc   Test toSignificantDigits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toSignificantDigits_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({

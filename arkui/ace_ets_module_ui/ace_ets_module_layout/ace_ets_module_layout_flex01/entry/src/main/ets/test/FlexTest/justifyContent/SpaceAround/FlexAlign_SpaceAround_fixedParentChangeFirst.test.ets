@@ -49,9 +49,12 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirst() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight122
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_1200
-     * @tc.name testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight122
-     * @tc.desc Parent component fixed, child component binding layoutWeight first1 second2 third2 properties
+     * @tc.desc   Parent component fixed, child component binding layoutWeight first1 second2 third2 properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight122',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight122 START');
@@ -94,9 +97,12 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirst() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight120
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_1600
-     * @tc.name testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight120
-     * @tc.desc Parent component fixed, child component binding layoutWeight first1 second2 third0 properties
+     * @tc.desc   Parent component fixed, child component binding layoutWeight first1 second2 third0 properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight120',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapChangeFirstLayoutWeight120 START');

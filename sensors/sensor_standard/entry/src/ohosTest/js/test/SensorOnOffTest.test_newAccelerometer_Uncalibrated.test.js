@@ -78,10 +78,13 @@ describe("SensorJsTest_sensor_40", function () {
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let invalid  = -1;
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Accelerometer_Uncalibrated_JSTest_0140
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest014
-     * @tc.desc: Functional Use Cases
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest014
+     * @tc.number SUB_SensorsSystem_Accelerometer_Uncalibrated_JSTest_0140
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest014--------------');
@@ -92,10 +95,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0150
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest015
-     * @tc.desc: Illegal ID passed in
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest015
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0150
+     * @tc.desc   Illegal ID passed in
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest015--------------');
@@ -114,10 +120,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0160
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest016
-     * @tc.desc: For normal scenarios
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest016
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0160
+     * @tc.desc   For normal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------SensorJsTest003--------------');
@@ -130,10 +139,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0170
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest017
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest017--------------');
@@ -162,10 +174,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0180
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest018
-     * @tc.desc: Once Normal Subscription Scenario Use Case
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest018
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0180
+     * @tc.desc   Once Normal Subscription Scenario Use Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, callback);
@@ -175,10 +190,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0190
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest019
-     * @tc.desc: Use case of illegal parameter passed into once interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest019
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0190
+     * @tc.desc   Use case of illegal parameter passed into once interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onceSensorCallback(data) {
@@ -196,10 +214,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0200
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest020
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest020
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         function onceSensorCallback(data) {
@@ -222,10 +243,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0210
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest021
-     * @tc.desc: Use case of illegal parameter passed into off interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest021
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0210
+     * @tc.desc   Use case of illegal parameter passed into off interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -238,10 +262,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0220
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest022
-     * @tc.desc: Unsubscribe directly without waiting after starting subscription
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest022
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0220
+     * @tc.desc   Unsubscribe directly without waiting after starting subscription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onSensorCallback(data) {
@@ -257,10 +284,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 500);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0230
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest023
-     * @tc.desc:SensorId1000000 of incoming exception
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest023
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0230
+     * @tc.desc   SensorId1000000 of incoming exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function onSensorCallback(data) {
@@ -277,10 +307,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0240
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest024
-     * @tc.desc:Call interface multiple times
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest024
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0240
+     * @tc.desc   Call interface multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.on(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, (data)=>{
@@ -311,10 +344,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0250
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest025
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest025
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         try {
@@ -327,10 +363,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0260
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest026
-     * @tc.desc:Call on interface and once interface respectively, and use an off interface to close
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest026
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0260
+     * @tc.desc   Call on interface and once interface respectively, and use an off interface to close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest026--------------');
@@ -362,10 +401,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0270
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest027
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest027
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0270
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest027--------------');
@@ -397,10 +439,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0280
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest028
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest028
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0280
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest028--------------');
@@ -430,10 +475,13 @@ describe("SensorJsTest_sensor_40", function () {
         }
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0290
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest029
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest029
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0290
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAccelerometer_Uncalibrated_SensorJsTest029--------------');
@@ -456,10 +504,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 1000);
     })
 
-     /*
-     * @tc.number: SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0300
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest030
-     * @tc.desc:Verification results of the incorrect parameters of the test interface
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest030
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0300
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAccelerometer_Uncalibrated_SensorJsTest030--------------');
@@ -483,13 +534,13 @@ describe("SensorJsTest_sensor_40", function () {
         }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0310
-     * @tc.name: newAccelerometer_Uncalibrated_SensorJsTest031
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   newAccelerometer_Uncalibrated_SensorJsTest031
+     * @tc.number SUB_SensorsSystem_ACCELEROMETER_UNCALIBRATED_JSTest_0310
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("newAccelerometer_Uncalibrated_SensorJsTest031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newAccelerometer_Uncalibrated_SensorJsTest031--------------');

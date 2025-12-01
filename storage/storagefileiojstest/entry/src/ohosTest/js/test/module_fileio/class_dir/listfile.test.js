@@ -23,14 +23,12 @@ export default function fileioDirListfile() {
 describe('fileio_dir_listfile', function () {
 
     /**
+     * @tc.name   fileio_test_dir_listfile_sync_000
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_SYNC_0000
-     * @tc.name fileio_test_dir_listfile_sync_000
-     * @tc.desc Test Dir listfileSync() interface.
-     * List all files and subfolders in the directory directory entry Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_sync_000', Level.LEVEL0, async function () {
         let dpath = await nextFileName('fileio_test_dir_listfile_sync_000') + 'd';
@@ -61,14 +59,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_sync_001
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_SYNC_0100
-     * @tc.name fileio_test_dir_listfile_sync_001
-     * @tc.desc Test Dir listfileSync() interface.
-     * Loop to obtain the files and subfolders directory items in the directory Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_sync_001', Level.LEVEL0, async function () {
         let dpath = await nextFileName('fileio_test_dir_listfile_sync_001') + 'd';
@@ -105,14 +101,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_sync_002
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_SYNC_0200
-     * @tc.name fileio_test_dir_listfile_sync_002
-     * @tc.desc Test Dir listfileSync() interface.
-     * List the specified number of files and subfolders in the directory Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_sync_002', Level.LEVEL0, async function () {
         let dpath = await nextFileName('fileio_test_dir_listfile_sync_002') + 'd';
@@ -143,14 +137,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_sync_003
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_SYNC_0300
-     * @tc.name fileio_test_dir_listfile_sync_003
-     * @tc.desc Test Dir listfileSync() interface.
-     * List all files and subfolders in the directory directory entry Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfileSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_sync_003', Level.LEVEL0, async function () {
         let dpath = await nextFileName('fileio_test_dir_listfile_sync_003') + 'd';
@@ -169,13 +161,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_sync_004
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_SYNC_0400
-     * @tc.name fileio_test_dir_listfile_sync_004
-     * @tc.desc Test Dir listfileSync() interface. Invalid listNum.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfileSync() interface. Invalid listNum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_sync_004', Level.LEVEL0, async function () {
         let dpath = await nextFileName('fileio_test_dir_listfile_sync_004') + 'd';
@@ -192,13 +183,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_sync_005
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_SYNC_0400
-     * @tc.name fileio_test_dir_listfile_sync_004
-     * @tc.desc Test Dir listfileSync() interface. No parameters.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfileSync() interface. No parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_sync_005', Level.LEVEL0, async function () {
         let dpath = await nextFileName('fileio_test_dir_listfile_sync_005') + 'd';
@@ -215,14 +205,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_async_000
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_ASYNC_0000
-     * @tc.name fileio_test_dir_listfile_async_000
-     * @tc.desc Test Dir listfile() interface. return in callback mode.
-     * List all files and subfolders in the directory directory entry Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfile() interface. return in callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_async_000', Level.LEVEL0, async function (done) {
         let dpath = await nextFileName('fileio_test_dir_listfile_async_000') + 'd';
@@ -255,14 +243,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_async_001
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_ASYNC_0100
-     * @tc.name fileio_test_dir_listfile_async_001
-     * @tc.desc Test Dir listfile() interface. return in promise mode.
-     * Loop to obtain the files and subfolders directory items in the directory Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfile() interface. return in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_async_001', Level.LEVEL0, async function (done) {
         let dpath = await nextFileName('fileio_test_dir_listfile_async_001') + 'd';
@@ -300,14 +286,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_async_002
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_ASYNC_0200
-     * @tc.name fileio_test_dir_listfile_async_002
-     * @tc.desc Test Dir listfile() interface. return in promise mode.
-     * List the specified number of files and subfolders in the directory Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfile() interface. return in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_async_002', Level.LEVEL0, async function (done) {
         let dpath = await nextFileName('fileio_test_dir_listfile_async_002') + 'd';
@@ -339,14 +323,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_async_003
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_ASYNC_0300
-     * @tc.name fileio_test_dir_listfile_async_003
-     * @tc.desc Test Dir listfile() interface. return in promise mode.
-     * List all files and subfolders in the directory directory entry Dirent.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfile() interface. return in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_async_003', Level.LEVEL0, async function (done) {
         let dpath = await nextFileName('fileio_test_dir_listfile_async_003') + 'd';
@@ -366,13 +348,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_async_004
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_ASYNC_0400
-     * @tc.name fileio_test_dir_listfile_async_004
-     * @tc.desc Test Dir listfile() interface. Invalid listNum.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfile() interface. Invalid listNum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_async_004', Level.LEVEL0, async function (done) {
         let dpath = await nextFileName('fileio_test_dir_listfile_async_004') + 'd';
@@ -391,13 +372,12 @@ describe('fileio_dir_listfile', function () {
     });
 
     /**
+     * @tc.name   fileio_test_dir_listfile_async_005
      * @tc.number SUB_STORAGE_FileIO_DIR_LISTFILE_ASYNC_0500
-     * @tc.name fileio_test_dir_listfile_async_005
-     * @tc.desc Test Dir listfile() interface. No parameters.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test Dir listfile() interface. No parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileio_test_dir_listfile_async_005', Level.LEVEL0, async function (done) {
         let dpath = await nextFileName('fileio_test_dir_listfile_async_005') + 'd';

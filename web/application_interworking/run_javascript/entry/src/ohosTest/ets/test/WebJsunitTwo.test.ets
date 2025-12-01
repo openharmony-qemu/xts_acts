@@ -44,20 +44,26 @@ export default function webJsunitTwo() {
       console.info("web afterEach start:");
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_076                                                                                                                                                                  
-     *tc.name getLineNumber                                                                                                                                                                                                              
-     *tc.desic return the number of console message lines
-     */171300
+    /**
+     * @tc.name   getLineNumber
+     * @tc.number SUB_ACE_BASIC_ETS_API_076
+     * @tc.desc   getLineNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLineNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnConsoleTwo", 171310)
       Utils.registerEvent("getLineNumber", "44", 171320, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_077                                                                                                                                                                  
-     *tc.name getSourceId                                                                                                                                                                                                              
-     *tc.desic return the source url
+    /**
+     * @tc.name   getSourceId
+     * @tc.number SUB_ACE_BASIC_ETS_API_077
+     * @tc.desc   getSourceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSourceId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnConsoleTwo", 171310)

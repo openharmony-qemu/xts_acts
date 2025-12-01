@@ -40,12 +40,12 @@ export default function APIPanGestureisisBeginTest() {
       done();
     });
     /**
-     * @tc.number    APIPanGestureisisBeginTest_0100
-     * @tc.name      APIPanGestureisisBeginTest_0100
-     * @tc.desc      frameNode: APIPanGestureisisBegin
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPanGestureisisBeginTest_0100
+     * @tc.number APIPanGestureisisBeginTest_0100
+     * @tc.desc   frameNode: APIPanGestureisisBegin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPanGestureisisBeginTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIPanGestureisisBeginTest_0100 START');
@@ -59,12 +59,12 @@ export default function APIPanGestureisisBeginTest() {
       done();
     });
     /**
-     * @tc.number    APIPanGestureisisBeginTest_0200
-     * @tc.name      APIPanGestureisisBeginTest_0200
-     * @tc.desc      frameNode: APIPanGestureisisBegin
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPanGestureisisBeginTest_0200
+     * @tc.number APIPanGestureisisBeginTest_0200
+     * @tc.desc   frameNode: APIPanGestureisisBegin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPanGestureisisBeginTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('APIPanGestureisisBeginTest_0200 START');

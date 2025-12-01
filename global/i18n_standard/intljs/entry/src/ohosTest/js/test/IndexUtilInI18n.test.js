@@ -57,7 +57,6 @@ describe('IndexUtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_0100
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0100
      * @tc.desc   check the getIndex interface
@@ -74,7 +73,6 @@ describe('IndexUtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_0200
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0200
      * @tc.desc   check the getIndexList interface
@@ -92,7 +90,6 @@ describe('IndexUtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_0300
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0300
      * @tc.desc   check the addLocale interface
@@ -110,7 +107,6 @@ describe('IndexUtilInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_indexutil_0400
      * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0400
      * @tc.desc   check the getInstance interface with zh locale

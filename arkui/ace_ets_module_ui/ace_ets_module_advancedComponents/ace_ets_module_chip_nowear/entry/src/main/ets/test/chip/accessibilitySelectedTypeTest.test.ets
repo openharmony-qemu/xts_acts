@@ -45,10 +45,12 @@ export default function accessibilitySelectedTypeTest() {
     });
 
     /**
-     * @tc.number      accessibilitySelectedTypeTest_0100
-     * @tc.name        accessibilitySelectedTypeTest_0100
-     * @tc.desc        accessibilitySelectedType:AccessibilitySelectedType.CLICKED
-     * @tc.level       Level 3
+     * @tc.name   accessibilitySelectedTypeTest_0100
+     * @tc.number accessibilitySelectedTypeTest_0100
+     * @tc.desc   accessibilitySelectedType:AccessibilitySelectedType.CLICKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('accessibilitySelectedTypeTest_0100', Level.LEVEL3, async (done: Function) => {
      console.info('[accessibilitySelectedTypeTest_0100] START');

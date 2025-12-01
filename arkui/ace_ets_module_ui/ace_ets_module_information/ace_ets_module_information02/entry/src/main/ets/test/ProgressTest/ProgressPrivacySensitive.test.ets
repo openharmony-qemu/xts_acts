@@ -40,14 +40,14 @@ export default function ProgressPrivacySensitiveTest() {
       console.info('ProgressPrivacySensitiveTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: ProgressPrivacySensitiveTest_001
-    * @tc.name  : ProgressPrivacySensitiveTest_001
-    * @tc.desc  : To test the privacySensitive true
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ProgressPrivacySensitiveTest_001
+     * @tc.number ProgressPrivacySensitiveTest_001
+     * @tc.desc   To test the privacySensitive true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProgressPrivacySensitiveTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('ProgressPrivacySensitiveTest_001 START');
       let driver: Driver = Driver.create();
@@ -64,14 +64,14 @@ export default function ProgressPrivacySensitiveTest() {
       console.info('[ProgressPrivacySensitiveTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: ProgressPrivacySensitiveTest_002
-    * @tc.name  : ProgressPrivacySensitiveTest_002
-    * @tc.desc  : To test the privacySensitive false
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ProgressPrivacySensitiveTest_002
+     * @tc.number ProgressPrivacySensitiveTest_002
+     * @tc.desc   To test the privacySensitive false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProgressPrivacySensitiveTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('ProgressPrivacySensitiveTest_002 START');
       let driver: Driver = Driver.create();
@@ -88,14 +88,14 @@ export default function ProgressPrivacySensitiveTest() {
       console.info('[ProgressPrivacySensitiveTest_002] END');
       done();
     });
-    /* *
-    * @tc.number: ProgressPrivacySensitiveTest_003
-    * @tc.name  : ProgressPrivacySensitiveTest_003
-    * @tc.desc  : To test the privacySensitive undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ProgressPrivacySensitiveTest_003
+     * @tc.number ProgressPrivacySensitiveTest_003
+     * @tc.desc   To test the privacySensitive undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProgressPrivacySensitiveTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('ProgressPrivacySensitiveTest_003 START');
       let driver: Driver = Driver.create();
@@ -112,14 +112,14 @@ export default function ProgressPrivacySensitiveTest() {
       console.info('[ProgressPrivacySensitiveTest_003] END');
       done();
     });
-    /* *
-    * @tc.number: ProgressPrivacySensitiveTest_004
-    * @tc.name  : ProgressPrivacySensitiveTest_004
-    * @tc.desc  : To test the privacySensitive null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ProgressPrivacySensitiveTest_004
+     * @tc.number ProgressPrivacySensitiveTest_004
+     * @tc.desc   To test the privacySensitive null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProgressPrivacySensitiveTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('ProgressPrivacySensitiveTest_004 START');
       let driver: Driver = Driver.create();

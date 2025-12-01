@@ -27,13 +27,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(100);
       done();
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0070
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll并设置滚动条宽度为20，开启跨语言，TS侧改变滚动条宽度测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest001
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0070
+     * @tc.desc   C侧创建Scroll并设置滚动条宽度为20，开启跨语言，TS侧改变滚动条宽度测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest001', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -51,13 +51,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.scrollBarWidth).assertEqual(100)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0100
-     * @tc.name       : ScrollCrossAttributeTest002
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧改变属性测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest002
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0100
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧改变属性测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest002', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -75,13 +75,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.scrollBarWidth).assertEqual(20)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0010
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，开启跨语言通道，TS侧设置背景色测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest003
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0010
+     * @tc.desc   C侧创建Scroll，开启跨语言通道，TS侧设置背景色测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest003', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -99,13 +99,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.backgroundColor).assertEqual("#FF000000")
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0080
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置属性测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest004
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0080
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置属性测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest004', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -123,13 +123,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.backgroundColor).assertEqual("#FF00FFFF")
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0040
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，开启跨语言，TS侧调用scroller控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest005
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0040
+     * @tc.desc   C侧创建Scroll，开启跨语言，TS侧调用scroller控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest005', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -147,13 +147,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.content).assertLarger(0)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0090
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest006
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0090
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest006', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -171,13 +171,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.content).assertEqual(0)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0130
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest007
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0130
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest007', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -195,13 +195,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.enablePaging).assertEqual(undefined)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0020
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest008
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0020
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest008', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -219,13 +219,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.scrollBar).assertEqual(BarState.On)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0030
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest009
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0030
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest009', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -243,13 +243,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.enablePaging).assertEqual(true)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0060
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest010
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0060
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest010', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -267,13 +267,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.enableScrollInteraction).assertEqual(true)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0060
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest011
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0060
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest011', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -291,13 +291,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.enableScrollInteraction).assertEqual(false)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0050
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest012
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0050
+     * @tc.desc   C侧创建Scroll，关闭跨语言通道，TS侧设置控制器滚动测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest012', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -315,13 +315,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.content).assertEqual("callback")
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0120
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : TS侧关闭跨语言，C侧设置属性给TS侧scroll测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest013
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0120
+     * @tc.desc   TS侧关闭跨语言，C侧设置属性给TS侧scroll测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest013', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}_TS`, done);
@@ -339,13 +339,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.edgeEffect).assertEqual(EdgeEffect.Spring)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0120
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : TS侧关闭跨语言，C侧设置属性给TS侧scroll测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest014
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0120
+     * @tc.desc   TS侧关闭跨语言，C侧设置属性给TS侧scroll测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest014', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}_TS_False`, done);
@@ -363,13 +363,13 @@ export default function ScrollCrossAttributeTest() {
       await Utils.sleep(500);
       expect(obj.$attrs.edgeEffect).assertEqual(EdgeEffect.None)
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0110
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : TS侧关闭跨语言，C侧设置属性给TS侧scroll测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest015
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0110
+     * @tc.desc   TS侧关闭跨语言，C侧设置属性给TS侧scroll测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest015', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}_TS_True`, done);
@@ -388,13 +388,13 @@ export default function ScrollCrossAttributeTest() {
       expect(obj.$attrs.edgeEffect).assertEqual(EdgeEffect.Spring)
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0070
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll并设置滚动条宽度为20，开启跨语言，OH_ArkUI_NodeUtils_GetCrossLanguageOption测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   ScrollCrossAttributeTest016
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0070
+     * @tc.desc   C侧创建Scroll并设置滚动条宽度为20，开启跨语言，OH_ArkUI_NodeUtils_GetCrossLanguageOption测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ScrollCrossAttributeTest016', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);

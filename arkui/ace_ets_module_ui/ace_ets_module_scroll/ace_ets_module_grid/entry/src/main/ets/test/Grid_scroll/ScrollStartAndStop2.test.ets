@@ -56,12 +56,12 @@ export default function ScrollStartandStop2() {
     });
 
     /**
+     * @tc.name   Grid_ScrollStartandStop2_0300
      * @tc.number SUB_ACE_Grid_ScrollStartandStop2_0300
-     * @tc.name testGrid
-     * @tc.desc Trigger onScrollStart when grid sliding starts and onScrollStop when sliding stops
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Trigger onScrollStart when grid sliding starts and onScrollStop when sliding stops
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollStartandStop2_0300',  Level.LEVEL0, async (done: Function) => {
 

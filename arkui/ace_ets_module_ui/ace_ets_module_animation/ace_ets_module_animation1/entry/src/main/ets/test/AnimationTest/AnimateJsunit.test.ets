@@ -43,11 +43,14 @@ export default function animateJsunit() {
       console.info("animate after each called");
     });
 
-    /*
-    * @tc.number       animateTest_0100
-    * @tc.name         animateTest_0100
-    * @tc.desc         animateTest_0100
-    */
+    /**
+     * @tc.name   animateTest_0100
+     * @tc.number animateTest_0100
+     * @tc.desc   animateTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0100 START');
       await CommonFunc.sleep(1500);
@@ -74,11 +77,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0200
-    * @tc.name         animateTest_0200
-    * @tc.desc         animateTest_0200
-    */
+    /**
+     * @tc.name   animateTest_0200
+     * @tc.number animateTest_0200
+     * @tc.desc   animateTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0200 START');
       await CommonFunc.sleep(1500);
@@ -101,11 +107,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0300
-    * @tc.name         animateTest_0300
-    * @tc.desc         animateTest_0300
-    */
+    /**
+     * @tc.name   animateTest_0300
+     * @tc.number animateTest_0300
+     * @tc.desc   animateTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0300 START');
       await CommonFunc.sleep(1500);
@@ -132,11 +141,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0400
-    * @tc.name         animateTest_0400
-    * @tc.desc         animateTest_0400
-    */
+    /**
+     * @tc.name   animateTest_0400
+     * @tc.number animateTest_0400
+     * @tc.desc   animateTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0400 START');
       await CommonFunc.sleep(1500);
@@ -159,11 +171,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0500
-    * @tc.name         animateTest_0500
-    * @tc.desc         animateTest_0500
-    */
+    /**
+     * @tc.name   animateTest_0500
+     * @tc.number animateTest_0500
+     * @tc.desc   animateTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0500 START');
       await CommonFunc.sleep(1500);
@@ -186,11 +201,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0600
-    * @tc.name         animateTest_0600
-    * @tc.desc         animateTest_0600
-    */
+    /**
+     * @tc.name   animateTest_0600
+     * @tc.number animateTest_0600
+     * @tc.desc   animateTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0600', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       globalThis.value.message.notify({
@@ -220,11 +238,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0700
-    * @tc.name         animateTest_0700
-    * @tc.desc         animateTest_0700
-    */
+    /**
+     * @tc.name   animateTest_0700
+     * @tc.number animateTest_0700
+     * @tc.desc   animateTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0700 START');
       globalThis.value.message.notify({
@@ -254,11 +275,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0800
-    * @tc.name         animateTest_0800
-    * @tc.desc         animateTest_0800
-    */
+    /**
+     * @tc.name   animateTest_0800
+     * @tc.number animateTest_0800
+     * @tc.desc   animateTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0800 START');
       globalThis.value.message.notify({
@@ -288,11 +312,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_0900
-    * @tc.name         animateTest_0900
-    * @tc.desc         animateTest_0900
-    */
+    /**
+     * @tc.name   animateTest_0900
+     * @tc.number animateTest_0900
+     * @tc.desc   animateTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_0900 START');
       globalThis.value.message.notify({
@@ -322,11 +349,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1000
-    * @tc.name         animateTest_1000
-    * @tc.desc         animateTest_1000
-    */
+    /**
+     * @tc.name   animateTest_1000
+     * @tc.number animateTest_1000
+     * @tc.desc   animateTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1000 START');
       globalThis.value.message.notify({
@@ -356,11 +386,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1100
-    * @tc.name         animateTest_1100
-    * @tc.desc         animateTest_1100
-    */
+    /**
+     * @tc.name   animateTest_1100
+     * @tc.number animateTest_1100
+     * @tc.desc   animateTest_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1100 START');
       globalThis.value.message.notify({
@@ -390,11 +423,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1200
-    * @tc.name         animateTest_1200
-    * @tc.desc         animateTest_1200
-    */
+    /**
+     * @tc.name   animateTest_1200
+     * @tc.number animateTest_1200
+     * @tc.desc   animateTest_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1200', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1200 START');
       globalThis.value.message.notify({
@@ -424,11 +460,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1300
-    * @tc.name         animateTest_1300
-    * @tc.desc         animateTest_1300
-    */
+    /**
+     * @tc.name   animateTest_1300
+     * @tc.number animateTest_1300
+     * @tc.desc   animateTest_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1300', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1300 START');
       globalThis.value.message.notify({
@@ -458,11 +497,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1400
-    * @tc.name         animateTest_1400
-    * @tc.desc         animateTest_1400
-    */
+    /**
+     * @tc.name   animateTest_1400
+     * @tc.number animateTest_1400
+     * @tc.desc   animateTest_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1400', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1400 START');
       globalThis.value.message.notify({
@@ -492,11 +534,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1500
-    * @tc.name         animateTest_1500
-    * @tc.desc         animateTest_1500
-    */
+    /**
+     * @tc.name   animateTest_1500
+     * @tc.number animateTest_1500
+     * @tc.desc   animateTest_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1500', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1500 START');
       globalThis.value.message.notify({
@@ -526,11 +571,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1600
-    * @tc.name         animateTest_1600
-    * @tc.desc         animateTest_1600
-    */
+    /**
+     * @tc.name   animateTest_1600
+     * @tc.number animateTest_1600
+     * @tc.desc   animateTest_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1600', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1600 START');
       globalThis.value.message.notify({
@@ -560,11 +608,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1700
-    * @tc.name         animateTest_1700
-    * @tc.desc         animateTest_1700
-    */
+    /**
+     * @tc.name   animateTest_1700
+     * @tc.number animateTest_1700
+     * @tc.desc   animateTest_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1700', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1700 START');
       globalThis.value.message.notify({
@@ -594,11 +645,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1800
-    * @tc.name         animateTest_1800
-    * @tc.desc         animateTest_1800
-    */
+    /**
+     * @tc.name   animateTest_1800
+     * @tc.number animateTest_1800
+     * @tc.desc   animateTest_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1800', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1800 START');
       globalThis.value.message.notify({
@@ -628,11 +682,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_1900
-    * @tc.name         animateTest_1900
-    * @tc.desc         animateTest_1900
-    */
+    /**
+     * @tc.name   animateTest_1900
+     * @tc.number animateTest_1900
+     * @tc.desc   animateTest_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_1900', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_1900 START');
       globalThis.value.message.notify({
@@ -662,11 +719,14 @@ export default function animateJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       animateTest_2000
-    * @tc.name         animateTest_2000
-    * @tc.desc         animateTest_2000
-    */
+    /**
+     * @tc.name   animateTest_2000
+     * @tc.number animateTest_2000
+     * @tc.desc   animateTest_2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('animateTest_2000', Level.LEVEL0, async (done: Function) => {
       console.info('animateTest_2000 START');
       globalThis.value.message.notify({

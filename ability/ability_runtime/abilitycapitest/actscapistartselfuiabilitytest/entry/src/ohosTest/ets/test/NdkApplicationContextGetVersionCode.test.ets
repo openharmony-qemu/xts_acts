@@ -31,13 +31,13 @@ export default function NdkApplicationContextGetVersionCode() {
     afterEach(() => {})
     afterAll(() => {})
     
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.desc   : To verify use ApplicationContextGetVersionCode get right VersionCode.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100
+     * @tc.desc   To verify use ApplicationContextGetVersionCode get right VersionCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100', Level.LEVEL3, async (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100';
@@ -56,13 +56,13 @@ export default function NdkApplicationContextGetVersionCode() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0200
-     * @tc.desc   : To verify use ApplicationContextGetVersionCode with nullptr will return 401.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0200
+     * @tc.desc   To verify use ApplicationContextGetVersionCode with nullptr will return 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0200', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0200';

@@ -26,78 +26,78 @@ export default function progressStyleTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_STYLE_0100
-     * @tc.name       : testProgressStyle001
-     * @tc.desc       : testing style for Progress with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressStyle001
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_STYLE_0100
+     * @tc.desc   testing style for Progress with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressStyle001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_STYLE_0200
-     * @tc.name       : testProgressStyle002
-     * @tc.desc       : testing style for Progress with ARKUI_PROGRESS_TYPE_RING value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressStyle002
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_STYLE_0200
+     * @tc.desc   testing style for Progress with ARKUI_PROGRESS_TYPE_RING value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressStyle002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_STYLE_0300
-     * @tc.name       : testProgressStyle003
-     * @tc.desc       : testing style for Progress with ARKUI_PROGRESS_TYPE_ECLIPSE value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressStyle003
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_STYLE_0300
+     * @tc.desc   testing style for Progress with ARKUI_PROGRESS_TYPE_ECLIPSE value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressStyle003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_STYLE_0400
-     * @tc.name       : testProgressStyle004
-     * @tc.desc       : testing style for Progress with ARKUI_PROGRESS_TYPE_SCALE_RING value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressStyle004
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_STYLE_0400
+     * @tc.desc   testing style for Progress with ARKUI_PROGRESS_TYPE_SCALE_RING value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressStyle004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_STYLE_0500
-     * @tc.name       : testProgressStyle005
-     * @tc.desc       : testing style for Progress with ARKUI_PROGRESS_TYPE_CAPSULE value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressStyle005
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_STYLE_0500
+     * @tc.desc   testing style for Progress with ARKUI_PROGRESS_TYPE_CAPSULE value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressStyle005()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_STYLE_0600
-     * @tc.name       : testProgressStyle006
-     * @tc.desc       : testing style for Progress with ARKUI_PROGRESS_TYPE_LINEAR value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressStyle006
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_STYLE_0600
+     * @tc.desc   testing style for Progress with ARKUI_PROGRESS_TYPE_LINEAR value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressStyle006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressStyle006()).assertEqual(0)

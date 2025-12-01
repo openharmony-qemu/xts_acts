@@ -60,10 +60,13 @@ export default function webViewSetAudioMuted() {
       console.info("webViewSetAudioMuted afterEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWMUTED_API_0100
-     *tc.name testSetAudioMuted
-     *tc.desc test interface of setaudiomuted with muted true
+    /**
+     * @tc.name   testSetAudioMuted
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWMUTED_API_0100
+     * @tc.desc   test interface of setaudiomuted with muted true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAudioMuted',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitSetAudioMuted", 132620)
@@ -73,10 +76,13 @@ export default function webViewSetAudioMuted() {
         });
       await Utils.waitAndClickComponent(driver, 'webViewSetAudioMuted');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWMUTED_API_0200
-     *tc.name testSetAudioDisMuted
-     *tc.desc test interface of setaudiomuted with muted false
+    /**
+     * @tc.name   testSetAudioDisMuted
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWMUTED_API_0200
+     * @tc.desc   test interface of setaudiomuted with muted false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAudioDisMuted',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitSetAudioDisMuted", 132620)

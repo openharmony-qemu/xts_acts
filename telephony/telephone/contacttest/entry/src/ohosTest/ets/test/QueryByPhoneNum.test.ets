@@ -205,12 +205,12 @@ export default function QueryByEmailPhoneNumTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0100
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0100
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0100
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0100
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0100";
@@ -248,12 +248,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0200
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0200
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0200
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0200
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0200";
@@ -281,12 +281,12 @@ export default function QueryByEmailPhoneNumTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0300
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0300
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0300
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0300
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0300";
@@ -335,12 +335,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0500
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0500
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0500
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0500
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0500";
@@ -378,12 +378,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0600
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0600
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0600
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0600
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0600";
@@ -428,12 +428,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0700
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0700
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0700
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0700
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0700";
@@ -478,12 +478,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0800
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0800
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0800
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0800
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0800";
@@ -528,12 +528,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_0900
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber0900
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber0900
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_0900
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber0900";
@@ -579,12 +579,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1000
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1000
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1000
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1000
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1000";
@@ -632,12 +632,12 @@ export default function QueryByEmailPhoneNumTest() {
 
     //---------------------------根据电话号码查询联系人-----QueryContactsByPhoneNumber-----版本10--4个参数----------------
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1100
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1100
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1100
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1100
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryContactByPhoneNumber1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1100";
@@ -675,12 +675,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1200
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1200
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1200
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1200
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1200";
@@ -723,12 +723,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1300
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1300
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1300
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1300
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1300";
@@ -771,12 +771,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1400
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1400
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1400
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1400
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1400";
@@ -819,12 +819,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1500
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1500
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1500
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1500
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1500";
@@ -867,12 +867,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1600
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1600
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1600
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1600
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1600";
@@ -916,12 +916,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
     //---------------------------根据电话号码查询联系人-----${caseName}-----版本10--4个参数-----arrr属性-----------
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_1800
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber1800
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber1800
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_1800
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryContactByPhoneNumber1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber1800";
@@ -960,12 +960,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2200
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2200
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2200
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2200
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2200";
@@ -1010,12 +1010,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2300
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2300
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2300
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2300
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryContactByPhoneNumber2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2300";
@@ -1054,12 +1054,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2500
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2500
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2500
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2500
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2500";
@@ -1086,12 +1086,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2600
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2600
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2600
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2600
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2600";
@@ -1137,12 +1137,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2700
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2700
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2700
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2700
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2700";
@@ -1186,12 +1186,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2800
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2800
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2800
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2800
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2800";
@@ -1239,12 +1239,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_2900
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber2900
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber2900
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_2900
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber2900";
@@ -1298,12 +1298,12 @@ export default function QueryByEmailPhoneNumTest() {
       console.info(`${caseName} test end `);
     })
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_3000
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber3000
-     * @tc.desc       : Query contacts based on phone numbers and use callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber3000
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_3000
+     * @tc.desc   Query contacts based on phone numbers and use callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber3000";
@@ -1355,12 +1355,12 @@ export default function QueryByEmailPhoneNumTest() {
     //---------------------------根据电话号码查询联系人，使用Promise方式作为异步方法----------------
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_3100
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber3100
-     * @tc.desc       : Query contacts based on phone numbers and use Promise as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber3100
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_3100
+     * @tc.desc   Query contacts based on phone numbers and use Promise as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryContactByPhoneNumber3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber3100";
@@ -1398,12 +1398,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_3400
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber3400
-     * @tc.desc       : Query contacts based on phone numbers and use Promise as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber3400
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_3400
+     * @tc.desc   Query contacts based on phone numbers and use Promise as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber3400";
@@ -1446,12 +1446,12 @@ export default function QueryByEmailPhoneNumTest() {
     })
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_3500
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber3500
-     * @tc.desc       : Query contacts based on phone numbers and use Promise as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber3500
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_3500
+     * @tc.desc   Query contacts based on phone numbers and use Promise as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber3500";
@@ -1489,12 +1489,12 @@ export default function QueryByEmailPhoneNumTest() {
 
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryContactsByPhoneNumber_3600
-     * @tc.name       : testTelephonyContactQueryContactByPhoneNumber3600
-     * @tc.desc       : Query contacts based on phone numbers and use Promise as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryContactByPhoneNumber3600
+     * @tc.number SUB_Telephony_Contact_QueryContactsByPhoneNumber_3600
+     * @tc.desc   Query contacts based on phone numbers and use Promise as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryContactByPhoneNumber3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryContactByPhoneNumber3600";

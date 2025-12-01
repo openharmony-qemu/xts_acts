@@ -40,12 +40,12 @@ export default function setLabelTest() {
       done();
     });
     /**
-     * @tc.number    setLabelTest_0010
-     * @tc.name      setLabelTest_0010
-     * @tc.desc      renderNode: setLabel
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setLabelTest_0010
+     * @tc.number setLabelTest_0010
+     * @tc.desc   renderNode: setLabel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setLabelTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('setLabelTest_0010 START');

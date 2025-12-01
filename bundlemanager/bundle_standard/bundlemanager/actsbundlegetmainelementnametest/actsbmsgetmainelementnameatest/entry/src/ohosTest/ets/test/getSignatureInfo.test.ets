@@ -20,12 +20,12 @@ import { BusinessError } from '@ohos.base';
 export default function getSignatureInfo() {
   describe('getSignatureInfo', () => {
     /**
-     * @tc.number: Sub_Bms_Framework_getSignatureInfo01
-     * @tc.name: Sub_Bms_Framework_getSignatureInfo01
-     * @tc.desc: Test getSignatureInfo with Skill
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   Sub_Bms_Framework_getSignatureInfo01
+     * @tc.number Sub_Bms_Framework_getSignatureInfo01
+     * @tc.desc   Test getSignatureInfo with Skill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getSignatureInfo01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
@@ -46,12 +46,12 @@ export default function getSignatureInfo() {
     })
 
     /**
-     * @tc.number: Sub_Bms_Framework_getSignatureInfo02
-     * @tc.name: Sub_Bms_Framework_getSignatureInfo02
-     * @tc.desc: Test getSignatureInfo with error code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   Sub_Bms_Framework_getSignatureInfo02
+     * @tc.number Sub_Bms_Framework_getSignatureInfo02
+     * @tc.desc   Test getSignatureInfo with error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_getSignatureInfo02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
@@ -67,12 +67,12 @@ export default function getSignatureInfo() {
     })
 
     /**
-     * @tc.number: Sub_Bms_Framework_getSignatureInfo03
-     * @tc.name: Sub_Bms_Framework_getSignatureInfo03
-     * @tc.desc: Test getSignatureInfo with error code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   Sub_Bms_Framework_getSignatureInfo03
+     * @tc.number Sub_Bms_Framework_getSignatureInfo03
+     * @tc.desc   Test getSignatureInfo with error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_getSignatureInfo03', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
