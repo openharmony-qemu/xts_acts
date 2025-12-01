@@ -39,15 +39,15 @@ export default function PhotoShowAssetsCreationDialogTest() {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0100
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0100
+     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0100
+     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0100
      * @tc.desc     第一个参数为null
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0100", Level.LEVEL0, async (done: Function) => {
-      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0100";
+    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0100", Level.LEVEL0, async (done: Function) => {
+      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0100";
       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
         {
           title: 'showAssetsCreationDialog',
@@ -70,15 +70,15 @@ export default function PhotoShowAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0200
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0200
+     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0200
+     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0200
      * @tc.desc     第二个参数为null
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0200", Level.LEVEL0, async (done: Function) => {
-      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0200";
+    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0200", Level.LEVEL0, async (done: Function) => {
+      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0200";
       let srcFileUris: Array<string> = ['123456'];
       try {
         console.info(TAG, testNum, 'Start');
@@ -94,15 +94,15 @@ export default function PhotoShowAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0300
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0300
+     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0300
+     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0300
      * @tc.desc     第一个参数为空数组
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0300", Level.LEVEL0, async (done: Function) => {
-      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0300";
+    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0300", Level.LEVEL0, async (done: Function) => {
+      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0300";
       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
         {
           title: 'showAssetsCreationDialog',
@@ -125,15 +125,15 @@ export default function PhotoShowAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0400
-     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0400
+     * @tc.number   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0400
+     * @tc.name     SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0400
      * @tc.desc     第二个参数为空数组
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0400", Level.LEVEL0, async (done: Function) => {
-      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_BACK_0400";
+    it("SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0400", Level.LEVEL0, async (done: Function) => {
+      const testNum = "SUB_PHOTO_ACCESS_HELPER_SHOW_ASSET_CREATION_DIALOG_TEST_0400";
       let srcFileUris: Array<string> = ['123456'];
       try {
         console.info(TAG, testNum, 'Start');

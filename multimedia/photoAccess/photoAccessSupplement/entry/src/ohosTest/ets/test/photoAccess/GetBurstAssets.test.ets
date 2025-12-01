@@ -29,15 +29,15 @@ export default function GetBurstAssets() {
     });
 
     /**
-     * @tc.number    MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_001
-     * @tc.name      MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_001
+     * @tc.number    MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_001
+     * @tc.name      MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_001
      * @tc.desc      Testing GetBurstAssets
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_001';
+    it("MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_001';
       try {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
@@ -53,15 +53,15 @@ export default function GetBurstAssets() {
     })
 
     /**
-     * @tc.number    MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_002
-     * @tc.name      MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_002
+     * @tc.number    MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_002
+     * @tc.name      MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_002
      * @tc.desc      Testing GetBurstAssets
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_002", Level.LEVEL0, async (done: Function) => {
-      const testName = 'MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_002';
+    it("MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_002", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_002';
       try {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
@@ -82,15 +82,15 @@ export default function GetBurstAssets() {
     })
 
     /**
-     * @tc.number    MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_003
-     * @tc.name      MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_003
+     * @tc.number    MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_003
+     * @tc.name      MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_003
      * @tc.desc      Testing GetBurstAssets
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_003", Level.LEVEL0, async (done: Function) => {
-      const testName = 'MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_003';
+    it("MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_003", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_003';
       try {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
@@ -113,15 +113,15 @@ export default function GetBurstAssets() {
     })
 
     /**
-     * @tc.number    MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_004
-     * @tc.name      MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_004
+     * @tc.number    MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_004
+     * @tc.name      MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_004
      * @tc.desc      Testing GetBurstAssets
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_004", Level.LEVEL0, async (done: Function) => {
-      const testName = 'MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_004';
+    it("MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_004", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_004';
       try {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
@@ -143,15 +143,15 @@ export default function GetBurstAssets() {
 
 
     /**
-     * @tc.number    MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_005
-     * @tc.name      MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_005
+     * @tc.number    MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_005
+     * @tc.name      MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_005
      * @tc.desc      Testing GetBurstAssets
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_005", Level.LEVEL0, async (done: Function) => {
-      const testName = 'MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_005';
+    it("MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_005", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_005';
       try {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
@@ -172,15 +172,15 @@ export default function GetBurstAssets() {
     })
 
     /**
-     * @tc.number    MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_006
-     * @tc.name      MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_006
+     * @tc.number    MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_006
+     * @tc.name      MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_006
      * @tc.desc      Testing GetBurstAssets
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_006", Level.LEVEL0, async (done: Function) => {
-      const testName = 'MEDIA_LIBRARY_kIT_OVERWRITE_NULL_PHOTO_ASSETS_006';
+    it("MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_006", Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_LIBRARY_KIT__PHOTO_GET_BURST_006';
       try {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);

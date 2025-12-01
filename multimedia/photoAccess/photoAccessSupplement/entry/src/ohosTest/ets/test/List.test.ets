@@ -46,6 +46,11 @@ import PhotoCreateAssetWithShortTermPermissionTest
   from './photoAccess/PhotoAccessHelperCreateAssetWithShortTermPermission.test';
 import GetBurstAssets from './photoAccess/GetBurstAssets.test';
 import getPhotoAccessHelper from './photoAccess/GetPhotoAccessHelper.test';
+import ShowAssetsCreationDialogMoreSuppTest from './photoAccess/showAssetsCreationDialog.test';
+import photoAccessHelperEnumImageFileType from './photoAccess/photoAccessHelperEnumImageFileType.test';
+import PhotoAccessHelperEnumAlbumKeys from './photoAccess/PhotoAccessHelperEnumAlbumKeys.test';
+import sendablePhotoAccessHelperGetAlbumsTest from './photoAccess/SendablePhotoAccessHelperAlbumEnum.test';
+import sendablePhotoAccessHelperCreateAssetTest from './photoAccess/SendablePhotoAccessHelperPhotoTypeEnum.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -91,4 +96,9 @@ export default function testsuite() {
   PhotoCreateAssetWithShortTermPermissionTest();
   GetBurstAssets();
   getPhotoAccessHelper();
+  ShowAssetsCreationDialogMoreSuppTest();
+  photoAccessHelperEnumImageFileType();
+  PhotoAccessHelperEnumAlbumKeys();
+  sendablePhotoAccessHelperGetAlbumsTest();
+  sendablePhotoAccessHelperCreateAssetTest();
 }
