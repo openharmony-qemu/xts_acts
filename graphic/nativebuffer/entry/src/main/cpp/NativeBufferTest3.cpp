@@ -178,21 +178,21 @@ napi_value OHNativeBufferIsSupportedAbnormal01(napi_env env, napi_callback_info 
     bool isSupported = false;
     int32_t ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
-        napi_create_int32(env, 1, &result);
+        napi_create_int32(env, FAIL, &result);
         return result;
     }
     config.width = 0x100;
     config.height = -1;
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
-        napi_create_int32(env, 2, &result);
+        napi_create_int32(env, FAIL, &result);
         return result;
     }
     config.height = 0x100;
     config.format = static_cast<int32_t>(-1);
     ret = OH_NativeBuffer_IsSupported(config, &isSupported);
     if (ret != 0 || isSupported != false) {
-        napi_create_int32(env, 3, &result);
+        napi_create_int32(env, FAIL, &result);
         return result;
     }
     napi_create_int32(env, SUCCESS, &result);
