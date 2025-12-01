@@ -72,20 +72,18 @@ export default function VelocityFields() {
       await CommonFunc.sleep(1000);
       let callbackJson = getInspectorByKey('particleId2');
       let obj: ESObject = JSON.parse(callbackJson);
-      let velocityFields: [] = obj?.$attrs?.velocityFields;
-      if (velocityFields && velocityFields.length) {
-        console.log('VelocityFields_001 velocityFields is : ',  JSON.stringify(velocityFields))
-        let velocity: Vector2T<number, number> | undefined = velocityFields[0]?.velocity;
-        expect(velocity).assertEqual('{"x":100,"y":0}')
-        let region: FieldRegion | undefined = velocityFields[0]?.region;
-        let shape: DisturbanceFieldShape | undefined = region?.shape;
-        let position: PositionT<number> | undefined = region?.position;
-        let size: SizeT<number> | undefined = region?.size;
-        expect(shape).assertEqual('RECT');
-        expect(JSON.stringify(size)).assertEqual('{"width":"200.00vp","height":"200.00vp"}');
-        expect(JSON.stringify(position)).assertEqual('{"x":"150.00vp","y":"150.00vp"}');
-        console.info("[VelocityFields_001] END");
-      }
+      let velocityFields: Array<VelocityFieldOptions> = obj?.$attrs?.velocityFields;
+      console.log('VelocityFields_001 velocityFields is : ',  JSON.stringify(velocityFields))
+      let velocity: Vector2T<number> | undefined = velocityFields[0]?.velocity;
+      expect(JSON.stringify(velocity)).assertEqual('{"x":100,"y":0}')
+      let region: FieldRegion | undefined = velocityFields[0]?.region;
+      let shape: DisturbanceFieldShape | undefined = region?.shape;
+      let position: PositionT<number> | undefined = region?.position;
+      let size: SizeT<number> | undefined = region?.size;
+      expect(shape).assertEqual('RECT');
+      expect(JSON.stringify(size)).assertEqual('{"width":"200.00vp","height":"200.00vp"}');
+      expect(JSON.stringify(position)).assertEqual('{"x":"150.00vp","y":"150.00vp"}');
+      console.info("[VelocityFields_001] END");
       done();
     });
   })

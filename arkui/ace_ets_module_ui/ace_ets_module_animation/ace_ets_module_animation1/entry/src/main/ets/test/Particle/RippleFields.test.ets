@@ -73,7 +73,7 @@ export default function RippleFields() {
       let callbackJson = getInspectorByKey('particleId');
       let obj: ESObject = JSON.parse(callbackJson);
       console.info("InspectorLayoutCallback001 component obj is: " + JSON.stringify(obj));
-      let rippleFields: [] = obj?.$attrs?.rippleFields;
+      let rippleFields: Array<RippleFieldOptions> = obj?.$attrs?.rippleFields;
       console.log('RippleFields_001 rippleFields is : ',  JSON.stringify(rippleFields))
       let amplitude: number | undefined = rippleFields[0]?.amplitude;
       expect(amplitude).assertEqual(120)
