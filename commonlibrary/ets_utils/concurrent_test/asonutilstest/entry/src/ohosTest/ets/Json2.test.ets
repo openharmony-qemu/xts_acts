@@ -1965,6 +1965,753 @@ export default function Json2Test() {
       const jsonStr = ArkTSUtils.ASON.stringify(arr);
       expect(jsonStr).assertEqual("[1,null,3]");
     });
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11100
+     * @tc.name Json2Test111
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        a: A,
 
+      }
+      interface A {
+        b: B,
+        e: number
+      }
+      interface B {
+        c: number,
+        d: number
+      }
+      const obj: Obj = { a: { b: { c: 5, d: 6 } as B, e: 7 } as A };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, ["a", "b", "c"]]);
+      expect(jsonStr).assertEqual('[{"a":{"b":{"c":5,"d":6},"e":7}},["a","b","c"]]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11200
+     * @tc.name Json2Test112
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const date = new Date("2024-05-01T18:00:00+08:00");
+      const jsonStr = ArkTSUtils.ASON.stringify(date);
+      expect(jsonStr).assertEqual('"2024-05-01T10:00:00.000Z"');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11300
+     * @tc.name Json2Test113
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        num: number
+      }
+      const obj: Obj = { num: 123 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"num":123}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11400
+     * @tc.name Json2Test114
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        m: number
+      }
+      const obj: Obj = { m: 30 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, 10]);
+      const expected = "[{\"m\":30},null,10]";
+      expect(jsonStr).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11500
+     * @tc.name Json2Test115
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [undefined, 2, 3];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual("[null,2,3]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11600
+     * @tc.name Json2Test116
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [[[1, "str"], 3], 4];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual("[[[1,\"str\"],3],4]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11700
+     * @tc.name Json2Test117
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        n: number
+      }
+      const obj: Obj = { n: 35 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, "abc123"]);
+      expect(jsonStr).assertEqual("[{\"n\":35},null,\"abc123\"]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11800
+     * @tc.name Json2Test118
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface A {
+        a: null,
+        b: number
+      }
+
+      interface C {
+        c: number
+      }
+
+      const arr = [{ a: null, b: 5 } as A, { c: 10 } as C];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual('[{"a":null,"b":5},{"c":10}]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_11900
+     * @tc.name Json2Test119
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [0, 1, 2];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual("[0,1,2]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12000
+     * @tc.name Json2Test120
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        p: number
+      }
+
+      const obj: Obj = { p: 40 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, "\t-"]);
+      expect(jsonStr).assertEqual("[{\"p\":40},null,\"\\t-\"]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12100
+     * @tc.name Json2Test121
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        line: string
+      }
+
+      const obj: Obj = { line: "first\nsecond" };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"line":"first\\nsecond"}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12200
+     * @tc.name Json2Test122
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        a: A,
+        d: number
+      }
+      interface A {
+        b: number,
+        c: number
+      }
+      const obj: Obj = { a: { b: 5, c: 6 } as A, d: 7 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"a":{"b":5,"c":6},"d":7}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12300
+     * @tc.name Json2Test123
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        name: string,
+        age: number,
+        score: number
+      }
+      const obj: Obj = { name: "王五", age: 28, score: 95.5 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"name":"王五","age":28,"score":95.5}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12400
+     * @tc.name Json2Test124
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        id: number,
+        name: string,
+        status: string
+      }
+
+      const obj: Obj = { id: 101, name: "Test", status: "active" };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, ["id", "status"], 4]);
+      expect(jsonStr).assertEqual("[{\"id\":101,\"name\":\"Test\",\"status\":\"active\"},[\"id\",\"status\"],4]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12500
+     * @tc.name Json2Test125
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const strObj = new String("test");
+      const jsonStr = ArkTSUtils.ASON.stringify(strObj);
+      expect(jsonStr).assertEqual('"test"');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12600
+     * @tc.name Json2Test126
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        val: number
+      }
+
+      const obj: Obj = { val: 3 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"val":3}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12700
+     * @tc.name Json2Test127
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        price: number,
+        inStock: boolean
+      }
+
+      const obj: Obj = { price: 99.99, inStock: true };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"price":99.99,"inStock":true}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12800
+     * @tc.name Json2Test128
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        id: number,
+        name: string
+      }
+
+      interface Arr {
+        user: Obj
+      }
+
+      const arr = [{ user: { id: 1, name: "A" } } as Arr, { user: { id: 2, name: "B" } } as Arr];
+      const jsonStr = ArkTSUtils.ASON.stringify([arr, ["user", "id"]]);
+      expect(jsonStr).assertEqual('[[{"user":{"id":1,"name":"A"}},{"user":{"id":2,"name":"B"}}],["user","id"]]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_12900
+     * @tc.name Json2Test129
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        key: number
+      }
+
+      const obj: Obj = { key: 5 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, 6]);
+      expect(jsonStr).assertEqual("[{\"key\":5},null,6]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13000
+     * @tc.name Json2Test130
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        count: number
+      }
+
+      const obj: Obj = { count: 0 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"count":0}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13100
+     * @tc.name Json2Test131
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        val: number
+      }
+
+      const obj: Obj = { val: 10 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, "  *  "]);
+      expect(jsonStr).assertEqual("[{\"val\":10},null,\"  *  \"]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13200
+     * @tc.name Json2Test132
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        data: number
+      }
+
+      const obj: Obj = { data: 15 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, -1]);
+      expect(jsonStr).assertEqual('[{"data":15},null,-1]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13300
+     * @tc.name Json2Test133
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = ["old1", "old2", 3];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual('["old1","old2",3]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13400
+     * @tc.name Json2Test134
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        a: number,
+        b: number
+      }
+
+      const obj: Obj = { a: 1, b: 2 };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, ["a", "a", "b"]]);
+      expect(jsonStr).assertEqual('[{"a":1,"b":2},["a","a","b"]]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13500
+     * @tc.name Json2Test135
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const date = new Date("2024-03-15T12:34:56.123456Z");
+      const jsonStr = ArkTSUtils.ASON.stringify(date);
+      expect(jsonStr).assertEqual('"2024-03-15T12:34:56.123Z"');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13600
+     * @tc.name Json2Test136
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface XObj {
+        y: number,
+        z: number
+      }
+
+      interface Obj {
+        x: XObj,
+        w: number
+      }
+
+      const obj: Obj = { x: { y: 5, z: 6 }, w: 7 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"x":{"y":5,"z":6},"w":7}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13700
+     * @tc.name Json2Test137
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface bObj {
+        b: number,
+      }
+
+      interface Obj {
+        a: bObj,
+      }
+
+      const obj: Obj = { a: { b: 5 } };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, 10]);
+      const expected = "{\n          \"a\": {\n                    \"b\": 5\n          }\n}";
+      expect(jsonStr).assertEqual('[{"a":{"b":5}},null,10]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13800
+     * @tc.name Json2Test138
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface bObj {
+        str: string,
+        num: number
+      }
+
+      interface Obj {
+        nested: bObj
+      }
+
+      const arr = [{ nested: { str: "test", num: 5 } } as Obj];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual('[{"nested":{"str":"test","num":5}}]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_13900
+     * @tc.name Json2Test139
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        code: number
+      }
+
+      const obj: Obj = { code: 404 };
+      const spaceStr = "~!@#$%^&*()_+";
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, spaceStr]);
+      const expected = "{\n~!@#$%^&*(\"code\": 404\n}";
+      expect(jsonStr).assertEqual('[{"code":404},null,"~!@#$%^&*()_+"]');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14000
+     * @tc.name Json2Test140
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        a: A
+      }
+      interface A {
+        b: null,
+        c: C
+      }
+      interface C {
+        d: number
+      }
+      const obj: Obj = { a: { b: null, c: { d: 5 } } };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"a":{"b":null,"c":{"d":5}}}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14100
+     * @tc.name Json2Test141
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        num: number
+      }
+      const obj: Obj = { num: 2 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual("{\"num\":2}");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14200
+     * @tc.name Json2Test142
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        msg: string
+      }
+
+      const obj: Obj = { msg: "test" };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, null, "\t\t"]);
+      expect(jsonStr).assertEqual("[{\"msg\":\"test\"},null,\"\\t\\t\"]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14300
+     * @tc.name Json2Test143
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        line: string
+      }
+
+      const obj: Obj = { line: "line1\rline2" };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"line":"line1\\rline2"}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14400
+     * @tc.name Json2Test144
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = [1, () => {
+      }, 3];
+      const jsonStr = ArkTSUtils.ASON.stringify(arr);
+      expect(jsonStr).assertEqual("[1,null,3]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14500
+     * @tc.name Json2Test145
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        desc: string
+      }
+
+      const obj: Obj = { desc: "测试：中文符号，。！" };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"desc":"测试：中文符号，。！"}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14600
+     * @tc.name Json2Test146
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        parent: Parent
+      }
+
+      interface Parent {
+        child1: number,
+        child2: number,
+      }
+
+      const obj: Obj = { parent: { child1: 10, child2: 20 } };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, ["parent", "child2"], "\t"]);
+      expect(jsonStr).assertEqual("[{\"parent\":{\"child1\":10,\"child2\":20}},[\"parent\",\"child2\"],\"\\t\"]");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14700
+     * @tc.name Json2Test147
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+
+      const boolObj = new Boolean(false);
+      const jsonStr = ArkTSUtils.ASON.stringify(boolObj);
+      expect(jsonStr).assertEqual("false");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14800
+     * @tc.name Json2Test148
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        x: number
+      }
+
+      interface A {
+        a: B
+      }
+
+      interface B {
+        b: number
+      }
+
+      const obj: Obj = { x: 4 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"x":4}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_14900
+     * @tc.name Json2Test149
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        largeNum: number,
+        smallNum: number
+      }
+
+      const obj: Obj = { largeNum: 1.23e5, smallNum: 4.5e-2 };
+      const jsonStr = ArkTSUtils.ASON.stringify(obj);
+      expect(jsonStr).assertEqual('{"largeNum":123000,"smallNum":0.045}');
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Json2_TEST_15000
+     * @tc.name Json2Test150
+     * @tc.desc test Json stringify()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Json2Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface Obj {
+        date: Date,
+        name: string
+      }
+
+      const obj: Obj = { date: new Date("2024-01-01"), name: "Test" };
+      const jsonStr = ArkTSUtils.ASON.stringify([obj, ["date"]]);
+      expect(jsonStr).assertEqual('[{"date":"2024-01-01T00:00:00.000Z","name":"Test"},["date"]]');
+    });
   })
 }
