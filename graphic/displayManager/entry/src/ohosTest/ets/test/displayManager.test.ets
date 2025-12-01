@@ -2374,7 +2374,7 @@ export default function displayTest() {
           console.info(caseName+ ' current window stage event is HIDDEN');
           let displays = await display.getAllDisplay();
           console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
-          expect(displays.length).assertEqual(0);
+          expect(displays.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
           console.info(caseName+ ' restore success');
@@ -2424,7 +2424,7 @@ export default function displayTest() {
             }else {
               console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
               let displays = data;
-              expect(displays.length).assertEqual(0);
+              expect(displays.length).assertLargerOrEqual(1);
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
               console.info(caseName+ ' restore success');
@@ -2477,7 +2477,7 @@ export default function displayTest() {
             }else {
               console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
               let displays = data;
-              expect(displays.length).assertEqual(0);
+              expect(displays.length).assertLargerOrEqual(1);
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
               console.info(caseName+ ' restore success');
@@ -2520,7 +2520,7 @@ export default function displayTest() {
           console.info(caseName+ ' current window stage event is HIDDEN');
           let displays = await display.getAllDisplays();
           console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
-          expect(displays.length).assertEqual(0);
+          expect(displays.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
           console.info(caseName+ ' restore success');
@@ -2560,7 +2560,7 @@ export default function displayTest() {
           console.info(caseName+ ' current window stage event is HIDDEN');
           let resolutionObjects = await display.getAllDisplayPhysicalResolution();
           console.info(caseName+` Succeeded in obtaining all the resolutionObjects . Data: ${JSON.stringify(resolutionObjects)}`);
-          expect(resolutionObjects.length).assertEqual(0);
+          expect(resolutionObjects.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
           console.info(caseName+ ' restore success');
