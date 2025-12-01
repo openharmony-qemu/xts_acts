@@ -36,7 +36,7 @@ export default function CapiPostUITaskAndWait() {
     beforeEach(async (done: Function) => {
       console.info("ListCNode beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/capi/ArkUIPostUITaskAndWait',
+        url: 'MainAbility/pages/capi/ArkUIPostUITaskAndWaitF',
       }
       try {
         router.clear();
