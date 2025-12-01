@@ -288,48 +288,5 @@ export default function PreviewOutputTest() {
         done();
       }
     })
-
-/*
-    /**
-     * @tc.name   on_error_listen_previewOutput_abnormal_001
-     * @tc.number on_error_listen_previewOutput_abnormal_001
-     * @tc.desc   on_error_listen_previewOutput_abnormal_001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('on_error_listen_previewOutput_abnormal_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'on_error_listen_previewOutput_abnormal_001';
-      console.info(TAG, testName + ' begin.');
-      try {
-        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName + ' cameraManager is null.');
-          expect().assertFail();
-        } else {
-          let previewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
-          mPhotoSession = mCameraManager.createSession(mSupportedModes[0]);
-          previewOutput.on('error', (error) => {
-            if (error !== undefined && error.code !== 0) {
-              console.error(TAG,
-                testName + ' failed to listen error previewOutput on, err: ' + error.code + ', msg: ' + error.message);
-              expect().assertFail();
-            } else {
-              console.info(TAG, testName + ' succeed to listen error previewOutput on.');
-              expect(true).assertFalse();
-            }
-          });
-          await mPhotoSession.start();
-          mPhotoSession.beginConfig();
-          await mPhotoSession.release();
-        }
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-        await mPhotoSession.release();
-        done();
-      }
-    })
-*/
   })
 }

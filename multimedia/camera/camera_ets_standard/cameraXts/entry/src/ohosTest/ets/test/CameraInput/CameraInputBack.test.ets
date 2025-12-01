@@ -246,61 +246,6 @@ export default function CameraInputBackTest() {
       }
     })
 
-    /*
-        /**
-         * @tc.name   open_promise_secure_photo_back_001
-         * @tc.number open_promise_secure_photo_back_001
-         * @tc.desc   open_promise_secure_photo_back_001
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('open_promise_secure_photo_back_001', Level.LEVEL2, async (done: Function) => {
-          const testName = 'open_promise_secure_photo_back_001';
-          console.info(TAG, testName + ' begin.');
-          if (!checkBackCamera()) {
-            console.info(TAG, testName + ' the current device does not have a rear camera.');
-            done();
-            return;
-          }
-          try {
-            if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
-              console.info(TAG, testName + ' cameraManager is null.');
-              expect().assertFail();
-            } else {
-              let cameraInput = mCameraManager.createCameraInput(mCameraDeviceArray[1]);
-              expect(isEmpty(cameraInput)).assertFalse();
-              if (mSupportedModes.includes(sceneMode.SECURE_PHOTO)) {
-                mCameraManager.on('cameraStatus', async (error, cameraStatusInfo) => {
-                  cameraStatusOnCallback(error, cameraStatusInfo);
-                })
-                await cameraInput.open(true).then(async (seqId: bigint) => {
-                  console.info(TAG, testName + ' camera opened successfully. bigint: ' + JSON.stringify(seqId));
-                  expect(true).assertTrue();
-                })
-                  .catch((error: BusinessError) => {
-                    if (error !== undefined && error.code !== 0) {
-                      console.error(TAG,
-                        testName + ' failed to open the camera, err: ' + error.code + ', msg: ' + error.message);
-                      expect().assertFail();
-                    }
-                  })
-                await cameraInput.close();
-              } else {
-                console.info(TAG, testName + ' No secure mode. ');
-                expect(false).assertFalse();
-              }
-
-            }
-            done();
-          } catch (error) {
-            console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-            expect(error.code === cameraErrorCode.INVALID_ARGUMENT).assertTrue();
-            done();
-          }
-        })
-    */
-
     /**
      * @tc.name   open_promise_secure_photo_back_002
      * @tc.number CAMERA_INPUT_BACK_004

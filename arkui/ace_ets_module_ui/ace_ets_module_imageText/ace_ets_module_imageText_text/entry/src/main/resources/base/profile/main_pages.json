@@ -83,6 +83,7 @@
         "MainAbility/pages/Text/TextTextDecoration",
         "MainAbility/pages/Text/TextTwoJsunit",
         "MainAbility/pages/Text/TextVerticalAlign",
-        "MainAbility/pages/Text/TextVerticalAlignModifier"
+        "MainAbility/pages/Text/TextVerticalAlignModifier",
+        "MainAbility/pages/Text/lineHeight"
     ]
 }
