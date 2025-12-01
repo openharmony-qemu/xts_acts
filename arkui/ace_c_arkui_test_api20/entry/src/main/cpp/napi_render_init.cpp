@@ -103,12 +103,12 @@ namespace ArkUICapiTest
 			{ "DisposeNodeTree", nullptr,
 				NativeModule::DisposeNodeTree, nullptr, nullptr, nullptr, napi_default, nullptr },
             {"scrollZoomStartTest", nullptr, ScrollZoomSampleTest::ScrollZoomStartTest, nullptr,
-             nullptr, nullptr, napi_default, nullptr},,
+             nullptr, nullptr, napi_default, nullptr},
             {"scrollZoomDidTest", nullptr, ScrollZoomSampleTest::ScrollZoomDidTest, nullptr,
-             nullptr, nullptr, napi_default, nullptr},,
+             nullptr, nullptr, napi_default, nullptr},
             {"scrollZoomStopTest", nullptr, ScrollZoomSampleTest::ScrollZoomStopTest, nullptr,
              nullptr, nullptr, napi_default, nullptr},
-			};
+		};
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
