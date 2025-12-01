@@ -985,12 +985,12 @@ export default function AVMetadata() {
       done();
     });
     /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
-      * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
       */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
