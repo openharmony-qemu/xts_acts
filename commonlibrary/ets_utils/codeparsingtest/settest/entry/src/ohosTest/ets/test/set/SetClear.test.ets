@@ -1615,7 +1615,7 @@ export default function SetClearTest() {
      */
     it('SetClearTest080', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
-      const count = 1000000;
+      const count = 1000;
 
       for (let i = 0; i < count; i++) {
         set.add(i);

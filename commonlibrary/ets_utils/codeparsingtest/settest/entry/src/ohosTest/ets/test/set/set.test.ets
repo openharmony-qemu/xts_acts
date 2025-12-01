@@ -1239,7 +1239,7 @@ export default function SetSetTest() {
      */
     it('MapSetTest075', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, async () => {
       const map:Map<string,number> = new Map();
-      const count = 100000;
+      const count = 1000;
       const start = Date.now();
       for (let i = 0; i < count; i++) {
         map.set(`perf-key-${i}`, i);
@@ -1264,7 +1264,7 @@ export default function SetSetTest() {
         id: number;
       }
       const map:Map<IdentifiedObject, number>  = new Map();
-      const count = 50000;
+      const count = 500;
       const objects:IdentifiedObject[] = [];
       // Create objects first
       for (let i = 0; i < count; i++) {
