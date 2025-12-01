@@ -46,6 +46,7 @@ import rotationGestureTest from './isFingerCountLimited/RotationGesture.test';
 import swipeGestureTest from './isFingerCountLimited/SwipeGesture.test';
 import tapGestureTest from './isFingerCountLimited/TapGesture.test';
 import UIObserverEvent from './ListeningEvent/UIObserverEvent.test';
+import distanceThresholdTest from './GestureHandler/TapGestureHandler_addTest/distanceThreshold.test';
 
 export default function testsuite() {
   TapGestureHandlerTest();
@@ -77,4 +78,5 @@ export default function testsuite() {
   swipeGestureTest();
   tapGestureTest();
   UIObserverEvent();
+  distanceThresholdTest();
 }
