@@ -147,9 +147,12 @@ static void SetVideoValue(OH_AVCodecBufferAttr attr, bool &videoIsEnd, int &vide
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_1400
- * @tc.name      : demuxer video and 2 audio file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_1400
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_1400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1400, TestSize.Level0)
 {
@@ -204,9 +207,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_1500
- * @tc.name      : demuxer video and 9 audio file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_1500
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_1500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1500, TestSize.Level0)
 {
@@ -259,9 +265,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1500, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_1600
- * @tc.name      : demuxer avc+MP3 flv video file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_1600
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_1600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1600, TestSize.Level0)
 {
@@ -311,9 +320,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1600, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_1700
- * @tc.name      : demuxer hevc+pcm flv video file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_1700
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_1700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1700, TestSize.Level0)
 {
@@ -363,9 +375,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_1800
- * @tc.name      : demuxer damaged flv video file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_1800
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_1800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1800, TestSize.Level2)
 {
@@ -411,9 +426,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_1900
- * @tc.name      : demuxer damaged ape audio file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_1900
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_1900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1900, TestSize.Level2)
 {
@@ -452,9 +470,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_1900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2000
- * @tc.name      : demuxer h264+mp3 fmp4 file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2000
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2000, TestSize.Level0)
 {
@@ -504,9 +525,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2000, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2100
- * @tc.name      : demuxer h265+aac fmp4 file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2100
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2100, TestSize.Level0)
 {
@@ -556,9 +580,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2200
- * @tc.name      : demuxer HDRVivid+AudioVivid fmp4 file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2200
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2200, TestSize.Level0)
 {
@@ -606,9 +633,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2300
- * @tc.name      : demuxer M4A fmp4 file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2300
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2300, TestSize.Level0)
 {
@@ -638,9 +668,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2400
- * @tc.name      : demuxer M4V fmp4 file
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2400
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2400, TestSize.Level0)
 {
@@ -690,9 +723,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2500
- * @tc.name      : create hls demuxer with error uri
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2500
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2500, TestSize.Level0)
 {
@@ -702,9 +738,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2500, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2600
- * @tc.name      : create str demuxer with file and read
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2600
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2600, TestSize.Level0)
 {
@@ -747,9 +786,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2600, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2700
- * @tc.name      : create str demuxer with file and seek+read
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2700
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2700, TestSize.Level0)
 {
@@ -803,9 +845,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2700, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2800
- * @tc.name      : create str demuxer with error file -- no empty paragraphs
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2800
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2800, TestSize.Level2)
 {
@@ -836,9 +881,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_2900
- * @tc.name      : create str demuxer with error file -- subtitle sequence error
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_2900
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2900, TestSize.Level2)
 {
@@ -869,9 +917,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_2900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3000
- * @tc.name      : create str demuxer with error file -- timeline format error
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3000
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3000, TestSize.Level2)
 {
@@ -893,9 +944,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3100
- * @tc.name      : create str demuxer with error file -- subtitle is empty
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3100
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3100, TestSize.Level2)
 {
@@ -926,10 +980,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3200
- * @tc.name      : create str demuxer with error file -- SRT file is empty
- * @tc.desc      : function test
- * fail
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3200
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3200, TestSize.Level2)
 {
@@ -951,9 +1007,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3300
- * @tc.name      : create str demuxer with error file -- alternating Up and Down Times
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3300
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3300, TestSize.Level2)
 {
@@ -984,9 +1043,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3400
- * @tc.name      : demuxer MP4 ,OH_MD_KEY_DURATION,OH_MD_KEY_CODEC_CONFIG
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3400
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3400, TestSize.Level0)
 {
@@ -1035,9 +1097,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3800
- * @tc.name      : demuxer MP4 ,AVCODEC_BUFFER_FLAGS_DISCARD
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3800
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3800, TestSize.Level0)
 {
@@ -1081,9 +1146,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3800, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3700
- * @tc.name      : demuxer MP4,duration,dts
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3700
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3700, TestSize.Level0)
 {
@@ -1126,9 +1194,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3700, TestSize.Level0)
 }
  
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3600
- * @tc.name      : demuxer MP4 ,SAR,bitsPreCodedSample,sampleFormat
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3600
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3600, TestSize.Level0)
 {
@@ -1171,9 +1242,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3600, TestSize.Level0)
 }
 
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3510
- * @tc.name      : demuxer MP4 ,startTime Non-zero
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3510
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3510
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3510, TestSize.Level0)
 {
@@ -1192,9 +1266,12 @@ HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3510, TestSize.Level0)
 }
  
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_PROCESS_3500
- * @tc.name      : demuxer MP4 ,startTime
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_PROCESS_3500
+ * @tc.number SUB_MEDIA_DEMUXER_PROCESS_3500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerProcNdkTest, SUB_MEDIA_DEMUXER_PROCESS_3500, TestSize.Level0)
 {

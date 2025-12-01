@@ -56,12 +56,12 @@ export default function PixelMapReadPixelsToBufferTest() {
     });
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_001
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_001
-     * @tc.desc       第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_001
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_001
+     * @tc.desc   第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_001'
@@ -84,12 +84,12 @@ export default function PixelMapReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_002
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_002
-     * @tc.desc       第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_002
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_002
+     * @tc.desc   第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_002'
@@ -112,12 +112,12 @@ export default function PixelMapReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_003
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_003
-     * @tc.desc       第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_003
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_003
+     * @tc.desc   第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_003'
@@ -138,12 +138,12 @@ export default function PixelMapReadPixelsToBufferTest() {
       }
     })
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_004
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_004
-     * @tc.desc       callback形式的第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_004
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_004
+     * @tc.desc   callback形式的第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_004';
@@ -159,12 +159,12 @@ export default function PixelMapReadPixelsToBufferTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_005
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_005
-     * @tc.desc       callback形式的第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_005
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_005
+     * @tc.desc   callback形式的第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_005';
@@ -180,12 +180,12 @@ export default function PixelMapReadPixelsToBufferTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_006
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_006
-     * @tc.desc       callback形式的第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_006
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_006
+     * @tc.desc   callback形式的第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_TEST_006';
@@ -201,12 +201,12 @@ export default function PixelMapReadPixelsToBufferTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_007
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_007
-     * @tc.desc       第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_007
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_007
+     * @tc.desc   第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_007'
@@ -229,12 +229,12 @@ export default function PixelMapReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_008
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_008
-     * @tc.desc       第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_008
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_008
+     * @tc.desc   第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_008'
@@ -257,12 +257,12 @@ export default function PixelMapReadPixelsToBufferTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_009
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_009
-     * @tc.desc       第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_009
+     * @tc.number PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_009
+     * @tc.desc   第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TO_BUFFER_SYNC_TEST_009'

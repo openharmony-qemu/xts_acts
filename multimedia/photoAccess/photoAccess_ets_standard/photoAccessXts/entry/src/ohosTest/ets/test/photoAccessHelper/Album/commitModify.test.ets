@@ -120,12 +120,12 @@ export default function albumCommitModifyTest() {
     const albumUri = "file://media/PhotoAlbum/68";
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_001
-     * @tc.name      : album_commitModify_callback_001
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_001
+     * @tc.number ALBUM_COMMIT_MODIFY_001
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_001';
@@ -135,12 +135,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_002
-     * @tc.name      : album_commitModify_callback_002
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_002
+     * @tc.number ALBUM_COMMIT_MODIFY_002
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_002';
@@ -150,12 +150,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_003
-     * @tc.name      : album_commitModify_callback_003
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_003
+     * @tc.number ALBUM_COMMIT_MODIFY_003
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_003';
@@ -165,12 +165,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_004
-     * @tc.name      : album_commitModify_callback_004
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_004
+     * @tc.number ALBUM_COMMIT_MODIFY_004
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_004';
@@ -180,12 +180,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_005
-     * @tc.name      : album_commitModify_callback_005
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_005
+     * @tc.number ALBUM_COMMIT_MODIFY_005
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_005';
@@ -195,12 +195,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_006
-     * @tc.name      : album_commitModify_callback_006
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_006
+     * @tc.number ALBUM_COMMIT_MODIFY_006
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_006';
@@ -210,12 +210,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_007  //TODO 13900020
-     * @tc.name      : album_commitModify_callback_007
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_007
+     * @tc.number ALBUM_COMMIT_MODIFY_007  //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_007';
@@ -225,12 +225,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_008 //TODO 13900020
-     * @tc.name      : album_commitModify_callback_008
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_008
+     * @tc.number ALBUM_COMMIT_MODIFY_008 //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_008';
@@ -240,12 +240,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_009 //TODO 13900020
-     * @tc.name      : album_commitModify_callback_009
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_009
+     * @tc.number ALBUM_COMMIT_MODIFY_009 //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_009';
@@ -255,12 +255,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_010 //TODO 13900020
-     * @tc.name      : album_commitModify_callback_010
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_010
+     * @tc.number ALBUM_COMMIT_MODIFY_010 //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_010';
@@ -270,12 +270,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_011
-     * @tc.name      : album_commitModify_callback_011
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_011
+     * @tc.number ALBUM_COMMIT_MODIFY_011
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_011';
@@ -285,12 +285,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_012
-     * @tc.name      : album_commitModify_callback_012
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_012
+     * @tc.number ALBUM_COMMIT_MODIFY_012
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_012';
@@ -300,12 +300,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_013
-     * @tc.name      : album_commitModify_callback_013
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_013
+     * @tc.number ALBUM_COMMIT_MODIFY_013
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_013';
@@ -315,12 +315,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_014
-     * @tc.name      : album_commitModify_callback_014
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_014
+     * @tc.number ALBUM_COMMIT_MODIFY_014
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_014';
@@ -330,12 +330,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_015
-     * @tc.name      : album_commitModify_callback_015
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_015
+     * @tc.number ALBUM_COMMIT_MODIFY_015
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_015';
@@ -345,12 +345,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_016
-     * @tc.name      : album_commitModify_callback_016
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_016
+     * @tc.number ALBUM_COMMIT_MODIFY_016
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_016';
@@ -360,12 +360,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_017
-     * @tc.name      : album_commitModify_callback_017
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_017
+     * @tc.number ALBUM_COMMIT_MODIFY_017
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_017';
@@ -375,12 +375,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_018
-     * @tc.name      : album_commitModify_callback_018
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_018
+     * @tc.number ALBUM_COMMIT_MODIFY_018
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_018';
@@ -390,12 +390,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_019
-     * @tc.name      : album_commitModify_callback_019
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_019
+     * @tc.number ALBUM_COMMIT_MODIFY_019
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_019';
@@ -405,12 +405,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_020
-     * @tc.name      : album_commitModify_callback_020
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_020
+     * @tc.number ALBUM_COMMIT_MODIFY_020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_020';
@@ -420,12 +420,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_021
-     * @tc.name      : album_commitModify_callback_021
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_021
+     * @tc.number ALBUM_COMMIT_MODIFY_021
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_021';
@@ -435,12 +435,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_022
-     * @tc.name      : album_commitModify_callback_022
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_022
+     * @tc.number ALBUM_COMMIT_MODIFY_022
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_022';
@@ -450,12 +450,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_023
-     * @tc.name      : album_commitModify_callback_023
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_023
+     * @tc.number ALBUM_COMMIT_MODIFY_023
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_023';
@@ -465,12 +465,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_024
-     * @tc.name      : album_commitModify_callback_024
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_024
+     * @tc.number ALBUM_COMMIT_MODIFY_024
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_024';
@@ -480,12 +480,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_025
-     * @tc.name      : album_commitModify_callback_025
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_025
+     * @tc.number ALBUM_COMMIT_MODIFY_025
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_025';
@@ -495,12 +495,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_026
-     * @tc.name      : album_commitModify_callback_026
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_026
+     * @tc.number ALBUM_COMMIT_MODIFY_026
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_026';
@@ -510,12 +510,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_027
-     * @tc.name      : album_commitModify_callback_027
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_027
+     * @tc.number ALBUM_COMMIT_MODIFY_027
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_027';
@@ -525,12 +525,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_028
-     * @tc.name      : album_commitModify_callback_028
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_028
+     * @tc.number ALBUM_COMMIT_MODIFY_028
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_028';
@@ -540,12 +540,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_029
-     * @tc.name      : album_commitModify_callback_029
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_029
+     * @tc.number ALBUM_COMMIT_MODIFY_029
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_029';
@@ -555,12 +555,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_030
-     * @tc.name      : album_commitModify_callback_030
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_callback_030
+     * @tc.number ALBUM_COMMIT_MODIFY_030
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_callback_030';
@@ -570,12 +570,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_031
-     * @tc.name      : album_commitModify_promise_001
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_001
+     * @tc.number ALBUM_COMMIT_MODIFY_031
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_001';
@@ -585,12 +585,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_032
-     * @tc.name      : album_commitModify_promise_002
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_002
+     * @tc.number ALBUM_COMMIT_MODIFY_032
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_002';
@@ -600,12 +600,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_033
-     * @tc.name      : album_commitModify_promise_003
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_003
+     * @tc.number ALBUM_COMMIT_MODIFY_033
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_003';
@@ -615,12 +615,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_034
-     * @tc.name      : album_commitModify_promise_004
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_004
+     * @tc.number ALBUM_COMMIT_MODIFY_034
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_004';
@@ -630,12 +630,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_035
-     * @tc.name      : album_commitModify_promise_005
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_005
+     * @tc.number ALBUM_COMMIT_MODIFY_035
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_005';
@@ -645,12 +645,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_036
-     * @tc.name      : album_commitModify_promise_006
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_006
+     * @tc.number ALBUM_COMMIT_MODIFY_036
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_006';
@@ -660,12 +660,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_037  //TODO 13900020
-     * @tc.name      : album_commitModify_promise_007
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_007
+     * @tc.number ALBUM_COMMIT_MODIFY_037  //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_007';
@@ -675,12 +675,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_038  //TODO 13900020
-     * @tc.name      : album_commitModify_promise_008
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_008
+     * @tc.number ALBUM_COMMIT_MODIFY_038  //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_008';
@@ -690,12 +690,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_039  //TODO 13900020
-     * @tc.name      : album_commitModify_promise_009
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_009
+     * @tc.number ALBUM_COMMIT_MODIFY_039  //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_009';
@@ -705,12 +705,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_040  //TODO 13900020
-     * @tc.name      : album_commitModify_promise_010
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_010
+     * @tc.number ALBUM_COMMIT_MODIFY_040  //TODO 13900020
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('album_commitModify_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_010';
@@ -720,12 +720,12 @@ export default function albumCommitModifyTest() {
     })*/
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_041
-     * @tc.name      : album_commitModify_promise_011
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_011
+     * @tc.number ALBUM_COMMIT_MODIFY_041
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_011';
@@ -735,12 +735,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_042
-     * @tc.name      : album_commitModify_promise_012
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_012
+     * @tc.number ALBUM_COMMIT_MODIFY_042
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_012';
@@ -750,12 +750,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_043
-     * @tc.name      : album_commitModify_promise_013
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_013
+     * @tc.number ALBUM_COMMIT_MODIFY_043
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_013';
@@ -765,12 +765,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_044
-     * @tc.name      : album_commitModify_promise_014
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_014
+     * @tc.number ALBUM_COMMIT_MODIFY_044
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_014';
@@ -780,12 +780,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_045
-     * @tc.name      : album_commitModify_promise_015
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_015
+     * @tc.number ALBUM_COMMIT_MODIFY_045
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_015';
@@ -795,12 +795,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_046
-     * @tc.name      : album_commitModify_promise_016
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_016
+     * @tc.number ALBUM_COMMIT_MODIFY_046
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_016';
@@ -810,12 +810,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_047
-     * @tc.name      : album_commitModify_promise_017
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_017
+     * @tc.number ALBUM_COMMIT_MODIFY_047
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_017';
@@ -825,12 +825,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_048
-     * @tc.name      : album_commitModify_promise_018
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_018
+     * @tc.number ALBUM_COMMIT_MODIFY_048
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_018';
@@ -840,12 +840,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_049
-     * @tc.name      : album_commitModify_promise_019
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_019
+     * @tc.number ALBUM_COMMIT_MODIFY_049
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_019';
@@ -855,12 +855,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_050
-     * @tc.name      : album_commitModify_promise_020
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_020
+     * @tc.number ALBUM_COMMIT_MODIFY_050
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_020';
@@ -870,12 +870,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_051
-     * @tc.name      : album_commitModify_promise_021
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_021
+     * @tc.number ALBUM_COMMIT_MODIFY_051
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_021';
@@ -885,12 +885,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_052
-     * @tc.name      : album_commitModify_promise_022
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_022
+     * @tc.number ALBUM_COMMIT_MODIFY_052
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_022';
@@ -900,12 +900,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_053
-     * @tc.name      : album_commitModify_promise_023
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_023
+     * @tc.number ALBUM_COMMIT_MODIFY_053
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_023';
@@ -915,12 +915,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_054
-     * @tc.name      : album_commitModify_promise_024
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_024
+     * @tc.number ALBUM_COMMIT_MODIFY_054
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_024';
@@ -930,12 +930,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_055
-     * @tc.name      : album_commitModify_promise_025
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_025
+     * @tc.number ALBUM_COMMIT_MODIFY_055
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_025';
@@ -945,12 +945,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_056
-     * @tc.name      : album_commitModify_promise_026
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_026
+     * @tc.number ALBUM_COMMIT_MODIFY_056
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_026';
@@ -960,12 +960,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_057
-     * @tc.name      : album_commitModify_promise_027
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_027
+     * @tc.number ALBUM_COMMIT_MODIFY_057
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_027';
@@ -975,12 +975,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_058
-     * @tc.name      : album_commitModify_promise_028
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_028
+     * @tc.number ALBUM_COMMIT_MODIFY_058
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_028';
@@ -990,12 +990,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_059
-     * @tc.name      : album_commitModify_promise_029
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_029
+     * @tc.number ALBUM_COMMIT_MODIFY_059
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_029';
@@ -1005,12 +1005,12 @@ export default function albumCommitModifyTest() {
     })
 
     /**
-     * @tc.number    : ALBUM_COMMIT_MODIFY_060
-     * @tc.name      : album_commitModify_promise_030
-     * @tc.desc      : commitModify
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_commitModify_promise_030
+     * @tc.number ALBUM_COMMIT_MODIFY_060
+     * @tc.desc   commitModify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'album_commitModify_promise_030';

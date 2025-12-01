@@ -42,12 +42,12 @@ export default function requestImageTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_STATIC_0400
-      * @tc.name    request_image_static_004
-      * @tc.desc    request image with fastMode and editedMode
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   request_image_static_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_STATIC_0400
+     * @tc.desc   request image with fastMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

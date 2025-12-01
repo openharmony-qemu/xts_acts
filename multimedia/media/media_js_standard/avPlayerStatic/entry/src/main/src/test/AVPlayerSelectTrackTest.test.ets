@@ -233,13 +233,12 @@ export default function AVPlayerSelectTrackTest() {
       await mediaTestBase.closeFdNumber(avFd.fd)
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
-      * @tc.desc    test change default audio track
-      *               : 001.test change default audio track
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let preparedOperation = async () => {
@@ -267,13 +266,12 @@ export default function AVPlayerSelectTrackTest() {
       await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined , done);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
-      * @tc.desc    test change default audio track
-      *               : 001.test change default audio track
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
 

@@ -43,15 +43,15 @@ export default function ImageKitErrorCodeTest() {
       // This API supports only one parameter: clear action function.
     });
 
-    /**
-     * @tc.number    SUB_OH_PixelmapNative_AntiAliasingLevel_NONE
-     * @tc.name      OH_PixelmapNative_AntiAliasingLevel_NONE
-     * @tc.desc      test OH_PixelmapNative_AntiAliasingLevel_NONE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
 
+    /**
+     * @tc.name   SUB_OH_PixelmapNative_AntiAliasingLevel_NONE
+     * @tc.number SUB_OH_PixelmapNative_AntiAliasingLevel_NONE
+     * @tc.desc   SUB_OH_PixelmapNative_AntiAliasingLevel_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_OH_PixelmapNative_AntiAliasingLevel_NONE', Level.LEVEL1, () => {
       try {
           let c: number = testNapi.pixelmapNative_AntiAliasingLevel_NONE();
@@ -62,15 +62,15 @@ export default function ImageKitErrorCodeTest() {
         }
     });
 
-    /**
-     * @tc.number    SUB_OH_PixelmapNative_AntiAliasingLevel_LOW
-     * @tc.name      OH_PixelmapNative_AntiAliasingLevel_LOW
-     * @tc.desc      test OH_PixelmapNative_AntiAliasingLevel_LOW
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
 
+    /**
+     * @tc.name   SUB_OH_PixelmapNative_AntiAliasingLevel_LOW
+     * @tc.number SUB_OH_PixelmapNative_AntiAliasingLevel_LOW
+     * @tc.desc   SUB_OH_PixelmapNative_AntiAliasingLevel_LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_OH_PixelmapNative_AntiAliasingLevel_LOW', Level.LEVEL1, () => {
       try {
         let c: number = testNapi.pixelmapNative_AntiAliasingLevel_LOW();
@@ -82,12 +82,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_PixelmapNative_AntiAliasingLevel_MEDIUM
-     * @tc.name      OH_PixelmapNative_AntiAliasingLevel_MEDIUM
-     * @tc.desc      test OH_PixelmapNative_AntiAliasingLevel_MEDIUM
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_PixelmapNative_AntiAliasingLevel_MEDIUM
+     * @tc.number SUB_OH_PixelmapNative_AntiAliasingLevel_MEDIUM
+     * @tc.desc   test OH_PixelmapNative_AntiAliasingLevel_MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_PixelmapNative_AntiAliasingLevel_MEDIUM', Level.LEVEL0, () => {
       try {
@@ -100,12 +100,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA
-     * @tc.name      OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA
-     * @tc.desc      test OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA
+     * @tc.desc   test OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA', Level.LEVEL1, () => {
       try {
@@ -118,12 +118,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA
-     * @tc.name      OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA
-     * @tc.desc      test OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA
+     * @tc.desc   test OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA', Level.LEVEL0, () => {
       try {
@@ -136,12 +136,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA
-     * @tc.name      OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA
-     * @tc.desc      test OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA
+     * @tc.desc   test OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA', Level.LEVEL1, () => {
       try {
@@ -154,12 +154,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_Image_ErrorCode_IMAGE_DMA_NOT_EXIST
-     * @tc.name      Image_ErrorCode_IMAGE_DMA_NOT_EXIST
-     * @tc.desc      test Image_ErrorCode_IMAGE_DMA_NOT_EXIST
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_Image_ErrorCode_IMAGE_DMA_NOT_EXIST
+     * @tc.number SUB_Image_ErrorCode_IMAGE_DMA_NOT_EXIST
+     * @tc.desc   test Image_ErrorCode_IMAGE_DMA_NOT_EXIST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Image_ErrorCode_IMAGE_DMA_NOT_EXIST', Level.LEVEL0, () => {
       try {
@@ -172,12 +172,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataType_NONE
-     * @tc.name      OH_Pixelmap_HdrMetadataType_NONE
-     * @tc.desc      test OH_Pixelmap_HdrMetadataType_NONE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataType_NONE
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataType_NONE
+     * @tc.desc   test OH_Pixelmap_HdrMetadataType_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Pixelmap_HdrMetadataType_NONE', Level.LEVEL1, () => {
       try {
@@ -190,12 +190,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataType_BASE
-     * @tc.name      OH_Pixelmap_HdrMetadataType_BASE
-     * @tc.desc      test OH_Pixelmap_HdrMetadataType_BASE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataType_BASE
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataType_BASE
+     * @tc.desc   test OH_Pixelmap_HdrMetadataType_BASE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrMetadataType_BASE', Level.LEVEL0, () => {
       try {
@@ -208,12 +208,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataType_GAINMAP
-     * @tc.name      OH_Pixelmap_HdrMetadataType_GAINMAP
-     * @tc.desc      test OH_Pixelmap_HdrMetadataType_GAINMAP
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataType_GAINMAP
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataType_GAINMAP
+     * @tc.desc   test OH_Pixelmap_HdrMetadataType_GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Pixelmap_HdrMetadataType_GAINMAP', Level.LEVEL1, () => {
       try {
@@ -226,12 +226,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrMetadataType_ALTERNATE
-     * @tc.name      OH_Pixelmap_HdrMetadataType_ALTERNATE
-     * @tc.desc      test OH_Pixelmap_HdrMetadataType_ALTERNATE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrMetadataType_ALTERNATE
+     * @tc.number SUB_OH_Pixelmap_HdrMetadataType_ALTERNATE
+     * @tc.desc   test OH_Pixelmap_HdrMetadataType_ALTERNATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrMetadataType_ALTERNATE', Level.LEVEL0, () => {
       try {
@@ -244,12 +244,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesX
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_displayPrimariesX
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_displayPrimariesX
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesX
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesX
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_displayPrimariesX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesX', Level.LEVEL0, () => {
       try {
@@ -262,12 +262,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesY
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_displayPrimariesY
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_displayPrimariesY
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesY
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesY
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_displayPrimariesY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_displayPrimariesY', Level.LEVEL0, () => {
       try {
@@ -280,12 +280,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_whitePointX
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_whitePointX
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_whitePointX
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_whitePointX
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_whitePointX
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_whitePointX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_whitePointX', Level.LEVEL0, () => {
       try {
@@ -298,12 +298,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_whitePointY
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_whitePointY
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_whitePointY
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_whitePointY
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_whitePointY
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_whitePointY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_whitePointY', Level.LEVEL0, () => {
       try {
@@ -316,12 +316,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_maxLuminance
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_maxLuminance
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_maxLuminance
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_maxLuminance
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_maxLuminance
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_maxLuminance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_maxLuminance', Level.LEVEL0, () => {
       try {
@@ -334,12 +334,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_minLuminance
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_minLuminance
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_minLuminance
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_minLuminance
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_minLuminance
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_minLuminance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_minLuminance', Level.LEVEL0, () => {
       try {
@@ -352,12 +352,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel', Level.LEVEL0, () => {
       try {
@@ -370,12 +370,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel
-     * @tc.name      OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel
-     * @tc.desc      test OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel
+     * @tc.number SUB_OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel
+     * @tc.desc   test OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel', Level.LEVEL0, () => {
       try {
@@ -388,12 +388,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrDynamicMetadata_data
-     * @tc.name      OH_Pixelmap_HdrDynamicMetadata_data
-     * @tc.desc      test OH_Pixelmap_HdrDynamicMetadata_data
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrDynamicMetadata_data
+     * @tc.number SUB_OH_Pixelmap_HdrDynamicMetadata_data
+     * @tc.desc   test OH_Pixelmap_HdrDynamicMetadata_data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrDynamicMetadata_data', Level.LEVEL0, () => {
       try {
@@ -406,12 +406,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrDynamicMetadata_length
-     * @tc.name      OH_Pixelmap_HdrDynamicMetadata_length
-     * @tc.desc      test OH_Pixelmap_HdrDynamicMetadata_length
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrDynamicMetadata_length
+     * @tc.number SUB_OH_Pixelmap_HdrDynamicMetadata_length
+     * @tc.desc   test OH_Pixelmap_HdrDynamicMetadata_length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrDynamicMetadata_length', Level.LEVEL0, () => {
       try {
@@ -424,12 +424,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_writerVersion
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_writerVersion
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_writerVersion
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_writerVersion
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_writerVersion
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_writerVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_writerVersion', Level.LEVEL0, () => {
       try {
@@ -442,12 +442,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_miniVersion
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_miniVersion
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_miniVersion
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_miniVersion
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_miniVersion
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_miniVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_miniVersion', Level.LEVEL0, () => {
       try {
@@ -460,12 +460,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum', Level.LEVEL0, () => {
       try {
@@ -478,12 +478,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag', Level.LEVEL0, () => {
       try {
@@ -496,12 +496,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_baseHeadroom
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_baseHeadroom
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_baseHeadroom
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_baseHeadroom
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_baseHeadroom
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_baseHeadroom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_baseHeadroom', Level.LEVEL0, () => {
       try {
@@ -514,12 +514,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom', Level.LEVEL0, () => {
       try {
@@ -533,12 +533,12 @@ export default function ImageKitErrorCodeTest() {
 
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMax
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_gainmapMax
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_gainmapMax
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMax
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMax
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_gainmapMax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMax', Level.LEVEL0, () => {
       try {
@@ -551,12 +551,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMin
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_gainmapMin
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_gainmapMin
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMin
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMin
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_gainmapMin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_gainmapMin', Level.LEVEL0, () => {
       try {
@@ -569,12 +569,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_gamma
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_gamma
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_gamma
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_gamma
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_gamma
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_gamma
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_gamma', Level.LEVEL0, () => {
       try {
@@ -587,12 +587,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_baselineOffset
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_baselineOffset
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_baselineOffset
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_baselineOffset
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_baselineOffset
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_baselineOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_baselineOffset', Level.LEVEL0, () => {
       try {
@@ -605,12 +605,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_Pixelmap_HdrGainmapMetadata_alternateOffset
-     * @tc.name      OH_Pixelmap_HdrGainmapMetadata_alternateOffset
-     * @tc.desc      test OH_Pixelmap_HdrGainmapMetadata_alternateOffset
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_Pixelmap_HdrGainmapMetadata_alternateOffset
+     * @tc.number SUB_OH_Pixelmap_HdrGainmapMetadata_alternateOffset
+     * @tc.desc   test OH_Pixelmap_HdrGainmapMetadata_alternateOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_Pixelmap_HdrGainmapMetadata_alternateOffset', Level.LEVEL0, () => {
       try {
@@ -623,12 +623,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_RGB_565
-     * @tc.name      PixelFormat_RGB_565
-     * @tc.desc      test PixelFormat_RGB_565
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_RGB_565
+     * @tc.number SUB_PixelFormat_RGB_565
+     * @tc.desc   test PixelFormat_RGB_565
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_RGB_565', Level.LEVEL0, () => {
       try {
@@ -641,12 +641,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_RGB_888
-     * @tc.name      PixelFormat_RGB_888
-     * @tc.desc      test PixelFormat_RGB_888
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_RGB_888
+     * @tc.number SUB_PixelFormat_RGB_888
+     * @tc.desc   test PixelFormat_RGB_888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_RGB_888', Level.LEVEL0, () => {
       try {
@@ -659,12 +659,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_ALPHA_8
-     * @tc.name      PixelFormat_ALPHA_8
-     * @tc.desc      test PixelFormat_ALPHA_8
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_ALPHA_8
+     * @tc.number SUB_PixelFormat_ALPHA_8
+     * @tc.desc   test PixelFormat_ALPHA_8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_ALPHA_8', Level.LEVEL0, () => {
       try {
@@ -677,12 +677,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_RGBA_F16
-     * @tc.name      PixelFormat_RGBA_F16
-     * @tc.desc      test PixelFormat_RGBA_F16
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_RGBA_F16
+     * @tc.number SUB_PixelFormat_RGBA_F16
+     * @tc.desc   test PixelFormat_RGBA_F16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_RGBA_F16', Level.LEVEL0, () => {
       try {
@@ -695,12 +695,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_NV21
-     * @tc.name      PixelFormat_NV21
-     * @tc.desc      test PixelFormat_NV21
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_NV21
+     * @tc.number SUB_PixelFormat_NV21
+     * @tc.desc   test PixelFormat_NV21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_NV21', Level.LEVEL0, () => {
       try {
@@ -713,12 +713,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_NV12
-     * @tc.name      PixelFormat_NV12
-     * @tc.desc      test PixelFormat_NV12
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_NV12
+     * @tc.number SUB_PixelFormat_NV12
+     * @tc.desc   test PixelFormat_NV12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_NV12', Level.LEVEL0, () => {
       try {
@@ -731,12 +731,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_RGBA_1010102
-     * @tc.name      PixelFormat_RGBA_1010102
-     * @tc.desc      test PixelFormat_RGBA_1010102
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_RGBA_1010102
+     * @tc.number SUB_PixelFormat_RGBA_1010102
+     * @tc.desc   test PixelFormat_RGBA_1010102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_RGBA_1010102', Level.LEVEL0, () => {
       try {
@@ -749,12 +749,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number    SUB_PixelFormat_YCRCB_P010
-     * @tc.name      pixelFormat_YCRCB_P010
-     * @tc.desc      test pixelFormat_YCRCB_P010
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_PixelFormat_YCRCB_P010
+     * @tc.number SUB_PixelFormat_YCRCB_P010
+     * @tc.desc   test pixelFormat_YCRCB_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PixelFormat_YCRCB_P010', Level.LEVEL0, () => {
       try {
@@ -767,12 +767,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_DMA_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_DMA_0100
-     * @tc.desc     : test IMAGE_ALLOCATOR_MODE_DMA
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_DMA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_DMA_0100
+     * @tc.desc   test IMAGE_ALLOCATOR_MODE_DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_DMA_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImageImageAllocatorModeDmaCode();
@@ -781,12 +781,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_SHARED_MEMORY_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_SHARED_MEMORY_0100
-     * @tc.desc     : test IMAGE_ALLOCATOR_MODE_SHARED_MEMORY
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_SHARED_MEMORY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_SHARED_MEMORY_0100
+     * @tc.desc   test IMAGE_ALLOCATOR_MODE_SHARED_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_ALLOCATOR_MODE_SHARED_MEMORY_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImageImageAllocatorModeSharedMemoryCode();
@@ -795,12 +795,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_OPAQUE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_OPAQUE_0100
-     * @tc.desc     : test PIXELMAP_ALPHA_TYPE_OPAQUE
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_OPAQUE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_OPAQUE_0100
+     * @tc.desc   test PIXELMAP_ALPHA_TYPE_OPAQUE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_OPAQUE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImagePixelmapAlphaTypeOpaqueCode();
@@ -809,12 +809,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED_0100
-     * @tc.desc     : test PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED_0100
+     * @tc.desc   test PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImagePixelmapAlphaTypeUnpremultipliedCode();
@@ -823,12 +823,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_TYPE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_TYPE_0100
-     * @tc.desc     : test type of OH_Pixelmap_HdrMetadataValue
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_TYPE_0100
+     * @tc.desc   test type of OH_Pixelmap_HdrMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_TYPE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImagePixelmapHdrMetadataValueTypeCode();
@@ -837,12 +837,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_STATIC_METADATA_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_STATIC_METADATA_0100
-     * @tc.desc     : test staticMetadata of OH_Pixelmap_HdrMetadataValue
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_STATIC_METADATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_STATIC_METADATA_0100
+     * @tc.desc   test staticMetadata of OH_Pixelmap_HdrMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_STATIC_METADATA_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImagePixelmapHdrMetadataValueStaticMetadataCode();
@@ -851,12 +851,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_DYNAMIC_METADATA0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_DYNAMIC_METADATA0100
-     * @tc.desc     : test dynamicMetadata of OH_Pixelmap_HdrMetadataValue
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_DYNAMIC_METADATA0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_DYNAMIC_METADATA0100
+     * @tc.desc   test dynamicMetadata of OH_Pixelmap_HdrMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_DYNAMIC_METADATA0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImagePixelmapHdrMetadataValueDynamicMetadataCode();
@@ -865,12 +865,12 @@ export default function ImageKitErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_GAINMAP_METADATA0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_GAINMAP_METADATA0100
-     * @tc.desc     : test gainmapMetadata of OH_Pixelmap_HdrMetadataValue
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_GAINMAP_METADATA0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_GAINMAP_METADATA0100
+     * @tc.desc   test gainmapMetadata of OH_Pixelmap_HdrMetadataValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PIXELMAP_HDRMETADATAVALUE_GAINMAP_METADATA0100", Level.LEVEL3, async (done: Function) => {
       let res: number = testNapi.JSImagePixelmapHdrMetadataValueGainmapMetadataCode();

@@ -364,12 +364,12 @@ export default function CameraPhotoQualityPrioritizationTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0100
-     * @tc.desc      : Check whether photo quality prioritization of the HIGH_QUALITY type is supported and set it.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0100
+     * @tc.desc   Check whether photo quality prioritization of the HIGH_QUALITY type is supported and set it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0100--------------");
@@ -405,12 +405,12 @@ export default function CameraPhotoQualityPrioritizationTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0200
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0200
-     * @tc.desc      : Check whether photo quality prioritization of the SPEED type is supported and set it.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0200
+     * @tc.desc   Check whether photo quality prioritization of the SPEED type is supported and set it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0200--------------");
@@ -447,12 +447,12 @@ export default function CameraPhotoQualityPrioritizationTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0300
-     * @tc.desc      : Check whether photo quality prioritization of the invalid type is supported
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0300
+     * @tc.desc   Check whether photo quality prioritization of the invalid type is supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0300', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0300--------------");
@@ -481,13 +481,13 @@ export default function CameraPhotoQualityPrioritizationTest() {
       done();
     })
 
-     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0400
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0400
-     * @tc.desc      : Check whether photo quality prioritization is supported when session is not config.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0400
+     * @tc.desc   Check whether photo quality prioritization is supported when session is not config.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0400', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0400--------------");
@@ -511,12 +511,12 @@ export default function CameraPhotoQualityPrioritizationTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0500
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0500
-     * @tc.desc      : Set photo quality prioritization of the invalid type.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0500
+     * @tc.desc   Set photo quality prioritization of the invalid type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0500', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0500--------------");

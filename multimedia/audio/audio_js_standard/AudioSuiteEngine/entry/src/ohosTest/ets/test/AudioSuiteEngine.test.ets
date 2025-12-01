@@ -26,12 +26,12 @@ export default function AudioSuiteEngineTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : AudioSuiteEngineTest_0001
-     * @tc.name      : AudioSuiteEngine create test
-     * @tc.desc      : AudioSuiteEngine create test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineTest_0001
+     * @tc.number AudioSuiteEngineTest_0001
+     * @tc.desc   AudioSuiteEngine create test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     async (done: Function) => {
@@ -40,12 +40,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteEngineCreateTest_0003
-     * @tc.name      : AudioSuiteEngineCreate AUDIOSUITE_SUCCESS test
-     * @tc.desc      : AudioSuiteEngineCreate AUDIOSUITE_SUCCESS test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineCreateTest_0003
+     * @tc.number AudioSuiteEngineCreateTest_0003
+     * @tc.desc   AudioSuiteEngineCreate AUDIOSUITE_SUCCESS test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineCreateTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -56,12 +56,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteEngineCreateTest_0004
-     * @tc.name      : AudioSuiteEngineCreate AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.desc      : AudioSuiteEngineCreate AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineCreateTest_0004
+     * @tc.number AudioSuiteEngineCreateTest_0004
+     * @tc.desc   AudioSuiteEngineCreate AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineCreateTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -72,12 +72,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteEngineCreateTest_0005
-     * @tc.name      : AudioSuiteEngineCreate AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.desc      : AudioSuiteEngineCreate AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineCreateTest_0005
+     * @tc.number AudioSuiteEngineCreateTest_0005
+     * @tc.desc   AudioSuiteEngineCreate AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineCreateTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -88,12 +88,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteEngineDestroyTest_0001
-     * @tc.name      : AudioSuiteEngineDestroy AUDIOSUITE_SUCCESS test
-     * @tc.desc      : AudioSuiteEngineDestroy AUDIOSUITE_SUCCESS test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineDestroyTest_0001
+     * @tc.number AudioSuiteEngineDestroyTest_0001
+     * @tc.desc   AudioSuiteEngineDestroy AUDIOSUITE_SUCCESS test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineDestroyTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -104,12 +104,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteEngineDestroyTest_0002
-     * @tc.name      : AudioSuiteEngineDestroy AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.desc      : AudioSuiteEngineDestroy AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineDestroyTest_0002
+     * @tc.number AudioSuiteEngineDestroyTest_0002
+     * @tc.desc   AudioSuiteEngineDestroy AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineDestroyTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -120,12 +120,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteEngineDestroyTest_0003
-     * @tc.name      : AudioSuiteEngineDestroy AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.desc      : AudioSuiteEngineDestroy AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteEngineDestroyTest_0003
+     * @tc.number AudioSuiteEngineDestroyTest_0003
+     * @tc.desc   AudioSuiteEngineDestroy AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteEngineDestroyTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -136,12 +136,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetNodeTypeTest_0001
-     * @tc.name      : AudioSuitNodeBuilderSetNodeTypeTest AUDIOSUITE_SUCCESS test
-     * @tc.desc      : AudioSuitNodeBuilderSetNodeTypeTest AUDIOSUITE_SUCCESS test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetNodeTypeTest_0001
+     * @tc.number AudioSuiteNodeBuilderSetNodeTypeTest_0001
+     * @tc.desc   AudioSuitNodeBuilderSetNodeTypeTest AUDIOSUITE_SUCCESS test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetNodeTypeTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetNodeTypeTest_0002
-     * @tc.name      : AudioSuitNodeBuilderSetNodeTypeTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.desc      : AudioSuitNodeBuilderSetNodeTypeTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetNodeTypeTest_0002
+     * @tc.number AudioSuiteNodeBuilderSetNodeTypeTest_0002
+     * @tc.desc   AudioSuitNodeBuilderSetNodeTypeTest AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetNodeTypeTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -168,12 +168,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0001
-     * @tc.name      : AudioSuitInputNodeBuilderSetFormatTest single track test
-     * @tc.desc      : AudioSuitInputNodeBuilderSetFormatTest single track test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0001
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0001
+     * @tc.desc   AudioSuitInputNodeBuilderSetFormatTest single track test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -184,12 +184,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0002
-     * @tc.name      : AudioSuitInputNodeBuilderSetFormatTest double track test
-     * @tc.desc      : AudioSuitInputNodeBuilderSetFormatTest double track test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0002
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0002
+     * @tc.desc   AudioSuitInputNodeBuilderSetFormatTest double track test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -200,12 +200,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0003
-     * @tc.name      : AudioSuitInputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.desc      : AudioSuitInputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0003
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0003
+     * @tc.desc   AudioSuitInputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -216,12 +216,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0004
-     * @tc.name      : AudioSuitInputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.desc      : AudioSuitInputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0004
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0004
+     * @tc.desc   AudioSuitInputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -232,12 +232,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0005
-     * @tc.name      : AudioSuitOutputNodeBuilderSetFormatTest single track test
-     * @tc.desc      : AudioSuitOutputNodeBuilderSetFormatTest single track test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0005
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0005
+     * @tc.desc   AudioSuitOutputNodeBuilderSetFormatTest single track test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -248,12 +248,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0006
-     * @tc.name      : AudioSuitOutputNodeBuilderSetFormatTest double track test
-     * @tc.desc      : AudioSuitOutputNodeBuilderSetFormatTest double track test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0006
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0006
+     * @tc.desc   AudioSuitOutputNodeBuilderSetFormatTest double track test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -264,12 +264,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0007
-     * @tc.name      : AudioSuitOutputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.desc      : AudioSuitOutputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0007
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0007
+     * @tc.desc   AudioSuitOutputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -280,12 +280,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : AudioSuiteNodeBuilderSetFormatTest_0008
-     * @tc.name      : AudioSuitOutputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.desc      : AudioSuitOutputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_STATE test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   AudioSuiteNodeBuilderSetFormatTest_0008
+     * @tc.number AudioSuiteNodeBuilderSetFormatTest_0008
+     * @tc.desc   AudioSuitOutputNodeBuilderSetFormatTest AUDIOSUITE_ERROR_INVALID_STATE test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AudioSuiteNodeBuilderSetFormatTest_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -296,12 +296,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : InputNodeRequestDataCallbackTest_0001
-     * @tc.name      : InputNodeRequestDataCallbackTest AUDIOSUITE_SUCCESS test
-     * @tc.desc      : InputNodeRequestDataCallbackTest AUDIOSUITE_SUCCESS test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   InputNodeRequestDataCallbackTest_0001
+     * @tc.number InputNodeRequestDataCallbackTest_0001
+     * @tc.desc   InputNodeRequestDataCallbackTest AUDIOSUITE_SUCCESS test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InputNodeRequestDataCallbackTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -312,12 +312,12 @@ export default function AudioSuiteEngineTest() {
       done();
     })
     /**
-     * @tc.number    : InputNodeRequestDataCallbackTest_0002
-     * @tc.name      : InputNodeRequestDataCallbackTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.desc      : InputNodeRequestDataCallbackTest AUDIOSUITE_ERROR_INVALID_PARAM test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   InputNodeRequestDataCallbackTest_0002
+     * @tc.number InputNodeRequestDataCallbackTest_0002
+     * @tc.desc   InputNodeRequestDataCallbackTest AUDIOSUITE_ERROR_INVALID_PARAM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('InputNodeRequestDataCallbackTest_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {

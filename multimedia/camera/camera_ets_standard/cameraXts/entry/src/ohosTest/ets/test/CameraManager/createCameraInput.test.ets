@@ -102,12 +102,12 @@ export default function createCameraInputTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_001
-     * @tc.name      : createCameraInput_001
-     * @tc.desc      : No abnormal scenarios - 1 param -> pass
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createCameraInput_001
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_001
+     * @tc.desc   No abnormal scenarios - 1 param -> pass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('createCameraInput_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'createCameraInput_001';
@@ -132,12 +132,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_002
-     * @tc.name      : createCameraInput_002
-     * @tc.desc      : No abnormal scenarios - 2 params -> pass
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createCameraInput_002
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_002
+     * @tc.desc   No abnormal scenarios - 2 params -> pass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('createCameraInput_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'createCameraInput_002';
@@ -163,12 +163,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_003
-     * @tc.name      : createCameraInput_abnormal_001
-     * @tc.desc      : camaraDevice->invalid -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createCameraInput_abnormal_001
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_003
+     * @tc.desc   camaraDevice->invalid -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('createCameraInput_abnormal_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'createCameraInput_abnormal_001';
@@ -177,12 +177,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_004
-     * @tc.name      : createCameraInput_abnormal_002
-     * @tc.desc      : camaraDevice->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_abnormal_002
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_004
+     * @tc.desc   camaraDevice->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_abnormal_002';
@@ -191,12 +191,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_005
-     * @tc.name      : createCameraInput_abnormal_003
-     * @tc.desc      : camaraDevice->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_abnormal_003
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_005
+     * @tc.desc   camaraDevice->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_abnormal_003';
@@ -205,12 +205,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_006
-     * @tc.name      : createCameraInput_two_params_abnormal_001
-     * @tc.desc      : cameraPosition->invalid, normal cameraType -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_abnormal_001
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_006
+     * @tc.desc   cameraPosition->invalid, normal cameraType -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_abnormal_001';
@@ -220,12 +220,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_007
-     * @tc.name      : createCameraInput_two_params_abnormal_002
-     * @tc.desc      : cameraPosition->null, normal cameraType -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_abnormal_002
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_007
+     * @tc.desc   cameraPosition->null, normal cameraType -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_abnormal_002';
@@ -235,12 +235,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_008
-     * @tc.name      : createCameraInput_two_params_abnormal_003
-     * @tc.desc      : cameraPosition->undefined, normal cameraType -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_abnormal_003
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_008
+     * @tc.desc   cameraPosition->undefined, normal cameraType -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_abnormal_003';
@@ -250,12 +250,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_009
-     * @tc.name      : createCameraInput_two_params_abnormal_004
-     * @tc.desc      : normal cameraPosition, cameraType->invalid -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_abnormal_004
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_009
+     * @tc.desc   normal cameraPosition, cameraType->invalid -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_abnormal_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_abnormal_004';
@@ -265,12 +265,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_010
-     * @tc.name      : createCameraInput_two_params_abnormal_005
-     * @tc.desc      : normal cameraPosition, cameraType->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_abnormal_005
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_010
+     * @tc.desc   normal cameraPosition, cameraType->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_abnormal_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_abnormal_005';
@@ -280,12 +280,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_011
-     * @tc.name      : createCameraInput_two_params_abnormal_006
-     * @tc.desc      : normal cameraPosition, cameraType->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_abnormal_006
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_011
+     * @tc.desc   normal cameraPosition, cameraType->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_abnormal_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_abnormal_006';
@@ -295,12 +295,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_012
-     * @tc.name      : createCameraInput_two_params_001
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_DEFAULT -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_001
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_012
+     * @tc.desc   cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_DEFAULT -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_001';
@@ -310,12 +310,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_013
-     * @tc.name      : createCameraInput_two_params_002
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_WIDE_ANGLE -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_002
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_013
+     * @tc.desc   cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_WIDE_ANGLE -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_002';
@@ -325,12 +325,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_014
-     * @tc.name      : createCameraInput_two_params_003
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_ULTRA_WIDE -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_003
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_014
+     * @tc.desc   cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_ULTRA_WIDE -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_003';
@@ -340,12 +340,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_015
-     * @tc.name      : createCameraInput_two_params_004
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_TELEPHOTO -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_004
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_015
+     * @tc.desc   cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_TELEPHOTO -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_004';
@@ -355,12 +355,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_016
-     * @tc.name      : createCameraInput_two_params_005
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_TRUE_DEPTH -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_005
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_016
+     * @tc.desc   cameraPosition->CAMERA_POSITION_UNSPECIFIED, cameraType->CAMERA_TYPE_TRUE_DEPTH -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_005';
@@ -370,12 +370,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_017
-     * @tc.name      : createCameraInput_two_params_006
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_DEFAULT -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_006
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_017
+     * @tc.desc   cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_DEFAULT -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_006';
@@ -385,12 +385,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_018
-     * @tc.name      : createCameraInput_two_params_007
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_WIDE_ANGLE -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_007
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_018
+     * @tc.desc   cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_WIDE_ANGLE -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_007', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_007';
@@ -400,12 +400,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_019
-     * @tc.name      : createCameraInput_two_params_008
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_ULTRA_WIDE -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_008
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_019
+     * @tc.desc   cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_ULTRA_WIDE -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_008', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_008';
@@ -415,12 +415,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_020
-     * @tc.name      : createCameraInput_two_params_009
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_TELEPHOTO -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_009
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_020
+     * @tc.desc   cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_TELEPHOTO -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_009';
@@ -430,12 +430,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_021
-     * @tc.name      : createCameraInput_two_params_010
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_TRUE_DEPTH -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_010
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_021
+     * @tc.desc   cameraPosition->CAMERA_POSITION_BACK, cameraType->CAMERA_TYPE_TRUE_DEPTH -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_010', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_010';
@@ -445,12 +445,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_022
-     * @tc.name      : createCameraInput_two_params_011
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_DEFAULT -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_011
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_022
+     * @tc.desc   cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_DEFAULT -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_011', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_011';
@@ -460,12 +460,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_023
-     * @tc.name      : createCameraInput_two_params_012
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_WIDE_ANGLE -> pass
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_012
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_023
+     * @tc.desc   cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_WIDE_ANGLE -> pass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_012', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_012';
@@ -475,12 +475,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_024
-     * @tc.name      : createCameraInput_two_params_013
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_ULTRA_WIDE -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_013
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_024
+     * @tc.desc   cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_ULTRA_WIDE -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_013', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_013';
@@ -490,12 +490,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_025
-     * @tc.name      : createCameraInput_two_params_014
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_TELEPHOTO -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_014
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_025
+     * @tc.desc   cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_TELEPHOTO -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_014', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_014';
@@ -505,12 +505,12 @@ export default function createCameraInputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_CAMERA_INPUT_026
-     * @tc.name      : createCameraInput_two_params_015
-     * @tc.desc      : cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_TRUE_DEPTH -> error_code: 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createCameraInput_two_params_015
+     * @tc.number CAMERA_MANAGER_CREATE_CAMERA_INPUT_026
+     * @tc.desc   cameraPosition->CAMERA_POSITION_FRONT, cameraType->CAMERA_TYPE_TRUE_DEPTH -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createCameraInput_two_params_015', Level.LEVEL2, async (done: Function) => {
       const testName = 'createCameraInput_two_params_015';

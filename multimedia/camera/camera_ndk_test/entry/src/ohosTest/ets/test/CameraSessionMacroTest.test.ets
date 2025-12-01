@@ -365,12 +365,12 @@ export default function CameraSessionMacroTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_MACRO_SUPPORT_PROMISE_001
-     * @tc.name      : Check capture session support macro  with promise 
-     * @tc.desc      : Check capture session support macro  with promise 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_MACRO_SUPPORT_PROMISE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_MACRO_SUPPORT_PROMISE_001
+     * @tc.desc   Check capture session support macro  with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_MACRO_SUPPORT_PROMISE_001', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_IS_MACRO_SUPPORT_PROMISE_001--------------");
@@ -387,12 +387,12 @@ export default function CameraSessionMacroTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_001
-     * @tc.name      : Check capture session enable macro  with promise enable true
-     * @tc.desc      : Check capture session enable macro  with promise enable true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_001
+     * @tc.desc   Check capture session enable macro  with promise enable true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_001', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_001--------------");
@@ -406,12 +406,12 @@ export default function CameraSessionMacroTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_002
-     * @tc.name      : Check capture session enable macro  with promise enable false
-     * @tc.desc      : Check capture session enable macro  with promise enable false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_002
+     * @tc.desc   Check capture session enable macro  with promise enable false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_002', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ENABLE_MACRO_PROMISE_002--------------");
@@ -425,12 +425,12 @@ export default function CameraSessionMacroTest() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_003
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_003 
-     * @tc.desc      : Check capture session enable macro  with promise 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_003
+     * @tc.desc   Check capture session enable macro  with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_003', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_003--------------");
@@ -444,12 +444,12 @@ export default function CameraSessionMacroTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_004
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_004 
-     * @tc.desc      : Check capture session enable macro  with promise 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_004
+     * @tc.desc   Check capture session enable macro  with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_004', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_004--------------");
@@ -463,12 +463,12 @@ export default function CameraSessionMacroTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_005
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_005 
-     * @tc.desc      : Check capture session enable macro  with promise 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_005
+     * @tc.desc   Check capture session enable macro  with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_005', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_SESSION_ENABLE_MACRO_PROMISE_005--------------");
@@ -482,12 +482,12 @@ export default function CameraSessionMacroTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_MACRO_STATUS_PROMISE_001
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_MACRO_STATUS_PROMISE_001
-     * @tc.desc      : Check capture session enable macro  with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_MACRO_STATUS_PROMISE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_MACRO_STATUS_PROMISE_001
+     * @tc.desc   Check capture session enable macro  with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_MACRO_STATUS_PROMISE_001', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_SESSION_MACRO_STATUS_PROMISE_001--------------");

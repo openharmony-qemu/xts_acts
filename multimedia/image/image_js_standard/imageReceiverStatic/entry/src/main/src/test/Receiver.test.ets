@@ -185,15 +185,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_STATIC_0100
-      * @tc.desc    createImageReceiver
-      *                 1.set size,format,capacity
-      *                 2.create ImageReceiver
-      *                 3.return ImageReceiver not empty
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_STATIC_0100
+     * @tc.desc   createImageReceiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, image.ImageFormat.JPEG, CAPACITY);
@@ -203,15 +200,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_STATIC_0100
-      * @tc.desc    createImageReceiver
-      *                 1.set width,height,format,capacity
-      *                 2.create ImageReceiver
-      *                 3.return ImageReceiver not empty
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_STATIC_0100
+     * @tc.desc   createImageReceiver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -230,15 +224,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100
-      * @tc.desc    getReceivingSurfaceId-promise
-      *                 1.create ImageReceiver
-      *                 2.call getReceivingSurfaceId
-      *                 3.return SurfaceId
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100
+     * @tc.desc   getReceivingSurfaceId-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -265,15 +256,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100
-      * @tc.desc    getReceivingSurfaceId-callback
-      *                 1.create ImageReceiver
-      *                 2.call getReceivingSurfaceId
-      *                 3.return SurfaceId
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100
+     * @tc.desc   getReceivingSurfaceId-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -296,14 +284,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_STATIC_0100
-      * @tc.desc    release-promise
-      *                 1.create ImageReceiver
-      *                 2.call release
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_STATIC_0100
+     * @tc.desc   release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -325,14 +311,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_STATIC_0100
-      * @tc.desc    release-callback
-      *                 1.create ImageReceiver
-      *                 2.call release
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_STATIC_0100
+     * @tc.desc   release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -356,16 +340,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100
-      * @tc.desc    on
-      *                 1.create ImageReceiver x2
-      *                 2.get 2 surfaceId
-      *                 3.call on to register the callback
-      *                 4.call camera service to trigger on callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100
+     * @tc.desc   on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -399,15 +379,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100
-      * @tc.desc    off
-      *                 1.create ImageReceiver
-      *                 2.call off to close callback subscription
-      *                 3.View the subscription effect of Image Receiver callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100
+     * @tc.desc   off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -430,17 +407,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100
-      * @tc.desc    readLatestImage-callback
-      *                 1.create ImageReceiver x2
-      *                 2.get 2 surfaceId
-      *                 3.call on to register the callback
-      *                 4.The readLatestImage function is called in on's callback
-      *                 5.call camera service to trigger on callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100
+     * @tc.desc   readLatestImage-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -484,17 +456,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100
-      * @tc.desc    readLatestImage-callback
-      *                 1.create ImageReceiver x2
-      *                 2.get 2 surfaceId
-      *                 3.call on to register the callback
-      *                 4.The readLatestImage function is called in on's callback
-      *                 5.call camera service to trigger on callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100
+     * @tc.desc   readLatestImage-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -540,17 +507,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100
-      * @tc.desc    readNextImage-callback
-      *                 1.create ImageReceiver x2
-      *                 2.get 2 surfaceId
-      *                 3.call on to register the callback
-      *                 4.The readLatestImage function is called in on's callback
-      *                 5.call camera service to trigger on callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100
+     * @tc.desc   readNextImage-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
@@ -594,17 +556,12 @@ export default function ImageReceiver() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100
-      * @tc.desc    readNextImage-callback
-      *                 1.create ImageReceiver x2
-      *                 2.get 2 surfaceId
-      *                 3.call on to register the callback
-      *                 4.The readLatestImage function is called in on's callback
-      *                 5.call camera service to trigger on callback
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100
+     * @tc.desc   readNextImage-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);

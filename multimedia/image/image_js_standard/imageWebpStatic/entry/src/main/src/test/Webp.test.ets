@@ -456,16 +456,12 @@ export default function imageWebp() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0100
-      * @tc.desc    createPixelMap - promise-webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0100
+     * @tc.desc   createPixelMap - promise-webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -518,16 +514,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0100
-      * @tc.desc    createPixelMap - callback-webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0100
+     * @tc.desc   createPixelMap - callback-webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -574,16 +566,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200
-      * @tc.desc    createPixelMap-promise-webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200
+     * @tc.desc   createPixelMap-promise-webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -614,16 +602,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0200
-      * @tc.desc    createPixelMap-callback-webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0200
+     * @tc.desc   createPixelMap-callback-webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -648,16 +632,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0900
-      * @tc.desc    createPixelMap-callback -size: { height: 10000, width: 10000 } -webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0900
+     * @tc.desc   createPixelMap-callback -size: { height: 10000, width: 10000 } -webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOptions: image.DecodingOptions = {
@@ -679,16 +659,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1000
-      * @tc.desc    createPixelMap-callback - sampleSize: -1 -webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1000
+     * @tc.desc   createPixelMap-callback - sampleSize: -1 -webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOptions: image.DecodingOptions = {
@@ -710,16 +686,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1100
-      * @tc.desc    createPixelMap-callback - index: -1 -webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1100
+     * @tc.desc   createPixelMap-callback - index: -1 -webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOptions: image.DecodingOptions = {
@@ -741,16 +713,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1200
-      * @tc.desc    createPixelMap-callback - desiredPixelFormat: 1 -webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1200
+     * @tc.desc   createPixelMap-callback - desiredPixelFormat: 1 -webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOptions: image.DecodingOptions = {
@@ -771,16 +739,12 @@ export default function imageWebp() {
       createPixMapPromiseErr(done, "SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1200", decodingOptions);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1300
-      * @tc.desc    createPixelMap-callback - { size: { height: 1, width: 2 }, x: -1, y: -1 } -webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1300
+     * @tc.desc   createPixelMap-callback - { size: { height: 1, width: 2 }, x: -1, y: -1 } -webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOptions: image.DecodingOptions = {
@@ -802,16 +766,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1400
-      * @tc.desc    createPixelMap-callback -  size: { height: 10000, width:10000 } -webp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.return pixelmap undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1400
+     * @tc.desc   createPixelMap-callback -  size: { height: 10000, width:10000 } -webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_CREATEPIXELMAP_CALLBACK_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOptions: image.DecodingOptions = {
@@ -833,15 +793,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0100
-      * @tc.desc    packing - promise-webp
-      *                 1.create ImageSource
-      *                 2.call packing
-      *                 3.return array
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0100
+     * @tc.desc   packing - promise-webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -851,15 +808,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0100
-      * @tc.desc    packing - promise-webp-wrong quality
-      *                 1.create ImageSource
-      *                 2.call packing
-      *                 3.return array
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0100
+     * @tc.desc   packing - promise-webp-wrong quality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -869,15 +823,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0200
-      * @tc.desc    packing - promise-webp
-      *                 1.create ImageSource
-      *                 2.call packing
-      *                 3.return array
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0200
+     * @tc.desc   packing - promise-webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (isSupportGifEncode) {
@@ -893,15 +844,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0500
-      * @tc.desc    packing - promise-webp-quality -1
-      *                 1.create ImageSource
-      *                 2.call packing
-      *                 3.return array
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0500
+     * @tc.desc   packing - promise-webp-quality -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_ERROR_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -911,15 +859,12 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0200
-      * @tc.desc    packing - promise-webp-quality 0
-      *                 1.create ImageSource
-      *                 2.call packing
-      *                 3.return array
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0200
+     * @tc.desc   packing - promise-webp-quality 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_PACKING_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let packOpts: image.PackingOption = {
@@ -929,70 +874,60 @@ export default function imageWebp() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0100
-      * @tc.desc    test getDelayTime promise for one frame webp
-      *                 1.create one frame webp imagesource
-      *                 2.getDelayTime
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0100
+     * @tc.desc   test getDelayTime promise for one frame webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0100", "test_large.webp");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0200
-      * @tc.desc    test getDelayTime promise for webp
-      *                 1.create webp imagesource
-      *                 2.getDelayTime
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0200
+     * @tc.desc   test getDelayTime promise for webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0200", "moving_test.webp");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0300
-      * @tc.desc    test getDelayTime promise for unsupported jpg
-      *                 1.create jpg imagesource
-      *                 2.getDelayTime
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0300
+     * @tc.desc   test getDelayTime promise for unsupported jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_PROMISE_STATIC_0300", "test.jpg");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0100
-      * @tc.desc    test getDelayTime callback for one frame webp
-      *                 1.create one frame webp imagesource
-      *                 2.getDelayTime with callback
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0100
+     * @tc.desc   test getDelayTime callback for one frame webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0100", "test_large.webp");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0200
-      * @tc.desc    test getDelayTime callback for webp
-      *                 1.create webp imagesource
-      *                 2.getDelayTime with callback
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0200
+     * @tc.desc   test getDelayTime callback for webp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_WEBP_GETDELAYTIME_CALLBACK_STATIC_0200", "moving_test.webp");

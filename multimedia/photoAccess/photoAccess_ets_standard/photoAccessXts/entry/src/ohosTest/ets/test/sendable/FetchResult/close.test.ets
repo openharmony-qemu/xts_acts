@@ -62,12 +62,12 @@ export default function sendableCloseTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_CLOSE_001
-     * @tc.name      : close_sendable_001
-     * @tc.desc      : close fetchResult
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_sendable_001
+     * @tc.number SENDABLE_FETCH_RESULT_CLOSE_001
+     * @tc.desc   close fetchResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_sendable_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'close_sendable_001';
@@ -76,12 +76,12 @@ export default function sendableCloseTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_CLOSE_002
-     * @tc.name      : close_sendable_002
-     * @tc.desc      : close fetchResult
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_sendable_002
+     * @tc.number SENDABLE_FETCH_RESULT_CLOSE_002
+     * @tc.desc   close fetchResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_sendable_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'close_sendable_002';
@@ -91,12 +91,12 @@ export default function sendableCloseTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_CLOSE_003
-     * @tc.name      : close_sendable_003
-     * @tc.desc      : close fetchResult
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   close_sendable_003
+     * @tc.number SENDABLE_FETCH_RESULT_CLOSE_003
+     * @tc.desc   close fetchResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_sendable_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'close_sendable_003';

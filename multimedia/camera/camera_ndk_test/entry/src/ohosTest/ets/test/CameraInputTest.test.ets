@@ -175,12 +175,12 @@ export default function CameraInputTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ON_ERROR_0100
-     * @tc.name      : camera status callback on CameraInput async api for error
-     * @tc.desc      : camera status callback on CameraInput async api for error
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ON_ERROR_0100
+     * @tc.desc   camera status callback on CameraInput async api for error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ON_ERROR_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ON_ERROR_0100--------------");
@@ -194,12 +194,12 @@ export default function CameraInputTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ON_ERROR_0100 end for camera");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100
-     * @tc.name      : open/close Camera with cameraInput callback api
-     * @tc.desc      : open/close Camera with cameraInput callback api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100
+     * @tc.desc   open/close Camera with cameraInput callback api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100--------------");
@@ -212,12 +212,12 @@ export default function CameraInputTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100
-     * @tc.name      : open/close Camera with cameraInput promise api
-     * @tc.desc      : open/close Camera with cameraInput promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100
+     * @tc.desc   open/close Camera with cameraInput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100', Level.LEVEL0, async () => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100";
@@ -230,12 +230,12 @@ export default function CameraInputTest() {
       console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_UNREGISTER_CALLBACK_PROMISE_0100
-     * @tc.name      : unregister Camera with cameraInput promise api
-     * @tc.desc      : unregister Camera with cameraInput promise api
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_UNREGISTER_CALLBACK_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_UNREGISTER_CALLBACK_PROMISE_0100
+     * @tc.desc   unregister Camera with cameraInput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_UNREGISTER_CALLBACK_PROMISE_0100', Level.LEVEL0, async () => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_UNREGISTER_CALLBACK_PROMISE_0100";
@@ -248,12 +248,12 @@ export default function CameraInputTest() {
       console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_UNREGISTER_CALLBACK_PROMISE_0100 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_WITHPOSITIONANDTYPE_ON_ERROR_0100
-     * @tc.name      : create CameraInput with position and type
-     * @tc.desc      : create CameraInput with position and type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_WITHPOSITIONANDTYPE_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_WITHPOSITIONANDTYPE_ON_ERROR_0100
+     * @tc.desc   create CameraInput with position and type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_WITHPOSITIONANDTYPE_ON_ERROR_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_WITHPOSITIONANDTYPE_ON_ERROR_0100--------------");
@@ -272,12 +272,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100
-     * @tc.name      : query whether physical camera orientation is variable under different fold status
-     * @tc.desc      : query whether physical camera orientation is variable under different fold status
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100
+     * @tc.desc   query whether physical camera orientation is variable under different fold status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_ISPHYSICALCAMERAORIENTATIONVARIABLE_0100--------------");
@@ -293,12 +293,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
-     * @tc.name      : get physical camera orientation under current fold status
-     * @tc.desc      : get physical camera orientation under current fold status
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
+     * @tc.desc   get physical camera orientation under current fold status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100--------------");
@@ -314,12 +314,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
-     * @tc.name      : choose whether to use the physical camera orientation
-     * @tc.desc      : choose whether to use the physical camera orientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
+     * @tc.desc   choose whether to use the physical camera orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100--------------");

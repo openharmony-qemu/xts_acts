@@ -63,12 +63,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_001
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_001
-     * @tc.desc       第一个参数非空数组覆盖，gif格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_001
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_001
+     * @tc.desc   第一个参数非空数组覆盖，gif格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_001';
@@ -94,12 +94,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_002
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_002
-     * @tc.desc       第一个参数空数组覆盖，gif格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_002
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_002
+     * @tc.desc   第一个参数空数组覆盖，gif格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_002';
@@ -120,12 +120,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_003
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_003
-     * @tc.desc       第一个参数null覆盖，gif格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_003
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_003
+     * @tc.desc   第一个参数null覆盖，gif格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_003';
@@ -147,12 +147,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_004
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_004
-     * @tc.desc       第二个参数null覆盖，gif格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_004
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_004
+     * @tc.desc   第二个参数null覆盖，gif格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_004';
@@ -170,12 +170,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_005
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_005
-     * @tc.desc       第二个参数undefined覆盖，gif格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_005
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_005
+     * @tc.desc   第二个参数undefined覆盖，gif格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_005';
@@ -193,12 +193,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_006
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_006
-     * @tc.desc       第二个参数空覆盖，gif格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_006
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_006
+     * @tc.desc   第二个参数空覆盖，gif格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_006';
@@ -216,12 +216,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_007
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_007
-     * @tc.desc       第二个参数null覆盖，webp格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_007
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_007
+     * @tc.desc   第二个参数null覆盖，webp格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_007';
@@ -239,12 +239,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_008
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_008
-     * @tc.desc       第二个参数undefined覆盖，webp格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_008
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_008
+     * @tc.desc   第二个参数undefined覆盖，webp格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_008';
@@ -262,12 +262,12 @@ export default function imagePackerPackToDataFromPixelmapSequenceTest() {
       }
     })
     /**
-     * @tc.number     IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_009
-     * @tc.name       IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_009
-     * @tc.desc       第二个参数空覆盖，webp格式图片
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_009
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_009
+     * @tc.desc   第二个参数空覆盖，webp格式图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACK_TO_DATA_SEQUENCE_TEST_009';

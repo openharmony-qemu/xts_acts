@@ -73,12 +73,12 @@ export default function createPictureTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_001
-     * @tc.name      : createPicture_promise_001
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_promise_001
+     * @tc.number IMAGE_CREATE_PICTURE_001
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_promise_001';
@@ -87,12 +87,12 @@ export default function createPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_002
-     * @tc.name      : createPicture_promise_002
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_promise_002
+     * @tc.number IMAGE_CREATE_PICTURE_002
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_promise_002';
@@ -101,12 +101,12 @@ export default function createPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_003
-     * @tc.name      : createPicture_promise_003
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_promise_003
+     * @tc.number IMAGE_CREATE_PICTURE_003
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_promise_003';
@@ -115,12 +115,12 @@ export default function createPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_004
-     * @tc.name      : createPicture_promise_004
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_promise_004
+     * @tc.number IMAGE_CREATE_PICTURE_004
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_promise_004';
@@ -129,12 +129,12 @@ export default function createPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_005
-     * @tc.name      : createPicture_abnormal_promise_001
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_abnormal_promise_001
+     * @tc.number IMAGE_CREATE_PICTURE_005
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_abnormal_promise_001';
@@ -143,12 +143,12 @@ export default function createPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_006
-     * @tc.name      : createPicture_abnormal_promise_002
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_abnormal_promise_002
+     * @tc.number IMAGE_CREATE_PICTURE_006
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_abnormal_promise_002';
@@ -157,12 +157,12 @@ export default function createPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PICTURE_007
-     * @tc.name      : createPicture_abnormal_promise_003
-     * @tc.desc      : createPicture
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPicture_abnormal_promise_003
+     * @tc.number IMAGE_CREATE_PICTURE_007
+     * @tc.desc   createPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPicture_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPicture_abnormal_promise_003';

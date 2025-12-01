@@ -60,12 +60,12 @@ export default function MediaAssetManagerLoadMovingPhotoTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_001
-     * @tc.name      : MediaAssetManager_cancelRequest_promise_001
-     * @tc.desc      : cancelRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetManager_cancelRequest_promise_001
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_001
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetManager_cancelRequest_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetManager_cancelRequest_promise_001';
@@ -79,12 +79,12 @@ export default function MediaAssetManagerLoadMovingPhotoTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_002
-     * @tc.name      : MediaAssetManager_cancelRequest_promise_002
-     * @tc.desc      : cancelRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetManager_cancelRequest_promise_002
+     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_002
+     * @tc.desc   cancelRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetManager_cancelRequest_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetManager_cancelRequest_promise_002';

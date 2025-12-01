@@ -44,12 +44,12 @@ export default function registerPhotoChangeTest () {
     const NOTIFY_CHANGE_YUV_READY = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_YUV_READY;
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_001
-     * @tc.name      : register_photoChange_callback_001
-     * @tc.desc      : listening motify file title, type NOTIFY_CHANGE_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   register_photoChange_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_001
+     * @tc.desc   listening motify file title, type NOTIFY_CHANGE_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL0
      */
     it('register_photoChange_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'register_photoChange_callback_001';
@@ -87,12 +87,12 @@ export default function registerPhotoChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_002
-     * @tc.name      : register_photoChange_callback_002
-     * @tc.desc      : listening motify file title, type NOTIFY_CHANGE_YUV_READY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   register_photoChange_callback_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTER_PHOTOCHANGE_CALLBACK_002
+     * @tc.desc   listening motify file title, type NOTIFY_CHANGE_YUV_READY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL0
      */
     it('register_photoChange_callback_002', Level.LEVEL0, async (done: Function) => {
       const testNum = 'register_photoChange_callback_002';

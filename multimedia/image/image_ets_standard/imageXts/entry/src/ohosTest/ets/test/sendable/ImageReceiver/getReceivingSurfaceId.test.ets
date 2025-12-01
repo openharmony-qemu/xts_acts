@@ -60,12 +60,12 @@ export default function sendableGetReceivingSurfaceIdTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_001
-     * @tc.name      : getReceivingSurfaceId_sendable_promise_001
-     * @tc.desc      : getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReceivingSurfaceId_sendable_promise_001
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_001
+     * @tc.desc   getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReceivingSurfaceId_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getReceivingSurfaceId_sendable_promise_001';
@@ -78,12 +78,12 @@ export default function sendableGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_002
-     * @tc.name      : getReceivingSurfaceId_sendable_promise_002
-     * @tc.desc      : getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReceivingSurfaceId_sendable_promise_002
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_002
+     * @tc.desc   getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReceivingSurfaceId_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getReceivingSurfaceId_sendable_promise_002';
@@ -96,12 +96,12 @@ export default function sendableGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_003
-     * @tc.name      : getReceivingSurfaceId_sendable_promise_003
-     * @tc.desc      : getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReceivingSurfaceId_sendable_promise_003
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_003
+     * @tc.desc   getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReceivingSurfaceId_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getReceivingSurfaceId_sendable_promise_003';
@@ -114,12 +114,12 @@ export default function sendableGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_004
-     * @tc.name      : getReceivingSurfaceId_sendable_promise_004
-     * @tc.desc      : getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReceivingSurfaceId_sendable_promise_004
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_004
+     * @tc.desc   getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReceivingSurfaceId_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getReceivingSurfaceId_sendable_promise_004';
@@ -132,12 +132,12 @@ export default function sendableGetReceivingSurfaceIdTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_005
-     * @tc.name      : getReceivingSurfaceId_sendable_promise_005
-     * @tc.desc      : getReceivingSurfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReceivingSurfaceId_sendable_promise_005
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_005
+     * @tc.desc   getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReceivingSurfaceId_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getReceivingSurfaceId_sendable_promise_005';

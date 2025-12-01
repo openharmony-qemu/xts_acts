@@ -45,12 +45,12 @@ export default function SendableImageSourceCreatePixelMapTest() {
     });
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_001
-     * @tc.name       SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_001
-     * @tc.desc       第1个参数为空对象
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_001
+     * @tc.number SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_001
+     * @tc.desc   第1个参数为空对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_001';
@@ -71,12 +71,12 @@ export default function SendableImageSourceCreatePixelMapTest() {
     });
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_002
-     * @tc.name       SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_002
-     * @tc.desc       第1个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_002
+     * @tc.number SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_002
+     * @tc.desc   第1个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_002';
@@ -97,12 +97,12 @@ export default function SendableImageSourceCreatePixelMapTest() {
     });
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_003
-     * @tc.name       SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_003
-     * @tc.desc       第1个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_003
+     * @tc.number SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_003
+     * @tc.desc   第1个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SOURCE_CREATE_PIXEL_MAP_003';

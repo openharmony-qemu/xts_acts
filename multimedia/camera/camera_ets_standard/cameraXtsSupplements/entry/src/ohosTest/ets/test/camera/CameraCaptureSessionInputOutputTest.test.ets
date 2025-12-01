@@ -241,12 +241,12 @@ export default function CameraCaptureSessionInputOutputTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_001
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_001
-     * @tc.desc      CaptureSession中AddInput的null覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_001
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_001
+     * @tc.desc   CaptureSession中AddInput的null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_001'
@@ -257,12 +257,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
       })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_002
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_002
-     * @tc.desc      CaptureSession中AddInput的undefined覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_002
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_002
+     * @tc.desc   CaptureSession中AddInput的undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_002'
@@ -273,12 +273,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_003
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_003
-     * @tc.desc      CaptureSession中AddInput的空字符串覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_003
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_003
+     * @tc.desc   CaptureSession中AddInput的空字符串覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_ADD_INPUT_003'
@@ -289,12 +289,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_004
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_004
-     * @tc.desc      CaptureSession中AddOutput的null覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_004
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_004
+     * @tc.desc   CaptureSession中AddOutput的null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_004'
@@ -305,12 +305,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_005
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_005
-     * @tc.desc      CaptureSession中AddOutput的undefined覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_005
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_005
+     * @tc.desc   CaptureSession中AddOutput的undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_005'
@@ -321,12 +321,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_006
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_006
-     * @tc.desc      CaptureSession中AddOutput的空字符串覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_006
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_006
+     * @tc.desc   CaptureSession中AddOutput的空字符串覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_ADD_OUTPUT_006'
@@ -337,12 +337,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_007
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_007
-     * @tc.desc      CaptureSession中RemoveInput的null覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_007
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_007
+     * @tc.desc   CaptureSession中RemoveInput的null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_007', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_007'
@@ -354,12 +354,12 @@ export default function CameraCaptureSessionInputOutputTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_008
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_008
-     * @tc.desc      CaptureSession中RemoveInput的undefined覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_008
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_008
+     * @tc.desc   CaptureSession中RemoveInput的undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_008', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_008'
@@ -370,12 +370,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_009
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_009
-     * @tc.desc      CaptureSession中RemoveInput的空字符串覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_009
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_009
+     * @tc.desc   CaptureSession中RemoveInput的空字符串覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_INPUT_009'
@@ -386,12 +386,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0010
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0010
-     * @tc.desc      CaptureSession中RemoveOutput的null覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0010
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0010
+     * @tc.desc   CaptureSession中RemoveOutput的null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0010', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0010'
@@ -402,12 +402,12 @@ export default function CameraCaptureSessionInputOutputTest() {
       })
     })
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0011
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0011
-     * @tc.desc      CaptureSession中RemoveOutput的undefined覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0011
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0011
+     * @tc.desc   CaptureSession中RemoveOutput的undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0011', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0011'
@@ -419,12 +419,12 @@ export default function CameraCaptureSessionInputOutputTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0012
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0012
-     * @tc.desc      CaptureSession中RemoveOutput的空字符串覆盖情况
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0012
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0012
+     * @tc.desc   CaptureSession中RemoveOutput的空字符串覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0012', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_REMOVE_OUTPUT_0012'

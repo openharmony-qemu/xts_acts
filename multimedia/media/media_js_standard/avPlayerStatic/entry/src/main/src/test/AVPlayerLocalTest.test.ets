@@ -1320,13 +1320,12 @@ export default function AVPlayerLocalTest() {
       await mediaTestBase.clearRouter()
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100
-      * @tc.desc    Local Video playback control test
-      *               : 003.test getPlaybackInfo
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let descriptionKey =
@@ -1337,13 +1336,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_static_0100
-      * @tc.desc    Local Video playback control test
-      *               : 001.test video player videoScaleTpe
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_static_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1351,13 +1349,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_static_0100
-      * @tc.desc    Local Video playback control test
-      *               : 001.test off callback Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_static_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1365,13 +1362,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0100
-      * @tc.desc    Local Video subtitle control test
-      *               : 001.test subtitle Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor && subtitleFdSrc) {
@@ -1379,13 +1375,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0200
-      * @tc.desc    Local Video subtitle control test
-      *               : 002.test subtitle Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor && subtitleFdSrc) {
@@ -1393,13 +1388,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0100
-      * @tc.desc    Local Video subtitle control test
-      *               : 001.test setPlaybackStrategy Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1408,13 +1402,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0200
-      * @tc.desc    Local Video subtitle control test
-      *               : 002.test setPlaybackStrategy Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0200
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1423,13 +1416,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_static_0100
-      * @tc.desc    Local Video subtitle control test
-      *               : 001.test setMediaMuted Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_static_0100
+     * @tc.desc   Local Video subtitle control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1437,13 +1429,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_static_0100
-      * @tc.desc    Local Video preferred audio language control test
-      *               : 001.test setPlaybackStrategy Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_static_0100
+     * @tc.desc   Local Video preferred audio language control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1451,13 +1442,12 @@ export default function AVPlayerLocalTest() {
       }
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_static_0100
-      * @tc.desc    Local Video getPlaybackPosition control test
-      *               : 001.test getPlaybackPosition Function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_static_0100
+     * @tc.desc   Local Video getPlaybackPosition control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
@@ -1466,13 +1456,12 @@ export default function AVPlayerLocalTest() {
     });
 
      /**
-       * @tc.number  SUB_MULTIMEDIA_PLAYER_SETPLAYBACKRANGE_FUNCTION_static_0100
-       * @tc.name    SUB_MULTIMEDIA_PLAYER_SETPLAYBACKRANGE_FUNCTION_static_0100
-       * @tc.desc    test function setPlaybackRange
-       *               : 001.test setPlaybackRange Function
-       * @tc.size    MediumTest
-       * @tc.type    Function test
-       * @tc.level   Level1
+      * @tc.name   SUB_MULTIMEDIA_PLAYER_SETPLAYBACKRANGE_FUNCTION_static_0100
+      * @tc.number SUB_MULTIMEDIA_PLAYER_SETPLAYBACKRANGE_FUNCTION_static_0100
+      * @tc.desc   test function setPlaybackRange
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
       */
      it('SUB_MULTIMEDIA_PLAYER_SETPLAYBACKRANGE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1482,13 +1471,12 @@ export default function AVPlayerLocalTest() {
       });
  
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_ON_OFF_SUBTITLEUPDATE_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_ON_OFF_SUBTITLEUPDATE_FUNCTION_static_0100
-        * @tc.desc    test on/off trackinfoupdate
-        *               : 001.test on/off trackinfoupdate
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_SUBTITLEUPDATE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_SUBTITLEUPDATE_FUNCTION_static_0100
+       * @tc.desc   test on/off trackinfoupdate
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_SUBTITLEUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1498,13 +1486,12 @@ export default function AVPlayerLocalTest() {
       })
  
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_ON_OFF_TRACKINFOUPDATE_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_ON_OFF_TRACKINFOUPDATE_FUNCTION_static_0100
-        * @tc.desc    test on/off trackinfoupdate
-        *               : 001.test on/off trackinfoupdate
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_TRACKINFOUPDATE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_TRACKINFOUPDATE_FUNCTION_static_0100
+       * @tc.desc   test on/off trackinfoupdate
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_TRACKINFOUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1514,13 +1501,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_SETBITRATE_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_SETBITRATE_FUNCTION_static_0100
-        * @tc.desc    test setBitrate function
-        *               : 001.test setBitrate function
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_SETBITRATE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_SETBITRATE_FUNCTION_static_0100
+       * @tc.desc   test setBitrate function
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_SETBITRATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         let bitrate: int = 96000;
@@ -1542,13 +1528,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100
-        * @tc.desc    test off seiMessageReceived function
-        *               : 001.test off seiMessageReceived function
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100
+       * @tc.desc   test off seiMessageReceived function
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1558,13 +1543,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0100
-        * @tc.desc    test on/off audioOutputDeviceChangeWithInfo
-        *               : 001.test on/off audioOutputDeviceChangeWithInfo
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0100
+       * @tc.desc   test on/off audioOutputDeviceChangeWithInfo
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1574,13 +1558,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100
-        * @tc.desc    test setDecryptionConfig funciton
-        *               : 001.test setDecryptionConfig funciton
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100
+       * @tc.desc   test setDecryptionConfig funciton
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_DRM_SETDECRYPTIONCONFIG_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         let systemName:string;
@@ -1600,13 +1583,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_DRM_GETMEDIAKEYSYSTEMINFOS_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_DRM_GETMEDIAKEYSYSTEMINFOS_FUNCTION_static_0100
-        * @tc.desc    test getMediaKeySystemInfos funciton
-        *               : 001.test getMediaKeySystemInfos funciton
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_DRM_GETMEDIAKEYSYSTEMINFOS_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_DRM_GETMEDIAKEYSYSTEMINFOS_FUNCTION_static_0100
+       * @tc.desc   test getMediaKeySystemInfos funciton
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_DRM_GETMEDIAKEYSYSTEMINFOS_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         let avPlayer = await media.createAVPlayer()
@@ -1617,13 +1599,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_ON_OFF_MEDIAKEYSYSTEMINFOUPDATE_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_ON_OFF_MEDIAKEYSYSTEMINFOUPDATE_FUNCTION_static_0100
-        * @tc.desc    test on/off mediaKeySystemInfoUpdate
-        *               : 001.test on/off mediaKeySystemInfoUpdate
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_MEDIAKEYSYSTEMINFOUPDATE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_MEDIAKEYSYSTEMINFOUPDATE_FUNCTION_static_0100
+       * @tc.desc   test on/off mediaKeySystemInfoUpdate
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_MEDIAKEYSYSTEMINFOUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1633,13 +1614,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOINTERRUPT_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOINTERRUPT_FUNCTION_static_0100
-        * @tc.desc    test on/off audioInterrupt
-        *               : 001.test on/off audioInterrupt
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOINTERRUPT_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOINTERRUPT_FUNCTION_static_0100
+       * @tc.desc   test on/off audioInterrupt
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOINTERRUPT_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1649,13 +1629,12 @@ export default function AVPlayerLocalTest() {
       })
 
       /**
-        * @tc.number  SUB_MULTIMEDIA_PLAYER_ON_OFF_BITRATEDONE_FUNCTION_static_0100
-        * @tc.name    SUB_MULTIMEDIA_PLAYER_ON_OFF_BITRATEDONE_FUNCTION_static_0100
-        * @tc.desc    test on/off bitrateDone
-        *               : 001.test on/off bitrateDone
-        * @tc.size    MediumTest
-        * @tc.type    Function test
-        * @tc.level   Level1
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_BITRATEDONE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_BITRATEDONE_FUNCTION_static_0100
+       * @tc.desc   test on/off bitrateDone
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_BITRATEDONE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
@@ -1665,13 +1644,12 @@ export default function AVPlayerLocalTest() {
       })
 
        /**
-         * @tc.number  SUB_MULTIMEDIA_PLAYER_DATASRC_FUNCTION_static_0100
-         * @tc.name    SUB_MULTIMEDIA_PLAYER_DATASRC_FUNCTION_static_0100
-         * @tc.desc    test avplayer data src
-         *               : 001.test avplayer data src
-         * @tc.size    MediumTest
-         * @tc.type    Function test
-         * @tc.level   Level0
+        * @tc.name   SUB_MULTIMEDIA_PLAYER_DATASRC_FUNCTION_static_0100
+        * @tc.number SUB_MULTIMEDIA_PLAYER_DATASRC_FUNCTION_static_0100
+        * @tc.desc   test avplayer data src
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
         */
        it('SUB_MULTIMEDIA_PLAYER_DATASRC_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {

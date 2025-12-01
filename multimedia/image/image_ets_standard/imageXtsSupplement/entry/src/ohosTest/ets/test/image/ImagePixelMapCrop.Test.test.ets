@@ -43,12 +43,12 @@ export default function ImagePixelMapCropTest() {
     });
 
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_CROP_REGION_001
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_CROP_REGION_001
-     * @tc.desc       第1个参数为空对象
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_CROP_REGION_001
+     * @tc.number IMAGE_AUXILIARY_PICTURE_CROP_REGION_001
+     * @tc.desc   第1个参数为空对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_AUXILIARY_PICTURE_CROP_REGION_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_CROP_REGION_001';
@@ -71,12 +71,12 @@ export default function ImagePixelMapCropTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CROP_002
-     * @tc.name       IMAGE_PIXEL_MAP_CROP_002
-     * @tc.desc       第1个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_CROP_002
+     * @tc.number IMAGE_PIXEL_MAP_CROP_002
+     * @tc.desc   第1个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_CROP_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CROP_002';
@@ -99,12 +99,12 @@ export default function ImagePixelMapCropTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CROP_003
-     * @tc.name       IMAGE_PIXEL_MAP_CROP_003
-     * @tc.desc       第1个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_CROP_003
+     * @tc.number IMAGE_PIXEL_MAP_CROP_003
+     * @tc.desc   第1个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_CROP_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CROP_003';
@@ -127,12 +127,12 @@ export default function ImagePixelMapCropTest() {
     });
 
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CROP_004
-     * @tc.name       IMAGE_PIXEL_MAP_CROP_004
-     * @tc.desc       第1个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_CROP_004
+     * @tc.number IMAGE_PIXEL_MAP_CROP_004
+     * @tc.desc   第1个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_CROP_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CROP_004';
@@ -159,12 +159,12 @@ export default function ImagePixelMapCropTest() {
       }
     });
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CROP_005
-     * @tc.name       IMAGE_PIXEL_MAP_CROP_005
-     * @tc.desc       第1个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_CROP_005
+     * @tc.number IMAGE_PIXEL_MAP_CROP_005
+     * @tc.desc   第1个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_CROP_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CROP_005';
@@ -191,12 +191,12 @@ export default function ImagePixelMapCropTest() {
       }
     });
     /**
-     * @tc.number     IMAGE_PIXEL_MAP_CROP_006
-     * @tc.name       IMAGE_PIXEL_MAP_CROP_006
-     * @tc.desc       第1个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   IMAGE_PIXEL_MAP_CROP_006
+     * @tc.number IMAGE_PIXEL_MAP_CROP_006
+     * @tc.desc   第1个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IMAGE_PIXEL_MAP_CROP_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'IMAGE_PIXEL_MAP_CROP_006';

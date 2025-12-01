@@ -172,14 +172,12 @@ export default function imageColorSpace() {
     }
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_STATIC_0100
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_STATIC_0100
-          * @tc.desc    Decode
-          *                 1.create imagesource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_STATIC_0100
+         * @tc.desc   Decode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
             let logger = new Logger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_STATIC_0100');
@@ -204,14 +202,12 @@ export default function imageColorSpace() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100
-          * @tc.desc    Decode -callback
-          *                 1.create imagesource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100
+         * @tc.desc   Decode -callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
             let logger = new Logger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100');
@@ -236,15 +232,12 @@ export default function imageColorSpace() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0100
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0100
-          * @tc.desc    Encode -promise
-          *                 1.create imagesource
-          *                 2.createImagePacker
-          *                 3.packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0100
+         * @tc.desc   Encode -promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
             let testNum = 'SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0100'
@@ -290,15 +283,12 @@ export default function imageColorSpace() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200
-          * @tc.desc    Encode -callback-
-          *                 1.create imagesource
-          *                 2.createImagePacker
-          *                 3.packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200
+         * @tc.desc   Encode -callback-
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
             if (isSupportGifEncode) {
@@ -312,15 +302,12 @@ export default function imageColorSpace() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_STATIC_0100
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_STATIC_0100
-          * @tc.desc    Encode -callback-wrong format
-          *                 1.create imagesource
-          *                 2.createImagePacker
-          *                 3.packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_STATIC_0100
+         * @tc.desc   Encode -callback-wrong format
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_ERROR_FORMAT_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
             let packOpts: image.PackingOption = { format: "image/jpeg", quality: 200 }
@@ -328,15 +315,12 @@ export default function imageColorSpace() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0200
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0200
-          * @tc.desc    Encode -promise
-          *                 1.create imagesource
-          *                 2.createImagePacker
-          *                 3.packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0200
+         * @tc.desc   Encode -promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
             if (isSupportGifEncode) {
@@ -350,15 +334,12 @@ export default function imageColorSpace() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0300
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0300
-          * @tc.desc    Encode -promise
-          *                 1.create imagesource
-          *                 2.createImagePacker
-          *                 3.packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0300
+         * @tc.desc   Encode -promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
             let packOpts: image.PackingOption = { format: "image/jpeg", quality: 101 }

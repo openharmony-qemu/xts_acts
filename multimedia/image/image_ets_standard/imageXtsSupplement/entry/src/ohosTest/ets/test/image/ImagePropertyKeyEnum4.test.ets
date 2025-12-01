@@ -53,14 +53,14 @@ export default function ImagePropertyKeyTest4() {
       console.info('afterAll case');
     });
 
-    /**
-     * @tc.number  SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_001
-     * @tc.name    SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_001
-     * @tc.desc    PhotoAccessHelper_Photo property enum
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
+      /**
+       * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_001
+       * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_001
+       * @tc.desc   PhotoAccessHelper_Photo property enum
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_001', Level.LEVEL1, async (done:Function)=> {
         console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_001---------')
         expect(image.PropertyKey.FACE_SMILE_SCORE).assertEqual('HwMnoteFaceSmileScore');
@@ -72,12 +72,12 @@ export default function ImagePropertyKeyTest4() {
         done();
       })
     /**
-     * @tc.number  SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_002
-     * @tc.name    SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_002
-     * @tc.desc    PhotoAccessHelper_Photo property enum
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_002
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_002
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_002', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_002---------')
@@ -90,12 +90,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number  SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_003
-     * @tc.name    SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_003
-     * @tc.desc    PhotoAccessHelper_Photo property enum
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_003
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_003
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_003', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_003---------')
@@ -108,12 +108,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number  SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_004
-     * @tc.name    SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_004
-     * @tc.desc    PhotoAccessHelper_Photo property enum
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_004
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_004
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_004', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_004---------')
@@ -126,12 +126,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_005
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_005
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_005
      * @tc.desc   PhotoAccessHelper_Photo property enum
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_005', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_005---------')
@@ -144,12 +144,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     *  @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_006
-     *  @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_006
-     *  @tc.desc     PhotoAccessHelper_Photo property enum
-     *  @tc.size     MEDIUM
-     *  @tc.type     Function
-     *  @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_006
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_006
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_006', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_006---------')
@@ -162,12 +162,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     *   @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_007
-     *   @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_007
-     *   @tc.desc     PhotoAccessHelper_Photo property enum
-     *   @tc.size     MEDIUM
-     *   @tc.type     Function
-     *   @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_007
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_007
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_007', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_007---------')
@@ -178,12 +178,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     *   @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_008
-     *   @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_008
-     *   @tc.desc     PhotoAccessHelper_Photo property enum
-     *   @tc.size     MEDIUM
-     *   @tc.type     Function
-     *   @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_008
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_008
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_008', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_008---------')
@@ -195,12 +195,12 @@ export default function ImagePropertyKeyTest4() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_009
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_009
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_009
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_009
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_009', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_009---------')
@@ -213,12 +213,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_010
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_010
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_010
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_010
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_010', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_010---------')
@@ -231,12 +231,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_011
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_011
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_011
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_011
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_011', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_011---------')
@@ -249,12 +249,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_012
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_012
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_012
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_012
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_012', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_012---------')
@@ -267,12 +267,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_013
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_013
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_013
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_013
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_013', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_013---------')
@@ -285,12 +285,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_014
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_014
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_014
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_014
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_014', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_014---------')
@@ -303,12 +303,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_015
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_015
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_015
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_015
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_015', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_015---------')
@@ -321,12 +321,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_016
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_016
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_016
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_016
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_016', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_016---------')
@@ -339,12 +339,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_017
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_017
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_017
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_017
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_017', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_017---------')
@@ -357,12 +357,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_018
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_018
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_018
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_018
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_018', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_018---------')
@@ -375,12 +375,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_019
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_019
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_019
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_019
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_019', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_019---------')
@@ -393,12 +393,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_020
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_020
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_020
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_020
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_020', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_020---------')
@@ -411,12 +411,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_021
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_021
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_021
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_021
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_021', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_021---------')
@@ -429,12 +429,12 @@ export default function ImagePropertyKeyTest4() {
       done();
     })
     /**
-     * @tc.number   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_022
-     * @tc.name     SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_022
-     * @tc.desc     PhotoAccessHelper_Photo property enum
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_022
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_022
+     * @tc.desc   PhotoAccessHelper_Photo property enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_022', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM2_List_022---------')

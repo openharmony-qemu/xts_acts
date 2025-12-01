@@ -243,17 +243,12 @@ export default function imageDecodeOptionsRawTest() {
     })
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -273,16 +268,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -302,17 +293,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -332,16 +318,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -361,17 +343,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -391,16 +368,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -420,17 +393,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -450,16 +418,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -479,17 +443,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0900
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -509,16 +468,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1000
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -538,17 +493,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -568,16 +518,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -597,17 +543,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -627,16 +568,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -656,17 +593,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -686,16 +618,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -715,17 +643,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -745,16 +668,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -774,17 +693,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1900
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_1900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -804,16 +718,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2000
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -833,17 +743,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -863,16 +768,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -892,17 +793,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -922,16 +818,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -951,17 +843,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -981,16 +868,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1010,17 +893,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1040,16 +918,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGB565_CREATEPIXELMAP_STATIC_2800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1069,17 +943,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1099,16 +968,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1128,17 +993,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1158,16 +1018,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1187,17 +1043,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1217,16 +1068,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1246,17 +1093,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1276,16 +1118,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1305,17 +1143,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0900
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1335,16 +1168,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1000
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1364,17 +1193,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1394,16 +1218,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1423,17 +1243,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1453,16 +1268,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1482,17 +1293,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1512,16 +1318,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1541,17 +1343,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1571,16 +1368,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1600,17 +1393,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1900
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_1900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1630,16 +1418,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2000
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1659,17 +1443,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1689,16 +1468,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1718,17 +1493,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1748,16 +1518,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1777,17 +1543,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1807,16 +1568,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1836,17 +1593,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1866,16 +1618,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBA8888_CREATEPIXELMAP_STATIC_2800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1895,17 +1643,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1925,16 +1668,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0200
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1954,17 +1693,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0300
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -1984,16 +1718,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0400
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2013,17 +1743,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0500
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2043,16 +1768,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0600
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2072,17 +1793,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0700
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2102,16 +1818,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0800
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2131,17 +1843,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0900
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2161,16 +1868,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1000
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2190,17 +1893,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1100
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2220,16 +1918,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1200
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2249,17 +1943,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1300
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2279,16 +1968,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1400
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2308,17 +1993,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1500
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2338,16 +2018,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1600
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2367,17 +2043,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1700
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2397,16 +2068,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1800
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2426,17 +2093,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1900
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_1900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2456,16 +2118,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2000
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2485,17 +2143,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2100
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2515,16 +2168,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2200
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2544,17 +2193,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2300
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2574,16 +2218,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2400
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2603,17 +2243,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2500
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2633,16 +2268,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2600
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2662,17 +2293,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2700
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2692,16 +2318,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2800
+     * @tc.number SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_BGRA8888_CREATEPIXELMAP_STATIC_2800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2721,17 +2343,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2751,16 +2368,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2780,17 +2393,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2810,16 +2418,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2839,17 +2443,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2869,16 +2468,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2898,17 +2493,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2928,16 +2518,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2957,17 +2543,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0900
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -2987,16 +2568,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1000
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3016,17 +2593,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3046,16 +2618,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3075,17 +2643,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3105,16 +2668,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3134,17 +2693,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3164,16 +2718,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3193,17 +2743,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3223,16 +2768,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3252,17 +2793,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1900
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1900
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1900
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1900
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_1900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3282,16 +2818,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2000
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2000
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2000
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2000
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3311,17 +2843,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2100
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2100
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2100
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2100
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3341,16 +2868,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2200
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2200
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2200
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2200
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3370,17 +2893,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2300
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2300
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2300
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2300
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3400,16 +2918,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2400
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2400
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2400
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2400
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3429,17 +2943,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2500
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2500
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2500
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2500
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3459,16 +2968,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2600
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2600
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2600
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2600
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3488,17 +2993,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      *
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2700
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2700
-      * @tc.desc    createPixelMap(decodingOptions)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2700
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2700
+     * @tc.desc   createPixelMap(decodingOptions)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");
@@ -3518,16 +3018,12 @@ export default function imageDecodeOptionsRawTest() {
     });
 
     /**
-      * @tc.number  SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2800
-      * @tc.name    SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2800
-      * @tc.desc    createPixelMap(decodingOptions, asyncCallback)-DNG
-      *                 1.create imageSource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 3
+     * @tc.name   SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2800
+     * @tc.number SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2800
+     * @tc.desc   createPixelMap(decodingOptions, asyncCallback)-DNG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_DECODEOPTIONS_WITH_RGBAF16_CREATEPIXELMAP_STATIC_2800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("test2.arw");

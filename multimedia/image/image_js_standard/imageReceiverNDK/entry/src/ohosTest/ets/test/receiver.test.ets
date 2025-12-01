@@ -218,17 +218,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0000
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   imageArriveOn
-         *                 3.imageArriveOff
-         *                 4.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0000
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0000', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0000`;
@@ -253,14 +248,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0100
-         * @tc.desc      : 1.createImageReceiver
-         *                 2.imageArriveOff error
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0100
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0100`;
@@ -275,15 +268,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0200
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn error
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0200
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0200', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0200`;
@@ -298,15 +288,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0300
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn error
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0300
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0300', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0300`;
@@ -322,15 +309,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0400
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOff error
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0400
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0400', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_ERROR_0400`;
@@ -344,15 +328,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0100
-         * @tc.name      : test release image receiver options
-         * @tc.desc      : 1.create image receiver options
-         *                 2.create image receiver
-         *                 3.release image receiver options
-         *                 4.recreate image receiver failed
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0100
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0100', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0100`;
@@ -385,15 +366,12 @@ export default function ImageReceiverTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0200
-         * @tc.name      : test release image receiver
-         * @tc.desc      : 1.create image receiver options
-         *                 2.create image receiver
-         *                 3.release image receiver
-         *                 4.get image receiver properties failed
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0200
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0200', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0200`;
@@ -430,15 +408,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0300
-         * @tc.name      : test set image receiver options
-         * @tc.desc      : 1.create image receiver options
-         *                 2.set image receiver options
-         *                 3.create image receiver
-         *                 4.get image receiver properties
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0300
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0300', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0300`;
@@ -477,15 +452,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0400
-         * @tc.name      : test set image receiver options fail
-         * @tc.desc      : 1.create image receiver options
-         *                 2.set image receiver options with wrong parameter type
-         *                 3.create image receiver
-         *                 4.get image receiver properties
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0400
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0400', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0400`;
@@ -524,13 +496,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0100
-         * @tc.name      : createImageReceiver_1
-         * @tc.desc      : 1.set width,height,format,capacity
-         *               : 2.createImageReceiver
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0100
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0100', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0100`;
@@ -543,13 +514,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0200
-         * @tc.name      : createImageReceiver_2
-         * @tc.desc      : 1.set width,height,format,capacity
-         *               : 2.createImageReceiver
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0200
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0200', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0200`;
@@ -562,13 +532,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0300
-         * @tc.name      : createImageReceiver_3
-         * @tc.desc      : 1.set width,height,format,capacity
-         *               : 2.createImageReceiver
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0300
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0300', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0300`;
@@ -581,13 +550,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0400
-         * @tc.name      : createImageReceiver_4
-         * @tc.desc      : 1.set width,height,format,capacity
-         *               : 2.createImageReceiver
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0400
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0400', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_ERR_0300`;
@@ -600,13 +568,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0100
-         * @tc.name      : createImageReceiver
-         * @tc.desc      : 1.set width,height,format,capacity
-         *               : 2.createImageReceiver
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0100
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0100', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0100`;
@@ -630,14 +597,12 @@ export default function ImageReceiverTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0200
-         * @tc.name      : createImageReceiver_5
-         * @tc.desc      : 1.set width,height,format,capacity
-         *               : 2.createImageReceiver
-         *               : 3.getSize,getFormat,getCapacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0200
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0200', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0200`;
@@ -667,13 +632,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0300
-         * @tc.name      : getReceivingSurfaceId
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.getReceivingSurfaceId
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0300
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0300', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0300`;
@@ -699,13 +663,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400
-         * @tc.name      : readLatestImage
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.readLatestImage
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400`;
@@ -732,13 +695,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500
-         * @tc.name      : readNextImage
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.readNextImage
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500`;
@@ -765,13 +727,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600
-         * @tc.name      : on
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.on
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600`;
@@ -798,14 +759,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700
-         * @tc.name      : getOnEventCount
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.on
-         *               : 3.getOnEventCount
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700`;
@@ -848,14 +807,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800
-         * @tc.name      : imageGetComponent
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.on
-         *               : 3.imageGetComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800`;
@@ -899,14 +856,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900
-         * @tc.name      : img.release
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.readLatestImage
-         *               : 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900`;
@@ -941,13 +896,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_1000
-         * @tc.name      : receiver.release
-         * @tc.desc      : 1.createImageReceiver
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_1000
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_1000', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_1000`;
@@ -970,16 +924,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0100
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                 3.imageArriveOff
-         *                 4.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0100
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0100`;
@@ -1001,18 +951,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0200
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   imageArriveOn
-         *                   imageArriveOn
-         *                 3.imageArriveOff
-         *                 4.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0200
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0200', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0200`;
@@ -1038,18 +982,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0300
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   nativeOn
-         *                 3.arriveOff
-         *                   nativeOff
-         *                 4.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0300
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0300', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0300`;
@@ -1074,18 +1012,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0400
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   nativeOn
-         *                 3.arriveOff
-         *                   nativeOff
-         *                 4.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0400
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0400', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0400`;
@@ -1110,16 +1042,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0500
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   imageArriveOff
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0500
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0500', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0500`;
@@ -1140,17 +1068,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0600
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   imageArriveOn
-         *                   imageArriveOff
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0600
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0600', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0600`;
@@ -1174,17 +1097,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0700
-         * @tc.desc      : test imageArriveOn
-         *                 1.createImageReceiver
-         *                 2.imageArriveOn
-         *                   imageArriveOn
-         *                   imageArriveOff
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0700
+         * @tc.desc   test imageArriveOn
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0700', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0700`;
@@ -1209,17 +1127,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0800
-         * @tc.desc      : 1.createImageReceiver
-         *                 2.nativeOn
-         *                   imageArriveOn
-         *                   nativeOff
-         *                   imageArriveOff
-         *                 3.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0800
+         * @tc.desc   1.createImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0800', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_ARRIVE_NATIVE_0800`;
@@ -1244,15 +1157,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0500
-         * @tc.name      : test set callback image receiver
-         * @tc.desc      : 1.create image receiver options
-         *                 2.create image receiver
-         *                 3.make receiver callback on, take photo, check callback status
-         *                 4.make receiver callback off, take photo, check callback status
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0500
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0500', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0500`;
@@ -1349,14 +1259,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0600
-         * @tc.name      : test get image receiver properties
-         * @tc.desc      : 1.create image receiver options
-         *                 2.create image receiver
-         *                 3.get image receiver properties
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0600
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0600', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0600`;
@@ -1456,15 +1364,12 @@ export default function ImageReceiverTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_0700
-         * @tc.name      : test get image properties in image receiver
-         * @tc.desc      : 1.create image receiver options
-         *                 2.create image receiver
-         *                 3.get image in receiver
-         *                 4.get image properties
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_0700
+         * @tc.desc   1.create image receiver options
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_RECEIVER_0700', Level.LEVEL0, async (done: Function) => {
             const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_0700`;

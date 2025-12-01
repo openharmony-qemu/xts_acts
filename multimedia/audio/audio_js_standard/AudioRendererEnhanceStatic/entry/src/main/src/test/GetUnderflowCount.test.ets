@@ -181,12 +181,12 @@ export default function audioRendererTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0100
-     * @tc.desc        AudioRenderer - getUnderflowCountSync_COUNT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0100
+     * @tc.desc   AudioRenderer - getUnderflowCountSync_COUNT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -203,12 +203,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0200
-     * @tc.desc        AudioRenderer - getUnderflowCountSync_COUNT_RENDER_PLAY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0200
+     * @tc.desc   AudioRenderer - getUnderflowCountSync_COUNT_RENDER_PLAY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -241,12 +241,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0100
-     * @tc.desc        AudioRenderer - getUnderflowCount "unit_32" - COUNT_PROMISE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0100
+     * @tc.desc   AudioRenderer - getUnderflowCount "unit_32" - COUNT_PROMISE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -269,12 +269,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0200
-     * @tc.desc        AudioRenderer - getUnderflowCount "unit_32" - COUNT_RENDER_PLAY_PROMISE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0200
+     * @tc.desc   AudioRenderer - getUnderflowCount "unit_32" - COUNT_RENDER_PLAY_PROMISE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -312,12 +312,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300
-     * @tc.desc        AudioRenderer - getUnderflowCount "unit_32" - ALL_STREAM_TYPE_PROMISE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300
+     * @tc.desc   AudioRenderer - getUnderflowCount "unit_32" - ALL_STREAM_TYPE_PROMISE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -373,12 +373,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0100
-     * @tc.desc        AudioRenderer - getUnderflowCount "uint_32" - COUNT_CALLBACK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0100
+     * @tc.desc   AudioRenderer - getUnderflowCount "uint_32" - COUNT_CALLBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       audioRen.getUnderflowCount((err: BusinessError<void> | null, data: long | undefined) => {
@@ -395,12 +395,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0200
-     * @tc.desc        AudioRenderer - getUnderflowCount "uint_32" - COUNT_RENDER_PLAY_CALLBACK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0200
+     * @tc.desc   AudioRenderer - getUnderflowCount "uint_32" - COUNT_RENDER_PLAY_CALLBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -438,12 +438,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300
-     * @tc.desc        AudioRenderer - getUnderflowCount "uint_32" - ALL_STREAM_TYPE_CALLBACK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300
+     * @tc.desc   AudioRenderer - getUnderflowCount "uint_32" - ALL_STREAM_TYPE_CALLBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {

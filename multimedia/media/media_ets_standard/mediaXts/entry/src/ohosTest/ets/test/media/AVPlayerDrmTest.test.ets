@@ -53,12 +53,12 @@ export default function AVPlayerDrmTest() {
     });
 
     /**
-     * @tc.number    : AVPLAYER_DRM_TEST_001
-     * @tc.name      : setDecryptionConfig_001
-     * @tc.desc      : create AVPlayer to set DecryptionConfig
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setDecryptionConfig_001
+     * @tc.number AVPLAYER_DRM_TEST_001
+     * @tc.desc   create AVPlayer to set DecryptionConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setDecryptionConfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setDecryptionConfig_001';
@@ -87,12 +87,12 @@ export default function AVPlayerDrmTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_DRM_TEST_002
-     * @tc.name      : getMediaKeySystemInfos_001
-     * @tc.desc      : create AVPlayer to get MediaKeySystemInfos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getMediaKeySystemInfos_001
+     * @tc.number AVPLAYER_DRM_TEST_002
+     * @tc.desc   create AVPlayer to get MediaKeySystemInfos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaKeySystemInfos_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getMediaKeySystemInfos_001';

@@ -302,15 +302,15 @@ export default function cameraCanPreconfigTest() {
       await closeFd(fdNumber);
       AppStorage.delete('key')
     });
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001
+     * @tc.desc   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001';
       CameraPreconfigPhoto(done, testName, () => {
@@ -326,15 +326,15 @@ export default function cameraCanPreconfigTest() {
       })
     })
 
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002
+     * @tc.desc   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002';
       CameraPreconfigVideo(done, testName, () => {
@@ -350,12 +350,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003';
@@ -372,15 +372,15 @@ export default function cameraCanPreconfigTest() {
       })
     })
 
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004
+     * @tc.desc   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004';
       CameraPreconfigVideo(done, testName, () => {
@@ -396,12 +396,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005';
@@ -418,15 +418,15 @@ export default function cameraCanPreconfigTest() {
       })
     })
 
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006
+     * @tc.desc   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006';
       CameraPreconfigVideo(done, testName, () => {
@@ -442,12 +442,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007';
@@ -464,12 +464,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008';
@@ -487,12 +487,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009';
@@ -510,12 +510,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010';
@@ -535,12 +535,12 @@ export default function cameraCanPreconfigTest() {
 
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011';
@@ -558,12 +558,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012';
@@ -582,12 +582,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013';
@@ -605,12 +605,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014';
@@ -628,12 +628,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015';
@@ -651,12 +651,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016';
@@ -676,12 +676,12 @@ export default function cameraCanPreconfigTest() {
 
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017';
@@ -699,12 +699,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018';
@@ -723,12 +723,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019';
@@ -746,12 +746,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020';
@@ -770,12 +770,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021';
@@ -793,12 +793,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022';
@@ -818,12 +818,12 @@ export default function cameraCanPreconfigTest() {
 
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023';
@@ -841,12 +841,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024';
@@ -865,12 +865,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025';
@@ -888,12 +888,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026';
@@ -912,12 +912,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027';
@@ -935,12 +935,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028';
@@ -960,12 +960,12 @@ export default function cameraCanPreconfigTest() {
 
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029';
@@ -983,12 +983,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030';
@@ -1007,12 +1007,12 @@ export default function cameraCanPreconfigTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031';
@@ -1030,12 +1030,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032';
@@ -1053,12 +1053,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033';
@@ -1075,12 +1075,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034';
@@ -1097,12 +1097,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035';
@@ -1119,12 +1119,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036';
@@ -1141,12 +1141,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037';
@@ -1163,12 +1163,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038
-     * @tc.desc      Create Video session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038
+     * @tc.desc   Create Video session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038';
@@ -1185,12 +1185,12 @@ export default function cameraCanPreconfigTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039
-     * @tc.name      SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039
-     * @tc.desc      Create photo session Preconfig
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039
+     * @tc.number SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039
+     * @tc.desc   Create photo session Preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039';

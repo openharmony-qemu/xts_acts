@@ -74,12 +74,12 @@ export default function assetCloseTest() {
       }
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CLOSE_STATIC_0000
-      * @tc.name    close_callback_static_000
-      * @tc.desc    close image
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   close_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CLOSE_STATIC_0000
+     * @tc.desc   close image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -90,12 +90,12 @@ export default function assetCloseTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_CLOSE_STATIC_0100
-      * @tc.name    close_callback_static_001
-      * @tc.desc    close video
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   close_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CLOSE_STATIC_0100
+     * @tc.desc   close video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('close_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -389,12 +389,12 @@ export default function VideoMirrorTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHVideoOutputEnableMirror001
-     * @tc.name      : Check videoOutput Mirror enable
-     * @tc.desc      : Check videoOutput Mirror enable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHVideoOutputEnableMirror001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHVideoOutputEnableMirror001
+     * @tc.desc   Check videoOutput Mirror enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHVideoOutputEnableMirror001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHVideoOutputEnableMirror001--------------");
@@ -409,12 +409,12 @@ export default function VideoMirrorTest() {
       console.info(TAG + "testOHVideoOutputEnableMirror001 success");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_OHVideoOutputIsMirrorSupported001
-     * @tc.name      : Check whether videoOutput mirror is supported
-     * @tc.desc      : Check whether videoOutput mirror is supported
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testOHVideoOutputIsMirrorSupported001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_OHVideoOutputIsMirrorSupported001
+     * @tc.desc   Check whether videoOutput mirror is supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOHVideoOutputIsMirrorSupported001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------testOHVideoOutputIsMirrorSupported001--------------");

@@ -100,12 +100,12 @@ export default function imageNdkDecodeTest() {
     }
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0010
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0010
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0010
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0010", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0010';
@@ -113,12 +113,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0020
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0020
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0020
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0020", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0020';
@@ -126,24 +126,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0030
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0030
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0030
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0030", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0030';
       await Ndk_CropAndScaleStrategyDecode(done, 'pixel_bmp_1440x1920.bmp', tag, 800, 800, 0, 0, 500, 1000, 2, 800, 800);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0040
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0040
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0040
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0040", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0040';
@@ -151,12 +151,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0050
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0050
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0050
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0050", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0050';
@@ -164,24 +164,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0060
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0060
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0060
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0060", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0060';
       await Ndk_CropAndScaleStrategyDecodeErr(done, 'pixel_bmp_1440x1920.bmp', tag, 960, 1440, 1500, 2000, 300, 300, 2);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0070
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0070
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0070
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0070", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0070';
@@ -189,12 +189,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0080
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0080
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0080
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0080", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0080';
@@ -202,24 +202,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0090
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0090
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0090
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0090", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0090';
       await Ndk_CropAndScaleStrategyDecodeErr(done, 'pixel_bmp_1440x1920.bmp', tag, 960, 1440, 1000, 1000, 500, 1000, 2);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0100
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0100
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0100", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0100';
@@ -227,12 +227,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0110
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0110
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0110
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0110", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0110';
@@ -240,24 +240,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0120
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0120
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0120
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0120", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0120';
       await Ndk_CropAndScaleStrategyDecode(done, 'pixel_bmp_3072x4096.bmp', tag, 1000, 2000, 300, 500, 2000, 3000, 2, 1000, 2000);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0130
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0130
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0130
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0130", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0130';
@@ -265,12 +265,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0140
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0140
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0140
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0140", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0140';
@@ -278,24 +278,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0150
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0150
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0150
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0150", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0150';
       await Ndk_CropAndScaleStrategyDecodeWithCropRegion(done, 'pixel_bmp_3072x4096.bmp', tag, 300, 500, 1000, 1500, 0, 1000, 1500);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0160
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0160
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0160
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0160", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0160';
@@ -303,12 +303,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0170
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0170
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0170
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0170", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0170';
@@ -316,24 +316,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0180
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0180
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0180
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0180", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0180';
       await Ndk_CropAndScaleStrategyDecode(done, 'pixel_bmp_3072x4096.bmp', tag, 1000, 1000, 300, 500, 1000, 1500, 2, 1000, 1000);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0190
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0190
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0190
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0190", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0190';
@@ -341,12 +341,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0200
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0200
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0200", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0200';
@@ -354,12 +354,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0210
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0210
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0210
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0210", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0210';
@@ -367,12 +367,12 @@ export default function imageNdkDecodeTest() {
     })
     
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0220
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0220
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0220
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0220", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0220';
@@ -380,12 +380,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0230
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0230
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0230
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0230", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0230';
@@ -393,24 +393,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0240
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0240
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0240
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0240", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0240';
       await Ndk_CropAndScaleStrategyDecode(done, 'pixel_bmp_3072x4096.bmp', tag, 4000, 5000, 300, 500, 1000, 1500, 2, 4000, 5000);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0250
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0250
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0250
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0250", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0250';
@@ -418,12 +418,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0260
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0260
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0260
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0260", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0260';
@@ -431,24 +431,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0270
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0270
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0270
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0270", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0270';
       await Ndk_CropAndScaleStrategyDecode(done, 'pixel_bmp_6144x8192.bmp', tag, 3072, 4096, 800, 1000, 4096, 6144, 2, 3072, 4096);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0280
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0280
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0280
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0280", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0280';
@@ -456,12 +456,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0290
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0290
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0290
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0290", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0290';
@@ -469,24 +469,24 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0300
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0300
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0300", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0300';
       await Ndk_CropAndScaleStrategyDecode(done, 'pixel_bmp_480x360.bmp', tag, 240, 180, 0, 0, 240, 180, 2, 240, 180);
     })
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0310
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0310
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0310
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0310", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0310';
@@ -494,12 +494,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0320
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0320
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0320
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0320", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0320';
@@ -507,12 +507,12 @@ export default function imageNdkDecodeTest() {
     })
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0330
-     * @tc.name     : decode image
-     * @tc.desc     : 1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0330
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0330
+     * @tc.desc   1.getimagepath,2.createImageSourceFromFd,3.CreateDecodingOptions,4.DecodingOptionsSetDesiredSize, 5.DecodingOptionsSetDesiredRegion,6.CreatePixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0330", Level.LEVEL2, async (done: Function) => {
       const tag = 'SUB_MULTIMEDIA_IMAGE_NDK_CROP_AND_SCALE_Strategy_0330';

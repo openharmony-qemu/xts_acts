@@ -31,12 +31,12 @@ export default function albumGetCountTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_COUNT_STATIC_0000
-      * @tc.name    album_getCount_callback_static_000
-      * @tc.desc    getCount
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getCount_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_COUNT_STATIC_0000
+     * @tc.desc   getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getCount_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

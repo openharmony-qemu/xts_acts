@@ -42,12 +42,12 @@ export default function PhotoAccessHelperGetPhotoAccessHelper() {
     });
 
     /**
-     * @tc.number     SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_001
-     * @tc.name       SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_001
-     * @tc.desc       Obtains a photoAccess instance
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_001
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_001
+     * @tc.desc   Obtains a photoAccess instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_001';
@@ -64,12 +64,12 @@ export default function PhotoAccessHelperGetPhotoAccessHelper() {
       }
     })
     /**
-     * @tc.number     SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_002
-     * @tc.name       SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_002
-     * @tc.desc       Obtains a photoAccess instance
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_002
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_002
+     * @tc.desc   Obtains a photoAccess instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_002';
@@ -85,15 +85,15 @@ export default function PhotoAccessHelperGetPhotoAccessHelper() {
         done();
       }
     })
-    /**
-     * @tc.number     SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003
-     * @tc.name       SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003
-     * @tc.desc       Obtains a photoAccess instance
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003
+     * @tc.desc   SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_003';
       try {

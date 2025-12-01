@@ -60,12 +60,12 @@ export default function sendableCreatePixelMapFromSurfaceTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001
-     * @tc.name      : sendableImage_createPixelMapFromSurface_sendable_abnormal_promise_001
-     * @tc.desc      : sendableImage_createPixelMapFromSurface_Abnormal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPixelMapFromSurface_sendable_abnormal_promise_001
+     * @tc.number SENDABLE_IMAGE_CREATE_PIXEL_MAP_FROM_SURFACE_001
+     * @tc.desc   sendableImage_createPixelMapFromSurface_Abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMapFromSurface_sendable_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMapFromSurface_sendable_abnormal_promise_001';

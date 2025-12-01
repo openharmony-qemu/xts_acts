@@ -408,12 +408,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_STATIC_0100
-      * @tc.desc   Create photo session
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_STATIC_0100
+     * @tc.desc   Create photo session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_STATIC_0100--------------");
@@ -431,12 +431,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100
-      * @tc.desc   Photo session preconfig
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100
+     * @tc.desc   Photo session preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100--------------");
@@ -476,12 +476,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_STATIC_0100
-      * @tc.desc   Video session preconfig
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_STATIC_0100
+     * @tc.desc   Video session preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_STATIC_0100--------------");
@@ -522,12 +522,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
-     * @tc.desc      : test Photo session canpreconfig api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.desc   test Photo session canpreconfig api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     // it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100--------------");
@@ -545,12 +545,12 @@ export default function cameraPreconfigTest() {
     // })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
-     * @tc.desc      : test Photo session preconfig api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100
+     * @tc.desc   test Photo session preconfig api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     // it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
     //   console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100--------------");

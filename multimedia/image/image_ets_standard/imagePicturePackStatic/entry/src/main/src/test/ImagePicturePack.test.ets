@@ -384,17 +384,12 @@ export default function imagePicturePack() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0100
-     * @tc.desc        test picture packing
-     *                 1.create picture object by main pixelMap
-     *                 2.create auxiliary picture and insert them into the picture
-     *                 3.create ImagePacker
-     *                 4.set packingOption
-     *                 5.test picture packing
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0100");
@@ -417,17 +412,12 @@ export default function imagePicturePack() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0200
-     * @tc.desc      : test picture packing
-     *                 1.create picture object by decode image source
-     *                 2.create auxiliary picture and insert them into the picture
-     *                 3.create ImagePacker
-     *                 4.set packingOption
-     *                 5.test picture packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKING_JPEG_STATIC_0200");
@@ -450,17 +440,12 @@ export default function imagePicturePack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0100
-     * @tc.desc        test picture packToFile
-     *                 1.create picture object by main pixelMap
-     *                 2.create auxiliary picture and insert them into the picture
-     *                 3.create ImagePacker
-     *                 4.set packingOption
-     *                 5.test picture packToFile
-     * @tc.size        MediumTest
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0100");
@@ -484,17 +469,12 @@ export default function imagePicturePack() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0200
-     * @tc.desc      : test picture packToFile
-     *                 1.create picture object by decode image source
-     *                 2.create auxiliary picture and insert them into the picture
-     *                 3.create ImagePacker
-     *                 4.set packingOption
-     *                 5.test picture packToFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_GAINMAP_PACKTOFILE_JPEG_STATIC_0200");
@@ -518,17 +498,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0100");
@@ -551,17 +526,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0200");
@@ -584,17 +554,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0300");
@@ -617,17 +582,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0400");
@@ -647,17 +607,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_JPEG_STATIC_0500");
@@ -680,17 +635,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0100");
@@ -714,17 +664,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0200");
@@ -748,17 +693,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0300");
@@ -782,17 +722,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0400");
@@ -813,17 +748,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_JPEG_STATIC_0500");
@@ -847,17 +777,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0100");
@@ -880,17 +805,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0200");
@@ -913,17 +833,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0300");
@@ -946,17 +861,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0400");
@@ -976,17 +886,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_JPEG_STATIC_0500");
@@ -1009,17 +914,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0100");
@@ -1043,17 +943,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0200");
@@ -1077,17 +972,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0300");
@@ -1111,17 +1001,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0400");
@@ -1142,17 +1027,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_JPEG_STATIC_0500");
@@ -1176,17 +1056,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0100");
@@ -1209,17 +1084,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0200");
@@ -1242,17 +1112,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0300");
@@ -1275,17 +1140,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0400");
@@ -1305,17 +1165,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_JPEG_STATIC_0500");
@@ -1338,17 +1193,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0100");
@@ -1372,17 +1222,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0200");
@@ -1406,17 +1251,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0300");
@@ -1440,17 +1280,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0400");
@@ -1471,17 +1306,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_JPEG_STATIC_0500");
@@ -1505,17 +1335,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0100");
@@ -1538,17 +1363,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0200");
@@ -1571,17 +1391,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0300");
@@ -1604,17 +1419,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0400");
@@ -1634,17 +1444,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_JPEG_STATIC_0500");
@@ -1667,17 +1472,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0100");
@@ -1701,17 +1501,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0200");
@@ -1735,17 +1530,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0300");
@@ -1769,17 +1559,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0400");
@@ -1800,17 +1585,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_JPEG_STATIC_0500");
@@ -1834,17 +1614,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100");
@@ -1869,17 +1644,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200");
@@ -1904,17 +1674,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300");
@@ -1939,17 +1704,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0400");
@@ -1974,17 +1734,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0500");
@@ -2007,17 +1762,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100");
@@ -2043,17 +1793,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200");
@@ -2079,17 +1824,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0300");
@@ -2115,17 +1855,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0400");
@@ -2151,17 +1886,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0500");
@@ -2185,17 +1915,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0100");
@@ -2220,17 +1945,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0200");
@@ -2255,17 +1975,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKING_HEIF_STATIC_0300");
@@ -2288,17 +2003,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0100");
@@ -2324,17 +2034,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0200");
@@ -2360,17 +2065,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_UNREFOCUSMAP_PACKTOFILE_HEIF_STATIC_0300");
@@ -2394,17 +2094,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0100");
@@ -2429,17 +2124,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0200");
@@ -2464,17 +2154,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0300");
@@ -2499,17 +2184,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0400");
@@ -2534,17 +2214,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKING_HEIF_STATIC_0500");
@@ -2567,17 +2242,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0100");
@@ -2603,17 +2273,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0200");
@@ -2639,17 +2304,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0300");
@@ -2675,17 +2335,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0400");
@@ -2711,17 +2366,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_LINEARMAP_PACKTOFILE_HEIF_STATIC_0500");
@@ -2745,17 +2395,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0100
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0100
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0100");
@@ -2780,17 +2425,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0200
-      * @tc.desc    test picture packing
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0200
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0200");
@@ -2815,17 +2455,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0300
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0300
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0300");
@@ -2850,17 +2485,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0400
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0400
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0400");
@@ -2885,17 +2515,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0500
-      * @tc.desc    test picture packing
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0500
+     * @tc.desc   test picture packing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKING_HEIF_STATIC_0500");
@@ -2918,17 +2543,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0100
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0100
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0100");
@@ -2954,17 +2574,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0200
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by main pixelMap
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0200
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0200");
@@ -2990,17 +2605,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0300
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0300
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0300");
@@ -3026,17 +2636,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0400
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0400
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0400");
@@ -3062,17 +2667,12 @@ export default function imagePicturePack() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0500
-      * @tc.desc    test picture packToFile
-      *                 1.create picture object by decode image source
-      *                 2.create auxiliary picture and insert them into the picture
-      *                 3.create ImagePacker
-      *                 4.set packingOption
-      *                 5.test picture packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0500
+     * @tc.desc   test picture packToFile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_FRAGMENTMAP_PACKTOFILE_HEIF_STATIC_0500");

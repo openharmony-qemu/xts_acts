@@ -35,12 +35,12 @@ export default function ImageEffectSuppTest() {
     afterAll(() => {
     });
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPP_0100
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPP_0100
-     * @tc.desc   : OHImageEffectCreateSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPP_0100
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPP_0100
+     * @tc.desc   OHImageEffectCreateSupp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPP_0100', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -50,12 +50,12 @@ export default function ImageEffectSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPP_0100
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPP_0100
-     * @tc.desc   : OHImageEffectAddFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPP_0100
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPP_0100
+     * @tc.desc   OHImageEffectAddFilterSupp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPP_0100', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -65,12 +65,12 @@ export default function ImageEffectSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPP_0100
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPP_0100
-     * @tc.desc   : OHImageEffectInsertFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPP_0100
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPP_0100
+     * @tc.desc   OHImageEffectInsertFilterSupp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPP_0100', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -80,12 +80,12 @@ export default function ImageEffectSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REMOVE_FILTER_SUPP_0100
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REMOVE_FILTER_SUPP_0100
-     * @tc.desc   : OHImageEffectRemoveFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REMOVE_FILTER_SUPP_0100
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REMOVE_FILTER_SUPP_0100
+     * @tc.desc   OHImageEffectRemoveFilterSupp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REMOVE_FILTER_SUPP_0100', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
@@ -95,12 +95,12 @@ export default function ImageEffectSuppTest() {
     });
 
     /**
-     * @tc.number : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPP_0100
-     * @tc.name   : SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPP_0100
-     * @tc.desc   : OHImageEffectReplaceFilterSupp
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPP_0100
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPP_0100
+     * @tc.desc   OHImageEffectReplaceFilterSupp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPP_0100', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
