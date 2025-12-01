@@ -920,7 +920,7 @@ export default function api16CertFuncTestTwoUnit() {
     
         /**
      * @tc.number SUB_Security_CertManager_Ukey_0600
-     * @tc.name test getUkeyCertificate
+     * @tc.name SUB_Security_CertManager_Ukey_0600
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -953,7 +953,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0800
-     * @tc.name test getUkeyCertificate
+     * @tc.name SUB_Security_CertManager_Ukey_0800
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -969,7 +969,7 @@ export default function api16CertFuncTestTwoUnit() {
         await certManager.getUkeyCertificate(keyUri, ukeyInfo);
         expect(null).assertFail();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_Ukey_0600 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+        console.error(`SUB_Security_CertManager_Ukey_0800 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
         expect(err.code).assertEqual(17500001);
       }
       done();
@@ -977,7 +977,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0200
-     * @tc.name test getUkeyCertificate
+     * @tc.name SUB_Security_CertManager_Ukey_0200
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -1012,7 +1012,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0400
-     * @tc.name test openAuthorizeDialog
+     * @tc.name SUB_Security_CertManager_Ukey_0400
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -1039,7 +1039,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_1000
-     * @tc.name test openUkeyAuthDialog
+     * @tc.name SUB_Security_CertManager_Ukey_1000
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -1072,7 +1072,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_1200
-     * @tc.name test openUkeyAuthDialog
+     * @tc.name SUB_Security_CertManager_Ukey_1200
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3

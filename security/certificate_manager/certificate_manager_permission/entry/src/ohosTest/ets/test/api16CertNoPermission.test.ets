@@ -255,7 +255,7 @@ export default function api16CertNoPermissionTestUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0100
-     * @tc.name test openAuthorizeDialog
+     * @tc.name SUB_Security_CertManager_Ukey_0100
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -282,7 +282,7 @@ export default function api16CertNoPermissionTestUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0500
-     * @tc.name test getUkeyCertificate
+     * @tc.name SUB_Security_CertManager_Ukey_0500
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -307,7 +307,7 @@ export default function api16CertNoPermissionTestUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0900
-     * @tc.name test openUkeyAuthDialog
+     * @tc.name SUB_Security_CertManager_Ukey_0900
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3

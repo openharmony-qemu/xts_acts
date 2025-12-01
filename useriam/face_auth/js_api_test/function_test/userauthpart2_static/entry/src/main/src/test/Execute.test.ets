@@ -44,7 +44,7 @@ const widgetParamDefault: userAuth.WidgetParam = {
 
 const widgetParam: userAuth.WidgetParam  = {
   title: '请输入密码',
-  uiContext: null,
+  uiContext: undefined,
 };
 
 function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {

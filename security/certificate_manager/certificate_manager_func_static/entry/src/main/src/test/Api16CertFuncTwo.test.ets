@@ -758,7 +758,7 @@ export default function api16CertFuncTestTwoUnit() {
     
     /**
      * @tc.number SUB_Security_CertManager_Ukey_Static_0800
-     * @tc.name test getUkeyCertificate
+     * @tc.name SUB_Security_CertManager_Ukey_Static_0800
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -782,7 +782,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_Static_0400
-     * @tc.name test openAuthorizeDialog
+     * @tc.name SUB_Security_CertManager_Ukey_Static_0400
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
@@ -809,7 +809,7 @@ export default function api16CertFuncTestTwoUnit() {
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_Static_1200
-     * @tc.name test openUkeyAuthDialog
+     * @tc.name SUB_Security_CertManager_Ukey_Static_1200
      * @tc.desc abnormal test
      * @tc.size MediumTest
      * @tc.level Level3
