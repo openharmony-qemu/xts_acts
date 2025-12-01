@@ -2735,6 +2735,11 @@ export default function Json4Test() {
 
     });
 
+
+    interface CircularSafeObj {
+      name: string;
+      parent?: CircularSafeObj | string | undefined;
+    }
     /**
      * @tc.number SUB_BUILTINS_Json4_TEST_7400
      * @tc.name Json4Test074
@@ -2743,10 +2748,6 @@ export default function Json4Test() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    interface CircularSafeObj {
-      name: string;
-      parent?: CircularSafeObj | string | undefined;
-    }
     it('Json4Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CircularSafeObj = { name: "child" };
       const parent: CircularSafeObj = { name: "parent", parent: obj };
@@ -3045,7 +3046,6 @@ export default function Json4Test() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('Json4Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test87_Obj5 = {
         groups: [{ items: [{ value: 10 }, { value: 20 }] }]

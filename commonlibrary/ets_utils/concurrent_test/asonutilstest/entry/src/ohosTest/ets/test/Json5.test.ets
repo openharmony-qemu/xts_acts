@@ -1158,7 +1158,6 @@ export default function Json5Test() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('Json5Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       {
         const originalSet: Set<string> = new Set(["apple", "banana", "cherry"]);
@@ -2422,7 +2421,6 @@ export default function Json5Test() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('Json5Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
 
       const obj: FirstLetters = { words: ["apple", "banana"], letters: [] };
