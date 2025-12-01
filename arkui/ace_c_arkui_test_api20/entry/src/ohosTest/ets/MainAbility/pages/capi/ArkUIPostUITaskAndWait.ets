@@ -46,6 +46,7 @@ struct TitleComponent7 {
   build() {
     Column() {
       Text(this.message)
+        .id('text')
         .fontSize(18)
         .fontWeight(FontWeight.Bold)
         .width('100%')

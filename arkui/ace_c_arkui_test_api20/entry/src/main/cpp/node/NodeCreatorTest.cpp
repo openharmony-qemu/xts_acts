@@ -23,6 +23,12 @@
 #include "card/CardCreatorTest.h"
 #include "data/MockData.h"
 
+#include "common/common.h"
+#include "../manager/plugin_manager.h"
+#include <arkui/native_render.h>
+#include <arkui/native_node.h>
+#include <hilog/log.h>
+
 namespace NativeModule {
 #define CHILD_NODE_TREE_NUMBER 200 //多线程创建组件树的数量
 struct AsyncData {

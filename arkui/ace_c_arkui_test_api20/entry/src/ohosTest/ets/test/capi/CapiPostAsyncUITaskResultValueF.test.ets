@@ -69,6 +69,7 @@ export default function CapiPostAsyncUITask() {
      */
     it('ArkUIPostAsyncUITaskResultValueF_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUIPostAsyncUITaskResultValueF_001] START'); 
+      expect(nativeFunc.RenderNodeUtils_003()).assertEqual(0)
       console.info('[ArkUIPostAsyncUITaskResultValueF_001] END');
       done();
     });
