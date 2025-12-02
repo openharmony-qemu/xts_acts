@@ -270,33 +270,19 @@ export default function getBundleInfoForSelf() {
     })
 
     /**
-     * @tc.name   getBundleInfoForSelfModulePro
-     * @tc.number Sub_Bms_Framework_Query_AppInfo_5640
+     * @tc.name   getBundleInfoForSelfEntryModuleInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_5641
      * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by promise).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('getBundleInfoForSelfModulePro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
-      await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE).then(data => {
-        console.info("ModulePro" + JSON.stringify(data.hapModulesInfo[0]));
+    it('getBundleInfoForSelfEntryModuleInfo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+      await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ENTRY_MODULE).then(data => {
+        console.info("ModulePro" + JSON.stringify(data));
         checkCommonBundleInfo(data);
         expect(data.appInfo).assertEqual(null);
-        expect(data.hapModulesInfo.length).assertEqual(1);
-        expect(data.hapModulesInfo[0].name).assertEqual("testModule");
-        expect(data.hapModulesInfo[0].icon).assertEqual("");
-        expect(data.hapModulesInfo[0].iconId).assertEqual(0);
-        expect(data.hapModulesInfo[0].label).assertEqual("$string:TestAbility_label");
-        expect(data.hapModulesInfo[0].labelId).assertLarger(0);
-        expect(data.hapModulesInfo[0].description).assertEqual("$string:module_test_desc");
-        expect(data.hapModulesInfo[0].descriptionId).assertLarger(0);
-        expect(data.hapModulesInfo[0].mainElementName).assertEqual("TestAbility");
-        expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
-        expect(data.hapModulesInfo[0].extensionAbilitiesInfo.length).assertEqual(0);
-        expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
-        expect(data.hapModulesInfo[0].deviceTypes.length).assertEqual(0);
-        expect(data.hapModulesInfo[0].installationFree).assertFalse();
-        expect(data.hapModulesInfo[0].hashValue).assertEqual("");
+        expect(data.hapModulesInfo.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
         expect(data.signatureInfo).assertEqual(null);
