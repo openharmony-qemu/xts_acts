@@ -469,8 +469,14 @@ export default function penPart2Test() {
         }
         pen.setColor(colors);
         let colorGet = pen.getColor();
-        expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
-        console.info(msg + ' getColor2 successed,colorGet:' + JSON.stringify(colorGet));
+        expect(colors.alpha == colorGet.alpha).assertTrue();
+        expect(colors.red == colorGet.red).assertTrue();
+        expect(colors.green == colorGet.green).assertTrue();
+        expect(colors.blue == colorGet.blue).assertTrue();
+        console.info(msg + ' getColor 2 successed,colorGet:'+ JSON.stringify(colorGet));
+        console.info(`${msg} 2 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
+        console.info(msg + ' getColor 2 successed,colors:'+ JSON.stringify(colors));
+        console.info(`${msg} 2 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColor2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -486,8 +492,14 @@ export default function penPart2Test() {
         }
         pen.setColor(colors);
         let colorGet = pen.getColor();
-        expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
-        console.info(msg + ' getColor2 successed,colorGet:' + JSON.stringify(colorGet));
+        expect(colors.alpha == colorGet.alpha).assertTrue();
+        expect(colors.red == colorGet.red).assertTrue();
+        expect(colors.green == colorGet.green).assertTrue();
+        expect(colors.blue == colorGet.blue).assertTrue();
+        console.info(msg + ' getColor 3 successed,colorGet:'+ JSON.stringify(colorGet));
+        console.info(`${msg} 3 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
+        console.info(msg + ' getColor 3 successed,colors:'+ JSON.stringify(colors));
+        console.info(`${msg} 3 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
