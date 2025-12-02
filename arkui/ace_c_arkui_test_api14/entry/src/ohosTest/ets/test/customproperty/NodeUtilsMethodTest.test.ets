@@ -26,12 +26,12 @@ export default function NodeUtilsMethodTest(){
     });
 
     /*
-     * @tc.number     : NodeUtilsMethodTest_001
-     * @tc.name       : NodeUtilsMethodTest_001
-     * @tc.desc       : testing Custom Property Return Value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number     NodeUtilsMethodTest_001
+     * @tc.name       NodeUtilsMethodTest_001
+     * @tc.desc       testing Custom Property Return Value
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('NodeUtilsMethodTest_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestMethodReturnValue001()).assertEqual(0)
