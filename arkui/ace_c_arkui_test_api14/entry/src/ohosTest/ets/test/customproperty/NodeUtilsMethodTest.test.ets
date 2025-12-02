@@ -25,13 +25,13 @@ export default function NodeUtilsMethodTest(){
       done();
     });
 
-    /*
-     * @tc.number     NodeUtilsMethodTest_001
-     * @tc.name       NodeUtilsMethodTest_001
-     * @tc.desc       testing Custom Property Return Value
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+    /**
+     * @tc.name   NodeUtilsMethodTest_001
+     * @tc.number SUB_ARKUI_CAPI_NodeUtilsMethodTest_001
+     * @tc.desc   Test Custom Property Return Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NodeUtilsMethodTest_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestMethodReturnValue001()).assertEqual(0)
