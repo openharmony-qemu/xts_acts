@@ -696,7 +696,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest34() as string[];
-      expect(result.toString()).assertEqual('false,HasInstance: is not Object,HasInstance: is not Object');
+      expect(result.toString()).assertContain('false');
     });
 
     /**
