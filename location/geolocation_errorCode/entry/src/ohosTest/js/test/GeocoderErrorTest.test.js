@@ -1096,7 +1096,7 @@ export default function geolocationTest_GeoErr() {
                 
                 try {
                     geolocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
-                        console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
+                        console.info('====>getAddressesFromLocationName: ' + JSON.stringify(result));
                         expect(result.length>0).assertTrue();
                     })
                     .catch((error) => {
