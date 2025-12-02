@@ -62,12 +62,12 @@ export default function WindowImmersiveTest() {
 
 
         /**
-         * @tc.name   testGetWindowAvoidArea_1300002_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-         * @tc.desc   testGetWindowAvoidArea_1300002_static_0300
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+         * @tc.name        testGetWindowAvoidArea_1300002_static_0300
+         * @tc.desc        testGetWindowAvoidArea_1300002_static_0300
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testGetWindowAvoidArea_1300002_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetWindowAvoidArea_1300002_static_0300';
@@ -89,12 +89,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testGetWindowAvoidArea_Type_System_static_0400
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0660
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0660
+         * @tc.name        testGetWindowAvoidArea_Type_System_static_0400
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testGetWindowAvoidArea_Type_System_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetWindowAvoidArea_Type_System_static_0400';
@@ -125,12 +125,12 @@ export default function WindowImmersiveTest() {
         })
 
         /**
-         * @tc.name   testGetWindowAvoidArea_Type_CutOut_static_0500
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0640
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0640
+         * @tc.name        testGetWindowAvoidArea_Type_CutOut_static_0500
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testGetWindowAvoidArea_Type_CutOut_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetWindowAvoidArea_Type_CutOut_static_0500';
@@ -161,12 +161,12 @@ export default function WindowImmersiveTest() {
             ;
         })
         /**
-         * @tc.name   testGetWindowAvoidArea_Type_System_Gesture_static_0600
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0670
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0670
+         * @tc.name        testGetWindowAvoidArea_Type_System_Gesture_static_0600
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testGetWindowAvoidArea_Type_System_Gesture_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetWindowAvoidArea_Type_System_Gesture_static_0600';
@@ -196,12 +196,12 @@ export default function WindowImmersiveTest() {
             ;
         })
         /**
-         * @tc.name   testGetWindowAvoidArea_Type_Keyboard_static_0700
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0650
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0650
+         * @tc.name        testGetWindowAvoidArea_Type_Keyboard_static_0700
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testGetWindowAvoidArea_Type_Keyboard_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetWindowAvoidArea_Type_Keyboard_static_0700';
@@ -231,12 +231,12 @@ export default function WindowImmersiveTest() {
             ;
         })
         /**
-         * @tc.name   testGetWindowAvoidAreaTypeNavigationIndicator_static_0800
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+         * @tc.name        testGetWindowAvoidAreaTypeNavigationIndicator_static_0800
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetWindowAvoidAreaTypeNavigationIndicator_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetWindowAvoidAreaTypeNavigationIndicator_static_0800';
@@ -257,12 +257,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testGetWindowAvoidAreaTypeSystemInLandScape_static_0900
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+         * @tc.name        testGetWindowAvoidAreaTypeSystemInLandScape_static_0900
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetWindowAvoidAreaTypeSystemInLandScape_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetWindowAvoidAreaTypeSystemInLandScape_static_0900';
@@ -286,12 +286,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+         * @tc.name        testGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetWindowAvoidAreaTypeSystemInPortraitInverted_static_1000';
@@ -315,12 +315,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+         * @tc.name        testGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetWindowAvoidAreaTypeCutOutInPortraitInverted_static_1100';
@@ -344,12 +344,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+         * @tc.name        testGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetWindowAvoidAreaTypeSystemInLandScapeInverted_static_1200';
@@ -373,12 +373,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-         * @tc.desc   Obtain the area that the window content avoids
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+         * @tc.name        testGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300
+         * @tc.desc        Obtain the area that the window content avoids
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetWindowAvoidAreaTypeCutOutInLandScapeInverted_static_1300';
@@ -403,12 +403,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testMaximizePresentation_enum_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_MAXIMIZE_JS_API_0100
-         * @tc.desc   Test the function value of RectChangeReason
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_MAXIMIZE_JS_API_0100
+         * @tc.name        testMaximizePresentation_enum_static_0100
+         * @tc.desc        Test the function value of RectChangeReason
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it("testMaximizePresentation_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = "testMaximizePresentation_enum_static_0100";
@@ -426,12 +426,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_LAYOUT_FULLSCREEN_API_0100
-         * @tc.desc   test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_LAYOUT_FULLSCREEN_API_0100
+         * @tc.name        test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100
+         * @tc.desc        test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let CaseName:string = 'test_setWindowLayoutFullScreen_ErrorCode_1300002_static_0100';
@@ -450,12 +450,12 @@ export default function WindowImmersiveTest() {
             })
         })
         /**
-         * @tc.name   test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_ENABLE_API_0100
-         * @tc.desc   test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_ENABLE_API_0100
+         * @tc.name        test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100
+         * @tc.desc        test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let CaseName:string = 'test_setWindowSystemBarEnable_ErrorCode_1300002_static_0100';
@@ -475,12 +475,12 @@ export default function WindowImmersiveTest() {
             })
         })
         /**
-         * @tc.name   testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_PROPERTIES_API_0100
-         * @tc.desc   Set the properties of the navigation bar and status bar in the window in full screen mode
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_PROPERTIES_API_0100
+         * @tc.name        testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100
+         * @tc.desc        Set the properties of the navigation bar and status bar in the window in full screen mode
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testSetWindowSystemBarProperties_WinAbnormal_Promise_static_0100';
@@ -515,12 +515,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testSetWindowSystemBarProperties_Callback_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_PROPERTIES_API_0200
-         * @tc.desc   Verify the scene where the colors of the status bar and navigation bar are set in RGB
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL4
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SET_WINDOW_SYSTEMBAR_PROPERTIES_API_0200
+         * @tc.name        testSetWindowSystemBarProperties_Callback_static_0100
+         * @tc.desc        Verify the scene where the colors of the status bar and navigation bar are set in RGB
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('testSetWindowSystemBarProperties_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName:string = 'testSetWindowSystemBarProperties_Callback_static_0100';
@@ -560,13 +560,13 @@ export default function WindowImmersiveTest() {
                 })
             }
         })
-        /**
-         * @tc.name   testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
-         * @tc.number testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
-         * @tc.desc   testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+/**
+         * @tc.number       testSetSpecificSystemBarEnabledPromiseErrCode1300002_0100
+         * @tc.name         testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
+         * @tc.desc         testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testSetSpecificSystemBarEnabledPromiseErrCode1300002_static_0100";
@@ -600,13 +600,13 @@ export default function WindowImmersiveTest() {
             });
             
         })
-        /**
-         * @tc.name   testSetImmersiveModeEnabledStateErrCode1300002_static_0100
-         * @tc.number testSetImmersiveModeEnabledStateErrCode1300002_static_0100
-         * @tc.desc   testSetImmersiveModeEnabledStateErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+/**
+         * @tc.number       testSetImmersiveModeEnabledStateErrCode1300002_static_0100
+         * @tc.name         testSetImmersiveModeEnabledStateErrCode1300002_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetImmersiveModeEnabledStateErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetImmersiveModeEnabledStateErrCode1300002_static_0100";
@@ -640,12 +640,12 @@ export default function WindowImmersiveTest() {
 
 
         /**
-         * @tc.name   testSetImmersiveModeEnabledStateErrCode1300004_static_0100
-         * @tc.number testSetImmersiveModeEnabledStateErrCode1300004_static_0100
-         * @tc.desc   testSetImmersiveModeEnabledStateErrCode1300004_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.name         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.desc         testSetImmersiveModeEnabledStateErrCode1300004_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testSetImmersiveModeEnabledStateErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testSetImmersiveModeEnabledStateErrCode1300004_static_0100";
@@ -680,12 +680,12 @@ export default function WindowImmersiveTest() {
             }
         })
         /**
-         * @tc.name   testWindowOffAvoidAreaChange_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3570
-         * @tc.desc   Disable listening for system circumvention zone changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3570
+         * @tc.name        testWindowOffAvoidAreaChange_RepeatOff_static_0100
+         * @tc.desc        Disable listening for system circumvention zone changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowOffAvoidAreaChange_RepeatOff_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowOffAvoidAreaChange_RepeatOff_static_0100';
@@ -720,6 +720,258 @@ export default function WindowImmersiveTest() {
                 expect(false).assertTrue();
             }
             done();
+        })
+        /**
+         * @tc.number      testMaximizePromiseErrCode1300002_0100
+         * @tc.name        testMaximizePromiseErrCode1300002_0100
+         * @tc.desc        testMaximizePromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMaximizePromiseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testMaximizePromiseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+
+            try {
+                subWin = await windowStage.createSubWindow('testMaximizePromiseErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch(exception) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                await (subWin! as window.Window).maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling maximize.');
+                    expect(false).assertTrue();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    done()
+                });
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+        
+/**
+         * @tc.number      testGetImmersiveModeEnabledStateErrCode1300002_0100
+         * @tc.name        testGetImmersiveModeEnabledStateErrCode1300002_0100
+         * @tc.desc        testGetImmersiveModeEnabledStateErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetImmersiveModeEnabledStateErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetImmersiveModeEnabledStateErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testGetImmersiveModeEnabledStateErrCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.getImmersiveModeEnabledState();
+                console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call getImmersiveModeEnabledState. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+        /**
+         * @tc.number      testGetImmersiveModeEnabledStateErrCode1300004_0100
+         * @tc.name        testGetImmersiveModeEnabledStateErrCode1300004_0100
+         * @tc.desc        testGetImmersiveModeEnabledStateErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetImmersiveModeEnabledStateErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetImmersiveModeEnabledStateErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testGetImmersiveModeEnabledStateErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let win: window.Window | undefined = undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+            } catch (err) {
+                console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            try {
+                (win as window.Window).getImmersiveModeEnabledState();
+                console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
+                expect(false).assertTrue();
+                await (win! as window.Window).destroyWindow();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed to set the call getImmersiveModeEnabledState. Cause:' +
+                JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300004);
+                await (win! as window.Window).destroyWindow();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      testGetWindowStatusErrCode1300004_0100
+         * @tc.name        testGetWindowStatusErrCode1300004_0100
+         * @tc.desc        testGetWindowStatusErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetWindowStatusErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetWindowStatusErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testGetWindowStatusErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let win: window.Window | undefined = undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+            } catch (err) {
+                console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (win! as window.Window).destroyWindow();
+            try {
+                (win as window.Window).getWindowStatus();
+                console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
+                expect(false).assertTrue();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed to set the call getImmersiveModeEnabledState. Cause:' +
+                JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done();
+            }
+        })
+/**
+         * @tc.number      testSetTitleAndDockHoverShownPromiseErrCode1300002_0100
+         * @tc.name        testSetTitleAndDockHoverShownPromiseErrCode1300002_0100
+         * @tc.desc        testSetTitleAndDockHoverShownPromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetTitleAndDockHoverShownPromiseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetTitleAndDockHoverShownPromiseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetTitleAndDockHoverShownPromiseErrCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                (subWin! as window.Window).setTitleAndDockHoverShown(true, true).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    done()
+                });
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetTitleAndDockHoverShownPromiseErrCode1300004_0100
+         * @tc.name        testSetTitleAndDockHoverShownPromiseErrCode1300004_0100
+         * @tc.desc        testSetTitleAndDockHoverShownPromiseErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetTitleAndDockHoverShownPromiseErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetTitleAndDockHoverShownPromiseErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetTitleAndDockHoverShownPromiseErrCode1300004_SubWindow_Promise');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            expect(!!subWin).assertTrue();
+            await (subWin! as window.Window).setUIContent("pages/Index");
+            await (subWin! as window.Window).showWindow();
+            try {
+                await (subWin! as window.Window).setTitleAndDockHoverShown(true, true).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
+                    expect(false).assertTrue();
+                    await (subWin! as window.Window).destroyWindow();
+                    done()
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
+                    await (subWin! as window.Window).destroyWindow();
+                    if (err.code == 801) {
+                        console.info(msgStr + '此设备不支持setTitleAndDockHoverShown能力.');
+                    } else {
+                        expect(err.code).assertEqual(1300004);
+                    }
+                    done()
+                });
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' +
+                JSON.stringify(exception));
+                await (subWin! as window.Window).destroyWindow();
+                expect(false).assertTrue();
+                done()
+            }
         })
 
 
