@@ -995,7 +995,7 @@ export default function brushTest() {
           alpha : 0 , red : 0 , green : 0 , blue : 0
         }
         brush.setColor(colors);
-        let colorGet = brush.getColor();
+        let colorGet = brush.getColor() as common2D.Color;
         expect(colors.alpha == colorGet.alpha).assertTrue();
         expect(colors.red == colorGet.red).assertTrue();
         expect(colors.green == colorGet.green).assertTrue();
@@ -1014,7 +1014,7 @@ export default function brushTest() {
           alpha : 255 , red : 255 , green : 255 , blue : 255
         }
         brush.setColor(colors);
-        let colorGet = brush.getColor();
+        let colorGet = brush.getColor() as common2D.Color;
         expect(colors.alpha == colorGet.alpha).assertTrue();
         expect(colors.red == colorGet.red).assertTrue();
         expect(colors.green == colorGet.green).assertTrue();
