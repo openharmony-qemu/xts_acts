@@ -1281,8 +1281,8 @@ export default function preferenceTest() {
       await preferences.flush();
       let ret = preferences.getSync("base_int", 0);
       expect(baseInt).assertEqual(ret);
-      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, typeof(ret):" + typeof(ret));
-      expect(typeof(ret)).assertEqual("int");
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret instanceof int:" + (ret instanceof int));
+      expect(true).assertEqual(ret instanceof int);
       await dataPreferences.deletePreferences(context, 'test_preferences_base_int');
       done();
     })
@@ -1329,8 +1329,8 @@ export default function preferenceTest() {
       await preferences.flush();
       let ret = preferences.getSync("base_long", 0);
       expect(baseLong).assertEqual(ret);
-      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, typeof(ret):" + typeof(ret));
-      expect(typeof(ret)).assertEqual("long");
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, (ret instanceof long):" + (ret instanceof long));
+      expect(true).assertEqual(ret instanceof long);
       await dataPreferences.deletePreferences(context, 'test_preferences_base_long');
       done();
     })
