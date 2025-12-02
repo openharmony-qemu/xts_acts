@@ -588,142 +588,120 @@ export default function imageGif() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0100
-      * @tc.desc    test getDelayTimeList(promise) one frame gif
-      *                 1.create one frame gif imagesource
-      *                 2.getDelayTimeList(promise)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0100
+     * @tc.desc   test getDelayTimeList(promise) one frame gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0100", "test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0200
-      * @tc.desc    test getDelayTimeList(promise) gif
-      *                 1.create gif imagesource
-      *                 2.getDelayTimeList(promise)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0200
+     * @tc.desc   test getDelayTimeList(promise) gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getDelayTimePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_PROMISE_STATIC_0200", "moving_test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0100
-      * @tc.desc    test getDelayTimeList(callback) one frame gif
-      *                 1.create one frame gif imagesource
-      *                 2.getDelayTimeList(callback)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0100
+     * @tc.desc   test getDelayTimeList(callback) one frame gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0100", "test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0200
-      * @tc.desc    test getDelayTimeList(callback) gif
-      *                 1.create gif imagesource
-      *                 2.getDelayTimeList(callback)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0200
+     * @tc.desc   test getDelayTimeList(callback) gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getDelayTimeCallBack(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDELAYTIME_CALLBACK_STATIC_0200", "moving_test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0100
-      * @tc.desc    test getDisposalType promise for gif
-      *                 1.create gif imagesource
-      *                 2.getDisposalType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0100
+     * @tc.desc   test getDisposalType promise for gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDisposalTypePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0100", "moving_test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0200
-      * @tc.desc    test getDisposalType promise for one frame gif
-      *                 1.create one frame gif imagesource
-      *                 2.getDisposalType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0200
+     * @tc.desc   test getDisposalType promise for one frame gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDisposalTypePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0200", "test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0300
-      * @tc.desc    test getDisposalType promise jpg error
-      *                 1.create jpg imagesource
-      *                 2.getDisposalType
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0300
+     * @tc.desc   test getDisposalType promise jpg error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testGetDisposalTypePromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETDISPOSALTYPE_PROMISE_STATIC_0300", "test.jpg");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_STATIC_0100
-      * @tc.desc    getFrameCount - promise
-      *                 1.create imagesource
-      *                 2.getFrameCount
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_STATIC_0100
+     * @tc.desc   getFrameCount - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFrameCountPromise(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_PROMISE_STATIC_0100", "moving_test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_STATIC_0100
-      * @tc.desc    getFrameCount - callback
-      *                 1.create imagesource
-      *                 2.getFrameCount
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_STATIC_0100
+     * @tc.desc   getFrameCount - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFrameCountCallBack(done, "SUB_MULTIMEDIA_IMAGE_GIF_GETFRAMECOUNT_CALLBACK_STATIC_0100", "moving_test.gif");
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_STATIC_0100
-      * @tc.desc    createPixelMapList - promise
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.createPixelMapList
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_STATIC_0100
+     * @tc.desc   createPixelMapList - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let desired_size: image.Size ={ width: 198, height: 202 };
@@ -740,15 +718,12 @@ export default function imageGif() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0100
-      * @tc.desc    createPixelMapList - promise-sampleSize: -1
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.createPixelMapList
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0100
+     * @tc.desc   createPixelMapList - promise-sampleSize: -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let desired_size: image.Size ={ width: 198, height: 202 };
@@ -770,15 +745,12 @@ export default function imageGif() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0200
-      * @tc.desc    createPixelMapList - promise-index: -8
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.createPixelMapList
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0200
+     * @tc.desc   createPixelMapList - promise-index: -8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let desired_size: image.Size ={ width: 198, height: 202 };
@@ -800,15 +772,12 @@ export default function imageGif() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0300
-      * @tc.desc    createPixelMapList - promise-rotate: 500
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.createPixelMapList
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0300
+     * @tc.desc   createPixelMapList - promise-rotate: 500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_ERR_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let desired_size: image.Size ={ width: 198, height: 202 };
@@ -830,16 +799,12 @@ export default function imageGif() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_STATIC_0100
-      * @tc.desc    createPixelMapList - callback
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.createPixelMapList
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_STATIC_0100
+     * @tc.desc   createPixelMapList - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_CREATEPIXELMAPLIST_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let desired_size: image.Size ={ width: 198, height: 202 };
@@ -856,16 +821,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0100
-     * @tc.desc        test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.getDelayTimeList
-     *                 4.getDisposalType
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0100
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0100", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0100");
@@ -875,16 +836,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0200
-     * @tc.desc        test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.test marshalling
-     *                 4.compare picture gif metadata properties
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0200
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0200", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0200");
@@ -909,15 +866,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0300
-     * @tc.desc        test gif incomplete frame
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     *                 3.compare picture gif metadata properties
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0300
+     * @tc.desc   test gif incomplete frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0300", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_STATIC_0300");
@@ -943,14 +897,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0100
-     * @tc.desc        test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0100
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0100", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0100");
@@ -960,14 +912,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0200
-     * @tc.desc        test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0200
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0200", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0200");
@@ -983,14 +933,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0300
-     * @tc.desc        test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0300
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0300", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0300");
@@ -1000,14 +948,12 @@ export default function imageGif() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0400
-     * @tc.desc        test gif incomplete frame error
-     *                 1.create imagesource
-     *                 2.createPictureAtIndex
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0400
+     * @tc.desc   test gif incomplete frame error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0400", Level.LEVEL0, async (done:() => void)=>{
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_GIF_INCOMPLETE_FRAME_ERROR_STATIC_0400");

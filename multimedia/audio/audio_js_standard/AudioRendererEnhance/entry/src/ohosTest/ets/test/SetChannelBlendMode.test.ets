@@ -191,12 +191,12 @@ export default function audioRendererTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0100
-     * @tc.name      : AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0100
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -212,12 +212,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0200
-     * @tc.name      : AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0200
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -233,12 +233,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0300
-     * @tc.name      : AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0300
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -254,12 +254,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0400
-     * @tc.name      : AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0400
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -275,12 +275,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0500
-     * @tc.name      : AudioRenderer - setChannelBlendMode-ERROR-INPUT_NUMBER_PARAMETER
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-ERROR-INPUT_NUMBER_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0500
+     * @tc.desc   AudioRenderer - setChannelBlendMode-ERROR-INPUT_NUMBER_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -297,12 +297,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0600
-     * @tc.name      : AudioRenderer - setChannelBlendMode-ERROR-INPUT_NUMBER_PARAMETER
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-ERROR-INPUT_NUMBER_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0600
+     * @tc.desc   AudioRenderer - setChannelBlendMode-ERROR-INPUT_NUMBER_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -319,12 +319,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0700
-     * @tc.name      : AudioRenderer - setChannelBlendMode-ERROR-INPUT_STRING_PARAMETER
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-ERROR-INPUT_STRING_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0700
+     * @tc.desc   AudioRenderer - setChannelBlendMode-ERROR-INPUT_STRING_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -341,12 +341,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0800
-     * @tc.name      : AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
-     * @tc.desc      : AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0800
+     * @tc.desc   AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -404,12 +404,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0900
-     * @tc.name      : AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0900
+     * @tc.desc   AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

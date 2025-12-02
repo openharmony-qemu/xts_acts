@@ -353,13 +353,12 @@ export default function PreDownLoadTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_static_0100
-      * @tc.desc    start-pause-resume-stop-release
-      *               : 001.test createSource -> avplayer -> setSource -> prepare -> play -> pause -> release
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_static_0100
+     * @tc.desc   start-pause-resume-stop-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100 begin');
@@ -393,13 +392,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0100
-      * @tc.desc    LOADING_ERROR_SUCCESS
-      *               : 001.test finishLoading
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0100
+     * @tc.desc   LOADING_ERROR_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100 begin');
@@ -430,13 +428,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0200
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0200
-      * @tc.desc    LOADING_ERROR_NOT_READY
-      *               : 001.test finishLoading LOADING_ERROR_NOT_READY
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0200
+     * @tc.desc   LOADING_ERROR_NOT_READY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200 begin');
@@ -467,13 +464,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0300
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0300
-      * @tc.desc    LOADING_ERROR_NO_RESOURCE
-      *               : 001.test finishLoading LOADING_ERROR_NO_RESOURCE
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0300
+     * @tc.desc   LOADING_ERROR_NO_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0300 begin');
@@ -502,13 +498,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0300 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0400
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0400
-      * @tc.desc    LOADING_ERROR_INVAID_HANDLE
-      *               : 001.test finishLoading LOADING_ERROR_INVAID_HANDLE
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0400
+     * @tc.desc   LOADING_ERROR_INVAID_HANDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400 begin');
@@ -537,13 +532,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0500
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0500
-      * @tc.desc    LOADING_ERROR_ACCESS_DENIED
-      *               : 001.test finishLoading LOADING_ERROR_ACCESS_DENIED
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0500
+     * @tc.desc   LOADING_ERROR_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500 begin');
@@ -572,13 +566,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0600
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0600
-      * @tc.desc    LOADING_ERROR_ACCESS_TIMEOUT
-      *               : 001.test finishLoading LOADING_ERROR_ACCESS_TIMEOUT
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0600
+     * @tc.desc   LOADING_ERROR_ACCESS_TIMEOUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600 begin');
@@ -607,13 +600,12 @@ export default function PreDownLoadTest() {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600 end');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0700
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0700
-      * @tc.desc    LOADING_ERROR_AUTHORIZE_FAILED
-      *               : 001.test finishLoading LOADING_ERROR_AUTHORIZE_FAILED
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0700
+     * @tc.desc   LOADING_ERROR_AUTHORIZE_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700 begin');

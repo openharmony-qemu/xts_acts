@@ -76,12 +76,12 @@ export default function getThumbnailTestSupp() {
     }
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_001
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_001
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_001
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_001
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_001';
@@ -96,12 +96,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_002
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_002
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_002
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_002
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_002';
@@ -119,12 +119,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_003
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_003
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_003
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_003
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_003';
@@ -142,12 +142,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_004
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_004
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_004
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_004
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_004';
@@ -166,12 +166,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_005
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_005
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_005
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_005
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_005';
@@ -190,12 +190,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_006
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_006
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_006
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_006
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_006';
@@ -210,12 +210,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_007
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_007
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_007
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_007
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_007';
@@ -233,12 +233,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_008
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_008
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_008
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_008
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_008', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_008';
@@ -256,12 +256,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_009
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_009
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_009
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_009
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_009', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_009';
@@ -280,12 +280,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_010
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_010
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_010
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_010
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_010', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_010';
@@ -305,12 +305,12 @@ export default function getThumbnailTestSupp() {
 
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_011
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_011
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_011
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_011
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_011', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_011';
@@ -326,12 +326,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_012
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_012
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_012
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_012
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_012', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_012';
@@ -347,12 +347,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_013
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_013
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_013
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_013
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_013', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_013';
@@ -365,12 +365,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_014
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_014
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_014
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_014
+     * @tc.desc   getThumbnail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_014', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_014';
@@ -389,12 +389,12 @@ export default function getThumbnailTestSupp() {
 
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_015
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_015
-     * @tc.desc     getThumbnail Abnormal .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_015
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_015
+     * @tc.desc   getThumbnail Abnormal .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_015', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_015';
@@ -408,12 +408,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_016
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_016
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_016
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_016
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_016', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_016';
@@ -435,12 +435,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_018
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_018
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_018
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_018
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_018', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_018';
@@ -458,12 +458,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_019
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_019
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_019
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_019
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_019', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_019';
@@ -482,12 +482,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_020
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_020
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_020
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_020
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_020', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_020';
@@ -505,12 +505,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_021
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_021
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_021
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_021
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_021', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_021';
@@ -528,12 +528,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_022
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_022
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_022
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_022
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_022', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_022';
@@ -551,12 +551,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_023
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_023
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_023
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_023
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_023', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_023';
@@ -575,12 +575,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_024
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_024
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_024
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_024
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_024', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_024';
@@ -598,12 +598,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_025
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_025
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_025
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_025
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_025', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_025';
@@ -619,12 +619,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_026
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_026
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_026
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_026
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_026', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_026';
@@ -639,12 +639,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_027
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_027
-     * @tc.desc     getThumbnail .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_027
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_027
+     * @tc.desc   getThumbnail .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_027', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_027';
@@ -660,12 +660,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_028
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_028
-     * @tc.desc     getThumbnail Abnormal .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_028
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_028
+     * @tc.desc   getThumbnail Abnormal .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_028', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_028';
@@ -678,12 +678,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_029
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_029
-     * @tc.desc     getThumbnail Abnormal .01.gif
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_029
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_029
+     * @tc.desc   getThumbnail Abnormal .01.gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_029', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_029';
@@ -700,12 +700,12 @@ export default function getThumbnailTestSupp() {
 
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_030
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_030
-     * @tc.desc     getThumbnail Abnormal .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_030
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_030
+     * @tc.desc   getThumbnail Abnormal .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_030', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_030';
@@ -719,12 +719,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_031
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_031
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_031
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_031
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_031', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_031';
@@ -742,12 +742,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_032
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_032
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_032
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_032
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_032', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_032';
@@ -765,12 +765,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_033
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_033
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_033
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_033
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_033', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_033';
@@ -789,12 +789,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_034
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_034
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_034
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_034
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_034', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_034';
@@ -812,12 +812,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_035
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_035
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_035
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_035
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_035', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_035';
@@ -835,12 +835,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_036
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_036
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_036
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_036
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_036', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_036';
@@ -858,12 +858,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_037
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_037
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_037
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_037
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_037', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_037';
@@ -882,12 +882,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_038
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_038
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_038
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_038
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_038', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_038';
@@ -905,12 +905,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_039
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_039
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_039
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_039
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_039', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_039';
@@ -926,12 +926,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_040
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_040
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_040
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_040
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_040', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_040';
@@ -946,12 +946,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_041
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_041
-     * @tc.desc     getThumbnail .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_041
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_041
+     * @tc.desc   getThumbnail .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_041', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_041';
@@ -967,12 +967,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_042
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_042
-     * @tc.desc     getThumbnail Abnormal .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_042
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_042
+     * @tc.desc   getThumbnail Abnormal .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_042', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_042';
@@ -985,12 +985,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_043
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_043
-     * @tc.desc     getThumbnail Abnormal .mpeg
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_043
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_043
+     * @tc.desc   getThumbnail Abnormal .mpeg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_043', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_043';
@@ -1010,12 +1010,12 @@ export default function getThumbnailTestSupp() {
 
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_044
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_044
-     * @tc.desc     getThumbnail Abnormal .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_044
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_044
+     * @tc.desc   getThumbnail Abnormal .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_044', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_044';
@@ -1029,12 +1029,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_045
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_045
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_045
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_045
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_045', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_045';
@@ -1056,12 +1056,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_046
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_046
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_046
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_046
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_046', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_046';
@@ -1079,12 +1079,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_047
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_047
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_047
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_047
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_047', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_047';
@@ -1103,12 +1103,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_048
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_048
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_048
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_048
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_048', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_048';
@@ -1126,12 +1126,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_049
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_049
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_049
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_049
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_049', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_049';
@@ -1149,12 +1149,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_050
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_050
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_050
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_050
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_050', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_050';
@@ -1172,12 +1172,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_051
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_051
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_051
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_051
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_051', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_051';
@@ -1196,12 +1196,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_052
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_052
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_052
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_052
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_052', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_052';
@@ -1219,12 +1219,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_053
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_053
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_053
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_053
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_053', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_053';
@@ -1240,12 +1240,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_054
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_054
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_054
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_054
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_054', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_054';
@@ -1260,12 +1260,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_055
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_055
-     * @tc.desc     getThumbnail .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_055
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_055
+     * @tc.desc   getThumbnail .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_055', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_055';
@@ -1281,12 +1281,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_056
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_056
-     * @tc.desc     getThumbnail Abnormal .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_056
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_056
+     * @tc.desc   getThumbnail Abnormal .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_056', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_056';
@@ -1299,12 +1299,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_057
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_057
-     * @tc.desc     getThumbnail Abnormal .01.png
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_057
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_057
+     * @tc.desc   getThumbnail Abnormal .01.png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_057', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_057';
@@ -1322,12 +1322,12 @@ export default function getThumbnailTestSupp() {
 
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_058
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_058
-     * @tc.desc     getThumbnail Abnormal stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_058
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_058
+     * @tc.desc   getThumbnail Abnormal stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_058', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_058';
@@ -1341,12 +1341,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_059
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_059
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_059
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_059
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_059', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_059';
@@ -1368,12 +1368,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_060
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_060
-     * @tc.desc     getThumbnail .01.stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_060
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_060
+     * @tc.desc   getThumbnail .01.stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_060', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_060';
@@ -1391,12 +1391,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_061
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_061
-     * @tc.desc     getThumbnail stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_061
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_061
+     * @tc.desc   getThumbnail stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_061', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_061';
@@ -1415,12 +1415,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_062
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_062
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_062
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_062
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_062', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_062';
@@ -1438,12 +1438,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_063
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_063
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_063
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_063
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_063', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_063';
@@ -1461,12 +1461,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_064
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_064
-     * @tc.desc     getThumbnail stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_064
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_064
+     * @tc.desc   getThumbnail stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_064', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_064';
@@ -1484,12 +1484,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_065
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_065
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_065
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_065
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_065', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_065';
@@ -1508,12 +1508,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_066
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_066
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_066
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_066
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_066', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_066';
@@ -1531,12 +1531,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_067
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_067
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_067
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_067
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_067', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_067';
@@ -1552,12 +1552,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_068
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_068
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_068
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_068
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_068', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_068';
@@ -1572,12 +1572,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_069
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_069
-     * @tc.desc     getThumbnail .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_069
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_069
+     * @tc.desc   getThumbnail .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_069', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_069';
@@ -1593,12 +1593,12 @@ export default function getThumbnailTestSupp() {
       });
     });
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_070
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_070
-     * @tc.desc     getThumbnail Abnormal .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_070
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_070
+     * @tc.desc   getThumbnail Abnormal .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_070', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_070';
@@ -1611,12 +1611,12 @@ export default function getThumbnailTestSupp() {
     });
 
     /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_071
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_071
-     * @tc.desc     getThumbnail Abnormal .stm_RAW.dng
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_071
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_071
+     * @tc.desc   getThumbnail Abnormal .stm_RAW.dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_071', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_071';

@@ -137,14 +137,14 @@ export default function AVPlayerDataSrcNoSeekReliabilityTest() {
             return -1;
         }
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0100
-            * @tc.name      : 0100.readAt buffer data is not enough
-            * @tc.desc      : data source compatibility test
-            * @tc.size      : MediumTest
-            * @tc.type      : compatibility test
-            * @tc.level     : Level3
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0100
+         * @tc.desc   data source compatibility test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0100', Level.LEVEL0,async function (done) {
             filePath = pathDir + "/01_15s.mp3";
             console.info('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0100 filePath is ' + JSON.stringify(filePath));
@@ -166,14 +166,14 @@ export default function AVPlayerDataSrcNoSeekReliabilityTest() {
             testDataSrcNoSeek(done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0200
-            * @tc.name      : 0200.readAt buffer offset is wrong
-            * @tc.desc      : data source compatibility test
-            * @tc.size      : MediumTest
-            * @tc.type      : compatibility test
-            * @tc.level     : Level3
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0200
+         * @tc.desc   data source compatibility test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0200', Level.LEVEL0,async function (done) {
             filePath = pathDir + "/01_15s.mp3";
             fd = fileio.openSync(filePath, 0o0);
@@ -193,14 +193,14 @@ export default function AVPlayerDataSrcNoSeekReliabilityTest() {
             testDataSrcNoSeek(done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0300
-            * @tc.name      : 0200.readAt media file position is wrong 
-            * @tc.desc      : data source compatibility test
-            * @tc.size      : MediumTest
-            * @tc.type      : compatibility test
-            * @tc.level     : Level3
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0300
+         * @tc.desc   data source compatibility test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0300', Level.LEVEL0,async function (done) {
             filePath = pathDir + "/01_15s.mp3";
             fd = fileio.openSync(filePath, 0o0);
@@ -219,14 +219,14 @@ export default function AVPlayerDataSrcNoSeekReliabilityTest() {
             testDataSrcNoSeek(done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0400
-            * @tc.name      : 0200.readAt num is wrong
-            * @tc.desc      : data source compatibility test
-            * @tc.size      : MediumTest
-            * @tc.type      : compatibility test
-            * @tc.level     : Level3
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0400
+         * @tc.desc   data source compatibility test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0400', Level.LEVEL0,async function (done) {
             filePath = pathDir + "/01_15s.mp3";
             fd = fileio.openSync(filePath, 0o0);
@@ -245,14 +245,14 @@ export default function AVPlayerDataSrcNoSeekReliabilityTest() {
             testDataSrcNoSeek(done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0500
-            * @tc.name      : 0200.readAt num is wrong
-            * @tc.desc      : data source compatibility test
-            * @tc.size      : MediumTest
-            * @tc.type      : compatibility test
-            * @tc.level     : Level3
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0500
+         * @tc.desc   data source compatibility test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_DATASRC_NOSEEK_RELI_MP3_0500', Level.LEVEL0,async function (done) {
             filePath = pathDir + "/01_15s.mp3";
             fd = fileio.openSync(filePath, 0o0);

@@ -43,12 +43,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_001
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_001
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_001
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_001
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_001';
@@ -67,12 +67,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_002
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_002
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_002
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_002
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_002';
@@ -91,12 +91,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_003
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_003
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_003
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_003
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_003';
@@ -115,12 +115,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_004
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_004
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_004
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_004
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_004';
@@ -139,12 +139,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_005
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_005
-     * @tc.desc       第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_005
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_005
+     * @tc.desc   第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_005';
@@ -163,12 +163,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_006
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_006
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_006
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_006
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_006';
@@ -187,12 +187,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_007
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_007
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_007
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_007
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_007';
@@ -211,12 +211,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_008
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_008
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_008
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_008
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_008';
@@ -235,12 +235,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_009
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_009
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_009
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_009
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_009';
@@ -259,12 +259,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_010
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_010
-     * @tc.desc       第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_010
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_010
+     * @tc.desc   第一个参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_010';
@@ -284,12 +284,12 @@ export default function CreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_011
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_011
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_011
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_011
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_011';
@@ -308,12 +308,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_012
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_012
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_012
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_012
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_012';
@@ -332,12 +332,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_013
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_013
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_013
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_013
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_013';
@@ -356,12 +356,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_014
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_014
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_014
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_014
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_014';
@@ -380,12 +380,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_015
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_015
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_015
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_015
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_015';
@@ -405,12 +405,12 @@ export default function CreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_016
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_016
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_016
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_016
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_016';
@@ -429,12 +429,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_017
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_017
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_017
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_017
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_017';
@@ -453,12 +453,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_018
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_018
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_018
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_018
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_018';
@@ -477,12 +477,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_019
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_019
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_019
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_019
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_019';
@@ -501,12 +501,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_020
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_020
-     * @tc.desc       第二个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_020
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_020
+     * @tc.desc   第二个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_020';
@@ -526,12 +526,12 @@ export default function CreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_021
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_021
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_021
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_021
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_021';
@@ -553,12 +553,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_022
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_022
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_022
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_022
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_022';
@@ -580,12 +580,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_023
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_023
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_023
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_023
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_023';
@@ -607,12 +607,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_024
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_024
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_024
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_024
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_024';
@@ -634,12 +634,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_025
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_025
-     * @tc.desc       枚举覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_025
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_025
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_025';
@@ -662,12 +662,12 @@ export default function CreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_026
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_006
-     * @tc.desc       第一个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_026
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_026
+     * @tc.desc   第一个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_026';
@@ -686,12 +686,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_027
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_027
-     * @tc.desc       第一个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_027
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_027
+     * @tc.desc   第一个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_027';
@@ -710,12 +710,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_028
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_028
-     * @tc.desc       第一个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_028
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_028
+     * @tc.desc   第一个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_028';
@@ -734,12 +734,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_029
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_029
-     * @tc.desc       第一个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_029
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_029
+     * @tc.desc   第一个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_029';
@@ -758,12 +758,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_030
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_030
-     * @tc.desc       第一个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_030
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_030
+     * @tc.desc   第一个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_030';
@@ -783,12 +783,12 @@ export default function CreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_031
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_031
-     * @tc.desc       第二个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_031
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_031
+     * @tc.desc   第二个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_031';
@@ -808,12 +808,12 @@ export default function CreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_032
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_032
-     * @tc.desc       第二个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_032
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_032
+     * @tc.desc   第二个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_032';
@@ -832,12 +832,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_033
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_033
-     * @tc.desc       第二个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_033
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_033
+     * @tc.desc   第二个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_033';
@@ -856,12 +856,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_034
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_034
-     * @tc.desc       第二个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_034
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_034
+     * @tc.desc   第二个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_034';
@@ -880,12 +880,12 @@ export default function CreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_AUXILIARY_PICTURE_035
-     * @tc.name       IMAGE_CREATE_AUXILIARY_PICTURE_035
-     * @tc.desc       第二个参数为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_AUXILIARY_PICTURE_035
+     * @tc.number IMAGE_CREATE_AUXILIARY_PICTURE_035
+     * @tc.desc   第二个参数为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_AUXILIARY_PICTURE_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_AUXILIARY_PICTURE_035';

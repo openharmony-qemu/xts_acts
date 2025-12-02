@@ -85,12 +85,12 @@ export default function ImageEnumSupp() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_001
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_001
-     * @tc.desc       ImageFormat Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_001
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_001
+     * @tc.desc   ImageFormat Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_001', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_001---------')
@@ -100,12 +100,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_002
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_002
-     * @tc.desc       AlphaType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_002
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_002
+     * @tc.desc   AlphaType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_002', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_002---------')
@@ -117,12 +117,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_003
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_003
-     * @tc.desc       DecodingDynamicRange Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_003
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_003
+     * @tc.desc   DecodingDynamicRange Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_003', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_003---------')
@@ -133,12 +133,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_004
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_004
-     * @tc.desc       PackingDynamicRange Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_004
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_004
+     * @tc.desc   PackingDynamicRange Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_004', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_004---------')
@@ -148,12 +148,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_005
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_005
-     * @tc.desc       AntiAliasingLevel Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_005
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_005
+     * @tc.desc   AntiAliasingLevel Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_005', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_005---------')
@@ -165,12 +165,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_006
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_006
-     * @tc.desc       ComponentType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_006
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_006
+     * @tc.desc   ComponentType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_006', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_006---------')
@@ -182,12 +182,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_007
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_007
-     * @tc.desc       ScaleMode Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_007
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_007
+     * @tc.desc   ScaleMode Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_007', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_007---------')
@@ -197,12 +197,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_008
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_008
-     * @tc.desc       HdrMetadataKey Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_008
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_008
+     * @tc.desc   HdrMetadataKey Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_008', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_008---------')
@@ -214,12 +214,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_009
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_009
-     * @tc.desc       HdrMetadataType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_009
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_009
+     * @tc.desc   HdrMetadataType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_009', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_009---------')
@@ -231,12 +231,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_010
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_010
-     * @tc.desc       HdrMetadataType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_010
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_010
+     * @tc.desc   HdrMetadataType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_010', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_010---------')
@@ -247,12 +247,12 @@ export default function ImageEnumSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_ENUM_List_011
-     * @tc.name       SUB_MEDIA_IMAGE_ENUM_List_011
-     * @tc.desc       HdrMetadataType Enum
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_ENUM_List_011
+     * @tc.number SUB_MEDIA_IMAGE_ENUM_List_011
+     * @tc.desc   HdrMetadataType Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_ENUM_List_011', Level.LEVEL1, async (done:Function)=> {
       console.info(TAG,'--------SUB_MEDIA_IMAGE_ENUM_List_011---------')

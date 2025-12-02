@@ -109,12 +109,12 @@ export default function SendableImageScale() {
     });
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0001
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0001
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0001
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0001
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0001';
@@ -126,12 +126,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0002
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0002
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0002
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0002
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0002';
@@ -143,12 +143,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0003
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0003
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0003
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0003
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0003';
@@ -160,12 +160,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0004
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0004
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0004
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0004
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0004';
@@ -177,12 +177,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0005
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0005
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0005
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0005
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0005';
@@ -194,12 +194,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     PIXELMAPSCALETEST_PROMISE_0006
-     * @tc.name       PIXELMAPSCALETEST_PROMISE_0006
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0006
+     * @tc.number PIXELMAPSCALETEST_PROMISE_0006
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0006';
@@ -211,12 +211,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0007
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0007
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0007
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0007
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0007';
@@ -228,12 +228,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0008
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0008
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0008
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0008
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0008';
@@ -245,12 +245,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0009
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0009
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0009
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0009
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0009';
@@ -262,12 +262,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0010
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0010
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0010
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0010
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0010';
@@ -279,12 +279,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0011
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0011
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0011
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0011
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0011';
@@ -296,12 +296,12 @@ export default function SendableImageScale() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_SCALE_TEST_0012
-     * @tc.name       SENDABLE_IMAGE_SCALE_TEST_0012
-     * @tc.desc       getType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_SCALE_TEST_0012
+     * @tc.number SENDABLE_IMAGE_SCALE_TEST_0012
+     * @tc.desc   getType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_SCALE_TEST_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_SCALE_TEST_0012';

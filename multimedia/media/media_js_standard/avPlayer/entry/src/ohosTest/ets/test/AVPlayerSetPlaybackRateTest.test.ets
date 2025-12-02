@@ -203,12 +203,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0100
-         * @tc.name      : 001.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0.125 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0100
+         * @tc.desc   test setPlaybackRate 0.125 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.125
@@ -226,12 +226,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0200
-         * @tc.name      : 002.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0.25 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0200
+         * @tc.desc   test setPlaybackRate 0.25 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.25
@@ -249,12 +249,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0300
-         * @tc.name      : 003.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0.5 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0300
+         * @tc.desc   test setPlaybackRate 0.5 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.5
@@ -272,12 +272,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0400
-         * @tc.name      : 004.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0.75 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0400
+         * @tc.desc   test setPlaybackRate 0.75 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.75
@@ -293,12 +293,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0500
-         * @tc.name      : 005.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate 1.0 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0500
+         * @tc.desc   test setPlaybackRate 1.0 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.0
@@ -316,12 +316,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0600
-         * @tc.name      : 006.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate 1.25 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0600
+         * @tc.desc   test setPlaybackRate 1.25 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.25
@@ -337,12 +337,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0700
-         * @tc.name      : 007.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate 1.75 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0700
+         * @tc.desc   test setPlaybackRate 1.75 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.75
@@ -358,12 +358,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0800
-         * @tc.name      : 008.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate 2.0 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0800
+         * @tc.desc   test setPlaybackRate 2.0 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 2.0
@@ -379,12 +379,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0900
-         * @tc.name      : 009.test setPlaybackRate in paused state
-         * @tc.desc      : test setPlaybackRate 2.25 in paused state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0900
+         * @tc.desc   test setPlaybackRate 2.25 in paused state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 2.25
@@ -406,12 +406,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1000
-         * @tc.name      : 010.test setPlaybackRate in paused state
-         * @tc.desc      : test setPlaybackRate 2.5 in paused state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1000
+         * @tc.desc   test setPlaybackRate 2.5 in paused state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 2.5
@@ -433,12 +433,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1100
-         * @tc.name      : 011.test setPlaybackRate in paused state
-         * @tc.desc      : test setPlaybackRate 2.75 in paused state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1100
+         * @tc.desc   test setPlaybackRate 2.75 in paused state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 2.75
@@ -460,12 +460,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200
-         * @tc.name      : 012.test setPlaybackRate in paused state
-         * @tc.desc      : test setPlaybackRate 3.0 in paused state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200
+         * @tc.desc   test setPlaybackRate 3.0 in paused state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 3.0
@@ -487,12 +487,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300
-         * @tc.name      : 013.test setPlaybackRate in completed state
-         * @tc.desc      : test setPlaybackRate 3.25 in completed state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300
+         * @tc.desc   test setPlaybackRate 3.25 in completed state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 3.25
@@ -508,12 +508,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1400
-         * @tc.name      : 014.test setPlaybackRate in completed state
-         * @tc.desc      : test setPlaybackRate 3.5 in completed state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1400
+         * @tc.desc   test setPlaybackRate 3.5 in completed state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 3.5
@@ -529,12 +529,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1500
-         * @tc.name      : 015.test setPlaybackRate in completed state
-         * @tc.desc      : test setPlaybackRate 3.75 in completed state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1500
+         * @tc.desc   test setPlaybackRate 3.75 in completed state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 3.75
@@ -550,12 +550,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1600
-         * @tc.name      : 016.test setPlaybackRate in completed state
-         * @tc.desc      : test setPlaybackRate 4.0 in completed state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1600
+         * @tc.desc   test setPlaybackRate 4.0 in completed state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 4.0
@@ -571,12 +571,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1700
-         * @tc.name      : 017.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0.126 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1700
+         * @tc.desc   test setPlaybackRate 0.126 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.126
@@ -592,12 +592,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1800
-         * @tc.name      : 018.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 3.999 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1800
+         * @tc.desc   test setPlaybackRate 3.999 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 3.999
@@ -613,12 +613,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1900
-         * @tc.name      : 019.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate switch from 1.0 to 2.0 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1900
+         * @tc.desc   test setPlaybackRate switch from 1.0 to 2.0 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let rate1 = 1.0
@@ -645,12 +645,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2000
-         * @tc.name      : 020.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate switch from 2.0 to 0.5 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2000
+         * @tc.desc   test setPlaybackRate switch from 2.0 to 0.5 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let rate1 = 2.0
@@ -675,12 +675,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2100
-         * @tc.name      : 021.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate switch from 0.125 to 4.0 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2100
+         * @tc.desc   test setPlaybackRate switch from 0.125 to 4.0 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let rate1 = 0.125
@@ -705,12 +705,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2200
-         * @tc.name      : 022.test setPlaybackRate in playing state
-         * @tc.desc      : test setPlaybackRate switch from 4.0 to 0.125 in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2200
+         * @tc.desc   test setPlaybackRate switch from 4.0 to 0.125 in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let rate1 = 4.0
@@ -735,12 +735,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2300
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2300
-         * @tc.desc      : test setPlaybackRate 1.25 in playing state after pausing
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2300
+         * @tc.desc   test setPlaybackRate 1.25 in playing state after pausing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.25
@@ -760,12 +760,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2400
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2400
-         * @tc.desc      : test setPlaybackRate 1.25 in playing state after seeking
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2400
+         * @tc.desc   test setPlaybackRate 1.25 in playing state after seeking
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.25
@@ -783,12 +783,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2500
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2500
-         * @tc.desc      : test setPlaybackRate 1.25 in playing state before seeking
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2500
+         * @tc.desc   test setPlaybackRate 1.25 in playing state before seeking
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.25
@@ -806,12 +806,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2600
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2600
-         * @tc.desc      : test setPlaybackRate 0.125001 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2600
+         * @tc.desc   test setPlaybackRate 0.125001 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.125001
@@ -828,12 +828,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2700
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2700
-         * @tc.desc      : test setPlaybackRate 3.999999 in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2700
+         * @tc.desc   test setPlaybackRate 3.999999 in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 3.999999
@@ -850,12 +850,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2800
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2800
-         * @tc.desc      : test setPlaybackRate by step in prepared state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2800
+         * @tc.desc   test setPlaybackRate by step in prepared state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             const setrates = createStepRates(0.125,4,0.125)
@@ -886,12 +886,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2900
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2900
-         * @tc.desc      : test setPlaybackRate by step in playing state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2900
+         * @tc.desc   test setPlaybackRate by step in playing state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             const setrates = createStepRates(0.125,4,0.125).sort(() => Math.random() - 0.5)
@@ -921,12 +921,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3000
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3000
-         * @tc.desc      : test setPlaybackRate by step in paused state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3000
+         * @tc.desc   test setPlaybackRate by step in paused state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             const setrates = createStepRates(4,0.125,-0.125)
@@ -960,12 +960,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3100
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3100
-         * @tc.desc      : test setPlaybackRate by step in completed state
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3100
+         * @tc.desc   test setPlaybackRate by step in completed state
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             const setrates = createStepRates(0.2,4,0.1)
@@ -1004,12 +1004,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3200
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3200
-         * @tc.desc      : test setPlaybackRate in executable state by normal
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3200
+         * @tc.desc   test setPlaybackRate in executable state by normal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             const setrates = createStepRates(1,3,0.5)
@@ -1057,12 +1057,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3300
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3300
-         * @tc.desc      : test setPlaybackRate in executable state by random
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3300
+         * @tc.desc   test setPlaybackRate in executable state by random
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             const setrates = createStepRates(0.125,4,0.125).sort(() => Math.random() - 0.5)
@@ -1126,12 +1126,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0100
-         * @tc.name      : 027.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0.124 in prepared state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0100
+         * @tc.desc   test setPlaybackRate 0.124 in prepared state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0.124
@@ -1152,12 +1152,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0200
-         * @tc.name      : 028.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 4.001 in prepared state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0200
+         * @tc.desc   test setPlaybackRate 4.001 in prepared state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 4.001
@@ -1178,12 +1178,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0300
-         * @tc.name      : 029.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 0 in prepared state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0300
+         * @tc.desc   test setPlaybackRate 0 in prepared state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 0
@@ -1204,12 +1204,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0400
-         * @tc.name      : 030.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate -1 in prepared state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0400
+         * @tc.desc   test setPlaybackRate -1 in prepared state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = -1
@@ -1230,12 +1230,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0500
-         * @tc.name      : 031.test setPlaybackRate in prepared state
-         * @tc.desc      : test setPlaybackRate 10000 in prepared state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0500
+         * @tc.desc   test setPlaybackRate 10000 in prepared state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 10000
@@ -1256,12 +1256,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0600
-         * @tc.name      : 032.test setPlaybackRate in idle state
-         * @tc.desc      : test setPlaybackRate 1.5 in idle state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0600
+         * @tc.desc   test setPlaybackRate 1.5 in idle state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.5
@@ -1285,12 +1285,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0700
-         * @tc.name      : 033.test setPlaybackRate in initialized state
-         * @tc.desc      : test setPlaybackRate 1.5 in initialized state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0700
+         * @tc.desc   test setPlaybackRate 1.5 in initialized state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.5
@@ -1311,12 +1311,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0800
-         * @tc.name      : 034.test setPlaybackRate in stopped state
-         * @tc.desc      : test setPlaybackRate 1.5 in stopped state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0800
+         * @tc.desc   test setPlaybackRate 1.5 in stopped state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.5
@@ -1342,12 +1342,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0900
-         * @tc.name      : 035.test setPlaybackRate in released state
-         * @tc.desc      : test setPlaybackRate 1.5 in released state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0900
+         * @tc.desc   test setPlaybackRate 1.5 in released state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.5
@@ -1373,12 +1373,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1000
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1000
-         * @tc.desc      : test setPlaybackRate 1.5 in stopped state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1000
+         * @tc.desc   test setPlaybackRate 1.5 in stopped state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.5
@@ -1404,12 +1404,12 @@ export default function AVPlayerSetPlaybackRateTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1100
-         * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1100
-         * @tc.desc      : test setPlaybackRate 1.5 in released state, expect error
-         * @tc.size      : MediumTest
-         * @tc.type      : Function test
-         * @tc.level     : Level0
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1100
+         * @tc.desc   test setPlaybackRate 1.5 in released state, expect error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let setrate = 1.5

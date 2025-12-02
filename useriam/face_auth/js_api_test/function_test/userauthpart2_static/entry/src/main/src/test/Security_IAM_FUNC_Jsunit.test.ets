@@ -175,6 +175,7 @@ export default function userauthTest_API9() {
       expect('12500005').assertEqual(''+userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT);
       expect('12500006').assertEqual(''+userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT);
       expect('12500007').assertEqual(''+userAuth.UserAuthResultCode.BUSY);
+      expect('12500008').assertEqual(''+userAuth.UserAuthResultCode.INVALID_PARAMETERS);
       expect('12500009').assertEqual(''+userAuth.UserAuthResultCode.LOCKED);
       expect('12500010').assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
       expect('12500011').assertEqual(''+userAuth.UserAuthResultCode.CANCELED_FROM_WIDGET);
@@ -310,6 +311,7 @@ export default function userauthTest_API9() {
       let checkPin = checkSupportOrNot(userAuth.UserAuthType.PIN);
       let checkFingerprint = checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT);
       let authType:userAuth.UserAuthType[] = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN];
+      let permaentLockoutDuration:int[]  = [userAuth.PERMANENT_LOCKOUT_DURATION];
       if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
         for (let idx0 = 0; idx0 < authType.length; idx0++) {
           try {

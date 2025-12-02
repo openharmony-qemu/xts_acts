@@ -63,15 +63,15 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       console.info(TAG, 'afterAll case.');
     });
 
-    /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_001
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_001
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_001
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_001
+     * @tc.desc   PICTURE_SET_AUXILIARY_PICTURE_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PICTURE_SET_AUXILIARY_PICTURE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_001';
       const path = 'test_large.webp';
@@ -88,12 +88,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_002
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_002
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_002
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_002
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_002';
@@ -111,12 +111,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_003
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_003
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_003
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_003
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_003';
@@ -134,12 +134,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_004
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_004
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_004
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_004
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_004';
@@ -157,12 +157,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_005
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_005
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_005
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_005
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_005';
@@ -180,12 +180,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_006
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_006
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_006
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_006
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_006';
@@ -203,12 +203,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_007
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_007
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_007
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_007
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_007';
@@ -226,12 +226,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_008
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_008
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_008
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_008
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_008';
@@ -249,12 +249,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_009
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_009
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_009
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_009
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_009';
@@ -272,12 +272,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_010
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_010
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_010
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_010
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_010';
@@ -295,12 +295,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_011
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_011
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_011
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_011
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_011';
@@ -318,12 +318,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_012
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_012
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_012
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_012
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_012';
@@ -341,12 +341,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_013
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_013
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_013
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_013
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_013';
@@ -364,12 +364,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_014
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_014
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_014
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_014
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_014';
@@ -387,12 +387,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_015
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_015
-     * @tc.desc       picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_015
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_015
+     * @tc.desc   picture_setAuxiliaryPicture webp图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_015';
@@ -410,12 +410,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_016
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_016
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_016
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_016
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_016';
@@ -433,12 +433,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_017
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_017
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_017
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_017
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_017';
@@ -456,12 +456,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_018
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_018
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_018
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_018
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_018';
@@ -479,12 +479,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_019
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_019
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_019
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_019
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_019';
@@ -502,12 +502,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_020
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_020
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_020
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_020
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_020';
@@ -525,12 +525,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_021
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_021
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_021
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_021
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_021';
@@ -548,12 +548,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_022
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_022
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_022
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_022
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_022';
@@ -571,12 +571,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_023
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_023
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_023
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_023
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_023';
@@ -594,12 +594,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_024
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_024
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_024
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_024
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_024';
@@ -617,12 +617,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_025
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_025
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_025
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_025
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_025';
@@ -640,12 +640,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_026
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_026
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_026
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_026
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_026';
@@ -663,12 +663,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_027
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_027
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_027
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_027
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_027';
@@ -686,12 +686,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_028
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_028
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_028
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_028
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_028';
@@ -709,12 +709,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_029
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_029
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_029
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_029
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_029';
@@ -732,12 +732,12 @@ export default function ImagePictureSetAuxiliaryPictureTest() {
       }
     })
     /**
-     * @tc.number     PICTURE_SET_AUXILIARY_PICTURE_030
-     * @tc.name       PICTURE_SET_AUXILIARY_PICTURE_030
-     * @tc.desc       picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PICTURE_SET_AUXILIARY_PICTURE_030
+     * @tc.number PICTURE_SET_AUXILIARY_PICTURE_030
+     * @tc.desc   picture_setAuxiliaryPicture jpg图片第一个参数为空覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_SET_AUXILIARY_PICTURE_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_SET_AUXILIARY_PICTURE_030';

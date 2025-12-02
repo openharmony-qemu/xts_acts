@@ -58,12 +58,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
       }
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0100
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0100
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0100
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0100', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0100';
@@ -73,12 +73,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0200
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0200
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0200
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0200', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0200';
@@ -88,12 +88,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0300
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0300
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0300
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0300', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0300';
@@ -104,12 +104,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
 
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0400
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0400
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0400
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0400', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0400';
@@ -119,12 +119,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0500
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0500
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0500
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0500', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0500';
@@ -134,12 +134,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0600
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0600
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0600
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0600', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0600';
@@ -150,12 +150,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0700
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0700
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0700
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0700', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0700';
@@ -166,12 +166,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0800
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0800
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0800
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0800', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0800';
@@ -181,12 +181,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0900
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0900
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0900
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0900', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_0900';
@@ -197,12 +197,12 @@ export default function DeleteAssetsChangeRequestSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_1000
      * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_1000
+     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_1000
      * @tc.desc   MediaAssetChangeRequest_deleteAssets
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_1000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_DELETE_ASSETS_1000';

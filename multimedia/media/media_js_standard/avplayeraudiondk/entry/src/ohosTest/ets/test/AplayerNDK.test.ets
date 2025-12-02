@@ -33,14 +33,14 @@ export default function APlayerNDKTest() {
       console.info('afterAll case');
     })
 
-    /* *
-           * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEtURLSOURCE_0100
-           * @tc.name      : OH_PLAYER_PlayerStateSetURLSource_001
-           * @tc.desc      : Test OH_AVPlayer_SetURLSource
-           * @tc.size      : MediumTest
-           * @tc.type      : Function test
-           * @tc.level     : Level0
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEtURLSOURCE_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEtURLSOURCE_0100
+     * @tc.desc   Test OH_AVPlayer_SetURLSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEtURLSOURCE_0100', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateSetURLSource();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEtURLSOURCE_0100-------------PlayerStateSetURLSource:" + a);
@@ -48,14 +48,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_PREPARE_0200
-          * @tc.name      : OH_PLAYER_PlayerStatePrepare_002
-          * @tc.desc      : Test OH_AVPlayer_Prepare
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_PREPARE_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_PREPARE_0200
+     * @tc.desc   Test OH_AVPlayer_Prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_PREPARE_0200', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStatePrepare();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_PREPARE_0200-------------PlayerStatePrepare:" + a);
@@ -63,14 +63,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_PLAYER_0300
-          * @tc.name      : OH_PLAYER_PlayerStatePlayer_003
-          * @tc.desc      : Test OH_AVPlayer_Play
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_PLAYER_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_PLAYER_0300
+     * @tc.desc   Test OH_AVPlayer_Play
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_PLAYER_0300', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStatePlayer();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_PLAYER_0300-------------PlayerStatePlayer:" + a);
@@ -78,14 +78,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_PAUSE_0400
-          * @tc.name      : OH_PLAYER_PlayerStatePause_004
-          * @tc.desc      : Test OH_AVPlayer_Pause
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_PAUSE_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_PAUSE_0400
+     * @tc.desc   Test OH_AVPlayer_Pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_PAUSE_0400', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStatePause();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_PAUSE_0400-------------PlayerStatePause:" + a);
@@ -93,14 +93,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_STOP_0500
-          * @tc.name      : OH_PLAYER_PlayerStateStop_005
-          * @tc.desc      : Test OH_AVPlayer_Stop
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_STOP_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_STOP_0500
+     * @tc.desc   Test OH_AVPlayer_Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_STOP_0500', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateStop();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_STOP_0500-------------PlayerStateStop:" + a);
@@ -108,14 +108,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_RESET_0600
-          * @tc.name      : OH_PLAYER_PlayerStateReset_006
-          * @tc.desc      : Test OH_AVPlayer_Reset
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_RESET_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_RESET_0600
+     * @tc.desc   Test OH_AVPlayer_Reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_RESET_0600', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateReset();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_RESET_0600-------------PlayerStateReset:" + a);
@@ -123,14 +123,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETVOLUME_0700
-          * @tc.name      : OH_PLAYER_PlayerStateSetvolume_007
-          * @tc.desc      : Test OH_AVPlayer_Setvolume
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETVOLUME_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETVOLUME_0700
+     * @tc.desc   Test OH_AVPlayer_Setvolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETVOLUME_0700', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateSetvolume();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETVOLUME_0700-------------PlayerStateSetvolume:" + a);
@@ -138,14 +138,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEEK_0800
-          * @tc.name      : OH_PLAYER_PlayerStateSeek_008
-          * @tc.desc      : Test OH_AVPlayer_Seek
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEEK_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEEK_0800
+     * @tc.desc   Test OH_AVPlayer_Seek
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEEK_0800', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateSeek();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_SEEK_0800-------------PlayerStateSeek:" + a);
@@ -153,14 +153,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_CURRENTTIME_0900
-          * @tc.name      : OH_PLAYER_PlayerStateGetCurrentTime_009
-          * @tc.desc      : Test OH_AVPlayer_GetCurrentTime
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_CURRENTTIME_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_CURRENTTIME_0900
+     * @tc.desc   Test OH_AVPlayer_GetCurrentTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_CURRENTTIME_0900', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateGetCurrentTime();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_CURRENTTIME_0900-------------PlayerStateGetCurrentTime:" + a);
@@ -168,14 +168,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1000
-          * @tc.name      : OH_PLAYER_PlayerStateSetSpeed_010
-          * @tc.desc      : Test OH_AVPlayer_SetSpeed
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1000
+     * @tc.desc   Test OH_AVPlayer_SetSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1000', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateSetSpeed();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1000-------------PlayerStateSetSpeed:" + a);
@@ -183,14 +183,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_GETSPEED_1100
-          * @tc.name      : OH_PLAYER_PlayerStateGetSpeed_011
-          * @tc.desc      : Test OH_AVPlayer_GetSpeed
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_GETSPEED_1100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_GETSPEED_1100
+     * @tc.desc   Test OH_AVPlayer_GetSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_GETSPEED_1100', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateGetSpeed();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_GETSPEED_1100-------------PlayerStateGetSpeed:" + a);
@@ -198,14 +198,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_ISPLAY_1200
-          * @tc.name      : OH_PLAYER_PlayerStateIsPlaying_012
-          * @tc.desc      : Test OH_AVPlayer_IsPlaying
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_ISPLAY_1200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_ISPLAY_1200
+     * @tc.desc   Test OH_AVPlayer_IsPlaying
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_ISPLAY_1200', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateIsPlaying();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_ISPLAY_1200-------------PlayerStateIsPlaying:" + a);
@@ -213,14 +213,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_DURATION_1300
-          * @tc.name      : OH_PLAYER_PlayerStateGetDuration_013
-          * @tc.desc      : Test OH_AVPlayer_GetDuration
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_DURATION_1300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_DURATION_1300
+     * @tc.desc   Test OH_AVPlayer_GetDuration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_DURATION_1300', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateGetDuration();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_DURATION_1300-------------PlayerStateGetDuration:" + a);
@@ -228,14 +228,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400
-          * @tc.name      : OH_PLAYER_PlayerStateLoop_014
-          * @tc.desc      : Test OH_AVPlayer_Loop
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400
+     * @tc.desc   Test OH_AVPlayer_Loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateLoop();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400-------------PlayerStateLoop:" + a);
@@ -243,14 +243,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-    /* *
-          * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1500
-          * @tc.name      : OH_PLAYER_PlayerStateLoop_014
-          * @tc.desc      : Test OH_AVPlayer_Loop
-          * @tc.size      : MediumTest
-          * @tc.type      : Function test
-          * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1500
+     * @tc.desc   Test OH_AVPlayer_Loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1500', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateSetSpeed_1_25_X();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400-------------PlayerStateLoop:" + a);
@@ -258,14 +258,14 @@ export default function APlayerNDKTest() {
       done()
     })
 
-      /* *
-        * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1600
-        * @tc.name      : OH_PLAYER_PlayerStateLoop_014
-        * @tc.desc      : Test OH_AVPlayer_Loop
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-      */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1600
+   * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1600
+   * @tc.desc   Test OH_AVPlayer_Loop
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1600', Level.LEVEL0,async (done: Function) => {
     let a = aplayerTest.PlayerStateSetSpeed_1_75_X();
     console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400-------------PlayerStateLoop:" + a);
@@ -273,14 +273,14 @@ export default function APlayerNDKTest() {
     done()
   })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1700
-        * @tc.name      : OH_PLAYER_PlayerStateLoop_014
-        * @tc.desc      : Test OH_AVPlayer_Loop
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-      */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1700
+     * @tc.desc   Test OH_AVPlayer_Loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AUDIONDK_SETSPEED_1700', Level.LEVEL0,async (done: Function) => {
       let a = aplayerTest.PlayerStateSetSpeed_2_00_X();
       console.info(Tag + "SUB_MULTIMEDIA_PLAYER_AUDIONDK_LOOP_1400-------------PlayerStateLoop:" + a);

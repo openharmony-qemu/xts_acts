@@ -54,14 +54,14 @@ export default function photoAccessHelperTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0000
-       * @tc.name      : test getAssets basic API by callback
-       * @tc.desc      : test getAssets operation: fetchColumns is ['uri'、'media_type'、'subtype'、'display_name']，查询一个照片对象
-       * @tc.size      : MEDIUM
-       * @tc.type      : Function
-       * @tc.level     : Level2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0000
+     * @tc.desc   test getAssets operation: fetchColumns is ['uri'、'media_type'、'subtype'、'display_name']，查询一个照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0000', Level.LEVEL0, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -80,14 +80,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
-    * @tc.name      : test getAssets basic API by callback
-    * @tc.desc      : test getAssets operation: fetchOption的fetchColumns为空情况下，查询一个已经存在的照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100
+     * @tc.desc   test getAssets operation: fetchOption的fetchColumns为空情况下，查询一个已经存在的照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0100', Level.LEVEL1, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -106,14 +106,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
-    * @tc.name      : test getAssets basic API by callback
-    * @tc.desc      : test getAssets operation: fetchOption为undefined情况下，查询一个已经存在的照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200
+     * @tc.desc   test getAssets operation: fetchOption为undefined情况下，查询一个已经存在的照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0200', Level.LEVEL2, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions | undefined = undefined;
@@ -128,14 +128,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
-    * @tc.name      : test getAssets basic API by promise
-    * @tc.desc      : test getAssets operation: fetchOption的fetchColumns为空情况下，查询一个已经存在的照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300
+     * @tc.desc   test getAssets operation: fetchOption的fetchColumns为空情况下，查询一个已经存在的照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0300', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -154,14 +154,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
-    * @tc.name      : test getAssets basic API by promise
-    * @tc.desc      : test getAssets operation: fetchOption为undefined情况下，查询一个已经存在的照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400
+     * @tc.desc   test getAssets operation: fetchOption为undefined情况下，查询一个已经存在的照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0400', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions | undefined = undefined;
@@ -175,14 +175,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
-    * @tc.name      : test getAssets basic API by promise
-    * @tc.desc      : test getAssets operation: fetchOption的displayName正常情况下，查询一个已经存在的照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500
+     * @tc.desc   test getAssets operation: fetchOption的displayName正常情况下，查询一个已经存在的照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0500', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -200,14 +200,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
-    * @tc.name      : test getAssets basic API by promise
-    * @tc.desc      : test getAssets operation: fetchOption的displayName不正常情况下（displayName不带后缀），查询一个照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600
+     * @tc.desc   test getAssets operation: fetchOption的displayName不正常情况下（displayName不带后缀），查询一个照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0600', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -225,14 +225,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
-    * @tc.name      : test getAssets basic API by callback
-    * @tc.desc      : test getAssets operation: fetchOption的displayName正常情况下，查询一个已经存在的照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700
+     * @tc.desc   test getAssets operation: fetchOption的displayName正常情况下，查询一个已经存在的照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0700', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -250,14 +250,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
-    * @tc.name      : test getAssets basic API by callback
-    * @tc.desc      : test getAssets operation: fetchOption的displayName不正常情况下（displayName不带后缀），查询一个照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800
+     * @tc.desc   test getAssets operation: fetchOption的displayName不正常情况下（displayName不带后缀），查询一个照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0800', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -275,14 +275,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
-    * @tc.name      : test getAssets basic API by callback
-    * @tc.desc      : test getAssets operation: fetchColumns is ['uri'、'media_type'、'subtype'、'display_name']，查询一个照片对象
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900
+     * @tc.desc   test getAssets operation: fetchColumns is ['uri'、'media_type'、'subtype'、'display_name']，查询一个照片对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_0900', Level.LEVEL3, async (done: Function) => {
       try {
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -301,14 +301,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation: 创建照片，type:IMAGE,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000
+     * @tc.desc   test createAsset operation: 创建照片，type:IMAGE,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1000', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -329,14 +329,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation: 创建照片，type:undefined,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100
+     * @tc.desc   test createAsset operation: 创建照片，type:undefined,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1100', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType | undefined = undefined;
@@ -354,14 +354,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation: 创建照片，type:IMAGE,extension:123,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200
+     * @tc.desc   test createAsset operation: 创建照片，type:IMAGE,extension:123,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1200', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -379,14 +379,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation: 创建照片，type:IMAGE,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300
+     * @tc.desc   test createAsset operation: 创建照片，type:IMAGE,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1300', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -404,14 +404,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：title为undefined, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400
+     * @tc.desc   test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：title为undefined, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1400', Level.LEVEL3, async (done: Function) => { //14
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -430,14 +430,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：undefined
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500
+     * @tc.desc   test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1500', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -453,14 +453,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建视频，type:VIDEO,extension:mp4,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600
+     * @tc.desc   test createAsset operation:创建视频，type:VIDEO,extension:mp4,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1600', Level.LEVEL3, async (done: Function) => { //16
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -478,14 +478,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建视频，type：undefined，extension：mp4，createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700
+     * @tc.desc   test createAsset operation:创建视频，type：undefined，extension：mp4，createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1700', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType | undefined = undefined;
@@ -503,14 +503,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建视频，type：VIDEO，extension：123，createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800
+     * @tc.desc   test createAsset operation:创建视频，type：VIDEO，extension：123，createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1800', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -528,14 +528,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建视频，type:VIDEO,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900
+     * @tc.desc   test createAsset operation:创建视频，type:VIDEO,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_1900', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -553,14 +553,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：title为undefined, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000
+     * @tc.desc   test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：title为undefined, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2000', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -578,14 +578,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：undefined
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100
+     * @tc.desc   test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2100', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -601,14 +601,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200
+     * @tc.desc   test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2200', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -626,14 +626,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
-    * @tc.name      : test createAsset basic API by promise
-    * @tc.desc      : test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300
+     * @tc.desc   test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2300', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -652,14 +652,14 @@ export default function photoAccessHelperTest() {
     })
 
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation: 创建照片，type:IMAGE,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400
+     * @tc.desc   test createAsset operation: 创建照片，type:IMAGE,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2400', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -679,14 +679,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation: 创建照片，type:undefined,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500
+     * @tc.desc   test createAsset operation: 创建照片，type:undefined,extension:jpg,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2500', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType | undefined = undefined;
@@ -705,14 +705,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation: 创建照片，type:IMAGE,extension:123,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600
+     * @tc.desc   test createAsset operation: 创建照片，type:IMAGE,extension:123,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2600', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -731,14 +731,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation: 创建照片，type:IMAGE,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700
+     * @tc.desc   test createAsset operation: 创建照片，type:IMAGE,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2700', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -757,14 +757,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：title为undefined, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800
+     * @tc.desc   test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：title为undefined, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2800', Level.LEVEL3, (done: Function) => { //28
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -783,14 +783,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：undefined
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900
+     * @tc.desc   test createAsset operation:创建照片，type:IMAGE,extension:jpg,createOptions：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_2900', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -807,14 +807,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建视频，type:VIDEO,extension:mp4,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000
+     * @tc.desc   test createAsset operation:创建视频，type:VIDEO,extension:mp4,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3000', Level.LEVEL3, (done: Function) => { //30
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -833,14 +833,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建视频，type：undefined，extension：mp4，createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100
+     * @tc.desc   test createAsset operation:创建视频，type：undefined，extension：mp4，createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3100', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType | undefined = undefined;
@@ -859,14 +859,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3200
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建视频，type：VIDEO，extension：123，createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3200
+     * @tc.desc   test createAsset operation:创建视频，type：VIDEO，extension：123，createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3200', Level.LEVEL3, (done: Function) => {
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
       let extension: string = '123';
@@ -879,14 +879,14 @@ export default function photoAccessHelperTest() {
       });
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3300
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建视频，type:VIDEO,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3300
+     * @tc.desc   test createAsset operation:创建视频，type:VIDEO,extension:undefined,createOptions：title为testNum, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3300', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -905,14 +905,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：title为undefined, PhotoSubtype为default
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400
+     * @tc.desc   test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：title为undefined, PhotoSubtype为default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3400', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -931,14 +931,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：undefined
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500
+     * @tc.desc   test createAsset operation:创建视频，type：VIDEO,extension:mp4,createOptions：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3500', Level.LEVEL3, (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -955,14 +955,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600
+     * @tc.desc   test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3600', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
@@ -979,14 +979,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
-    * @tc.name      : test createAsset basic API by callback
-    * @tc.desc      : test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700
+     * @tc.desc   test createAsset operation:创建一个照片，只有type（IMAGE）、extension(jpg)参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3700', Level.LEVEL3, async (done: Function) => {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
@@ -1003,14 +1003,14 @@ export default function photoAccessHelperTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
-    * @tc.name      : test getAlbums basic API by promise
-    * @tc.desc      : test getAlbums operation: 通过albumType.USER和photoAccessHelper.AlbumSubtype.USER_GENERIC获取用户相册(带album_name,fetchOptions)
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800
+     * @tc.desc   test getAlbums operation: 通过albumType.USER和photoAccessHelper.AlbumSubtype.USER_GENERIC获取用户相册(带album_name,fetchOptions)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3800', Level.LEVEL3, async (done: Function) => {
       // 示例代码中为获取相册名为newAlbumName的相册。
       console.info('getAlbumsDemo');
@@ -1032,14 +1032,14 @@ export default function photoAccessHelperTest() {
       });
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
-    * @tc.name      : test getAlbums basic API by promise
-    * @tc.desc      : test getAlbums operation: 通过albumType.USER和photoAccessHelper.AlbumSubtype.USER_GENERIC获取用户相册(不带album_name,fetchOptions)
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900
+     * @tc.desc   test getAlbums operation: 通过albumType.USER和photoAccessHelper.AlbumSubtype.USER_GENERIC获取用户相册(不带album_name,fetchOptions)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_3900', Level.LEVEL3, async (done: Function) => {
       phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC)
         .then(async (fetchResult) => {
@@ -1054,14 +1054,14 @@ export default function photoAccessHelperTest() {
         });
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
-    * @tc.name      : test getAlbums basic API by promise
-    * @tc.desc      : test getAlbums operation: 通过albumType.USER和photoAccessHelper.AlbumSubtype.USER_GENERIC获取用户相册(带album_name,fetchOptions)
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000
+     * @tc.desc   test getAlbums operation: 通过albumType.USER和photoAccessHelper.AlbumSubtype.USER_GENERIC获取用户相册(带album_name,fetchOptions)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4000', Level.LEVEL3, async (done: Function) => {
       // 示例代码中为获取相册名为newAlbumName的相册。
       console.info('getAlbumsDemo');
@@ -1083,14 +1083,14 @@ export default function photoAccessHelperTest() {
       });
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
-    * @tc.name      : test getAlbums basic API by promise
-    * @tc.desc      : test getAlbums operation: 通过albumType.USER和fetchOptions指定album_name获取指定的用户相册
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100
+     * @tc.desc   test getAlbums operation: 通过albumType.USER和fetchOptions指定album_name获取指定的用户相册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4100', Level.LEVEL3, async (done: Function) => {
       // 示例代码中为获取相册名为newAlbumName的相册。
       console.info('getAlbumsDemo');
@@ -1112,14 +1112,14 @@ export default function photoAccessHelperTest() {
       });
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
-    * @tc.name      : test getAlbums basic API by promise
-    * @tc.desc      : test getAlbums operation: 通过相册类型和相册子类型查询系统相册(VIDEO,FAVORITE)
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200
+     * @tc.desc   test getAlbums operation: 通过相册类型和相册子类型查询系统相册(VIDEO,FAVORITE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4200', Level.LEVEL3, async (done: Function) => {
       // 示例代码中为获取相册名为newAlbumName的相册。
       console.info('getAlbumsDemo');
@@ -1141,14 +1141,14 @@ export default function photoAccessHelperTest() {
       });
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
-    * @tc.name      : test getAlbums basic API by promise
-    * @tc.desc      : test getAlbums operation: 通过fetchOptions指定三个用户相册的albumName,并按照album_name升序的情况下，查询对应相册
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300
+     * @tc.desc   test getAlbums operation: 通过fetchOptions指定三个用户相册的albumName,并按照album_name升序的情况下，查询对应相册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4300', Level.LEVEL3, async (done: Function) => {
       // 示例代码中为获取相册名为newAlbumName的相册。
       console.info('getAlbumsDemo');
@@ -1170,14 +1170,14 @@ export default function photoAccessHelperTest() {
       });
     })
 
-    /* *
-   * @tc.number    : SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
-   * @tc.name      : test getAlbums basic API by promise
-   * @tc.desc      : test getAlbums operation: 通过fetchOptions指定三个用户相册的albumName,并按照album_name降序的情况下，查询对应相册
-   * @tc.size      : MEDIUM
-   * @tc.type      : Function
-   * @tc.level     : Level3
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400
+     * @tc.desc   test getAlbums operation: 通过fetchOptions指定三个用户相册的albumName,并按照album_name降序的情况下，查询对应相册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_4400', Level.LEVEL3, async (done: Function) => {
       // 示例代码中为获取相册名为newAlbumName的相册。
       console.info('getAlbumsDemo');

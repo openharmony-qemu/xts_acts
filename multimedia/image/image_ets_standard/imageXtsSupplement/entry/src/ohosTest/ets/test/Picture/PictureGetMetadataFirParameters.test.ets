@@ -70,12 +70,12 @@ export default function PictureGetMetadataFirstParameters() {
 
 
     /**
-     * @tc.number    PICTURE_GET_METADATA_FIRST_PARAMETERS_001
-     * @tc.name      PICTURE_GET_METADATA_FIRST_PARAMETERS_001
-     * @tc.desc      getMetadata :image.MetadataType.FRAGMENT_METADATA
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_FIRST_PARAMETERS_001
+     * @tc.number PICTURE_GET_METADATA_FIRST_PARAMETERS_001
+     * @tc.desc   getMetadata :image.MetadataType.FRAGMENT_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_FIRST_PARAMETERS_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_FIRST_PARAMETERS_001';
@@ -102,12 +102,12 @@ export default function PictureGetMetadataFirstParameters() {
       })
     })
     /**
-     * @tc.number    PICTURE_GET_METADATA_FIRST_PARAMETERS_002
-     * @tc.name      PICTURE_GET_METADATA_FIRST_PARAMETERS_002
-     * @tc.desc      getMetadata :image.MetadataType.FRAGMENT_METADATA
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_FIRST_PARAMETERS_002
+     * @tc.number PICTURE_GET_METADATA_FIRST_PARAMETERS_002
+     * @tc.desc   getMetadata :image.MetadataType.FRAGMENT_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_FIRST_PARAMETERS_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_FIRST_PARAMETERS_002';
@@ -133,12 +133,12 @@ export default function PictureGetMetadataFirstParameters() {
     })
   })
     /**
-     * @tc.number    PICTURE_GET_METADATA_FIRST_PARAMETERS_003
-     * @tc.name      PICTURE_GET_METADATA_FIRST_PARAMETERS_003
-     * @tc.desc      getMetadata :image.MetadataType.FRAGMENT_METADATA
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_FIRST_PARAMETERS_003
+     * @tc.number PICTURE_GET_METADATA_FIRST_PARAMETERS_003
+     * @tc.desc   getMetadata :image.MetadataType.FRAGMENT_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_FIRST_PARAMETERS_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_FIRST_PARAMETERS_003';
@@ -165,12 +165,12 @@ export default function PictureGetMetadataFirstParameters() {
     })
 
     /**
-     * @tc.number    PICTURE_GET_METADATA_FIRST_PARAMETERS_004
-     * @tc.name      PICTURE_GET_METADATA_FIRST_PARAMETERS_004
-     * @tc.desc      getMetadata :image.MetadataType.FRAGMENT_METADATA
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PICTURE_GET_METADATA_FIRST_PARAMETERS_004
+     * @tc.number PICTURE_GET_METADATA_FIRST_PARAMETERS_004
+     * @tc.desc   getMetadata :image.MetadataType.FRAGMENT_METADATA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PICTURE_GET_METADATA_FIRST_PARAMETERS_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PICTURE_GET_METADATA_FIRST_PARAMETERS_004';

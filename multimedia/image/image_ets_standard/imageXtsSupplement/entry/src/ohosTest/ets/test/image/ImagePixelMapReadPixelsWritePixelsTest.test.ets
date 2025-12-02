@@ -66,15 +66,15 @@ export default function ReadPixelsWritePixelsTest() {
       AppStorage.delete('emptyString');
     });
 
-    /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_001
-     * @tc.name       PIXEL_MAP_READ_PIXELS_001
-     * @tc.desc       readPixels测试第一个参数为null的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PIXEL_MAP_READ_PIXELS_001
+     * @tc.number PIXEL_MAP_READ_PIXELS_001
+     * @tc.desc   PIXEL_MAP_READ_PIXELS_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PIXEL_MAP_READ_PIXELS_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_001';
       try {
@@ -94,15 +94,15 @@ export default function ReadPixelsWritePixelsTest() {
         done();
       }
     });
-    /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_002
-     * @tc.name       PIXEL_MAP_READ_PIXELS_002
-     * @tc.desc       readPixels测试第一个参数为undefined的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PIXEL_MAP_READ_PIXELS_002
+     * @tc.number PIXEL_MAP_READ_PIXELS_002
+     * @tc.desc   PIXEL_MAP_READ_PIXELS_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PIXEL_MAP_READ_PIXELS_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_002';
       try {
@@ -122,15 +122,15 @@ export default function ReadPixelsWritePixelsTest() {
         done();
       }
     });
-    /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_003
-     * @tc.name       PIXEL_MAP_READ_PIXELS_003
-     * @tc.desc       readPixels测试第一个参数为空的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PIXEL_MAP_READ_PIXELS_003
+     * @tc.number PIXEL_MAP_READ_PIXELS_003
+     * @tc.desc   PIXEL_MAP_READ_PIXELS_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PIXEL_MAP_READ_PIXELS_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_003';
       try {
@@ -151,12 +151,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TEST_004
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TEST_004
-     * @tc.desc       callback形式的第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TEST_004
+     * @tc.number PIXEL_MAP_READ_PIXELS_TEST_004
+     * @tc.desc   callback形式的第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TEST_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TEST_004';
@@ -172,12 +172,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TEST_005
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TEST_005
-     * @tc.desc       callback形式的第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TEST_005
+     * @tc.number PIXEL_MAP_READ_PIXELS_TEST_005
+     * @tc.desc   callback形式的第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TEST_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TEST_005';
@@ -193,12 +193,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_TEST_006
-     * @tc.name       PIXEL_MAP_READ_PIXELS_TEST_006
-     * @tc.desc       callback形式的第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_TEST_006
+     * @tc.number PIXEL_MAP_READ_PIXELS_TEST_006
+     * @tc.desc   callback形式的第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_TEST_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_TEST_006';
@@ -214,12 +214,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_SYNC_TEST_007
-     * @tc.name       PIXEL_MAP_READ_PIXELS_SYNC_TEST_007
-     * @tc.desc       readPixelsSync第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_SYNC_TEST_007
+     * @tc.number PIXEL_MAP_READ_PIXELS_SYNC_TEST_007
+     * @tc.desc   readPixelsSync第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_SYNC_TEST_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_SYNC_TEST_007'
@@ -242,12 +242,12 @@ export default function ReadPixelsWritePixelsTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_SYNC_TEST_008
-     * @tc.name       PIXEL_MAP_READ_PIXELS_SYNC_TEST_008
-     * @tc.desc       readPixelsSync第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_SYNC_TEST_008
+     * @tc.number PIXEL_MAP_READ_PIXELS_SYNC_TEST_008
+     * @tc.desc   readPixelsSync第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_SYNC_TEST_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_SYNC_TEST_008'
@@ -270,12 +270,12 @@ export default function ReadPixelsWritePixelsTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_READ_PIXELS_SYNC_TEST_009
-     * @tc.name       PIXEL_MAP_READ_PIXELS_SYNC_TEST_009
-     * @tc.desc       readPixelsSync第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_READ_PIXELS_SYNC_TEST_009
+     * @tc.number PIXEL_MAP_READ_PIXELS_SYNC_TEST_009
+     * @tc.desc   readPixelsSync第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_READ_PIXELS_SYNC_TEST_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_SYNC_TEST_009'
@@ -295,15 +295,15 @@ export default function ReadPixelsWritePixelsTest() {
         done();
       }
     })
-    /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_0010
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_0010
-     * @tc.desc       writePixels测试第一个参数为null的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_0010
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_0010
+     * @tc.desc   PIXEL_MAP_WRITE_PIXELS_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PIXEL_MAP_WRITE_PIXELS_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_0010';
       try {
@@ -324,15 +324,15 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
 
-    /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_0011
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_0011
-     * @tc.desc       writePixels测试第一个参数为undefined的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_0011
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_0011
+     * @tc.desc   PIXEL_MAP_WRITE_PIXELS_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PIXEL_MAP_WRITE_PIXELS_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_0011';
       try {
@@ -352,15 +352,15 @@ export default function ReadPixelsWritePixelsTest() {
         done();
       }
     });
-    /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_0012
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_0012
-     * @tc.desc       writePixels测试第一个参数为空的情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_0012
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_0012
+     * @tc.desc   PIXEL_MAP_WRITE_PIXELS_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PIXEL_MAP_WRITE_PIXELS_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_0012';
       try {
@@ -381,12 +381,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_TEST_0013
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_TEST_0013
-     * @tc.desc       callback形式的第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_TEST_0013
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_TEST_0013
+     * @tc.desc   callback形式的第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_WRITE_PIXELS_TEST_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_TEST_0013';
@@ -402,12 +402,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_TEST_0014
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_TEST_0014
-     * @tc.desc       callback形式的第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_TEST_0014
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_TEST_0014
+     * @tc.desc   callback形式的第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_WRITE_PIXELS_TEST_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_TEST_0014';
@@ -423,12 +423,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_TEST_0015
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_TEST_0015
-     * @tc.desc       callback形式的第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_TEST_0015
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_TEST_0015
+     * @tc.desc   callback形式的第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_WRITE_PIXELS_TEST_0015', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_TEST_0015';
@@ -444,12 +444,12 @@ export default function ReadPixelsWritePixelsTest() {
       }
     });
     /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0016
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0016
-     * @tc.desc       writePixelsSync第一个参数空值覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0016
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0016
+     * @tc.desc   writePixelsSync第一个参数空值覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0016', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0016'
@@ -472,12 +472,12 @@ export default function ReadPixelsWritePixelsTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0017
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0017
-     * @tc.desc       writePixelsSync第一个参数undefined覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0017
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0017
+     * @tc.desc   writePixelsSync第一个参数undefined覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0017', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0017'
@@ -500,12 +500,12 @@ export default function ReadPixelsWritePixelsTest() {
     })
 
     /**
-     * @tc.number     PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0018
-     * @tc.name       PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0018
-     * @tc.desc       writePixelsSync第一个参数null覆盖情况
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0018
+     * @tc.number PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0018
+     * @tc.desc   writePixelsSync第一个参数null覆盖情况
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0018', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_SYNC_TEST_0018'

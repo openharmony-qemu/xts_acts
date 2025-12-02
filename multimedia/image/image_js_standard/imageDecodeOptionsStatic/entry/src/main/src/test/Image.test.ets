@@ -235,16 +235,12 @@ export default function imageDecodeOptions() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGBA_8888-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGBA_8888-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -263,16 +259,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions:index -1})-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions:index -1})-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -291,16 +283,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:unknown-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return null
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:unknown-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_JPG_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -319,16 +307,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions:editable false})-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions:editable false})-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -347,16 +331,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions:desiredSize>imagesize)-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions:desiredSize>imagesize)-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size_err: image.Size ={ width: 10000, height: 10000 };
@@ -376,16 +356,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions:desiredRegion>imagesize)-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions:desiredRegion>imagesize)-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -447,16 +423,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100
-      * @tc.desc    createPixelMap-promise-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100
+     * @tc.desc   createPixelMap-promise-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -487,16 +459,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0100
-      * @tc.desc    createPixelMap-callback-jpg
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return null
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0100
+     * @tc.desc   createPixelMap-callback-jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -522,16 +490,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGBA_8888-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGBA_8888-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -550,16 +514,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGBA_565-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return null
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGBA_565-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -578,16 +538,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:unkonwn-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:unkonwn-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -606,16 +562,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_INDEX_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_INDEX_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions:index 1})-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return null
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_INDEX_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_INDEX_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions:index 1})-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_INDEX_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -634,16 +586,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0200
-      * @tc.desc    createPixelMap(decodingOptions:editable false})-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0200
+     * @tc.desc   createPixelMap(decodingOptions:editable false})-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -662,16 +610,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions:desiredSize>imagesize)-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions:desiredSize>imagesize)-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size_err: image.Size ={ width: 10000, height: 10000 };
@@ -691,16 +635,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions:desiredRegion>imagesize)-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions:desiredRegion>imagesize)-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let fd: int = getFd("moving_test.gif");
@@ -749,16 +689,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200
-      * @tc.desc    createPixelMap-promise-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200
+     * @tc.desc   createPixelMap-promise-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let fd: int = getFd("moving_test.gif");
@@ -783,16 +719,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0200
-      * @tc.desc    createPixelMap-callback-gif
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return null
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0200
+     * @tc.desc   createPixelMap-callback-gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_CALLBACK_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let fd: int = getFd("moving_test.gif");
@@ -811,16 +743,12 @@ export default function imageDecodeOptions() {
     });
     //
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGBA_8888-bmp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGBA_8888-bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -839,16 +767,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGB_565-bmp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGB_565-bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -867,16 +791,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:unkonwn-bmp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:unkonwn-bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -895,16 +815,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0300
-      * @tc.desc    createPixelMap(decodingOptions:editable false})-bmp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0300
+     * @tc.desc   createPixelMap(decodingOptions:editable false})-bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -923,16 +839,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0500
-      * @tc.desc    createPixelMap(decodingOptions:desiredSize>imagesize)-bmp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0500
+     * @tc.desc   createPixelMap(decodingOptions:desiredSize>imagesize)-bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size_err: image.Size ={ width: 1500, height: 1500 };
@@ -952,16 +864,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600
-      * @tc.desc    createPixelMap(decodingOptions:desiredRegion>imagesize)-bmp
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600
+     * @tc.desc   createPixelMap(decodingOptions:desiredRegion>imagesize)-bmp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let fd: int = getFd("test.bmp");
@@ -1010,16 +918,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGBA_8888-png
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGBA_8888-png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -1038,16 +942,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:RGB_565-png
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:RGB_565-png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -1066,16 +966,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900
-      * @tc.desc    createPixelMap(decodingOptions)-pixelformat:unkonwn-png
-      *                 1.create imagesource
-      *                 2.set index and DecodeOptions
-      *                 3.create PixelMap
-      *                 4.callback return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900
+     * @tc.desc   createPixelMap(decodingOptions)-pixelformat:unkonwn-png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PIXELFORMAT_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -1094,17 +990,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0400
-      * @tc.desc    createPixelMap(decodingOptions:editable false})-png
-      *                 1.create imagesource
-      *                 2.set decodingOptions
-      *                 3.call createPixelMap
-      *                 4.set index=-1,options
-      *                 5.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0400
+     * @tc.desc   createPixelMap(decodingOptions:editable false})-png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_EDITABLE_FALSE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size: image.Size ={ width: 1, height: 2 };
@@ -1123,17 +1014,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0700
-      * @tc.desc    createPixelMap(decodingOptions:desiredSize>imagesize)-png
-      *                 1.create imagesource
-      *                 2.set decodingOptions
-      *                 3.call createPixelMap
-      *                 4.set index=-1,options
-      *                 5.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0700
+     * @tc.desc   createPixelMap(decodingOptions:desiredSize>imagesize)-png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let size_err: image.Size ={ width: 1500, height: 1500 };
@@ -1153,17 +1039,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800
-      * @tc.desc    createPixelMap(decodingOptions:desiredRegion>imagesize)-png
-      *                 1.create imagesource
-      *                 2.set decodingOptions
-      *                 3.call createPixelMap
-      *                 4.set index=-1,options
-      *                 5.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800
+     * @tc.desc   createPixelMap(decodingOptions:desiredRegion>imagesize)-png
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let fd: int = getFd("test.png");
@@ -1212,16 +1093,12 @@ export default function imageDecodeOptions() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_ROTATE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_ROTATE_STATIC_0900
-      * @tc.desc    Decode the image to generate a bitmap
-      *                 1.create imagesource
-      *                 2.create pixelmap
-      *                 3.call getimageinfo
-      *                 4.Judging the length and width are opposite to the original
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_ROTATE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_ROTATE_STATIC_0900
+     * @tc.desc   Decode the image to generate a bitmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_ROTATE_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let fd: int = getFd("test.jpg");

@@ -43,12 +43,12 @@ export default function albumGetNextObjectTest () {
 
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_NEXT_OBJECT_0000
-     * @tc.name      : album_getNextObject_callback_000
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getNextObject_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_NEXT_OBJECT_0000
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getNextObject_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_getNextObject_callback_000';
@@ -85,12 +85,12 @@ export default function albumGetNextObjectTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_NEXT_OBJECT_0100
-     * @tc.name      : album_getNextObject_callback_001
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getNextObject_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_NEXT_OBJECT_0100
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getNextObject_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_getNextObject_callback_001';
@@ -125,12 +125,12 @@ export default function albumGetNextObjectTest () {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_NEXT_OBJECT_0000
-     * @tc.name      : album_getNextObject_promise_000
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getNextObject_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_NEXT_OBJECT_0000
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getNextObject_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_getNextObject_promise_000';
@@ -165,12 +165,12 @@ export default function albumGetNextObjectTest () {
     });
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_NEXT_OBJECT_0100
-     * @tc.name      : album_getNextObject_promise_001
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getNextObject_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_NEXT_OBJECT_0100
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getNextObject_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_getNextObject_promise_001';

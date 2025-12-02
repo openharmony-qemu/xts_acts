@@ -539,14 +539,12 @@ export default function imagePacking() {
         done();
       }
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0100
-     * @tc.name      : SUB_IMAGE_packing_P_001
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -557,14 +555,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0200
-     * @tc.name      : SUB_IMAGE_packing_P_002 - Promise - RGB565 quality 123
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -574,14 +570,12 @@ export default function imagePacking() {
       packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0200", 2, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0300
-     * @tc.name      : SUB_IMAGE_packing_P_003 - Promise - RGB565 quality null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0300
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -591,14 +585,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0400
-     * @tc.name      : SUB_IMAGE_packing_P_004 - Promise - RGB565 format null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0400
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -607,14 +599,12 @@ export default function imagePacking() {
       packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0400", 2, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0500
-     * @tc.name      : SUB_IMAGE_packing_P_005 - Promise - RGB565 wrong format
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0500
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0500", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -624,14 +614,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0600
-     * @tc.name      : SUB_IMAGE_packing_P_006
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0600
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0600", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -640,14 +628,12 @@ export default function imagePacking() {
       packingPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0600", 5, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0700
-     * @tc.name      : SUB_IMAGE_packing_P_007 - Promise - RGB888 quality 123
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0700
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0700", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -657,14 +643,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0800
-     * @tc.name      : SUB_IMAGE_packing_P_008 - Promise - RGB888 quality null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0800
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0800", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -673,14 +657,12 @@ export default function imagePacking() {
       packingPromiseFail(done, "SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0800", 5, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0900
-     * @tc.name      : SUB_IMAGE_packing_P_009 - Promise - RGB888 format null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0900
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_0900", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -690,14 +672,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1000
-     * @tc.name      : SUB_IMAGE_packing_P_010 - Promise - RGB888 wrong format
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1000
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1000", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -707,14 +687,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1100
-     * @tc.name      : SUB_IMAGE_packing_PixelMap - Promise - no quality
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PROMISE_1100", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -724,14 +702,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0100
-     * @tc.name      : SUB_IMAGE_packingCb_001
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -741,14 +717,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0200
-     * @tc.name      : SUB_IMAGE_packingCb_002 - callback - RGB565 quality 123
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -757,14 +731,12 @@ export default function imagePacking() {
       packingCbFail(done, "SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0200", 2, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0300
-     * @tc.name      : SUB_IMAGE_packingCb_003 - callback - RGB565 quality null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0300
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -774,14 +746,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0400
-     * @tc.name      : SUB_IMAGE_packingCb_004 - callback - RGB565 format null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0400
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -790,14 +760,12 @@ export default function imagePacking() {
       packingCbFail(done, "SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0400", 2, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0500
-     * @tc.name      : SUB_IMAGE_packingCb_005 - callback - RGB565 wrong format
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0500
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -807,14 +775,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0600
-     * @tc.name      : SUB_IMAGE_packingCb_006
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0600
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0600", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -823,14 +789,12 @@ export default function imagePacking() {
       packingCb(done, "SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0600", 5, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0700
-     * @tc.name      : SUB_IMAGE_packingCb_007 - callback - RGB888 quality 123
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0700
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0700", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -840,14 +804,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0800
-     * @tc.name      : SUB_IMAGE_packingCb_008 - callback - RGB888 quality null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0800
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0800", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -856,14 +818,12 @@ export default function imagePacking() {
       packingCbFail(done, "SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0800", 5, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0900
-     * @tc.name      : SUB_IMAGE_packingCb_009 - callback - RGB888 format null
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0900
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_0900", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -873,14 +833,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1000
-     * @tc.name      : SUB_IMAGE_packingCb_010 - callback - RGB888 wrong format
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1000
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1000", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -890,14 +848,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1200
-     * @tc.name      : SUB_IMAGE_packingCb_PixelMap - callback - quality: 123
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CALLBACK_1200", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -907,15 +863,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100
-     * @tc.name      : packing ImageSource - promise
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -959,15 +912,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100
-     * @tc.name      : packing ImageSource - callback
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1007,15 +957,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200
-     * @tc.name      : packing ImageSource - callback - wrong quality
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1054,15 +1001,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_0100
-     * @tc.name      : createImagePacker
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_0100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_CREATEIMAGEPACKER_0100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1092,18 +1036,15 @@ export default function imagePacking() {
         done();
       }
     });
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
-     * @tc.name      : packing ImageSource - promise - no quality
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       try {
         let fdNumber: ESObject = await getFd("test.png");
@@ -1146,15 +1087,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300
-     * @tc.name      : packing ImageSource - promise - no format
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1197,18 +1135,15 @@ export default function imagePacking() {
         done();
       }
     });
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0400
-     * @tc.name      : packing ImageSource - callback - quality 100
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
-     */
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0400
+     * @tc.desc   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
       try {
         let fdNumber: ESObject = await getFd("test.png");
@@ -1256,15 +1191,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0500
-     * @tc.name      : packing ImageSource - callback - quality 0
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0500
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1302,15 +1234,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0600
-     * @tc.name      : packing ImageSource - callback - quality -1
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0600
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0600", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1349,15 +1278,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0700
-     * @tc.name      : packing ImageSource - promise - no quality
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0700
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0700", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1402,15 +1328,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0800
-     * @tc.name      : packing ImageSource - callback - quality: 123
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0800
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_0800", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1449,15 +1372,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_0900", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1502,15 +1422,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1000", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1554,15 +1471,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.call return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_PROMISE_1100", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1607,15 +1521,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
-     * @tc.desc      : 1.create ImageSource
-     *                 2.call packing
-     *                 3.return array
-     *                 4.callbackcall return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200
+     * @tc.desc   1.create ImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_IMAGESOURCE_CALLBACK_1200", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1654,14 +1565,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100
-     * @tc.desc      : 1.create ImagePacker
-     *                 2.call release
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100
+     * @tc.desc   1.create ImagePacker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       const imagePackerApi = image.createImagePacker();
@@ -1686,14 +1595,12 @@ export default function imagePacking() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_0100
-     * @tc.name      : release ImagePacker - callback
-     * @tc.desc      : 1.create ImagePacker
-     *                 2.call release
-     *                 3.return undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_0100
+     * @tc.desc   1.create ImagePacker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_RELEASE_IMAGEPACKER_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       const imagePackerApi = image.createImagePacker();
@@ -1712,14 +1619,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0100
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -1728,14 +1633,12 @@ export default function imagePacking() {
       packingPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0100", 2, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0200
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -1746,14 +1649,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300-over maxbufferSize
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -1762,14 +1663,12 @@ export default function imagePacking() {
       packingPromise(done, "SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_PROMISE_0300", 2, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0100
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0100
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -1779,14 +1678,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0200
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0200
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -1795,14 +1692,12 @@ export default function imagePacking() {
       packingCb(done, "SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0200", 5, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0300
-     * @tc.desc      : 1.create PixelMap
-     *                 2.create ImagePacker
-     *                 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0300
+     * @tc.desc   1.create PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_ADDBUFFERSIZE_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       let packOpts: packOpts = {
@@ -1812,15 +1707,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0100
-     * @tc.name      : test the packing interface uses many PixelMaps
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0100
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0100", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1839,15 +1731,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0200
-     * @tc.name      : test the packing interface uses PixelMap
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0200
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0200", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1867,15 +1756,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0300
-     * @tc.name      : test the packing interface configuration delaytimes
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0300
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0300", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1891,15 +1777,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400
-     * @tc.name      : test the packing interface configuration loop
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0400", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1916,15 +1799,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0500
-     * @tc.name      : test the packing interface no disposalTypes and no loopCount
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0500
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0500", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -1941,15 +1821,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0600
-     * @tc.name      : test the packing interface frameCount less than PixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0600
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0600", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -1966,15 +1843,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0700
-     * @tc.name      : test the packing interface frameCount more than PixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0700
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0700", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -1991,15 +1865,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0800
-     * @tc.name      : test the packing interface delayTimeList less than PixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0800
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0800", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2016,15 +1887,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0900
-     * @tc.name      : test the packing interface delayTimeList more than PixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0900
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_0900", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2041,15 +1909,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1000
-     * @tc.name      : test the packing interface disposalTypes less than PixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1000
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1000", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2066,15 +1931,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1100
-     * @tc.name      : test the packing interface disposalTypes more than PixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1100
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1100", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2091,15 +1953,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1200
-     * @tc.name      : test the packing interface uses test.bmp
-     * @tc.desc      : 1.Create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1200
+     * @tc.desc   1.Create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1200", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2119,15 +1978,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1300
-     * @tc.name      : test the packing interface uses test.jpg
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1300
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1300", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2147,15 +2003,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1400
-     * @tc.name      : test the packing interface uses test.ico
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1400
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1400", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2175,15 +2028,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1500
-     * @tc.name      : test the packing interface uses test.svg
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1500
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1500", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2203,15 +2053,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1600
-     * @tc.name      : test the packing interface uses test.dng
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1600
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1600", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2231,15 +2078,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1700
-     * @tc.name      : test the packing interface uses test.jpeg
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1700
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1700", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2259,15 +2103,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1800
-     * @tc.name      : test the packing interface uses test.webp
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1800
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1800", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2287,15 +2128,12 @@ export default function imagePacking() {
     });
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1900
-     * @tc.name      : test the packing interface uses HDRVividSingleLayer.heic
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1900
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_1900", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2321,15 +2159,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0100
-     * @tc.name      : test the packing interface passed wrong frameCount
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0100
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0100", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2346,15 +2181,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0200
-     * @tc.name      : test the packing interface passed wrong delayTimeList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0200
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0200", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2371,15 +2203,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0300
-     * @tc.name      : test the packing interface passed wrong disposalTypes
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0300
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0300", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2396,15 +2225,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0400
-     * @tc.name      : test the packing interface passed wrong loopCount
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0400
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0400", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2421,15 +2247,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0500
-     * @tc.name      : test the packing interface passed wrong loopCount
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0500
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGFORSEQUENCE_ERROR_0500", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2446,15 +2269,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_0100
-     * @tc.name      : test the packingMultiFrames interface passed empty pixelMapList
-     * @tc.desc      : 1.create PixelMap List
-     *               : 2.get writefd
-     *               : 3.create ImagePacker
-     *               : 4.packingMultiFrames
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_0100
+     * @tc.desc   1.create PixelMap List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKING_PIXELMAPLIST_ERROR_0100", Level.LEVEL0, async (done: Function) => {
         if (!isSupportGifEncode) {
@@ -2471,15 +2291,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0100
-     * @tc.name      : test pack gif PixelMap to buffer --callback
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create PixelMap
-     *               : 3.create ImagePacker
-     *               : 4.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0100", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2499,14 +2316,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0200
-     * @tc.name      : test pack gif ImageSource to buffer --callback
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create ImagePacker
-     *               : 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0200", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2527,15 +2342,12 @@ export default function imagePacking() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0300
-     * @tc.name      : test pack gif PixelMap to buffer --promise
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create PixelMap
-     *               : 3.create ImagePacker
-     *               : 4.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0300", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {
@@ -2555,14 +2367,12 @@ export default function imagePacking() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0400
-     * @tc.name      : test pack gif ImageSource to buffer --promise
-     * @tc.desc      : 1.create imagesource
-     *               : 2.create ImagePacker
-     *               : 3.call packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_GIF_PACKINGTODATA_0400", Level.LEVEL0, async (done: Function) => {
       if (!isSupportGifEncode) {

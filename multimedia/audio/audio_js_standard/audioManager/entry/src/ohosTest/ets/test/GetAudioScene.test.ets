@@ -66,12 +66,12 @@ export default function getAudioSceneApi12() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0100
-     * @tc.name      : mute - AudioScene - AsyncCallback - AudioSceneRinging - 1 响铃模式, AudioScenePhoneCall - 2 电话模式。
-     * @tc.desc      : mute - AudioScene - AsyncCallback - AudioScene
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0100
+     * @tc.desc   mute - AudioScene - AsyncCallback - AudioScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0100', 1, (done: Function) => {
       try {
@@ -95,12 +95,12 @@ export default function getAudioSceneApi12() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0200
-     * @tc.name      : mute - AudioScene - Promise - AudioSceneRinging - 1 响铃模式, AudioScenePhoneCall - 2 电话模式。
-     * @tc.desc      : mute - AudioScene - Promise - AudioScene
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0200
+     * @tc.desc   mute - AudioScene - Promise - AudioScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -119,12 +119,12 @@ export default function getAudioSceneApi12() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0300
-     * @tc.name      : mute - AudioScene - AudioSceneRinging - 1 响铃模式, AudioScenePhoneCall - 2 电话模式。
-     * @tc.desc      : mute - AudioScene - getAudioSceneSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0300
+     * @tc.desc   mute - AudioScene - getAudioSceneSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_0300', 3, (done: Function) => {
       try {

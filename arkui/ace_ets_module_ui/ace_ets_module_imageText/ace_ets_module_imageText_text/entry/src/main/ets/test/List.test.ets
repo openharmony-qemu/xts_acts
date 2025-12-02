@@ -94,6 +94,7 @@ import TextTwoJsunit from './TextTest/TextTwoJsunit.test';
 import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
 import ModifierTextVerticalAlignTest from './TextTest/ModifierTextVerticalAlignTest.test';
 import TextTextDecorationTest from './TextTest/TextTextDecorationTest.test';
+import lineHeight from './TextTest/lineHeight.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -178,4 +179,5 @@ export default function testsuite() {
   TextVerticalAlignTest()
   ModifierTextVerticalAlignTest()
   TextTextDecorationTest()
+  lineHeight();
 }

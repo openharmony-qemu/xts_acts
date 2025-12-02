@@ -45,12 +45,12 @@ export default function getSendableAlbumAssetsTest () {
 
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Album_Asset_001
-     * @tc.name      : addAssets_promise_001
-     * @tc.desc      : add image asset to user album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   addAssets_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Album_Asset_001
+     * @tc.desc   add image asset to user album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'addAssets_promise_001';

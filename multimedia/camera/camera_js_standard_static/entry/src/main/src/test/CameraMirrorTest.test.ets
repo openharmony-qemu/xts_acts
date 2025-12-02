@@ -488,12 +488,12 @@ export default function cameraMirrorTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0100
-      * @tc.desc   Check photo output is mirror supported with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0100
+     * @tc.desc   Check photo output is mirror supported with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0100--------------");
@@ -537,12 +537,12 @@ export default function cameraMirrorTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_STATIC_0100
-      * @tc.desc   Check photo output enable mirror with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_STATIC_0100
+     * @tc.desc   Check photo output enable mirror with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_STATIC_0100--------------");

@@ -76,12 +76,12 @@ export default function ImageReceiverReadNextImageTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_READ_NEXT_IMAGE_001
-     * @tc.name      : ImageReceiver_readNextImage_promise_001
-     * @tc.desc      : ImageReceiver_readNextImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageReceiver_readNextImage_promise_001
+     * @tc.number IMAGE_RECEIVER_READ_NEXT_IMAGE_001
+     * @tc.desc   ImageReceiver_readNextImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('ImageReceiver_readNextImage_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageReceiver_readNextImage_promise_001';
@@ -93,12 +93,12 @@ export default function ImageReceiverReadNextImageTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_RECEIVER_READ_NEXT_IMAGE_002
-     * @tc.name      : ImageReceiver_readNextImage_callback_001
-     * @tc.desc      : ImageReceiver_readNextImage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageReceiver_readNextImage_callback_001
+     * @tc.number IMAGE_RECEIVER_READ_NEXT_IMAGE_002
+     * @tc.desc   ImageReceiver_readNextImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('ImageReceiver_readNextImage_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageReceiver_readNextImage_callback_001';

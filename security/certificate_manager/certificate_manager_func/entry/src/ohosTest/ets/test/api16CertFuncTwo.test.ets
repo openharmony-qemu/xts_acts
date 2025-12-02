@@ -918,5 +918,181 @@ export default function api16CertFuncTestTwoUnit() {
       done();
     });
     
+        /**
+     * @tc.number SUB_Security_CertManager_Ukey_0600
+     * @tc.name SUB_Security_CertManager_Ukey_0600
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0600: started ");
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        await certManager.getUkeyCertificate(null, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_0600 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        await certManager.getUkeyCertificate(keyUri, null);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_0600 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(401);
+      }
+
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_0800
+     * @tc.name SUB_Security_CertManager_Ukey_0800
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0800: started ");
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        await certManager.getUkeyCertificate(keyUri, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_0800 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(17500001);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_0200
+     * @tc.name SUB_Security_CertManager_Ukey_0200
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0200: started ");
+      const context :common.Context = GlobalContext.getContext();
+      let certTypes: Array<certManagerDialog.CertificateType> = [
+        certManagerDialog.CertificateType.CREDENTIAL_UKEY
+      ];
+      let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
+      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+
+      try {
+        await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0200 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, null);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0200 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_0400
+     * @tc.name SUB_Security_CertManager_Ukey_0400
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0400: started ");
+      const context :common.Context = GlobalContext.getContext();
+      let certTypes: Array<certManagerDialog.CertificateType> = [
+        certManagerDialog.CertificateType.CREDENTIAL_UKEY
+      ];
+      let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
+      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0400 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(29700001);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_1000
+     * @tc.name SUB_Security_CertManager_Ukey_1000
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_1000: started ");
+
+      const context :common.Context = GlobalContext.getContext();
+      let keyUri: string = "test"
+      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
+
+      try {
+        await certManagerDialog.openUkeyAuthDialog(null, ukeyAuthRequest);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_1000 Failed to open ukey authorization dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+
+      try {
+        await certManagerDialog.openUkeyAuthDialog(context, null);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_1000 Failed to open ukey authorization dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_1200
+     * @tc.name SUB_Security_CertManager_Ukey_1200
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_1200: started ");
+      const context :common.Context = GlobalContext.getContext();
+      let keyUri: string = "test"
+      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
+
+      try {
+        await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_1200 Failed to open ukey authorization dialog. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(29700003);
+      }
+      done();
+    });
+
   })
 }

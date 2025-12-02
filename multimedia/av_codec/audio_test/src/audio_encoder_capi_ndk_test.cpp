@@ -338,6 +338,14 @@ bool AudioCodeCapiEncoderNdkTest::IsSupportHeAac()
     return false;
 }
 
+/**
+ * @tc.name   EncoderConfigureLCAAC
+ * @tc.number EncoderConfigureLCAAC
+ * @tc.desc   EncoderConfigureLCAAC
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureLCAAC, TestSize.Level1)
 {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
@@ -381,6 +389,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureLCAAC, TestSize.Level1)
     EXPECT_EQ(AV_ERR_OK, OH_AudioCodec_Destroy(audioEnc_));
 }
 
+/**
+ * @tc.name   EncoderConfigureHEAAC
+ * @tc.number EncoderConfigureHEAAC
+ * @tc.desc   EncoderConfigureHEAAC
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureHEAAC, TestSize.Level1)
 {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
@@ -432,6 +448,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureHEAAC, TestSize.Level1)
     EXPECT_EQ(AV_ERR_OK, OH_AudioCodec_Destroy(audioEnc_));
 }
 
+/**
+ * @tc.name   EncoderConfigureHEAACv2
+ * @tc.number EncoderConfigureHEAACv2
+ * @tc.desc   EncoderConfigureHEAACv2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureHEAACv2, TestSize.Level1)
 {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
@@ -481,6 +505,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureHEAACv2, TestSize.Level1)
     EXPECT_EQ(AV_ERR_OK, OH_AudioCodec_Destroy(audioEnc_));
 }
 
+/**
+ * @tc.name   EncoderConfigureByCap
+ * @tc.number EncoderConfigureByCap
+ * @tc.desc   EncoderConfigureByCap
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureByCap, TestSize.Level1)
 {
     inputFilePath_ = AAC_INPUT_FILE_PATH;
@@ -526,6 +558,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, EncoderConfigureByCap, TestSize.Level1)
     EXPECT_EQ(AV_ERR_OK, OH_AudioCodec_Destroy(audioEnc_));
 }
 
+/**
+ * @tc.name   sample_rate
+ * @tc.number sample_rate
+ * @tc.desc   sample_rate
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, sample_rate, TestSize.Level1)
 {
     if (!IsSupportHeAac()) {
@@ -536,6 +576,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, sample_rate, TestSize.Level1)
     HeAACSampleRateTest(AAC_PROFILE_HE_V2);
 }
 
+/**
+ * @tc.name   channel_count_v1
+ * @tc.number channel_count_v1
+ * @tc.desc   channel_count_v1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_count_v1, TestSize.Level1)
 {
     if (!IsSupportHeAac()) {
@@ -545,6 +593,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_count_v1, TestSize.Level1)
     ChannelCountTest(supportedChannelCntSet, AAC_PROFILE_HE);
 }
 
+/**
+ * @tc.name   channel_count_v2
+ * @tc.number channel_count_v2
+ * @tc.desc   channel_count_v2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_count_v2, TestSize.Level1)
 {
     if (!IsSupportHeAac()) {
@@ -554,6 +610,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_count_v2, TestSize.Level1)
     ChannelCountTest(supportedChannelCntSet, AAC_PROFILE_HE_V2);
 }
 
+/**
+ * @tc.name   channel_layout_v1
+ * @tc.number channel_layout_v1
+ * @tc.desc   channel_layout_v1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_layout_v1, TestSize.Level1)
 {
     if (!IsSupportHeAac()) {
@@ -572,6 +636,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_layout_v1, TestSize.Level1)
     ChannelLayoutTest(supportedLayoutMap, AAC_PROFILE_HE);
 }
 
+/**
+ * @tc.name   channel_layout_v2
+ * @tc.number channel_layout_v2
+ * @tc.desc   channel_layout_v2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_layout_v2, TestSize.Level1)
 {
     if (!IsSupportHeAac()) {
@@ -583,6 +655,14 @@ HWTEST_F(AudioCodeCapiEncoderNdkTest, channel_layout_v2, TestSize.Level1)
     ChannelLayoutTest(supportedLayoutMap, AAC_PROFILE_HE_V2);
 }
 
+/**
+ * @tc.name   aac_profile
+ * @tc.number aac_profile
+ * @tc.desc   aac_profile
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(AudioCodeCapiEncoderNdkTest, aac_profile, TestSize.Level1)
 {
     ProceByMimeFunc(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);

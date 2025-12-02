@@ -323,9 +323,12 @@ static void GetPreyAndIdsTrack()
     g_isRefult = true;
 }
 /**
- * @tc.number    : SUB_MEDIA_DEMUXER_VTT_6100
- * @tc.name      : create vtt demuxer with error file -- alternating Up and Down Times
- * @tc.desc      : function test
+ * @tc.name   SUB_MEDIA_DEMUXER_VTT_6100
+ * @tc.number SUB_MEDIA_DEMUXER_VTT_6100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, SUB_MEDIA_DEMUXER_VTT_6100, TestSize.Level2)
 {
@@ -363,9 +366,12 @@ HWTEST_F(DemuxerFunc2NdkTest, SUB_MEDIA_DEMUXER_VTT_6100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_META_0090
- * @tc.name      : demuxer meta info, souce is null
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_META_0090
+ * @tc.number DEMUXER_META_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_META_0090, TestSize.Level0)
 {
@@ -374,9 +380,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_META_0090, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0001
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0001
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0001
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0001, TestSize.Level2)
 {
@@ -390,9 +399,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0001, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0002
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0002
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0002
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0002, TestSize.Level2)
 {
@@ -408,9 +420,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0002, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0003
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0003
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0003
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0003, TestSize.Level0)
 {
@@ -424,9 +439,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0003, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0004
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0004
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0004
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0004, TestSize.Level1)
 {
@@ -443,9 +461,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0004, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0005
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0005
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0005
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0005, TestSize.Level2)
 {
@@ -459,9 +480,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0005, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0006
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0006
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0006
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0006, TestSize.Level2)
 {
@@ -478,9 +502,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0006, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0007
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0007
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0007
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0007, TestSize.Level2)
 {
@@ -494,9 +521,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0007, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0008
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0008
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0008
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0008, TestSize.Level2)
 {
@@ -513,9 +543,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0008, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0009
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0009
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0009
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0009, TestSize.Level2)
 {
@@ -529,9 +562,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0009, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_WAV_ALAW_FUNC_0010
- * @tc.name      : DEMUXER_WAV_ALAW_FUNC_0010
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_WAV_ALAW_FUNC_0010
+ * @tc.number DEMUXER_WAV_ALAW_FUNC_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0010, TestSize.Level2)
 {
@@ -547,9 +583,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_WAV_ALAW_FUNC_0010, TestSize.Level2)
     close(fd);
 }
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0010
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0010
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0010
+ * @tc.number DEMUXER_FUNCTION_TRACK_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0010, TestSize.Level1)
 {
@@ -568,9 +607,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0020
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0020
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0020
+ * @tc.number DEMUXER_FUNCTION_TRACK_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0020, TestSize.Level1)
 {
@@ -600,9 +642,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0020, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0030
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0030
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0030
+ * @tc.number DEMUXER_FUNCTION_TRACK_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0030, TestSize.Level1)
 {
@@ -632,9 +677,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0030, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0040
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0040
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0040
+ * @tc.number DEMUXER_FUNCTION_TRACK_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0040, TestSize.Level1)
 {
@@ -668,9 +716,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0040, TestSize.Level1)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0050
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0050
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0050
+ * @tc.number DEMUXER_FUNCTION_TRACK_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0050, TestSize.Level0)
 {
@@ -680,9 +731,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0050, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0060
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0060
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0060
+ * @tc.number DEMUXER_FUNCTION_TRACK_0060
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0060, TestSize.Level0)
 {
@@ -702,9 +756,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0060, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0061
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0061
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0061
+ * @tc.number DEMUXER_FUNCTION_TRACK_0061
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0061, TestSize.Level0)
 {
@@ -729,9 +786,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0061, TestSize.Level0)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0070
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0070
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0070
+ * @tc.number DEMUXER_FUNCTION_TRACK_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0070, TestSize.Level2)
 {
@@ -759,9 +819,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0070, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0080
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0080
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0080
+ * @tc.number DEMUXER_FUNCTION_TRACK_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0080, TestSize.Level2)
 {
@@ -789,9 +852,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0080, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0090
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0090
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0090
+ * @tc.number DEMUXER_FUNCTION_TRACK_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0090, TestSize.Level2)
 {
@@ -824,9 +890,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0090, TestSize.Level2)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0130
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0130
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0130
+ * @tc.number DEMUXER_FUNCTION_TRACK_0130
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0130, TestSize.Level3)
 {
@@ -880,9 +949,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0130, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0140
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0140
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0140
+ * @tc.number DEMUXER_FUNCTION_TRACK_0140
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0140, TestSize.Level3)
 {
@@ -936,9 +1008,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0140, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0150
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0150
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0150
+ * @tc.number DEMUXER_FUNCTION_TRACK_0150
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0150, TestSize.Level3)
 {
@@ -982,9 +1057,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0150, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0160
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0160
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0160
+ * @tc.number DEMUXER_FUNCTION_TRACK_0160
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0160, TestSize.Level3)
 {
@@ -1029,9 +1107,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0160, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0170
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0170
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0170
+ * @tc.number DEMUXER_FUNCTION_TRACK_0170
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0170, TestSize.Level3)
 {
@@ -1076,9 +1157,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0170, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0180
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0180
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0180
+ * @tc.number DEMUXER_FUNCTION_TRACK_0180
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0180, TestSize.Level3)
 {
@@ -1124,9 +1208,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0180, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_TRACK_0190
- * @tc.name      : DEMUXER_FUNCTION_TRACK_0190
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_TRACK_0190
+ * @tc.number DEMUXER_FUNCTION_TRACK_0190
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0190, TestSize.Level3)
 {
@@ -1171,9 +1258,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_TRACK_0190, TestSize.Level3)
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0010
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0010
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0010
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0010, TestSize.Level1)
 {
@@ -1192,9 +1282,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0010, TestSize.Level1
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0020
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0020
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0020
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0020, TestSize.Level1)
 {
@@ -1224,9 +1317,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0020, TestSize.Level1
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0030
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0030
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0030
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0030, TestSize.Level1)
 {
@@ -1256,9 +1352,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0030, TestSize.Level1
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0040
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0040
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0040
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0040, TestSize.Level1)
 {
@@ -1292,9 +1391,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0040, TestSize.Level1
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0050
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0050
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0050
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0050, TestSize.Level0)
 {
@@ -1304,9 +1406,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0050, TestSize.Level0
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0060
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0060
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0060
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0060
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0060, TestSize.Level0)
 {
@@ -1326,9 +1431,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0060, TestSize.Level0
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0061
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0061
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0061
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0061
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0061, TestSize.Level0)
 {
@@ -1353,9 +1461,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0061, TestSize.Level0
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0070
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0070
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0070
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0070, TestSize.Level2)
 {
@@ -1383,9 +1494,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0070, TestSize.Level2
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0080
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0080
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0080
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0080, TestSize.Level2)
 {
@@ -1413,9 +1527,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0080, TestSize.Level2
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0090
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0090
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0090
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0090, TestSize.Level2)
 {
@@ -1448,9 +1565,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0090, TestSize.Level2
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0130
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0130
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0130
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0130
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0130, TestSize.Level3)
 {
@@ -1504,9 +1624,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0130, TestSize.Level3
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0140
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0140
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0140
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0140
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0140, TestSize.Level3)
 {
@@ -1560,9 +1683,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0140, TestSize.Level3
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0150
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0150
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0150
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0150
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0150, TestSize.Level3)
 {
@@ -1606,9 +1732,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0150, TestSize.Level3
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0160
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0160
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0160
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0160
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0160, TestSize.Level3)
 {
@@ -1653,9 +1782,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0160, TestSize.Level3
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0170
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0170
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0170
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0170
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0170, TestSize.Level3)
 {
@@ -1700,9 +1832,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0170, TestSize.Level3
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0180
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0180
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0180
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0180
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0180, TestSize.Level3)
 {
@@ -1748,9 +1883,12 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0180, TestSize.Level3
 }
 
 /**
- * @tc.number    : DEMUXER_FUNCTION_AUDIO_TRACK_0190
- * @tc.name      : DEMUXER_FUNCTION_AUDIO_TRACK_0190
- * @tc.desc      : function test
+ * @tc.name   DEMUXER_FUNCTION_AUDIO_TRACK_0190
+ * @tc.number DEMUXER_FUNCTION_AUDIO_TRACK_0190
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0190, TestSize.Level3)
 {

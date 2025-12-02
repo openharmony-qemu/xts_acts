@@ -19,7 +19,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import wantConstant from '@ohos.app.ability.wantConstant';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import { BusinessError } from "@ohos.base";
 
@@ -95,6 +95,14 @@ const judgeDialog = async (done: Function) => {
 export default function flagstartwithouttipstest() {
   describe('FlagsSartWithoutTipsTest', () => {
     beforeAll(async (done: Function) => {
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       context = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       console.log('ishave ishave driver', !!driver);
       await checkAppSelectorExist();

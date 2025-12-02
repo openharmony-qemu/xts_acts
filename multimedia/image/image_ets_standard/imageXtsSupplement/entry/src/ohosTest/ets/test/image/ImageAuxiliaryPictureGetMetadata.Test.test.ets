@@ -84,12 +84,12 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
     });
 
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_GET_METADATA_001
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_GET_METADATA_001
-     * @tc.desc       Get EXIF metadata from UNFOCUSED_MAP auxiliary picture
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_GET_METADATA_001
+     * @tc.number IMAGE_AUXILIARY_PICTURE_GET_METADATA_001
+     * @tc.desc   Get EXIF metadata from UNFOCUSED_MAP auxiliary picture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_GET_METADATA_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_GET_METADATA_001';
@@ -102,12 +102,12 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
       })
   });
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_GET_METADATA_002
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_GET_METADATA_002
-     * @tc.desc       Get GIF metadata from FRAGMENT_MAP auxiliary picture
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_GET_METADATA_002
+     * @tc.number IMAGE_AUXILIARY_PICTURE_GET_METADATA_002
+     * @tc.desc   Get GIF metadata from FRAGMENT_MAP auxiliary picture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_GET_METADATA_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_GET_METADATA_002';
@@ -121,12 +121,12 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number     IMAGE_AUXILIARY_PICTURE_GET_METADATA_003
-     * @tc.name       IMAGE_AUXILIARY_PICTURE_GET_METADATA_003
-     * @tc.desc       Get GIF metadata from FRAGMENT_MAP auxiliary picture
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_AUXILIARY_PICTURE_GET_METADATA_003
+     * @tc.number IMAGE_AUXILIARY_PICTURE_GET_METADATA_003
+     * @tc.desc   Get GIF metadata from FRAGMENT_MAP auxiliary picture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_AUXILIARY_PICTURE_GET_METADATA_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_AUXILIARY_PICTURE_GET_METADATA_003';

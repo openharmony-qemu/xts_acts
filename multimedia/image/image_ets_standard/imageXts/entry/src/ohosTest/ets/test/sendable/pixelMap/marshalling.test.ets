@@ -137,12 +137,12 @@ export default function sendableMarshallingTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_MARSHALLING_001
-     * @tc.name      : marshalling_sendable_promise_001
-     * @tc.desc      : marshalling
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   marshalling_sendable_promise_001
+     * @tc.number PIXEL_MAP_MARSHALLING_001
+     * @tc.desc   marshalling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('marshalling_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'marshalling_sendable_promise_001';
@@ -156,12 +156,12 @@ export default function sendableMarshallingTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_MARSHALLING_002
-     * @tc.name      : marshalling_sendable_promise_002
-     * @tc.desc      : marshalling
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   marshalling_sendable_promise_002
+     * @tc.number PIXEL_MAP_MARSHALLING_002
+     * @tc.desc   marshalling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('marshalling_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'marshalling_sendable_promise_002';
@@ -175,12 +175,12 @@ export default function sendableMarshallingTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_MARSHALLING_003
-     * @tc.name      : marshalling_sendable_promise_003
-     * @tc.desc      : marshalling
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   marshalling_sendable_promise_003
+     * @tc.number PIXEL_MAP_MARSHALLING_003
+     * @tc.desc   marshalling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('marshalling_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'marshalling_sendable_promise_003';
@@ -194,12 +194,12 @@ export default function sendableMarshallingTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_MARSHALLING_004 //TODO 报错错误 error为62980096  Code为 undefined错误码 格式不对
-     * @tc.name      : marshalling_abnormal_sendable_promise_001
-     * @tc.desc      : marshalling
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   marshalling_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_MARSHALLING_004 //TODO 报错错误 error为62980096  Code为 undefined错误码 格式不对
+     * @tc.desc   marshalling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('marshalling_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'marshalling_abnormal_sendable_promise_001';
@@ -213,12 +213,12 @@ export default function sendableMarshallingTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_MARSHALLING_005 //TODO 报错错误 error为62980096  Code为 undefined错误码 格式不对
-     * @tc.name      : marshalling_abnormal_sendable_promise_002
-     * @tc.desc      : marshalling
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   marshalling_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_MARSHALLING_005 //TODO 报错错误 error为62980096  Code为 undefined错误码 格式不对
+     * @tc.desc   marshalling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('marshalling_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'marshalling_abnormal_sendable_promise_002';

@@ -119,6 +119,10 @@
     {
       "name": "fontSize_30",
       "value": "30"
+    },
+    {
+      "name": "Text_LineHeight_2fp",
+      "value": "2fp"
     }
   ]
 }

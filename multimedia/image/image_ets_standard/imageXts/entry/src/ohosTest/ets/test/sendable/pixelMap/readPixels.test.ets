@@ -82,12 +82,12 @@ export default function sendableReadPixelsTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_001
-     * @tc.name      : readPixels_sendable_promise_001
-     * @tc.desc      : readPixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixels_sendable_promise_001
+     * @tc.number PIXEL_MAP_READ_PIXELS_001
+     * @tc.desc   readPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixels_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixels_sendable_promise_001';
@@ -101,12 +101,12 @@ export default function sendableReadPixelsTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_READ_PIXELS_002 //TODO 传入异常参数报错62980115 不规范 文档没有错误码
-     * @tc.name      : readPixels_abnormal_sendable_promise_001
-     * @tc.desc      : readPixels
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   readPixels_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_READ_PIXELS_002 //TODO 传入异常参数报错62980115 不规范 文档没有错误码
+     * @tc.desc   readPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('readPixels_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'readPixels_abnormal_sendable_promise_001';

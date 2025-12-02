@@ -82,12 +82,12 @@ export default function provisionResourcesTest() {
     }
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0100
-     * @tc.name      : sub_media_photoAccess_provision_check_assets_001
-     * @tc.desc      : Provision mediaAssets and check mediaAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0100
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0100';
@@ -100,12 +100,12 @@ export default function provisionResourcesTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0200
-     * @tc.name      : sub_media_photoAccess_provision_check_assets_002
-     * @tc.desc      : Provision mediaAssets and check mediaAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_002
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0200
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_002', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0200';
@@ -118,12 +118,12 @@ export default function provisionResourcesTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0300
-     * @tc.name      : sub_media_photoAccess_provision_check_assets_003
-     * @tc.desc      : Provision mediaAssets and check mediaAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_003
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0300
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_003', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0300';
@@ -136,12 +136,12 @@ export default function provisionResourcesTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0400
-     * @tc.name      : sub_media_photoAccess_provision_check_assets_004
-     * @tc.desc      : Provision mediaAssets and check mediaAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_004
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0400
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_004', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_0400';
@@ -154,12 +154,12 @@ export default function provisionResourcesTest() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_001
-     * @tc.name      : check_provision_resource_count_001
-     * @tc.desc      : check provisionResources count
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   check_provision_resource_count_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_001
+     * @tc.desc   check provisionResources count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('check_provision_resource_count_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'check_provision_resource_count_001';

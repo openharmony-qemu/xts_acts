@@ -446,8 +446,8 @@ export default function dateTimeTest() {
     it('DateTest0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const date = new Date(2023, 0, 1, 14, 30, 45);
       const timeParts = date.toLocaleTimeString('en-US').split(':');
-      // en-US format: "2:30:45 PM" → split to ["2", "30", "45 PM"]
-      expect(timeParts.toString()).assertEqual(['2', '30', '45 PM'].toString());
+      // en-US format: "2:30:45 PM" → split to ["2", "30", "45 PM"]
+      expect(timeParts.toString()).assertEqual(['2', '30', '45 PM'].toString());
     });
 
     /**
@@ -1656,7 +1656,7 @@ export default function dateTimeTest() {
         const date = new Date('2023-01-01T12:00:00Z');
         const options: Intl.DateTimeFormatOptions = { timeZone: 'America/New_York' };
         // New York is UTC-5 in standard time, so 12:00Z = 7:00 AM
-        expect(date.toLocaleTimeString('en-US', options)).assertContain('7:00:00 AM');
+        expect(date.toLocaleTimeString('en-US', options)).assertContain('7:00:00 AM');
       });
 
 
@@ -2578,7 +2578,7 @@ export default function dateTimeTest() {
     it('DateTest0197', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         const date = new Date('2023-01-01T12:00:00Z');
         const options: Intl.DateTimeFormatOptions = { timeZone: 'Asia/Tokyo' }; // UTC+9
-        expect(date.toLocaleTimeString('en-US', options)).assertContain('9:00:00 PM');
+        expect(date.toLocaleTimeString('en-US', options)).assertContain('9:00:00 PM');
       });
 
     /**

@@ -264,14 +264,12 @@ export default function imagepixelMapSupportYuv() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
-      * @tc.desc    packing -promise
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100
+     * @tc.desc   packing -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0100"
@@ -293,14 +291,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
-      * @tc.desc    packing -callback
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200
+     * @tc.desc   packing -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_PACKING_STATIC_0200"
@@ -323,14 +319,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
-      * @tc.desc    packToFile -promise
-      *                 1.modifyImageProperty
-      *                 2.packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100
+     * @tc.desc   packToFile -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0100"
@@ -352,14 +346,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
-      * @tc.desc    packToFile  -callback
-      *                 1.modifyImageProperty
-      *                 2.packToFile
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200
+     * @tc.desc   packToFile  -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_STATIC_0200"
@@ -381,14 +373,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
-      * @tc.desc    packing -promise
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100
+     * @tc.desc   packing -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0100"
@@ -410,14 +400,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
-      * @tc.desc    packing -callback
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200
+     * @tc.desc   packing -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKING_STATIC_0200"
@@ -439,14 +427,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
-      * @tc.desc    packing -promise
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100
+     * @tc.desc   packing -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0100"
@@ -468,14 +454,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
-      * @tc.desc    packing -callback
-      *                 1.modifyImageProperty
-      *                 2.packing
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200
+     * @tc.desc   packing -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_STATIC_0200"
@@ -497,15 +481,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0100"
@@ -527,15 +508,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0200"
@@ -557,15 +535,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0300"
@@ -587,15 +562,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_STATIC_0400"
@@ -618,15 +590,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.desc    writeBufferToPixels -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writeBufferToPixels
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.desc   writeBufferToPixels -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0100"
@@ -648,15 +617,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.desc    writeBufferToPixels -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBuffer
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.desc   writeBufferToPixels -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0200"
@@ -678,15 +644,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.desc    writeBufferToPixelsSync
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBufferSync
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.desc   writeBufferToPixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_STATIC_0300"
@@ -709,15 +672,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0100"
@@ -740,15 +700,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0200"
@@ -770,15 +727,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
-      * @tc.desc    applyColorSpace -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300
+     * @tc.desc   applyColorSpace -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0300"
@@ -800,15 +754,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
-      * @tc.desc    applyColorSpace -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.applyColorSpace
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400
+     * @tc.desc   applyColorSpace -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_STATIC_0400"
@@ -830,15 +781,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
-      * @tc.desc    writeBufferToPixels -promise
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writeBufferToPixels
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100
+     * @tc.desc   writeBufferToPixels -promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0100"
@@ -860,15 +808,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
-      * @tc.desc    writeBufferToPixels -callback
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBuffer
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200
+     * @tc.desc   writeBufferToPixels -callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0200"
@@ -890,15 +835,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
-      * @tc.desc    writeBufferToPixelsSync
-      *                 1.createImageSource
-      *                 2.createPixelMap
-      *                 3.PixelMap.writePixelsToBufferSync
-      * @tc.size    MediumTest
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300
+     * @tc.desc   writeBufferToPixelsSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_STATIC_0300"

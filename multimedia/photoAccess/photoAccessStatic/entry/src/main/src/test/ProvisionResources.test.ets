@@ -94,12 +94,12 @@ export default function provisionResourcesTest() {
     }
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0100
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_001
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0100
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0200
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_002
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_002
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0200
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -138,12 +138,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0300
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_003
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_003
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0300
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -157,12 +157,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0400
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_004
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_004
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0400
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -176,12 +176,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0500
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_005
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_005
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0500
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -195,12 +195,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0600
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_006
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_006
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0600
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -214,12 +214,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0700
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_007
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_007
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0700
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -233,12 +233,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0800
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_008
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_008
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0800
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -253,12 +253,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0900
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_009
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_009
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_0900
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -271,12 +271,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1000
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_010
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_010
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1000
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -289,12 +289,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1100
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_011
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_011
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1100
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -307,12 +307,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1200
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_012
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_012
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1200
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -325,12 +325,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1300
-      * @tc.name    sub_media_photoAccess_provision_check_assets_static_013
-      * @tc.desc    Provision mediaAssets and check mediaAssets
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   sub_media_photoAccess_provision_check_assets_static_013
+     * @tc.number SUB_MEDIA_PHOTOACCESS_PROVISION_CHECK_ASSETS_STATIC_1300
+     * @tc.desc   Provision mediaAssets and check mediaAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sub_media_photoAccess_provision_check_assets_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -345,12 +345,12 @@ export default function provisionResourcesTest() {
       });
 
     /**
-      * @tc.number  SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_STATIC_001
-      * @tc.name    check_provision_resource_count_static_001
-      * @tc.desc    check provisionResources count
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   check_provision_resource_count_static_001
+     * @tc.number SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_STATIC_001
+     * @tc.desc   check provisionResources count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('check_provision_resource_count_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

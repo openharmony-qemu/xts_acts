@@ -68,12 +68,12 @@ export default function ImagePropertyOptionTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_002
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_002
-     * @tc.desc       SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM_GPS_VERSION_ID
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_002
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_002
+     * @tc.desc   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM_GPS_VERSION_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_002', Level.LEVEL1, async (done:Function)=> {
       const testName = 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_002'
@@ -104,12 +104,12 @@ export default function ImagePropertyOptionTest() {
 
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_003
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_003
-     * @tc.desc       SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM_GPS_VERSION_ID
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_003
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_003
+     * @tc.desc   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM_GPS_VERSION_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_003', Level.LEVEL1, async (done:Function)=> {
       const testName = 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_003'
@@ -139,12 +139,12 @@ export default function ImagePropertyOptionTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_004
-     * @tc.name       SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_004
-     * @tc.desc       SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM_GPS_VERSION_ID
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_004
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_004
+     * @tc.desc   SUB_MEDIA_IMAGE_EXIF_PROPERTY_ENUM_GPS_VERSION_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_004', Level.LEVEL1, async (done:Function)=> {
       const testName = 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_OPTION_004'

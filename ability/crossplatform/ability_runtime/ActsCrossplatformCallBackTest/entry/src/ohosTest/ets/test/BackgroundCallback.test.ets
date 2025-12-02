@@ -19,6 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
@@ -26,6 +27,19 @@ const START_ABILITY_TIMEOUT_FIVE_HUNDRED = 500;
 
 export default function BackgroundCallback() {
   describe("BackgroundCallback", () => {
+
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
     beforeEach((done:Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({

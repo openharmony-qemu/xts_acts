@@ -200,14 +200,14 @@ export default function RecorderLocalTestAudioFUNC() {
       console.info('afterAll case');
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0100
-        * @tc.name      : 01.AAC
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0100
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0100', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_01.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -220,14 +220,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0200
-        * @tc.name      : 02.AAC_Different Channels 1
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0200
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0200', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_02.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -241,14 +241,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0300
-        * @tc.name      : 02.AAC_Different Channels 2
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0300
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0300', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_03.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -262,14 +262,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0400
-        * @tc.name      : 03.AAC_DifferentSampleRate 8000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0400
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0400', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_04.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -284,14 +284,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0500
-        * @tc.name      : 03.AAC_DifferentSampleRate 32000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0500
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0500', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_05.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -307,14 +307,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0600
-        * @tc.name      : 03.AAC_DifferentSampleRate 44100
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0600
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0600', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_06.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -330,14 +330,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0700
-        * @tc.name      : 03.AAC_DifferentSampleRate 64000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0700
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0700', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_07.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -353,14 +353,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0800
-        * @tc.name      : 03.AAC_DifferentSampleRate 96000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0800
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0800', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_08.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -376,14 +376,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0900
-        * @tc.name      : 04.AAC_DifferentBitrate 8000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0900
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0900', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_09.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -400,14 +400,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1000
-        * @tc.name      : 04.AAC_DifferentBitrate 16000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1000
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1000', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_10.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -424,14 +424,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1100
-        * @tc.name      : 04.AAC_DifferentBitrate 32000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1100
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1100', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_11.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -448,14 +448,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1200
-        * @tc.name      : 04.AAC_DifferentBitrate 64000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1200
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1200', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_12.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -472,14 +472,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1300
-        * @tc.name      : 04.AAC_DifferentBitrate 112000
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1300
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1300', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_13.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -496,14 +496,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_MP4_0100
-        * @tc.name      : 02.AAC,mp4
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_MP4_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_MP4_0100
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_MP4_0100', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_14.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -520,14 +520,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_M4A_0100
-        * @tc.name      : 02.AAC,mp4
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_M4A_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_M4A_0100
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_M4A_0100', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_15.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -544,14 +544,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0100
-        * @tc.name      : 001.start
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0100
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_16.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -565,14 +565,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0200
-        * @tc.name      : 002.pause
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0200
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0200', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_17.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -586,14 +586,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0300
-        * @tc.name      : 003.pause->resume
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0300
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_18.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -607,14 +607,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0400
-        * @tc.name      : 005.reset
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0400
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_19.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -628,14 +628,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0500
-        * @tc.name      : 006.pause->resume->pause
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0500
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0500', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_20.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -649,14 +649,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0600
-        * @tc.name      : 007.pause->stop->reset
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0600
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0600', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_21.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -670,14 +670,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0700
-        * @tc.name      : 008.pause->resume->stop->reset
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0700
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0700', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_22.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -691,14 +691,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0800
-        * @tc.name      : 009.stop->reset->pause->resume->stop->reset
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0800
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0800', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_23.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -713,14 +713,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0900
-        * @tc.name      : 010.stop->reset->pause->stop->reset
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0900
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0900', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_24.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -735,14 +735,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1000
-        * @tc.name      : 011.start->reset->start->stop
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1000
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1000', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_25.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -756,14 +756,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1100
-        * @tc.name      : 012.start->pause->start(error)
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1100
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1100', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_26.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -777,14 +777,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1200
-        * @tc.name      : 013.start->stop->pause(error)
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1200
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1200', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_27.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -798,15 +798,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(audioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1300
-        * @tc.name      : 014. API8 audioEncoderMime: audio/mp4a-latm,
-        *                           fileFormat:mp4
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1300
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1300', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_28.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
@@ -830,15 +829,14 @@ export default function RecorderLocalTestAudioFUNC() {
       audioRecorder?.prepare(newAudioConfig);
     })
 
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1400
-        * @tc.name      : 014. API8 audioEncoderMime: audio/mp4a-latm,
-        *                           fileFormat:m4a
-        * @tc.desc      : Audio recordr control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1400
+     * @tc.desc   Audio recordr control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1400', Level.LEVEL0,async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_29.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();

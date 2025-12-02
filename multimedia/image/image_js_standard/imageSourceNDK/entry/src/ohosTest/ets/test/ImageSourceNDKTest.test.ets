@@ -617,13 +617,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0100
-         * @tc.name      : createImageSource -gif
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0100
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0100', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0100", "moving_test.gif",
@@ -631,52 +630,48 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0200
-         * @tc.name      : createImageSource -jpg
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0200
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0200', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0200", "test.jpg", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0300
-         * @tc.name      : createImageSource -bmp
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0300
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0300', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0300", "test.bmp", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0400
-         * @tc.name      : createImageSource -png
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0400
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0400', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0400", "test.png", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0500
-         * @tc.name      : createImageSource -webp
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0500
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0500', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0500", "test_large.webp",
@@ -684,13 +679,12 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0600
-         * @tc.name      : createImageSource -svg
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0600
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0600', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0600", "test_large.svg",
@@ -698,143 +692,132 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0700
-         * @tc.name      : createImageSource -dng
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0700
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0700', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0700", "test_dng.dng", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0800
-         * @tc.name      : createImageSource -raw
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0800
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0800', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0800", "test.nrw", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0900
-         * @tc.name      : createImageSource -raw
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0900
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0900', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_0900", "test.cr2", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1000
-         * @tc.name      : createImageSource -raw
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1000
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1000', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1000", "test.arw", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1100
-         * @tc.name      : createImageSource -raw
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1100
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1100', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1100", "test.pef", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1200
-         * @tc.name      : createImageSource -raw
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1200
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1200', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1200", "test.raf", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1300
-         * @tc.name      : createImageSource -raw
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1300
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1300', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_FD_1300", "test.rw2", "fd");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_FD_0100
-         * @tc.name      : createImageSourceFromFd -jpg
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSourceFromFd
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_FD_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_FD_0100
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_FD_0100', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateFromFdTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_FD_0100", "test.jpg");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_BUFFER
-         * @tc.name      : createImageSource -buffer
-         * @tc.desc      : 1.get image buffer
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_BUFFER
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_BUFFER
+         * @tc.desc   1.get image buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_BUFFER', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_BUFFER", "test.jpg", "buffer");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_DATA
-         * @tc.name      : createImageSourceFromData
-         * @tc.desc      : 1.get image buffer
-         *                 2.createImageSourceFromData
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_DATA
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_DATA
+         * @tc.desc   1.get image buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_DATA', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateFromDataTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_DATA");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_PATH
-         * @tc.name      : createImageSource -path
-         * @tc.desc      : 1.get image path
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_PATH
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_PATH
+         * @tc.desc   1.get image path
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_PATH', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_BY_PATH", "moving_test.gif",
@@ -842,13 +825,12 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_URI
-         * @tc.name      : createImageSourceFromUri
-         * @tc.desc      : 1.get image path
-         *                 2.createImageSourceFromUri
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_URI
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_URI
+         * @tc.desc   1.get image path
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_URI', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateFromUriTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_URI",
@@ -856,26 +838,24 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_RAWFILE
-         * @tc.name      : createImageSourceFromRawFile
-         * @tc.desc      : 1.get image rawfiledescriptor
-         *                 2.createImageSourceFromRawFile
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_RAWFILE
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_RAWFILE
+         * @tc.desc   1.get image rawfiledescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_RAWFILE', Level.LEVEL0, async (done :Function) => {
             await imageSourceCreateFromRawFileTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_FROM_RAWFILE");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL
-         * @tc.name      : createIncremental
-         * @tc.desc      : 1.set imageSourceOps
-         *                 2.createIncremental
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL
+         * @tc.desc   1.set imageSourceOps
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL', Level.LEVEL0, async (done :Function) => {
             try {
@@ -895,13 +875,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL_FROM_DATA
-         * @tc.name      : createIncremental
-         * @tc.desc      : 1.set imageSourceOps
-         *                 2.createIncremental
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL_FROM_DATA
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL_FROM_DATA
+         * @tc.desc   1.set imageSourceOps
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_INCREMENTAL_FROM_DATA', Level.LEVEL0, async (done :Function) => {
             try {
@@ -921,13 +900,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_INITNATIVE
-         * @tc.name      : initNative
-         * @tc.desc      : 1.create imageSource
-         *                 2.initNative
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_INITNATIVE
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_INITNATIVE
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_INITNATIVE', Level.LEVEL0, async (done :Function) => {
             try {
@@ -942,182 +920,168 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_GIF_0100
-         * @tc.name      : createPixelMap -gif
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_GIF_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_GIF_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_GIF_0100', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_GIF_0100", "moving_test.gif");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_BMP_0200
-         * @tc.name      : createPixelMap -bmp
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_BMP_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_BMP_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_BMP_0200', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_BMP_0200", "test.bmp");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_JPG_0300
-         * @tc.name      : createPixelMap -jpg
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_JPG_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_JPG_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_JPG_0300', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_JPG_0300", "test.jpg");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_WEBP_0400
-         * @tc.name      : createPixelMap -webp
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_WEBP_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_WEBP_0400
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_WEBP_0400', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_WEBP_0400", "test_large.webp");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_PNG_0500
-         * @tc.name      : createPixelMap -png
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_PNG_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_PNG_0500
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_PNG_0500', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_PNG_0500", "test.png");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_SVG_0600
-         * @tc.name      : createPixelMap -svg
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_SVG_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_SVG_0600
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_SVG_0600', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_SVG_0600", "test_large.svg");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0700
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0700
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0700', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0700", "test_dng.dng");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0800
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0800
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0800', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0800", "test.nrw");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0900
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0900
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0900', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_0900", "test.cr2");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1000
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1000
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1000', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1000", "test.arw");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1100
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1100', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1100", "test.pef");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1200
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1200', Level.LEVEL0, async (done :Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1200", "test.raf");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1300
-         * @tc.name      : createPixelMap -raw
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1300', Level.LEVEL0, async (done: Function) => {
             await createPixelMap(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATEPIXELMAP_RAW_1300", "test.rw2");
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_PIXEL_MAP_LIST
-         * @tc.name      : createPixelMapList
-         * @tc.desc      : 1.create imageSource
-         *                 2.createPixelMapList
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_PIXEL_MAP_LIST
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_PIXEL_MAP_LIST
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_PIXEL_MAP_LIST', Level.LEVEL0, async (done :Function) => {
             try {
@@ -1144,13 +1108,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_DELAY_TIME
-         * @tc.name      : getDelayTime
-         * @tc.desc      : 1.create imageSource
-         *                 2.getDelayTime
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_DELAY_TIME
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_DELAY_TIME
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_DELAY_TIME', Level.LEVEL0, async (done :Function) => {
             try {
@@ -1175,13 +1138,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_FRAME_COUNT
-         * @tc.name      : getFrameCount
-         * @tc.desc      : 1.create imageSource
-         *                 2.getFrameCount
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_FRAME_COUNT
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_FRAME_COUNT
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_FRAME_COUNT', Level.LEVEL0, async (done :Function) => {
             try {
@@ -1201,12 +1163,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_SUPPORTED_FORMATS
-         * @tc.name      : getSupportedFormats
-         * @tc.desc      : 1.getSupportedFormats
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_SUPPORTED_FORMATS
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_SUPPORTED_FORMATS
+         * @tc.desc   1.getSupportedFormats
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_SUPPORTED_FORMATS', Level.LEVEL0, async (done :Function) => {
             try {
@@ -1227,13 +1189,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_INFO
-         * @tc.name      : getImageInfo
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_INFO
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_INFO
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_INFO', Level.LEVEL0, async (done :Function) => {
             try {
@@ -1252,170 +1213,155 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0100
-         * @tc.name      : release -gif
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0100', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0100", "moving_test.gif");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0200
-         * @tc.name      : release -bmp
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0200', Level.LEVEL0, async (done: Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0200", "test.bmp");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0300
-         * @tc.name      : release -png
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0300', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0300", "test.png");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0400
-         * @tc.name      : release -jpg
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0400
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0400', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0400", "test.jpg");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0500
-         * @tc.name      : release -webp
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0500
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0500', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0500", "test_large.webp");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0600
-         * @tc.name      : release -svg
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0600
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0600', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0600", "test_large.svg");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0700
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0700
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0700', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0700", "test_dng.dng");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0800
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0800
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0800', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0800", "test.nrw");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0900
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0900
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0900', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_0900", "test.cr2");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1000
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1000
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1000', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1000", "test.arw");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1100
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1100', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1100", "test.pef");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1200
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1200', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1200", "test.raf");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1300
-         * @tc.name      : release -raw
-         * @tc.desc      : 1.create imageSource
-         *               : 2.release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1300', Level.LEVEL0, async (done :Function) => {
             release(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_IMAGE_RELEASE_1300", "test.rw2");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_UPDATE_DATA
-         * @tc.name      : updateData
-         * @tc.desc      : 1.createIncremental
-         *               : 2.updateData
-         *               : 3.createPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_UPDATE_DATA
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_UPDATE_DATA
+         * @tc.desc   1.createIncremental
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_UPDATE_DATA', Level.LEVEL0, async (done :Function) => {
             try {
@@ -1452,13 +1398,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0100
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done :Function) => {
 
@@ -1470,13 +1415,12 @@ export default function ImageSourceNDKTest() {
                 checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0200
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done :Function) => {
 
@@ -1487,13 +1431,12 @@ export default function ImageSourceNDKTest() {
             getImageProperty(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0200", image.PropertyKey.ORIENTATION, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0300
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0300', Level.LEVEL0, async (done :Function) => {
 
@@ -1504,13 +1447,12 @@ export default function ImageSourceNDKTest() {
             getImageProperty(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0300", image.PropertyKey.IMAGE_LENGTH, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0400
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0400
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done :Function) => {
 
@@ -1521,13 +1463,12 @@ export default function ImageSourceNDKTest() {
             getImageProperty(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0400", image.PropertyKey.IMAGE_WIDTH, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0500
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0500
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0500', Level.LEVEL0, async (done :Function) => {
 
@@ -1538,13 +1479,12 @@ export default function ImageSourceNDKTest() {
             getImageProperty(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0500", image.PropertyKey.GPS_LATITUDE, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0600
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0600
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0600', Level.LEVEL0, async (done :Function) => {
 
@@ -1555,13 +1495,12 @@ export default function ImageSourceNDKTest() {
             getImageProperty(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0600", image.PropertyKey.GPS_LONGITUDE, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0700
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0700
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0700', Level.LEVEL0, async (done :Function) => {
 
@@ -1573,13 +1512,12 @@ export default function ImageSourceNDKTest() {
                 checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0800
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0800
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0800', Level.LEVEL0, async (done :Function) => {
 
@@ -1591,13 +1529,12 @@ export default function ImageSourceNDKTest() {
                 checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0900
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0900
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_0900', Level.LEVEL0, async (done :Function) => {
 
@@ -1609,13 +1546,12 @@ export default function ImageSourceNDKTest() {
                 checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0100
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done :Function) => {
             let prop: ESObject = {
@@ -1630,13 +1566,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0100", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0200
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done :Function) => {
             let prop: ESObject = {
@@ -1650,13 +1585,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0200", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0300
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0300', Level.LEVEL0, async (done :Function) => {
             let prop:ESObject = {
@@ -1670,13 +1604,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0300", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0400
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0400
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done :Function) => {
             let prop: ESObject = {
@@ -1690,13 +1623,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0400", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0500
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0500
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0500', Level.LEVEL0, async (done :Function) => {
             let prop: ESObject = {
@@ -1710,13 +1642,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0500", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0600
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0600
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0600', Level.LEVEL0, async (done :Function) => {
             let prop: ESObject = {
@@ -1730,13 +1661,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0600", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0700
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0700
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0700', Level.LEVEL0, async (done :Function) => {
             let prop:ESObject = {
@@ -1750,13 +1680,12 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0700", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0800
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0800
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0800', Level.LEVEL0, async (done :Function) => {
             let prop: ESObject = {
@@ -1770,148 +1699,136 @@ export default function ImageSourceNDKTest() {
             modify(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_0800", prop, checkProps);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0100
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0100', Level.LEVEL0, async (done :Function) => {
             await modifyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0100", "null", "100");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0200
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0200', Level.LEVEL0, async (done :Function) => {
             await modifyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0200", " GPSLongitudeRef",
                 "12345");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0300
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0300', Level.LEVEL0, async (done :Function) => {
             await modifyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0300", "GPSLatitude",
                 "{a:3}");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0400
-         * @tc.name      : modifyImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.modifyImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0400
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0400', Level.LEVEL0, async (done :Function) => {
             await modifyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_IMAGE_PROPERTY_ERR_0400", "1000",
                 "ImageLength");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0100
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0100
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0100', Level.LEVEL0, async (done :Function) => {
             getImagePropertyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0100", "aa");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0200
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0200
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0200', Level.LEVEL0, async (done :Function) => {
             getImagePropertyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0200", "12");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0300
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0300
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0300', Level.LEVEL0, async (done :Function) => {
             getImagePropertyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0300", "true");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0400
-         * @tc.name      : getImageProperty
-         * @tc.desc      : 1.create imageSource
-         *               : 2.getImageProperty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0400
+         * @tc.desc   1.create imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0400', Level.LEVEL0, async (done :Function) => {
             getImagePropertyErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_IMAGE_PROPERTY_ERR_0400", "abc,123");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0100
-         * @tc.name      : createImageSource fd<0
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0100
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0100', Level.LEVEL0, async (done :Function) => {
             createImageSourceErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0100", '-1');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0200
-         * @tc.name      : createImageSource -wrong uri
-         * @tc.desc      : 1.get path
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0200
+         * @tc.desc   1.get path
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0200', Level.LEVEL0, async (done :Function) => {
             createImageSourceErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0200", "file:///multimedia/test.jpg");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0300
-         * @tc.name      : createImageSource -fd string
-         * @tc.desc      : 1.get fd
-         *                 2.createImageSource
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0300
+         * @tc.desc   1.get fd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0300', Level.LEVEL0, async (done :Function) => {
             createImageSourceErr(done, "SUB_MULTIMEDIA_IMAGE_SOURCENDK_CREATE_ERR_0300", "fd");
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100
-         * @tc.name      : test OH_ImageSourceNative_GetImageProperty obtains the loop count 5 of gif
-         * @tc.desc      : 1. get file description
-         *                 2. get loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100', Level.LEVEL0, async (done :Function) => {
             let mlg:ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100");
@@ -1933,13 +1850,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200
-         * @tc.name      : test OH_ImageSourceNative_GetImageProperty obtains the loop count 1 of gif
-         * @tc.desc      : 1. get file description
-         *                 2. get loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200', Level.LEVEL0, async (done :Function) => {
             let mlg: ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200");
@@ -1961,13 +1877,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300
-         * @tc.name      : test OH_ImageSourceNative_GetImageProperty obtains the loop count infinite of gif
-         * @tc.desc      : 1. get file description
-         *                 2. get loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300', Level.LEVEL0, async (done :Function) => {
             let mlg:ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300");
@@ -1989,13 +1904,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400
-         * @tc.name      : test OH_ImageSourceNative_GetImageProperty obtains the loop count error of jpg
-         * @tc.desc      : 1. get file description
-         *                 2. get loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400', Level.LEVEL0, async (done :Function) => {
             let mlg:ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_GETIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400");
@@ -2017,13 +1931,12 @@ export default function ImageSourceNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100
-         * @tc.name      : test OH_ImageSourceNative_ModifyImageProperty modify the loop count 5 of gif error
-         * @tc.desc      : 1. get file description
-         *                 2. modify loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100', Level.LEVEL0, async (done :Function) => {
             let mlg: ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0100");
@@ -2037,13 +1950,12 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200
-         * @tc.name      : test OH_ImageSourceNative_ModifyImageProperty modify the loop count 1 of gif error
-         * @tc.desc      : 1. get file description
-         *                 2. modify loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200', Level.LEVEL0, async (done :Function) => {
             let mlg: ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0200");
@@ -2057,13 +1969,12 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300
-         * @tc.name      : test OH_ImageSourceNative_ModifyImageProperty modify the loop count infinite of gif error
-         * @tc.desc      : 1. get file description
-         *                 2. modify loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300', Level.LEVEL0, async (done :Function) => {
             let mlg: ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0300");
@@ -2077,13 +1988,12 @@ export default function ImageSourceNDKTest() {
             done();
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400
-         * @tc.name      : test OH_ImageSourceNative_ModifyImageProperty modify the loop count error of jpg error
-         * @tc.desc      : 1. get file description
-         *                 2. modify loop count
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400
+         * @tc.desc   1. get file description
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400', Level.LEVEL0, async (done :Function) => {
             let mlg: ESObject = logger("SUB_MULTIMEDIA_IMAGE_NATIVE_MODIFYIMAGEPROPERTY_LOOPCOUNT_PROMISE_0400");
@@ -2098,16 +2008,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0100
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.jpg
-         *                 3.ColorSpace.ADOBE_RGB_1998 = 1
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0100
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2121,16 +2027,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0200
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.jpg
-         *                 3.ColorSpace.DCI_P3 = 2
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0200
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2144,16 +2046,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0300
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.jpg
-         *                 3.ColorSpace.DISPLAY_P3 = 3
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0300
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2167,16 +2065,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0400
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.jpg
-         *                 3.ColorSpace.SRGB = 4
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0400
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2190,16 +2084,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0500
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_exif.png
-         *                 3.ColorSpace.BT709 = 6
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0500
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2213,16 +2103,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0600
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_exif.png
-         *                 3.ColorSpace.BT601_EBU = 7
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0600
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2236,16 +2122,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0700
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_exif.png
-         *                 3.ColorSpace.BT601_SMPTE_C = 8
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0700
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2260,16 +2142,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0800
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_dng.dng
-         *                 3.ColorSpace.BT2020_HLG = 9
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0800
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2283,16 +2161,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0900
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_dng.dng
-         *                 3.ColorSpace.BT2020_PQ = 10
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0900
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_0900',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2306,16 +2180,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1000
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_dng.dng
-         *                 3.ColorSpace.P3_HLG = 11
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1000
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1000',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2329,16 +2199,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1100
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test_dng.dng
-         *                 3.ColorSpace.P3_PQ = 12
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1100
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2352,16 +2218,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1200
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.bmp
-         *                 3.ColorSpace.ADOBE_RGB_1998_LIMIT = 13
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1200
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2375,16 +2237,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1300
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.bmp
-         *                 3.ColorSpace.DISPLAY_P3_LIMIT = 14
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1300
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2398,16 +2256,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1400
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.bmp
-         *                 3.ColorSpace.SRGB_LIMIT = 15
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1400
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2421,16 +2275,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1500
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.bmp
-         *                 3.ColorSpace.BT709_LIMIT = 16
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1500
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2444,16 +2294,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1600
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.webp
-         *                 3.ColorSpace.BT601_EBU_LIMIT = 17
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1600
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2467,16 +2313,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1700
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.webp
-         *                 3.ColorSpace.BT601_SMPTE_C_LIMIT = 18
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1700
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2490,16 +2332,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1800
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.webp
-         *                 3.ColorSpace.BT2020_HLG_LIMIT = 19
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1800
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2513,16 +2351,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1900
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.webp
-         *                 3.ColorSpace.BT2020_PQ_LIMIT = 20
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1900
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_1900',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2536,16 +2370,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2000
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.moving_test.gif
-         *                 3.ColorSpace.P3_HLG_LIMIT = 21
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2000
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2000',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2559,16 +2389,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2100
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.moving_test.gif
-         *                 3.ColorSpace.P3_PQ_LIMIT = 22
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2100
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2582,16 +2408,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2200
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.moving_test.gif
-         *                 3.ColorSpace.LINEAR_P3 = 23
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2200
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2605,16 +2427,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2300
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.moving_test.gif
-         *                 3.ColorSpace.LINEAR_SRGB = 24
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2300
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2628,16 +2446,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2400
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.ico
-         *                 3.ColorSpace.LINEAR_BT709 = LINEAR_SRGB = 24
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2400
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2651,16 +2465,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2500
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.ico
-         *                 3.ColorSpace.LINEAR_BT2020 = 25
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2500
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2674,16 +2484,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2600
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.ico
-         *                 3.ColorSpace.DISPLAY_SRGB = SRGB = 4
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2600
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2697,16 +2503,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2700
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.ico
-         *                 3.ColorSpace.DISPLAY_P3_SRGB = DISPLAY_P3 = 3
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2700
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2720,16 +2522,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2800
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.jpg
-         *                 3.ColorSpace.DISPLAY_P3_HLG = P3_HLG = 11
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2800
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2743,16 +2541,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2900
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.test.jpg
-         *                 3.ColorSpace.DISPLAY_P3_PQ = P3_PQ = 12
-         *                 4.testGetPixelMapForColorSpace
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2900
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_2900',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2766,17 +2560,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3000
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.all_auxtype.heic
-         *                 3.ColorSpace.ADOBE_RGB_1998 = 1
-         *                 4.testGetPixelMapForColorSpace
-         *                 5.pixelMapColorSpace = ColorSpace.BT2020_HLG = 9
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3000
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3000',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2803,17 +2592,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3100
-         * @tc.desc      : testGetPixelMapForColorSpace
-         *                 1.create imageSource
-         *                 2.CUVAHdr.jpg
-         *                 3.ColorSpace.DISPLAY_P3 = 3
-         *                 4.testGetPixelMapForColorSpace
-         *                 5.pixelMapColorSpace = ColorSpace.BT2020_HLG = 9
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3100
+         * @tc.desc   testGetPixelMapForColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_3100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2840,13 +2624,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0100
-         * @tc.desc      : setDecodingOptColorSpace
-         *                 1.set ColorSpace is 0
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0100
+         * @tc.desc   setDecodingOptColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2865,14 +2648,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0200
-         * @tc.desc      : setDecodingOptColorSpace
-         *                 1.create imageSource
-         *                 2.ColorSpace.CUSTOM = 5
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0200
+         * @tc.desc   setDecodingOptColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2891,13 +2672,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0300
-         * @tc.desc      : setDecodingOptColorSpace
-         *                 1.set ColorSpace is 26
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0300
+         * @tc.desc   setDecodingOptColorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2916,13 +2696,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0400
-         * @tc.desc      : setDecodingOptColorSpaceErr
-         *                 1.set DecodingOptions nullPtr
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0400
+         * @tc.desc   setDecodingOptColorSpaceErr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_SET_COLOR_SPACE_ERR_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2934,13 +2713,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0500
-         * @tc.desc      : getDecodingOptColorSpaceErr
-         *                 1.get DecodingOptions nullPtr
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0500
+         * @tc.desc   getDecodingOptColorSpaceErr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2952,13 +2730,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0600
-         * @tc.desc      : getDecodingOptColorSpaceErr
-         *                 1.get colorSpace nullPtr
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0600
+         * @tc.desc   getDecodingOptColorSpaceErr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXEL_MAP_GET_COLOR_SPACE_ERR_0600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -2972,15 +2749,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imageSource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use test_exif.jpg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -2995,15 +2769,12 @@ export default function ImageSourceNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use test_exif_v3.heic format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0200",
           TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3027,15 +2798,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use test_exif.png format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0300",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -3050,15 +2818,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use test_exif_v2.webp format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0400",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -3070,15 +2835,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use test_dng.dng format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0500",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done :Function) => {
@@ -3090,15 +2852,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use test.jpg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0600",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3110,15 +2869,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0700
-         * @tc.desc      : test get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.Use food.jpg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0700
+         * @tc.desc   test get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0700",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3144,15 +2900,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use food.jpg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0800",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3164,15 +2917,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use food_notHW.jpg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_0900",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3184,15 +2934,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
-         * @tc.desc      : test Modify Maker Note Image Property, get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty, GetMakerNoteImageProperty
-         *                 3.Use food_notHW.jpg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000
+         * @tc.desc   test Modify Maker Note Image Property, get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1000",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3204,15 +2951,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1100
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.test_exif.jpg write characters longer than 64*1024
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1100
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MODIFY_MAKERNOTE_PROPERTY_1100",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3226,15 +2970,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.Use test.bmp format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0100",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3246,15 +2987,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.Use moving_test.gif format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0200",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3266,15 +3004,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.Use test.ico format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0300",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3286,15 +3021,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.Use test_large.svg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0400",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3306,15 +3038,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.test_exif.jpg write characters that are less than or equal to 0
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0500",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3326,15 +3055,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
-         * @tc.desc      : test Modify Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call ModifyMakerNoteImageProperty
-         *                 3.test_exif.jpg write characters longer than 64*1024
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600
+         * @tc.desc   test Modify Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_MODIFY_MAKERNOTE_PROPERTY_ERR_0600",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3348,15 +3074,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
-         * @tc.desc      : test Get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.Use test.bmp format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700
+         * @tc.desc   test Get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0700",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3365,15 +3088,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
-         * @tc.desc      : test Get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.Use moving_test.gif format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800
+         * @tc.desc   test Get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0800",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3382,15 +3102,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
-         * @tc.desc      : test Get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.Use test.ico format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900
+         * @tc.desc   test Get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_0900",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3399,15 +3116,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
-         * @tc.desc      : test Get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.Use test_large.svg format images
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000
+         * @tc.desc   test Get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1000",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3416,15 +3130,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
-         * @tc.desc      : test get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.testExif.jpg no makernote info
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100
+         * @tc.desc   test get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1100",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -3433,15 +3144,12 @@ export default function ImageSourceNDKTest() {
         });
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
-         * @tc.desc      : test get Maker Note Image Property
-         *                 1.create imagesource
-         *                 2.call GetMakerNoteImageProperty
-         *                 3.food_notHW2.jpg
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200
+         * @tc.desc   test get Maker Note Image Property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_ERR_1200",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

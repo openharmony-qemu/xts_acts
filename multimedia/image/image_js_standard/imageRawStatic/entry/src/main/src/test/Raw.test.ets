@@ -249,16 +249,12 @@ export default function imageRaw() {
         console.info(`${testNum} createPixelMap leave`);
       };
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0100
-      * @tc.desc    createPixelMap - promise-arw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0100
+     * @tc.desc   createPixelMap - promise-arw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -278,16 +274,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0200
-      * @tc.desc    createPixelMap - promise-cr2
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0200
+     * @tc.desc   createPixelMap - promise-cr2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -306,16 +298,12 @@ export default function imageRaw() {
       createPixelMapPromise(done, "SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0200", "test.cr2", decodeOpts, packOpts);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0300
-      * @tc.desc    createPixelMap - promise-dng
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0300
+     * @tc.desc   createPixelMap - promise-dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -340,16 +328,12 @@ export default function imageRaw() {
       );
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0400
-      * @tc.desc    createPixelMap - promise-nrw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0400
+     * @tc.desc   createPixelMap - promise-nrw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -369,16 +353,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0500
-      * @tc.desc    createPixelMap - promise-pef
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0500
+     * @tc.desc   createPixelMap - promise-pef
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -398,16 +378,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0600
-      * @tc.desc    createPixelMap - promise-raf
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0600
+     * @tc.desc   createPixelMap - promise-raf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -427,16 +403,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0700
-      * @tc.desc    createPixelMap - promise-rw2
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0700
+     * @tc.desc   createPixelMap - promise-rw2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -456,16 +428,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0800
-      * @tc.desc    createPixelMap - callback-arw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0800
+     * @tc.desc   createPixelMap - callback-arw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -491,16 +459,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0900
-      * @tc.desc    createPixelMap - callback-cr2
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0900
+     * @tc.desc   createPixelMap - callback-cr2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -526,16 +490,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1000
-      * @tc.desc    createPixelMap - callback-dng
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1000
+     * @tc.desc   createPixelMap - callback-dng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -561,16 +521,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1100
-      * @tc.desc    createPixelMap - callback-nrw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1100
+     * @tc.desc   createPixelMap - callback-nrw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -595,16 +551,12 @@ export default function imageRaw() {
       );
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1200
-      * @tc.desc    createPixelMap - callback-pef
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1200
+     * @tc.desc   createPixelMap - callback-pef
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -629,16 +581,12 @@ export default function imageRaw() {
       );
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1300
-      * @tc.desc    createPixelMap - callback-raf
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1300
+     * @tc.desc   createPixelMap - callback-raf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -664,16 +612,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1400
-      * @tc.desc    createPixelMap - callback-rw2
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      *                 4.packing
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1400
+     * @tc.desc   createPixelMap - callback-rw2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_1400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodeOpts: image.DecodingOptions = {
@@ -699,15 +643,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2100
-      * @tc.desc    createPixelMap - promise-arw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2100
+     * @tc.desc   createPixelMap - promise-arw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {
@@ -729,15 +670,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2200
-      * @tc.desc    createPixelMap - promise-arw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2200
+     * @tc.desc   createPixelMap - promise-arw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {
@@ -759,15 +697,12 @@ export default function imageRaw() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2300
-      * @tc.desc    createPixelMap - promise-arw
-      *                 1.create imagesource
-      *                 2.set DecodeOptions
-      *                 3.create PixelMap
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2300
+     * @tc.desc   createPixelMap - promise-arw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_STATIC_2300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let decodingOption: image.DecodingOptions = {

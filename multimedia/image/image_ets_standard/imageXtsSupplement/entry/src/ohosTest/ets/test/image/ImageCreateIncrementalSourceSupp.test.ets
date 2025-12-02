@@ -54,12 +54,12 @@ export default function ImageCreateIncrementalSourceSupp() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_001
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_001
-     * @tc.desc       buf: ArrayBuffer undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_001
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_001
+     * @tc.desc   buf: ArrayBuffer undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_001';
@@ -88,12 +88,12 @@ export default function ImageCreateIncrementalSourceSupp() {
       }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002
-     * @tc.desc       buf: ArrayBuffer null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002
+     * @tc.desc   buf: ArrayBuffer null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002';
@@ -122,12 +122,12 @@ export default function ImageCreateIncrementalSourceSupp() {
      }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_003
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_003
-     * @tc.desc       buf: ArrayBuffer ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_003
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_003
+     * @tc.desc   buf: ArrayBuffer ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_003';
@@ -159,12 +159,12 @@ export default function ImageCreateIncrementalSourceSupp() {
 
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_001
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_001
-     * @tc.desc       buf: ArrayBuffer ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_001
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_001
+     * @tc.desc   buf: ArrayBuffer ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_001';
@@ -196,12 +196,12 @@ export default function ImageCreateIncrementalSourceSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_002
-     * @tc.desc       buf: ArrayBuffer null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_002
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_002
+     * @tc.desc   buf: ArrayBuffer null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_002';
@@ -231,12 +231,12 @@ export default function ImageCreateIncrementalSourceSupp() {
      }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_003
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_003
-     * @tc.desc       buf: ArrayBuffer undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_003
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_003
+     * @tc.desc   buf: ArrayBuffer undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_003';
@@ -266,12 +266,12 @@ export default function ImageCreateIncrementalSourceSupp() {
       }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_004
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_004
-     * @tc.desc       buf: sourceOptions undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_004
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_004
+     * @tc.desc   buf: sourceOptions undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_004';
@@ -301,12 +301,12 @@ export default function ImageCreateIncrementalSourceSupp() {
      }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_005
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_005
-     * @tc.desc       buf: sourceOptions null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_005
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_005
+     * @tc.desc   buf: sourceOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_005';
@@ -335,12 +335,12 @@ export default function ImageCreateIncrementalSourceSupp() {
       }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_006
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_006
-     * @tc.desc       buf: sourceOptions ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_006
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_006
+     * @tc.desc   buf: sourceOptions ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_006';
@@ -370,12 +370,12 @@ export default function ImageCreateIncrementalSourceSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_007
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_007
-     * @tc.desc       buf: ArrayBuffer：undefined，sourceOptions ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_007
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_007
+     * @tc.desc   buf: ArrayBuffer：undefined，sourceOptions ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_007', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_007';
@@ -405,12 +405,12 @@ export default function ImageCreateIncrementalSourceSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_008
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_008
-     * @tc.desc       buf: ArrayBuffer：undefined，sourceOptions undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_008
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_008
+     * @tc.desc   buf: ArrayBuffer：undefined，sourceOptions undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_008', Level.LEVEL1, async (done: Function) => {
         const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_008';
@@ -439,12 +439,12 @@ export default function ImageCreateIncrementalSourceSupp() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_009
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_009
-     * @tc.desc       buf: ArrayBuffer：undefined，sourceOptions null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_009
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_009
+     * @tc.desc   buf: ArrayBuffer：undefined，sourceOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_009', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_009';
@@ -473,12 +473,12 @@ export default function ImageCreateIncrementalSourceSupp() {
      }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_010
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_010
-     * @tc.desc       buf: ArrayBuffer：null，sourceOptions null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_010
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_010
+     * @tc.desc   buf: ArrayBuffer：null，sourceOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_010', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_010';
@@ -506,12 +506,12 @@ export default function ImageCreateIncrementalSourceSupp() {
      }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_011
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_011
-     * @tc.desc       buf: ArrayBuffer：''，sourceOptions null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_011
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_011
+     * @tc.desc   buf: ArrayBuffer：''，sourceOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_011', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_011';
@@ -540,12 +540,12 @@ export default function ImageCreateIncrementalSourceSupp() {
      }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_012
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_012
-     * @tc.desc       buf: ArrayBuffer：''，sourceOptions ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_012
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_012
+     * @tc.desc   buf: ArrayBuffer：''，sourceOptions ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_012', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_sourceOptions_012';

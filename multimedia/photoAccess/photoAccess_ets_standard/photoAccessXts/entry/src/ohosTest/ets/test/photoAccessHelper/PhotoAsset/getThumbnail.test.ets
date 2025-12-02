@@ -199,12 +199,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_001
-     * @tc.name      : getThumbnail_callback_001
-     * @tc.desc      : getThumbnail(image) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_callback_001
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_001
+     * @tc.desc   getThumbnail(image) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_callback_001';
@@ -213,12 +213,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_002
-     * @tc.name      : getThumbnail_callback_002
-     * @tc.desc      : getThumbnail(image) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_callback_002
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_002
+     * @tc.desc   getThumbnail(image) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_callback_002';
@@ -229,12 +229,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_003
-     * @tc.name      : getThumbnail_callback_003
-     * @tc.desc      : getThumbnail(image) by { width: 1, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_003
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_003
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_003';
@@ -245,12 +245,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_004
-     * @tc.name      : getThumbnail_callback_004
-     * @tc.desc      : getThumbnail(image) by { width: 1024, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_004
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_004
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_004';
@@ -261,12 +261,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_005
-     * @tc.name      : getThumbnail_callback_005
-     * @tc.desc      : getThumbnail(image) by { width: 1024, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_005
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_005
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_005';
@@ -277,12 +277,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_006
-     * @tc.name      : getThumbnail_callback_006
-     * @tc.desc      : getThumbnail(image) by { width: 1, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_006
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_006
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_006';
@@ -293,12 +293,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_007
-     * @tc.name      : getThumbnail_callback_007
-     * @tc.desc      : getThumbnail(image) by { height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_007
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_007
+     * @tc.desc   getThumbnail(image) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_007', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_007';
@@ -309,12 +309,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_008
-     * @tc.name      : getThumbnail_callback_008
-     * @tc.desc      : getThumbnail(image) by { width: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_008
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_008
+     * @tc.desc   getThumbnail(image) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_008', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_008';
@@ -325,12 +325,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_009
-     * @tc.name      : getThumbnail_callback_009
-     * @tc.desc      : getThumbnail(image) by undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_009
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_009
+     * @tc.desc   getThumbnail(image) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_009';
@@ -340,12 +340,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_010
-     * @tc.name      : getThumbnail_callback_010
-     * @tc.desc      : getThumbnail(image) by { width: 0, height: 0 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_010
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_010
+     * @tc.desc   getThumbnail(image) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_010', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_010';
@@ -355,12 +355,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_011
-     * @tc.name      : getThumbnail_callback_011
-     * @tc.desc      : getThumbnail(image) by { width: -1, height: -1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_011
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_011
+     * @tc.desc   getThumbnail(image) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_011', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_011';
@@ -370,12 +370,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_012
-     * @tc.name      : getThumbnail_callback_012
-     * @tc.desc      : getThumbnail(image) by { width: 99999, height: 99999 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_012
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_012
+     * @tc.desc   getThumbnail(image) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_012', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_012';
@@ -385,12 +385,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_013
-     * @tc.name      : getThumbnail_callback_013
-     * @tc.desc      : getThumbnail(video) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_callback_013
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_013
+     * @tc.desc   getThumbnail(video) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_callback_013';
@@ -399,12 +399,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_014
-     * @tc.name      : getThumbnail_callback_014
-     * @tc.desc      : getThumbnail(video) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_callback_014
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_014
+     * @tc.desc   getThumbnail(video) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_callback_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_callback_014';
@@ -415,12 +415,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_015
-     * @tc.name      : getThumbnail_callback_015
-     * @tc.desc      : getThumbnail(video) by { width: 1, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_015
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_015
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_015', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_015';
@@ -431,12 +431,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_016
-     * @tc.name      : getThumbnail_callback_016
-     * @tc.desc      : getThumbnail(video) by { width: 1024, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_016
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_016
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_016', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_016';
@@ -447,12 +447,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_017
-     * @tc.name      : getThumbnail_callback_017
-     * @tc.desc      : getThumbnail(video) by { width: 1024, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_017
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_017
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_017', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_017';
@@ -463,12 +463,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_018
-     * @tc.name      : getThumbnail_callback_018
-     * @tc.desc      : getThumbnail(video) by { width: 1, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_018
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_018
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_018', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_018';
@@ -479,12 +479,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_019
-     * @tc.name      : getThumbnail_callback_019
-     * @tc.desc      : getThumbnail(video) by { height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_019
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_019
+     * @tc.desc   getThumbnail(video) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_019', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_019';
@@ -495,12 +495,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_020
-     * @tc.name      : getThumbnail_callback_020
-     * @tc.desc      : getThumbnail(video) by { width: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_020
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_020
+     * @tc.desc   getThumbnail(video) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_020', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_020';
@@ -511,12 +511,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_021
-     * @tc.name      : getThumbnail_callback_021
-     * @tc.desc      : getThumbnail(video) by undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_021
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_021
+     * @tc.desc   getThumbnail(video) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_021', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_021';
@@ -526,12 +526,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_022
-     * @tc.name      : getThumbnail_callback_022
-     * @tc.desc      : getThumbnail(video) by { width: 0, height: 0 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_022
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_022
+     * @tc.desc   getThumbnail(video) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_022', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_022';
@@ -541,12 +541,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_023
-     * @tc.name      : getThumbnail_callback_023
-     * @tc.desc      : getThumbnail(video) by { width: -1, height: -1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_023
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_023
+     * @tc.desc   getThumbnail(video) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_023', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_023';
@@ -556,12 +556,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_024
-     * @tc.name      : getThumbnail_callback_024
-     * @tc.desc      : getThumbnail(video) by { width: 99999, height: 99999 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_callback_024
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_024
+     * @tc.desc   getThumbnail(video) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_callback_024', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_callback_024';
@@ -571,12 +571,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_025
-     * @tc.name      : getThumbnail_promise_001
-     * @tc.desc      : getThumbnail(image) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_promise_001
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_025
+     * @tc.desc   getThumbnail(image) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_promise_001';
@@ -585,12 +585,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_026
-     * @tc.name      : getThumbnail_promise_002
-     * @tc.desc      : getThumbnail(image) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_promise_002
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_026
+     * @tc.desc   getThumbnail(image) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_promise_002';
@@ -601,12 +601,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_027
-     * @tc.name      : getThumbnail_promise_003
-     * @tc.desc      : getThumbnail(image) by { width: 1, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_003
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_027
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_003';
@@ -617,12 +617,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_028
-     * @tc.name      : getThumbnail_promise_004
-     * @tc.desc      : getThumbnail(image) by { width: 1024, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_004
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_028
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_004';
@@ -633,12 +633,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_029
-     * @tc.name      : getThumbnail_promise_005
-     * @tc.desc      : getThumbnail(image) by { width: 1024, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_005
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_029
+     * @tc.desc   getThumbnail(image) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_005';
@@ -649,12 +649,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_030
-     * @tc.name      : getThumbnail_promise_006
-     * @tc.desc      : getThumbnail(image) by { width: 1, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_006
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_030
+     * @tc.desc   getThumbnail(image) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_006';
@@ -665,12 +665,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_031
-     * @tc.name      : getThumbnail_promise_007
-     * @tc.desc      : getThumbnail(image) by { height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_007
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_031
+     * @tc.desc   getThumbnail(image) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_007', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_007';
@@ -681,12 +681,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_032
-     * @tc.name      : getThumbnail_promise_008
-     * @tc.desc      : getThumbnail(image) by { width: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_008
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_032
+     * @tc.desc   getThumbnail(image) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_008', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_008';
@@ -697,12 +697,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_033
-     * @tc.name      : getThumbnail_promise_009
-     * @tc.desc      : getThumbnail(image) by undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_009
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_033
+     * @tc.desc   getThumbnail(image) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_009';
@@ -715,12 +715,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_034
-     * @tc.name      : getThumbnail_promise_010
-     * @tc.desc      : getThumbnail(image) by { width: 0, height: 0 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_010
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_034
+     * @tc.desc   getThumbnail(image) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_010', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_010';
@@ -730,12 +730,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_035
-     * @tc.name      : getThumbnail_promise_011
-     * @tc.desc      : getThumbnail(image) by { width: -1, height: -1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_011
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_035
+     * @tc.desc   getThumbnail(image) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_011', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_011';
@@ -745,12 +745,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_036
-     * @tc.name      : getThumbnail_promise_012
-     * @tc.desc      : getThumbnail(image) by { width: 99999, height: 99999 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_012
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_036
+     * @tc.desc   getThumbnail(image) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_012', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_012';
@@ -760,12 +760,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_037
-     * @tc.name      : getThumbnail_promise_013
-     * @tc.desc      : getThumbnail(video) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_promise_013
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_037
+     * @tc.desc   getThumbnail(video) by no size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_promise_013';
@@ -774,12 +774,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_038
-     * @tc.name      : getThumbnail_promise_014
-     * @tc.desc      : getThumbnail(video) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getThumbnail_promise_014
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_038
+     * @tc.desc   getThumbnail(video) by { width: 128, height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getThumbnail_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'getThumbnail_promise_014';
@@ -790,12 +790,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_039
-     * @tc.name      : getThumbnail_promise_015
-     * @tc.desc      : getThumbnail(video) by { width: 1, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_015
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_039
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_015', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_015';
@@ -806,12 +806,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_040
-     * @tc.name      : getThumbnail_promise_016
-     * @tc.desc      : getThumbnail(video) by { width: 1024, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_016
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_040
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_016', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_016';
@@ -822,12 +822,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_041
-     * @tc.name      : getThumbnail_promise_017
-     * @tc.desc      : getThumbnail(video) by { width: 1024, height: 1024 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_017
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_041
+     * @tc.desc   getThumbnail(video) by { width: 1024, height: 1024 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_017', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_017';
@@ -838,12 +838,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_042
-     * @tc.name      : getThumbnail_promise_018
-     * @tc.desc      : getThumbnail(video) by { width: 1, height: 1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_018
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_042
+     * @tc.desc   getThumbnail(video) by { width: 1, height: 1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_018', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_018';
@@ -854,12 +854,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_043
-     * @tc.name      : getThumbnail_promise_019
-     * @tc.desc      : getThumbnail(video) by { height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_019
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_043
+     * @tc.desc   getThumbnail(video) by { height: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_019', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_019';
@@ -870,12 +870,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_044
-     * @tc.name      : getThumbnail_promise_020
-     * @tc.desc      : getThumbnail(video) by { width: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_020
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_044
+     * @tc.desc   getThumbnail(video) by { width: 128 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_020', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_020';
@@ -886,12 +886,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_045
-     * @tc.name      : getThumbnail_promise_021
-     * @tc.desc      : getThumbnail(video) by undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_021
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_045
+     * @tc.desc   getThumbnail(video) by undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_021', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_021';
@@ -902,12 +902,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_046
-     * @tc.name      : getThumbnail_promise_022
-     * @tc.desc      : getThumbnail(video) by { width: 0, height: 0 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_022
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_046
+     * @tc.desc   getThumbnail(video) by { width: 0, height: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_022', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_022';
@@ -917,12 +917,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_047
-     * @tc.name      : getThumbnail_promise_023
-     * @tc.desc      : getThumbnail(video) by { width: -1, height: -1 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_023
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_047
+     * @tc.desc   getThumbnail(video) by { width: -1, height: -1 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_023', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_023';
@@ -932,12 +932,12 @@ export default function getThumbnailTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_THUMBNAIL_048
-     * @tc.name      : getThumbnail_promise_024
-     * @tc.desc      : getThumbnail(video) by { width: 99999, height: 99999 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getThumbnail_promise_024
+     * @tc.number PHOTO_ASSET_GET_THUMBNAIL_048
+     * @tc.desc   getThumbnail(video) by { width: 99999, height: 99999 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getThumbnail_promise_024', Level.LEVEL2, async (done: Function) => {
       const testName = 'getThumbnail_promise_024';

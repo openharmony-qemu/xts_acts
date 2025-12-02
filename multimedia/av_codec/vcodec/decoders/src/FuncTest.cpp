@@ -95,9 +95,12 @@ void DecFuncNdkTest::TearDown() {}
 
 namespace {
 /**
- * @tc.number    : VIDEO_VC1DEC_FUNCTION_0001
- * @tc.name      : VIDEO_VC1DEC_FUNCTION_0001
- * @tc.desc      : function test
+ * @tc.name   VIDEO_VC1DEC_FUNCTION_0001
+ * @tc.number VIDEO_VC1DEC_FUNCTION_0001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0001, TestSize.Level0)
 {
@@ -117,9 +120,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0001, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_VC1DEC_FUNCTION_0002
- * @tc.name      : VIDEO_VC1DEC_FUNCTION_0002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_VC1DEC_FUNCTION_0002
+ * @tc.number VIDEO_VC1DEC_FUNCTION_0002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0002, TestSize.Level0)
 {
@@ -137,9 +143,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0002, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MJPEGDEC_FUNCTION_0003
- * @tc.name      : VIDEO_MJPEGDEC_FUNCTION_0003
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MJPEGDEC_FUNCTION_0003
+ * @tc.number VIDEO_MJPEGDEC_FUNCTION_0003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
 {
@@ -159,9 +168,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MJPEGDEC_FUNCTION_0004
- * @tc.name      : VIDEO_MJPEGDEC_FUNCTION_0004
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MJPEGDEC_FUNCTION_0004
+ * @tc.number VIDEO_MJPEGDEC_FUNCTION_0004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
 {
@@ -179,9 +191,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_FUNCTION_0005
- * @tc.name      : VIDEO_MSVIDEO1DEC_FUNCTION_0005
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MSVIDEO1DEC_FUNCTION_0005
+ * @tc.number VIDEO_MSVIDEO1DEC_FUNCTION_0005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0005, TestSize.Level0)
 {
@@ -201,9 +216,12 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0005, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_MSVIDEO1DEC_FUNCTION_0006
- * @tc.name      : VIDEO_MSVIDEO1DEC_FUNCTION_0006
- * @tc.desc      : function test
+ * @tc.name   VIDEO_MSVIDEO1DEC_FUNCTION_0006
+ * @tc.number VIDEO_MSVIDEO1DEC_FUNCTION_0006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0006, TestSize.Level0)
 {

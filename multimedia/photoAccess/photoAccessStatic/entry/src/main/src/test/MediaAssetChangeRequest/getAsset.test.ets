@@ -27,12 +27,12 @@ export default function getAsset() {
   describe("getAsset", (): void => {
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_GET_ASSET_CHANGE_REQUEST_STATIC_0100
-      * @tc.name    get_asset_change_request_static_001
-      * @tc.desc    get asset before/after applyChanges
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   get_asset_change_request_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_GET_ASSET_CHANGE_REQUEST_STATIC_0100
+     * @tc.desc   get asset before/after applyChanges
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("get_asset_change_request_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

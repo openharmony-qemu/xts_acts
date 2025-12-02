@@ -41,12 +41,12 @@ export default function ImageCreateImageReceiverCreator() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_001
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_001
-     * @tc.desc       Test createImageReceiver with size:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_001
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_001
+     * @tc.desc   Test createImageReceiver with size:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_001';
@@ -63,12 +63,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_002
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_002
-     * @tc.desc       Test createImageReceiver with size :undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_002
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_002
+     * @tc.desc   Test createImageReceiver with size :undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_002';
@@ -85,12 +85,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_003
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_003
-     * @tc.desc       Test createImageReceiver with size ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_003
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_003
+     * @tc.desc   Test createImageReceiver with size ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_003';
@@ -109,12 +109,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_004
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_004
-     * @tc.desc       Test createImageReceiver with format:ImageFormat.YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_004
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_004
+     * @tc.desc   Test createImageReceiver with format:ImageFormat.YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_004';
@@ -133,12 +133,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_005
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_005
-     * @tc.desc       Test createImageReceiver with size null,ImageFormat.YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_005
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_005
+     * @tc.desc   Test createImageReceiver with size null,ImageFormat.YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_005';
@@ -156,12 +156,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_006
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_006
-     * @tc.desc       Test createImageReceiver with size undefined,ImageFormat.YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_006
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_006
+     * @tc.desc   Test createImageReceiver with size undefined,ImageFormat.YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_006';
@@ -179,12 +179,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_007
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_007
-     * @tc.desc       Test createImageReceiver with size:'',ImageFormat.YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_007
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_007
+     * @tc.desc   Test createImageReceiver with size:'',ImageFormat.YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_007';
@@ -203,12 +203,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001
-     * @tc.desc       Test createImageCreator with size ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001
+     * @tc.desc   Test createImageCreator with size ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001';
@@ -227,12 +227,12 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_002
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_002
-     * @tc.desc       Test createImageCreator with size null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_002
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_002
+     * @tc.desc   Test createImageCreator with size null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_002';
@@ -249,12 +249,12 @@ export default function ImageCreateImageReceiverCreator() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_003
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_003
-     * @tc.desc       Test createImageCreator with size undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_003
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_003
+     * @tc.desc   Test createImageCreator with size undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_003';
@@ -271,12 +271,12 @@ export default function ImageCreateImageReceiverCreator() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_004
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_004
-     * @tc.desc       Test createImageCreator with ImageFormat :YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_004
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_004
+     * @tc.desc   Test createImageCreator with ImageFormat :YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_004';
@@ -296,12 +296,12 @@ export default function ImageCreateImageReceiverCreator() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_005
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_005
-     * @tc.desc       Test createImageCreator with size:null ImageFormat :YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_005
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_005
+     * @tc.desc   Test createImageCreator with size:null ImageFormat :YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_005';
@@ -318,12 +318,12 @@ export default function ImageCreateImageReceiverCreator() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_006
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_006
-     * @tc.desc       Test createImageCreator with size:undefined ImageFormat :YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_006
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_006
+     * @tc.desc   Test createImageCreator with size:undefined ImageFormat :YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_006';
@@ -340,12 +340,12 @@ export default function ImageCreateImageReceiverCreator() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_007
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_007
-     * @tc.desc       Test createImageCreator with size:'', ImageFormat :YCBCR_422_SP
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_007
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_007
+     * @tc.desc   Test createImageCreator with size:'', ImageFormat :YCBCR_422_SP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_007';

@@ -17,7 +17,7 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
@@ -27,6 +27,19 @@ const START_ABILITY_TIMEOUT_THOUSAND = 1000;
 
 export default function BackgroundPromise() {
   describe("BackgroundPromise", () => {
+
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
     beforeEach(async (done: Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({

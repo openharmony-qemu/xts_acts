@@ -115,6 +115,9 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       expect(certManager.CMErrorCode.CM_ERROR_MAX_CERT_COUNT_REACHED).assertEqual(17500004);
       expect(certManager.CMErrorCode.CM_ERROR_NO_AUTHORIZATION).assertEqual(17500005);
       expect(certManager.CMErrorCode.CM_ERROR_DEVICE_ENTER_ADVSECMODE).assertEqual(17500007);
+      expect(certManager.CMErrorCode.CM_ERROR_STORE_PATH_NOT_SUPPORTED).assertEqual(17500009);
+      expect(certManager.CMErrorCode.CM_ERROR_ACCESS_UKEY_SERVICE_FAILED).assertEqual(17500010);
+      expect(certManager.CMErrorCode.CM_ERROR_PARAMETER_VALIDATION_FAILED).assertEqual(17500011);
       expect(certManager.CmKeyPadding.CM_PADDING_NONE).assertEqual(0);
       expect(certManager.CmKeyPadding.CM_PADDING_PSS).assertEqual(1);
       expect(certManager.CmKeyPadding.CM_PADDING_PKCS1_V1_5).assertEqual(2);
@@ -130,6 +133,10 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       expect(certManager.AuthStorageLevel.EL1).assertEqual(1);
       expect(certManager.AuthStorageLevel.EL2).assertEqual(2);
       expect(certManager.AuthStorageLevel.EL4).assertEqual(4);
+      expect(certManager.CertificatePurpose.PURPOSE_DEFAULT).assertEqual(0);
+      expect(certManager.CertificatePurpose.PURPOSE_ALL).assertEqual(1);
+      expect(certManager.CertificatePurpose.PURPOSE_SIGN).assertEqual(2);
+      expect(certManager.CertificatePurpose.PURPOSE_ENCRYPT).assertEqual(3);
       done();
     });
 

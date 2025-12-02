@@ -51,70 +51,70 @@ export default function AVPlayerHttpCompatibilityTest() {
             }
         })
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0100
-        * @tc.name      : 001.H264_AAC
-        * @tc.desc      : Http playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0100
+         * @tc.desc   Http playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0100', Level.LEVEL0,async function (done) {
             let path = VIDEOPLAYER_PATH + 'mp4/h264_aac_640x320_30r.mp4';
             avPlayTest = { width: 640, height: 320, duration: 10100 };
             testAVPlayerFun(path, avPlayer, avPlayTest, PLAY_TIME, done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0200
-            * @tc.name      : 002.H264_MP3
-            * @tc.desc      : Http playback control test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0200
+         * @tc.desc   Http playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MP4_0200', Level.LEVEL0,async function (done) {
             let path = VIDEOPLAYER_PATH + 'mp4/h264_mp3_640x480_25r.mp4';
             avPlayTest = { width: 640, height: 480, duration: 10080 };
             testAVPlayerFun(path, avPlayer, avPlayTest, PLAY_TIME, done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0100
-            * @tc.name      : 001.H264_AAC
-            * @tc.desc      : Http playback control test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0100
+         * @tc.desc   Http playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0100', Level.LEVEL0,async function (done) {
             let path = VIDEOPLAYER_PATH + 'mpeg_ts/h264_aac_640x480_30r.ts';
             avPlayTest = { width: 640, height: 480, duration: 10161 };
             testAVPlayerFun(path, avPlayer, avPlayTest, PLAY_TIME, done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0200
-            * @tc.name      : 002.H264_MP3
-            * @tc.desc      : Http playback control test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0200
+         * @tc.desc   Http playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_TS_0200', Level.LEVEL0,async function (done) {
             let path = VIDEOPLAYER_PATH + 'mpeg_ts/h264_mp3_640x480_25r.ts';
             avPlayTest = { width: 640, height: 480, duration: 10169 };
             testAVPlayerFun(path, avPlayer, avPlayTest, PLAY_TIME, done);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MKV_0100
-            * @tc.name      : 001.H264_AAC
-            * @tc.desc      : Http playback control test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MKV_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MKV_0100
+         * @tc.desc   Http playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_HTTP_FORMAT_MKV_0100', Level.LEVEL0,async function (done) {
             let path = VIDEO_PATH + 'H264_AAC.mkv';
             avPlayTest = { width: 720, height: 480, duration: 10057 };

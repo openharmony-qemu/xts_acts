@@ -71,12 +71,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_0100
-     * @tc.name      : setTorchMode(); 设置手电筒模式开关 setTorchMode(ON)
-     * @tc.desc      : setTorchMode(); 设置手电筒模式开关 setTorchMode(ON)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(ON)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ON_0100', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -106,12 +106,12 @@ export default function cameraTorchTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_0100
-     * @tc.name      : setTorchMode(); 设置手电筒模式开关 setTorchMode(OFF)
-     * @tc.desc      : setTorchMode(); 设置手电筒模式开关 setTorchMode(OFF)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(OFF)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_OFF_0100', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -142,12 +142,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_0100
-     * @tc.name      : setTorchMode(); 设置手电筒模式开关 setTorchMode(AUTO)
-     * @tc.desc      : setTorchMode(); 设置手电筒模式开关 setTorchMode(AUTO)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(AUTO)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_AUTO_0100', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -178,12 +178,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0100
-     * @tc.name      : on 监听，手电筒更改模式OFF2ON
-     * @tc.desc      : on 监听，手电筒更改模式OFF2ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0100
+     * @tc.desc   on 监听，手电筒更改模式OFF2ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0100', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -234,12 +234,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0200
-     * @tc.name      : on 监听，手电筒更改模式OFF2AUTO
-     * @tc.desc      : on 监听，手电筒更改模式OFF2AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0200
+     * @tc.desc   on 监听，手电筒更改模式OFF2AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0200', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -290,12 +290,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0300
-     * @tc.name      : on 监听，手电筒更改模式ON2OFF
-     * @tc.desc      : on 监听，手电筒更改模式ON2OFF
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0300
+     * @tc.desc   on 监听，手电筒更改模式ON2OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0300', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -346,12 +346,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0400
-     * @tc.name      : on 监听，手电筒更改模式ON2AUTO
-     * @tc.desc      : on 监听，手电筒更改模式ON2AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0400
+     * @tc.desc   on 监听，手电筒更改模式ON2AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0400', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -402,12 +402,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0500
-     * @tc.name      : on 监听，手电筒更改模式AUTO2OFF
-     * @tc.desc      : on 监听，手电筒更改模式AUTO2OFF
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0500
+     * @tc.desc   on 监听，手电筒更改模式AUTO2OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0500', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -458,12 +458,12 @@ export default function cameraTorchTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0600
-     * @tc.name      : on 监听，手电筒更改模式AUTO2ON
-     * @tc.desc      : on 监听，手电筒更改模式AUTO2ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0600
+     * @tc.desc   on 监听，手电筒更改模式AUTO2ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ON_TORCH_STATUS_CHANGE_0600', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -515,12 +515,12 @@ export default function cameraTorchTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_0100
-     * @tc.name      : OFF torchStatusChange
-     * @tc.desc      : OFF torchStatusChange after ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_0100
+     * @tc.desc   OFF torchStatusChange after ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_OFF_TORCH_STATUS_CHANGE_0100', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {
@@ -563,12 +563,12 @@ export default function cameraTorchTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ERRORCODE_0100
-     * @tc.name      : setTorchMode(); 设置手电筒模式开关 setTorchMode(errparameter)
-     * @tc.desc      : setTorchMode(); 设置手电筒模式开关 setTorchMode(errparameter)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ERRORCODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ERRORCODE_0100
+     * @tc.desc   setTorchMode(); 设置手电筒模式开关 setTorchMode(errparameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SETTORCHMODE_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       if (mCameraNum == 0) {

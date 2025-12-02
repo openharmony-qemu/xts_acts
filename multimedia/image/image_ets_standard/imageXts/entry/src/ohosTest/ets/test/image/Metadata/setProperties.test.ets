@@ -91,12 +91,12 @@ export default function setPropertiesTest() {
     });
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_001
-     * @tc.name      : setProperties_promise_001
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_001
+     * @tc.number METADATA_SET_PROPERTIES_001
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_001';
@@ -109,12 +109,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_002
-     * @tc.name      : setProperties_promise_002
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_002
+     * @tc.number METADATA_SET_PROPERTIES_002
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_002';
@@ -127,12 +127,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_003
-     * @tc.name      : setProperties_promise_003
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_003
+     * @tc.number METADATA_SET_PROPERTIES_003
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_003';
@@ -145,12 +145,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_004
-     * @tc.name      : setProperties_promise_004
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_004
+     * @tc.number METADATA_SET_PROPERTIES_004
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_004';
@@ -163,12 +163,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_005
-     * @tc.name      : setProperties_promise_005
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_005
+     * @tc.number METADATA_SET_PROPERTIES_005
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_005';
@@ -181,12 +181,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_006
-     * @tc.name      : setProperties_promise_006
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_006
+     * @tc.number METADATA_SET_PROPERTIES_006
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_006';
@@ -199,12 +199,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_007
-     * @tc.name      : setProperties_promise_007
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_promise_007
+     * @tc.number METADATA_SET_PROPERTIES_007
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_promise_007';
@@ -214,12 +214,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_008
-     * @tc.name      : setProperties_abnormal_promise_001
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_abnormal_promise_001
+     * @tc.number METADATA_SET_PROPERTIES_008
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_abnormal_promise_001', Level.LEVEL0,
       async (done: Function) => {
@@ -233,12 +233,12 @@ export default function setPropertiesTest() {
       })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_009
-     * @tc.name      : setProperties_abnormal_promise_002
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_abnormal_promise_002
+     * @tc.number METADATA_SET_PROPERTIES_009
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_abnormal_promise_002';
@@ -251,12 +251,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_010
-     * @tc.name      : setProperties_abnormal_promise_003
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_abnormal_promise_003
+     * @tc.number METADATA_SET_PROPERTIES_010
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_abnormal_promise_003';
@@ -269,12 +269,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_011
-     * @tc.name      : setProperties_abnormal_promise_004
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_abnormal_promise_004
+     * @tc.number METADATA_SET_PROPERTIES_011
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_abnormal_promise_004';
@@ -287,12 +287,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_012
-     * @tc.name      : setProperties_abnormal_promise_005
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_abnormal_promise_005
+     * @tc.number METADATA_SET_PROPERTIES_012
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_abnormal_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_abnormal_promise_005';
@@ -302,12 +302,12 @@ export default function setPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_SET_PROPERTIES_013
-     * @tc.name      : setProperties_abnormal_promise_006
-     * @tc.desc      : setProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setProperties_abnormal_promise_006
+     * @tc.number METADATA_SET_PROPERTIES_013
+     * @tc.desc   setProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setProperties_abnormal_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'setProperties_abnormal_promise_006';

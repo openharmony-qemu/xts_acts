@@ -79,12 +79,12 @@ export default function sendableFlipTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_001
-     * @tc.name      : flip_sendable_promise_001
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_sendable_promise_001
+     * @tc.number PIXEL_MAP_FLIP_001
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_sendable_promise_001';
@@ -96,12 +96,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_002
-     * @tc.name      : flip_sendable_promise_002
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_sendable_promise_002
+     * @tc.number PIXEL_MAP_FLIP_002
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_sendable_promise_002';
@@ -113,12 +113,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_003
-     * @tc.name      : flip_sendable_promise_003
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_sendable_promise_003
+     * @tc.number PIXEL_MAP_FLIP_003
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_sendable_promise_003';
@@ -130,12 +130,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_004
-     * @tc.name      : flip_sendable_promise_004
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_sendable_promise_004
+     * @tc.number PIXEL_MAP_FLIP_004
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_sendable_promise_004';
@@ -147,12 +147,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_005
-     * @tc.name      : flip_abnormal_sendable_promise_001
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_FLIP_005
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_abnormal_sendable_promise_001';
@@ -164,12 +164,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_006
-     * @tc.name      : flip_abnormal_sendable_promise_002
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_FLIP_006
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_abnormal_sendable_promise_002';
@@ -181,12 +181,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_007
-     * @tc.name      : flip_abnormal_sendable_promise_003
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_FLIP_007
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_abnormal_sendable_promise_003';
@@ -198,12 +198,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_008
-     * @tc.name      : flip_abnormal_sendable_promise_004
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_FLIP_008
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_abnormal_sendable_promise_004';
@@ -215,12 +215,12 @@ export default function sendableFlipTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_009
-     * @tc.name      : flip_abnormal_sendable_promise_005
-     * @tc.desc      : flip
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flip_abnormal_sendable_promise_005
+     * @tc.number PIXEL_MAP_FLIP_009
+     * @tc.desc   flip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flip_abnormal_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'flip_abnormal_sendable_promise_005';

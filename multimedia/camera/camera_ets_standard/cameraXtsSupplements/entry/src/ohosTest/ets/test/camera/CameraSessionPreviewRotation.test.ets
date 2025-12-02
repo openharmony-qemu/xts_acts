@@ -285,12 +285,12 @@ export default function CameraSessionPreviewRotationTest() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0100
-     * @tc.desc      Test getPreviewOutputRotation with ROTATION_0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0100
+     * @tc.desc   Test getPreviewOutputRotation with ROTATION_0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0100';
@@ -304,12 +304,12 @@ export default function CameraSessionPreviewRotationTest() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0200
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0200
-     * @tc.desc      Test getPreviewOutputRotation with ROTATION_90
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0200
+     * @tc.desc   Test getPreviewOutputRotation with ROTATION_90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0200', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0200';
@@ -323,12 +323,12 @@ export default function CameraSessionPreviewRotationTest() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0300
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0300
-     * @tc.desc      Test getPreviewOutputRotation with ROTATION_180
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0300
+     * @tc.desc   Test getPreviewOutputRotation with ROTATION_180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0300', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0300';
@@ -342,12 +342,12 @@ export default function CameraSessionPreviewRotationTest() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0400
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0400
-     * @tc.desc      Test getPreviewOutputRotation with ROTATION_270
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0400
+     * @tc.desc   Test getPreviewOutputRotation with ROTATION_270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0400', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_SUPP_0400';
