@@ -32,6 +32,7 @@
         "MainAbility/pages/List/scrollSnapAnimationSpeedModifier",
         "MainAbility/pages/List/scrollSnapAnimationSpeed",
         "MainAbility/pages/ListItemGroup/listScrollbarColor",
+        "MainAbility/pages/List/ListFillPolicyModifier",
         "MainAbility/pages/List/ListFillPolicy",
         "MainAbility/pages/List/ListContentSize"
     ]
