@@ -60,11 +60,14 @@ export default function AllowableMovementTest() {
     });
 
     /**
-     * @tc.number : AllowableMovement_0100
-     * @tc.name  : AllowableMovement_0100
-     * @tc.desc  : To test whether AllowableMovement is effective.
-     * @tc.level : Level 0
+     * @tc.name   AllowableMovement_0100
+     * @tc.number sub_AllowableMovementTest_0010
+     * @tc.desc   api test AllowableMovement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
+
     it('AllowableMovement_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(500);
       console.info('AllowableMovement_0100 START');

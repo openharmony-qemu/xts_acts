@@ -23,7 +23,6 @@ struct AllowableMovementExample {
   @State count5: number = 0;
   @State allowableMovementTest: Array<number | undefined | null> = [-20, 0, 1, 15, 200.5, 10000, undefined, null]
   @State allowableMovement: number | undefined | null = 15
-  @State Test: number = 0
   @State eventType: string = ''
   @State text: number = 15
 
@@ -59,7 +58,6 @@ struct AllowableMovementExample {
                 this.count++
               }
               AppStorage.setOrCreate('allowableMovement', this.allowableMovement)
-              console.log("bbbb" + this.allowableMovement)
             })
             .onActionEnd((event: GestureEvent) => {
               this.count = 0
@@ -70,7 +68,6 @@ struct AllowableMovementExample {
           if (current.getType() == GestureControl.GestureType.LONG_PRESS_GESTURE) {
             let getAllow = (current as LongPressRecognizer).getAllowableMovement();
             AppStorage.setOrCreate('getAllowableMovement', getAllow)
-            console.log("aaa" + getAllow)
           }
           return GestureJudgeResult.CONTINUE
         })
