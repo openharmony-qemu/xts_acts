@@ -262,11 +262,17 @@ static napi_value TestImageObjectFit018(napi_env env, napi_callback_info info)
 static napi_value TestImageObjectFit019(napi_env env, napi_callback_info info)
 {
     NAPI_START(image, ARKUI_NODE_IMAGE);
+    ArkUI_NumberValue value17[] = {{.f32 = 1.0f}, {.f32 = 1.0f}, {.f32 = 0.0f}, {.f32 = 0.0f}, {.f32 = 0.0f},
+        {.f32 = 0.0f}, {.f32 = 1.0f}, {.f32 = 0.0f}, {.f32 = 0.0f}, {.f32 = 0.0f}, {.f32 = 0.0f},
+        {.f32 = 0.0f}, {.f32 = 1.0f}, {.f32 = 0.0f}, {.f32 = 0.0f}, {.f32 = 0.0f}, {.f32 = 0.0f} };
+    ArkUI_AttributeItem value_item = {value17, sizeof(value17) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(image, NODE_IMAGE_IMAGE_MATRIX, &value_item);
+
     int32_t objectFitValue = ArkUI_ObjectFit::ARKUI_OBJECT_FIT_NONE_MATRIX;
     ArkUI_NumberValue value[] = {{.i32 = objectFitValue}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(image, NODE_IMAGE_OBJECT_FIT, &valueItem);
-    ASSERT_EQ(ret, SUCCESS);
+    auto ret1 = nodeAPI->setAttribute(image, NODE_IMAGE_OBJECT_FIT, &valueItem);
+    ASSERT_EQ(ret1, SUCCESS);
     ASSERT_EQ(nodeAPI->getAttribute(image, NODE_IMAGE_OBJECT_FIT)->value[PARAM_0].i32, objectFitValue);
     NAPI_END;
 }
