@@ -11,6 +11,7 @@
     "MainAbility/pages/image/imageDrawableDescriptorTest",
     "MainAbility/pages/image/imageErrorTest",
     "MainAbility/pages/textLineHeight/TextLineHeightTest",
-    "MainAbility/pages/textArea/TextAreaBarStateTest"
+    "MainAbility/pages/textArea/TextAreaBarStateTest",
+    "MainAbility/pages/scrollbarTest/scrollbarTest"
   ]
 }

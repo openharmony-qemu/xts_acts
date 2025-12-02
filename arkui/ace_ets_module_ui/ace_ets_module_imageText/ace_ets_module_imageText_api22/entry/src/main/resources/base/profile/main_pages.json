@@ -8,6 +8,7 @@
     "MainAbility/pages/TextChangeObserver/richEditor",
     "MainAbility/pages/Image/imageAltTest",
     "MainAbility/pages/Text/minLines",
-    "MainAbility/pages/richEditorSupportSvg2/richEditorSupportSvg2"
+    "MainAbility/pages/richEditorSupportSvg2/richEditorSupportSvg2",
+    "MainAbility/pages/scrollbarTest/scrollbarTest"
   ]
 }

@@ -28,6 +28,7 @@ add_library(nativerender SHARED
     image/ImageErrorTest.cpp
     textLineHeight/LineHeightTest.cpp
     textArea/TextAreaBarStateTest.cpp
+    scrollbarTest/ScrollBarTest.cpp
 )
 
 add_library(nativefunc SHARED
