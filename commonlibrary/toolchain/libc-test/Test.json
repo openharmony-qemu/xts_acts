@@ -59,6 +59,7 @@
                 "cp /data/local/tmp/libc-test-lib/libdlopen_dso.so /data/local/tmp/libc-test-lib/lib_for_no_delete.so",
                 "cp /data/local/tmp/libc-test-lib/libdlopen_dso.so /data/local/tmp/libc-test-lib/lib_for_dlopen.so",
                 "cp /data/local/tmp/libc-test-lib/*.so /data/local/tmp",
+                "sh /data/local/tmp/libc-test-lib/adlt_build_syms.sh",
                 "param set debug.hitrace.tags.enableflags 1",
                 "echo 'root:This.is.a.test:18997:0:99999:7:::'>/etc/shadow",
                 "rm -rf /data/local/tmp/libc-test/vsyslog",
