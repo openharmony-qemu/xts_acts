@@ -26,12 +26,12 @@ export default function AccessibilityProviderCreateTest(){
     });
 
     /**
-     * @tc.number  :AccessibilityProviderCreateTest
-     * @tc.name    :AccessibilityProviderCreateTest_001
-     * @tc.desc    :Verify whether it can return the correct parameter error code when invalid parameters are passed in.
-     * @tc.level   :LEVEL1
-     * @tc.size    :MediumTest
-     * @tc.type    :Function
+     * @tc.number AccessibilityProviderCreateTest
+     * @tc.name AccessibilityProviderCreateTest_001
+     * @tc.desc Verify whether it can return the correct parameter error code when invalid parameters are passed in.
+     * @tc.level LEVEL1
+     * @tc.size MediumTest
+     * @tc.type Function
      */
     it('AccessibilityProviderCreateTest_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.AccessibilityProviderCreateTest()).assertEqual(0)
