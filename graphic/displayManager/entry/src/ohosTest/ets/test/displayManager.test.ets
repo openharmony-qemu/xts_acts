@@ -2619,12 +2619,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
-     * @tc.name      : testGetBrightnessInfowithMainDisplayid
-     * @tc.desc      : 查询主屏亮度信息
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
+     * @tc.name       testGetBrightnessInfowithMainDisplayid
+     * @tc.desc       查询主屏亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testGetBrightnessInfowithMainDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithMainDisplayid';
@@ -2647,12 +2647,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
-     * @tc.name      : testGetBrightnessInfowithVirtualDisplayid
-     * @tc.desc      : 查询虚拟屏亮度信息
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
+     * @tc.name       testGetBrightnessInfowithVirtualDisplayid
+     * @tc.desc       查询虚拟屏亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testGetBrightnessInfowithVirtualDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithVirtualDisplayid';
@@ -2685,12 +2685,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
-     * @tc.name      : testGetBrightnessInfowithNonExistedDisplayId
-     * @tc.desc      : 查询大于0但不存在的屏幕亮度信息
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
+     * @tc.name       testGetBrightnessInfowithNonExistedDisplayId
+     * @tc.desc       查询大于0但不存在的屏幕亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
      */
     it('testGetBrightnessInfowithNonExistedDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithNonExistedDisplayId';
@@ -2711,12 +2711,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
-     * @tc.name      : testGetBrightnessInfowithNegativeDisplayId
-     * @tc.desc      : 查询小于0不存在的屏幕亮度信息
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
+     * @tc.name       testGetBrightnessInfowithNegativeDisplayId
+     * @tc.desc       查询小于0不存在的屏幕亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
      */
     it('testGetBrightnessInfowithNegativeDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithNegativeDisplayId';
@@ -2737,12 +2737,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0100
-     * @tc.name      : testOnBrightnessInfoChange_0100
-     * @tc.desc      : 主屏通过调节窗口亮度触发屏幕亮度信息变化，取消全部监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0100
+     * @tc.name       testOnBrightnessInfoChange_0100
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消全部监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testOnBrightnessInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0100';
@@ -2815,12 +2815,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0200
-     * @tc.name      : testOnBrightnessInfoChange_0200
-     * @tc.desc      : 主屏通过调节窗口亮度触发屏幕亮度信息变化，取消指定监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0200
+     * @tc.name       testOnBrightnessInfoChange_0200
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消指定监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testOnBrightnessInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0200';
@@ -2894,12 +2894,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0300
-     * @tc.name      : testOnBrightnessInfoChange_0300
-     * @tc.desc      : 异源虚拟屏上调节窗口亮度触发屏幕亮度信息变化，触发主屏亮度信息改变
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0300
+     * @tc.name       testOnBrightnessInfoChange_0300
+     * @tc.desc       异源虚拟屏上调节窗口亮度触发屏幕亮度信息变化，触发主屏亮度信息改变
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
      */
     it('testOnBrightnessInfoChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0300';

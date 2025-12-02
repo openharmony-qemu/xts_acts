@@ -3513,12 +3513,12 @@ export default function windowImmersiveTest() {
 
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_AVOIDAREACHANGE_1000
-     * @tc.name      : testWindowAvoidareaChangeCutout_0100
-     * @tc.desc      : 横屏冷启动旋转窗口，正确获取挖孔避让区域
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_ROTATION_AVOIDAREACHANGE_1000
+     * @tc.name       testWindowAvoidareaChangeCutout_0100
+     * @tc.desc       横屏冷启动旋转窗口，正确获取挖孔避让区域
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
     it('testWindowAvoidareaChangeCutout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testWindowAvoidareaChangeCutout_0100';
