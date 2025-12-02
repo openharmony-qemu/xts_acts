@@ -59,3 +59,7 @@ export const createCrossLanguageColumnNode: (content: NodeContent, tag: string) 
 export const createCrossLanguageFlexNode: (content: NodeContent, tag: string) => void;
 export const createCrossLanguageStackNode: (content: NodeContent, tag: string) => void;
 export const createCrossLanguageRelativeContainerNode: (content: NodeContent, tag: string) => void;
+
+export const scrollZoomStartTest: (a: string) => void;
+export const scrollZoomDidTest: (a: string) => void;
+export const scrollZoomStopTest: (a: string) => void;

@@ -37,6 +37,7 @@
 #include "RelativeContainer/RelativeContainerCrossLanguageTest.h"
 #include "napi/native_api.h"
 #include "node/NodeCreatorTest.h"
+#include "scroll/ScrollZoomSampleTest.h"
 
 namespace ArkUICapiTest
 {
@@ -91,29 +92,35 @@ namespace ArkUICapiTest
              nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createCrossLanguageRelativeContainerNode", nullptr, RelativeContainerCrossLanguageTest::createCrossLanguageRelativeContainerNode,
              nullptr, nullptr, nullptr, napi_default, nullptr},
-			{ "CreateNodeArkUIPostAsyncUITask", nullptr, NativeModule::CreateNodeArkUIPostAsyncUITask,
+            { "CreateNodeArkUIPostAsyncUITask", nullptr, NativeModule::CreateNodeArkUIPostAsyncUITask,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostAsyncUITaskResultValueS", nullptr, NativeModule::CreateNodeArkUIPostAsyncUITaskResultValueS,
+            { "CreateNodeArkUIPostAsyncUITaskResultValueS", nullptr, NativeModule::CreateNodeArkUIPostAsyncUITaskResultValueS,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostAsyncUITaskResultValueF", nullptr, NativeModule::CreateNodeArkUIPostAsyncUITaskResultValueF,
+            { "CreateNodeArkUIPostAsyncUITaskResultValueF", nullptr, NativeModule::CreateNodeArkUIPostAsyncUITaskResultValueF,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostUITask", nullptr, NativeModule::CreateNodeArkUIPostUITask,
+            { "CreateNodeArkUIPostUITask", nullptr, NativeModule::CreateNodeArkUIPostUITask,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostUITaskResultValueS", nullptr, NativeModule::CreateNodeArkUIPostUITaskResultValueS,
+            { "CreateNodeArkUIPostUITaskResultValueS", nullptr, NativeModule::CreateNodeArkUIPostUITaskResultValueS,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostUITaskResultValueF", nullptr, NativeModule::CreateNodeArkUIPostUITaskResultValueF,
+            { "CreateNodeArkUIPostUITaskResultValueF", nullptr, NativeModule::CreateNodeArkUIPostUITaskResultValueF,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostUITaskAndWait", nullptr, NativeModule::CreateNodeArkUIPostUITaskAndWait,
+            { "CreateNodeArkUIPostUITaskAndWait", nullptr, NativeModule::CreateNodeArkUIPostUITaskAndWait,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostUITaskAndWaitResultValueS", nullptr, NativeModule::CreateNodeArkUIPostUITaskAndWaitResultValueS,
+            { "CreateNodeArkUIPostUITaskAndWaitResultValueS", nullptr, NativeModule::CreateNodeArkUIPostUITaskAndWaitResultValueS,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeArkUIPostUITaskAndWaitResultValueF", nullptr, NativeModule::CreateNodeArkUIPostUITaskAndWaitResultValueF,
+            { "CreateNodeArkUIPostUITaskAndWaitResultValueF", nullptr, NativeModule::CreateNodeArkUIPostUITaskAndWaitResultValueF,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "CreateNodeTreeOnUIThread", nullptr, NativeModule::CreateNodeTreeOnUIThread,
+            { "CreateNodeTreeOnUIThread", nullptr, NativeModule::CreateNodeTreeOnUIThread,
                  nullptr, nullptr, nullptr, napi_default, nullptr },
-			{ "DisposeNodeTree", nullptr, NativeModule::DisposeNodeTree,
-                 nullptr, nullptr, nullptr, napi_default, nullptr }
-			};
+            { "DisposeNodeTree", nullptr, NativeModule::DisposeNodeTree,
+                 nullptr, nullptr, nullptr, napi_default, nullptr },
+            {"scrollZoomStartTest", nullptr, ScrollZoomSampleTest::ScrollZoomStartTest, nullptr,
+             nullptr, nullptr, napi_default, nullptr},
+            {"scrollZoomDidTest", nullptr, ScrollZoomSampleTest::ScrollZoomDidTest, nullptr,
+             nullptr, nullptr, napi_default, nullptr},
+            {"scrollZoomStopTest", nullptr, ScrollZoomSampleTest::ScrollZoomStopTest, nullptr,
+             nullptr, nullptr, napi_default, nullptr},
+        };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
