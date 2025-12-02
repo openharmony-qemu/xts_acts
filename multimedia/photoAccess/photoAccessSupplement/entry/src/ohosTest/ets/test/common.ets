@@ -231,3 +231,30 @@ export { COMMON_WAIT_DURATION,
   albumSubtype,
   photoKeys,
 }
+
+export enum ErrorCode {
+  /**
+   * Parameter error.
+   */
+  PARAM_ERROR_CODE = 401,
+
+  /**
+   * Permission denied.
+   */
+  PERM_DENIED_ERROR_CODE = 13900012,
+
+  /**
+   * Invalid argument.
+   */
+  ARGUMENT_INVALID_ERROR_CODE = 13900020,
+
+  /**
+   * System inner fail.
+   */
+  SYSTEM_INNER_ERROR_CODE = 14000011,
+  /**
+   * Member is not a valid PhotoKey
+   */
+  NOT_VALID_PHOTO_KEY_ERROR_CODE = 14000014,
+
+}

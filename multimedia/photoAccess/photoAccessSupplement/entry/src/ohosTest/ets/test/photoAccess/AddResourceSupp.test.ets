@@ -64,6 +64,20 @@ export default function AddResourceChangeRequestSuppTest() {
           done();
         }
       }
+    const testInvalidResourceDataIMAGE1 =
+      async (testNum: string, done: Function, fun: () => void, callback: (errCode: ESObject) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          fun();
+          console.info(TAG, testNum, 'Success testInvalidResourceDataIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidResourceDataIMAGE`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
     const testInvalidResourceDataVIDEO =
       async (testNum: string, resourceType: photoAccessHelper.ResourceType, resourceData: ArrayBuffer,
         done: Function, callback: (errCode: ESObject) => void) => {
@@ -79,6 +93,20 @@ export default function AddResourceChangeRequestSuppTest() {
           done();
         } catch (error) {
           console.error(TAG, testNum, `Failed testInvalidResourceDataVIDEO`, error.code, JSON.stringify(error));
+          callback(error);
+          done();
+        }
+      }
+    const testInvalidResourceDataIVIDEO1 =
+      async (testNum: string, done: Function, fun: () => void, callback: (errCode: ESObject) => void) => {
+        try {
+          console.info(TAG, testNum, 'Start');
+          fun();
+          console.info(TAG, testNum, 'Success testInvalidResourceDataIMAGE');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(TAG, testNum, `Failed testInvalidResourceDataIMAGE`, error.code, JSON.stringify(error));
           callback(error);
           done();
         }
@@ -1686,6 +1714,526 @@ export default function AddResourceChangeRequestSuppTest() {
         (errCode: ESObject) => {
           expect(errCode.code).assertEqual('401');
         });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_20000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_21000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_22000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_23000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_24000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_25000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_26000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_27000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_28000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_29000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_31000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_33000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension = 'jpg';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIMAGE1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_34000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_35000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_36000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_37000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_38000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_39000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, null)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_40000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_41000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_42000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PHOTO_PROXY, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('14000011');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_43000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_44000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, undefined)
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_45000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_48000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_RESOURCE, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
+    });
+
+    /**
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000
+     * @tc.desc   add resource by invalid
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000', Level.LEVEL2, async (done: Function) => {
+      let photoType = photoAccessHelper.PhotoType.VIDEO;
+      let extension = 'mp4';
+      let assetChangeRequest =
+        photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      await testInvalidResourceDataIVIDEO1('SUB_PHOTO_ACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_49000', done, () => {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.PRIVATE_MOVING_PHOTO_METADATA, '')
+      }, (errCode: ESObject) => {
+        expect(errCode.code).assertEqual('401');
+      });
     });
   });
 }

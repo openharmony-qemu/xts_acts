@@ -61,12 +61,12 @@ export default function sendablePhotoAccessHelperGetObjectByPositionTest() {
 
 
     /**
-     * @tc.name   SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
-     * @tc.desc   sendable phAccessHelper.getObjectByPosition index 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number  SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
+     * @tc.name    SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001
+     * @tc.desc    sendable phAccessHelper.getObjectByPosition index 0
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_001';
@@ -82,12 +82,12 @@ export default function sendablePhotoAccessHelperGetObjectByPositionTest() {
       done();
     })
     /**
-     * @tc.name   SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
-     * @tc.desc   sendable phAccessHelper.getObjectByPosition index -1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number  SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
+     * @tc.name    SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002
+     * @tc.desc    sendable phAccessHelper.getObjectByPosition index -1
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_002';
@@ -104,12 +104,11 @@ export default function sendablePhotoAccessHelperGetObjectByPositionTest() {
       done();
     })
     /**
-     * @tc.name   SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
-     * @tc.desc   phAccessHelper.getObjectByPosition index 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number  SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
+     * @tc.name    SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003
+     * @tc.desc    phAccessHelper.getObjectByPosition index 1
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_003';
@@ -125,12 +124,11 @@ export default function sendablePhotoAccessHelperGetObjectByPositionTest() {
       done();
     })
     /**
-     * @tc.name   SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_004
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_004
-     * @tc.desc   phAccessHelper.getObjectByPosition index ''
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number  SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_004
+     * @tc.name    SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_004
+     * @tc.desc    phAccessHelper.getObjectByPosition index ''
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_004';
@@ -148,12 +146,11 @@ export default function sendablePhotoAccessHelperGetObjectByPositionTest() {
       done();
     })
     /**
-     * @tc.name   SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_005
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_005
-     * @tc.desc   phAccessHelper.getObjectByPosition index null
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number  SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_005
+     * @tc.name    SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_005
+     * @tc.desc    phAccessHelper.getObjectByPosition index null
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_005';
@@ -171,12 +168,11 @@ export default function sendablePhotoAccessHelperGetObjectByPositionTest() {
       done();
     })
     /**
-     * @tc.name   SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_006
-     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_006
-     * @tc.desc   phAccessHelper.getObjectByPosition index undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number  SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_006
+     * @tc.name    SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_006
+     * @tc.desc    phAccessHelper.getObjectByPosition index undefined
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_PHOTO_ACCESS_HELPER_GET_OBJECT_BY_POSITION_PROMISE_006';
