@@ -26,6 +26,8 @@ interface myObj2 {
   "code": number
 }
 
+const SETTINGS_PARAM_INVALID_CODE:number = 16900010;
+
 export default function settingUiJsunit() {
   beforeAll(() => {
     console.info("beforeAll start");
@@ -2335,7 +2337,7 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodSettings_121] error = " + err);
         code = err.code;
       }
-      expect(code).assertEqual(16900010);
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
       done();
     });
     
@@ -2350,7 +2352,7 @@ export default function settingUiJsunit() {
     it('openInputMethodSettings_122', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       let code = 0;
       try {
-        settings.openInputMethodSettings(globalThis.abilityContext);
+        settings.openInputMethodSettings(mContext);
       } catch (err) {
         console.error("[openInputMethodSettings_122] error = " + err);
         code = err.code;
@@ -2376,7 +2378,7 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodDetail_123] error = " + err);
         code = err.code;
       }
-      expect(code).assertEqual(16900010);
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
       done();
     });
 
@@ -2391,12 +2393,12 @@ export default function settingUiJsunit() {
     it('openInputMethodDetail_124', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       let code = 0;
       try {
-        settings.openInputMethodDetail(globalThis.abilityContext, null, '');
+        settings.openInputMethodDetail(mContext, null, '');
       } catch (err) {
         console.error("[openInputMethodDetail_124] error = " + err);
         code = err.code;
       }
-      expect(code).assertEqual(16900010);
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
       done();
     });
 
@@ -2411,12 +2413,12 @@ export default function settingUiJsunit() {
     it('openInputMethodDetail_125', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       let code = 0;
       try {
-        settings.openInputMethodDetail(globalThis.abilityContext, '', null);
+        settings.openInputMethodDetail(mContext, '', null);
       } catch (err) {
         console.error("[openInputMethodDetail_125] error = " + err);
         code = err.code;
       }
-      expect(code).assertEqual(16900010);
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
       done();
     });
 
@@ -2431,7 +2433,7 @@ export default function settingUiJsunit() {
     it('openInputMethodDetail_126', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       let code = 0;
       try {
-        settings.openInputMethodDetail(globalThis.abilityContext, '', '');
+        settings.openInputMethodDetail(mContext, '', '');
       } catch (err) {
         console.error("[openInputMethodDetail_126] error = " + err);
         code = err.code;
