@@ -1020,11 +1020,11 @@ export default function audioManagerApi9() {
       try {
         let audioCap = await audio.createAudioCapturer(capturerOptions);
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
-        await audioCap.start();
+        await audioCap!.start();
         const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
         expect(isAvailable).assertFalse();
-        await audioCap.stop();
-        await audioCap.release();
+        await audioCap!.stop();
+        await audioCap!.release();
       } catch (error: BusinessError) {
         console.log(`error code: ${error.code} ,message:${error.message}`);
         expect(false).assertTrue();

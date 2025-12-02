@@ -178,7 +178,7 @@ export default function audioVoip() {
             let resultFlag: boolean = true;
             console.info(`${TagRender}: Promise : Audio Playback Function`);
 
-            let audioRen: audio.AudioRenderer;
+            let audioRen: audio.AudioRenderer | null;
 
             try {
                 audioRen = await audio.createAudioRenderer(AudioRendererOptions);
@@ -191,9 +191,9 @@ export default function audioVoip() {
 
             console.info(`${TagRender}: AudioRenderer : Path : ${pathName}`);
 
-            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen.state}`);
+            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-            await audioRen.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
+            await audioRen!.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
                 console.info(`${TagRender}: Renderer getStreamInfo:`);
                 console.info(`${TagRender}: Renderer sampleFormat: ${audioParamsGet.sampleFormat}`);
                 console.info(`${TagRender}: Renderer samplingRate: ${audioParamsGet.samplingRate}`);
@@ -208,7 +208,7 @@ export default function audioVoip() {
                 return resultFlag;
             }
 
-            await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+            await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
                 console.info(`${TagRender}: Renderer RendererInfo:`);
                 console.info(`${TagRender}: Renderer usage: ${audioParamsGet.usage}`);
                 console.info(`${TagRender}: Renderer rendererFlags: ${audioParamsGet.rendererFlags}`);
@@ -221,7 +221,7 @@ export default function audioVoip() {
                 return resultFlag;
             }
 
-            await audioRen.start().then(() => {
+            await audioRen!.start().then(() => {
                 console.info(`${TagRender}: renderInstant started :SUCCESS `);
             }).catch((err: Error) => {
                 console.info(`${TagRender}: renderInstant start :ERROR : ${err.message}`);
@@ -232,10 +232,10 @@ export default function audioVoip() {
                 return resultFlag;
             }
 
-            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen.state}`);
+            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
             let bufferSize: Long;
-            audioRen.getBufferSize().then((data: Long) => {
+            audioRen!.getBufferSize().then((data: Long) => {
                 console.info(`${TagRender}: getBufferSize :SUCCESS ${data}`);
                 bufferSize = data;
             }).catch((err: Error) => {
@@ -257,7 +257,7 @@ export default function audioVoip() {
             console.info(`${TagRender}: File size : Removing header: ${totalSize}`);
             console.info(`${TagRender}: Renderer after read`);
 
-            await audioRen.drain().then(() => {
+            await audioRen!.drain().then(() => {
                 console.info(`${TagRender}: Renderer drained : SUCCESS`);
             }).catch((err: Error) => {
                 console.error(`${TagRender}: Renderer drain: ERROR : ${err.message}`);
@@ -268,9 +268,9 @@ export default function audioVoip() {
                 return resultFlag;
             }
 
-            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen.state}`);
+            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-            await audioRen.stop().then(() => {
+            await audioRen!.stop().then(() => {
                 console.info(`${TagRender}: Renderer stopped : SUCCESS`);
                 resultFlag = true;
                 console.info(`${TagRender}: resultFlagRen : ${resultFlag}`);
@@ -279,16 +279,16 @@ export default function audioVoip() {
                 resultFlag = false;
             });
 
-            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen.state}`);
+            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-            await audioRen.release().then(() => {
+            await audioRen!.release().then(() => {
                 console.info(`${TagRender}: Renderer release : SUCCESS`);
             }).catch((err: Error) => {
                 console.info(`${TagRender}: Renderer release :ERROR : ${err.message}`);
                 resultFlag = false;
             });
 
-            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen.state}`);
+            console.info(`${TagRender}: AudioRenderer : STATE : ${audioRen!.state}`);
             console.info(`${TagRender}: resultFlag : ${resultFlag}`);
 
             return resultFlag;
@@ -298,7 +298,7 @@ export default function audioVoip() {
             let resultFlag: boolean = true;
             console.info(`${TagRec}: Promise : Audio Recording Function`);
 
-            let audioCap: audio.AudioCapturer;
+            let audioCap: audio.AudioCapturer | null;
 
             try {
                 audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
@@ -309,8 +309,8 @@ export default function audioVoip() {
                 return resultFlag;
             }
             console.info(`${TagRec}: AudioCapturer : Path : ${fpath}`);
-            console.info(`${TagRec}: AudioCapturer : STATE : ${audioCap.state}`);
-            await audioCap.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
+            console.info(`${TagRec}: AudioCapturer : STATE : ${audioCap!.state}`);
+            await audioCap!.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
                 if (audioParamsGet != undefined) {
                     console.info(`${TagRec}: Capturer getStreamInfo:`);
                     console.info(`${TagRec}: Capturer sampleFormat: ${audioParamsGet.sampleFormat}`);
@@ -330,7 +330,7 @@ export default function audioVoip() {
                 console.info(`${TagRec}: resultFlag : ${resultFlag}`);
                 return resultFlag;
             }
-            await audioCap.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
+            await audioCap!.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
                 if (audioParamsGet != undefined) {
                     console.info(`${TagRec}: Capturer CapturerInfo:`);
                     console.info(`${TagRec}: Capturer SourceType: ${audioParamsGet.source}`);
@@ -349,7 +349,7 @@ export default function audioVoip() {
                 return resultFlag;
             }
 
-            await audioCap.start().then(() => {
+            await audioCap!.start().then(() => {
                 console.info(`${TagRec}: Capturer started :SUCCESS`);
             }).catch((err: Error) => {
                 console.info(`${TagRec}: Capturer start :ERROR : ${err.message}`);
@@ -359,9 +359,9 @@ export default function audioVoip() {
                 console.info(`${TagRec}: resultFlag :  ${resultFlag}`);
                 return resultFlag;
             }
-            console.info(`${TagRec}: AudioCapturer : STATE :  ${audioCap.state}`);
+            console.info(`${TagRec}: AudioCapturer : STATE :  ${audioCap!.state}`);
 
-            let bufferSize: long = await audioCap.getBufferSize();
+            let bufferSize: long = await audioCap!.getBufferSize();
             console.info(`${TagRec}: buffer size: ${bufferSize}`);
 
             let fd = fileio.openSync(fpath, fileio.OpenMode.READ_WRITE | fileio.OpenMode.CREATE);
@@ -383,7 +383,7 @@ export default function audioVoip() {
             }
             Utils.msSleep(100);
 
-            await audioCap.stop().then(() => {
+            await audioCap!.stop().then(() => {
                 console.info(`${TagRec}: Capturer stopped : SUCCESS`);
                 resultFlag = true;
                 console.info(`${TagRec}: resultFlag : ${resultFlag}`);
@@ -392,16 +392,16 @@ export default function audioVoip() {
                 resultFlag = false;
             });
 
-            console.info(`${TagRec}: AudioCapturer : STATE : ${audioCap.state}`);
+            console.info(`${TagRec}: AudioCapturer : STATE : ${audioCap!.state}`);
 
-            await audioCap.release().then(() => {
+            await audioCap!.release().then(() => {
                 console.info(`${TagRec}: Capturer release : SUCCESS`);
             }).catch((err: Error) => {
                 console.info(`${TagRec}: Capturer release :ERROR : ${err.message}`);
                 resultFlag = false;
             });
 
-            console.info(`${TagRec}: AudioCapturer : STATE : ${audioCap.state}`);
+            console.info(`${TagRec}: AudioCapturer : STATE : ${audioCap!.state}`);
 
             return resultFlag;
         }

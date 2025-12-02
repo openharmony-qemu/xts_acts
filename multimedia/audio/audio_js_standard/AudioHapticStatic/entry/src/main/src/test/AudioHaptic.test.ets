@@ -642,11 +642,11 @@ export default function AudioHapticTest() {
         muteHaptics: true
       }
       try {
-        const AudioHapticPlayer: audioHaptic.AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, audioHapticPlayerOptions);
+        const AudioHapticPlayer: audioHaptic.AudioHapticPlayer | null= await AudioHapticManager.createPlayer(sourceId_Notification, audioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         console.log(`${tag} AudioHapticPlayer release 1`);
-        await AudioHapticPlayer.release();
+        await AudioHapticPlayer!.release();
         console.log(`${tag} AudioHapticPlayer release success`);
         expect(true).assertTrue();
         done();
@@ -684,12 +684,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let releasePlayer : Promise<void> = player.release();
+          let releasePlayer : Promise<void> = player!.release();
           await releasePlayer;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -729,12 +729,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -775,12 +775,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -820,12 +820,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -867,12 +867,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -912,12 +912,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -957,12 +957,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -1002,12 +1002,12 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -1050,10 +1050,10 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1097,13 +1097,13 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1146,10 +1146,10 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1193,13 +1193,13 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1243,10 +1243,10 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1290,13 +1290,13 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1339,10 +1339,10 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1386,13 +1386,13 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1433,16 +1433,16 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Ringtone, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.onEndOfStream(() => {
+          AudioHapticPlayer!.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
           });
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(100);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
-          AudioHapticPlayer.offEndOfStream();
-          await AudioHapticPlayer.release();
+          AudioHapticPlayer!.offEndOfStream();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1484,17 +1484,17 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.onEndOfStream(() => {
+          AudioHapticPlayer!.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
             console.log(`${tag} AudioHapticPlayer release success`);
           });
-          AudioHapticPlayer.offEndOfStream();
-          await AudioHapticPlayer.start();
+          AudioHapticPlayer!.offEndOfStream();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
@@ -1536,14 +1536,14 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          AudioHapticPlayer.onAudioInterrupt((InterruptEvent) => {
+          AudioHapticPlayer!.onAudioInterrupt((InterruptEvent) => {
             console.info(`${tag} on audioInterrupt called `);
           });
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          AudioHapticPlayer.offAudioInterrupt();
-          await AudioHapticPlayer.release();
+          AudioHapticPlayer!.offAudioInterrupt();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();

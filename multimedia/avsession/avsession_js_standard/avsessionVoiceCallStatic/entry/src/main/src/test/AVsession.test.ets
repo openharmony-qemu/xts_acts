@@ -109,7 +109,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            let aVCastController: avSession.AVCastController;
+            let aVCastController: avSession.AVCastController | undefined;
             try{
                 console.info(`TestTag: getAVCastController : start`);
                 aVCastController = await session!.getAVCastController();

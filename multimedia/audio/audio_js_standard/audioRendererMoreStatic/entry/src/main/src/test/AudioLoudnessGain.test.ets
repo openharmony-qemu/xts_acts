@@ -65,13 +65,13 @@ export default function audioLoudnessGainTest() {
           rendererInfo: audioRendererInfo
         };
 
-        let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
         let loudnessGainFloatTen = -90.0;
         if (audioRenderer) {
           try {
-            await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-            let loudnessGain = audioRenderer.getLoudnessGain();
+            await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+            let loudnessGain = audioRenderer!.getLoudnessGain();
             console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
             expect(Math.abs(loudnessGain - (-90.0)) < 0.1).assertTrue();
           } catch (error) {
@@ -107,13 +107,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = -89.9;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - (-89.9)) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -149,13 +149,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -191,13 +191,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 23.9;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 23.9) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -233,13 +233,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = -90.1;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -278,13 +278,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.1;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -323,13 +323,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -367,13 +367,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -411,13 +411,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -455,13 +455,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -499,13 +499,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -543,13 +543,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -587,13 +587,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -631,13 +631,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {
@@ -675,13 +675,13 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
         } catch (error: BusinessError) {

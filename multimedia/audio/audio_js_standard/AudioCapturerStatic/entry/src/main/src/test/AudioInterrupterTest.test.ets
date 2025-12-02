@@ -144,7 +144,7 @@ export default function audioInterrupterTest() {
 
     let createAudioRenderer =
       async (AudioRendererInfo: audio.AudioRendererInfo, AudioStreamInfo: audio.AudioStreamInfo, done: () => void): Promise<audio.AudioRenderer> => {
-        let render: audio.AudioRenderer;
+        let render: audio.AudioRenderer | null;
         let AudioRendererOptions: audio.AudioRendererOptions = {
           streamInfo: AudioStreamInfo,
           rendererInfo: AudioRendererInfo
@@ -157,7 +157,7 @@ export default function audioInterrupterTest() {
           expect(false).assertEqual(true)
           done()
         }
-        return render
+        return render!
       }
     let renderRelease = async (render: audio.AudioRenderer, done: () => void) => {
       if (render.state === audio.AudioState.STATE_RELEASED) {

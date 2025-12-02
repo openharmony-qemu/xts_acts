@@ -115,7 +115,7 @@ export default function AudioRendererInterruptUnitTest() {
             AudioStreamInfo: audio.AudioStreamInfo,
             done: () => void
         ): Promise<audio.AudioRenderer> => {
-            let render: audio.AudioRenderer;
+            let render: audio.AudioRenderer | null;
 
             let AudioRendererOptions: audio.AudioRendererOptions = {
                 streamInfo: AudioStreamInfo,
@@ -131,16 +131,16 @@ export default function AudioRendererInterruptUnitTest() {
                 done();
             }
 
-            return render;
+            return render!;
         };
 
         let release = async (render: audio.AudioRenderer, done: () => void) => {
-            if (render.state == audio.AudioState.STATE_RELEASED) {
-                console.log(" release render state: " + render.state)
+            if (render!.state == audio.AudioState.STATE_RELEASED) {
+                console.log(" release render state: " + render!.state)
                 //return //Promise.resolve();
             }
             try {
-                await render.release()
+                await render!.release()
                 console.log(" release success.")
             } catch (err) {
                 console.log(" release err:" + JSON.stringify(err))
@@ -152,7 +152,7 @@ export default function AudioRendererInterruptUnitTest() {
         let start = async (render: audio.AudioRenderer, done: () => void)=> {
             console.info('come in start')
             try {
-                await render.start()
+                await render!.start()
                 console.log(" start success.")
             } catch (err: BusinessError) {
                 await release(render, done)
@@ -164,7 +164,7 @@ export default function AudioRendererInterruptUnitTest() {
 
         let startFail = async (render: audio.AudioRenderer, done: () => void, render1: audio.AudioRenderer)=> {
             try {
-                await render.start()
+                await render!.start()
                 console.log(" start success.")
             } catch (err) {
                 console.log(" start err:" + JSON.stringify(err))
@@ -178,7 +178,7 @@ export default function AudioRendererInterruptUnitTest() {
 
         let stop = async (render: audio.AudioRenderer, done: () => void)=> {
             try {
-                await render.stop()
+                await render!.stop()
                 console.log(" stop success.")
             } catch (err) {
                 console.log(" stop err:" + JSON.stringify(err))

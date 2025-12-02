@@ -27,7 +27,7 @@ import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
-let audioCap: audio.AudioCapturer;
+let audioCap: audio.AudioCapturer | null;
 let g_context: common.UIAbilityContext;
 
 export default function audioCapturerEnhanceTest() {
@@ -71,7 +71,7 @@ export default function audioCapturerEnhanceTest() {
     })
     afterEach(async () => {
       if (audioCap != null) {
-        releaseFun(audioCap);
+        releaseFun(audioCap!);
       }
       console.info(`${Tag} afterEach: Test case-level clearance conditions`);
       await Utils.msSleep(1000);
@@ -202,7 +202,7 @@ export default function audioCapturerEnhanceTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
@@ -213,7 +213,7 @@ export default function audioCapturerEnhanceTest() {
         done();
       }
       try {
-        let CapturerChangeInfo: audio.AudioCapturerChangeInfo = audioCap.getCurrentAudioCapturerChangeInfo();
+        let CapturerChangeInfo: audio.AudioCapturerChangeInfo = audioCap!.getCurrentAudioCapturerChangeInfo();
         // console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS\n ${getCapturerChangeInfo(CapturerChangeInfo)}`)
         expect(CapturerChangeInfo.capturerInfo.source).assertEqual(Number(AudioCapturerOptions.capturerInfo.source));
         expect(CapturerChangeInfo.muted).assertEqual(false);
@@ -257,20 +257,20 @@ export default function audioCapturerEnhanceTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
         await getFd("capture_js-44100-2C-16B.pcm");
-        await recordingFun(audioCap);
+        await recordingFun(audioCap!);
       } catch (error: BusinessError) {
         console.info(`${Tag} AudioCapturer Created and start ERROR :  ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();
       }
       try {
-        let CapturerChangeInfo: audio.AudioCapturerChangeInfo = audioCap.getCurrentAudioCapturerChangeInfo();
+        let CapturerChangeInfo: audio.AudioCapturerChangeInfo = audioCap!.getCurrentAudioCapturerChangeInfo();
         // console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
         expect(CapturerChangeInfo.muted).assertEqual(false);
         expect(CapturerChangeInfo.deviceDescriptors[0].id).assertLargerOrEqual(TestConst.OUTPUT_NUMBER_0);
@@ -283,7 +283,7 @@ export default function audioCapturerEnhanceTest() {
         expect(false).assertTrue();
         done();
       }
-      await audioCap.stop();
+      await audioCap!.stop();
       console.log(`${Tag} stop ok`);
     })
 
@@ -311,7 +311,7 @@ export default function audioCapturerEnhanceTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
@@ -322,7 +322,7 @@ export default function audioCapturerEnhanceTest() {
         done();
       }
       try {
-        let CapturerChangeInfo: audio.AudioCapturerChangeInfo = audioCap.getCurrentAudioCapturerChangeInfo();
+        let CapturerChangeInfo: audio.AudioCapturerChangeInfo = audioCap!.getCurrentAudioCapturerChangeInfo();
         // console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS\n ${getCapturerChangeInfo(CapturerChangeInfo)}`)
         expect(CapturerChangeInfo.capturerInfo.source).assertEqual(Number(AudioCapturerOptions.capturerInfo.source));
         expect(CapturerChangeInfo.muted).assertEqual(false);

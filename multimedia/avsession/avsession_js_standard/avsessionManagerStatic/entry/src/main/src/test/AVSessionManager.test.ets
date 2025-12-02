@@ -25,7 +25,7 @@ export default function AVSessionManager() {
     describe('AVSessionManager', () => {
         let tag = 'ApplicationA';
         let type = 'audio';
-        let currentAVSession: avSession.AVSession;
+        let currentAVSession: avSession.AVSession | undefined;
 
         beforeAll(() => {
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
@@ -39,7 +39,7 @@ export default function AVSessionManager() {
 
         afterEach(async () => {
             try{
-                await currentAVSession.destroy()
+                await currentAVSession!.destroy()
                 console.info('TestLog: Session destroy success');
             }catch(err: BusinessError){
                 console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
@@ -65,7 +65,7 @@ export default function AVSessionManager() {
             try{
                 let data: avSession.AVSession;
                 currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                if (currentAVSession.sessionId.length === 64) {
+                if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
                     expect(true).assertTrue();
                 }
@@ -115,7 +115,7 @@ export default function AVSessionManager() {
             async (done: () => void): Promise<void> => {
             try{
                 currentAVSession = await avSession.createAVSession(context, tag, "video")
-                if (currentAVSession.sessionId.length === 64) {
+                if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
                     expect(true).assertTrue();
                 }
@@ -146,7 +146,7 @@ export default function AVSessionManager() {
                 currentAVSession = await avSession.createAVSession(context, tag, 'video_call');
                 console.info(`CreateAVSession 111BusinessError: code: `);
                 console.info(`CreateAVSession 333BusinessError: code: `);
-                currentAVSession.getAVCastController((err: BusinessError|null, data: avSession.AVCastController|undefined) => {
+                currentAVSession?.getAVCastController((err: BusinessError|null, data: avSession.AVCastController | undefined|undefined) => {
                     if (err) {
                         console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code == 6600101).assertTrue();
@@ -175,13 +175,13 @@ export default function AVSessionManager() {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
 
-                let aVCastController: avSession.AVCastController;
-                currentAVSession.getAVCastController().then((avcontroller: avSession.AVCastController) => {
+                let aVCastController: avSession.AVCastController | undefined;
+                currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                     aVCastController = avcontroller;
                 }).catch(async(err: BusinessError) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -210,9 +210,9 @@ export default function AVSessionManager() {
             try {
                 await avSession.createAVSession(context, tag, 'video_call').then((data) => {
                     currentAVSession = data;
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                     try{
-                        currentAVSession.stopCasting((err: BusinessError|null) => {
+                        currentAVSession?.stopCasting((err: BusinessError|null) => {
                             if (err) {
                                 console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                             } else {
@@ -247,12 +247,12 @@ export default function AVSessionManager() {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
                 try{
-                    currentAVSession.stopCasting()
+                    currentAVSession?.stopCasting()
                     console.info(`stopCasting successfully`);
                     expect(true).assertTrue();
                 }catch(err: BusinessError){
@@ -282,14 +282,14 @@ export default function AVSessionManager() {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-                let aVCastController: avSession.AVCastController;
-                currentAVSession.getAVCastController().then((avcontroller: avSession.AVCastController) => {
+                let aVCastController: avSession.AVCastController | undefined;
+                currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                     aVCastController = avcontroller;
-                    aVCastController.getCurrentItem((err, value)=> {
+                    aVCastController?.getCurrentItem((err, value)=> {
                         if (err) {
                             console.error(`getCurrentItem BusinessError: code: ${err.code}, message: ${err.message}`);
                         } else {
@@ -323,15 +323,15 @@ export default function AVSessionManager() {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-                let aVCastController: avSession.AVCastController
-                currentAVSession.getAVCastController().then((avcontroller: avSession.AVCastController) => {
+                let aVCastController: avSession.AVCastController | undefined
+                currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                         aVCastController = avcontroller;
                     try{
-                        aVCastController.getCurrentItem()
+                        aVCastController?.getCurrentItem()
                         console.info(`getCurrentItem successfully`);
                     }catch(err: BusinessError){
                         console.error(`getCurrentItem BusinessError: code: ${err.code}, message: ${err.message}`);

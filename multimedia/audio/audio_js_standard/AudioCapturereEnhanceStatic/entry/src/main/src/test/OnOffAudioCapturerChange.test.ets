@@ -27,13 +27,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let tag: string = 'AudioCpaturerEnhanceTest';
 let g_context: common.UIAbilityContext;
-let audioCap: audio.AudioCapturer;
+let audioCap: audio.AudioCapturer | null;
 
 
 export default function onOffAudioCapturerChangeTest() {
   describe('onOffAudioCapturerChange', () => {
     let dirPath: string;
-    let audioCap: audio.AudioCapturer;
+    let audioCap: audio.AudioCapturer | null;
     let audioManager: audio.AudioManager;
     let flag1: boolean = false;
     let flag2: boolean = false;
@@ -92,7 +92,7 @@ export default function onOffAudioCapturerChangeTest() {
     })
     afterEach(async () => {
       if (audioCap != null) {
-        releaseFun(audioCap);
+        releaseFun(audioCap!);
       }
       console.info(`${Tag} afterEach: Test case-level clearance conditions`);
       await Utils.msSleep(1000);
@@ -125,7 +125,7 @@ export default function onOffAudioCapturerChangeTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
@@ -138,9 +138,9 @@ export default function onOffAudioCapturerChangeTest() {
       flag1 = false;
       flag2 = false;
       try {
-        audioCap.onAudioCapturerChange(callback1);
-        audioCap.onAudioCapturerChange(callback2);
-        await audioCap.start();
+        audioCap!.onAudioCapturerChange(callback1);
+        audioCap!.onAudioCapturerChange(callback2);
+        await audioCap!.start();
         await Utils.msSleep(1000);
         console.log(`flag1: ${flag1}, flag2: ${flag2}`)
         if (flag1 && flag2) {
@@ -181,7 +181,7 @@ export default function onOffAudioCapturerChangeTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
@@ -192,14 +192,14 @@ export default function onOffAudioCapturerChangeTest() {
         done();
       }
       try {
-        audioCap.onAudioCapturerChange(callback1);
-        audioCap.onAudioCapturerChange(callback2);
-        await audioCap.start();
+        audioCap!.onAudioCapturerChange(callback1);
+        audioCap!.onAudioCapturerChange(callback2);
+        await audioCap!.start();
         await Utils.msSleep(1000);
-        audioCap.offAudioCapturerChange(callback1);
+        audioCap!.offAudioCapturerChange(callback1);
         flag1 = false;
         flag2 = false;
-        await audioCap.stop();
+        await audioCap!.stop();
         await Utils.msSleep(1000);
         console.log(`flag1: ${flag1}, flag2: ${flag2}`)
         if (!flag1 && flag2) {
@@ -239,7 +239,7 @@ export default function onOffAudioCapturerChangeTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
@@ -250,14 +250,14 @@ export default function onOffAudioCapturerChangeTest() {
         done();
       }
       try {
-        audioCap.onAudioCapturerChange(callback1);
-        audioCap.onAudioCapturerChange(callback2);
-        await audioCap.start();
+        audioCap!.onAudioCapturerChange(callback1);
+        audioCap!.onAudioCapturerChange(callback2);
+        await audioCap!.start();
         await Utils.msSleep(1000);
-        audioCap.offAudioCapturerChange();
+        audioCap!.offAudioCapturerChange();
         flag1 = false;
         flag2 = false;
-        await audioCap.stop();
+        await audioCap!.stop();
         await Utils.msSleep(1000);
         console.log(`flag1: ${flag1}, flag2: ${flag2}`)
         if (!flag1 && !flag2) {

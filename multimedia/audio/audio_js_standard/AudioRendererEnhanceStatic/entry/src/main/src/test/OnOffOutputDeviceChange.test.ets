@@ -29,7 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
-  let audioRen: audio.AudioRenderer;
+  let audioRen: audio.AudioRenderer | null;
   let TagFrmwkRender = "audioRendererEnhanceTest";
 
   describe('on_off_outputDeviceChange', () => {
@@ -75,10 +75,10 @@ export default function audioRendererTest() {
         rendererInfo: AudioRendererInfo
       }
       try {
-        await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer) => {
+        await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null) => {
           audioRen = data;
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data state: ' +
-          Object.keys(data));
+          Object.keys(data!));
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data value: ' +
           JSON.stringify(data));
         }).catch((err: Error) => {
@@ -91,7 +91,7 @@ export default function audioRendererTest() {
     afterEach(async () => {
       console.info(`${TagFrmwkRender}: afterEach: Test case-level clearance conditions`);
       Utils.msSleep(2000);
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
