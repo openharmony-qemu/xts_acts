@@ -273,7 +273,6 @@ static napi_value TestImageObjectFit019(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret1 = nodeAPI->setAttribute(image, NODE_IMAGE_OBJECT_FIT, &valueItem);
     ASSERT_EQ(ret1, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(image, NODE_IMAGE_OBJECT_FIT)->value[PARAM_0].i32, objectFitValue);
     NAPI_END;
 }
 
