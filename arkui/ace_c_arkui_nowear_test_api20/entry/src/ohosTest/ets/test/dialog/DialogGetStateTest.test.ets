@@ -149,5 +149,33 @@ export default function dialogGetStateTest() {
       expect(obj.$attrs.content).assertEqual('5');
       done();
     })
+
+    /**
+     * @tc.name   getStateErrorCode_001
+     * @tc.number getStateErrorCode_001
+     * @tc.desc   test the return value of OH_ArkUI_CustomDialog_GetState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getStateErrorCode_001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeRender.dialogGetStateErrorCode_001()).assertEqual(0)
+      await Utils.sleep(200)
+      done();
+    })
+
+    /**
+     * @tc.name   getStateErrorCode_002
+     * @tc.number getStateErrorCode_002
+     * @tc.desc   test the return value of OH_ArkUI_CustomDialog_GetState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getStateErrorCode_002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeRender.dialogGetStateErrorCode_002()).assertEqual(0)
+      await Utils.sleep(200)
+      done();
+    })
   })
 }
