@@ -929,9 +929,9 @@ export default function preferenceTest() {
             expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
             done();
         }
-        mPreferences.on('change', testObserver);
+        mPreferences.onChange(testObserver);
         hilog.info(domain, tag, '%{public}s', TAG + "start on2");
-        mPreferences.on('change', testObserver);
+        mPreferences.onChange(testObserver);
         hilog.info(domain, tag, '%{public}s', TAG + "start put");
 
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
@@ -967,8 +967,8 @@ export default function preferenceTest() {
           expect(null).assertFail();
           done();
         }
-        mPreferences.on('change', testObserver);
-        mPreferences.off('change', testObserver);
+        mPreferences.onChange(testObserver);
+        mPreferences.offChange(testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         await mPreferences.flush();
         await Utils.msSleep(1000);
@@ -998,13 +998,13 @@ export default function preferenceTest() {
           expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
           done();
         }
-        mPreferences.on('multiProcessChange', testObserver);
-        mPreferences.on('multiProcessChange', testObserver);
+        mPreferences.onMultiProcessChange(testObserver);
+        mPreferences.onMultiProcessChange(testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
 
         await Utils.msSleep(100);
-        mPreferences.off('multiProcessChange', testObserver);
+        mPreferences.offMultiProcessChange(testObserver);
         done();
       } catch (err : BusinessError) {
         expect().assertFail();
@@ -1031,8 +1031,8 @@ export default function preferenceTest() {
           expect(null).assertFail();
           done();
         }
-        mPreferences.on('multiProcessChange', testObserver);
-        mPreferences.off('multiProcessChange', testObserver);
+        mPreferences.onMultiProcessChange(testObserver);
+        mPreferences.offMultiProcessChange(testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
         await Utils.msSleep(1000);
@@ -1063,8 +1063,8 @@ export default function preferenceTest() {
           done();
         }
         let keys = new Array<string>(KEY_TEST_STRING_ELEMENT);
-        mPreferences.on('dataChange', keys, testObserver);
-        mPreferences.on('dataChange', keys, testObserver);
+        mPreferences.onDataChange(keys, testObserver);
+        mPreferences.onDataChange(keys, testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
       } catch (err : BusinessError) {
@@ -1092,8 +1092,8 @@ export default function preferenceTest() {
           done();
         }
         for (let index = 0; index < 80; index++) {
-          mPreferences.on('multiProcessChange', testObserver);
-          mPreferences.off('multiProcessChange', testObserver);
+          mPreferences.onMultiProcessChange(testObserver);
+          mPreferences.offMultiProcessChange(testObserver);
         }
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
