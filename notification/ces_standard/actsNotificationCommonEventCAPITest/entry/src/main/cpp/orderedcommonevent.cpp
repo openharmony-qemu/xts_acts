@@ -313,7 +313,7 @@ static napi_value GetSetCodeToSubscriber(napi_env env, napi_callback_info info) 
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetCodeToSubscriber", "GetSetCodeToSubscriber Enter");
     if (g_subscriber != nullptr) {
         bool setcode = OH_CommonEvent_SetCodeToSubscriber(g_subscriber, PARAM_1);
-        if (PARAM_1) {    
+        if (PARAM_1) {
             ASSERT_EQ(setcode, true);
         } else {
             ASSERT_EQ(setcode, false);
