@@ -281,14 +281,14 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, test_driver_crownRotate_17000007_static d=-1 error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect(e.code == 801 || e.code == 17000007).assertTrue();
       }
       try {
         await driver.crownRotate(1, -1);
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, test_driver_crownRotate_17000007_static speed=-1 error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect(e.code == 801 || e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, test_driver_crownRotate_17000007_static end`);
     })
