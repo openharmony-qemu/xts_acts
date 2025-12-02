@@ -468,7 +468,7 @@ export default function penPart2Test() {
           blue: 0
         }
         pen.setColor(colors);
-        let colorGet = pen.getColor();
+        let colorGet = pen.getColor() as common2D.Color;
         expect(colors.alpha == colorGet.alpha).assertTrue();
         expect(colors.red == colorGet.red).assertTrue();
         expect(colors.green == colorGet.green).assertTrue();
@@ -491,7 +491,7 @@ export default function penPart2Test() {
           blue: 255
         }
         pen.setColor(colors);
-        let colorGet = pen.getColor();
+        let colorGet = pen.getColor() as common2D.Color;
         expect(colors.alpha == colorGet.alpha).assertTrue();
         expect(colors.red == colorGet.red).assertTrue();
         expect(colors.green == colorGet.green).assertTrue();
