@@ -14,6 +14,7 @@
  */
 #include "xcomponent/xcomponent_test.cpp"
 #include "tabStop/tabStop.cpp"
+#include "customproperty/NodeUtilsMethodTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -28,6 +29,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testNativeXComponent_RegisterKeyEventCallbackWithResult001", nullptr,
          testNativeXComponent_RegisterKeyEventCallbackWithResult001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"tabStop_001", nullptr, tabStop_001, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"TestMethodReturnValue001", nullptr, TestMethodReturnValue001, nullptr, nullptr, nullptr, napi_default,
          nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

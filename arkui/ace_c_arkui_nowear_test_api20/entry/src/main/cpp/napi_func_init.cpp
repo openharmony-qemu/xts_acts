@@ -66,6 +66,8 @@ namespace ArkUICapiTest
             {"TestInvalidate", nullptr, TestInvalidate, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"TestRenderNode001", nullptr, TestRenderNode001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"TestRenderNode009", nullptr, TestRenderNode009, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
             {"TestRenderNode002", nullptr, TestRenderNode002, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestRenderNode003", nullptr, TestRenderNode003, nullptr, nullptr, nullptr,
