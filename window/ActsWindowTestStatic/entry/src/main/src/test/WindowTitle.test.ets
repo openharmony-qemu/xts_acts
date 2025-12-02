@@ -307,55 +307,18 @@ export default function WindowTitleTest() {
                 });
             
         })
-        /**
-         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300002_0100
-         * @tc.name        testSetWindowTitleButtonVisibleErrCode1300002_static_0100
-         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300002_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testSetWindowTitleButtonVisibleErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = "testSetWindowTitleButtonVisibleErrCode1300002_static_0100";
-            let msgStr: string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let subWin: window.Window;
-            windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300002_SubWindow_Promise')
-                .then((data: window.Window) => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
-                    try {
-                        subWin!.setWindowTitleButtonVisible(true, true, true);
-                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
-                        expect(false).assertTrue();
-                        done()
-                    } catch (e) {
-                        e = e as BusinessError;
-                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowTitleButtonVisible. Cause:' + JSON.stringify(e));
-                        expect(e!.code).assertEqual(1300002);
-                        done()
-                    }
-                })
-                .catch((err: BusinessError) :PromiseLike<void>|undefined => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
-                    done()
-                });
-
-        })
+        
 
         /**
-         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300004_0100
+         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300004_static_0100
          * @tc.name        testSetWindowTitleButtonVisibleErrCode1300004_static_0100
-         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300004_0100
+         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300004_static_0100
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level 3
          */
         it('testSetWindowTitleButtonVisibleErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = "testSetWindowTitleButtonVisibleErrCode1300004_0100";
+            let caseName: string = "testSetWindowTitleButtonVisibleErrCode1300004_static_0100";
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
@@ -436,9 +399,9 @@ export default function WindowTitleTest() {
         })
 
         /**
-         * @tc.number      testSetDecorButtonStyleErrCode1300004_0100
+         * @tc.number      testSetDecorButtonStyleErrCode1300004_static_0100
          * @tc.name        testSetDecorButtonStyleErrCode1300004_static_0100
-         * @tc.desc        testSetDecorButtonStyleErrCode1300004_0100
+         * @tc.desc        testSetDecorButtonStyleErrCode1300004_static_0100
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level 3
@@ -757,58 +720,6 @@ export default function WindowTitleTest() {
 
 
         /**
-         * @tc.number      testSetDecorButtonStyleErrCode1300004_0100
-         * @tc.name        testSetDecorButtonStyleErrCode1300004_0100
-         * @tc.desc        testSetDecorButtonStyleErrCode1300004_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testSetDecorButtonStyleErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testSetDecorButtonStyleErrCode1300004_0100";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let windowConfig: window.Configuration = {
-                name: "testSetDecorButtonStyleErrCode1300004_0100",
-                windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context,
-            };
-            let tempWnd: window.Window;
-            try {
-                tempWnd = await window.createWindow(windowConfig)
-                expect(!!tempWnd).assertTrue();
-                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
-            } catch (err) {
-                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect(false).assertTrue();
-                done()
-            }
-            expect(!!tempWnd).assertTrue();
-
-            await (tempWnd as window.Window).setUIContent("pages/Index");
-            await (tempWnd as window.Window).showWindow();
-            try {
-                // let param: window.DecorButtonStyle = {}
-                (tempWnd as window.Window).setDecorButtonStyle((tempWnd as window.Window).getDecorButtonStyle());
-                console.error(msgStr + 'Succeeded in calling setDecorButtonStyle.');
-                await (tempWnd! as window.Window).destroyWindow();
-                expect(false).assertTrue();
-                done();
-            } catch (exception) {
-                exception = exception as BusinessError;
-                console.error(msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
-                await (tempWnd! as window.Window).destroyWindow();
-                if (exception.code == 801) {
-                    console.info(msgStr + '此设备不支持setDecorButtonStyle能力.');
-                } else {
-                    expect(exception.code).assertEqual(1300004);
-                }
-                done();
-            }
-        })
-
-
-        /**
          * @tc.number     testGetDecorButtonStyleErrCode1300002_0100
          * @tc.name       testGetDecorButtonStyleErrCode1300002_0100
          * @tc.desc       testGetDecorButtonStyleErrCode1300002_0100
@@ -930,15 +841,15 @@ export default function WindowTitleTest() {
 
 
         /**
-         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300002_0100
-         * @tc.name        testSetWindowTitleButtonVisibleErrCode1300002_0100
-         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300002_0100
+         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300002_static_0100
+         * @tc.name        testSetWindowTitleButtonVisibleErrCode1300002_static_0100
+         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300002_static_0100
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level 3
          */
-        it('testSetWindowTitleButtonVisibleErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testSetWindowTitleButtonVisibleErrCode1300002_0100";
+        it('testSetWindowTitleButtonVisibleErrCode1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetWindowTitleButtonVisibleErrCode1300002_static_0100";
             let msgStr = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
@@ -966,50 +877,7 @@ export default function WindowTitleTest() {
         })
 
 
-        /**
-         * @tc.number      testSetWindowTitleButtonVisibleErrCode1300004_0100
-         * @tc.name        testSetWindowTitleButtonVisibleErrCode1300004_0100
-         * @tc.desc        testSetWindowTitleButtonVisibleErrCode1300004_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testSetWindowTitleButtonVisibleErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testSetWindowTitleButtonVisibleErrCode1300004_0100";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let subWin: window.Window | undefined = undefined;
-            try {
-                subWin = await windowStage.createSubWindow('testSetWindowTitleButtonVisibleErrCode1300004_SubWindow_Promise');
-                expect(!!subWin).assertTrue();
-                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
-            } catch (err) {
-                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect(false).assertTrue();
-                done()
-            }
-            expect(!!subWin).assertTrue();
-            await (subWin! as window.Window).setUIContent("pages/Index");
-            await (subWin! as window.Window).showWindow();
-            try {
-                (subWin! as window.Window).setWindowTitleButtonVisible(true, true, true);
-                console.error(msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
-                expect(false).assertTrue();
-                await (subWin!! as window.Window).destroyWindow();
-                done();
-            } catch (exception) {
-                exception = exception as BusinessError;
-                console.error(msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
-                JSON.stringify(exception));
-                await (subWin!! as window.Window).destroyWindow();
-                if (exception.code == 801) {
-                    console.info(msgStr + '此设备不支持getDecorButtonStyle能力.');
-                } else {
-                    expect(exception.code).assertEqual(1300004);
-                }
-                done();
-            }
-        })
+        
         /**
          * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_WINDOWTITLEBUTTONRE_CHANGE_0200
          * @tc.name      testWindowTitleButtonRectChange_on_Function_Callback
@@ -1086,7 +954,7 @@ export default function WindowTitleTest() {
             }
         });
         /**
-         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_0100
+         * @tc.number     testGetTitleButtonRect_static_0100
          * @tc.name       testGetTitleButtonRect_static
          * @tc.desc       Test the function of getTitleButtonRect
          * @tc.size       MediumTest

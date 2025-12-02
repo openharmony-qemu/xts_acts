@@ -722,15 +722,15 @@ export default function WindowImmersiveTest() {
             done();
         })
         /**
-         * @tc.number      testMaximizePromiseErrCode1300002_0100
-         * @tc.name        testMaximizePromiseErrCode1300002_0100
-         * @tc.desc        testMaximizePromiseErrCode1300002_0100
+         * @tc.number      testMaximizePromiseErrCode1300002_static_0100
+         * @tc.name        testMaximizePromiseErrCode1300002_static_0100
+         * @tc.desc        testMaximizePromiseErrCode1300002_static_0100
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level 3
          */
-        it('testMaximizePromiseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testMaximizePromiseErrCode1300002_0100";
+        it('testMaximizePromiseErrCode1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testMaximizePromiseErrCode1300002_static_0100";
             let msgStr = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;

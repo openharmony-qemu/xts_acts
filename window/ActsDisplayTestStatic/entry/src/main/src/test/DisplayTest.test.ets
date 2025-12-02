@@ -2042,7 +2042,7 @@ export default function DisplayTest() {
 
       /**
          * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0500
-         * @tc.name        testConvertGlobalToRelativeCoordinatewithPositionOutofRange
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static
          * @tc.desc        验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
          * @tc.size        MediumTest
          * @tc.type        Function

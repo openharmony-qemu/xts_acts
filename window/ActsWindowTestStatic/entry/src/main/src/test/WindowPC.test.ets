@@ -289,15 +289,15 @@ export default function WindowPCTest() {
         })
 
         /**
-         * @tc.number      testMaximizePromiseErrCode1300002_0100
-         * @tc.name        testMaximizePromiseErrCode1300002_static_0100
-         * @tc.desc        testMaximizePromiseErrCode1300002_0100
+         * @tc.number      testMaximizePromiseErrCode1300002_static_0200
+         * @tc.name        testMaximizePromiseErrCode1300002_static_0200
+         * @tc.desc        testMaximizePromiseErrCode1300002_static_0200
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level 3
          */
-        it('testMaximizePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = "testMaximizePromiseErrCode1300002_0100";
+        it('testMaximizePromiseErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = "testMaximizePromiseErrCode1300002_static_0200";
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
@@ -601,7 +601,7 @@ export default function WindowPCTest() {
 
         /**
          * @tc.number      testRestorePromiseErrCode1300002_static_0100
-         * @tc.name        testRestorePromiseErrCode1300002static__0100
+         * @tc.name        testRestorePromiseErrCode1300002_static_0100
          * @tc.desc        testRestorePromiseErrCode1300002_static_0100
          * @tc.size        MediumTest
          * @tc.type        Function
