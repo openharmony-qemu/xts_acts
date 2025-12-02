@@ -75,9 +75,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_002
-     * @tc.name: test_origin_static
-     * @tc.desc: specifies the string value match pattern.
+     * @tc.number UitestTest_Api20_002
+     * @tc.name test_origin_static
+     * @tc.desc specifies the string value match pattern.
      */
     it('test_origin_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_origin_static start`);
@@ -345,9 +345,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_008
-     * @tc.name: testDragBetween_static
-     * @tc.desc: drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.number UitestTest_Api20_008
+     * @tc.name testDragBetween_static
+     * @tc.desc drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      */
     it('testDragBetween_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragBetween_static start`);
@@ -376,9 +376,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_0081
-     * @tc.name: testDragBetween_speed_static
-     * @tc.desc: drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.number UitestTest_Api20_0081
+     * @tc.name testDragBetween_speed_static
+     * @tc.desc drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      */
     it('testDragBetween_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragBetween_speed_static start`);
@@ -407,9 +407,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_0082
-     * @tc.name: testDragBetween_duration_static
-     * @tc.desc: drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
+     * @tc.number UitestTest_Api20_0082
+     * @tc.name testDragBetween_duration_static
+     * @tc.desc drag this UiComponent to the bounds rect of target UiComponent, the value of duration is 3000, the value of speed is 3000.
      */
     it('testDragBetween_duration_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDragBetween_duration_static start`);
@@ -510,9 +510,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_011
-     * @tc.name: testGetDisplayDensityWithId_static
-     * @tc.desc: getDisplayDensity test
+     * @tc.number UitestTest_Api20_011
+     * @tc.name testGetDisplayDensityWithId_static
+     * @tc.desc getDisplayDensity test
      */
     it('testGetDisplayDensityWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetDisplayDensityWithId_static start`);
@@ -631,9 +631,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_013
-     * @tc.name: testNewMouseDrag_static
-     * @tc.desc: drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.number UitestTest_Api20_013
+     * @tc.name testNewMouseDrag_static
+     * @tc.desc drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      */
     it('testNewMouseDrag_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testNewMouseDrag_static start`);
@@ -663,9 +663,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_0131
-     * @tc.name: testNewMouseDrag_speed_static
-     * @tc.desc: drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.number UitestTest_Api20_0131
+     * @tc.name testNewMouseDrag_speed_static
+     * @tc.desc drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      */
     it('testNewMouseDrag_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testNewMouseDrag_speed_static start`);
@@ -695,9 +695,9 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number: UitestTest_Api20_0132
-     * @tc.name: testNewMouseDrag_duration_static
-     * @tc.desc: drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
+     * @tc.number UitestTest_Api20_0132
+     * @tc.name testNewMouseDrag_duration_static
+     * @tc.desc drag on the screen between the specified points by mouse, the value of speed and duration are 3000.
      */
     it('testNewMouseDrag_duration_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `testNewMouseDrag_duration_static start`);
