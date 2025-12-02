@@ -2317,5 +2317,127 @@ export default function settingUiJsunit() {
           return;
         }
       });
+
+    /**
+     * @tc.name   openInputMethodSettings_121
+     * @tc.number openInputMethodSettings_121
+     * @tc.desc   openInputMethodSettings_121
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_121', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let context = null;
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(context);
+      } catch (err) {
+        console.error("[openInputMethodSettings_121] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+    
+    /**
+     * @tc.name   openInputMethodSettings_122
+     * @tc.number openInputMethodSettings_122
+     * @tc.desc   openInputMethodSettings_122
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_122', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(globalThis.abilityContext);
+      } catch (err) {
+        console.error("[openInputMethodSettings_122] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_123
+     * @tc.number openInputMethodDetail_123
+     * @tc.desc   openInputMethodDetail_123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_123', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let context = null;
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(context, '', '');
+      } catch (err) {
+        console.error("[openInputMethodDetail_123] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_124
+     * @tc.number openInputMethodDetail_124
+     * @tc.desc   openInputMethodDetail_124
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_124', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(globalThis.abilityContext, null, '');
+      } catch (err) {
+        console.error("[openInputMethodDetail_124] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_125
+     * @tc.number openInputMethodDetail_125
+     * @tc.desc   openInputMethodDetail_125
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_125', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(globalThis.abilityContext, '', null);
+      } catch (err) {
+        console.error("[openInputMethodDetail_125] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_126
+     * @tc.number openInputMethodDetail_126
+     * @tc.desc   openInputMethodDetail_126
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_126', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(globalThis.abilityContext, '', '');
+      } catch (err) {
+        console.error("[openInputMethodDetail_126] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
   })
 }
