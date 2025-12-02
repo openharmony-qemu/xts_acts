@@ -428,7 +428,7 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
+      await commonEventManager.createSubscriber({
         events: ["getGroupDirEvent1", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
@@ -494,7 +494,7 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
+      await commonEventManager.createSubscriber({
         events: ["getGroupDirEvent1", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
@@ -560,7 +560,7 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
+      await commonEventManager.createSubscriber({
         events: ["getGroupDirEvent2", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
@@ -626,7 +626,7 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
+      await commonEventManager.createSubscriber({
         events: ["getGroupDirEvent2", "getGroupDirDone"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
