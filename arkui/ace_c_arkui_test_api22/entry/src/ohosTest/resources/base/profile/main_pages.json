@@ -4,6 +4,7 @@
     "MainAbility/pages/testgesture",
     "MainAbility/pages/image/imageAltTest",
     "MainAbility/pages/list/snapSpeedTest",
+    "MainAbility/pages/list/lanesValueTest",
     "MainAbility/pages/textMinLines/TextMinLinesTest",
     "MainAbility/pages/hasAxisTest/HasAxisTest",
     "MainAbility/pages/list/coastingAxisTest",

@@ -45,6 +45,7 @@ import scrollSnapAnimationSpeedModifier from './List/scrollSnapAnimationSpeedMod
 import scrollSnapAnimationSpeed from './List/scrollSnapAnimationSpeed.test';
 import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
+import ListFillPolicyModifier from './List/ListFillPolicyModifier.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
 
 export default function testsuite() {
@@ -80,5 +81,6 @@ export default function testsuite() {
   scrollSnapAnimationSpeed()
   listScrollbarColor()
   ListContentSize()
+  ListFillPolicyModifier()
   ListFillPolicy()
 }
