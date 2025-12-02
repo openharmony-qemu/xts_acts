@@ -312,7 +312,12 @@ static napi_value GetGetCodeFromSubscriber(napi_env env, napi_callback_info info
 static napi_value GetSetCodeToSubscriber(napi_env env, napi_callback_info info) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetCodeToSubscriber", "GetSetCodeToSubscriber Enter");
     if (g_subscriber != nullptr) {
-        ASSERT_EQ(OH_CommonEvent_SetCodeToSubscriber(g_subscriber, PARAM_1), true);
+        bool setcode = OH_CommonEvent_SetCodeToSubscriber(g_subscriber, PARAM_1);
+        if (PARAM_1) {    
+            ASSERT_EQ(setcode, true);
+        } else {
+            ASSERT_EQ(setcode, false);
+        }
         ASSERT_EQ(OH_CommonEvent_GetCodeFromSubscriber(g_subscriber), PARAM_1);
         OH_CommonEvent_UnSubscribe(g_subscriber);
         OH_CommonEvent_DestroySubscriber(g_subscriber);
@@ -350,7 +355,11 @@ static napi_value GetSetDataToSubscriber(napi_env env, napi_callback_info info) 
     bool ret = OH_CommonEvent_SetDataToSubscriber(g_subscriber, data, PARAM_4);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetDataToSubscriber",
                  "OH_CommonEvent_SetDataToSubscriber %{public}d", ret);
-    ASSERT_EQ(ret, true);
+    if (data) {
+        ASSERT_EQ(ret, true);
+    } else {
+        ASSERT_EQ(ret, false);
+    }
     const char *retStr = OH_CommonEvent_GetDataFromSubscriber(g_subscriber);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetSetDataToSubscriber",
                  "OH_CommonEvent_GetDataFromSubscriber %{public}s", retStr);
