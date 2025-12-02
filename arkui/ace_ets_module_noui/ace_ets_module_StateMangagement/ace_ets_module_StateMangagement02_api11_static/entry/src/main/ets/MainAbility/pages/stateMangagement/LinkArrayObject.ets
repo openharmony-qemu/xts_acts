@@ -107,7 +107,7 @@ struct LinkArrayObjectChild {
           this.value.shift()
         })
 
-      ForEach(Array.from(this.value.entries()), (item: [number, ArrayLinkObject]) => {
+      ForEach(Array.from(this.value.entries()), (item: [int, ArrayLinkObject]) => {
         Text(`${item[1].id}:${item[1].value} index:${item[0]}`).fontSize(9).height('5%')
           .id('LinkArrayObject_value_' + item[0])
         Divider()

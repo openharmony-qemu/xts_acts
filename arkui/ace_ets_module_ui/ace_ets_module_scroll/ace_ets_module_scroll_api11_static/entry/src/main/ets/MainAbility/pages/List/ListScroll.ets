@@ -44,7 +44,7 @@ import events_emitter from '@ohos.events.emitter';
 @Component
 struct ListScroll {
   @State listPosition: number = 0;
-  private arr: number[] = Array.from(Array(60).keys()).map((item: number) => item)
+  private arr: int[] = Array.from(Array(60).keys()).map((item: int) => item)
   private scrollerForList: Scroller = new Scroller()
 
   build() {
@@ -80,7 +80,7 @@ struct ListScroll {
       }.margin({ top: 10 } as Margin)
 
       List({ space: 5, initialIndex: 23, scroller: this.scrollerForList }) {
-        ForEach(this.arr, (item: number, index: int) => {
+        ForEach(this.arr, (item: int, index: int) => {
           ListItem() {
             Text("ListItem" + item)
               .width("100%")
@@ -92,7 +92,7 @@ struct ListScroll {
           }
           .width("90%")
           .height(50)
-        }, (item: number) => item.toString())
+        }, (item: int) => item.toString())
       }
       .listDirection(Axis.Vertical)
       .width("100%")

@@ -65,13 +65,13 @@ struct SwiperMargin {
   private swiperController2: SwiperController = new SwiperController()
   private swiperController3: SwiperController = new SwiperController()
   private swiperController4: SwiperController = new SwiperController()
-  private arr: number[] = Array.from(Array(6).keys()).map((item: number) => item) as number[]
+  private arr: int[] = Array.from(Array(6).keys()).map((item: int) => item)
 
   build() {
     Scroll() {
       Column() {
         Swiper(this.swiperController) {
-          ForEach(this.arr, (item: number) => {
+          ForEach(this.arr, (item: int) => {
             Text('' + item)
               .width('100%')
               .height(50)
@@ -96,7 +96,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper1')
 
         Swiper(this.swiperController2) {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: int, index: int) => {
             Text('' + item)
               .width('100%')
               .height(50)
@@ -121,7 +121,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper2')
 
         Swiper(this.swiperController3) {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: int, index: int) => {
             Text('' + item)
               .width('100%')
               .height(50)
@@ -146,7 +146,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper3')
 
         Swiper(this.swiperController4) {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: int, index: int) => {
             Text('' + item)
               .width('100%')
               .height(50)

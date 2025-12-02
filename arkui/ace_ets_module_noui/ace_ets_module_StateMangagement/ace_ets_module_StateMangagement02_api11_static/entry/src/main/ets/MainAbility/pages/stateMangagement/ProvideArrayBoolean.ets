@@ -100,7 +100,7 @@ struct ConsumeArrayBooleanChild {
           this.message.pop()
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [number, Boolean]) => {
+      ForEach(Array.from(this.message.entries()), (item: [int, Boolean]) => {
         Text(`${item[1]} index: ${item[0]}`).fontSize(9).id('consumeArrayBoolean_value_' + item[0])
           .height('5%')
         Divider()

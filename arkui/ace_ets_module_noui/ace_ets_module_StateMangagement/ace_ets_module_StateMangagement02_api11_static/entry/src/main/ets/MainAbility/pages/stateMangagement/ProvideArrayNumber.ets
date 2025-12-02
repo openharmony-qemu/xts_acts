@@ -95,7 +95,7 @@ struct ConsumeArrayNumberChild {
           this.message.pop()
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [number, Number]) => {
+      ForEach(Array.from(this.message.entries()), (item: [int, Number]) => {
         Text(`${item[1]} index: ${item[0]}`).fontSize(9).id('consumeArrayNumber_value_' + item[0])
           .height('5%')
         Divider()

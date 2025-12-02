@@ -2933,7 +2933,7 @@ export default function EsArrayTest001(){
             console.info(`${caseName}, test start`);
             let array: Array<string> = new Array<string>();
             let iterator = array.keys();
-            let result: IteratorResult<number>;
+            let result: IteratorResult<int>;
 
             array.push('a');
 
@@ -2966,7 +2966,7 @@ export default function EsArrayTest001(){
             console.info(`${caseName}, test start`);
             let array: Array<string> = new Array<string>('a', 'b', 'c');
             let iterator = array.keys();
-            let result: IteratorResult<number>;
+            let result: IteratorResult<int>;
 
             result = iterator.next();
             expect(result.value).assertEqual(0);
