@@ -46,6 +46,7 @@ import playModeTest from './PlayModeJsunit.test';
 import stageAnimatorTest from './StageAnimator.test';
 import RippleFields from './Particle/RippleFields.test';
 import VelocityFields from './Particle/VelocityFields.test';
+import UIContextAnimateToImmediately from './AnimatorResultTest/UIContextAnimateToImmediately.test'
 
 export default function testsuite() {
   animateJsunit();
@@ -81,4 +82,5 @@ export default function testsuite() {
   stageAnimatorTest();
   RippleFields();
   VelocityFields();
+  UIContextAnimateToImmediately(); 
 }
