@@ -24,6 +24,19 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     // 向ArkTS侧暴露接口
     napi_property_descriptor desc[] = {
+        {"ChangeColor", nullptr, XComponentSurfaceConfigTest::ChangeColor,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetSurfaceId", nullptr, XComponentSurfaceConfigTest::SetSurfaceId,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ChangeSurface", nullptr, XComponentSurfaceConfigTest::ChangeSurface,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetXComponentStatus", nullptr, XComponentSurfaceConfigTest::GetXComponentStatus,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DrawPattern", nullptr, XComponentSurfaceConfigTest::DrawPattern,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DestroySurface", nullptr, XComponentSurfaceConfigTest::DestroySurface,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+    
         {"bindNode", nullptr, XComponentSurfaceConfigTest::BindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"unbindNode", nullptr, XComponentSurfaceConfigTest::UnbindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"drawStar", nullptr, XComponentSurfaceConfigTest::DrawStar, nullptr, nullptr, nullptr, napi_default, nullptr},

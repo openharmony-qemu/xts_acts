@@ -12,6 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+type XComponentContextStatus = {
+  hasDraw: boolean,
+  hasChangeColor: boolean,
+};
+export const SetSurfaceId: (id: BigInt) => any;
+export const ChangeSurface: (id: BigInt, w: number, h: number) =>any;
+export const DrawPattern: (id: BigInt) => any;
+export const GetXComponentStatus: (id: BigInt) => XComponentContextStatus
+export const ChangeColor: (id: BigInt) => any;
+export const DestroySurface: (id: BigInt) => any;
+
 export const bindNode: (id: string, node: object) => void;
 export const unbindNode: (id: string) => void;
 export const drawStar: (id: string) => void;

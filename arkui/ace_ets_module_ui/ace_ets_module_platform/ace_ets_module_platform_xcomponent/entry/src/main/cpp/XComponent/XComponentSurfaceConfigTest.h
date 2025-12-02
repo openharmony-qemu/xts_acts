@@ -17,7 +17,11 @@
 #define NATIVEXCOMPONENT_SURFACE_CONFIG_TEST_H
 
 #include <ace/xcomponent/native_interface_xcomponent.h>
+#include <js_native_api.h>
+#include <js_native_api_types.h>
 #include <unordered_map>
+#include <native_window/external_window.h>
+#include "../render/plugin_render.h"
 #include "render/EGLRender.h"
 #include "napi/native_api.h"
 #include <arkui/native_node_napi.h>
@@ -31,14 +35,24 @@ constexpr const int FRAME_COUNT = 50;
 class XComponentSurfaceConfigTest {
 public:
     ~XComponentSurfaceConfigTest();
-        
+    static PluginRender* GetPluginRender(int64_t& id);
+    static napi_value ChangeColor(napi_env env, napi_callback_info info);
+    static napi_value DrawPattern(napi_env env, napi_callback_info info);
+    static napi_value SetSurfaceId(napi_env env, napi_callback_info info);
+    static napi_value ChangeSurface(napi_env env, napi_callback_info info);
+    static napi_value DestroySurface(napi_env env, napi_callback_info info);
+    static napi_value GetXComponentStatus(napi_env env, napi_callback_info info);
+    
     static napi_value BindNode(napi_env env, napi_callback_info info);
     static napi_value UnbindNode(napi_env env, napi_callback_info info);
     static napi_value DrawStar(napi_env env, napi_callback_info info);
 
     static napi_value TestSetSurfaceConfigErrorCode001(napi_env env, napi_callback_info info);
     static napi_value TestSetSurfaceConfigErrorCode002(napi_env env, napi_callback_info info);
-public:   
+public:
+    static std::unordered_map<int64_t, PluginRender*> pluginRenderMap_;
+    static std::unordered_map<int64_t, OHNativeWindow*> windowMap_;
+    
     static std::unordered_map<std::string, ArkUI_NodeHandle> nodeHandleMap_;
     static std::unordered_map<void *, OH_ArkUI_SurfaceCallback *> callbackMap_;
     static std::unordered_map<void *, OH_ArkUI_SurfaceHolder *> surfaceHolderMap_;
