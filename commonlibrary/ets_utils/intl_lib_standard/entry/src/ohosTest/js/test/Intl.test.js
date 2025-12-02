@@ -259,12 +259,12 @@ describe('etsIntlFunTest', function () {
     })
 	    
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_016
-     * @tc.name      : testIntlDateTimeFormat16
-     * @tc.desc      : The current function handles Intl DateTimeFormatToParts
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_016
+     * @tc.name testIntlDateTimeFormat16
+     * @tc.desc The current function handles Intl DateTimeFormatToParts
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.leve Level 0
     */
      it('testIntlDateTimeFormat16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric",
@@ -281,12 +281,12 @@ describe('etsIntlFunTest', function () {
     })
     
     /**
-     * @tc.number    : SUB_ARK_ETS_INTL_DATETIMEFORMAT_017
-     * @tc.name      : testIntlDateTimeFormat17
-     * @tc.desc      : The current function handles Intl DateTimeFormatToParts
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_017
+     * @tc.name testIntlDateTimeFormat17
+     * @tc.desc The current function handles Intl DateTimeFormatToParts
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
     */
      it('testIntlDateTimeFormat17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         var options = { year: "numeric", month: "long", day: "numeric",
