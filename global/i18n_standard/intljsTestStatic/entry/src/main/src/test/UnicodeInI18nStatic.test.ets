@@ -55,7 +55,6 @@ export default function UnicodeInI18nTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0100
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0100
      * @tc.desc   check the isDigit interface
@@ -71,7 +70,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0120
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0120
      * @tc.desc   check the isDigit interface,test isDigit interface with 123 param
@@ -87,7 +85,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0140
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0140
      * @tc.desc   check the isDigit interface，test isDigit interface with 123abc param
@@ -103,7 +100,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0150
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0150
      * @tc.desc   check the isDigit interface test isDigit interface with abc123 param
@@ -119,7 +115,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0160
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0160
      * @tc.desc   check the isDigit interface,test isDigit interface with null param
@@ -133,7 +128,6 @@ export default function UnicodeInI18nTest() {
       expect(value).assertFalse();
     })
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0200
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0200
      * @tc.desc   check the isSpaceChar interface test isSpaceChar interface with abc param
@@ -149,7 +143,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0220
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0220
      * @tc.desc   check the isSpaceChar interface test isSpaceChar interface with one space param
@@ -165,7 +158,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0240
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0240
      * @tc.desc   check the isSpaceChar interface test isSpaceChar interface with multi space param
@@ -181,7 +173,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0300
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0300
      * @tc.desc   test isWhitespace interface with abc param
@@ -197,7 +188,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0320
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0320
      * @tc.desc   check the isWhitespace interface,test isWhitespace interface with \u0009 param
@@ -213,7 +203,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0400
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0400
      * @tc.desc   check the isRTL interface test isRTL interface with abc param
@@ -229,7 +218,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0420
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0420
      * @tc.desc   test isRTL interface with ١٢٣٤٥٦٧ param check the isRTL interface
@@ -245,7 +233,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0440
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0440
      * @tc.desc   test isRTL interface with 我是小明 param
@@ -261,7 +248,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0460
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0460
      * @tc.desc   test isRTL interface with نحن param
@@ -277,7 +263,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0500
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0500
      * @tc.desc   check the isIdeograph interface test isIdeograph interface with abc param
@@ -293,7 +278,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0700
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0700
      * @tc.desc   test isLowerCase interface with abc param
@@ -309,7 +293,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0900
      * @tc.number i18n_test_character_static_0900
      * @tc.desc   test getType interface with a param
@@ -325,7 +308,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0520
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0520
      * @tc.desc   test isIdeograph interface with '我' param
@@ -341,7 +323,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0540
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0540
      * @tc.desc   test isIdeograph interface with '우리' param
@@ -357,7 +338,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0560
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0560
      * @tc.desc   test isIdeograph interface with '私た' param
@@ -373,7 +353,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0600
      * @tc.number i18n_test_character_static_0600
      * @tc.desc   test isLetter interface with abc param
@@ -389,7 +368,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0620
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0620
      * @tc.desc   test isLetter interface with 123 param
@@ -405,7 +383,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0640
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0640
      * @tc.desc   test isLetter interface with abc123 param
@@ -421,7 +398,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0660
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0660
      * @tc.desc   test isLetter interface with 123abc param
@@ -437,7 +413,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0720
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0720
      * @tc.desc   ftest isLowerCase interface with ABC param
@@ -453,7 +428,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0740
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0740
      * @tc.desc   test isLowerCase interface with abcDEF param
@@ -469,7 +443,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0760
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0760
      * @tc.desc   test isLowerCase interface with ABCdef param
@@ -485,7 +458,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0800
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0800
      * @tc.desc   test isUpperCase interface with ABC param
@@ -501,7 +473,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0820
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0820
      * @tc.desc   test isUpperCase interface with abc param
@@ -517,7 +488,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0840
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0840
      * @tc.desc   test isUpperCase interface with ABCdef param
@@ -533,7 +503,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0860
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0860
      * @tc.desc   test isUpperCase interface with abcDEF param
@@ -549,7 +518,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0920
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0920
      * @tc.desc   ftest getType interface with ABC param
@@ -565,7 +533,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0940
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0940
      * @tc.desc   test getType interface with ABCdef param
@@ -581,7 +548,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0960
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0960
      * @tc.desc   test getType interface with 123 param
@@ -597,7 +563,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0970
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0970
      * @tc.desc   test getType interface with 123abc param
@@ -613,7 +578,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0980
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0980
      * @tc.desc   test getType interface with ١٢٣٤٥٦٧ param
@@ -629,7 +593,6 @@ export default function UnicodeInI18nTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_static_0990
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_static_0990
      * @tc.desc   test getType interface with multi space param

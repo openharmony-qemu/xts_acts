@@ -40,14 +40,14 @@ export default function onScrollStopTest(){
       }
       done();
     });
-    /* *
-    * @tc.number: onScrollStopTest_0100
-    * @tc.name  : onScrollStopTest_0100
-    * @tc.desc  : To test the onScollStop interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   onScrollStopTest_0100
+     * @tc.number onScrollStopTest_0100
+     * @tc.desc   To test the onScollStop interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('onScrollStopTest_0100', Level.LEVEL3, async (done:Function) =>{
       console.info('onScrollStopTest_0100 START');
       let driver = await Driver.create()
@@ -67,14 +67,14 @@ export default function onScrollStopTest(){
       done();
     });
 
-    /* *
-    * @tc.number: onScrollStopTest_0200
-    * @tc.name  : onScrollStopTest_0200
-    * @tc.desc  : To test the onScollStop interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   onScrollStopTest_0200
+     * @tc.number onScrollStopTest_0200
+     * @tc.desc   To test the onScollStop interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('onScrollStopTest_0200', Level.LEVEL3, async (done:Function) =>{
       console.info('onScrollStopTest_0200 START');
       let driver = await Driver.create()

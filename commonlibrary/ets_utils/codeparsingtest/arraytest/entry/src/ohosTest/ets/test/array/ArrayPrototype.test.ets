@@ -77,12 +77,12 @@ export default function ArrayPrototypeTest() {
     })
 
     /**
+     * @tc.name   testArrayConstructor0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0001
-     * @tc.name testArrayConstructor0001
-     * @tc.desc Verify Array constructor creates empty array with single positive integer length (1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates empty array with single positive integer length (1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(1);
@@ -91,12 +91,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0002
-     * @tc.name testArrayConstructor0002
-     * @tc.desc Verify Array constructor creates empty array with single positive integer length (100)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates empty array with single positive integer length (100)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<string>(100);
@@ -105,12 +105,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0003
-     * @tc.name testArrayConstructor0003
-     * @tc.desc Verify Array constructor creates array with elements when multiple number arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with elements when multiple number arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(1, 2, 3);
@@ -121,12 +121,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0004
-     * @tc.name testArrayConstructor0004
-     * @tc.desc Verify Array constructor creates array with string elements when multiple string arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with string elements when multiple string arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
@@ -137,12 +137,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0005
-     * @tc.name testArrayConstructor0005
-     * @tc.desc Verify Array constructor creates array with boolean elements when multiple boolean arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with boolean elements when multiple boolean arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<boolean>(true, false, true);
@@ -153,12 +153,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0006
-     * @tc.name testArrayConstructor0006
-     * @tc.desc Verify Array constructor creates array with object elements when multiple object arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with object elements when multiple object arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let Constructor0006 = Prototype0006();
@@ -170,12 +170,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0007
-     * @tc.name testArrayConstructor0007
-     * @tc.desc Verify Array constructor creates array with mixed type elements when multiple mixed arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with mixed type elements when multiple mixed arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type MixedType = number | string | boolean;
@@ -187,12 +187,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0008
-     * @tc.name testArrayConstructor0008
-     * @tc.desc Verify Array constructor creates empty array when called with 0 as length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates empty array when called with 0 as length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(0);
@@ -201,12 +201,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0009
-     * @tc.name testArrayConstructor0009
-     * @tc.desc Verify Array constructor throws RangeError when called with negative integer length (-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor throws RangeError when called with negative integer length (-1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -217,12 +217,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0010
-     * @tc.name testArrayConstructor0010
-     * @tc.desc Verify Array constructor throws RangeError when called with negative float length (-2.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor throws RangeError when called with negative float length (-2.5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -234,12 +234,12 @@ export default function ArrayPrototypeTest() {
 
 
     /**
+     * @tc.name   testArrayConstructor0012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0012
-     * @tc.name testArrayConstructor0012
-     * @tc.desc Verify Array constructor creates array with single float element when float argument is passed (0.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with single float element when float argument is passed (0.5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
@@ -250,12 +250,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0013
-     * @tc.name testArrayConstructor0013
-     * @tc.desc Verify Array constructor creates array with multiple float elements when multiple float arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with multiple float elements when multiple float arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(1.1, 2.2, 3.3);
@@ -266,12 +266,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0017
-     * @tc.name testArrayConstructor0017
-     * @tc.desc Verify Array constructor creates empty array when called without arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates empty array when called without arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>();
@@ -280,12 +280,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0018
-     * @tc.name testArrayConstructor0018
-     * @tc.desc Verify Array constructor creates array with single null element when null is passed as argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with single null element when null is passed as argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<null>(null);
@@ -294,12 +294,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0019
-     * @tc.name testArrayConstructor0019
-     * @tc.desc Verify Array constructor creates array with single undefined element when undefined is passed as argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with single undefined element when undefined is passed as argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<undefined>(undefined);
@@ -308,12 +308,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0020
-     * @tc.name testArrayConstructor0020
-     * @tc.desc Verify Array constructor creates array with function elements when function arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with function elements when function arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0020 = Prototype0020();
@@ -325,12 +325,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0021
-     * @tc.name testArrayConstructor0021
-     * @tc.desc Verify Array constructor creates array with array elements when array arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with array elements when array arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const subArr1 = new Array<number>(1, 2);
@@ -344,12 +344,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0022
-     * @tc.name testArrayConstructor0022
-     * @tc.desc Verify Array constructor creates array with Date elements when Date arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with Date elements when Date arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date1 = new Date('2024-01-01');
@@ -363,12 +363,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0023
-     * @tc.name testArrayConstructor0023
-     * @tc.desc Verify Array constructor creates array with RegExp elements when RegExp arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with RegExp elements when RegExp arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const reg1 = /abc/;
@@ -382,12 +382,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0024
-     * @tc.name testArrayConstructor0024
-     * @tc.desc Verify Array constructor creates array with Symbol elements when Symbol arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with Symbol elements when Symbol arguments are passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0024 = Prototype0024();
@@ -399,12 +399,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0025
-     * @tc.name testArrayConstructor0025
-     * @tc.desc Verify Array constructor creates array with multiple Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0025 = Prototype0025();
@@ -416,12 +416,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0026
-     * @tc.name testArrayConstructor0026
-     * @tc.desc Verify Array constructor creates array with BigInt elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const big1 = BigInt(12345678901234567890);
@@ -433,12 +433,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0027
-     * @tc.name testArrayConstructor0027
-     * @tc.desc Verify Array constructor creates array with single BigInt element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with single BigInt element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const big = BigInt(42);
@@ -448,12 +448,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0028
-     * @tc.name testArrayConstructor0028
-     * @tc.desc Verify Array constructor creates array with typed array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with typed array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const typed1 = new Uint8Array([1, 2, 3]);
@@ -466,12 +466,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0029
-     * @tc.name testArrayConstructor0029
-     * @tc.desc Verify Array constructor creates array with Map elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with Map elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0029 = Prototype0029();
@@ -481,12 +481,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0030
-     * @tc.name testArrayConstructor0030
-     * @tc.desc Verify Array constructor creates array with Set elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with Set elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0030 = Prototype0030();
@@ -496,12 +496,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0031
-     * @tc.name testArrayConstructor0031
-     * @tc.desc Verify Array constructor creates array with WeakMap elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with WeakMap elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const obj1: GeneratedObjectLiteralInterface_1 = {};
@@ -517,12 +517,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0032
-     * @tc.name testArrayConstructor0032
-     * @tc.desc Verify Array constructor creates array with WeakSet elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with WeakSet elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const obj1: GeneratedObjectLiteralInterface_1 = {};
@@ -536,12 +536,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0033
-     * @tc.name testArrayConstructor0033
-     * @tc.desc Verify Array constructor creates array with Promise elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with Promise elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const promise1 = Promise.resolve(42);
@@ -553,12 +553,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0034
-     * @tc.name testArrayConstructor0034
-     * @tc.desc Verify Array constructor creates array with single large integer length (2^32 - 1)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with single large integer length (2^32 - 1)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const length = 4294967295;
@@ -567,12 +567,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0036
-     * @tc.name testArrayConstructor0036
-     * @tc.desc Verify Array constructor creates array with Boolean object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with Boolean object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const boolObj1 = new Boolean(true);
@@ -584,12 +584,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0037
-     * @tc.name testArrayConstructor0037
-     * @tc.desc Verify Array constructor creates array with Number object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with Number object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const numObj1 = new Number(123);
@@ -601,12 +601,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0038
-     * @tc.name testArrayConstructor0038
-     * @tc.desc Verify Array constructor creates array with String object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with String object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const strObj1 = new String('hello');
@@ -618,12 +618,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0039
-     * @tc.name testArrayConstructor0039
-     * @tc.desc Verify Array constructor creates array with Error objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with Error objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const err1 = new Error('Error 1');
@@ -634,12 +634,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0040
-     * @tc.name testArrayConstructor0040
-     * @tc.desc Verify Array constructor creates array with DOM element-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with DOM element-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       interface ele1 {
@@ -656,12 +656,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0041
-     * @tc.name testArrayConstructor0041
-     * @tc.desc Verify Array constructor creates empty array with length as string that converts to 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates empty array with length as string that converts to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0041 = Prototype0041();
@@ -670,12 +670,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0042
-     * @tc.name testArrayConstructor0042
-     * @tc.desc Verify Array constructor treats single string argument as element not length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor treats single string argument as element not length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('test');
@@ -684,12 +684,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0043
-     * @tc.name testArrayConstructor0043
-     * @tc.desc Verify Array constructor treats single string number as element not length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor treats single string number as element not length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('123');
@@ -698,12 +698,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0044
-     * @tc.name testArrayConstructor0044
-     * @tc.desc Verify Array constructor creates array with single element when passed object with valueOf 5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with single element when passed object with valueOf 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const obj: GeneratedTypeLiteralInterface_1 = {
@@ -715,12 +715,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0045
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0045
-     * @tc.name testArrayConstructor0045
-     * @tc.desc Verify Array constructor uses length when passed object with [Symbol.toPrimitive] returning number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor uses length when passed object with [Symbol.toPrimitive] returning number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0045 = Prototype0045();
@@ -729,12 +729,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0046
-     * @tc.name testArrayConstructor0046
-     * @tc.desc Verify Array constructor creates array with single element when passed array-like object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with single element when passed array-like object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0046 = Prototype0046();
@@ -744,12 +744,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0047
-     * @tc.name testArrayConstructor0047
-     * @tc.desc Verify Array constructor creates array with single element when passed null (non-primitive)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with single element when passed null (non-primitive)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<null>(null);
@@ -758,12 +758,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0048
-     * @tc.name testArrayConstructor0048
-     * @tc.desc Verify Array constructor creates array with multiple null elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple null elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<null>(null, null, null);
@@ -773,12 +773,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0049
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0049
-     * @tc.name testArrayConstructor0049
-     * @tc.desc Verify Array constructor creates array with multiple undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<undefined>(undefined, undefined);
@@ -788,12 +788,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0050
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0050
-     * @tc.name testArrayConstructor0050
-     * @tc.desc Verify Array constructor creates array with mixed null and undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with mixed null and undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       type NullOrUndefined = null | undefined;
@@ -804,12 +804,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0051
-     * @tc.name testArrayConstructor0051
-     * @tc.desc Verify Array constructor creates array with empty string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with empty string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('', '', '');
@@ -819,12 +819,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0052
-     * @tc.name testArrayConstructor0052
-     * @tc.desc Verify Array constructor creates array with whitespace string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with whitespace string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>(' ', '\t', '\n');
@@ -835,12 +835,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0053
-     * @tc.name testArrayConstructor0053
-     * @tc.desc Verify Array constructor creates array with very large number elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with very large number elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const largeNum1 = Number.MAX_SAFE_INTEGER;
@@ -852,12 +852,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0054
-     * @tc.name testArrayConstructor0054
-     * @tc.desc Verify Array constructor creates array with very small number elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with very small number elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const smallNum1 = Number.MIN_SAFE_INTEGER;
@@ -869,12 +869,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0055
-     * @tc.name testArrayConstructor0055
-     * @tc.desc Verify Array constructor creates array with multiple NaN elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple NaN elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(NaN, NaN);
@@ -884,12 +884,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0056
-     * @tc.name testArrayConstructor0056
-     * @tc.desc Verify Array constructor creates array with elements of different numeric types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with elements of different numeric types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       type NumericTypes = number | bigint;
@@ -901,12 +901,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0057
-     * @tc.name testArrayConstructor0057
-     * @tc.desc Verify Array constructor creates array with empty objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with empty objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj1: GeneratedObjectLiteralInterface_1 = {};
@@ -919,12 +919,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0058
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0058
-     * @tc.name testArrayConstructor0058
-     * @tc.desc Verify Array constructor creates array with nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0058 = Prototype0058();
@@ -933,12 +933,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0059
-     * @tc.name testArrayConstructor0059
-     * @tc.desc Verify Array constructor creates array with circular reference objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with circular reference objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0059 = Prototype0059();
@@ -949,12 +949,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0060
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0060
-     * @tc.name testArrayConstructor0060
-     * @tc.desc Verify Array constructor creates array with frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0060 = Prototype0060();
@@ -964,12 +964,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0061
-     * @tc.name testArrayConstructor0061
-     * @tc.desc Verify Array constructor creates array with sealed objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with sealed objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0061 = Prototype0061();
@@ -979,12 +979,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0062
-     * @tc.name testArrayConstructor0062
-     * @tc.desc Verify Array constructor creates array with multiple regular expressions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple regular expressions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const reg1 = /^[a-z]+$/i;
@@ -996,12 +996,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0063
-     * @tc.name testArrayConstructor0063
-     * @tc.desc Verify Array constructor creates array with date objects of different time zones
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with date objects of different time zones
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const date1 = new Date('2024-01-01T00:00:00Z');
@@ -1013,12 +1013,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0064
-     * @tc.name testArrayConstructor0064
-     * @tc.desc Verify Array constructor creates array with empty functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with empty functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const func1 = (): void => {
@@ -1032,12 +1032,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0065
-     * @tc.name testArrayConstructor0065
-     * @tc.desc Verify Array constructor creates array with arrow functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0065 = Prototype0065();
@@ -1047,12 +1047,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0066
-     * @tc.name testArrayConstructor0066
-     * @tc.desc Verify Array constructor creates array with generator functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with generator functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0066 = Prototype0066();
@@ -1062,12 +1062,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0067
-     * @tc.name testArrayConstructor0067
-     * @tc.desc Verify Array constructor creates array with async functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with async functions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0067 = Prototype0067();
@@ -1075,12 +1075,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0068
-     * @tc.name testArrayConstructor0068
-     * @tc.desc Verify Array constructor creates array with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with class instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class MyClass {
@@ -1100,12 +1100,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0069
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0069
-     * @tc.name testArrayConstructor0069
-     * @tc.desc Verify Array constructor creates array with class constructors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with class constructors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
 
@@ -1117,12 +1117,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0070
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0070
-     * @tc.name testArrayConstructor0070
-     * @tc.desc Verify Array constructor creates array with module-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with module-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0070 = Prototype0070();
@@ -1132,12 +1132,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0071
-     * @tc.name testArrayConstructor0071
-     * @tc.desc Verify Array constructor creates array with multiple NaN values from different sources
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple NaN values from different sources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan1 = NaN;
@@ -1151,12 +1151,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0072
-     * @tc.name testArrayConstructor0072
-     * @tc.desc Verify Array constructor creates array with Infinity and -Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with Infinity and -Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(Infinity, -Infinity);
@@ -1168,12 +1168,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0073
-     * @tc.name testArrayConstructor0073
-     * @tc.desc Verify Array constructor creates array with special string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with special string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('\0', '\u0000', '\uFFFF', '\u{1F600}'); // null char, max BMP, emoji
@@ -1185,12 +1185,12 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
+     * @tc.name   testArrayConstructor0074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0074
-     * @tc.name testArrayConstructor0074
-     * @tc.desc Verify Array constructor creates array with multi-line string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multi-line string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const str1 = 'line1\nline2';
@@ -1204,12 +1204,12 @@ lineB`;
 
 
     /**
+     * @tc.name   testArrayConstructor0076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0076
-     * @tc.name testArrayConstructor0076
-     * @tc.desc Verify Array constructor creates array with multiple empty arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multiple empty arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1: number[] = [];
@@ -1223,12 +1223,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0077
-     * @tc.name testArrayConstructor0077
-     * @tc.desc Verify Array constructor creates array with multi-dimensional arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with multi-dimensional arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const matrix1 = [[1, 2], [3, 4]];
@@ -1240,12 +1240,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0078
-     * @tc.name testArrayConstructor0078
-     * @tc.desc Verify Array constructor creates array with sparse arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const sparse1: number[] = [];
@@ -1261,12 +1261,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0079
-     * @tc.name testArrayConstructor0079
-     * @tc.desc Verify Array constructor creates array with arguments objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with arguments objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0079 = Prototype0079();
@@ -1276,12 +1276,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0080
-     * @tc.name testArrayConstructor0080
-     * @tc.desc Verify Array constructor creates array with various collection types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with various collection types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let Constructor0080 = Prototype0080();
@@ -1291,12 +1291,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0081
-     * @tc.name testArrayConstructor0081
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single boolean true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single boolean true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<boolean>(true);
@@ -1305,12 +1305,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0082
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0082
-     * @tc.name testArrayConstructor0082
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single boolean false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single boolean false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<boolean>(false);
@@ -1319,12 +1319,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0083
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0083
-     * @tc.name testArrayConstructor0083
-     * @tc.desc Verify Array constructor creates array with length 10 when passed 10 as single argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with length 10 when passed 10 as single argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(10);
@@ -1333,12 +1333,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0084
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0084
-     * @tc.name testArrayConstructor0084
-     * @tc.desc Verify Array constructor creates array with elements when passed multiple boolean values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with elements when passed multiple boolean values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<boolean>(true, false, true, false);
@@ -1351,12 +1351,12 @@ lineB`;
 
 
     /**
+     * @tc.name   testArrayConstructor0086
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0086
-     * @tc.name testArrayConstructor0086
-     * @tc.desc Verify Array constructor creates array with mixed positive and negative numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with mixed positive and negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(1, -2, 3, -4);
@@ -1368,12 +1368,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0087
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0087
-     * @tc.name testArrayConstructor0087
-     * @tc.desc Verify Array constructor creates array with elements when passed numbers and strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with elements when passed numbers and strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type NumOrStr = number | string;
@@ -1386,12 +1386,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0088
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0088
-     * @tc.name testArrayConstructor0088
-     * @tc.desc Verify Array constructor creates array with elements when passed various primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array constructor creates array with elements when passed various primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayConstructor0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Primitive = number | string | boolean | null | undefined;
@@ -1405,12 +1405,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0089
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0089
-     * @tc.name testArrayConstructor0089
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single empty object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj: GeneratedObjectLiteralInterface_1 = {};
@@ -1420,12 +1420,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0090
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0090
-     * @tc.name testArrayConstructor0090
-     * @tc.desc Verify Array constructor creates array with elements when passed objects with same properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with elements when passed objects with same properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       interface test0090 {
@@ -1442,12 +1442,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0091
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0091
-     * @tc.name testArrayConstructor0091
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single regexp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single regexp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const reg = /test/gi;
@@ -1458,12 +1458,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0092
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0092
-     * @tc.name testArrayConstructor0092
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single date object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single date object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2024, 0, 1);
@@ -1474,12 +1474,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0093
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0093
-     * @tc.name testArrayConstructor0093
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const func = (a: number, b: number): number => a + b;
@@ -1490,12 +1490,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0094
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0094
-     * @tc.name testArrayConstructor0094
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0094 = Prototype0094();
@@ -1505,12 +1505,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0095
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0095
-     * @tc.name testArrayConstructor0095
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single bigint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single bigint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const big = 123456789012345678901234567890n;
@@ -1520,12 +1520,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0096
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0096
-     * @tc.name testArrayConstructor0096
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
@@ -1536,12 +1536,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0097
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0097
-     * @tc.name testArrayConstructor0097
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const set = new Set<string>(['a', 'b', 'c']);
@@ -1552,12 +1552,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0098
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0098
-     * @tc.name testArrayConstructor0098
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const promise = Promise.resolve('resolved');
@@ -1567,12 +1567,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0099
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0099
-     * @tc.name testArrayConstructor0099
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single Error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const error = new Error('Test error');
@@ -1583,12 +1583,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0100
-     * @tc.name testArrayConstructor0100
-     * @tc.desc Verify Array constructor creates array with mixed element types including objects and primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with mixed element types including objects and primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let Constructor0100 = Prototype0100();
@@ -1601,12 +1601,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0101
-     * @tc.name testArrayConstructor0101
-     * @tc.desc Verify Array constructor creates array with length 1000 when passed 1000 as single argument
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with length 1000 when passed 1000 as single argument
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0101', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000);
@@ -1615,12 +1615,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0102
-     * @tc.name testArrayConstructor0102
-     * @tc.desc Verify Array constructor creates array with 1000 elements when passed 1000 arguments
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Array constructor creates array with 1000 elements when passed 1000 arguments
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it('testArrayConstructor0102', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
       let Constructor0102 = Prototype0102();
@@ -1630,12 +1630,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0103
-     * @tc.name testArrayConstructor0103
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single boxed number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single boxed number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const numObj = new Number(42);
@@ -1646,12 +1646,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0104
-     * @tc.name testArrayConstructor0104
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single boxed string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single boxed string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const strObj = new String('boxed');
@@ -1662,12 +1662,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0105
-     * @tc.name testArrayConstructor0105
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single boxed boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single boxed boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const boolObj = new Boolean(false);
@@ -1678,12 +1678,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0106
-     * @tc.name testArrayConstructor0106
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const buffer = new ArrayBuffer(16);
@@ -1694,12 +1694,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0107
-     * @tc.name testArrayConstructor0107
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single DataView
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single DataView
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const buffer = new ArrayBuffer(16);
@@ -1711,12 +1711,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0108
-     * @tc.name testArrayConstructor0108
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const int32 = new Int32Array([1, 2, 3]);
@@ -1727,12 +1727,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0109
-     * @tc.name testArrayConstructor0109
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single Float64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with length 1 when passed single Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const float64 = new Float64Array([1.1, 2.2, 3.3]);
@@ -1743,12 +1743,12 @@ lineB`;
     });
 
     /**
+     * @tc.name   testArrayConstructor0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0110
-     * @tc.name testArrayConstructor0110
-     * @tc.desc Verify Array constructor creates array with various typed array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify Array constructor creates array with various typed array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testArrayConstructor0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const uint8 = new Uint8Array([255, 0]);

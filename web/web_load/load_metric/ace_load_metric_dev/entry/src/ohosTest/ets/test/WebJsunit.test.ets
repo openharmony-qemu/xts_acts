@@ -36,9 +36,13 @@ export default function webJsunit() {
       console.info("web beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_008
-     *tc.name onProgressChange                                                                                                                                                                                                                    *tc.desic Triggered when the page loading progress changes
+    /**
+     * @tc.name   onProgressChange
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_008
+     * @tc.desc   onProgressChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onProgressChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnProgressChange";

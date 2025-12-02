@@ -110,7 +110,6 @@ export default function ActsLocation20Test() {
     )
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StartLocatingTest0102
      * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0102
      * @tc.desc   test OH_Location_StartLocating1.
@@ -135,7 +134,6 @@ export default function ActsLocation20Test() {
     )
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testLocationKitOH_Location_StopLocatingTest0101
      * @tc.number SUB_LocationKit_OH_Location_StopLocating_Test_0101
      * @tc.desc   test OH_Location_StopLocating.

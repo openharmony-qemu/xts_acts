@@ -132,12 +132,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0011
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0011
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0011
+     * @tc.number testOhAvRecorder_mp4_errorevent_0011
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0011', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -191,12 +191,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0012
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0012
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0012
+     * @tc.number testOhAvRecorder_mp4_errorevent_0012
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0012', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -248,12 +248,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0013
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0013
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0013
+     * @tc.number testOhAvRecorder_mp4_errorevent_0013
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0013', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -306,12 +306,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0014
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0014
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0014
+     * @tc.number testOhAvRecorder_mp4_errorevent_0014
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0014', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -362,12 +362,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0015
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0015
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0015
+     * @tc.number testOhAvRecorder_mp4_errorevent_0015
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0015', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -418,12 +418,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0016
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0016
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0016
+     * @tc.number testOhAvRecorder_mp4_errorevent_0016
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0016', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -493,12 +493,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0021
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0021
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0021
+     * @tc.number testOhAvRecorder_mp4_errorevent_0021
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0021', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -543,12 +543,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0022
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0022
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0022
+     * @tc.number testOhAvRecorder_mp4_errorevent_0022
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0022', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -595,12 +595,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0023
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0023
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0023
+     * @tc.number testOhAvRecorder_mp4_errorevent_0023
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0023', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -649,12 +649,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0024
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0024
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0024
+     * @tc.number testOhAvRecorder_mp4_errorevent_0024
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0024', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -705,12 +705,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0025
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0025
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0025
+     * @tc.number testOhAvRecorder_mp4_errorevent_0025
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0025', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -755,12 +755,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0026
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0026
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0026
+     * @tc.number testOhAvRecorder_mp4_errorevent_0026
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0026', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -807,12 +807,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0027
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0027
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0027
+     * @tc.number testOhAvRecorder_mp4_errorevent_0027
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0027', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -859,12 +859,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0031
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0031
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0031
+     * @tc.number testOhAvRecorder_mp4_errorevent_0031
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0031', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
@@ -916,12 +916,12 @@ export default function OhAVRecorderNDKMp4ErrTest() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp4_errorevent_0041
-     * @tc.name       : testOhAvRecorder_mp4_errorevent_0041
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp4_errorevent_0041
+     * @tc.number testOhAvRecorder_mp4_errorevent_0041
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp4_errorevent_0041', Level.LEVEL0,async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {

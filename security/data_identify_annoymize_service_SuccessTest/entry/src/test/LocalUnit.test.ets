@@ -23,12 +23,12 @@ export default function localUnitTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   assertContain
      * @tc.number PrivacyAssistant_JS_25.1_2_004
-     * @tc.name assertContain
-     * @tc.desc normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level1
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('assertContain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

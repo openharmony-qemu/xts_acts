@@ -29,11 +29,13 @@ export default function abilityTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number: Acts_applyQuickFixRevoke_1300
-     * @tc.name: Apply quick fix to support undo.
-     * @tc.desc: The passed-in exception parameter undefined calls revokeQuickFix, 
-     *           and there is an exception return value.
+    /**
+     * @tc.name   Acts_applyQuickFixRevoke_1300
+     * @tc.number Acts_applyQuickFixRevoke_1300
+     * @tc.desc   The passed-in exception parameter undefined calls revokeQuickFix,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_applyQuickFixRevoke_1300', Level.LEVEL0, (done: Function) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
@@ -53,11 +55,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: Acts_applyQuickFixRevoke_1400
-     * @tc.name: Apply quick fix to support undo.
-     * @tc.desc: An exception parameter null is passed in to call revokeQuickFix, 
-     *           and there is an exception return value.
+    /**
+     * @tc.name   Acts_applyQuickFixRevoke_1400
+     * @tc.number Acts_applyQuickFixRevoke_1400
+     * @tc.desc   An exception parameter null is passed in to call revokeQuickFix,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_applyQuickFixRevoke_1400', Level.LEVEL0, (done: Function) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
@@ -77,10 +81,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: Acts_applyQuickFixRevoke_1500
-     * @tc.name: Apply quick fix to support undo.
-     * @tc.desc: Non-system application calls revokeQuickFix, with abnormal return value.
+    /**
+     * @tc.name   Acts_applyQuickFixRevoke_1500
+     * @tc.number Acts_applyQuickFixRevoke_1500
+     * @tc.desc   Non-system application calls revokeQuickFix, with abnormal return value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_applyQuickFixRevoke_1500', Level.LEVEL0, (done: Function) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
@@ -100,11 +107,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: Acts_applyQuickFixRevoke_1600
-     * @tc.name: Apply quick fix to support undo.
-     * @tc.desc: The passed-in exception parameter undefined calls revokeQuickFix, 
-     * and there is an exception return value.
+    /**
+     * @tc.name   Acts_applyQuickFixRevoke_1600
+     * @tc.number Acts_applyQuickFixRevoke_1600
+     * @tc.desc   The passed-in exception parameter undefined calls revokeQuickFix,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_applyQuickFixRevoke_1600', Level.LEVEL0, (done: Function) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
@@ -120,11 +129,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: Acts_applyQuickFixRevoke_1700
-     * @tc.name: Apply quick fix to support undo.
-     * @tc.desc: An exception parameter null is passed in to call revokeQuickFix, 
-     * and there is an exception return value.
+    /**
+     * @tc.name   Acts_applyQuickFixRevoke_1700
+     * @tc.number Acts_applyQuickFixRevoke_1700
+     * @tc.desc   An exception parameter null is passed in to call revokeQuickFix,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_applyQuickFixRevoke_1700', Level.LEVEL0, (done: Function) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
@@ -140,10 +151,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number: Acts_applyQuickFixRevoke_1800
-     * @tc.name: Apply quick fix to support undo.
-     * @tc.desc: Non-system application calls revokeQuickFix, with abnormal return value.
+    /**
+     * @tc.name   Acts_applyQuickFixRevoke_1800
+     * @tc.number Acts_applyQuickFixRevoke_1800
+     * @tc.desc   Non-system application calls revokeQuickFix, with abnormal return value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_applyQuickFixRevoke_1800', Level.LEVEL0, (done: Function) => {
       hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);

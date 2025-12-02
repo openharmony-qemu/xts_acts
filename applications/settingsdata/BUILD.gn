@@ -13,5 +13,8 @@
 
 group("settingsdata") {
   testonly = true
-  deps = [ "settings_ets:SettingsEtsTest" ]
+  deps = [
+   "settings_ets:SettingsEtsTest",
+   "settings_ets_static:SettingsEtsStaticTest",
+  ]
 }

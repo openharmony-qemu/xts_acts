@@ -79,9 +79,12 @@ void HwCapabilityNdkTest::TearDown()
 }
 namespace {
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0010
- * @tc.name      : OH_AVCapability_IsFeatureSupported para error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0010
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0010, TestSize.Level2)
 {
@@ -92,9 +95,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0010, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0011
- * @tc.name      : 解码，是否支持分层编码
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0011
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0011
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0011, TestSize.Level2)
 {
@@ -104,9 +110,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0011, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0012
- * @tc.name      : 编码，是否支持分层编码
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0012
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0012
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0012, TestSize.Level1)
 {
@@ -124,9 +133,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0012, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0013
- * @tc.name      : 解码，是否支持LTR
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0013
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0013
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0013, TestSize.Level2)
 {
@@ -136,9 +148,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0013, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0014
- * @tc.name      : 编码，是否支持LTR
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0014
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0014
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0014, TestSize.Level1)
 {
@@ -156,9 +171,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0014, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0015
- * @tc.name      : 软解，是否支持低时延
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0015
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0015
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0015, TestSize.Level2)
 {
@@ -169,9 +187,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0015, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0016
- * @tc.name      : 硬解，是否支持低时延
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0016
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0016
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0016, TestSize.Level2)
 {
@@ -192,9 +213,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0016, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0017
- * @tc.name      : 编码，是否支持低时延
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0017
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0017
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0017, TestSize.Level1)
 {
@@ -212,9 +236,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0017, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0018
- * @tc.name      : OH_AVCapability_GetFeatureProperties para error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0018
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0018
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0018, TestSize.Level2)
 {
@@ -230,9 +257,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0018, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0019
- * @tc.name      : 解码，查询分层编码的能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0019
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0019
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0019, TestSize.Level2)
 {
@@ -242,9 +272,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0019, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0020
- * @tc.name      : 编码，查询分层编码的能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0020
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level1)
 {
@@ -255,9 +288,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0021
- * @tc.name      : 解码，查询LTR能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0021
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0021
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0021, TestSize.Level2)
 {
@@ -267,9 +303,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0021, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0022
- * @tc.name      : 编码，查询LTR的能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0022
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0022
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0022, TestSize.Level1)
 {
@@ -291,9 +330,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0022, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0023
- * @tc.name      : 软解，查询低时延的能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0023
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0023
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0023, TestSize.Level2)
 {
@@ -304,9 +346,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0023, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0024
- * @tc.name      : 硬解，查询低时延的能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0024
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0024
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0024, TestSize.Level2)
 {
@@ -316,9 +361,12 @@ HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0024, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_TEMPORAL_ENCODE_API_0025
- * @tc.name      : 编码，查询低时延的能力值
- * @tc.desc      : api test
+ * @tc.name   VIDEO_TEMPORAL_ENCODE_API_0025
+ * @tc.number VIDEO_TEMPORAL_ENCODE_API_0025
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwCapabilityNdkTest, VIDEO_TEMPORAL_ENCODE_API_0025, TestSize.Level1)
 {

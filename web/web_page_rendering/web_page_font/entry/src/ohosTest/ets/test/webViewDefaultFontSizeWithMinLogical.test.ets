@@ -56,10 +56,13 @@ export default function webViewDefaultFontSizeWithMinLogical() {
       done();
     })
    
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0100
-     *tc.name testDefaultFontSizeHalfAndMinFontSizeHalf
-     *tc.desc test with defaultfontsize 0.5 , minfontsize 0.5 and minLogicalFontSize 0.5
+    /**
+     * @tc.name   testDefaultFontSizeHalfAndMinFontSizeHalf
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR6_API_0100
+     * @tc.desc   test with defaultfontsize 0.5 , minfontsize 0.5 and minLogicalFontSize 0.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFontSizeHalfAndMinFontSizeHalf',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitdefaultFontSizeHalfAndminFontSizeHalf", 150330);

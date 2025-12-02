@@ -507,12 +507,12 @@ export default function CameraSessionCameraRotationTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0100
-     * @tc.name      : Check capture session support photo rotation get success or not
-     * @tc.desc      : Check capture session support photo rotation get success or not
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0100
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -559,12 +559,12 @@ export default function CameraSessionCameraRotationTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0200
-     * @tc.name      : Check capture session support photo rotation get success or not
-     * @tc.desc      : Check capture session support photo rotation get success or not
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0200
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_0200--------------");
@@ -604,12 +604,12 @@ export default function CameraSessionCameraRotationTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0100
-     * @tc.name      : Check capture session support video rotation get success or not
-     * @tc.desc      : Check capture session support video rotation get success or not
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0100
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -657,12 +657,12 @@ export default function CameraSessionCameraRotationTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0200
-     * @tc.name      : Check capture session support video rotation get success or not
-     * @tc.desc      : Check capture session support video rotation get success or not
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0200
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_0200--------------");
@@ -702,12 +702,12 @@ export default function CameraSessionCameraRotationTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0100
-     * @tc.name      : Check capture session support preview rotation get success or not
-     * @tc.desc      : Check capture session support preview rotation get success or not
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0100
+     * @tc.desc   Check capture session support preview rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0100', Level.LEVEL2, async (done: Function) => {
       try {
@@ -753,12 +753,12 @@ export default function CameraSessionCameraRotationTest() {
     }) 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0200
-     * @tc.name      : Test PreviewOutput getPreviewRotation 7400101
-     * @tc.desc      : Test PreviewOutput getPreviewRotation 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0200
+     * @tc.desc   Test PreviewOutput getPreviewRotation 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0200', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_0200--------------");

@@ -74,12 +74,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
-     * @tc.desc        AudioRendererChange - ON_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
+     * @tc.desc   AudioRendererChange - ON_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -157,12 +157,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
-     * @tc.desc        AudioRendererChange - ON_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
+     * @tc.desc   AudioRendererChange - ON_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -239,12 +239,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
-     * @tc.desc        AudioRendererChange - ON_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
+     * @tc.desc   AudioRendererChange - ON_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -324,12 +324,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
-     * @tc.desc        AudioRendererChange - ON_STATE_RELEASED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
+     * @tc.desc   AudioRendererChange - ON_STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -410,12 +410,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
-     * @tc.desc        AudioRendererChange - ON_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
+     * @tc.desc   AudioRendererChange - ON_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -502,12 +502,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -569,12 +569,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -636,12 +636,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -704,12 +704,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -770,12 +770,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
-     * @tc.desc        AudioRendererChange - STREAMID
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
+     * @tc.desc   AudioRendererChange - STREAMID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -838,12 +838,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
-     * @tc.desc        AudioRendererChange - CLIENTUID & RENDERERFLAG
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
+     * @tc.desc   AudioRendererChange - CLIENTUID & RENDERERFLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -908,12 +908,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -984,12 +984,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
-     * @tc.desc        AudioRendererChange - OFF_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
+     * @tc.desc   AudioRendererChange - OFF_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1047,12 +1047,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
-     * @tc.desc        AudioRendererChange - OFF_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
+     * @tc.desc   AudioRendererChange - OFF_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1119,12 +1119,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
-     * @tc.desc        AudioRenderer - OFF_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
+     * @tc.desc   AudioRenderer - OFF_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1197,12 +1197,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
-     * @tc.desc        AudioRendererChange - OFF_STATE_RELEASED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
+     * @tc.desc   AudioRendererChange - OFF_STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1277,12 +1277,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
-     * @tc.desc        AudioRendererChange - OFF_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
+     * @tc.desc   AudioRendererChange - OFF_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1364,12 +1364,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1435,12 +1435,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
-     * @tc.desc        getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
+     * @tc.desc   getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -1517,12 +1517,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
-     * @tc.desc        AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
+     * @tc.desc   AudioRendererChange - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -1601,12 +1601,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
-     * @tc.desc        AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
+     * @tc.desc   AudioRendererChange - GET_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1696,12 +1696,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
-     * @tc.desc        AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
+     * @tc.desc   AudioRendererChange - GET_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1799,12 +1799,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
-     * @tc.desc        AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
+     * @tc.desc   AudioRendererChange - GET_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1908,12 +1908,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -1996,12 +1996,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
-     * @tc.desc        AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
+     * @tc.desc   AudioRendererChange - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;
@@ -2084,12 +2084,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
-     * @tc.desc        AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
+     * @tc.desc   AudioRendererChange - GET_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -2184,12 +2184,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
-     * @tc.desc        AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
+     * @tc.desc   AudioRendererChange - GET_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2290,12 +2290,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
-     * @tc.desc        AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
+     * @tc.desc   AudioRendererChange - GET_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2402,12 +2402,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioRenderer: audio.AudioRenderer;

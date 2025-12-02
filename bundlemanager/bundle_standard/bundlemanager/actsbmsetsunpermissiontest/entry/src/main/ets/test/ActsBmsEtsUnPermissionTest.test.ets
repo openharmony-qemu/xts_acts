@@ -43,10 +43,13 @@ export default function actsBmsJsUnPermissionTest() {
         });
 
         /**
-        * @tc.number    Sub_Bms_Framework_Query_AppInfo_1080
-        * @tc.name      getApplicationInfosUnPermission
-        * @tc.desc      test getAllApplicationInfo 
-        */
+         * @tc.name   getApplicationInfosUnPermission
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_1080
+         * @tc.desc   test getAllApplicationInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getApplicationInfosUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundle.getAllApplicationInfo(DEFAULT_FLAG).then(data => {
                 expect().assertFail();
@@ -61,10 +64,13 @@ export default function actsBmsJsUnPermissionTest() {
         });
 
         /**
-        * @tc.number    Sub_Bms_Framework_Query_AppInfo_2340
-        * @tc.name      getBundleInfoUnPermission
-        * @tc.desc      test getBundleInfo
-        */
+         * @tc.name   getBundleInfoUnPermission
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_2340
+         * @tc.desc   test getBundleInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getBundleInfoUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundle.getBundleInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG, { userId: userId }).then(data => {
                 expect().assertFail();
@@ -79,10 +85,13 @@ export default function actsBmsJsUnPermissionTest() {
         });
 
         /**
-        * @tc.number    Sub_Bms_Framework_Query_AppInfo_0540
-        * @tc.name      getApplicationInfoUnPermission
-        * @tc.desc      test getApplicationInfo 
-        */
+         * @tc.name   getApplicationInfoUnPermission
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_0540
+         * @tc.desc   test getApplicationInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('getApplicationInfoUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             await bundle.getApplicationInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG).then(data => {
                 expect().assertFail();
@@ -96,11 +105,14 @@ export default function actsBmsJsUnPermissionTest() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_Query_1100
-         * @tc.name: hasInstalledUnPermissionSelf
-         * @tc.desc: test hasInstalled without permission
-        */
+        /**
+         * @tc.name   hasInstalledUnPermissionSelf
+         * @tc.number Sub_Bms_Framework_Status_Query_1100
+         * @tc.desc   test hasInstalled without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('hasInstalledUnPermissionSelf', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             let flag = 0;
             pkg.hasInstalled({
@@ -122,11 +134,14 @@ export default function actsBmsJsUnPermissionTest() {
             })
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_Query_1200
-         * @tc.name: hasInstalledUnPermissionOther
-         * @tc.desc: test hasInstalled without permission
-        */
+        /**
+         * @tc.name   hasInstalledUnPermissionOther
+         * @tc.number Sub_Bms_Framework_Status_Query_1200
+         * @tc.desc   test hasInstalled without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('hasInstalledUnPermissionOther', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             let flag = 0;
             pkg.hasInstalled({
@@ -148,11 +163,14 @@ export default function actsBmsJsUnPermissionTest() {
             })
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Icon_0600
-         * @tc.name: getAbilityIconUnPermission
-         * @tc.desc: test getAbilityIcon without permission
-        */
+        /**
+         * @tc.name   getAbilityIconUnPermission
+         * @tc.number Sub_Bms_Framework_Query_Icon_0600
+         * @tc.desc   test getAbilityIcon without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('getAbilityIconUnPermission', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.getAbilityIcon(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER).then(pixelmap => {
                 expect(pixelmap).assertFail();
@@ -165,11 +183,14 @@ export default function actsBmsJsUnPermissionTest() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2580
-         * @tc.name: getAbilityInfoUnPermissionSelf
-         * @tc.desc: test getAbilityInfo
-        */
+        /**
+         * @tc.name   getAbilityInfoUnPermissionSelf
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2580
+         * @tc.desc   test getAbilityInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('getAbilityInfoUnPermissionSelf', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.getAbilityInfo(SELF_BUNDLENAME, SELF_ABILITYNAME).then(res => {
                 console.info('actwsBundleManager getAbilityInfo promise success res:' + JSON.stringify(res));

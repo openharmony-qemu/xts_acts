@@ -44,11 +44,14 @@ export default function patternLockTest() {
       }, 1000)
     })
 
-   /*
-     *tc.number ArkUX_Stage_PatternLock_setChallengeResult_0100
-     *tc.name   Support setting the dot color
-     *tc.desc   Sets the setChallengeResult property parameter to undefined
-     */
+     /**
+      * @tc.name   ArkUX_Stage_PatternLock_setChallengeResult_0100
+      * @tc.number ArkUX_Stage_PatternLock_setChallengeResult_0100
+      * @tc.desc   Sets the setChallengeResult property parameter to undefined
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('ArkUX_Stage_PatternLock_setChallengeResult_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_PatternLock_setChallengeResult_0100 START');
       try {
@@ -65,10 +68,13 @@ export default function patternLockTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_PatternLock_onDotConnect_0100
-     *tc.name   Support getting the dot index
-     *tc.desc   Sets the onDotConnect property parameter to undefined
+    /**
+     * @tc.name   ArkUX_Stage_PatternLock_onDotConnect_0100
+     * @tc.number ArkUX_Stage_PatternLock_onDotConnect_0100
+     * @tc.desc   Sets the onDotConnect property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_PatternLock_onDotConnect_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 START');

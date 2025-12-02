@@ -36,10 +36,13 @@ export default function ActsBmsAccessTokenTest() {
             })
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_7540
-         * @tc.name: getAccessTokenIdOfEntry
-         * @tc.desc: get the accessTokenId
+        /**
+         * @tc.name   getAccessTokenIdOfEntry
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_7540
+         * @tc.desc   get the accessTokenId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('getAccessTokenIdOfEntry', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundle.getApplicationInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId)
@@ -54,10 +57,13 @@ export default function ActsBmsAccessTokenTest() {
                 });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_6200
-         * @tc.name: getReqPermissionOfEntry
-         * @tc.desc: get the reqPermissions and reqPermissionStates
+        /**
+         * @tc.name   getReqPermissionOfEntry
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_6200
+         * @tc.desc   get the reqPermissions and reqPermissionStates
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('getReqPermissionOfEntry', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundle.getBundleInfo(BUNDLE_NAME3, bundle.BundleFlag.GET_BUNDLE_WITH_REQUESTED_PERMISSION)
@@ -76,10 +82,13 @@ export default function ActsBmsAccessTokenTest() {
                 });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Permission_Query_0300
-         * @tc.name: getReqPermissionUpdateEntry
-         * @tc.desc: get the reqPermissions and reqPermissionStates
+        /**
+         * @tc.name   getReqPermissionUpdateEntry
+         * @tc.number Sub_Bms_Framework_Permission_Query_0300
+         * @tc.desc   get the reqPermissions and reqPermissionStates
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('getReqPermissionUpdateEntry', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             await bundle.getBundleInfo(BUNDLE_NAME2, bundle.BundleFlag.GET_BUNDLE_WITH_REQUESTED_PERMISSION)
@@ -102,10 +111,13 @@ export default function ActsBmsAccessTokenTest() {
                 });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AppInfo_6240
-         * @tc.name: getReqPermissionUpdateEntryAndFeature
-         * @tc.desc: get the reqPermissions and reqPermissionStates
+        /**
+         * @tc.name   getReqPermissionUpdateEntryAndFeature
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_6240
+         * @tc.desc   get the reqPermissions and reqPermissionStates
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('getReqPermissionUpdateEntryAndFeature', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             await bundle.getBundleInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_WITH_REQUESTED_PERMISSION)
@@ -131,9 +143,12 @@ export default function ActsBmsAccessTokenTest() {
         });
 
         /**
+         * @tc.name   getAccessTokenIdWithDefault
          * @tc.number Sub_Bms_Framework_Query_AppInfo_7560
-         * @tc.name getAccessTokenIdWithDefault
-         * @tc.desc Test getBundleInfos interfaces with with a flag
+         * @tc.desc   Test getBundleInfos interfaces with with a flag
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("getAccessTokenIdWithDefault", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.getApplicationInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_DEFAULT)
@@ -149,9 +164,12 @@ export default function ActsBmsAccessTokenTest() {
         });
 
         /**
+         * @tc.name   getAccessTokenIdWithGetAbilities
          * @tc.number Sub_Bms_Framework_Query_AppInfo_7580
-         * @tc.name getAccessTokenIdWithGetAbilities
-         * @tc.desc Test getBundleInfos interfaces with a flag
+         * @tc.desc   Test getBundleInfos interfaces with a flag
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("getAccessTokenIdWithGetAbilities", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.getApplicationInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES)
@@ -167,9 +185,12 @@ export default function ActsBmsAccessTokenTest() {
         });
 
         /**
+         * @tc.name   getAccessTokenIdWithGetPermission
          * @tc.number Sub_Bms_Framework_Query_AppInfo_7600
-         * @tc.name getAccessTokenIdWithGetPermission
-         * @tc.desc Test getBundleInfos interfaces with a flag
+         * @tc.desc   Test getBundleInfos interfaces with a flag
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("getAccessTokenIdWithGetPermission", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundle.getApplicationInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_APPLICATION_INFO_WITH_PERMISSION)

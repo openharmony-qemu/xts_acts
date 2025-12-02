@@ -188,12 +188,12 @@ export default function audioInterrupterTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0100
-     * @tc.name      : test[AudioRedner MUSIC INTERRUPT GAME]
-     * @tc.desc      : AudioRedner in INDEPENDENT_MODE  MUSIC interrupt GAME action play both
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0100
+     * @tc.desc   AudioRedner in INDEPENDENT_MODE  MUSIC interrupt GAME action play both
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
@@ -222,12 +222,12 @@ export default function audioInterrupterTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0200
-     * @tc.name      : test[AudioRedner ALARM INTERRUPT MOVIE]
-     * @tc.desc      : AudioRedner in INDEPENDENT_MODE ALARM interrupt ALARM action PAUSE already exists
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0200
+     * @tc.desc   AudioRedner in INDEPENDENT_MODE ALARM interrupt ALARM action PAUSE already exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
@@ -270,12 +270,12 @@ export default function audioInterrupterTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0300
-     * @tc.name      : test[AudioRedner RING INTERRUPT ALARM]
-     * @tc.desc      : AudioRedner  in INDEPENDENT_MODE RING interrupt ALARM action STOP already exists
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0300
+     * @tc.desc   AudioRedner  in INDEPENDENT_MODE RING interrupt ALARM action STOP already exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
@@ -312,12 +312,12 @@ export default function audioInterrupterTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0400
-     * @tc.name      : test[AudioRedner ACCESSIBILITY INTERRUPT MOVIE]
-     * @tc.desc      : AudioRedner in INDEPENDENT_MODE ACCESSIBILITY interrupt MOVIE action DUCK already exists
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0400
+     * @tc.desc   AudioRedner in INDEPENDENT_MODE ACCESSIBILITY interrupt MOVIE action DUCK already exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
@@ -360,12 +360,12 @@ export default function audioInterrupterTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0500
-     * @tc.name      : test[AudioRedner VOICE_ASSISTANT INTERRUPT RINGTONE]
-     * @tc.desc      : AudioRedner in INDEPENDENT_MODE VOICE_ASSISTANT interrupt RINGTONE action DENY  coming
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0500
+     * @tc.desc   AudioRedner in INDEPENDENT_MODE VOICE_ASSISTANT interrupt RINGTONE action DENY  coming
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -387,12 +387,12 @@ export default function audioInterrupterTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0600
-     * @tc.name      : test[AudioRedner MUSIC INTERRUPT MUSIC]
-     * @tc.desc      : AudioRedner in INDEPENDENT_MODE MUSIC interrupt MUSIC action play both
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INTERRUPT_TEST_0600
+     * @tc.desc   AudioRedner in INDEPENDENT_MODE MUSIC interrupt MUSIC action play both
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

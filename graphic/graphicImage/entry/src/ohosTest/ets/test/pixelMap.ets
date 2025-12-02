@@ -28,12 +28,12 @@ export default function imagePixelMapTest() {
     });
 
     /**
-     * @tc.number    ImagePixelMapTest
-     * @tc.name      ImagePixelMapTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImagePixelMapTest_0100
+     * @tc.number ImagePixelMapTest
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ImagePixelMapTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       let curSceneMode: camera.SceneMode = camera?.SceneMode?.NORMAL_PHOTO

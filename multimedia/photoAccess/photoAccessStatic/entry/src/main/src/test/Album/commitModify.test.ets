@@ -36,12 +36,12 @@ export default function albumCommitModifyTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_STATIC__0000
-      * @tc.name    album_commitModify_callback_static_000
-      * @tc.desc    album change new name
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_commitModify_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_STATIC__0000
+     * @tc.desc   album change new name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void):
@@ -71,12 +71,12 @@ export default function albumCommitModifyTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_STATIC_0100
-      * @tc.name    album_commitModify_callback_static_001
-      * @tc.desc    album commitModify with no change
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   album_commitModify_callback_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_STATIC_0100
+     * @tc.desc   album commitModify with no change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('album_commitModify_callback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void):
@@ -104,12 +104,12 @@ export default function albumCommitModifyTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_STATIC_0000
-      * @tc.name    album_commitModify_promise_static_000
-      * @tc.desc    album change new name
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_commitModify_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_STATIC_0000
+     * @tc.desc   album change new name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_commitModify_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void):
@@ -139,12 +139,12 @@ export default function albumCommitModifyTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_STATIC_0100
-      * @tc.name    album_commitModify_promise_static_001
-      * @tc.desc    album commitModify with no change
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   album_commitModify_promise_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_STATIC_0100
+     * @tc.desc   album commitModify with no change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('album_commitModify_promise_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void):
@@ -165,12 +165,12 @@ export default function albumCommitModifyTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_STATIC_0200
-      * @tc.name    album_commitModify_promise_static_002
-      * @tc.desc    album commitModify with invalid long albumName
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   album_commitModify_promise_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_STATIC_0200
+     * @tc.desc   album commitModify with invalid long albumName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('album_commitModify_promise_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void):

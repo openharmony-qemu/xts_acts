@@ -56,12 +56,12 @@ export default function RichEditorDoubleClick004() {
     });
     
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_004
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_004
-     * @tc.desc  : Test the RichEditor doubleClick event by double clicking the imagespan displayed on one line
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_004
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_004
+     * @tc.desc   Test the RichEditor doubleClick event by double clicking the imagespan displayed on one line
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_004',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_004 START');

@@ -49,12 +49,12 @@ export default function registerChangeTest () {
     const DEFAULT_ALBUM_URI = photoAccessHelper.DefaultChangeUri.DEFAULT_ALBUM_URI;
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_0100
-     * @tc.name      : registerChange_callback_001
-     * @tc.desc      : listening motify file title, type NOTIFY_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   registerChange_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_0100
+     * @tc.desc   listening motify file title, type NOTIFY_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('registerChange_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'registerChange_callback_001';
@@ -85,12 +85,12 @@ export default function registerChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_0700
-     * @tc.name      : registerChange_callback_007
-     * @tc.desc      : listening create album, type NOTIFY_ADD
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   registerChange_callback_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_0700
+     * @tc.desc   listening create album, type NOTIFY_ADD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('registerChange_callback_007', Level.LEVEL0, async (done: Function) => {
       const testNum = 'registerChange_callback_007';
@@ -120,14 +120,14 @@ export default function registerChangeTest () {
       }
     });
 
-    /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_0800
-     * @tc.name      : registerChange_callback_008
-     * @tc.desc      : listening change albumName, type NOTIFY_UPDATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
+   /**
+    * @tc.name   registerChange_callback_008
+    * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_0800
+    * @tc.desc   listening change albumName, type NOTIFY_UPDATE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('registerChange_callback_008', Level.LEVEL0, async (done: Function) => {
       const testNum = 'registerChange_callback_008';
       try {
@@ -157,12 +157,12 @@ export default function registerChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1100
-     * @tc.name      : registerChange_callback_011
-     * @tc.desc      : listening album addAssets, type NOTIFY_ALBUM_ADD_ASSET
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   registerChange_callback_011
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1100
+     * @tc.desc   listening album addAssets, type NOTIFY_ALBUM_ADD_ASSET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('registerChange_callback_011', Level.LEVEL2, async (done: Function) => {
       const testNum = 'registerChange_callback_011';
@@ -197,12 +197,12 @@ export default function registerChangeTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1200
-     * @tc.name      : registerChange_callback_012
-     * @tc.desc      : listening album removeAssets, type NOTIFY_ALBUM_REMOVE_ASSET
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   registerChange_callback_012
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1200
+     * @tc.desc   listening album removeAssets, type NOTIFY_ALBUM_REMOVE_ASSET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('registerChange_callback_012', Level.LEVEL2, async (done: Function) => {
       const testNum = 'registerChange_callback_012';
@@ -236,14 +236,14 @@ export default function registerChangeTest () {
       }
     });
 
-    /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1400
-     * @tc.name      : registerChange_callback_014
-     * @tc.desc      : listening album removeAssets, type NOTIFY_ALBUM_REMOVE_ASSET,error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+        /**
+         * @tc.name   registerChange_callback_014
+         * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1400
+         * @tc.desc   listening album removeAssets, type NOTIFY_ALBUM_REMOVE_ASSET,error code 13900020 or 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('registerChange_callback_014', Level.LEVEL2, async (done: Function) => {
           const testNum = 'registerChange_callback_014';
           try {
@@ -260,12 +260,12 @@ export default function registerChangeTest () {
         });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_UNREGISTERCHANGE_0100
-     * @tc.name      : unregisterChange_001
-     * @tc.desc      : unRegisterChange error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   unregisterChange_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_UNREGISTERCHANGE_0100
+     * @tc.desc   unRegisterChange error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('unregisterChange_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'unregisterChange_001';

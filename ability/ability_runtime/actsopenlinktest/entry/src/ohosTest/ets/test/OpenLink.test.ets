@@ -53,13 +53,13 @@ export default function openLinkTest() {
       }, 1000);
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0100
-     * @tc.name   : The input parameter 'link' is empty
-     * @tc.desc   : Call the openLink interface through context, and catch parameter invalid exception
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0100
+     * @tc.desc   Call the openLink interface through context, and catch parameter invalid exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0100`;
@@ -84,13 +84,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0200
-     * @tc.name   : The input parameter 'link' is illegal uri string
-     * @tc.desc   : Call the openLink interface through context, and catch parameter invalid exception
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0200
+     * @tc.desc   Call the openLink interface through context, and catch parameter invalid exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0200`;
@@ -113,13 +113,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0300
-     * @tc.name   : The input parameter 'link' is legal uri string and target app exist
-     * @tc.desc   : Call the openLink interface through context, open target app successfully
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0300
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0300
+     * @tc.desc   Call the openLink interface through context, open target app successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0300`;
@@ -141,13 +141,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0400
-     * @tc.name   : The input parameter 'link' is legal uri string but target app not exist
-     * @tc.desc   : Call the openLink interface through context, open target app failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0400
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0400
+     * @tc.desc   Call the openLink interface through context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0400`;
@@ -170,13 +170,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0500
-     * @tc.name   : The input parameter 'link' is valid, appLinkingOnly is true.
-     * @tc.desc   : Call the openLink interface through context, open target app failed.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0500
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0500
+     * @tc.desc   Call the openLink interface through context, open target app failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0500`;
@@ -199,13 +199,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0600
-     * @tc.name   : The input parameter 'link' is valid, appLinkingOnly is false.
-     * @tc.desc   : Call the openLink interface through context, open target app success.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0600
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0600
+     * @tc.desc   Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0600`;
@@ -227,13 +227,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0700
-     * @tc.name   : The input parameter 'link' is valid, set parameters.
-     * @tc.desc   : Call the openLink interface through context, open target app success.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0700
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0700
+     * @tc.desc   Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0700`;
@@ -255,13 +255,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0800
-     * @tc.name   : The input parameter 'link' is valid, set parameters.
-     * @tc.desc   : Call the openLink interface through context, open target app success.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0800
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0800
+     * @tc.desc   Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0800`;
@@ -288,13 +288,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_0900
-     * @tc.name   : The input parameter 'link' is valid, set parameters, appLinkingOnly is true.
-     * @tc.desc   : Call the openLink interface through context, open target app success.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_0900
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_0900
+     * @tc.desc   Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_0900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_0900`;
@@ -322,13 +322,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_OpenLink_1000
-     * @tc.name   : The input parameter 'link' is valid, set parameters, appLinkingOnly is true.
-     * @tc.desc   : Call the openLink interface through context, open target app success.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_1000
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_1000
+     * @tc.desc   Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_1000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_OpenLink_1000`;

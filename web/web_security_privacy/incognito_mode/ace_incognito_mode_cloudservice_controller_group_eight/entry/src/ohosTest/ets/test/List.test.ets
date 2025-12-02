@@ -17,9 +17,11 @@
 import abilityTest from './Ability.test'
 import ActsWebViewTest2 from './TestWebViewGeolocation.test';
 import ActsWebViewTest1 from './TestWebViewCookie.test';
+import WebCookieManagerCookie from './WebCookieManagerCookie.test';
 
 export default function testsuite() {
   abilityTest();
   ActsWebViewTest2();
   ActsWebViewTest1();
+  WebCookieManagerCookie();
 }

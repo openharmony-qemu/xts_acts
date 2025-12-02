@@ -40,12 +40,12 @@ export default function createNodeBlank() {
       done();
     });
     /**
-     * @tc.number    createNodeBlank_0100
-     * @tc.name      createNodeBlank_0100
-     * @tc.desc      frameNode: createNodeBlankToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeBlank_0100
+     * @tc.number createNodeBlank_0100
+     * @tc.desc   frameNode: createNodeBlankToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeBlank_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeBlank_0100 START');

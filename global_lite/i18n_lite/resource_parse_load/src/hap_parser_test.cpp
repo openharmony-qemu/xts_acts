@@ -59,10 +59,13 @@ void HapParserTest::TearDown()
     // step 4: input testcase teardown step
 }
 
-/*
- * @tc.name: HapParserFuncTest001
- * @tc.desc: Test CreateResConfigFromKeyParams
- * @tc.type: FUNC
+/**
+ * @tc.name   HapParserFuncTest001
+ * @tc.number HapParserFuncTest001
+ * @tc.desc   Test CreateResConfigFromKeyParams
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapParserTest, HapParserFuncTest001, TestSize.Level1)
 {
@@ -110,10 +113,13 @@ HWTEST_F(HapParserTest, HapParserFuncTest001, TestSize.Level1)
     delete config;
 }
 
-/*
- * @tc.name: HapParserFuncTest002
- * @tc.desc: Test GetDeviceType
- * @tc.type: FUNC
+/**
+ * @tc.name   HapParserFuncTest002
+ * @tc.number HapParserFuncTest002
+ * @tc.desc   Test GetDeviceType
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapParserTest, HapParserFuncTest002, TestSize.Level1)
 {
@@ -126,10 +132,13 @@ HWTEST_F(HapParserTest, HapParserFuncTest002, TestSize.Level1)
     ASSERT_EQ(DEVICE_NOT_SET, HapParser::GetDeviceType(1000000));
 }
 
-/*
- * @tc.name: HapParserFuncTest003
- * @tc.desc: Test GetScreenDensity
- * @tc.type: FUNC
+/**
+ * @tc.name   HapParserFuncTest003
+ * @tc.number HapParserFuncTest003
+ * @tc.desc   Test GetScreenDensity
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapParserTest, HapParserFuncTest003, TestSize.Level1)
 {
@@ -142,10 +151,13 @@ HWTEST_F(HapParserTest, HapParserFuncTest003, TestSize.Level1)
     ASSERT_EQ(SCREEN_DENSITY_NOT_SET, HapParser::GetScreenDensity(10000000));
 }
 
-/*
- * @tc.name: HapParserFuncTest004
- * @tc.desc: Test ToFolderPath
- * @tc.type: FUNC
+/**
+ * @tc.name   HapParserFuncTest004
+ * @tc.number HapParserFuncTest004
+ * @tc.desc   Test ToFolderPath
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapParserTest, HapParserFuncTest004, TestSize.Level1)
 {

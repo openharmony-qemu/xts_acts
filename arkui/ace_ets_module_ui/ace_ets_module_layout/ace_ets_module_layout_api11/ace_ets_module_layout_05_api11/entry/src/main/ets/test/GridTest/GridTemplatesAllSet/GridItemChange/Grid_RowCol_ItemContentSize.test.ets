@@ -45,9 +45,12 @@ export default function grid_RowCol_ItemContentSizeTest() {
       console.info("Grid_RowCol_ItemContentSizeTest after each called");
     });
     /**
+     * @tc.name   testGridRowColItemContentSize
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0900
-     * @tc.name testGridRowColItemContentSize
-     * @tc.desc The second griditem set width to '50%',height to '50%'
+     * @tc.desc   The second griditem set width to '50%',height to '50%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemContentSize',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemContentSize] START');

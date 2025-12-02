@@ -28,6 +28,7 @@
             "type": "PushKit",
             "pre-push": [],
             "push": [
+                "./resource/image/test.wbmp ->/data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files",
                 "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files",
                 "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files",
                 "./resource/image/test.123 ->/data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files",

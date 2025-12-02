@@ -50,12 +50,12 @@ export default function tabTitleBarPageTest() {
     })
 
     /**
+     * @tc.name   tabTitleBarPageTest_0100
      * @tc.number tabTitleBarPageTest
-     * @tc.name tabTitleBarPageTest_0100
-     * @tc.desc Test tabTitleBarPage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test tabTitleBarPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tabTitleBarPageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[tabTitleBarPageTest_0100] START');

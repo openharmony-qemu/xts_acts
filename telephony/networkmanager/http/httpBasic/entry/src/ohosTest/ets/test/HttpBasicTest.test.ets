@@ -37,12 +37,12 @@ export default function HttpBasicTest() {
   describe('HttpBasicTest',  ()=> {
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttpTestUserAgent0100
      * @tc.number SUB_Telephony_NETSTACK_HttpTestUserAgent_0100
-     * @tc.name testTelephonyNETSTACKHttpTestUserAgent0100
-     * @tc.desc Function test
-     * @tc.level LEVEL3
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNETSTACKHttpTestUserAgent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestUserAgent0100';
@@ -69,12 +69,12 @@ export default function HttpBasicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttpTestHeader0100
      * @tc.number SUB_Telephony_NETSTACK_HttpTestHeader_0100
-     * @tc.name testTelephonyNETSTACKHttpTestHeader0100
-     * @tc.desc Function test
-     * @tc.level LEVEL3
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNETSTACKHttpTestHeader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestHeader0100';
@@ -109,12 +109,12 @@ export default function HttpBasicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttpTestPost
      * @tc.number SUB_Telephony_NETSTACK_HttpTestPost
-     * @tc.name testTelephonyNETSTACKHttpTestPost
-     * @tc.desc Function test
-     * @tc.level LEVEL3
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNETSTACKHttpTestPost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestPost';
@@ -142,12 +142,12 @@ export default function HttpBasicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttpTestPUT
      * @tc.number SUB_Telephony_NETSTACK_HttpTestPUT
-     * @tc.name testTelephonyNETSTACKHttpTestPUT
-     * @tc.desc Function test
-     * @tc.level LEVEL3
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNETSTACKHttpTestPUT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestPUT';
@@ -174,12 +174,12 @@ export default function HttpBasicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttpTestCookies
      * @tc.number SUB_Telephony_NETSTACK_HttpTestCookies
-     * @tc.name testTelephonyNETSTACKHttpTestCookies
-     * @tc.desc Function test
-     * @tc.level LEVEL3
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNETSTACKHttpTestCookies', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestCookies';
@@ -205,12 +205,12 @@ export default function HttpBasicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNETSTACKHttpTestEncode
      * @tc.number SUB_Telephony_NETSTACK_HttpTestEncode
-     * @tc.name testTelephonyNETSTACKHttpTestEncode
-     * @tc.desc Function test
-     * @tc.level LEVEL3
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyNETSTACKHttpTestEncode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestEncode';

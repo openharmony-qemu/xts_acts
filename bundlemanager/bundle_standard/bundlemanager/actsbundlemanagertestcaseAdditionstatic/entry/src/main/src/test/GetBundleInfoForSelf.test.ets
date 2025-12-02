@@ -29,9 +29,12 @@ export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', (): void => {
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_BundleInfo_static_5560
-     * @tc.name    getBundleInfoForSelfWithREQUESTED_PERMISSION
-     * @tc.desc    Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION and GET_BUNDLE_INFO_WITH_SIGNATURE_INFO flag
+     * @tc.name   getBundleInfoForSelfWithREQUESTED_PERMISSION
+     * @tc.number Sub_Bms_Framework_Query_BundleInfo_static_5560
+     * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION and GET_BUNDLE_INFO_WITH_SIGNATURE_INFO flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfWithREQUESTED_PERMISSION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -71,9 +74,12 @@ export default function getBundleInfoForSelf() {
 
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_BundleInfo_static_5570
-     * @tc.name    getBundleInfoForSelfWithMETADATA
-     * @tc.desc    Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_METADATA flag
+     * @tc.name   getBundleInfoForSelfWithMETADATA
+     * @tc.number Sub_Bms_Framework_Query_BundleInfo_static_5570
+     * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_METADATA flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfWithMETADATA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -97,9 +103,12 @@ export default function getBundleInfoForSelf() {
 
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_BundleInfo_static_5580
-     * @tc.name    getBundleInfoForSelfWithMETADATAandAPPLICATION
-     * @tc.desc    Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_APPLICATION and GET_BUNDLE_INFO_WITH_METADATA flag
+     * @tc.name   getBundleInfoForSelfWithMETADATAandAPPLICATION
+     * @tc.number Sub_Bms_Framework_Query_BundleInfo_static_5580
+     * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_APPLICATION and GET_BUNDLE_INFO_WITH_METADATA flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfWithMETADATAandAPPLICATION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -129,11 +138,14 @@ export default function getBundleInfoForSelf() {
       })
 
 
-    /**
-     * @tc.number  Sub_Bms_Framework_Query_BundleInfo_static_5590
-     * @tc.name    getBundleInfoForSelfWithROUTERMAP
-     * @tc.desc    Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_ROUTER_MAP flag
-     */
+        /**
+         * @tc.name   getBundleInfoForSelfWithROUTERMAP
+         * @tc.number Sub_Bms_Framework_Query_BundleInfo_static_5590
+         * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE and GET_BUNDLE_INFO_WITH_ROUTER_MAP flag
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('getBundleInfoForSelfWithROUTERMAP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
@@ -162,10 +174,12 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
-     * @tc.number  Sub_Bms_Framework_Query_BundleInfo_5600
-     * @tc.name    getBundleInfoForSelfWithSKILL
-     * @tc.desc    Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE, GET_BUNDLE_INFO_WITH_ABILITY
-     *            and GET_BUNDLE_INFO_WITH_SKILL flag
+     * @tc.name   getBundleInfoForSelfWithSKILL
+     * @tc.number Sub_Bms_Framework_Query_BundleInfo_5600
+     * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_HAP_MODULE, GET_BUNDLE_INFO_WITH_ABILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoForSelfWithSKILL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

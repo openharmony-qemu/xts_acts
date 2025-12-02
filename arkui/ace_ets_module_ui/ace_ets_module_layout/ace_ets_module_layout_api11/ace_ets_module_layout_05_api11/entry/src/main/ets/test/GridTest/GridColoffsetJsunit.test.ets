@@ -44,6 +44,14 @@ export default function GridColOffsetJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridColOffsetJsunit_0100
+     * @tc.number GridColOffsetJsunit_0100
+     * @tc.desc   GridColOffsetJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridColOffsetJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the GridCol component
       let strJson = getInspectorByKey('keykey2');
@@ -54,6 +62,14 @@ export default function GridColOffsetJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridColOffsetJsunit_0200
+     * @tc.number GridColOffsetJsunit_0200
+     * @tc.desc   GridColOffsetJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridColOffsetJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component GridCol
       console.info('[GridColOffsetJsunit_0200] START');

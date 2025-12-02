@@ -35,10 +35,13 @@ export default function ErrcodeTest() {
   describe('ErrcodeTest', () =>  {
 
 
-    /*
-     * @tc.number: Sub_Bms_getProfileByAbility_401
-     * @tc.name:  getProfileByAbilityCallBack401
-     * @tc.desc: test errCode 401 when call getProfileByAbility
+    /**
+     * @tc.name   getProfileByAbilityCallBack401
+     * @tc.number Sub_Bms_getProfileByAbility_401
+     * @tc.desc   test errCode 401 when call getProfileByAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getProfileByAbilityCallBack401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getProfileByAbilityCallBack401 start");
@@ -63,11 +66,14 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-    * @tc.number: Sub_Bms_getProfileByAbility_401
-    * @tc.name:  getProfileByAbilityPromise401
-    * @tc.desc: test errCode 401 when call  getProfileByAbility
-    */
+    /**
+     * @tc.name   getProfileByAbilityPromise401
+     * @tc.number Sub_Bms_getProfileByAbility_401
+     * @tc.desc   test errCode 401 when call  getProfileByAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getProfileByAbilityPromise401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getProfileByAbilityPromise401 start");
       try {
@@ -90,11 +96,14 @@ export default function ErrcodeTest() {
     });
 
 
-    /*
-    * @tc.number: Sub_Bms_getProfileByExtensionAbility_401
-    * @tc.name: getProfileByExtensionAbilityCallBack401
-    * @tc.desc: test errCode 401 when call getProfileByExtensionAbility
-    */
+    /**
+     * @tc.name   getProfileByExtensionAbilityCallBack401
+     * @tc.number Sub_Bms_getProfileByExtensionAbility_401
+     * @tc.desc   test errCode 401 when call getProfileByExtensionAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getProfileByExtensionAbilityCallBack401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getProfileByExtensionAbilityCallBack401 start");
       try {
@@ -117,11 +126,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-    * @tc.number: Sub_Bms_getProfileByExtensionAbility_401
-    * @tc.name:  getProfileByExtensionAbilityPromise401
-    * @tc.desc: test errCode 401 when call  getProfileByExtensionAbility
-    */
+    /**
+     * @tc.name   getProfileByExtensionAbilityPromise401
+     * @tc.number Sub_Bms_getProfileByExtensionAbility_401
+     * @tc.desc   test errCode 401 when call  getProfileByExtensionAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getProfileByExtensionAbilityPromise401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getProfileByExtensionAbilityPromise401 start");
       try {
@@ -145,11 +157,14 @@ export default function ErrcodeTest() {
 
 
 
-    /*
-    * @tc.number: Sub_Bms_getSignatureInfo_401
-    * @tc.name:  getSignatureInfo401
-    * @tc.desc: test errCode 401 when call getSignatureInfo
-    */
+    /**
+     * @tc.name   getSignatureInfo401
+     * @tc.number Sub_Bms_getSignatureInfo_401
+     * @tc.desc   test errCode 401 when call getSignatureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getSignatureInfo401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getSignatureInfo401 start");
       try {
@@ -165,11 +180,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-   * @tc.number: Sub_Bms_getSignatureInfo_17700021
-   * @tc.name:  getSignatureInfo17700021
-   * @tc.desc: test errCode 17700021 when call getSignatureInfo
-   */
+    /**
+     * @tc.name   getSignatureInfo17700021
+     * @tc.number Sub_Bms_getSignatureInfo_17700021
+     * @tc.desc   test errCode 17700021 when call getSignatureInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getSignatureInfo17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getSignatureInfo17700021 start");
       try {
@@ -187,11 +205,14 @@ export default function ErrcodeTest() {
 
    
 
-    /*
-     * @tc.number: Sub_Bms_getAppCloneIdentity_401
-     * @tc.name:  isDefaultApplicationPromise401
-     * @tc.desc: test errCode 401 when call isDefaultApplication
-    */
+    /**
+     * @tc.name   isDefaultApplicationPromise401
+     * @tc.number Sub_Bms_getAppCloneIdentity_401
+     * @tc.desc   test errCode 401 when call isDefaultApplication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('isDefaultApplicationPromise401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "isDefaultApplicationPromise401 start");
       try {
@@ -220,11 +241,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-  * @tc.number: Sub_Bms_getAppCloneIdentity_401
-  * @tc.name:  isDefaultApplicationCallBack401
-  * @tc.desc: test errCode 401 when call isDefaultApplication
- */
+    /**
+     * @tc.name   isDefaultApplicationCallBack401
+     * @tc.number Sub_Bms_getAppCloneIdentity_401
+     * @tc.desc   test errCode 401 when call isDefaultApplication
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('isDefaultApplicationCallBack401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "isDefaultApplicationCallBack401 start");
       try {
@@ -253,11 +277,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_getLaunchWant_17700072
-     * @tc.name:  getLaunchWant17700072
-     * @tc.desc: test errCode 17700072 when call getLaunchWant
-    */
+    /**
+     * @tc.name   getLaunchWant17700072
+     * @tc.number Sub_Bms_getLaunchWant_17700072
+     * @tc.desc   test errCode 17700072 when call getLaunchWant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getLaunchWant17700072', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getLaunchWant17700072 start");
       try {
@@ -274,11 +301,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-    * @tc.number: Sub_Bms_deflateEnd_17800004
-    * @tc.name:  deflateEnd17800004
-    * @tc.desc: test errCode 17800004 when call deflateEnd
-   */
+    /**
+     * @tc.name   deflateEnd17800004
+     * @tc.number Sub_Bms_deflateEnd_17800004
+     * @tc.desc   test errCode 17800004 when call deflateEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('deflateEnd17800004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "deflateEnd17800004 start");
       let arrayBufferOut = new ArrayBuffer(100);

@@ -66,7 +66,7 @@ export default class MediaTestBase {
 
   setAVScreenCaptueCallback(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null, done: () => void) {
     // 状态机变化回调函数
-    avScreenCaptureRecorder?.on('stateChange', (state) => {
+    avScreenCaptureRecorder?.onStateChange((state) => {
       console.info('avScreenCapture stateChange to ' + state);
       switch (state) {
         case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STARTED:
@@ -97,7 +97,7 @@ export default class MediaTestBase {
       }
     })
 
-    avScreenCaptureRecorder?.on('error', (err) => {
+    avScreenCaptureRecorder?.onError((err) => {
       console.error('avScreenCaptureRecorder error:' + err.message);
       expect().assertFail()
     })
@@ -257,7 +257,7 @@ export default class MediaTestBase {
 
         let surfaceID: string = AppStorage.get<string>('surfaceId') as string;
         console.error(`case INITIALIZED , surfaceID is ${surfaceID}`);
-        this.avPlayer?.on('stateChange', (state: media.AVPlayerState, reason: media.StateChangeReason) => {
+        this.avPlayer?.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
           switch (state) {
             case 'initialized':
               if (!this.avPlayer) {

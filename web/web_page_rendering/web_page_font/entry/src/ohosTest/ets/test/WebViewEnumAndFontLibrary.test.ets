@@ -58,14 +58,14 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_DEFAULTFONTSIZE_0100
-    * @tc.name       : testDefaultFontSize001
-    * @tc.desc       : test defaultFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDefaultFontSize001
+     * @tc.number SUB_WEB_DEFAULTFONTSIZE_0100
+     * @tc.desc   test defaultFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDefaultFontSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDefaultFontSize", 150350)
       Utils.registerEvent("testDefaultFontSize001", '"13px"', 150360, done);
@@ -73,14 +73,14 @@ export default function WebViewEnumAndFontLibrary() {
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DEFAULTFONTSIZE_0200
-    * @tc.name       : testDefaultFontSize002
-    * @tc.desc       : test defaultFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDefaultFontSize002
+     * @tc.number SUB_WEB_DEFAULTFONTSIZE_0200
+     * @tc.desc   test defaultFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDefaultFontSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDefaultFontSizeMax", 150350)
       Utils.registerEvent("testDefaultFontSize002", '"72px"', 150370, done);
@@ -88,14 +88,14 @@ export default function WebViewEnumAndFontLibrary() {
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DEFAULTFONTSIZE_0300
-    * @tc.name       : testDefaultFontSize003
-    * @tc.desc       : test defaultFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDefaultFontSize003
+     * @tc.number SUB_WEB_DEFAULTFONTSIZE_0300
+     * @tc.desc   test defaultFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDefaultFontSize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitDefaultFontSizeMin", 150350)
       Utils.registerEvent("testDefaultFontSize003", '"13px"', 150380, done);
@@ -103,14 +103,14 @@ export default function WebViewEnumAndFontLibrary() {
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MINFONTSIZE_0100
-    * @tc.name       : testMinFontSize001
-    * @tc.desc       : test minFontSize
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMinFontSize001
+     * @tc.number SUB_WEB_MINFONTSIZE_0100
+     * @tc.desc   test minFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMinFontSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitMinFontSize", 150350)
       Utils.registerEvent("testMinFontSize001", 18, 150390, done);

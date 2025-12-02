@@ -17,10 +17,27 @@ import RegExpTest001 from './RegExp001.test';
 import RegExpTest002 from './RegExp002.test';
 import RegExpTest003 from './RegExp003.test';
 import RegExpTest004 from './RegExp004.test';
+import RegExpTaskpoolTest001 from './RegExpTaskpool001.test';
+import RegExpTaskpoolTest002 from './RegExpTaskpool002.test';
+import RegExpTaskpoolTest003 from './RegExpTaskpool003.test';
+import RegExpTaskpoolTest004 from './RegExpTaskpool004.test';
+import RegExpWorkerTest001 from './RegExpWorker001.test';
+import RegExpWorkerTest002 from './RegExpWorker002.test';
+import RegExpWorkerTest003 from './RegExpWorker003.test';
+import RegExpWorkerTest004 from './RegExpWorker004.test';
+
 
 export default function testsuite() {
   RegExpTest001();
   RegExpTest002();
   RegExpTest003();
   RegExpTest004();
+  RegExpTaskpoolTest001();
+  RegExpTaskpoolTest002();
+  RegExpTaskpoolTest003();
+  RegExpTaskpoolTest004();
+  RegExpWorkerTest001();
+  RegExpWorkerTest002();
+  RegExpWorkerTest003();
+  RegExpWorkerTest004();
 }

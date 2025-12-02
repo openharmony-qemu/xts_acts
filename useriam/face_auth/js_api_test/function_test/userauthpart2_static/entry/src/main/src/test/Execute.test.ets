@@ -42,6 +42,10 @@ const widgetParamDefault: userAuth.WidgetParam = {
   title: '使用密码验证',
 };
 
+const widgetParam: userAuth.WidgetParam  = {
+  title: '请输入密码',
+  uiContext: undefined,
+};
 
 function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
   return new Promise<void>((resolve, reject) => {
@@ -135,7 +139,6 @@ export default function signNormalAccessBiometricExecute() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_getUserAuthInstance_Func_Static_0043
      * @tc.number Security_IAM_getUserAuthInstance_Func_Static_0043
      * @tc.desc   call any userauth UserAuthResultCode return value check
@@ -274,7 +277,6 @@ export default function signNormalAccessBiometricExecute() {
 
 
      /**
-      * @generated.time 2025-11-09 20:57:57
       * @tc.name   Security_IAM_getUserAuthInstance_Func_Static_0088
       * @tc.number Security_IAM_getUserAuthInstance_Func_Static_0088
       * @tc.desc   call off return value check
@@ -300,7 +302,6 @@ export default function signNormalAccessBiometricExecute() {
      });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_getUserAuthInstance_Func_Static_0089
      * @tc.number Security_IAM_getUserAuthInstance_Func_Static_0089
      * @tc.desc   call cancel return value check

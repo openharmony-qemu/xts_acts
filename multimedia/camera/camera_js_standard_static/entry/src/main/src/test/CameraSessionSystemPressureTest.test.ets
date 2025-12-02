@@ -365,12 +365,12 @@ export default function cameraSessionSystemPressureTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
-         * @tc.desc      : Check whether register system pressure callback is successful.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
+         * @tc.desc   Check whether register system pressure callback is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100--------------");
@@ -401,7 +401,7 @@ export default function cameraSessionSystemPressureTest() {
                     mCameraSession.addOutput(mPreviewOutput);
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.PhotoSession).on('systemPressureLevelChange', (error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
+                    (mCameraSession as cameraObj.PhotoSession).onSystemPressureLevelChange((error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
                         if (error !== undefined && error!.code !== 0) {
                             expect().assertFail();
                         }
@@ -421,12 +421,12 @@ export default function cameraSessionSystemPressureTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
-         * @tc.desc      : Check whether unregister system pressure callback is successful.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
+         * @tc.desc   Check whether unregister system pressure callback is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100--------------");
@@ -457,7 +457,7 @@ export default function cameraSessionSystemPressureTest() {
                     mCameraSession.addOutput(mPreviewOutput);
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.PhotoSession).off('systemPressureLevelChange');
+                    (mCameraSession as cameraObj.PhotoSession).offSystemPressureLevelChange();
 
                     await mCameraSession.start();
                     await mCameraSession.stop();
@@ -472,12 +472,12 @@ export default function cameraSessionSystemPressureTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
-         * @tc.desc      : Check whether register system pressure callback is successful.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100
+         * @tc.desc   Check whether register system pressure callback is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("--------------SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100--------------");
@@ -511,7 +511,7 @@ export default function cameraSessionSystemPressureTest() {
                     }
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.VideoSession).on('systemPressureLevelChange', (error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
+                    (mCameraSession as cameraObj.VideoSession).onSystemPressureLevelChange((error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
                         if (error !== undefined && error!.code !== 0) {
                             expect().assertFail();
                         }
@@ -531,12 +531,12 @@ export default function cameraSessionSystemPressureTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
-         * @tc.desc      : Check whether unregister system pressure callback is successful.
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100
+         * @tc.desc   Check whether unregister system pressure callback is successful.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("--------------SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100--------------");
@@ -570,7 +570,7 @@ export default function cameraSessionSystemPressureTest() {
                     }
                     await mCameraSession.commitConfig();
 
-                    (mCameraSession as cameraObj.VideoSession).off('systemPressureLevelChange');
+                    (mCameraSession as cameraObj.VideoSession).offSystemPressureLevelChange();
 
                     await mCameraSession.start();
                     await mCameraSession.stop();

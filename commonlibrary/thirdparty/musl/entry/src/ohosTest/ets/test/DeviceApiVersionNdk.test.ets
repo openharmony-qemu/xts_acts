@@ -25,12 +25,12 @@ export default function muslDeviceApiVersionNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DEVICEAPIVERSION_GETDEVICEAPIVERSION_0100
-     * @tc.name       : testMuslDeviceApiVersionGetDeviceApiVersion001
-     * @tc.desc       : test get_device_api_version
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslDeviceApiVersionGetDeviceApiVersion001
+     * @tc.number SUB_THIRDPARTY_MUSL_DEVICEAPIVERSION_GETDEVICEAPIVERSION_0100
+     * @tc.desc   test get_device_api_version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDeviceApiVersionGetDeviceApiVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = deviceApiVersion.getDeviceApiVersion();

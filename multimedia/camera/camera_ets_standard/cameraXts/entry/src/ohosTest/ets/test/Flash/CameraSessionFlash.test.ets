@@ -851,12 +851,12 @@ export default function CameraSessionFlashTest() {
     });
 
     /**
-     * @tc.number    : SESSION_FLASH_001
-     * @tc.name      : hasFlash_photo_abnormal_001
-     * @tc.desc      : sceneMode: NORMAL_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_photo_abnormal_001
+     * @tc.number SESSION_FLASH_001
+     * @tc.desc   sceneMode: NORMAL_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'hasFlash_photo_abnormal_001';
@@ -864,12 +864,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_002
-     * @tc.name      : hasFlash_video_abnormal_001
-     * @tc.desc      : sceneMode: NORMAL_VIDEO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_video_abnormal_001
+     * @tc.number SESSION_FLASH_002
+     * @tc.desc   sceneMode: NORMAL_VIDEO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_video_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'hasFlash_video_abnormal_001';
@@ -877,12 +877,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_003
-     * @tc.name      : hasFlash_secure_photo_abnormal_001
-     * @tc.desc      : sceneMode: SECURE_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_secure_photo_abnormal_001
+     * @tc.number SESSION_FLASH_003
+     * @tc.desc   sceneMode: SECURE_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_secure_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'hasFlash_secure_photo_abnormal_001';
@@ -890,12 +890,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_004
-     * @tc.name      : isFlashModeSupported_photo_abnormal_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_001
+     * @tc.number SESSION_FLASH_004
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_001';
@@ -903,12 +903,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_005
-     * @tc.name      : isFlashModeSupported_photo_abnormal_002
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_002
+     * @tc.number SESSION_FLASH_005
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_002';
@@ -916,12 +916,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_006
-     * @tc.name      : isFlashModeSupported_photo_abnormal_003
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_003
+     * @tc.number SESSION_FLASH_006
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_003';
@@ -929,12 +929,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_007
-     * @tc.name      : isFlashModeSupported_photo_abnormal_004
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_004
+     * @tc.number SESSION_FLASH_007
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_004', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_004';
@@ -942,12 +942,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_008
-     * @tc.name      : isFlashModeSupported_video_abnormal_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_001
+     * @tc.number SESSION_FLASH_008
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_001';
@@ -955,12 +955,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_009
-     * @tc.name      : isFlashModeSupported_video_abnormal_002
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_002
+     * @tc.number SESSION_FLASH_009
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_002';
@@ -968,12 +968,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_010
-     * @tc.name      : isFlashModeSupported_video_abnormal_003
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_003
+     * @tc.number SESSION_FLASH_010
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_003';
@@ -981,12 +981,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_011
-     * @tc.name      : isFlashModeSupported_video_abnormal_004
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_004
+     * @tc.number SESSION_FLASH_011
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_004', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_004';
@@ -994,12 +994,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_012
-     * @tc.name      : isFlashModeSupported_secure_photo_abnormal_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_secure_photo_abnormal_001
+     * @tc.number SESSION_FLASH_012
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_secure_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_secure_photo_abnormal_001';
@@ -1007,12 +1007,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_013
-     * @tc.name      : isFlashModeSupported_secure_photo_abnormal_002
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_secure_photo_abnormal_002
+     * @tc.number SESSION_FLASH_013
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_secure_photo_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_secure_photo_abnormal_002';
@@ -1020,12 +1020,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_014
-     * @tc.name      : isFlashModeSupported_secure_photo_abnormal_003
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_secure_photo_abnormal_003
+     * @tc.number SESSION_FLASH_014
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_secure_photo_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_secure_photo_abnormal_003';
@@ -1033,12 +1033,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_015
-     * @tc.name      : isFlashModeSupported_secure_photo_abnormal_004
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_secure_photo_abnormal_004
+     * @tc.number SESSION_FLASH_015
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_secure_photo_abnormal_004', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_secure_photo_abnormal_004';
@@ -1046,12 +1046,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_016
-     * @tc.name      : hasFlash_photo_001
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_photo_001
+     * @tc.number SESSION_FLASH_016
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_photo_001';
@@ -1081,12 +1081,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_017
-     * @tc.name      : isFlashModeSupported_photo_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_001
+     * @tc.number SESSION_FLASH_017
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_photo_001';
@@ -1094,12 +1094,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_018
-     * @tc.name      : isFlashModeSupported_photo_002
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_002
+     * @tc.number SESSION_FLASH_018
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_photo_002';
@@ -1107,12 +1107,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_019
-     * @tc.name      : isFlashModeSupported_photo_003
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_003
+     * @tc.number SESSION_FLASH_019
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_photo_003';
@@ -1120,12 +1120,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_020
-     * @tc.name      : isFlashModeSupported_photo_004
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_004
+     * @tc.number SESSION_FLASH_020
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_photo_004';
@@ -1133,12 +1133,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_021
-     * @tc.name      : hasFlash_video_001
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_VIDEO-hasFlash
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_video_001
+     * @tc.number SESSION_FLASH_021
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_VIDEO-hasFlash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_video_001';
@@ -1172,12 +1172,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_022
-     * @tc.name      : isFlashModeSupported_video_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_001
+     * @tc.number SESSION_FLASH_022
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_video_001';
@@ -1185,12 +1185,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_023
-     * @tc.name      : isFlashModeSupported_video_002
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_002
+     * @tc.number SESSION_FLASH_023
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_video_002';
@@ -1198,12 +1198,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_024
-     * @tc.name      : isFlashModeSupported_video_003
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_003
+     * @tc.number SESSION_FLASH_024
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_video_003';
@@ -1211,12 +1211,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_025
-     * @tc.name      : isFlashModeSupported_video_004
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_004
+     * @tc.number SESSION_FLASH_025
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_ALWAYS_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_video_004';
@@ -1224,12 +1224,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_026
-     * @tc.name      : getFlashMode_photo_001
-     * @tc.desc      : getFlashMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_photo_001
+     * @tc.number SESSION_FLASH_026
+     * @tc.desc   getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_photo_001';
@@ -1258,12 +1258,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_027
-     * @tc.name      : getFlashMode_video_001
-     * @tc.desc      : getFlashMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_video_001
+     * @tc.number SESSION_FLASH_027
+     * @tc.desc   getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_video_001';
@@ -1297,12 +1297,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_028
-     * @tc.name      : getFlashMode_photo_abnormal_001
-     * @tc.desc      : getFlashMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_photo_abnormal_001
+     * @tc.number SESSION_FLASH_028
+     * @tc.desc   getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_photo_abnormal_001';
@@ -1310,12 +1310,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_029
-     * @tc.name      : getFlashMode_video_abnormal_001
-     * @tc.desc      : getFlashMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_video_abnormal_001
+     * @tc.number SESSION_FLASH_029
+     * @tc.desc   getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_video_abnormal_001';
@@ -1323,12 +1323,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_030
-     * @tc.name      : getFlashMode_secure_photo_abnormal_001
-     * @tc.desc      : getFlashMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_secure_photo_abnormal_001
+     * @tc.number SESSION_FLASH_030
+     * @tc.desc   getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_secure_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_secure_photo_abnormal_001';
@@ -1336,12 +1336,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_031
-     * @tc.name      : setFlashMode_photo_001
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_001
+     * @tc.number SESSION_FLASH_031
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_001';
@@ -1349,12 +1349,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_032
-     * @tc.name      : setFlashMode_photo_002
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_002
+     * @tc.number SESSION_FLASH_032
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_002';
@@ -1362,12 +1362,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_033
-     * @tc.name      : setFlashMode_photo_003
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_003
+     * @tc.number SESSION_FLASH_033
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_003';
@@ -1375,12 +1375,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_034
-     * @tc.name      : setFlashMode_photo_004
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_004
+     * @tc.number SESSION_FLASH_034
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_004';
@@ -1388,12 +1388,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_035
-     * @tc.name      : setFlashMode_video_001
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_CLOSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_001
+     * @tc.number SESSION_FLASH_035
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_CLOSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_001';
@@ -1401,12 +1401,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_036
-     * @tc.name      : setFlashMode_video_002
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_002
+     * @tc.number SESSION_FLASH_036
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_002';
@@ -1414,12 +1414,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_037
-     * @tc.name      : setFlashMode_video_003
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_003
+     * @tc.number SESSION_FLASH_037
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_003';
@@ -1427,12 +1427,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_038
-     * @tc.name      : setFlashMode_video_004
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_ALWAYS_OPEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_004
+     * @tc.number SESSION_FLASH_038
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_ALWAYS_OPEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_004';
@@ -1440,12 +1440,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_039
-     * @tc.name      : setFlashMode_photo_abnormal_001
-     * @tc.desc      : setFlashMode-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_abnormal_001
+     * @tc.number SESSION_FLASH_039
+     * @tc.desc   setFlashMode-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_abnormal_001';
@@ -1453,12 +1453,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_040
-     * @tc.name      : setFlashMode_photo_abnormal_002
-     * @tc.desc      : setFlashMode-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_abnormal_002
+     * @tc.number SESSION_FLASH_040
+     * @tc.desc   setFlashMode-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_abnormal_002';
@@ -1466,12 +1466,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_041
-     * @tc.name      : setFlashMode_photo_abnormal_003
-     * @tc.desc      : setFlashMode-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_abnormal_003
+     * @tc.number SESSION_FLASH_041
+     * @tc.desc   setFlashMode-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_abnormal_003';
@@ -1479,12 +1479,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_042
-     * @tc.name      : setFlashMode_video_abnormal_001
-     * @tc.desc      : setFlashMode-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_abnormal_001
+     * @tc.number SESSION_FLASH_042
+     * @tc.desc   setFlashMode-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_abnormal_001';
@@ -1492,12 +1492,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_043
-     * @tc.name      : setFlashMode_video_abnormal_002
-     * @tc.desc      : setFlashMode-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_abnormal_002
+     * @tc.number SESSION_FLASH_043
+     * @tc.desc   setFlashMode-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_abnormal_002';
@@ -1505,12 +1505,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_044
-     * @tc.name      : setFlashMode_video_abnormal_003
-     * @tc.desc      : setFlashMode-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_abnormal_003
+     * @tc.number SESSION_FLASH_044
+     * @tc.desc   setFlashMode-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_abnormal_003';
@@ -1518,12 +1518,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_045
-     * @tc.name      : isFlashModeSupported_photo_abnormal_005
-     * @tc.desc      : isFlashModeSupported-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_005
+     * @tc.number SESSION_FLASH_045
+     * @tc.desc   isFlashModeSupported-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_005', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_005';
@@ -1531,12 +1531,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_046
-     * @tc.name      : isFlashModeSupported_photo_abnormal_006
-     * @tc.desc      : isFlashModeSupported-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_006
+     * @tc.number SESSION_FLASH_046
+     * @tc.desc   isFlashModeSupported-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_006', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_006';
@@ -1544,12 +1544,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_047
-     * @tc.name      : isFlashModeSupported_photo_abnormal_007
-     * @tc.desc      : isFlashModeSupported-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_abnormal_007
+     * @tc.number SESSION_FLASH_047
+     * @tc.desc   isFlashModeSupported-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_abnormal_007', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_photo_abnormal_007';
@@ -1557,12 +1557,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_048
-     * @tc.name      : isFlashModeSupported_video_abnormal_005
-     * @tc.desc      : isFlashModeSupported-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_005
+     * @tc.number SESSION_FLASH_048
+     * @tc.desc   isFlashModeSupported-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_005', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_005';
@@ -1570,12 +1570,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_049
-     * @tc.name      : isFlashModeSupported_video_abnormal_006
-     * @tc.desc      : isFlashModeSupported-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_006
+     * @tc.number SESSION_FLASH_049
+     * @tc.desc   isFlashModeSupported-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_006', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_006';
@@ -1583,12 +1583,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_050
-     * @tc.name      : isFlashModeSupported_video_abnormal_007
-     * @tc.desc      : isFlashModeSupported-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_abnormal_007
+     * @tc.number SESSION_FLASH_050
+     * @tc.desc   isFlashModeSupported-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_abnormal_007', Level.LEVEL0, (done: Function) => {
       const testName = 'isFlashModeSupported_video_abnormal_007';
@@ -1596,12 +1596,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_051
-     * @tc.name      : hasFlash_photo_preconfig_001
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_photo_preconfig_001
+     * @tc.number SESSION_FLASH_051
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_photo_preconfig_001';
@@ -1610,12 +1610,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_052
-     * @tc.name      : hasFlash_photo_preconfig_002
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_photo_preconfig_002
+     * @tc.number SESSION_FLASH_052
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_photo_preconfig_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_photo_preconfig_002';
@@ -1624,12 +1624,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_053
-     * @tc.name      : hasFlash_photo_preconfig_003
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_photo_preconfig_003
+     * @tc.number SESSION_FLASH_053
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_photo_preconfig_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_photo_preconfig_003';
@@ -1638,12 +1638,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_054
-     * @tc.name      : hasFlash_photo_preconfig_004
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_photo_preconfig_004
+     * @tc.number SESSION_FLASH_054
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_photo_preconfig_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_photo_preconfig_004';
@@ -1652,12 +1652,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_055
-     * @tc.name      : hasFlash_video_preconfig_001
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_video_preconfig_001
+     * @tc.number SESSION_FLASH_055
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_video_preconfig_001';
@@ -1666,12 +1666,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_056
-     * @tc.name      : hasFlash_video_preconfig_002
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_video_preconfig_002
+     * @tc.number SESSION_FLASH_056
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_video_preconfig_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_video_preconfig_002';
@@ -1680,12 +1680,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_057
-     * @tc.name      : hasFlash_video_preconfig_003
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_video_preconfig_003
+     * @tc.number SESSION_FLASH_057
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_video_preconfig_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_video_preconfig_003';
@@ -1694,12 +1694,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_058
-     * @tc.name      : hasFlash_video_preconfig_004
-     * @tc.desc      : No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   hasFlash_video_preconfig_004
+     * @tc.number SESSION_FLASH_058
+     * @tc.desc   No abnormal scenarios-sceneMode: NORMAL_PHOTO-hasFlash-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('hasFlash_video_preconfig_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'hasFlash_video_preconfig_004';
@@ -1708,12 +1708,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_059
-     * @tc.name      : isFlashModeSupported_photo_preconfig_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_photo_preconfig_001
+     * @tc.number SESSION_FLASH_059
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_photo_preconfig_001';
@@ -1722,12 +1722,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_060
-     * @tc.name      : isFlashModeSupported_video_preconfig_001
-     * @tc.desc      : isFlashModeSupported-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFlashModeSupported_video_preconfig_001
+     * @tc.number SESSION_FLASH_060
+     * @tc.desc   isFlashModeSupported-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFlashModeSupported_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFlashModeSupported_video_preconfig_001';
@@ -1736,12 +1736,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_061
-     * @tc.name      : getFlashMode_photo_preconfig_001
-     * @tc.desc      : getFlashMode-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_photo_preconfig_001
+     * @tc.number SESSION_FLASH_061
+     * @tc.desc   getFlashMode-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_photo_preconfig_001';
@@ -1750,12 +1750,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_062
-     * @tc.name      : getFlashMode_video_preconfig_001
-     * @tc.desc      : getFlashMode-preConfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFlashMode_video_preconfig_001
+     * @tc.number SESSION_FLASH_062
+     * @tc.desc   getFlashMode-preConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFlashMode_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFlashMode_video_preconfig_001';
@@ -1764,12 +1764,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_063
-     * @tc.name      : setFlashMode_photo_preconfig_001
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_photo_preconfig_001
+     * @tc.number SESSION_FLASH_063
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_photo_preconfig_001';
@@ -1778,12 +1778,12 @@ export default function CameraSessionFlashTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FLASH_064
-     * @tc.name      : setFlashMode_video_preconfig_001
-     * @tc.desc      : setFlashMode-mode->FLASH_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFlashMode_video_preconfig_001
+     * @tc.number SESSION_FLASH_064
+     * @tc.desc   setFlashMode-mode->FLASH_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFlashMode_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFlashMode_video_preconfig_001';

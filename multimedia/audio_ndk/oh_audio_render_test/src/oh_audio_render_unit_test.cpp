@@ -219,9 +219,12 @@ void CleanupAudioResources(OH_AudioStreamBuilder* builder, OH_AudioRenderer* aud
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_GenerateRenderer API via legal state.
- * @tc.number: OH_Audio_Capture_Generate_001
- * @tc.desc  : Test OH_AudioStreamBuilder_GenerateRenderer interface. Returns true, if the result is successful.
+ * @tc.name   OH_Audio_Render_Generate_001
+ * @tc.number OH_Audio_Capture_Generate_001
+ * @tc.desc   Test OH_AudioStreamBuilder_GenerateRenderer interface. Returns true, if the result is successful.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Generate_001, TestSize.Level0)
 {
@@ -235,10 +238,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Generate_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_GenerateRenderer API via illegal OH_AudioStream_Type.
- * @tc.number: OH_Audio_Render_Generate_002
- * @tc.desc  : Test OH_AudioStreamBuilder_GenerateRenderer interface. Returns error code, if the stream type is
- *             AUDIOSTREAM_TYPE_CAPTURER.
+ * @tc.name   OH_Audio_Render_Generate_002
+ * @tc.number OH_Audio_Render_Generate_002
+ * @tc.desc   Test OH_AudioStreamBuilder_GenerateRenderer interface. Returns error code, if the stream type is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Generate_002, TestSize.Level0)
 {
@@ -253,9 +258,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Generate_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Start API via legal state.
- * @tc.number: Audio_Capturer_Start_001
- * @tc.desc  : Test OH_AudioRenderer_Start interface. Returns true if start is successful.
+ * @tc.name   OH_Audio_Render_Start_001
+ * @tc.number Audio_Capturer_Start_001
+ * @tc.desc   Test OH_AudioRenderer_Start interface. Returns true if start is successful.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Start_001, TestSize.Level0)
 {
@@ -272,9 +280,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Start_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Start API via illegal state.
- * @tc.number: Audio_Capturer_Start_002
- * @tc.desc  : Test OH_AudioRenderer_Start interface. Returns error code, if Start interface is called twice.
+ * @tc.name   OH_Audio_Render_Start_002
+ * @tc.number Audio_Capturer_Start_002
+ * @tc.desc   Test OH_AudioRenderer_Start interface. Returns error code, if Start interface is called twice.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Start_002, TestSize.Level0)
 {
@@ -293,9 +304,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Start_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Pause API via legal state.
- * @tc.number: OH_Audio_Render_Pause_001
- * @tc.desc  : Test OH_AudioRenderer_Pause interface. Returns true if Pause is successful.
+ * @tc.name   OH_Audio_Render_Pause_001
+ * @tc.number OH_Audio_Render_Pause_001
+ * @tc.desc   Test OH_AudioRenderer_Pause interface. Returns true if Pause is successful.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Pause_001, TestSize.Level0)
 {
@@ -313,9 +327,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Pause_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Pause API via illegal state, Pause without Start first.
- * @tc.number: OH_Audio_Render_Pause_002
- * @tc.desc  : Test OH_AudioRenderer_Pause interface. Returns error code, if Pause without Start first.
+ * @tc.name   OH_Audio_Render_Pause_002
+ * @tc.number OH_Audio_Render_Pause_002
+ * @tc.desc   Test OH_AudioRenderer_Pause interface. Returns error code, if Pause without Start first.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Pause_002, TestSize.Level0)
 {
@@ -332,9 +349,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Pause_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Stop API via legal state.
- * @tc.number: OH_Audio_Render_Stop_001
- * @tc.desc  : Test OH_AudioRenderer_Stop interface. Returns true if Stop is successful.
+ * @tc.name   OH_Audio_Render_Stop_001
+ * @tc.number OH_Audio_Render_Stop_001
+ * @tc.desc   Test OH_AudioRenderer_Stop interface. Returns true if Stop is successful.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Stop_001, TestSize.Level0)
 {
@@ -352,9 +372,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Stop_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Stop API via illegal state, Stop without Start first.
- * @tc.number: OH_Audio_Render_Stop_002
- * @tc.desc  : Test OH_AudioRenderer_Stop interface. Returns error code, if Stop without Start first.
+ * @tc.name   OH_Audio_Render_Stop_002
+ * @tc.number OH_Audio_Render_Stop_002
+ * @tc.desc   Test OH_AudioRenderer_Stop interface. Returns error code, if Stop without Start first.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Stop_002, TestSize.Level0)
 {
@@ -371,9 +394,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Stop_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Flush API via legal state.
- * @tc.number: OH_Audio_Render_Flush_001
- * @tc.desc  : Test OH_AudioRenderer_Flush interface. Returns true if Flush is successful.
+ * @tc.name   OH_Audio_Render_Flush_001
+ * @tc.number OH_Audio_Render_Flush_001
+ * @tc.desc   Test OH_AudioRenderer_Flush interface. Returns true if Flush is successful.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Flush_001, TestSize.Level0)
 {
@@ -391,9 +417,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Flush_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Flush API via illegal state.
- * @tc.number: OH_Audio_Render_Flush_002
- * @tc.desc  : Test OH_AudioRenderer_Flush interface. Returns error code, if Flush without Start first.
+ * @tc.name   OH_Audio_Render_Flush_002
+ * @tc.number OH_Audio_Render_Flush_002
+ * @tc.desc   Test OH_AudioRenderer_Flush interface. Returns error code, if Flush without Start first.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Flush_002, TestSize.Level0)
 {
@@ -410,9 +439,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Flush_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_Release API via legal state.
- * @tc.number: OH_Audio_Render_Release_001
- * @tc.desc  : Test OH_AudioRenderer_Release interface. Returns true if Release is successful.
+ * @tc.name   OH_Audio_Render_Release_001
+ * @tc.number OH_Audio_Render_Release_001
+ * @tc.desc   Test OH_AudioRenderer_Release interface. Returns true if Release is successful.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Release_001, TestSize.Level0)
 {
@@ -429,10 +461,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_Release_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetCurrentState API via legal state.
- * @tc.number: OH_AudioRenderer_GetCurrentState_001
- * @tc.desc  : Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
- *             AUDIOSTREAM_STATE_PREPARED.
+ * @tc.name   OH_AudioRenderer_GetCurrentState_001
+ * @tc.number OH_AudioRenderer_GetCurrentState_001
+ * @tc.desc   Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_001, TestSize.Level0)
 {
@@ -448,10 +482,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_001, TestSize.Lev
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetCurrentState API via legal state.
- * @tc.number: OH_AudioRenderer_GetCurrentState_002
- * @tc.desc  : Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
- *             AUDIOSTREAM_STATE_RUNNING.
+ * @tc.name   OH_AudioRenderer_GetCurrentState_002
+ * @tc.number OH_AudioRenderer_GetCurrentState_002
+ * @tc.desc   Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_002, TestSize.Level0)
 {
@@ -469,10 +505,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_002, TestSize.Lev
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetCurrentState API via legal state.
- * @tc.number: OH_AudioRenderer_GetCurrentState_003
- * @tc.desc  : Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
- *             AUDIOSTREAM_STATE_PAUSED.
+ * @tc.name   OH_AudioRenderer_GetCurrentState_003
+ * @tc.number OH_AudioRenderer_GetCurrentState_003
+ * @tc.desc   Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_003, TestSize.Level0)
 {
@@ -491,10 +529,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_003, TestSize.Lev
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetCurrentState API via legal state.
- * @tc.number: OH_AudioRenderer_GetCurrentState_004
- * @tc.desc  : Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
- *             AUDIOSTREAM_STATE_STOPPED.
+ * @tc.name   OH_AudioRenderer_GetCurrentState_004
+ * @tc.number OH_AudioRenderer_GetCurrentState_004
+ * @tc.desc   Test OH_AudioRenderer_GetCurrentState interface. Return true if the result state is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_004, TestSize.Level0)
 {
@@ -513,10 +553,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetCurrentState_004, TestSize.Lev
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetLatencyMode API via legal state.
- * @tc.number: OH_Audio_Render_GetParameter_001
- * @tc.desc  : Test OH_AudioRenderer_GetLatencyMode interface. Returns true if latencyMode is
- *             AUDIOSTREAM_LATENCY_MODE_NORMAL,because default latency mode is AUDIOSTREAM_LATENCY_MODE_NORMAL.
+ * @tc.name   OH_Audio_Render_GetParameter_001
+ * @tc.number OH_Audio_Render_GetParameter_001
+ * @tc.desc   Test OH_AudioRenderer_GetLatencyMode interface. Returns true if latencyMode is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetParameter_001, TestSize.Level0)
 {
@@ -532,9 +574,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetParameter_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetStreamId API via legal state.
- * @tc.number: OH_Audio_Render_GetParameter_002
- * @tc.desc  : Test OH_AudioRenderer_GetStreamId interface. Returns true if the result is AUDIOSTREAM_SUCCESS.
+ * @tc.name   OH_Audio_Render_GetParameter_002
+ * @tc.number OH_Audio_Render_GetParameter_002
+ * @tc.desc   Test OH_AudioRenderer_GetStreamId interface. Returns true if the result is AUDIOSTREAM_SUCCESS.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetParameter_002, TestSize.Level0)
 {
@@ -549,10 +594,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetParameter_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetSamplingRate API via legal state.
- * @tc.number: OH_Audio_Render_GetSamplingRate_001
- * @tc.desc  : Test OH_AudioRenderer_GetSamplingRate interface. Returns true if samplingRate is
- *             SAMPLE_RATE_48000,because default samplingRate is SAMPLE_RATE_48000.
+ * @tc.name   OH_Audio_Render_GetSamplingRate_001
+ * @tc.number OH_Audio_Render_GetSamplingRate_001
+ * @tc.desc   Test OH_AudioRenderer_GetSamplingRate interface. Returns true if samplingRate is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetSamplingRate_001, TestSize.Level0)
 {
@@ -568,10 +615,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetSamplingRate_001, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetSampleFormat API via legal state.
- * @tc.number: OH_Audio_Render_GetSampleFormat_001
- * @tc.desc  : Test OH_AudioRenderer_GetSampleFormat interface. Returns true if sampleFormat is
- *             AUDIOSTREAM_SAMPLE_S16LE,because default sampleFormat is AUDIOSTREAM_SAMPLE_S16LE.
+ * @tc.name   OH_Audio_Render_GetSampleFormat
+ * @tc.number OH_Audio_Render_GetSampleFormat_001
+ * @tc.desc   Test OH_AudioRenderer_GetSampleFormat interface. Returns true if sampleFormat is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetSampleFormat, TestSize.Level0)
 {
@@ -587,10 +636,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetSampleFormat, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetEncodingType API via legal state.
- * @tc.number: OH_Audio_Render_GetEncodingType_001
- * @tc.desc  : Test OH_AudioRenderer_GetEncodingType interface. Returns true if encodingType is
- *             ENCODING_PCM,because default encodingType is ENCODING_PCM.
+ * @tc.name   OH_Audio_Render_GetEncodingType_001
+ * @tc.number OH_Audio_Render_GetEncodingType_001
+ * @tc.desc   Test OH_AudioRenderer_GetEncodingType interface. Returns true if encodingType is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetEncodingType_001, TestSize.Level0)
 {
@@ -606,10 +657,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetEncodingType_001, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetRendererInfo API via legal state.
- * @tc.number: OH_Audio_Render_GetRendererInfo_001
- * @tc.desc  : Test OH_AudioRenderer_GetRendererInfo interface. Returns true if usage is STREAM_USAGE_MEDIA and content
- *             is CONTENT_TYPE_MUSIC.
+ * @tc.name   OH_Audio_Render_GetRendererInfo_001
+ * @tc.number OH_Audio_Render_GetRendererInfo_001
+ * @tc.desc   Test OH_AudioRenderer_GetRendererInfo interface. Returns true if usage is STREAM_USAGE_MEDIA and content
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetRendererInfo_001, TestSize.Level0)
 {
@@ -625,9 +678,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetRendererInfo_001, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetRendererPrivacy API.
- * @tc.number: OH_AudioRenderer_GetRendererPrivacy_001
- * @tc.desc  : Test OH_AudioRenderer_GetRendererPrivacy interface with default privacy AUDIO_STREAM_PRIVACY_TYPE_PUBLIC.
+ * @tc.name   OH_AudioRenderer_GetRendererPrivacy_001
+ * @tc.number OH_AudioRenderer_GetRendererPrivacy_001
+ * @tc.desc   Test OH_AudioRenderer_GetRendererPrivacy interface with default privacy AUDIO_STREAM_PRIVACY_TYPE_PUBLIC.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetRendererPrivacy_001, TestSize.Level0)
 {
@@ -643,9 +699,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetRendererPrivacy_001, TestSize.
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetRendererPrivacy API.
- * @tc.number: OH_AudioRenderer_GetRendererPrivacy_002
- * @tc.desc  : Test OH_AudioRenderer_GetRendererPrivacy interface with privacy AUDIO_STREAM_PRIVACY_TYPE_PRIVATE.
+ * @tc.name   OH_AudioRenderer_GetRendererPrivacy_002
+ * @tc.number OH_AudioRenderer_GetRendererPrivacy_002
+ * @tc.desc   Test OH_AudioRenderer_GetRendererPrivacy interface with privacy AUDIO_STREAM_PRIVACY_TYPE_PRIVATE.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetRendererPrivacy_002, TestSize.Level0)
 {
@@ -664,10 +723,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetRendererPrivacy_002, TestSize.
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetChannelLayout API via legal state.
- * @tc.number: OH_AudioRenderer_GetChannelLayout_001
- * @tc.desc  : Test OH_AudioRenderer_GetChannelLayout interface. Returns true if channelLayout is
- *             CH_LAYOUT_UNKNOWN, because default channelLayout is CH_LAYOUT_UNKNOWN.
+ * @tc.name   OH_AudioRenderer_GetChannelLayout_001
+ * @tc.number OH_AudioRenderer_GetChannelLayout_001
+ * @tc.desc   Test OH_AudioRenderer_GetChannelLayout interface. Returns true if channelLayout is
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetChannelLayout_001, TestSize.Level0)
 {
@@ -683,9 +744,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetChannelLayout_001, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetEffectMode API via legal state.
- * @tc.number: OH_AudioRenderer_GetEffectMode_001
- * @tc.desc  : Test OH_AudioRenderer_GetEffectMode interface. Returns true if effect mode is the same as set.
+ * @tc.name   OH_AudioRenderer_GetEffectMode_001
+ * @tc.number OH_AudioRenderer_GetEffectMode_001
+ * @tc.desc   Test OH_AudioRenderer_GetEffectMode interface. Returns true if effect mode is the same as set.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetEffectMode_001, TestSize.Level0)
 {
@@ -703,9 +767,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetEffectMode_001, TestSize.Level
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetVolume API via illegal state.
- * @tc.number: OH_Audio_Render_GetVolume_001
- * @tc.desc  : Test OH_AudioRenderer_GetVolume interface with nullptr audioRenderer.
+ * @tc.name   OH_Audio_Render_GetVolume_001
+ * @tc.number OH_Audio_Render_GetVolume_001
+ * @tc.desc   Test OH_AudioRenderer_GetVolume interface with nullptr audioRenderer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_001, TestSize.Level0)
 {
@@ -716,9 +783,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetVolume API via legal state.
- * @tc.number: OH_Audio_Render_GetVolume_002
- * @tc.desc  : Test OH_AudioRenderer_GetVolume interface.
+ * @tc.name   OH_Audio_Render_GetVolume_002
+ * @tc.number OH_Audio_Render_GetVolume_002
+ * @tc.desc   Test OH_AudioRenderer_GetVolume interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_002, TestSize.Level0)
 {
@@ -732,9 +802,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetVolume API via legal state.
- * @tc.number: OH_Audio_Render_GetVolume_003
- * @tc.desc  : Test OH_AudioRenderer_GetVolume interface after set volume call.
+ * @tc.name   OH_Audio_Render_GetVolume_003
+ * @tc.number OH_Audio_Render_GetVolume_003
+ * @tc.desc   Test OH_AudioRenderer_GetVolume interface after set volume call.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_003, TestSize.Level0)
 {
@@ -752,9 +825,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_003, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetVolume API via legal state.
- * @tc.number: OH_Audio_Render_GetVolume_004
- * @tc.desc  : Test OH_AudioRenderer_GetVolume interface after set volume fails.
+ * @tc.name   OH_Audio_Render_GetVolume_004
+ * @tc.number OH_Audio_Render_GetVolume_004
+ * @tc.desc   Test OH_AudioRenderer_GetVolume interface after set volume fails.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_004, TestSize.Level0)
 {
@@ -775,9 +851,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetVolume_004, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetVolume API via illegal state.
- * @tc.number: OH_Audio_Render_SetVolume_001
- * @tc.desc  : Test OH_AudioRenderer_SetVolume interface with nullptr audioRenderer.
+ * @tc.name   OH_Audio_Render_SetVolume_001
+ * @tc.number OH_Audio_Render_SetVolume_001
+ * @tc.desc   Test OH_AudioRenderer_SetVolume interface with nullptr audioRenderer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_001, TestSize.Level0)
 {
@@ -788,9 +867,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetVolume API via legal state.
- * @tc.number: OH_Audio_Render_SetVolume_002
- * @tc.desc  : Test OH_AudioRenderer_SetVolume interface between minimum and maximum volumes.
+ * @tc.name   OH_Audio_Render_SetVolume_002
+ * @tc.number OH_Audio_Render_SetVolume_002
+ * @tc.desc   Test OH_AudioRenderer_SetVolume interface between minimum and maximum volumes.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_002, TestSize.Level0)
 {
@@ -804,9 +886,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetVolume API via legal state.
- * @tc.number: OH_Audio_Render_SetVolume_003
- * @tc.desc  : Test OH_AudioRenderer_SetVolume interface for minimum and maximum volumes.
+ * @tc.name   OH_Audio_Render_SetVolume_003
+ * @tc.number OH_Audio_Render_SetVolume_003
+ * @tc.desc   Test OH_AudioRenderer_SetVolume interface for minimum and maximum volumes.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_003, TestSize.Level0)
 {
@@ -823,9 +908,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_003, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetVolume API via illegal state.
- * @tc.number: OH_Audio_Render_SetVolume_004
- * @tc.desc  : Test OH_AudioRenderer_SetVolume interface out of volumes range.
+ * @tc.name   OH_Audio_Render_SetVolume_004
+ * @tc.number OH_Audio_Render_SetVolume_004
+ * @tc.desc   Test OH_AudioRenderer_SetVolume interface out of volumes range.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_004, TestSize.Level0)
 {
@@ -842,9 +930,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolume_004, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetVolumeWithRamp API via illegal state.
- * @tc.number: OH_Audio_Render_SetVolumeWithRamp_001
- * @tc.desc  : Test OH_AudioRenderer_SetVolumeWithRamp interface with nullptr audioRenderer.
+ * @tc.name   OH_Audio_Render_SetVolumeWithRamp_001
+ * @tc.number OH_Audio_Render_SetVolumeWithRamp_001
+ * @tc.desc   Test OH_AudioRenderer_SetVolumeWithRamp interface with nullptr audioRenderer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolumeWithRamp_001, TestSize.Level0)
 {
@@ -856,9 +947,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolumeWithRamp_001, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetVolumeWithRamp API via legal state.
- * @tc.number: OH_Audio_Render_SetVolumeWithRamp_002
- * @tc.desc  : Test OH_AudioRenderer_SetVolumeWithRamp interface.
+ * @tc.name   OH_Audio_Render_SetVolumeWithRamp_002
+ * @tc.number OH_Audio_Render_SetVolumeWithRamp_002
+ * @tc.desc   Test OH_AudioRenderer_SetVolumeWithRamp interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolumeWithRamp_002, TestSize.Level0)
 {
@@ -873,9 +967,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetVolumeWithRamp_002, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetMarkPosition API via illegal state.
- * @tc.number: OH_Audio_Render_SetMarkPosition_001
- * @tc.desc  : Test OH_AudioRenderer_SetMarkPosition interface with nullptr audioRenderer.
+ * @tc.name   OH_Audio_Render_SetMarkPosition_001
+ * @tc.number OH_Audio_Render_SetMarkPosition_001
+ * @tc.desc   Test OH_AudioRenderer_SetMarkPosition interface with nullptr audioRenderer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_001, TestSize.Level0)
 {
@@ -887,9 +984,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_001, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetMarkPosition API via legal state.
- * @tc.number: OH_Audio_Render_SetMarkPosition_002
- * @tc.desc  : Test OH_AudioRenderer_SetMarkPosition interface.
+ * @tc.name   OH_Audio_Render_SetMarkPosition_002
+ * @tc.number OH_Audio_Render_SetMarkPosition_002
+ * @tc.desc   Test OH_AudioRenderer_SetMarkPosition interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_002, TestSize.Level0)
 {
@@ -905,9 +1005,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_002, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetMarkPosition API via illegal state.
- * @tc.number: OH_Audio_Render_SetMarkPosition_003
- * @tc.desc  : Test OH_AudioRenderer_SetMarkPosition interface with incorrect samplepos value.
+ * @tc.name   OH_Audio_Render_SetMarkPosition_003
+ * @tc.number OH_Audio_Render_SetMarkPosition_003
+ * @tc.desc   Test OH_AudioRenderer_SetMarkPosition interface with incorrect samplepos value.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_003, TestSize.Level0)
 {
@@ -923,9 +1026,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_003, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetMarkPosition API via legal state.
- * @tc.number: OH_Audio_Render_SetMarkPosition_004
- * @tc.desc  : Test OH_AudioRenderer_SetMarkPosition interface with callback.
+ * @tc.name   OH_Audio_Render_SetMarkPosition_004
+ * @tc.number OH_Audio_Render_SetMarkPosition_004
+ * @tc.desc   Test OH_AudioRenderer_SetMarkPosition interface with callback.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_004, TestSize.Level0)
 {
@@ -964,9 +1070,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_004, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_SetMarkPosition API via legal state.
- * @tc.number: OH_Audio_Render_SetMarkPosition_005
- * @tc.desc  : Test OH_AudioRenderer_SetMarkPosition interface multiple times.
+ * @tc.name   OH_Audio_Render_SetMarkPosition_005
+ * @tc.number OH_Audio_Render_SetMarkPosition_005
+ * @tc.desc   Test OH_AudioRenderer_SetMarkPosition interface multiple times.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_005, TestSize.Level0)
 {
@@ -1006,9 +1115,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetMarkPosition_005, TestSize.Leve
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_CancelMark API via illegal state.
- * @tc.number: OH_Audio_Render_CancelMark_001
- * @tc.desc  : Test OH_AudioRenderer_CancelMark interface with nullptr audioRenderer.
+ * @tc.name   OH_Audio_Render_CancelMark_001
+ * @tc.number OH_Audio_Render_CancelMark_001
+ * @tc.desc   Test OH_AudioRenderer_CancelMark interface with nullptr audioRenderer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_CancelMark_001, TestSize.Level0)
 {
@@ -1018,9 +1130,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_CancelMark_001, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_CancelMark API via legal state.
- * @tc.number: OH_Audio_Render_CancelMark_002
- * @tc.desc  : Test OH_AudioRenderer_CancelMark interface without callback.
+ * @tc.name   OH_Audio_Render_CancelMark_002
+ * @tc.number OH_Audio_Render_CancelMark_002
+ * @tc.desc   Test OH_AudioRenderer_CancelMark interface without callback.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_CancelMark_002, TestSize.Level0)
 {
@@ -1033,9 +1148,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_CancelMark_002, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_CancelMark API via legal state.
- * @tc.number: OH_Audio_Render_CancelMark_003
- * @tc.desc  : Test OH_AudioRenderer_CancelMark interface with callback.
+ * @tc.name   OH_Audio_Render_CancelMark_003
+ * @tc.number OH_Audio_Render_CancelMark_003
+ * @tc.desc   Test OH_AudioRenderer_CancelMark interface with callback.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_CancelMark_003, TestSize.Level0)
 {
@@ -1078,9 +1196,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_CancelMark_003, TestSize.Level0)
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetUnderflowCount API.
- * @tc.number: OH_AudioRenderer_GetUnderflowCount_001
- * @tc.desc  : Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.name   OH_AudioRenderer_GetUnderflowCount_001
+ * @tc.number OH_AudioRenderer_GetUnderflowCount_001
+ * @tc.desc   Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_001, TestSize.Level0)
 {
@@ -1145,9 +1266,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_001, TestSize.L
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetUnderflowCount API.
- * @tc.number: OH_AudioRenderer_GetUnderflowCount_002
- * @tc.desc  : Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.name   OH_AudioRenderer_GetUnderflowCount_002
+ * @tc.number OH_AudioRenderer_GetUnderflowCount_002
+ * @tc.desc   Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_002, TestSize.Level0)
 {
@@ -1212,9 +1336,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_002, TestSize.L
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetUnderflowCount API.
- * @tc.number: OH_AudioRenderer_GetUnderflowCount_003
- * @tc.desc  : Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.name   OH_AudioRenderer_GetUnderflowCount_003
+ * @tc.number OH_AudioRenderer_GetUnderflowCount_003
+ * @tc.desc   Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_003, TestSize.Level0)
 {
@@ -1250,9 +1377,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_003, TestSize.L
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetUnderflowCount API.
- * @tc.number: OH_AudioRenderer_GetUnderflowCount_004
- * @tc.desc  : Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.name   OH_AudioRenderer_GetUnderflowCount_004
+ * @tc.number OH_AudioRenderer_GetUnderflowCount_004
+ * @tc.desc   Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_004, TestSize.Level0)
 {
@@ -1321,9 +1451,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_004, TestSize.L
 }
 
 /**
- * @tc.name  : Test OH_AudioRenderer_GetUnderflowCount API.
- * @tc.number: OH_AudioRenderer_GetUnderflowCount_005
- * @tc.desc  : Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.name   OH_AudioRenderer_GetUnderflowCount_005
+ * @tc.number OH_AudioRenderer_GetUnderflowCount_005
+ * @tc.desc   Test OH_AudioRenderer_GetUnderflowCount interface.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_005, TestSize.Level0)
 {
@@ -1361,10 +1494,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioRenderer_GetUnderflowCount_005, TestSize.L
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback API via legal state.
- * @tc.number: OH_Audio_Render_WriteDataCallback_001
- * @tc.desc  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with VALID result.
- *             Returns true if result is successful.
+ * @tc.name   OH_Audio_Render_WriteDataCallback_001
+ * @tc.number OH_Audio_Render_WriteDataCallback_001
+ * @tc.desc   Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with VALID result.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_001, TestSize.Level0)
 {
@@ -1385,10 +1520,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_001, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback API via legal state.
- * @tc.number: OH_Audio_Render_WriteDataCallback_002
- * @tc.desc  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with INVALID result.
- *             Returns true if result is successful.
+ * @tc.name   OH_Audio_Render_WriteDataCallback_002
+ * @tc.number OH_Audio_Render_WriteDataCallback_002
+ * @tc.desc   Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with INVALID result.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_002, TestSize.Level0)
 {
@@ -1409,11 +1546,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_002, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback API via legal state.
- * @tc.number: OH_Audio_Render_WriteDataCallback_003
- * @tc.desc  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with VALID result
- *             overwrites OH_AudioStreamBuilder_SetRendererCallback interface.
- *             Returns true if result is successful.
+ * @tc.name   OH_Audio_Render_WriteDataCallback_003
+ * @tc.number OH_Audio_Render_WriteDataCallback_003
+ * @tc.desc   Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with VALID result
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_003, TestSize.Level0)
 {
@@ -1439,11 +1577,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_003, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback API via legal state.
- * @tc.number: OH_Audio_Render_WriteDataCallback_004
- * @tc.desc  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with INVALID result
- *             overwrites OH_AudioStreamBuilder_SetRendererCallback interface.
- *             Returns true if result is successful.
+ * @tc.name   OH_Audio_Render_WriteDataCallback_004
+ * @tc.number OH_Audio_Render_WriteDataCallback_004
+ * @tc.desc   Test OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with INVALID result
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_004, TestSize.Level0)
 {
@@ -1469,11 +1608,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_004, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback API via legal state.
- * @tc.number: OH_Audio_Render_WriteDataCallback_005
- * @tc.desc  : Test OH_AudioStreamBuilder_SetRendererCallback interface
- *             overwrites OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with VALID result.
- *             Returns true if result is successful.
+ * @tc.name   OH_Audio_Render_WriteDataCallback_005
+ * @tc.number OH_Audio_Render_WriteDataCallback_005
+ * @tc.desc   Test OH_AudioStreamBuilder_SetRendererCallback interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_005, TestSize.Level0)
 {
@@ -1499,11 +1639,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_005, TestSize.Le
 }
 
 /**
- * @tc.name  : Test OH_AudioStreamBuilder_SetRendererWriteDataCallback API via legal state.
- * @tc.number: OH_Audio_Render_WriteDataCallback_006
- * @tc.desc  : Test OH_AudioStreamBuilder_SetRendererCallback interface
- *             overwrites OH_AudioStreamBuilder_SetRendererWriteDataCallback interface with INVALID result.
- *             Returns true if result is successful.
+ * @tc.name   OH_Audio_Render_WriteDataCallback_006
+ * @tc.number OH_Audio_Render_WriteDataCallback_006
+ * @tc.desc   Test OH_AudioStreamBuilder_SetRendererCallback interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_006, TestSize.Level0)
 {
@@ -1528,12 +1669,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_WriteDataCallback_006, TestSize.Le
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_001
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_001
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'right test.
- *             loudness is -90.0 and streamtype is music.
- *             Returns AUDIOSTREAM_SUCCESS if result is successful.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_001
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_001
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_001, TestSize.Level0)
 {
@@ -1562,12 +1703,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_001, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_002
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_002
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'right test.
- *             loudness is -89.9 and streamtype is music.
- *             Returns AUDIOSTREAM_SUCCESS if result is successful.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_002
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_002
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_002, TestSize.Level0)
 {
@@ -1596,12 +1737,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_002, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_003
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_003
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'right test.
- *             loudness is 24.0 and streamtype is movie.
- *             Returns AUDIOSTREAM_SUCCESS if result is successful.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_003
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_003
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_003, TestSize.Level0)
 {
@@ -1630,12 +1771,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_003, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_004
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_004
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'right test.
- *             loudness is 23.9 and streamtype is audiobook.
- *             Returns AUDIOSTREAM_SUCCESS if result is successful.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_004
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_004
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_004, TestSize.Level0)
 {
@@ -1664,12 +1805,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_004, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_005
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_005
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'right test.
- *             super low-power.
- *             Returns AUDIOSTREAM_SUCCESS if result is successful.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_005
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_005
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_005, TestSize.Level0)
 {
@@ -1698,12 +1839,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_005, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_006
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_006
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             loudness is -90.1.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_006
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_006
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_006, TestSize.Level1)
 {
@@ -1728,12 +1869,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_006, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_007
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_007
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             loudness is 24.1.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_007
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_007
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_007, TestSize.Level1)
 {
@@ -1758,12 +1899,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_007, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_008
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_008
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             OH_AudioRenderer_SetLoudnessGain'renderer is nullptr.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_008
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_008
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_008, TestSize.Level2)
 {
@@ -1789,12 +1930,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_008, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_010
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_010
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_VOICE_COMMUNICATION.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_010
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_010
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_010, TestSize.Level2)
 {
@@ -1824,12 +1965,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_010, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_011
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_011
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_VOICE_ASSISTANT.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_011
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_011
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_011, TestSize.Level2)
 {
@@ -1859,12 +2000,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_011, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_012
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_012
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_ALARM.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_012
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_012
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_012, TestSize.Level2)
 {
@@ -1894,12 +2035,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_012, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_013
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_013
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_VOICE_MESSAGE.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_013
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_013
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_013, TestSize.Level2)
 {
@@ -1929,12 +2070,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_013, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_014
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_014
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_RINGTONE.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_014
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_014
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_014, TestSize.Level2)
 {
@@ -1964,12 +2105,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_014, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_015
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_015
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_NOTIFICATION.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_015
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_015
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_015, TestSize.Level2)
 {
@@ -1999,12 +2140,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_015, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_017
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_017
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_GAME.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_017
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_017
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_017, TestSize.Level2)
 {
@@ -2034,12 +2175,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_017, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_018
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_018
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_NAVIGATION.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_018
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_018
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_018, TestSize.Level2)
 {
@@ -2069,12 +2210,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_018, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_019
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_019
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface'back test.
- *             streamtype is AUDIOSTREAM_USAGE_VIDEO_COMMUNICATION.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_019
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_019
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_019, TestSize.Level2)
 {
@@ -2103,11 +2244,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_019, TestSize.Leve
     OH_AudioStreamBuilder_Destroy(builder);
 }
 /**
- * @tc.name  : OH_AudioRenderer_SetLoudnessGain_021
- * @tc.number: OH_AudioRenderer_SetLoudnessGain_021
- * @tc.desc  : Test OH_AudioRenderer_SetLoudnessGain interface
- *             overwrites OH_AudioRenderer_SetLoudnessGain interface' stability_test.
- *             Returns AUDIOSTREAM_SUCCESS if result is success.
+ * @tc.name   OH_Audio_Render_SetLoudnessGain_021
+ * @tc.number OH_AudioRenderer_SetLoudnessGain_021
+ * @tc.desc   Test OH_AudioRenderer_SetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_021, TestSize.Level0)
 {
@@ -2148,12 +2290,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_SetLoudnessGain_021, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_GetLoudnessGain_001
- * @tc.number: OH_AudioRenderer_GetLoudnessGain_001
- * @tc.desc  : Test OH_AudioRenderer_GetLoudnessGain interface
- *             overwrites OH_AudioRenderer_GetLoudnessGain interface'back test.
- *             renderer is nullptr.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_GetLoudnessGain_001
+ * @tc.number OH_AudioRenderer_GetLoudnessGain_001
+ * @tc.desc   Test OH_AudioRenderer_GetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetLoudnessGain_001, TestSize.Level2)
 {
@@ -2182,12 +2324,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetLoudnessGain_001, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioRenderer_GetLoudnessGain_002
- * @tc.number: OH_AudioRenderer_GetLoudnessGain_002
- * @tc.desc  : Test OH_AudioRenderer_GetLoudnessGain interface
- *             overwrites OH_AudioRenderer_GetLoudnessGain interface'back test.
- *             renderer is nullptr.
- *             Returns AUDIOSTREAM_ERROR_INVALID_PARAM if result is fail.
+ * @tc.name   OH_Audio_Render_GetLoudnessGain_002
+ * @tc.number OH_AudioRenderer_GetLoudnessGain_002
+ * @tc.desc   Test OH_AudioRenderer_GetLoudnessGain interface
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetLoudnessGain_002, TestSize.Level2)
 {
@@ -2215,9 +2357,12 @@ HWTEST(OHAudioRenderUnitTest, OH_Audio_Render_GetLoudnessGain_002, TestSize.Leve
 }
 
 /**
- * @tc.name  : OH_AudioStreamManager_IsAcousticEchoCancelerSupported_001
- * @tc.number: OH_AudioStreamManager_IsAcousticEchoCancelerSupported_001
- * @tc.desc  : null check
+ * @tc.name   OH_AudioStreamManager_IsAcousticEchoCancelerSupported_001
+ * @tc.number OH_AudioStreamManager_IsAcousticEchoCancelerSupported_001
+ * @tc.desc   null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioStreamManager_IsAcousticEchoCancelerSupported_001, TestSize.Level2)
 {
@@ -2236,9 +2381,12 @@ HWTEST(OHAudioRenderUnitTest, OH_AudioStreamManager_IsAcousticEchoCancelerSuppor
 }
 
 /**
- * @tc.name  : OH_AudioStreamManager_IsAcousticEchoCancelerSupported_002
- * @tc.number: OH_AudioStreamManager_IsAcousticEchoCancelerSupported_002
- * @tc.desc  : IsAcousticEchoCancelerSupported
+ * @tc.name   OH_AudioStreamManager_IsAcousticEchoCancelerSupported_002
+ * @tc.number OH_AudioStreamManager_IsAcousticEchoCancelerSupported_002
+ * @tc.desc   IsAcousticEchoCancelerSupported
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST(OHAudioRenderUnitTest, OH_AudioStreamManager_IsAcousticEchoCancelerSupported_002, TestSize.Level2)
 {

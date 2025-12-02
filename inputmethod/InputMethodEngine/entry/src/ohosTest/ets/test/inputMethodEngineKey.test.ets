@@ -73,7 +73,6 @@ export default function inputMethodEngineKeyJSUnit() {
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0010
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0010
      * @tc.desc   Function test
@@ -153,7 +152,6 @@ export default function inputMethodEngineKeyJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0020
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0020
      * @tc.desc   Function test
@@ -233,7 +231,6 @@ export default function inputMethodEngineKeyJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0030
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0030
      * @tc.desc   Function test
@@ -313,7 +310,6 @@ export default function inputMethodEngineKeyJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0040
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0040
      * @tc.desc   Function test
@@ -393,7 +389,6 @@ export default function inputMethodEngineKeyJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0050
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0050
      * @tc.desc   Function test
@@ -474,7 +469,6 @@ export default function inputMethodEngineKeyJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0060
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0060
      * @tc.desc   Function test
@@ -554,7 +548,6 @@ export default function inputMethodEngineKeyJSUnit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_Misc_InputMethod_Manage_Physical_Buttons_0070
      * @tc.number SUB_Misc_InputMethod_Manage_Physical_Buttons_0070
      * @tc.desc   Function test

@@ -36,7 +36,6 @@ export default function jsMessageExtErrorCode() {
     
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetStringErrorStatic001
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0100
      * @tc.desc   test JsMessageExtGetString error
@@ -57,7 +56,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetStringErrorStatic002
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0200
      * @tc.desc   test JsMessageExtGetString error
@@ -77,7 +75,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetStringErrorStatic003
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0300
      * @tc.desc   test JsMessageExtGetString error
@@ -96,7 +93,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetStringErrorStatic004
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0400
      * @tc.desc   test JsMessageExtGetString error
@@ -115,7 +111,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetNumberErrorStatic001
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0100
      * @tc.desc   test JsMessageExtGetString error
@@ -134,7 +129,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetNumberErrorStatic002
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0200
      * @tc.desc   test JsMessageExtGetString error
@@ -153,7 +147,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetNumberErrorStatic003
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0300
      * @tc.desc   test JsMessageExtGetString error
@@ -172,7 +165,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetNumberErrorStatic004
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0400
      * @tc.desc   test JsMessageExtGetString error
@@ -191,7 +183,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetBooleanErrorStatic001
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0100
      * @tc.desc   test JsMessageExtGetBoolean error
@@ -210,7 +201,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetBooleanErrorStatic002
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0200
      * @tc.desc   test JsMessageExtGetBoolean error
@@ -229,7 +219,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetBooleanErrorStatic003
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0300
      * @tc.desc   test JsMessageExtGetBoolean error
@@ -248,7 +237,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetBooleanErrorStatic004
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0400
      * @tc.desc   test JsMessageExtGetBoolean error
@@ -267,7 +255,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayBufferErrorStatic001
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0100
      * @tc.desc   test JsMessageExtGetArrayBuffer error
@@ -286,7 +273,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayBufferErrorStatic002
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0200
      * @tc.desc   test JsMessageExtGetArrayBuffer error
@@ -305,7 +291,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayBufferErrorStatic003
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0300
      * @tc.desc   test JsMessageExtGetArrayBuffer error
@@ -324,7 +309,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayBufferErrorStatic004
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0400
      * @tc.desc   test JsMessageExtGetArrayBuffer error
@@ -343,7 +327,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayErrorStatic001
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0100
      * @tc.desc   test JsMessageExtGetArray error
@@ -362,7 +345,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayErrorStatic002
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0200
      * @tc.desc   test JsMessageExtGetArray error
@@ -381,7 +363,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayErrorStatic003
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0300
      * @tc.desc   test JsMessageExtGetArray error
@@ -400,7 +381,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testJsMessageExtGetArrayErrorStatic004
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0400
      * @tc.desc   test JsMessageExtGetArray error
@@ -419,7 +399,6 @@ export default function jsMessageExtErrorCode() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SwitchNextPageStatic
      * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
      * @tc.desc   test PAGE_REDIRECT

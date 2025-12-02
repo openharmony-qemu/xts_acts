@@ -63,11 +63,14 @@ export default function webViewOnWindowNewJsunit() {
       done();
     })
 
-    /*
-    *tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0100
-    *tc.name testBlockNetWorkTrue
-    *tc.desc test api blockNetWork set to true by load online website
-    */
+    /**
+     * @tc.name   testBlockNetWorkTrue
+     * @tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0100
+     * @tc.desc   test api blockNetWork set to true by load online website
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBlockNetWorkTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitBlockNetWorkTrue", 130590);
       let url = "http://www.example.com/";
@@ -77,10 +80,13 @@ export default function webViewOnWindowNewJsunit() {
         });
       await Utils.waitAndClickComponent(driver, "onWindowNew");
     })
-    /*
-    *tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0200
-    *tc.name testBlockNetWorkFalse
-    *tc.desc test api blockNetWork set to false by load online website
+   /**
+    * @tc.name   testBlockNetWorkFalse
+    * @tc.number SUB_ACE_BASIC_ETS_API_BLOCKNETWORK_0200
+    * @tc.desc   test api blockNetWork set to false by load online website
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('testBlockNetWorkFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitBlockNetWorkFalse", 130590);

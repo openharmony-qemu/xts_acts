@@ -20,7 +20,6 @@ export default function rdbTest() {
   describe('RdbTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCreateValueObject001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0010
      * @tc.desc   OH_Rdb_CreateValueObject Interface testing
@@ -36,7 +35,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCreateValuesBucket001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0020
      * @tc.desc   OH_Rdb_CreateValuesBucket Interface testing
@@ -52,7 +50,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCreatePredicates001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0030
      * @tc.desc   OH_Rdb_CreatePredicates Interface testing
@@ -67,7 +64,6 @@ export default function rdbTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCreatePredicates002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0040
      * @tc.desc   OH_Rdb_CreatePredicates Interface testing
@@ -83,7 +79,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCreatePredicates003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0050
      * @tc.desc   OH_Rdb_CreatePredicates Interface testing
@@ -99,7 +94,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetOrOpen001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0060
      * @tc.desc   OH_Rdb_GetOrOpen Interface testing
@@ -115,7 +109,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetOrOpen002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0070
      * @tc.desc   OH_Rdb_GetOrOpen Interface testing
@@ -131,7 +124,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetOrOpen003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0080
      * @tc.desc   OH_Rdb_GetOrOpen Interface testing
@@ -147,7 +139,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testGetOrOpen004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0090
      * @tc.desc   OH_Rdb_GetOrOpen Interface testing
@@ -163,7 +154,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCloseStore001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0100
      * @tc.desc   OH_Rdb_CloseStore Interface testing
@@ -179,7 +169,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCloseStore002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0110
      * @tc.desc   OH_Rdb_CloseStore Interface testing
@@ -195,7 +184,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testCloseStore003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0120
      * @tc.desc   OH_Rdb_CloseStore Interface testing
@@ -211,7 +199,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDeleteStore001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0130
      * @tc.desc   OH_Rdb_DeleteStore Interface testing
@@ -227,7 +214,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDeleteStore002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0140
      * @tc.desc   OH_Rdb_DeleteStore Interface testing
@@ -243,7 +229,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDeleteStore003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0150
      * @tc.desc   OH_Rdb_DeleteStore Interface testing
@@ -259,7 +244,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testInsert001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0160
      * @tc.desc   OH_Rdb_Insert Interface testing
@@ -275,7 +259,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testInsert002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0170
      * @tc.desc   OH_Rdb_Insert Interface testing
@@ -291,7 +274,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testInsert003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0180
      * @tc.desc   OH_Rdb_Insert Interface testing
@@ -307,7 +289,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testInsert004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0190
      * @tc.desc   OH_Rdb_Insert Interface testing
@@ -323,7 +304,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testInsert005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0200
      * @tc.desc   OH_Rdb_Insert Interface testing
@@ -339,7 +319,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0210
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -355,7 +334,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0220
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -371,7 +349,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0230
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -387,7 +364,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0240
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -403,7 +379,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0250
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -419,7 +394,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0260
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -435,7 +409,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testUpdate007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0270
      * @tc.desc   OH_Rdb_Update Interface testing
@@ -451,7 +424,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDelete001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0280
      * @tc.desc   OH_Rdb_Delete Interface testing
@@ -467,7 +439,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDelete002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0290
      * @tc.desc   OH_Rdb_Delete Interface testing
@@ -483,7 +454,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDelete003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0300
      * @tc.desc   OH_Rdb_Delete Interface testing
@@ -499,7 +469,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDelete004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0310
      * @tc.desc   OH_Rdb_Delete Interface testing
@@ -515,7 +484,6 @@ export default function rdbTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testDelete005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0320
      * @tc.desc   OH_Rdb_Delete Interface testing

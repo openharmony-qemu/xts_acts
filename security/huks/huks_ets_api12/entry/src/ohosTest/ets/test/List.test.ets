@@ -18,6 +18,7 @@ import SecurityHuksKeyGenerateListAliasesTest from './SecurityHuksKeyGenerateLis
 import SecurityHuksCmacTest from './SecurityHuksCmac.test';
 import SecurityHuksSignVerifyRSATest from './SecurityHuksSignVerifyRSA.test';
 import SecurityHuksCipherRSATest from './SecurityHuksCipherRSA.test';
+import SecurityHuksCipherAesTest from './SecurityHuksCipherAES.test';
 import SecurityHuksCipherDESTest from './SecurityHuksCipherDES.test';
 import SecurityHuksCipher3DESTest from './SecurityHuksCipher3DES.test';
 import SecurityHuksImportTest from './SecurityHuksImport.test';
@@ -36,6 +37,7 @@ export default function testsuite() {
   SecurityHuksCmacTest();
   SecurityHuksSignVerifyRSATest();
   SecurityHuksCipherRSATest();
+  SecurityHuksCipherAesTest();
   SecurityHuksCipherDESTest();
   SecurityHuksCipher3DESTest();
   SecurityHuksImportTest();

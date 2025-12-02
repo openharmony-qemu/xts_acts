@@ -43,12 +43,14 @@ export default function StartAndEnd() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : StartAndEnd_0001
-    * @tc.desc  : Component sliding triggers onReachEnd and onReachStart
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   StartAndEnd_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   Component sliding triggers onReachEnd and onReachStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StartAndEnd_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[StartAndEnd_0001] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('StartAndEnd')

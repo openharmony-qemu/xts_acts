@@ -36,13 +36,13 @@ export default function abilityTest() {
     })
 
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0100
-     * @tc.desc: Call the interface to return whether the current application is running
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_0100
+     * @tc.desc   Call the interface to return whether the current application is running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0100', Level.LEVEL0, async (done: Function) => {
   let tag = "SUB_Ability_AbilityRuntime_AppManager_0100";
@@ -58,13 +58,13 @@ export default function abilityTest() {
   })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0200
-     * @tc.desc: Call the interface to return whether the current application is running
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_0200
+     * @tc.desc   Call the interface to return whether the current application is running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0200', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_AppManager_0200";
@@ -80,13 +80,13 @@ export default function abilityTest() {
       })
     })
 
-        /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0300
-     * @tc.desc: Call the interface to 401 when bundlename is undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_0300
+     * @tc.desc   Call the interface to 401 when bundlename is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0300', Level.LEVEL0, async (done: Function) => {
           let tag = "SUB_Ability_AbilityRuntime_AppManager_0300";
@@ -109,13 +109,13 @@ export default function abilityTest() {
           
     })
 
-            /*
-     * @tc.number: SUB_Ability_AbilityRuntime_AppManager_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_AppManager_0400
-     * @tc.desc: Registering an Application Status Listener.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_0400
+     * @tc.desc   Registering an Application Status Listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0400', Level.LEVEL0, async (done: Function) => {
       let tag = "SUB_Ability_AbilityRuntime_AppManager_0400";

@@ -41,14 +41,14 @@ export default function webSocketJsunitTest() {
   describe("webSocketJsunitTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-   /*
-    * @tc.number    : TUB_NetworkMgr_WebSocket_WebSocketCloseOptions_0100
-    * @tc.name      : testNetworkMgrWebSocketWebSocketCloseOptions0100
-    * @tc.desc      : webSocketCloseOptions.code
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketCloseOptions0100
+     * @tc.number TUB_NetworkMgr_WebSocket_WebSocketCloseOptions_0100
+     * @tc.desc   webSocketCloseOptions.code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketWebSocketCloseOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketCloseOptions0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -68,14 +68,14 @@ export default function webSocketJsunitTest() {
       }
     });
 
-    /*
-    * @tc.number    : TUB_NetworkMgr_WebSocket_WebSocketCloseOptions_0200
-    * @tc.name      : testNetworkMgrWebSocketWebSocketCloseOptions0200
-    * @tc.desc      : webSocketCloseOptions.code
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketCloseOptions0200
+     * @tc.number TUB_NetworkMgr_WebSocket_WebSocketCloseOptions_0200
+     * @tc.desc   webSocketCloseOptions.code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketWebSocketCloseOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketCloseOptions0200';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -93,13 +93,13 @@ export default function webSocketJsunitTest() {
       }
     });
 
-    /*
-     * @tc.number    : TUB_NetworkMgr_WebSocket_WebSocketCloseOptions_0300
-     * @tc.name      : testNetworkMgrWebSocketWebSocketCloseOptions0300
-     * @tc.desc      : webSocketCloseOptions.code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketCloseOptions0300
+     * @tc.number TUB_NetworkMgr_WebSocket_WebSocketCloseOptions_0300
+     * @tc.desc   webSocketCloseOptions.code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketCloseOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketCloseOptions0300';
@@ -118,14 +118,14 @@ export default function webSocketJsunitTest() {
       }
     });
 
-    /*
-    * @tc.number    : TUB_NetworkMgr_WebSocket_CloseResult_0100
-    * @tc.name      : testNetworkMgrWebSocketCloseResult0100
-    * @tc.desc      : webSocketCloseOptions.code
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrWebSocketCloseResult0100
+     * @tc.number TUB_NetworkMgr_WebSocket_CloseResult_0100
+     * @tc.desc   webSocketCloseOptions.code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrWebSocketCloseResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketCloseResult0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');

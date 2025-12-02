@@ -355,10 +355,13 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponse_0010
- * @tc.name      : Receiver send response successfully
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSendResponse0010
+ * @tc.number DMSLite_SAMGR_SendResponse_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendResponseTest, testSendResponse0010, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
     if (demoApi == nullptr) {
@@ -390,10 +393,13 @@ HWTEST_F(SendResponseTest, testSendResponse0010, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponse_0020
- * @tc.name      : Receiver can not send response if sender has not register callback
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSendResponse0020
+ * @tc.number DMSLite_SAMGR_SendResponse_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendResponseTest, testSendResponse0020, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
     if (demoApi == nullptr) {
@@ -424,10 +430,13 @@ HWTEST_F(SendResponseTest, testSendResponse0020, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponse_0030
- * @tc.name      : Receiver send response to itself successfully
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSendResponse0030
+ * @tc.number DMSLite_SAMGR_SendResponse_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendResponseTest, testSendResponse0030, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown("serviceName601", "featureName603");
     if (demoApi == nullptr) {
@@ -458,10 +467,13 @@ HWTEST_F(SendResponseTest, testSendResponse0030, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponseByIdentity_0020
- * @tc.name      : Receiver can not forward message if the sender has not registered handler
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testSendResponseByIdentity0020
+ * @tc.number DMSLite_SAMGR_SendResponseByIdentity_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendResponseTest, testSendResponseByIdentity0020, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown("serviceName601", "featureName602");
     if (demoApi == nullptr) {

@@ -42,6 +42,14 @@ export default function textOneJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textOneJsunit_0100
+     * @tc.number textOneJsunit_0100
+     * @tc.desc   textOneJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textOneJsunit_0100', Level.LEVEL1, async (done: Function) => {
        console.info('textOneJsunit_0100 START');
        await CommonFunc.sleep(1000);
@@ -55,6 +63,14 @@ export default function textOneJsunit() {
        done();
     });
 
+   /**
+    * @tc.name   textOneJsunit_0200
+    * @tc.number textOneJsunit_0200
+    * @tc.desc   textOneJsunit_0200
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('textOneJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0200 START');
       // test the enum value of textAlign 
@@ -73,6 +89,14 @@ export default function textOneJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textOneJsunit_0300
+     * @tc.number textOneJsunit_0300
+     * @tc.desc   textOneJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textOneJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0300 START');
       // test the illegal enum value of textAlign 
@@ -85,6 +109,14 @@ export default function textOneJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textOneJsunit_0400
+     * @tc.number textOneJsunit_0400
+     * @tc.desc   textOneJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textOneJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0400 START');
       // test the  enum value of textOverflow
@@ -106,6 +138,14 @@ export default function textOneJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textOneJsunit_0500
+     * @tc.number textOneJsunit_0500
+     * @tc.desc   textOneJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textOneJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0500 START');
       // test the illegal enum value of textOverflow
@@ -120,6 +160,14 @@ export default function textOneJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textOneJsunit_0600
+     * @tc.number textOneJsunit_0600
+     * @tc.desc   textOneJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textOneJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('textOneJsunit_0600 START');
       // test the value of lineHeight 

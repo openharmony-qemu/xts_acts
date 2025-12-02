@@ -60,10 +60,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_001
-     *tc.name createPdf
-     *tc.desic get createPdf
+    /**
+     * @tc.name   SavePDF
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_001
+     * @tc.desc   SavePDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SavePDF', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSavePDF", 300500)
@@ -71,10 +74,13 @@ export default function webJsunit() {
       sendEventByKey('webSavePDF', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_PDFARRAYBUFFER_002
-     *tc.name pdfArrayBuffer
-     *tc.desic get pdfArrayBuffer
+    /**
+     * @tc.name   SavePDF1
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_PDFARRAYBUFFER_002
+     * @tc.desc   SavePDF1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SavePDF1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSavePDF1", 300500)

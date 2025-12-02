@@ -61,12 +61,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_001
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_001
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_0001
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_001
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_0001';
@@ -83,12 +83,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_002
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_002
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_002
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_002
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_002';
@@ -105,12 +105,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_003
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_003
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_003
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_003
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_003';
@@ -127,12 +127,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_004
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_004
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_004
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_004
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_004';
@@ -149,12 +149,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_005
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_005
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_005
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_005
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_005';
@@ -171,12 +171,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_006
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_006
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_006
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_006
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_006';
@@ -193,12 +193,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_007
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_007
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_007
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_007
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_007';
@@ -215,12 +215,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_008
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_008
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_008
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_008
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_008';
@@ -237,12 +237,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_009
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_009
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_009
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_009
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_009';
@@ -259,12 +259,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_010
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_010
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_010
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_010
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_010';
@@ -281,12 +281,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_011
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_011
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_011
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_011
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_011';
@@ -303,12 +303,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_012
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_012
-     * @tc.desc       Test createImageReceiver with options
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_012
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_012
+     * @tc.desc   Test createImageReceiver with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_012';
@@ -325,12 +325,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_013
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_013
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_013
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_013
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_013';
@@ -342,12 +342,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_014
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_014
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_014
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_014
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_014';
@@ -359,12 +359,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_015
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_015
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_015
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_015
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_015';
@@ -377,12 +377,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_016
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_016
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_016
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_016
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_016';
@@ -395,12 +395,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_017
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_017
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_017
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_017
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_017';
@@ -413,12 +413,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_018
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_018
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_018
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_018
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_018';
@@ -431,12 +431,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_019
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_019
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_019
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_019
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_019';
@@ -448,12 +448,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_020
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_020
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_020
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_020
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_020';
@@ -465,12 +465,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_021
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_021
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_021
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_021
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_021';
@@ -483,12 +483,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_022
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_022
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_022
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_022
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_022';
@@ -501,12 +501,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_023
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_023
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_023
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_023
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_023';
@@ -519,12 +519,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_024
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_024
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_024
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_024
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_024';
@@ -537,12 +537,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_025
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_025
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_025
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_025
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_025';
@@ -554,12 +554,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_026
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_026
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_026
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_026
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_026';
@@ -571,12 +571,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_027
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_027
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_027
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_027
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_027';
@@ -588,12 +588,12 @@ export default function ImageCreateImageSourceOptionsTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_028
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_028
-     * @tc.desc       Test createImageReceiver with size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_028
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_028
+     * @tc.desc   Test createImageReceiver with size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_SOURCE_ABNORMAL_ERROR_028';

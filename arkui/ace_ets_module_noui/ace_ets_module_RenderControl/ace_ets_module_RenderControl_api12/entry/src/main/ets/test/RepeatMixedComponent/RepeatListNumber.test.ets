@@ -59,12 +59,12 @@ export default function RepeatListNumber() {
     });
 
     /**
+     * @tc.name   RepeatListNumber_001
      * @tc.number RepeatListNumber_001
-     * @tc.name RepeatListNumber_001
-     * @tc.desc Test RepeatListNumber component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatListNumber component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatListNumber_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatListNumber_001] START');

@@ -36,14 +36,14 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 export default function ActNetManagerDataDoubleCard() {
   describe('ActNetManagerDataDoubleCard', () => {
 
-	/* *
-	 * @tc.number: SUB_Telephony_Data_GetActiveApnName_0100
-	 * @tc.name  : testTelephonyDataGetActiveApnName0100
-	 * @tc.desc  : test interface getActiveApnName with a sim card and without a network.
-	 * @tc.size  : MediumTest
-	 * @tc.type  : Function
-	 * @tc.level : level 3
-	*/
+    /**
+     * @tc.name   testTelephonyDataGetActiveApnName0100
+     * @tc.number SUB_Telephony_Data_GetActiveApnName_0100
+     * @tc.desc   test interface getActiveApnName with a sim card and without a network.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testTelephonyDataGetActiveApnName0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testTelephonyDataGetActiveApnName0100";
       console.info(`${caseName}---Start`);

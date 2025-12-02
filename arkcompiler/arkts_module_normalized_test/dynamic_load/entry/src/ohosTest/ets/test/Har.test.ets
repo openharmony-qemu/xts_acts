@@ -19,12 +19,12 @@ import { BusinessError } from "@kit.BasicServicesKit";
 export default function dynamicLoadHar() {
   describe('HarTest', () => {
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0100
-     * @tc.name      : testConstantExpressionsHar01
-     * @tc.desc      : Test constant expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHar01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0100
+     * @tc.desc   Test constant expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHar01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHar01";
@@ -37,12 +37,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0200
-     * @tc.name      : testConstantExpressionsHar02
-     * @tc.desc      : Test constant expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHar02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0200
+     * @tc.desc   Test constant expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHar02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHar02";
@@ -55,12 +55,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0300
-     * @tc.name      : testConstantExpressionsHar03
-     * @tc.desc      : Test constant expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHar03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0300
+     * @tc.desc   Test constant expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHar03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHar03";
@@ -73,12 +73,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0400
-     * @tc.name      : testConstantExpressionsHar04
-     * @tc.desc      : Test constant expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsHar04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0400
+     * @tc.desc   Test constant expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConstantExpressionsHar04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsHar04";
@@ -91,12 +91,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0500
-     * @tc.name      : testConstantExpressionsOhpm01
-     * @tc.desc      : Test constant expression loading ohpm.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsOhpm01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0500
+     * @tc.desc   Test constant expression loading ohpm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testConstantExpressionsOhpm01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsOhpm02";
@@ -112,12 +112,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0700
-     * @tc.name      : testConstantExpressionsOhpm03
-     * @tc.desc      : Test constant expression loading ohpm.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsOhpm03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0700
+     * @tc.desc   Test constant expression loading ohpm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testConstantExpressionsOhpm03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsOhpm03";
@@ -130,12 +130,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0800
-     * @tc.name      : testConstantExpressionsOhpm04
-     * @tc.desc      : Test constant expression loading ohpm.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testConstantExpressionsOhpm04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0800
+     * @tc.desc   Test constant expression loading ohpm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testConstantExpressionsOhpm04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsOhpm04";
@@ -148,12 +148,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0900
-     * @tc.name      : testVariableExpressionsHar01
-     * @tc.desc      : Test variable expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHar01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_0900
+     * @tc.desc   Test variable expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHar01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHar01";
@@ -167,12 +167,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1000
-     * @tc.name      : testVariableExpressionsHar02
-     * @tc.desc      : Test variable expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHar02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1000
+     * @tc.desc   Test variable expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHar02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHar02";
@@ -186,12 +186,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1100
-     * @tc.name      : testVariableExpressionsHar03
-     * @tc.desc      : Test variable expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHar03
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1100
+     * @tc.desc   Test variable expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHar03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHar03";
@@ -205,12 +205,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1200
-     * @tc.name      : testVariableExpressionsHar04
-     * @tc.desc      : Test variable expression loading har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsHar04
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1200
+     * @tc.desc   Test variable expression loading har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVariableExpressionsHar04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsHar04";
@@ -224,12 +224,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1300
-     * @tc.name      : testVariableExpressionsOhpm01
-     * @tc.desc      : Test variable expression loading ohpm.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsOhpm01
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1300
+     * @tc.desc   Test variable expression loading ohpm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testVariableExpressionsOhpm01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsOhpm01";
@@ -243,12 +243,12 @@ export default function dynamicLoadHar() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1400
-     * @tc.name      : testVariableExpressionsOhpm02
-     * @tc.desc      : Test variable expression loading ohpm.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testVariableExpressionsOhpm02
+     * @tc.number SUB_COMPILER_RUNTIME_DYNAMIC_LOAD_HAR_1400
+     * @tc.desc   Test variable expression loading ohpm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testVariableExpressionsOhpm02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsOhpm02";

@@ -68,7 +68,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPermissionUserGrant0100
      * @tc.number STD-SECURITY-0101
      * @tc.desc   【STD-SECURITY-0101】必须为用户提供专用的界面或接口用于授权和管理动态权限(user_grant)，必要时用户可以撤销授权。
@@ -96,7 +95,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBackgroundCameraBanned0100
      * @tc.number STD-SECURITY-0105
      * @tc.desc   【STD-SECURITY-0105】禁止允许应用在后台时使用相机权限。
@@ -177,7 +175,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAuthenticationCall0100
      * @tc.number STD-SECURITY-0106
      * @tc.desc   【STD-SECURITY-0106】涉及权限保护的接口，必须通过鉴权之后才允许被调用。
@@ -234,7 +231,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testHardwareSupportAESGCM256Alg0100
      * @tc.number C-ALL-SECURITY-0300
      * @tc.desc   【C-ALL-SECURITY-0300】必须至少支持 AES-GCM-256 算法，用于报文传输的加密和解密。
@@ -267,7 +263,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportHASHAndHMACAlg0100
      * @tc.number C-ALL-SECURITY-0302
      * @tc.desc   【C-ALL-SECURITY-0302】必须支持硬件 HASH-SHA256、HMAC_SHA256 算法。
@@ -313,7 +308,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportRSA2048Alg0100
      * @tc.number C-ALL-SECURITY-0303
      * @tc.desc   【C-ALL-SECURITY-0303】必须支持硬件 RSA、ECC 签名校验算法。
@@ -342,7 +336,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportECCAlg0100
      * @tc.number C-ALL-SECURITY-0303
      * @tc.desc   【C-ALL-SECURITY-0303】必须支持硬件 RSA、ECC 签名校验算法。
@@ -371,7 +364,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportSecureRandomNumber0100
      * @tc.number G-SECURITY-0308
      * @tc.desc   【G-SECURITY-0308】必须支持安全随机数。
@@ -399,7 +391,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportHASHSHA256Alg0100
      * @tc.number G-SECURITY-0309
      * @tc.desc   【G-SECURITY-0309】必须支持 HASH 算法，至少包括 SHA256。
@@ -427,7 +418,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportHKDFAlg0100
      * @tc.number S|STD-SECURITY-0310
      * @tc.desc   【S|STD-SECURITY-0310】必须支持 HMAC 和 HKDF 算法，至少包括 HMAC-SHA256。
@@ -468,7 +458,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCBC128Alg0100
      * @tc.number G-SECURITY-0311
      * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
@@ -499,7 +488,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCBC192Alg0100
      * @tc.number G-SECURITY-0311
      * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
@@ -530,7 +518,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCBC256Alg0100
      * @tc.number G-SECURITY-0311
      * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
@@ -561,7 +548,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESGCM128Alg0100
      * @tc.number G-SECURITY-0311
      * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
@@ -592,7 +578,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESGCM192Alg0100
      * @tc.number G-SECURITY-0311
      * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
@@ -623,7 +608,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESGCM256Alg0100
      * @tc.number G-SECURITY-0311
      * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
@@ -654,7 +638,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESECB128Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -684,7 +667,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESECB192Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -714,7 +696,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESECB256Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -744,7 +725,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESOFB128Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -775,7 +755,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESOFB192Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -806,7 +785,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESOFB256Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -837,7 +815,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCFB128Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -868,7 +845,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCFB192Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -899,7 +875,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCFB256Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -930,7 +905,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCTR128Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -961,7 +935,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCTR192Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -993,7 +966,6 @@ export default function securityTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCTR256Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -1024,7 +996,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCCM128Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -1055,7 +1026,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCCM192Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -1086,7 +1056,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportAESCCM256Alg0100
      * @tc.number S|STD-SECURITY-0312
      * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
@@ -1117,7 +1086,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportRSA3072Alg0100
      * @tc.number S|STD-SECURITY-0313
      * @tc.desc   【S|STD-SECURITY-0313】必须支持非对称加密算法 RSA，包括 2048 位、3072 位、4096 位，
@@ -1146,7 +1114,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportRSA4096Alg0100
      * @tc.number S|STD-SECURITY-0313
      * @tc.desc   【S|STD-SECURITY-0313】必须支持非对称加密算法 RSA，包括 2048 位、3072 位、4096 位，
@@ -1175,7 +1142,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportSignatureVerifyAlg0100
      * @tc.number S|STD-SECURITY-0314
      * @tc.desc   【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
@@ -1220,7 +1186,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportKeySignatureAlg0100
      * @tc.number S|STD-SECURITY-0314
      * @tc.desc   【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
@@ -1259,7 +1224,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSupportKeyAgreementAlg0100
      * @tc.number S|STD-SECURITY-0314
      * @tc.desc   【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
@@ -1298,7 +1262,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testKeyStorage0100
      * @tc.number STD-SECURITY-0315
      * @tc.desc   【STD-SECURITY-0315】HUKS 应提供密钥安全存储能力，保护业务所存储密钥的机密性与完整性。
@@ -1325,7 +1288,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testKeyIdentityAssociation0100
      * @tc.number STD-SECURITY-0316
      * @tc.desc   【STD-SECURITY-0316】业务存储密钥时，系统级的密钥管理模块应将该业务的身份与密钥进行关联存储，并对该业务身份进行完整性保护。
@@ -1403,7 +1365,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testFileRiskLevelEnable0100
      * @tc.number C-S|STD-SECURITY-0500
      * @tc.desc   【C-S|STD-SECURITY-0500】对于要求提供风险等级标签设置能力的系统，对应的文件系统（包括本地文件系统和分布式文件系统）
@@ -1430,7 +1391,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testDatabaseRiskLevelEnable0100
      * @tc.number C-S|STD-SECURITY-0501
      * @tc.desc   【C-S|STD-SECURITY-0501】对于要求提供风险等级标签设置能力的系统，对应的数据库系统（包括本地数据库和分布式数据库）
@@ -1470,7 +1430,6 @@ export default function securityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testDriverNodeAccess
      * @tc.number STD-SECURITY-0201
      * @tc.desc   【STD-SECURITY-0201】不应给应用开放直接访问设备驱动节点的能力，需通过服务层访问。

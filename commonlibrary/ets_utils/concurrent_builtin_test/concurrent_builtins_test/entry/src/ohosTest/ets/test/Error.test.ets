@@ -56,12 +56,12 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0100
-     * @tc.name      : testError
-     * @tc.desc      : Test 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -90,12 +90,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0200
-     * @tc.name      : testRangeError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRangeError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testRangeError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -124,12 +124,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_020
-     * @tc.name      : testReferenceError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testReferenceError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_020
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testReferenceError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -158,12 +158,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0300
-     * @tc.name      : testTypeError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTypeError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTypeError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -192,12 +192,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0400
-     * @tc.name      : testAggregateError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAggregateError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAggregateError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -226,12 +226,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0500
-     * @tc.name      : testURIError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testURIError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testURIError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -260,12 +260,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0600
-     * @tc.name      : testSyntaxError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSyntaxError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSyntaxError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -294,12 +294,12 @@ export default function ErrorTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0700
-     * @tc.name      : testEvalError
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testEvalError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testEvalError', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

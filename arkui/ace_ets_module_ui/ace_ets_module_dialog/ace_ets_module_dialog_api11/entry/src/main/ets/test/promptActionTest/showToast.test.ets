@@ -48,12 +48,12 @@ export default function showToast() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showToast_0100
-     * @tc.name      showToast_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showToast_0100
+     * @tc.number SUB_ACE_showToast_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showToast_0100', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0100 START');
@@ -77,12 +77,12 @@ export default function showToast() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showToast_0200
-     * @tc.name      showToast_0200
-     * @tc.desc      test error code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showToast_0200
+     * @tc.number SUB_ACE_showToast_0200
+     * @tc.desc   test error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showToast_0200', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0200 START');

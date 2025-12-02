@@ -48,12 +48,12 @@ export default function VideoContentTransitionEffectTest() {
     });
 
     /**
-     * @tc.number     VideoContentTransitionEffectTest_0100
-     * @tc.name       VideoContentTransitionEffectTest_0100
-     * @tc.desc       Test Video ContentTransitionEffect
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   VideoContentTransitionEffectTest_0100
+     * @tc.number VideoContentTransitionEffectTest_0100
+     * @tc.desc   Test Video ContentTransitionEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VideoContentTransitionEffectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[VideoContentTransitionEffectTest_0100] START');

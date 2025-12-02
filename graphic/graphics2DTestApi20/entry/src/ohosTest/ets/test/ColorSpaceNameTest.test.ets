@@ -42,12 +42,12 @@ const LINEAR_BT2020 = 25;
 export default function ColorSpaceNameTest() {
   describe('ColorSpaceNameTest', () => {
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT601EBU_0100
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT601EBU_0100
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT601EBU
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT601EBU_0100
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT601EBU_0100
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT601EBU
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT601EBU_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT601SMPTEC_0200
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT601SMPTEC_0200
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT601SMPTEC
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT601SMPTEC_0200
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT601SMPTEC_0200
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT601SMPTEC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT601SMPTEC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT2020HLG_0300
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT2020HLG_0300
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT2020HLG
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT2020HLG_0300
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT2020HLG_0300
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT2020HLG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT2020HLG_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT2020PQ_0400
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT2020PQ_0400
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT2020PQ
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT2020PQ_0400
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT2020PQ_0400
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT2020PQ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT2020PQ_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameP3HLG_0500
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameP3HLG_0500
-     * @tc.desc    : Test OHCreateColorSpaceFromNameP3HLG
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameP3HLG_0500
+     * @tc.number SUB_OH_CreateColorSpaceFromNameP3HLG_0500
+     * @tc.desc   Test OHCreateColorSpaceFromNameP3HLG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameP3HLG_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -152,12 +152,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameP3PQ_0600
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameP3PQ_0600
-     * @tc.desc    : Test OHCreateColorSpaceFromNameP3PQ
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameP3PQ_0600
+     * @tc.number SUB_OH_CreateColorSpaceFromNameP3PQ_0600
+     * @tc.desc   Test OHCreateColorSpaceFromNameP3PQ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameP3PQ_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -174,12 +174,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameADOBERGBLIMIT_0700
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameADOBERGBLIMIT_0700
-     * @tc.desc    : Test OHCreateColorSpaceFromNameADOBERGBLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameADOBERGBLIMIT_0700
+     * @tc.number SUB_OH_CreateColorSpaceFromNameADOBERGBLIMIT_0700
+     * @tc.desc   Test OHCreateColorSpaceFromNameADOBERGBLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameADOBERGBLIMIT_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -196,12 +196,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDISPLAYP3LIMIT_0800
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDISPLAYP3LIMIT_0800
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDISPLAYP3LIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDISPLAYP3LIMIT_0800
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDISPLAYP3LIMIT_0800
+     * @tc.desc   Test OHCreateColorSpaceFromNameDISPLAYP3LIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDISPLAYP3LIMIT_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -218,12 +218,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_0900
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_0900
-     * @tc.desc    : Test OHCreateColorSpaceFromNameSRGBLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_0900
+     * @tc.number SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_0900
+     * @tc.desc   Test OHCreateColorSpaceFromNameSRGBLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -240,12 +240,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_1000
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_1000
-     * @tc.desc    : Test OHCreateColorSpaceFromNameSRGBLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_1000
+     * @tc.number SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_1000
+     * @tc.desc   Test OHCreateColorSpaceFromNameSRGBLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameSRGBLIMIT_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -262,12 +262,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT601EBULIMIT_1100
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT601EBULIMIT_1100
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT601EBULIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT601EBULIMIT_1100
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT601EBULIMIT_1100
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT601EBULIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT601EBULIMIT_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -284,12 +284,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT601SMPTECLIMIT_1200
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT601SMPTECLIMIT_1200
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT601SMPTECLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT601SMPTECLIMIT_1200
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT601SMPTECLIMIT_1200
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT601SMPTECLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT601SMPTECLIMIT_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -306,12 +306,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT2020HLGLIMIT_1300
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT2020HLGLIMIT_1300
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT2020HLGLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT2020HLGLIMIT_1300
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT2020HLGLIMIT_1300
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT2020HLGLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT2020HLGLIMIT_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -328,12 +328,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT2020PQLIMIT_1400
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT2020PQLIMIT_1400
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT2020PQLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT2020PQLIMIT_1400
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT2020PQLIMIT_1400
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT2020PQLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT2020PQLIMIT_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -350,12 +350,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameP3HLGLIMIT_1500
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameP3HLGLIMIT_1500
-     * @tc.desc    : Test OHCreateColorSpaceFromNameP3HLGLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameP3HLGLIMIT_1500
+     * @tc.number SUB_OH_CreateColorSpaceFromNameP3HLGLIMIT_1500
+     * @tc.desc   Test OHCreateColorSpaceFromNameP3HLGLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameP3HLGLIMIT_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -372,12 +372,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameP3PQLIMIT_1600
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameP3PQLIMIT_1600
-     * @tc.desc    : Test OHCreateColorSpaceFromNameP3PQLIMIT
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameP3PQLIMIT_1600
+     * @tc.number SUB_OH_CreateColorSpaceFromNameP3PQLIMIT_1600
+     * @tc.desc   Test OHCreateColorSpaceFromNameP3PQLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameP3PQLIMIT_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -394,12 +394,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameLINEARP3_1700
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameLINEARP3_1700
-     * @tc.desc    : Test OHCreateColorSpaceFromNameLINEARP3
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameLINEARP3_1700
+     * @tc.number SUB_OH_CreateColorSpaceFromNameLINEARP3_1700
+     * @tc.desc   Test OHCreateColorSpaceFromNameLINEARP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameLINEARP3_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -416,12 +416,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameLINEARSRGB_1800
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameLINEARSRGB_1800
-     * @tc.desc    : Test OHCreateColorSpaceFromNameLINEARSRGB
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameLINEARSRGB_1800
+     * @tc.number SUB_OH_CreateColorSpaceFromNameLINEARSRGB_1800
+     * @tc.desc   Test OHCreateColorSpaceFromNameLINEARSRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameLINEARSRGB_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -438,12 +438,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameLINEARBT709_1900
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameLINEARBT709_1900
-     * @tc.desc    : Test OHCreateColorSpaceFromNameLINEARBT709
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameLINEARBT709_1900
+     * @tc.number SUB_OH_CreateColorSpaceFromNameLINEARBT709_1900
+     * @tc.desc   Test OHCreateColorSpaceFromNameLINEARBT709
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameLINEARBT709_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -460,12 +460,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_OHCreateColorSpaceFromNameLINEARBT2020_2000
-     * @tc.name    : SUB_OH_OHCreateColorSpaceFromNameLINEARBT2020_2000
-     * @tc.desc    : Test OHCreateColorSpaceFromNameLINEARBT2020
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_OHCreateColorSpaceFromNameLINEARBT2020_2000
+     * @tc.number SUB_OH_OHCreateColorSpaceFromNameLINEARBT2020_2000
+     * @tc.desc   Test OHCreateColorSpaceFromNameLINEARBT2020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_OHCreateColorSpaceFromNameLINEARBT2020_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -482,12 +482,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDCIP3_2100
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDCIP3_2100
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDCIP3
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDCIP3_2100
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDCIP3_2100
+     * @tc.desc   Test OHCreateColorSpaceFromNameDCIP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDCIP3_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -504,12 +504,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDISPLAYP3_2200
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDISPLAYP3_2200
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDISPLAYP3
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDISPLAYP3_2200
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDISPLAYP3_2200
+     * @tc.desc   Test OHCreateColorSpaceFromNameDISPLAYP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDISPLAYP3_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -526,12 +526,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameBT709_2300
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameBT709_2300
-     * @tc.desc    : Test OHCreateColorSpaceFromNameBT709
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameBT709_2300
+     * @tc.number SUB_OH_CreateColorSpaceFromNameBT709_2300
+     * @tc.desc   Test OHCreateColorSpaceFromNameBT709
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameBT709_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -548,12 +548,12 @@ export default function ColorSpaceNameTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDISPLAYSRGB_2400
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDISPLAYSRGB_2400
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDISPLAYSRGB
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDISPLAYSRGB_2400
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDISPLAYSRGB_2400
+     * @tc.desc   Test OHCreateColorSpaceFromNameDISPLAYSRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDISPLAYSRGB_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -570,12 +570,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDISPLAYP3SRGB_2500
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDISPLAYP3SRGB_2500
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDISPLAYP3SRGB
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDISPLAYP3SRGB_2500
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDISPLAYP3SRGB_2500
+     * @tc.desc   Test OHCreateColorSpaceFromNameDISPLAYP3SRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDISPLAYP3SRGB_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -592,12 +592,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDISPLAYP3HLG_2600
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDISPLAYP3HLG_2600
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDISPLAYP3HLG
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDISPLAYP3HLG_2600
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDISPLAYP3HLG_2600
+     * @tc.desc   Test OHCreateColorSpaceFromNameDISPLAYP3HLG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDISPLAYP3HLG_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -614,12 +614,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameDISPLAYP3PQ_2700
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameDISPLAYP3PQ_2700
-     * @tc.desc    : Test OHCreateColorSpaceFromNameDISPLAYP3PQ
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameDISPLAYP3PQ_2700
+     * @tc.number SUB_OH_CreateColorSpaceFromNameDISPLAYP3PQ_2700
+     * @tc.desc   Test OHCreateColorSpaceFromNameDISPLAYP3PQ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameDISPLAYP3PQ_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -636,12 +636,12 @@ export default function ColorSpaceNameTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateColorSpaceFromNameCUSTOM_2800
-     * @tc.name    : SUB_OH_CreateColorSpaceFromNameCUSTOM_2800
-     * @tc.desc    : Test OHCreateColorSpaceFromNameCUSTOM
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateColorSpaceFromNameCUSTOM_2800
+     * @tc.number SUB_OH_CreateColorSpaceFromNameCUSTOM_2800
+     * @tc.desc   Test OHCreateColorSpaceFromNameCUSTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateColorSpaceFromNameCUSTOM_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

@@ -41,12 +41,12 @@ export default function ScrollToIndexForWaterFlowJsunit01() {
     });
 
     /**
+     * @tc.name   ScrollToIndexForWaterFlow01_0100
      * @tc.number ScrollToIndexForWaterFlow01_0100
-     * @tc.name scenario testing
-     * @tc.desc set index to 30
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level   2
+     * @tc.desc   set index to 30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollToIndexForWaterFlow01_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ScrollToIndexForWaterFlow01_0100] START');
@@ -64,12 +64,12 @@ export default function ScrollToIndexForWaterFlowJsunit01() {
     });
 
     /**
+     * @tc.name   ScrollToIndexForWaterFlow01_0200
      * @tc.number ScrollToIndexForWaterFlow01_0200
-     * @tc.name scenario testing
-     * @tc.desc set index to 66,set the smooth to True
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level   2
+     * @tc.desc   set index to 66,set the smooth to True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollToIndexForWaterFlow01_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ScrollToIndexForWaterFlow01_0200] START');
@@ -94,12 +94,12 @@ export default function ScrollToIndexForWaterFlowJsunit01() {
     });
 
     /**
+     * @tc.name   ScrollToIndexForWaterFlow01_0300
      * @tc.number ScrollToIndexForWaterFlow01_0300
-     * @tc.name scenario testing
-     * @tc.desc set index to 99,set the smooth to false
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level   2
+     * @tc.desc   set index to 99,set the smooth to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollToIndexForWaterFlow01_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ScrollToIndexForGridJsunit01_0100] START');

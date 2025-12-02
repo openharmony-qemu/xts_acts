@@ -42,12 +42,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0001
      * @tc.number testScroll0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollSnapAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollSnapAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0001', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0001 START');
@@ -60,12 +60,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0002
      * @tc.number testScroll0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set friction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set friction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0002', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0002 START');
@@ -78,12 +78,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0003
      * @tc.number testScroll0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableScrollInteraction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableScrollInteraction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0003', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0003 START');
@@ -96,12 +96,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0005
      * @tc.number testScroll0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0005', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0005 START');
@@ -114,12 +114,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0006
      * @tc.number testScroll0006
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBar values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0006', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0006 START');
@@ -132,12 +132,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0007
      * @tc.number testScroll0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBarWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0007', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0007 START');
@@ -150,12 +150,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0008
      * @tc.number testScroll0008
-     * @tc.name Test the properties of components
-     * @tc.desc Set edgeEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set edgeEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0008', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0008 START');
@@ -168,12 +168,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0009
      * @tc.number testScroll0009
-     * @tc.name Test the properties of components
-     * @tc.desc Set scrollBarColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set scrollBarColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0009', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0009 START');
@@ -186,12 +186,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0010
      * @tc.number testScroll0010
-     * @tc.name Test the properties of components
-     * @tc.desc Set enablePaging values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enablePaging values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0010', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0010 START');
@@ -204,12 +204,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
+     * @tc.name   testScroll0011
      * @tc.number testScroll0011
-     * @tc.name Test the properties of components
-     * @tc.desc Change scrollBarColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change scrollBarColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScroll0011', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0011 START');

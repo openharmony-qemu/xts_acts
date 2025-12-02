@@ -18,6 +18,7 @@ group("ActsWebLoadMetricTest") {
       "ace_load_metric_dev:ActsWebLoadMetricDevTest",
       "ace_load_metric_dev_two:ActsWebLoadMetricDevTwoTest",
       "ace_load_metric_enhanced_three:ActsWebLoadMetricEnhancedThreeTest",
+      "ace_load_metric_enhanced_three_static:ActsWebLoadMetricEnhancedThreeStaticTest",
       "ace_load_metric_enhanced_two:ActsWebLoadMetricEnhancedTwoTest",
     ]
   }

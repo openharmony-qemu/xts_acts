@@ -50,12 +50,12 @@ export default function treeViewSymbol() {
     })
 
     /**
-     * @tc.number treeViewSymbol
      * @tc.name   treeViewSymbol_0100
+     * @tc.number treeViewSymbol
      * @tc.desc   Test treeViewSymbol
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('treeViewSymbol_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[treeViewSymbol_0100] START');

@@ -26,78 +26,78 @@ export default function commonAttrsDisplayPriorityTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0100
-     * @tc.name       : testCommonAttrsDisplayPriority001
-     * @tc.desc       : testing displaypriority for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDisplayPriority001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0100
+     * @tc.desc   testing displaypriority for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDisplayPriority001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDisplayPriority001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0200
-     * @tc.name       : testCommonAttrsDisplayPriority002
-     * @tc.desc       : testing displaypriority for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDisplayPriority002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0200
+     * @tc.desc   testing displaypriority for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDisplayPriority002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDisplayPriority002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0300
-     * @tc.name       : testCommonAttrsDisplayPriority003
-     * @tc.desc       : testing displaypriority for commonAttrs with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDisplayPriority003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0300
+     * @tc.desc   testing displaypriority for commonAttrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDisplayPriority003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDisplayPriority003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0400
-     * @tc.name       : testCommonAttrsDisplayPriority004
-     * @tc.desc       : testing displaypriority for commonAttrs with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDisplayPriority004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0400
+     * @tc.desc   testing displaypriority for commonAttrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDisplayPriority004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDisplayPriority004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0500
-     * @tc.name       : testCommonAttrsDisplayPriority005
-     * @tc.desc       : testing displaypriority for commonAttrs with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDisplayPriority005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0500
+     * @tc.desc   testing displaypriority for commonAttrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDisplayPriority005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDisplayPriority005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0600
-     * @tc.name       : testCommonAttrsDisplayPriority006
-     * @tc.desc       : testing resetAttribute displaypriority for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsDisplayPriority006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_DISPLAYPRIORITY_0600
+     * @tc.desc   testing resetAttribute displaypriority for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsDisplayPriority006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsDisplayPriority006()).assertEqual(0)

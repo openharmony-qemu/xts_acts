@@ -44,6 +44,14 @@ export default function contentModifier() {
       console.info("contentModifier after each called");
     });
 
+    /**
+     * @tc.name   contentModifierTest_0100
+     * @tc.number contentModifierTest_0100
+     * @tc.desc   contentModifierTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('contentModifierTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('contentModifierText_0100 START');
       let strJson = getInspectorByKey('ContentModifierMessage');

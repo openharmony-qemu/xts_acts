@@ -40,12 +40,12 @@ export default function builtinsRegExpMatchArrayGroupsTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayGroupsTest0100
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_GROUPS_TEST_0100
-     * @tc.name builtinsRegExpMatchArrayGroupsTest0100
-     * @tc.desc Testing RegExpMatchArray groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing RegExpMatchArray groups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsRegExpMatchArrayGroupsTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       (done: Function) => {
@@ -84,12 +84,12 @@ export default function builtinsRegExpMatchArrayGroupsTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayGroupsTest0200
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_GROUPS_TEST_0200
-     * @tc.name builtinsRegExpMatchArrayGroupsTest0200
-     * @tc.desc Testing RegExpMatchArray groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray groups
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayGroupsTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {

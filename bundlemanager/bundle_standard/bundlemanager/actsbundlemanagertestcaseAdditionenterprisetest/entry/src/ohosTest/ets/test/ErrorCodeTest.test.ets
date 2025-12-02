@@ -34,10 +34,13 @@ let metadataName = 'ability_metadata';
 export default function ErrcodeTest() {
   describe('ErrcodeTest', () =>  {
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoNoUserId_401
-     * @tc.name:  getBundleInfoTestNoUserId401
-     * @tc.desc: test errCode 401 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestNoUserId401
+     * @tc.number Sub_Bms_GetBundleInfoNoUserId_401
+     * @tc.desc   test errCode 401 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoTestNoUserId401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info("getBundleInfoTestNoUserId401 start");
@@ -61,10 +64,13 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoNoUserId_17700001
-     * @tc.name:  getBundleInfoTestNoUserId17700001
-     * @tc.desc: test errCode 17700001 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestNoUserId17700001
+     * @tc.number Sub_Bms_GetBundleInfoNoUserId_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoTestNoUserId17700001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       console.info("getBundleInfoTestNoUserId17700001 start");
@@ -89,10 +95,13 @@ export default function ErrcodeTest() {
     });
 
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_401
-     * @tc.name:  getBundleInfoTestWithUserIdCallBack401
-     * @tc.desc: test errCode 401 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdCallBack401
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_401
+     * @tc.desc   test errCode 401 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoTestWithUserIdCallBack401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info("getBundleInfoTestWithUserIdCallBack401 start");
@@ -117,10 +126,13 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_17700001
-     * @tc.name:  getBundleInfoTestWithUserIdCallBack17700001
-     * @tc.desc: test errCode 17700001 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdCallBack177001
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleInfoTestWithUserIdCallBack177001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG +"getBundleInfoTestWithUserIdCallBack177001 start");
@@ -145,11 +157,14 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-    * @tc.number: Sub_Bms_GetBundleInfoWithUserId_17700004
-    * @tc.name:  getBundleInfoTestWithUserIdCallBack17700004
-    * @tc.desc: test errCode 17700004 when call getBundleInfo
-    */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdCallBack177004
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_17700004
+     * @tc.desc   test errCode 17700004 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoTestWithUserIdCallBack177004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getBundleInfoTestWithUserIdCallBack177004 start");
       try {
@@ -172,11 +187,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_401
-     * @tc.name:  getBundleInfoTestWithUserIdPromise401
-     * @tc.desc: test errCode 401 when call getBundleInfo
-    */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdPromise401
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_401
+     * @tc.desc   test errCode 401 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoTestWithUserIdPromise401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info("getBundleInfoTestWithUserIdPromise401 start");
       try {
@@ -197,11 +215,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_17700001
-     * @tc.name:  getBundleInfoTestWithUserIdPromise17700001
-     * @tc.desc: test errCode 17700001 when call getBundleInfo
-    */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdPromise17700001
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getBundleInfoTestWithUserIdPromise17700001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       console.info(TAG + "getBundleInfoTestWithUserIdPromise17700001 start");
       try {
@@ -222,11 +243,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_17700004
-    * @tc.name:  getBundleInfoTestWithUserIdPromise17700004
-    * @tc.desc: test errCode 17700004 when call getBundleInfo
-    */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdPromise17700004
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_17700004
+     * @tc.desc   test errCode 17700004 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoTestWithUserIdPromise17700004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       console.info(TAG +"getBundleInfoTestWithUserIdPromise17700004 start");
       try {
@@ -248,10 +272,13 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-     * @tc.number: Sub_Bms_getBundleNameByUid_401
-     * @tc.name:  getBundleNameByUidCallBack401
-     * @tc.desc: test errCode 401 when call getBundleNameByUid
+    /**
+     * @tc.name   getBundleNameByUidCallBack401
+     * @tc.number Sub_Bms_getBundleNameByUid_401
+     * @tc.desc   test errCode 401 when call getBundleNameByUid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidCallBack401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG +"getBundleNameByUidCallBack401 start");
@@ -274,11 +301,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-   * @tc.number: Sub_Bms_getBundleNameByUid_17700021
-   * @tc.name:  getBundleNameByUidCallBack17700021
-   * @tc.desc: test errCode 17700021 when call getBundleNameByUid
-   */
+    /**
+     * @tc.name   getBundleNameByUidCallBack17700021
+     * @tc.number Sub_Bms_getBundleNameByUid_17700021
+     * @tc.desc   test errCode 17700021 when call getBundleNameByUid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleNameByUidCallBack17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       console.info(TAG +"getBundleNameByUidCallBack17700021 start");
       try {
@@ -301,11 +331,14 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-    * @tc.number: Sub_Bms_getBundleNameByUid_401
-    * @tc.name:  getBundleNameByUidPromise401
-    * @tc.desc: test errCode 401 when call getBundleNameByUid
-    */
+    /**
+     * @tc.name   getBundleNameByUidPromise401
+     * @tc.number Sub_Bms_getBundleNameByUid_401
+     * @tc.desc   test errCode 401 when call getBundleNameByUid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleNameByUidPromise401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG +"getBundleNameByUidPromise401 start");
       try {
@@ -326,11 +359,14 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-     * @tc.number: Sub_Bms_getBundleNameByUid_17700021
-     * @tc.name:  getBundleNameByUidPromise17700021
-    * @tc.desc: test errCode 17700021 when call getBundleNameByUid
-    */
+    /**
+     * @tc.name   getBundleNameByUidPromise17700021
+     * @tc.number Sub_Bms_getBundleNameByUid_17700021
+     * @tc.desc   test errCode 17700021 when call getBundleNameByUid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleNameByUidPromise17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getBundleNameByUidPromise17700021 start");
       try {
@@ -351,11 +387,14 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-    * @tc.number: Sub_Bms_getBundleNameByUid_401
-    * @tc.name:  getBundleNameByUidSync401
-    * @tc.desc: test errCode 401 when call getBundleNameByUidSync
-    */
+    /**
+     * @tc.name   getBundleNameByUidSync401
+     * @tc.number Sub_Bms_getBundleNameByUid_401
+     * @tc.desc   test errCode 401 when call getBundleNameByUidSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleNameByUidSync401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG +"getBundleNameByUidSync401 start");
       try {
@@ -371,11 +410,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-   * @tc.number: Sub_Bms_getBundleNameByUid_17700021
-   * @tc.name:  getBundleNameByUidSync17700021
-   * @tc.desc: test errCode 401 when call getBundleNameByUidSync
-   */
+    /**
+     * @tc.name   getBundleNameByUidSync17700021
+     * @tc.number Sub_Bms_getBundleNameByUid_17700021
+     * @tc.desc   test errCode 401 when call getBundleNameByUidSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleNameByUidSync17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG +"getBundleNameByUidSync17700021 start");
       try {
@@ -396,11 +438,14 @@ export default function ErrcodeTest() {
   
 
 
-    /*
-    * @tc.number: Sub_Bms_getBundleInfoSyncWithUserId_401
-    * @tc.name:  getBundleInfoSynWithUserId401
-    * @tc.desc: test errCode 401 when call getBundleInfoSync
-    */
+    /**
+     * @tc.name   getBundleInfoSynWithUserId401
+     * @tc.number Sub_Bms_getBundleInfoSyncWithUserId_401
+     * @tc.desc   test errCode 401 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoSynWithUserId401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + " getBundleInfoSynWithUserId401 start");
       try {
@@ -417,11 +462,14 @@ export default function ErrcodeTest() {
 
     });
 
-    /*
-    * @tc.number: Sub_Bms_getBundleInfoSyncWithUserId_17700001
-    * @tc.name:  getBundleInfoSynWithUserId17700001
-    * @tc.desc: test errCode 17700001 when call getBundleInfoSync
-    */
+    /**
+     * @tc.name   getBundleInfoSynWithUserId17700001
+     * @tc.number Sub_Bms_getBundleInfoSyncWithUserId_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoSynWithUserId17700001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + " getBundleInfoSynWithUserId17700001 start");
       try {
@@ -437,11 +485,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-    * @tc.number: Sub_Bms_getBundleInfoSyncWithUserId_17700004
-    * @tc.name:  getBundleInfoSynWithUserId17700004
-    * @tc.desc: test errCode 17700004 when call getBundleInfoSync
-    */
+    /**
+     * @tc.name   getBundleInfoSynWithUserId17700004
+     * @tc.number Sub_Bms_getBundleInfoSyncWithUserId_17700004
+     * @tc.desc   test errCode 17700004 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoSynWithUserId17700004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + " getBundleInfoSynWithUserId17700004 start");
       try {
@@ -457,11 +508,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-    * @tc.number: Sub_Bms_getBundleInfoSyncNoUserId_401
-    * @tc.name:  getBundleInfoSynNoUserId401
-    * @tc.desc: test errCode 401 when call getBundleInfoSync
-    */
+    /**
+     * @tc.name   getBundleInfoSynNoUserId401
+     * @tc.number Sub_Bms_getBundleInfoSyncNoUserId_401
+     * @tc.desc   test errCode 401 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoSynNoUserId401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getBundleInfoSynNoUserId401 start");
       try {
@@ -477,11 +531,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-    * @tc.number: Sub_Bms_getBundleInfoSyncNoUserId_17700001
-    * @tc.name:  getBundleInfoSynNoUserId17700001
-    * @tc.desc: test errCode 17700001 when call getBundleInfoSync
-    */
+    /**
+     * @tc.name   getBundleInfoSynNoUserId17700001
+     * @tc.number Sub_Bms_getBundleInfoSyncNoUserId_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getBundleInfoSynNoUserId17700001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + " getBundleInfoSynNoUserId17700001 start");
       try {
@@ -499,11 +556,14 @@ export default function ErrcodeTest() {
 
 
 
-    /*
-     * @tc.number: Sub_Bms_getAppCloneIdentity_401
-     * @tc.name:  getAppCloneIdentity401
-     * @tc.desc: test errCode 401 when call getAppCloneIdentity
-    */
+    /**
+     * @tc.name   getAppCloneIdentity401
+     * @tc.number Sub_Bms_getAppCloneIdentity_401
+     * @tc.desc   test errCode 401 when call getAppCloneIdentity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getAppCloneIdentity401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getAppCloneIdentity401 start");
       try {
@@ -526,11 +586,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_getAppCloneIdentity_17700021
-     * @tc.name:  getAppCloneIdentity17700021
-     * @tc.desc: test errCode 17700021 when call getAppCloneIdentity
-    */
+    /**
+     * @tc.name   getAppCloneIdentity17700021
+     * @tc.number Sub_Bms_getAppCloneIdentity_17700021
+     * @tc.desc   test errCode 17700021 when call getAppCloneIdentity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getAppCloneIdentity17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
       console.info(TAG + "getAppCloneIdentity17700021 start");
       try {

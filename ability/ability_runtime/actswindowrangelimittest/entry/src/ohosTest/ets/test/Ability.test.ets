@@ -30,12 +30,12 @@ export default function abilityTest(abilityContext: common.UIAbilityContext) {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_windowRangeLimit_0100
-     * @tc.name  : SUB_Ability_AbilityRuntime_windowRangeLimit_0100
-     * @tc.desc  : startOptions set window area value undefined startAbility success
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_windowRangeLimit_0100
+     * @tc.number SUB_Ability_AbilityRuntime_windowRangeLimit_0100
+     * @tc.desc   startOptions set window area value undefined startAbility success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_windowRangeLimit_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = '[SUB_Ability_AbilityRuntime_windowRangeLimit_0100]'

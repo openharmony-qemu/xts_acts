@@ -37,10 +37,13 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_032
-     *tc.name onPrompt
-     *tc.desic Triggered when the web page wants to display a JavaScript prompt() dialog
+    /**
+     * @tc.name   onPrompt
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_032
+     * @tc.desc   onPrompt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onPrompt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnPrompt", EVENT_ID_SET_SUITE_KEY)
@@ -50,10 +53,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, "onPrompt" + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_041
-     *tc.name onAlert
-     *tc.desic Triggered when the Web wants to display a JavaScript alert() dialog
+    /**
+     * @tc.name   onAlert
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_041
+     * @tc.desc   onAlert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onAlert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnAlert", EVENT_ID_SET_SUITE_KEY)
@@ -63,10 +69,13 @@ export default function webInitTest() {
       await Utils.waitForExist(() => isReturn, "onAlert" + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_042
-     *tc.name onConfirm
-     *tc.desic Triggered when the web page wants to display a JavaScript confirm() dialog
+    /**
+     * @tc.name   onConfirm
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_042
+     * @tc.desc   onConfirm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onConfirm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnConfirm", EVENT_ID_SET_SUITE_KEY)

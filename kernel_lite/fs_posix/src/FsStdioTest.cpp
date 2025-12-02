@@ -34,9 +34,12 @@
 
 using namespace testing::ext;
 /**
- * @tc.number   SUB_KERNEL_FS_STDIO_0700
- * @tc.name     basic function test : Use the rename function to rename files.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testRename
+ * @tc.number SUB_KERNEL_FS_STDIO_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testRename, Function | MediumTest | Level3)
 {
@@ -51,9 +54,12 @@ HWTEST_F(FileSystemTest, testRename, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_STDIO_0710
- * @tc.name     basic function test : Use the rename function to rename directories.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testRenameDir
+ * @tc.number SUB_KERNEL_FS_STDIO_0710
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testRenameDir, Function | MediumTest | Level3)
 {

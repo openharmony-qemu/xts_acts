@@ -58,13 +58,15 @@ export default function dragIsSystem() {
       console.info("dragIsSystem after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_JUDGE_0110_dragIsSystem_001
-     * @tc.desc button drag is or not systemGesture test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   dragIsSystem_001
+     * @tc.number dragIsSystem_001
+     * @tc.desc   dragIsSystem_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dragIsSystem_001', Level.LEVEL0, async (done: Function) => {
       console.info('[dragIsSystem_001] START');
       let str1 = getInspectorByKey("dragIsSystemBtn1");

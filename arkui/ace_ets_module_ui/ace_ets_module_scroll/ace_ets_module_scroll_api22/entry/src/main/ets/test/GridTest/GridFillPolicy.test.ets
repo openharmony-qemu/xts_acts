@@ -43,12 +43,12 @@ export default function GridFillPolicy() {
     });
 
     /**
-     * @tc.number    GridFillPolicy_001
-     * @tc.name      GridFillPolicy_0100
-     * @tc.desc      Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridFillPolicy_0100
+     * @tc.number GridFillPolicy_001
+     * @tc.desc   Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GridFillPolicy_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[GridFillPolicy_0100] START');
@@ -76,12 +76,12 @@ export default function GridFillPolicy() {
     });
 
     /**
-     * @tc.number    GridFillPolicy_002
-     * @tc.name      GridFillPolicy_0200
-     * @tc.desc      Display 1 column when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridFillPolicy_0200
+     * @tc.number GridFillPolicy_002
+     * @tc.desc   Display 1 column when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GridFillPolicy_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[GridFillPolicy_0200] START');
@@ -109,12 +109,12 @@ export default function GridFillPolicy() {
     });
 
     /**
-     * @tc.number    GridFillPolicy_003
-     * @tc.name      GridFillPolicy_0300
-     * @tc.desc      Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridFillPolicy_0300
+     * @tc.number GridFillPolicy_003
+     * @tc.desc   Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GridFillPolicy_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[GridFillPolicy_0300] START');

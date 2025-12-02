@@ -60,12 +60,12 @@ export default function blurModeTest() {
 
 
     /**
-     * @tc.number     SUB_WEB_ONWINDOWNEW_0001
-     * @tc.name       emitAllowWindowOpenMethod
-     * @tc.desc       test onWindowNew
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   emitAllowWindowOpenMethod
+     * @tc.number SUB_WEB_ONWINDOWNEW_0001
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitAllowWindowOpenMethod',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitAllowWindowOpenMethod";

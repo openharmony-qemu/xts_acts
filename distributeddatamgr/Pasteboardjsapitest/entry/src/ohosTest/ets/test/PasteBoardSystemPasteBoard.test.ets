@@ -110,7 +110,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1800
      * @tc.desc   Clear the data in the system pasteBoard
@@ -135,7 +134,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2000
      * @tc.desc   Clear the data in the system pasteBoard fail,type of parameter "callback" is string
@@ -160,7 +158,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CLEARDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1900
      * @tc.desc   Clear the data in the system pasteBoard
@@ -197,7 +194,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3200
      * @tc.desc   get the pastedata from system pasteBoard success
@@ -228,7 +224,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3400
      * @tc.desc   get the pastedata from system pasteBoard fail,type of parameter "callback" is string
@@ -254,7 +249,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3300
      * @tc.desc   get the pastedata from system pasteBoard success
@@ -284,7 +278,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1300
      * @tc.desc   Determine if there is data in the system pasteboard success, result is true
@@ -314,7 +307,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1600
      * @tc.desc   Determine if there is data in the system pasteboard success, result is true
@@ -340,7 +332,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_CALLBACK_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1500
      * @tc.desc   Determine if there is data in the system pasteboard fail,type of parameter "callback" is string
@@ -365,7 +356,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1400
      * @tc.desc   Determine if there is data in the system pasteboard success, result is true
@@ -393,7 +383,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASDATA_PROMISE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1700
      * @tc.desc   Determine if there is data in the system pasteboard success, result is true
@@ -417,7 +406,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2600
      * @tc.desc   Put pastedata to system pasteBoard success
@@ -448,7 +436,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2800
      * @tc.desc   Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
@@ -479,7 +466,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_CALLBACK_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3100
      * @tc.desc   Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
@@ -504,7 +490,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2700
      * @tc.desc   Put pastedata to system pasteBoard success
@@ -532,7 +517,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2900
      * @tc.desc   Put pastedata to system pasteBoard fail,type of parameter "pasteData" is string
@@ -555,7 +539,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETDATA_PROMISE_0300
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_3000
      * @tc.desc   Put pastedata to system pasteBoard fail without parameters
@@ -578,7 +561,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_ISREMOTEDATA_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0100
      * @tc.desc   clear data than check the data whether it is from remote device
@@ -603,7 +585,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_ISREMOTEDATA_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0200
      * @tc.desc   set data than check the data whether it is from remote device
@@ -633,7 +614,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_HASDATATYPE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0300
      * @tc.desc   set data than check the data type
@@ -662,7 +642,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_HASDATATYPE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0400
      * @tc.desc   set data than check the data type
@@ -692,7 +671,6 @@ export default function pasteBoardSystemPasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_GETDATASOURCE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_SourceOrType_0500
      * @tc.desc   set data than get the data source
@@ -723,7 +701,6 @@ export default function pasteBoardSystemPasteBoardTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_CALLBACK_0800
      * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_9900
      * @tc.desc   get the pastedata from system pasteBoard success

@@ -174,12 +174,12 @@ export default function getObjectByPositionTest() {
     });
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_001
-     * @tc.name      : fetchResult_getObjectByPosition_promise_001
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_promise_001
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_001
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_promise_001';
@@ -189,12 +189,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_002
-     * @tc.name      : fetchResult_getObjectByPosition_promise_002
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_promise_002
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_002
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_promise_002';
@@ -204,12 +204,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_003
-     * @tc.name      : fetchResult_getObjectByPosition_promise_003
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_promise_003
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_003
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_promise_003';
@@ -219,12 +219,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_004
-     * @tc.name      : fetchResult_getObjectByPosition_promise_004
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_promise_004
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_004
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_promise_004';
@@ -234,12 +234,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_005
-     * @tc.name      : fetchResult_getObjectByPosition_promise_005
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_promise_005
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_005
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_promise_005';
@@ -249,12 +249,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_006
-     * @tc.name      : fetchResult_getObjectByPosition_promise_006
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_promise_006
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_006
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_promise_006';
@@ -264,12 +264,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_007
-     * @tc.name      : fetchResult_getObjectByPosition_abnormal_promise_001
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_promise_001
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_007
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_promise_001';
@@ -279,12 +279,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_008
-     * @tc.name      : fetchResult_getObjectByPosition_abnormal_promise_002
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_promise_002
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_008
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_promise_002';
@@ -294,12 +294,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_009
-     * @tc.name      : fetchResult_getObjectByPosition_abnormal_promise_003
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_promise_003
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_009
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_promise_003';
@@ -309,12 +309,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_010
-     * @tc.name      : fetchResult_getObjectByPosition_callback_001
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_callback_001
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_010
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_callback_001';
@@ -324,12 +324,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_011
-     * @tc.name      : fetchResult_getObjectByPosition_callback_002
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_callback_002
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_011
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_callback_002';
@@ -339,12 +339,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_012
-     * @tc.name      : fetchResult_getObjectByPosition_callback_003
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_callback_003
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_012
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_callback_003';
@@ -354,12 +354,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_013
-     * @tc.name      : fetchResult_getObjectByPosition_callback_004
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_callback_004
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_013
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_callback_004';
@@ -369,12 +369,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_014
-     * @tc.name      : fetchResult_getObjectByPosition_callback_005
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_callback_005
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_014
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_callback_005';
@@ -384,12 +384,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_015
-     * @tc.name      : fetchResult_getObjectByPosition_callback_006
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_callback_006
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_015
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_callback_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_callback_006';
@@ -399,12 +399,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_016
-     * @tc.name      : fetchResult_getObjectByPosition_abnormal_callback_001
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_callback_001
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_016
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_abnormal_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_callback_001';
@@ -414,12 +414,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_017
-     * @tc.name      : fetchResult_getObjectByPosition_abnormal_callback_002
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_callback_002
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_017
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_abnormal_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_callback_002';
@@ -429,12 +429,12 @@ export default function getObjectByPositionTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_018
-     * @tc.name      : fetchResult_getObjectByPosition_abnormal_callback_003
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_callback_003
+     * @tc.number FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_018
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getObjectByPosition_abnormal_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_callback_003';

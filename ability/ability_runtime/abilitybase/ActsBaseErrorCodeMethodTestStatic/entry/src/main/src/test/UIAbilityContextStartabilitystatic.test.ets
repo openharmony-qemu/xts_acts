@@ -18,15 +18,31 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from '@ohos.app.ability.contextConstant';
+import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext;
+let g_code: number = 0;
+
+class AbilityStartCallbackExt implements common.AbilityStartCallback {
+  onError(code: int, name: string, message: string): void {
+    console.log(`startAbilityByType Error:` + "code:" + code + "name:" + name + "message:" + message);
+    g_code = code;
+  }
+
+  onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
+    console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
+  }
+
+  completionHandler?: CompletionHandlerForAbilityStartCallback = undefined
+
+}
 
 export default function UiAbilityContextStartAbilityStatic() {
   describe("ActsStartAbilityErrorTestStatic", (): void => {
@@ -40,13 +56,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_1200
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_1200
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_1200
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_1200
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_StartAbilityError_static_1200`;
@@ -55,7 +71,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         'type': 'FD',
         'value': -1
       }
-      let parameters: Record<String,Object> = {
+      let parameters: Record<String,RecordData> = {
         'keyFd': Fd
       }
       let want: Want = {
@@ -87,13 +103,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_1700
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_1700
-     * @tc.desc   : To verify StartAbility with option ErrorCode.Expect: 16000004
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_1700
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_1700
+     * @tc.desc   To verify StartAbility with option ErrorCode.Expect: 16000004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_StartAbilityError_static_1700`;
@@ -125,13 +141,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_static_1800
-     * @tc.name   : SUB_Ability_AbilityBase_ErrorCode_static_1800
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000004
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_static_1800
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_static_1800
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_ErrorCode_static_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_1800`;
@@ -161,13 +177,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_static_1900
-     * @tc.name   : SUB_Ability_AbilityBase_ErrorCode_static_1900
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000050
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_static_1900
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_static_1900
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_ErrorCode_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_1900`;
@@ -176,7 +192,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         'type': 'FD',
         'value': -1
       }
-      let parameters: Record<String,Object> = {
+      let parameters: Record<String,RecordData> = {
         'keyFd': Fd
       }
       let want: Want = {
@@ -206,13 +222,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_static_2000
-     * @tc.name   : SUB_Ability_AbilityBase_ErrorCode_static_2000
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(promise).Expect: 16000004
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_static_2000
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_static_2000
+     * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_ErrorCode_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_2000`;
@@ -242,13 +258,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_ErrorCode_static_2100
-     * @tc.name   : SUB_Ability_AbilityBase_ErrorCode_static_2100
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(promise).Expect: 16000050
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_static_2100
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_static_2100
+     * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_ErrorCode_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0017`;
@@ -257,7 +273,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         'type': 'FD',
         'value': -1
       }
-      let parameters: Record<String,Object> = {
+      let parameters: Record<String,RecordData> = {
         'keyFd': Fd
       }
       let want: Want = {
@@ -287,13 +303,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2600
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2600
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(callback), Expect: 801
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2600
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2600
+     * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_2600`;
@@ -326,15 +342,15 @@ export default function UiAbilityContextStartAbilityStatic() {
         done();
       }
     })
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2700
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2700
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise).Expect: 801
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2700
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2700
+     * @tc.desc   SUB_Ability_AbilityBase_StartAbilityError_static_2700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2700`;
       hilog.info(domain, tag, `it begin`);
@@ -372,13 +388,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_1800
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_1800
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(callback), Expect: 16000005
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_1800
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_1800
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback), Expect: 16000005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_1700`;
@@ -410,13 +426,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_1900
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_1900
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(callback), Expect: 16000005
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_1900
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_1900
+     * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 16000005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_1900`;
@@ -444,13 +460,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2000
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2000
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000005
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2000
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2000
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2000`;
@@ -480,13 +496,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2100
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2100
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(promise).Expect: 16000005
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2100
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2100
+     * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2100`;
@@ -512,13 +528,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2200
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2200
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(promise) Expect: 201
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2200
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2200
+     * @tc.desc   Call UIAbilityContext startAbility failed.(promise) Expect: 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2200`;
@@ -546,13 +562,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2300
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2300
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise) Expect: 201
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2300
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2300
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise) Expect: 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2300`;
@@ -584,13 +600,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2400
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2400
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(callback), Expect: 201
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2400
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2400
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback), Expect: 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2400`;
@@ -624,13 +640,13 @@ export default function UiAbilityContextStartAbilityStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_static_2500
-     * @tc.name   : SUB_Ability_AbilityBase_StartAbilityError_static_2500
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(callback), Expect: 201
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_static_2500
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_static_2500
+     * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_static_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2500`;
@@ -655,6 +671,73 @@ export default function UiAbilityContextStartAbilityStatic() {
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByTypeStatic001
+     * @tc.number ACTS_UIExtension_StartAbilityByTypeStatic001
+     * @tc.desc   Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic001 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context.startAbilityByType("shareerror", wantParam, abilityStartCallback, ((err: BusinessError<void> | null): void => {
+          if (err != null && err?.code != 0) {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType001 err, err:" + JSON.stringify(err));
+            return;
+          } else {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType001 success:");
+          }
+        }))
+        await Utils.msSleep(1000);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error: BusinessError) {
+        hilog.info(domain, tag, `startAbilityByType001 fail: ` + JSON.stringify(Error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByTypeStatic002
+     * @tc.number ACTS_UIExtension_StartAbilityByTypeStatic002
+     * @tc.desc   Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic002 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType002 success");
+        }).catch((error: BusinessError): void => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType002 fail, err:" + JSON.stringify(error));
+        })
+        await Utils.msSleep(1000);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error: BusinessError) {
+        hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
       }

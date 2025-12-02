@@ -57,10 +57,12 @@ static const struct OH_Huks_Param g_commonParams[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksAttestKeyNoIdsTest.Security_HUKS_NAPI_Attest_0100
- * @tc.desc: attest with right params and validate success.
- * @tc.type: FUNC
- * @tc.require: issueI5NY0L
+ * @tc.name   Security_HUKS_NAPI_Attest_0100
+ * @tc.number Security_HUKS_NAPI_Attest_0100
+ * @tc.desc   attest with right params and validate success.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksAttestKeyNoIdsTest, Security_HUKS_NAPI_Attest_0100, TestSize.Level0)
 {

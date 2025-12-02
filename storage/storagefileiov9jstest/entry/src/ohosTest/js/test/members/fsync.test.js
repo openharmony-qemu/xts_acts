@@ -22,14 +22,12 @@ export default function fileIOFsync() {
 describe('fileIO_fs_fsync', function () {
 
   /**
+   * @tc.name   fileIO_test_fsync_sync_000
    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0000
-   * @tc.name fileIO_test_fsync_sync_000
-   * @tc.desc Test fsyncSync() interface.
-   * Open the file in read-write mode, and synchronize the file content data.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsyncSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_fsync_sync_000');
@@ -47,13 +45,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_sync_001
    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0100
-   * @tc.name fileIO_test_fsync_sync_001
-   * @tc.desc Test fsyncSync() interface. Invalid fd parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsyncSync() interface. Invalid fd parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_sync_001', Level.LEVEL0, function () {
 
@@ -67,13 +64,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_sync_002
    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0200
-   * @tc.name fileIO_test_fsync_sync_002
-   * @tc.desc Test fsyncSync() interface. Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsyncSync() interface. Missing parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_sync_002', Level.LEVEL0, function () {
 
@@ -87,14 +83,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_000
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0000
-   * @tc.name fileIO_test_fsync_async_000
-   * @tc.desc Test fsync() interface. await Promise.
-   * Open the file in read-write mode, and synchronize the file content data.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test fsync() interface. await Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_fsync_async_000');
@@ -113,14 +107,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_001
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0100
-   * @tc.name fileIO_test_fsync_async_001
-   * @tc.desc Test fsync() interface. Promise.then().catch()
-   * Open the file in read-write mode, and synchronize the file content data.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_fsync_async_001');
@@ -143,14 +135,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_002
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0200
-   * @tc.name fileIO_test_fsync_async_002
-   * @tc.desc Test fsync() interface. Callback.
-   * Open the file in read-write mode, and synchronize the file content data.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_fsync_sync_002');
@@ -174,14 +164,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_003
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0300
-   * @tc.name fileIO_test_fsync_async_003
-   * @tc.desc Test fsync() interface. await Promise.
-   * Invalid fd parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. await Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_003', Level.LEVEL0, async function (done) {
 
@@ -196,14 +184,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_004
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0400
-   * @tc.name fileIO_test_fsync_async_004
-   * @tc.desc Test fsync() interface. Callback.
-   * Invalid fd parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_004', Level.LEVEL0, async function (done) {
 
@@ -222,14 +208,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_005
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0500
-   * @tc.name fileIO_test_fsync_async_005
-   * @tc.desc Test fsync() interface. Promise.then().catch()
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. Promise.then().catch()
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_005', Level.LEVEL0, async function (done) {
 
@@ -248,14 +232,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_006
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0600
-   * @tc.name fileIO_test_fsync_async_006
-   * @tc.desc Test fsync() interface. await Promise.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. await Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_006', Level.LEVEL0, async function (done) {
 
@@ -270,14 +252,12 @@ describe('fileIO_fs_fsync', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_fsync_async_007
    * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0700
-   * @tc.name fileIO_test_fsync_async_007
-   * @tc.desc Test fsync() interface. Callback.
-   * Missing parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test fsync() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_fsync_async_007', Level.LEVEL0, async function (done) {
 

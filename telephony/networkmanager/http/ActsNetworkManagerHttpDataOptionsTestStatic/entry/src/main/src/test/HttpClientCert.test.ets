@@ -49,13 +49,13 @@ export default function httpClientCertTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-        * @tc.number: SUB_NetworkMgr_Http_ClientCert_0100
-        * @tc.name  : testHttpClientCert_static_0100
-        * @tc.desc  : test clientCert with no certPath no keyPath certType any
-        * @tc.size  : smallTest
-        * @tc.type  : Function
-        * @tc.level : level 2
-        */
+         * @tc.name   testHttpClientCert_static_0100
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0100
+         * @tc.desc   test clientCert with no certPath no keyPath certType any
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it("testHttpClientCert_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -112,12 +112,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0200
-         * @tc.name  : testHttpClientCert_static_0200
-         * @tc.desc  : test clientCert with no certPath no keyPath certType any
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0200
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0200
+         * @tc.desc   test clientCert with no certPath no keyPath certType any
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0200';
@@ -171,12 +171,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0300
-         * @tc.name  : testHttpClientCert_static_0300
-         * @tc.desc  : test clientCert with illegal certPath illegal keyPath certType any legitimated
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0300
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0300
+         * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0300';
@@ -235,12 +235,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0400
-         * @tc.name  : testHttpClientCert_static_0400
-         * @tc.desc  : test clientCert with illegal certPath illegal keyPath certType any legitimated
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0400
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0400
+         * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0400';
@@ -294,12 +294,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0500
-         * @tc.name  : testHttpClientCert_static_0500
-         * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.P12
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0500
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0500
+         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0500';
@@ -357,12 +357,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0600
-         * @tc.name  : testHttpClientCert_static_0600
-         * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.P12
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0600
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0600
+         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0600';
@@ -416,12 +416,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0700
-         * @tc.name  : testHttpClientCert_static_0700
-         * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0700
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0700
+         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0700';
@@ -479,12 +479,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0800
-         * @tc.name  : testHttpClientCert_static_0800
-         * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0800
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0800
+         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0800';
@@ -538,12 +538,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_0900
-         * @tc.name  : testHttpClientCert_static_0900
-         * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.DER
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_0900
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_0900
+         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_0900';
@@ -601,12 +601,12 @@ export default function httpClientCertTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_ClientCert_1000
-         * @tc.name  : testHttpClientCert_static_1000
-         * @tc.desc  : test clientCert with  legitimated certPath and keyPath http.CertType.DER
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpClientCert_static_1000
+         * @tc.number SUB_NetworkMgr_Http_ClientCert_1000
+         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpClientCert_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpClientCert_static_1000';

@@ -26,121 +26,121 @@ export default function textAreaEnterKeyTypeTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0001
-     * @tc.name: testTextAreaEnterKeyType001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0002
-     * @tc.name: testTextAreaEnterKeyType002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0003
-     * @tc.name: testTextAreaEnterKeyType003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0004
-     * @tc.name: testTextAreaEnterKeyType004
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType004
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0004
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType004()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0005
-     * @tc.name: testTextAreaEnterKeyType005
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType005
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0005
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType005()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0006
-     * @tc.name: testTextAreaEnterKeyType006
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType006
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0006
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType006()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0007
-     * @tc.name: testTextAreaEnterKeyType007
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType007
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0007
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType007()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0008
-     * @tc.name: testTextAreaEnterKeyType008
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType008
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0008
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType008()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0009
-     * @tc.name: testTextAreaEnterKeyType009
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType009
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0009
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType009()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0010
-     * @tc.name: testTextAreaEnterKeyType010
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaEnterKeyType010
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ENTER_KEY_TYPE_0010
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaEnterKeyType010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaEnterKeyType010()).assertEqual(0)

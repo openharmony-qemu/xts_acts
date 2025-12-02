@@ -41,7 +41,7 @@ export default {
         console.info("====>onoff scene start====");
         let appAccountManager = account.createAppAccountManager();
         let commonEventSubscribeInfo = {
-            events: ["account_on_change"]
+            events: ["account_on_change", "account_on_change_static"]
         }
 
         // The callback of the event that publishes the verification result to the test application, and unsubscribe
@@ -91,7 +91,7 @@ export default {
         function changeOnAssociateData(data){
             console.info("====>receive change 0200 data:" + JSON.stringify(data));
             try{
-                if(data[0].owner === "com.example.actsaccounttest" && data[0].name === "onoff_associatedata"){
+                if(data[0].name === "onoff_associatedata"){
                     let commonEventPublishData = {
                         data: "SUCCESS"
                     }
@@ -160,7 +160,7 @@ export default {
         function changeOnSetCredential(data){
             console.info("====>receive change 0300 data:" + JSON.stringify(data));
             try{
-                if(data[0].owner === "com.example.actsaccountoperatetest" && data[0].name === "onoff_setcredential"){
+                if(data[0].name === "onoff_setcredential"){
                     let commonEventPublishData = {
                         data: "SUCCESS"
                     }
@@ -206,7 +206,7 @@ export default {
         function changeOnRemoverAnother(data){
             console.info("====>receive change 0400 data:" + JSON.stringify(data));
             try{
-                if(data[0].owner === "com.example.actsaccountoperatetest" && data[0].name === "onoff_removeFir"){
+                if(data[0].name === "onoff_removeFir"){
                     let commonEventPublishData = {
                         data: "SUCCESS"
                     }
@@ -298,7 +298,7 @@ export default {
         function changeOnSetAnotherDisable(data){
             console.info("====>receive changeonoff 0600 data:" + JSON.stringify(data));
             try{
-                if(data[0].owner === "com.example.actsaccountoperatetest" && data[0].name === "onoff_disableFir"){
+                if(data[0].name === "onoff_disableFir"){
                     let commonEventPublishData = {
                         data: "SUCCESS"
                     }
@@ -380,7 +380,11 @@ export default {
                     break;
                 case ACCOUNT_TEST_ONOFF_ASSOCIATEDDATA:
                     console.info("====>receive event 0200 event:" + data.event);
-                    appAccountManager.on('change', ["com.example.actsaccounttest"], changeOnAssociateData);
+                    if (data.event === "account_on_change") {
+                        appAccountManager.on('change', ["com.example.actsaccounttest"], changeOnAssociateData);
+                    } else {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest.static"], changeOnAssociateData);
+                    }
                     console.info("====>scene start publish on success");
                     commonevent.publish("account_on_change_associatedata", commonEventPublishData, publishOnSuccessCallback);
                     break;
@@ -410,7 +414,11 @@ export default {
                     break;
                 case ACCOUNT_TEST_ONOFF_DISABLEONLY:
                     console.info("====>receive event 0700 event:" + data.event);
-                    appAccountManager.on('change', ["com.example.actsaccounttest"], changeOnDisable);
+                    if (data.event === "account_on_change") {
+                        appAccountManager.on('change', ["com.example.actsaccounttest"], changeOnDisable);
+                    } else {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest.static"], changeOnDisable);
+                    }
                     console.info("====>scene start publish on success");
                     commonevent.publish("account_on_change_disable", commonEventPublishData, publishOnSuccessCallback);
                     break;
@@ -422,25 +430,41 @@ export default {
                     break;
                 case ACCOUNT_TEST_ONOFF_SETCREDENTIAL:
                     console.info("====>receive event 0900 event:" + data.event);
-                    appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnSetCredential);
+                    if (data.event === "account_on_change") {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnSetCredential);
+                    } else {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest.static"], changeOnSetCredential);
+                    }
                     console.info("====>scene start publish on success");
                     commonevent.publish("account_on_change_setcredential", commonEventPublishData, publishOnSuccessCallback);
                     break;
                 case ACCOUNT_TEST_ONOFF_REMOVE:
                     console.info("====>receive event 1000 event:" + data.event);
-                    appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnRemoverAnother);
+                    if (data.event === "account_on_change") {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnRemoverAnother);
+                    } else {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest.static"], changeOnRemoverAnother);
+                    }
                     console.info("====>scene start publish on success");
                     commonevent.publish("account_on_remove_another", commonEventPublishData, publishOnSuccessCallback);
                     break;
                 case ACCOUNT_TEST_ONOFF_REMOVEONLY:
                     console.info("====>receive event 1100 event:" + data.event);
-                    appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnRemove);
+                    if (data.event === "account_on_change") {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnRemove);
+                    } else {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest.static"], changeOnRemove);
+                    }
                     console.info("====>scene start publish on success");
                     commonevent.publish("account_on_change_remove", commonEventPublishData, publishOnSuccessCallback);
                     break;
                 case ACCOUNT_TEST_ONOFF_SETDISABLE:
                     console.info("====>receive event 1200 event:" + data.event);
-                    appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnSetAnotherDisable);
+                    if (data.event === "account_on_change") {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], changeOnSetAnotherDisable);
+                    } else {
+                        appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest.static"], changeOnSetAnotherDisable);
+                    }
                     console.info("====>scene start publish on success");
                     commonevent.publish("account_on_set_another_disable", commonEventPublishData, publishOnSuccessCallback);
                     break;

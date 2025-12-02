@@ -47,12 +47,12 @@ export default function dragEventTest() {
     });
 
     /**
-     * @tc.number    dragEventTest_0010
-     * @tc.name      dragEventTest_0010
-     * @tc.desc      dragEvent get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   dragEventTest_0010
+     * @tc.number dragEventTest_0010
+     * @tc.desc   dragEvent get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[dragEventTest_0010] START');

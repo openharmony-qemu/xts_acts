@@ -53,7 +53,6 @@ export default function CollatorInIntlTest() {
       console.info("afterAll case");
     });
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3500
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3500
      * @tc.desc   compare two different strings
@@ -68,7 +67,6 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3510
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3510
      * @tc.desc   compare the same strings
@@ -84,7 +82,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3520
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3520
      * @tc.desc   compare two different strings and return positive value
@@ -100,7 +97,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3600
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3600
      * @tc.desc   compare two different strings with zh locale
@@ -116,7 +112,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3620
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3620
      * @tc.desc   compare two different strings with zh locale and undefined options
@@ -132,7 +127,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3640
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3640
      * @tc.desc   compare two different strings with zh locale and null options
@@ -148,7 +142,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3700
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3700
      * @tc.desc   compare two different strings with zh locale and eor collation
@@ -165,7 +158,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3800
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3800
      * @tc.desc   compare two different strings with zh locale and base sensitivity
@@ -182,7 +174,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_3900
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3900
      * @tc.desc   compare two different strings with zh locale and upper caseFirst
@@ -199,7 +190,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_4000
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_4000
      * @tc.desc   compare two different strings with zh locale and true numeric
@@ -216,7 +206,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_4100
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_4100
      * @tc.desc   compare two different strings with zh locale and true ignorePunctuation
@@ -233,7 +222,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_4200
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_4200
      * @tc.desc   * @tc.name    collator_test_static_4200
@@ -250,7 +238,6 @@ export default function CollatorInIntlTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_static_4300
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_4300
      * @tc.desc   check the compare result

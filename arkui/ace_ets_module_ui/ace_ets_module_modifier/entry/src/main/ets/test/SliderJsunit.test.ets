@@ -43,12 +43,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_010
      * @tc.number ArkUX_Stage_Slider_010
-     * @tc.name Test the properties of components
-     * @tc.desc set stepSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set stepSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_010', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_010 START');
@@ -61,12 +61,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_011
      * @tc.number ArkUX_Stage_Slider_011
-     * @tc.name Test the properties of components
-     * @tc.desc set stepColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set stepColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_011', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_011 START');
@@ -79,12 +79,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_012
      * @tc.number ArkUX_Stage_Slider_012
-     * @tc.name Test the properties of components
-     * @tc.desc set blockBorderWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set blockBorderWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_012', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_012 START');
@@ -97,12 +97,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_013
      * @tc.number ArkUX_Stage_Slider_013
-     * @tc.name Test the properties of components
-     * @tc.desc set trackBorderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set trackBorderRadius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_013', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_013 START');
@@ -115,12 +115,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_014
      * @tc.number ArkUX_Stage_Slider_014
-     * @tc.name Test the properties of components
-     * @tc.desc set showTips values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set showTips values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_014', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_014 START');
@@ -133,12 +133,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_015
      * @tc.number ArkUX_Stage_Slider_015
-     * @tc.name Test the properties of components
-     * @tc.desc set blockBorderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set blockBorderColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_015', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_015 START');
@@ -151,12 +151,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_017
      * @tc.number ArkUX_Stage_Slider_017
-     * @tc.name Test the properties of components
-     * @tc.desc set blockSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set blockSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_017', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_017 START');
@@ -170,12 +170,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_018
      * @tc.number ArkUX_Stage_Slider_018
-     * @tc.name Test the properties of components
-     * @tc.desc set blockColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set blockColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_018', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_018 START');
@@ -188,12 +188,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_019
      * @tc.number ArkUX_Stage_Slider_019
-     * @tc.name Test the properties of components
-     * @tc.desc set trackColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set trackColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_019', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_019 START');
@@ -206,12 +206,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_020
      * @tc.number ArkUX_Stage_Slider_020
-     * @tc.name Test the properties of components
-     * @tc.desc set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set selectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_020', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_020 START');
@@ -224,12 +224,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_021
      * @tc.number ArkUX_Stage_Slider_021
-     * @tc.name Test the properties of components
-     * @tc.desc set showSteps values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set showSteps values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_021', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_021 START');
@@ -242,12 +242,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_022
      * @tc.number ArkUX_Stage_Slider_022
-     * @tc.name Test the properties of components
-     * @tc.desc set trackThickness values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set trackThickness values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_022', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_022 START');
@@ -260,12 +260,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_023
      * @tc.number ArkUX_Stage_Slider_023
-     * @tc.name Test the properties of components
-     * @tc.desc set blockType values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set blockType values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_023', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_023 START');
@@ -278,12 +278,12 @@ export default function sliderTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Slider_0110
      * @tc.number ArkUX_Stage_Slider_0110
-     * @tc.name Test the properties of components
-     * @tc.desc Change stepSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change stepSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_0110', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_0110 START');

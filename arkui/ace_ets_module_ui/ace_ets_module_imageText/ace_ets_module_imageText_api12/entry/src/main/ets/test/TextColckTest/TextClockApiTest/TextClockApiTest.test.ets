@@ -46,12 +46,12 @@ export default function TextClockApiTest() {
     });
 
     /**
-     * @tc.number    TextClockApiTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextClockApiTest_001
+     * @tc.number TextClockApiTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("TextClockApiTest_001",  Level.LEVEL0, async (done: Function) => {
       console.info("[TextClockApiTest_001] START");
@@ -64,12 +64,12 @@ export default function TextClockApiTest() {
     });
 
     /**
-     * @tc.number    TextClockApiTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextClockApiTest_002
+     * @tc.number TextClockApiTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("TextClockApiTest_002",  Level.LEVEL0, async (done: Function) => {
       console.info("[TextClockApiTest_002] START");

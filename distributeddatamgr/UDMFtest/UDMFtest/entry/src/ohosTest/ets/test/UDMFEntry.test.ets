@@ -37,7 +37,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100
      * @tc.desc   Verify the properties of the contentForm type
@@ -126,7 +125,6 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200
      * @tc.desc   Verify the properties of the contentForm type
@@ -215,7 +213,6 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300
      * @tc.desc   Verify the properties of the contentForm type
@@ -284,7 +281,6 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400
      * @tc.desc   Verify the properties of the contentForm type
@@ -336,7 +332,6 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
      * @tc.desc   Verify the properties of the contentForm type
@@ -387,7 +382,6 @@ export default function UDMFEntryTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600
      * @tc.desc   Verify the properties of the contentForm type
@@ -434,7 +428,6 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700
      * @tc.desc   Verify the properties of the contentForm type
@@ -485,7 +478,6 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800
      * @tc.desc   Verify the properties of the contentForm type
@@ -531,7 +523,6 @@ export default function UDMFEntryTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800 end");
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900
      * @tc.desc   Verify the properties of the contentForm type
@@ -610,7 +601,6 @@ export default function UDMFEntryTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000
        * @tc.desc   Verify the properties of the contentForm type
@@ -681,7 +671,6 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100
        * @tc.desc   Verify the properties of the contentForm type
@@ -737,7 +726,6 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200
        * @tc.desc   Verify the properties of the contentForm type
@@ -794,7 +782,6 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300
        * @tc.desc   Verify the properties of the contentForm type
@@ -850,7 +837,6 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400
        * @tc.desc   Verify the properties of the contentForm type
@@ -908,7 +894,6 @@ export default function UDMFEntryTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500
        * @tc.desc   Verify the properties of the contentForm type
@@ -994,7 +979,6 @@ export default function UDMFEntryTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:53
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600
        * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600
        * @tc.desc   Verify the properties of the contentForm type
@@ -1060,7 +1044,6 @@ export default function UDMFEntryTest() {
         console.log("SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600 end");
       });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700
      * @tc.desc   Verify the properties of the contentForm type
@@ -1137,7 +1120,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800
      * @tc.desc   Verify the properties of the contentForm type
@@ -1218,7 +1200,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900
      * @tc.desc   Verify the properties of the contentForm type
@@ -1322,7 +1303,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000
      * @tc.desc   Verify the properties of the contentForm type
@@ -1513,7 +1493,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100
      * @tc.desc   Verify the properties of the contentForm type
@@ -1710,7 +1689,6 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
      * @tc.desc   Verify the properties of the contentForm type
@@ -1951,7 +1929,6 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300
      * @tc.desc   Verify the properties of the contentForm type
@@ -2159,7 +2136,6 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400
      * @tc.desc   Verify the properties of the contentForm type
@@ -2418,7 +2394,6 @@ export default function UDMFEntryTest() {
       });
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500
      * @tc.desc   Verify the properties of the contentForm type
@@ -2437,7 +2412,6 @@ export default function UDMFEntryTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600
      * @tc.desc   Verify the properties of the contentForm type
@@ -2456,7 +2430,6 @@ export default function UDMFEntryTest() {
       }
     })  
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700
      * @tc.desc   Verify the properties of the contentForm type
@@ -2543,7 +2516,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800
      * @tc.desc   Verify the properties of the contentForm type
@@ -2632,7 +2604,6 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900
      * @tc.desc   Verify the properties of the contentForm type
@@ -2694,7 +2665,6 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000
      * @tc.desc   Verify the properties of the contentForm type
@@ -2754,7 +2724,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100
      * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100
      * @tc.desc   Test UDMF unifiedData getTypes
@@ -2771,7 +2740,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200
      * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200
      * @tc.desc   Test UDMF UnifiedRecord getTypes
@@ -2783,12 +2751,12 @@ export default function UDMFEntryTest() {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200 start')
       let record = new unifiedDataChannel.UnifiedRecord();
       let types = record.getTypes();
-      expect(types.length).assertEqual(0);
+      expect(types.length).assertEqual(1);
+      expect(types[0]).assertEqual('')
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200 end')
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300
      * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300
      * @tc.desc   Test UDMF unifiedDataChannel queryData promise
@@ -2807,7 +2775,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
      * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
      * @tc.desc   Test UDMF unifiedDataChannel queryData callback
@@ -2832,7 +2799,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500
      * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500
      * @tc.desc   Test UDMF unifiedDataChannel deleteData promise
@@ -2851,7 +2817,6 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
      * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
      * @tc.desc   Test UDMF unifiedDataChannel queryData callback

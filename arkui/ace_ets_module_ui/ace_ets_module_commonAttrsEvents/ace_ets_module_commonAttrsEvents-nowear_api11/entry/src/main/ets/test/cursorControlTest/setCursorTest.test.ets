@@ -55,12 +55,12 @@ export default function setCursorTest() {
       done();
     });
     /**
+     * @tc.name   setCursorTest_0100
      * @tc.number setCursor
-     * @tc.name setCursorTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setCursorTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('setCursorTest_0100 START');
@@ -81,12 +81,12 @@ export default function setCursorTest() {
       done();
     });
     /**
+     * @tc.name   setCursorTest_0200
      * @tc.number setCursor
-     * @tc.name setCursorTest_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setCursorTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('setCursorTest_0200 START');

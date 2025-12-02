@@ -43,12 +43,12 @@ export default function arkuiNodeRenderTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_arkuiNodeRenderTest
-     * @tc.name      arkuiNodeRenderTest_0100
-     * @tc.desc      test the render
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   arkuiNodeRenderTest_0100
+     * @tc.number SUB_ACE_arkuiNodeRenderTest
+     * @tc.desc   test the render
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('arkuiNodeRenderTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[arkuiNodeRenderTest_0100] START');

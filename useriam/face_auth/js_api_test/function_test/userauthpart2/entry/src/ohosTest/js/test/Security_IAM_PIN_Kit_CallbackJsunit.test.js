@@ -23,7 +23,6 @@ export default function userauthTest() {
     describe('userauthTest', function () {
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0101
          * @tc.number Security_IAM_PIN_Kit_Func_0101
          * @tc.desc   A normal response is expected
@@ -53,7 +52,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0102
          * @tc.number Security_IAM_PIN_Kit_Func_0102
          * @tc.desc   Abnormal testing
@@ -116,7 +114,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0112
          * @tc.number Security_IAM_PIN_Kit_Func_0112
          * @tc.desc   Abnormal testing
@@ -196,7 +193,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0113
          * @tc.number Security_IAM_PIN_Kit_Func_0113
          * @tc.desc   Abnormal testing
@@ -268,7 +264,6 @@ export default function userauthTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   Security_IAM_PIN_Kit_Func_0107
          * @tc.number Security_IAM_PIN_Kit_Func_0107
          * @tc.desc   Enumeration testing

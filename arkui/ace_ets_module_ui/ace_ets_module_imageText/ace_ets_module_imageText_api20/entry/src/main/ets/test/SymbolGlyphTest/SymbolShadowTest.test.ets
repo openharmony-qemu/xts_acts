@@ -47,13 +47,13 @@ export default function SymbolShadowTest() {
       console.info("SymbolShadowTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_SYMBOL_SHADOW_ETS_API_0001
-    * @tc.name         SymbolShadowTest0001
-    * @tc.desc         test SymbolGlyph set symbolShadow
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SymbolShadowTest0001
+     * @tc.number SUB_ACE_BASIC_SYMBOL_SHADOW_ETS_API_0001
+     * @tc.desc   test SymbolGlyph set symbolShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SymbolShadowTest0001', Level.LEVEL1, async (done: Function) => {
       console.info('SymbolShadowTest0001 START');
@@ -69,13 +69,13 @@ export default function SymbolShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_SYMBOL_SHADOW_ETS_API_0002
-    * @tc.name         SymbolShadowTest0002
-    * @tc.desc         test SymbolGlyph set symbolShadow
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   SymbolShadowTest0002
+     * @tc.number SUB_ACE_BASIC_SYMBOL_SHADOW_ETS_API_0002
+     * @tc.desc   test SymbolGlyph set symbolShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SymbolShadowTest0002', Level.LEVEL3, async (done: Function) => {
       console.info('SymbolShadowTest0002 START');
@@ -91,13 +91,13 @@ export default function SymbolShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_SYMBOL_SHADOW_ETS_API_0003
-    * @tc.name         SymbolShadowTest0003
-    * @tc.desc         test SymbolGlyph set symbolShadow
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   SymbolShadowTest0003
+     * @tc.number SUB_ACE_BASIC_SYMBOL_SHADOW_ETS_API_0003
+     * @tc.desc   test SymbolGlyph set symbolShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SymbolShadowTest0003', Level.LEVEL3, async (done: Function) => {
       console.info('SymbolShadowTest0003 START');

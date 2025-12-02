@@ -42,12 +42,12 @@ export default function loadingProgressJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_loadingProgress_attrs_0100
      * @tc.number ArkUX_Stage_loadingProgress_attrs_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_loadingProgress_attrs_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_loadingProgress_attrs_0100 START');
@@ -66,12 +66,12 @@ export default function loadingProgressJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_loadingProgress_attrs_0101
      * @tc.number ArkUX_Stage_loadingProgress_attrs_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableLoading values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableLoading values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_loadingProgress_attrs_0101', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_loadingProgress_attrs_0101 START');
@@ -89,12 +89,12 @@ export default function loadingProgressJsunit() {
       }, 500)
     });
     /**
+     * @tc.name   ArkUX_Stage_loadingProgress_attrs_0102
      * @tc.number ArkUX_Stage_loadingProgress_attrs_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Change enableLoading values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change enableLoading values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_loadingProgress_attrs_0102', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_loadingProgress_attrs_0102 START');

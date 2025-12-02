@@ -44,10 +44,13 @@ export default function commonBackgroundBlurStyleJsunit() {
       console.info("commonBackgroundBlurStyle after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_001
-     * @tc.name         testcommonBackgroundBlurStyle001
-     * @tc.desic        acecommonBackgroundBlurStyleEtsTest001
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle001
+     * @tc.number SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc   testcommonBackgroundBlurStyle001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonBackgroundBlurStyle001', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle001 START');
@@ -77,10 +80,13 @@ export default function commonBackgroundBlurStyleJsunit() {
         .borderImage));
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_002
-     * @tc.name         testcommonBackgroundBlurStyle002
-     * @tc.desic        acecommonBackgroundBlurStyleEtsTest002
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle002
+     * @tc.number SUB_ACE_BASIC_ETS_API_002
+     * @tc.desc   testcommonBackgroundBlurStyle002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonBackgroundBlurStyle002', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle002 START');
@@ -93,10 +99,13 @@ export default function commonBackgroundBlurStyleJsunit() {
       console.info("[testcommonBackgroundBlurStyle002] tabIndex value :" + JSON.parse(strJson).$attrs.textAlign);
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_003
-     * @tc.name         testcommonBackgroundBlurStyle003
-     * @tc.desic        acecommonBackgroundBlurStyleEtsTest003
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle003
+     * @tc.number SUB_ACE_BASIC_ETS_API_003
+     * @tc.desc   testcommonBackgroundBlurStyle003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonBackgroundBlurStyle003', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle003 START');
@@ -109,10 +118,13 @@ export default function commonBackgroundBlurStyleJsunit() {
       console.info("[testcommonBackgroundBlurStyle003] sepia value :" + JSON.parse(strJson).$attrs.sepia);
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_004
-     * @tc.name         testcommonBackgroundBlurStyle004
-     * @tc.desic        acecommonBackgroundBlurStyleEtsTest004
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle004
+     * @tc.number SUB_ACE_BASIC_ETS_API_004
+     * @tc.desc   testcommonBackgroundBlurStyle004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonBackgroundBlurStyle004', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle004 START');
@@ -135,10 +147,13 @@ export default function commonBackgroundBlurStyleJsunit() {
         .alignRules));
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_005
-     * @tc.name         testcommonBackgroundBlurStyle005
-     * @tc.desic        acecommonBackgroundBlurStyleEtsTest005
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle005
+     * @tc.number SUB_ACE_BASIC_ETS_API_005
+     * @tc.desc   testcommonBackgroundBlurStyle005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonBackgroundBlurStyle005', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle005 START');
@@ -152,20 +167,26 @@ export default function commonBackgroundBlurStyleJsunit() {
         .backgroundBlurStyle);
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_006
-     * @tc.name         testcommonBackgroundBlurStyle006
-     * @tc.desic        acecommonBackgroundBlurStyleEtsTest006
+    /**
+     * @tc.name   testcommonBackgroundBlurStyle006
+     * @tc.number SUB_ACE_BASIC_ETS_API_006
+     * @tc.desc   testcommonBackgroundBlurStyle006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonBackgroundBlurStyle006', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
       console.info("common onKeyEvent click result is: " + JSON.stringify(sendEventByKey('onKeyEventButton', 10, "")));
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testcommonHoverEffectHighlight0006
-     * @tc.desic        acecommonHoverEffectHighlightEtsTest0006
+    /**
+     * @tc.name   testcommonHoverEffectHighlight0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   testcommonHoverEffectHighlight0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonHoverEffectHighlight0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectHighlight testcommonHoverEffectHighlight0001 START');
@@ -177,10 +198,13 @@ export default function commonBackgroundBlurStyleJsunit() {
       console.info("[testcommonHoverEffectHighlight0001] hoverEffect value :" + JSON.parse(strJson).$attrs.hoverEffect);
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testcommonHoverEffectScale0007
-     * @tc.desic        acecommonHoverEffectScaleEtsTest0007
+    /**
+     * @tc.name   testcommonHoverEffectScale0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   testcommonHoverEffectScale0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonHoverEffectScale0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectScale testcommonHoverEffectScale0001 START');
@@ -193,10 +217,13 @@ export default function commonBackgroundBlurStyleJsunit() {
     });
 
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         testcommonhitTestBehavior0008
-     * @tc.desic        acecommonhitTestBehaviorEtsTest0008
+    /**
+     * @tc.name   testcommonhitTestBehavior0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   testcommonhitTestBehavior0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcommonhitTestBehavior0001', Level.LEVEL0, async () => {
       console.info('commonhitTestBehavior testcommonhitTestBehavior0001 START');

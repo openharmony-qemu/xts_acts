@@ -65,9 +65,12 @@ export default function Tabs_itemPadMar() {
       });
     });
     /**
+     * @tc.name   testTabsItemPad
      * @tc.number SUB_ACE_TABS_ITEMPADMAR_TEST_0100
-     * @tc.name testTabsItemPad
-     * @tc.desc Set 20 padding for TabContent
+     * @tc.desc   Set 20 padding for TabContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsItemPad', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsItemPad] START');
@@ -172,9 +175,12 @@ export default function Tabs_itemPadMar() {
       done();
     });
     /**
+     * @tc.name   testTabsItemMar
      * @tc.number SUB_ACE_TABS_ITEMPADMAR_TEST_0200
-     * @tc.name testTabsItemMar
-     * @tc.desc Set 20 margin for TabContent
+     * @tc.desc   Set 20 margin for TabContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsItemMar', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsItemMar] START');
@@ -284,9 +290,12 @@ export default function Tabs_itemPadMar() {
       done();
     });
     /**
+     * @tc.name   testTabsItemPadMar
      * @tc.number SUB_ACE_TABS_ITEMPADMAR_TEST_0300
-     * @tc.name testTabsItemPadMar
-     * @tc.desc Set 20 padding and 20 margin for TabContent
+     * @tc.desc   Set 20 padding and 20 margin for TabContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsItemPadMar', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsItemPadMar] START');

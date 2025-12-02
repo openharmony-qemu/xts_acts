@@ -86,7 +86,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0600
          * @tc.number SUB_Communication_NFC_secureElement_js_0600
          * @tc.desc   Check whether the SE service is connected.
@@ -106,7 +105,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0700
          * @tc.number SUB_Communication_NFC_secureElement_js_0700
          * @tc.desc   Returns the version number of the OMA specification.
@@ -126,7 +124,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0800
          * @tc.number SUB_Communication_NFC_secureElement_js_0800
          * @tc.desc   Returns the name of this reader.
@@ -161,7 +158,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0900
          * @tc.number SUB_Communication_NFC_secureElement_js_0900
          * @tc.desc   Indicates whether the corresponding secure element is available.
@@ -236,7 +232,6 @@ export default function newSEServicetest() {
         })
         
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_1000
          * @tc.number SUB_Communication_NFC_secureElement_js_1000
          * @tc.desc   Release all SE resources allocated to the service.
@@ -281,7 +276,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_1400
          * @tc.number SUB_Communication_NFC_secureElement_js_1400
          * @tc.desc   Close a single omapi.on and omapi.off
@@ -309,7 +303,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_1500
          * @tc.number SUB_Communication_NFC_secureElement_js_1500
          * @tc.desc   Close a single omapi.on and omapi.off
@@ -356,7 +349,6 @@ export default function newSEServicetest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_1600
          * @tc.number SUB_Communication_NFC_secureElement_js_1600
          * @tc.desc   Close a single omapi.on and omapi.off

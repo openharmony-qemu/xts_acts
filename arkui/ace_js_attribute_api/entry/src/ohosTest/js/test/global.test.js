@@ -54,9 +54,12 @@ describe('globalGetAppTest', function () {
         }
 
     /**
-     * @tc.number    getApp
-     * @tc.name      getApp
-     * @tc.desc      ACE
+     * @tc.name   globalGetAppTest_001
+     * @tc.number getApp
+     * @tc.desc   ACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('globalGetAppTest_001', Level.LEVEL0, function (done) {
         console.log('globalGetAppTest_001 start')
@@ -75,12 +78,15 @@ describe('globalGetAppTest', function () {
         
     });
 
-    /**
-     * @tc.number    createLocalParticleAbility
-     * @tc.name      createLocalParticleAbility
-     * @tc.desc      ACE
-     */
 
+    /**
+     * @tc.name   globalGetAppTest_002
+     * @tc.number globalGetAppTest_002
+     * @tc.desc   globalGetAppTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('globalGetAppTest_002', Level.LEVEL0, function (done) {
         try {
             createLocalParticleAbility('com.freesonwill.facallpa.biz.MyLocalParticleAbility');

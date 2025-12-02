@@ -20,13 +20,12 @@ export default function fileioMkdirRmdir() {
 describe('fileio_mkdir_rmdir', function () {
 
   /**
+   * @tc.name   fileio_mkdir_sync_rmdir_sync_000
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_RMDIR_SYNC_0000
-   * @tc.name fileio_mkdir_sync_rmdir_sync_000
-   * @tc.desc Test mkdirSync() and rmdirSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdirSync() and rmdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_sync_rmdir_sync_000', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileio_mkdir_sync_rmdir_sync_000') + 'd';
@@ -41,13 +40,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_sync_rmdir_sync_001
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_RMDIR_SYNC_0100
-   * @tc.name fileio_mkdir_sync_rmdir_sync_001
-   * @tc.desc Test mkdirSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_sync_rmdir_sync_001', Level.LEVEL0, function () {
     try {
@@ -59,13 +57,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_sync_rmdir_sync_002
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_RMDIR_SYNC_0200
-   * @tc.name fileio_mkdir_sync_rmdir_sync_002
-   * @tc.desc Test mkdirSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_sync_rmdir_sync_002', Level.LEVEL0, function () {
     try {
@@ -77,13 +74,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_sync_rmdir_sync_003
    * @tc.number SUB_DF_FILEIO_MKDIR_SYNC_RMDIR_SYNC_0300
-   * @tc.name fileio_mkdir_sync_rmdir_sync_003
-   * @tc.desc Test mkdirSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdirSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_sync_rmdir_sync_003', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileio_mkdir_sync_rmdir_sync_003');
@@ -98,13 +94,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_000
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0000
-   * @tc.name fileio_mkdir_async_rmdir_sync_000
-   * @tc.desc Test mkdir() and rmdirSync() interfaces. Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() and rmdirSync() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_mkdir_async_rmdir_sync_000') + 'd';
@@ -120,13 +115,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_001
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0100
-   * @tc.name fileio_mkdir_async_rmdir_sync_001
-   * @tc.desc Test mkdir() and rmdirSync() interfaces. Callback.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() and rmdirSync() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_mkdir_async_rmdir_sync_001') + 'd';
@@ -143,13 +137,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_002
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0200
-   * @tc.name fileio_mkdir_async_rmdir_sync_002
-   * @tc.desc Test mkdir() and rmdirSync() interfaces. Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() and rmdirSync() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_mkdir_async_rmdir_sync_002');
@@ -165,13 +158,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_003
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0300
-   * @tc.name fileio_mkdir_async_rmdir_sync_003
-   * @tc.desc Test mkdir() and rmdirSync() interfaces. Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() and rmdirSync() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_mkdir_async_rmdir_sync_003');
@@ -187,13 +179,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_004
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0400
-   * @tc.name fileio_mkdir_async_rmdir_sync_004
-   * @tc.desc Test mkdir() and interfaces. Promise.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() and interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_004', Level.LEVEL0, async function (done) {
     try {
@@ -206,14 +197,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_005
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0500
-   * @tc.name fileio_mkdir_async_rmdir_sync_005
-   * @tc.desc Test mkdir() interfaces. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_005', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_mkdir_async_rmdir_sync_005');
@@ -229,14 +218,12 @@ describe('fileio_mkdir_rmdir', function () {
   });
 
   /**
+   * @tc.name   fileio_mkdir_async_rmdir_sync_006
    * @tc.number SUB_DF_FILEIO_MKDIR_ASYNC_RMDIR_SYNC_0600
-   * @tc.name fileio_mkdir_async_rmdir_sync_006
-   * @tc.desc Test mkdir() interfaces. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test mkdir() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_mkdir_async_rmdir_sync_006', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_mkdir_async_rmdir_sync_006');

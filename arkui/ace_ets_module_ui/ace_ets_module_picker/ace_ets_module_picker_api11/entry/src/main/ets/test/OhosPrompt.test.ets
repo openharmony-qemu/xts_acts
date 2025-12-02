@@ -51,12 +51,14 @@ export default function ohosPromptJsunit() {
       await Utils.sleep(1000);
       console.info("prompt each called");
     });
-    /* *
-    * @tc.number: ohosPromptJsunit_0100
-    * @tc.name  : ohosPromptJsunit_0100
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   ohosPromptJsunit_0100
+     * @tc.number ohosPromptJsunit_0100
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ohosPromptJsunit_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ohosPromptJsunit_0100 is start');
       let driver = await Driver.create()

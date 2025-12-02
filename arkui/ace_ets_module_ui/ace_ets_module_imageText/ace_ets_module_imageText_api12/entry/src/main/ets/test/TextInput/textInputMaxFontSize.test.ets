@@ -48,12 +48,12 @@ export default function textInputMaxFontSize() {
     })
 
     /**
+     * @tc.name   textInputMaxFontSize0100
      * @tc.number textInputMaxFontSize0100
-     * @tc.name Test the maxFontSize property of the textInput component
-     * @tc.desc set the maxFontSize property value is  21
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the maxFontSize property value is  21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputMaxFontSize0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textInputMaxFontSize0100';

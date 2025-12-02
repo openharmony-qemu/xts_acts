@@ -44,6 +44,14 @@ export default function GridRowJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridRowJsunit_0100
+     * @tc.number GridRowJsunit_0100
+     * @tc.desc   GridRowJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the GridRow component
       console.info('[GridRowJsunit_0100] START');
@@ -67,6 +75,14 @@ export default function GridRowJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridRowJsunit_0200
+     * @tc.number GridRowJsunit_0200
+     * @tc.desc   GridRowJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component GridRow
       console.info('[GridRowJsunit_0200] START');
@@ -108,6 +124,14 @@ export default function GridRowJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridRowJsunit_0300
+     * @tc.number GridRowJsunit_0300
+     * @tc.desc   GridRowJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component GridRow
       console.info('[GridRowJsunit_0300] START');
@@ -149,6 +173,14 @@ export default function GridRowJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   GridRowJsunit_0400
+     * @tc.number GridRowJsunit_0400
+     * @tc.desc   GridRowJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify default value of the GridRow component
       console.info('[GridRowJsunit_0400] START');

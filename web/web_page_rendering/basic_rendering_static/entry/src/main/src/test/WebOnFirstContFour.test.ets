@@ -42,13 +42,13 @@ export default function webOnFirstContFour() {
       console.info('webOnFirstContFour beforeEach start');
     })
 
-    /*
-     * @tc.number :  SUB_ACE_BASIC_ETS_WEBPATR5_API_0400
-     * @tc.name : testOnfirstcontentfulpaintrefreshWebcStatic
-     * @tc.desc : onfirstcontentfulpaint with web refresh
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   testOnfirstcontentfulpaintrefreshWebcStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR5_API_0400
+     * @tc.desc   onfirstcontentfulpaint with web refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnfirstcontentfulpaintrefreshWebcStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
@@ -61,13 +61,13 @@ export default function webOnFirstContFour() {
       done();
     })
 
-    /*
-     * @tc.number :  SUB_ACE_BASIC_ETS_WEBPATR5_API_0500
-     * @tc.name: emitonSwitchNextPage
-     * @tc.desc: PAGE_REDIRECT
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR5_API_0500
+     * @tc.desc   PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

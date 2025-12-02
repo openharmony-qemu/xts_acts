@@ -61,14 +61,14 @@ export default function webOnFullScreenEnter() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONFULLSCREENENTER_0100
-    * @tc.name        : testOnFullScreenEnter001
-    * @tc.desc        : test onFullScreenEnter
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnFullScreenEnter001
+     * @tc.number SUB_WEB_ONFULLSCREENENTER_0100
+     * @tc.desc   test onFullScreenEnter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnFullScreenEnter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitOnFullScreenEnter", 300750)
       Utils.registerBaseEvent("testOnFullScreenEnter001", "true_\"true\"", 300760, done,

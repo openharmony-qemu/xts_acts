@@ -196,13 +196,13 @@ export default function TLSSocketConnectionTest() {
       console.info('************* end SocketTest *************');
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_Send_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionSend0400
-     * @tc.desc  :  Do not monitor the service for testing,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionSend0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_Send_0400
+     * @tc.desc   Do not monitor the service for testing,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionSend0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionSend0400';
@@ -246,13 +246,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_Send_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionSend0500
-     * @tc.desc  :  Send an empty ip,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionSend0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_Send_0500
+     * @tc.desc   Send an empty ip,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionSend0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionSend0500';
@@ -329,13 +329,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteAddress_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0500
-     * @tc.desc  :  Test the interface before listen,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteAddress_0500
+     * @tc.desc   Test the interface before listen,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0500';
@@ -423,13 +423,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteAddress_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0600
-     * @tc.desc  :  Ca is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteAddress_0600
+     * @tc.desc   Ca is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetRemoteAddress0600';
@@ -523,13 +523,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0200
-     * @tc.desc  :  Ca is an empty test interface,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0200
+     * @tc.desc   Ca is an empty test interface,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0200';
@@ -625,13 +625,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0300
-     * @tc.desc  :  Key is an empty test interface,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0300
+     * @tc.desc   Key is an empty test interface,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0300';
@@ -730,13 +730,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0400
-     * @tc.desc  :  cert is an empty test interface,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0400
+     * @tc.desc   cert is an empty test interface,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0400';
@@ -835,13 +835,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0500
-     * @tc.desc  :  password is an empty test interface,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetRemoteCertificate_0500
+     * @tc.desc   password is an empty test interface,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetRemoteCertificate0500';
@@ -942,13 +942,13 @@ export default function TLSSocketConnectionTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketConnection_GetCipherSuite_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketConnectionGetCipherSuite0600
-     * @tc.desc  :  Get the cipher suite negotiated by both parties,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionGetCipherSuite0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_GetCipherSuite_0600
+     * @tc.desc   Get the cipher suite negotiated by both parties,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrSocketTLSSocketConnectionGetCipherSuite0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionGetCipherSuite0600';

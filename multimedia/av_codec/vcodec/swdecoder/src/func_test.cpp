@@ -73,9 +73,12 @@ void SwdecFuncNdkTest::TearDown() {}
 
 namespace {
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_0200
- * @tc.name      : create nonexist decoder
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_0200
+ * @tc.number VIDEO_SWDEC_FUNCTION_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0200, TestSize.Level1)
 {
@@ -84,9 +87,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0200, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_0300
- * @tc.name      : test h264  decode buffer
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_0300
+ * @tc.number VIDEO_SWDEC_FUNCTION_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0300, TestSize.Level0)
 {
@@ -104,9 +110,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_0400
- * @tc.name      : test h264  decode surface
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_0400
+ * @tc.number VIDEO_SWDEC_FUNCTION_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0400, TestSize.Level0)
 {
@@ -127,9 +136,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_0700
- * @tc.name      : test set EOS when last frame
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_0700
+ * @tc.number VIDEO_SWDEC_FUNCTION_0700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0700, TestSize.Level1)
 {
@@ -150,9 +162,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0700, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_0800
- * @tc.name      : test set EOS before last frame then stop
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_0800
+ * @tc.number VIDEO_SWDEC_FUNCTION_0800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0800, TestSize.Level1)
 {
@@ -172,12 +187,15 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_0800, TestSize.Level1)
         ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
     }
 }
-/**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_4000
- * @tc.name      : test set EOS before last frame then stop surface
- * @tc.desc      : function test
- */
 
+/**
+ * @tc.name   VIDEO_SWDEC_FUNCTION_4000
+ * @tc.number VIDEO_SWDEC_FUNCTION_4000
+ * @tc.desc   VIDEO_SWDEC_FUNCTION_4000
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_4000, TestSize.Level1)
 {
     if (cap) {
@@ -195,9 +213,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_4000, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1000
- * @tc.name      : test reconfigure for new file with one decoder
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1000
+ * @tc.number VIDEO_SWDEC_FUNCTION_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1000, TestSize.Level1)
 {
@@ -225,9 +246,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1000, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1100
- * @tc.name      : test reconfigure for new file with the recreated decoder
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1100
+ * @tc.number VIDEO_SWDEC_FUNCTION_1100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1100, TestSize.Level1)
 {
@@ -254,9 +278,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1100, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1200
- * @tc.name      : repeat start and stop 5 times before EOS
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1200
+ * @tc.number VIDEO_SWDEC_FUNCTION_1200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1200, TestSize.Level2)
 {
@@ -278,9 +305,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1300
- * @tc.name      : repeat start and flush 5 times before EOS
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1300
+ * @tc.number VIDEO_SWDEC_FUNCTION_1300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1300, TestSize.Level2)
 {
@@ -302,9 +332,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1400
- * @tc.name      : set larger width and height
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1400
+ * @tc.number VIDEO_SWDEC_FUNCTION_1400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1400, TestSize.Level2)
 {
@@ -325,9 +358,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1500
- * @tc.name      : set the width and height to a samller value
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1500
+ * @tc.number VIDEO_SWDEC_FUNCTION_1500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1500, TestSize.Level2)
 {
@@ -348,9 +384,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_SWDEC_FUNCTION_1600
- * @tc.name      : resolution change
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDEC_FUNCTION_1600
+ * @tc.number VIDEO_SWDEC_FUNCTION_1600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1600, TestSize.Level2)
 {
@@ -371,9 +410,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDEC_FUNCTION_1600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SW264_FUNC_0010
- * @tc.name      : VIDEO_DECODE_SYNC_SW264_FUNC_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SW264_FUNC_0010
+ * @tc.number VIDEO_DECODE_SYNC_SW264_FUNC_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW264_FUNC_0010, TestSize.Level1)
 {
@@ -396,9 +438,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW264_FUNC_0010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SW264_FUNC_0020
- * @tc.name      : VIDEO_DECODE_SYNC_SW264_FUNC_0020
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SW264_FUNC_0020
+ * @tc.number VIDEO_DECODE_SYNC_SW264_FUNC_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW264_FUNC_0020, TestSize.Level0)
 {
@@ -421,9 +466,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW264_FUNC_0020, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SW264_FUNC_0040
- * @tc.name      : VIDEO_DECODE_SYNC_SW264_FUNC_0040
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SW264_FUNC_0040
+ * @tc.number VIDEO_DECODE_SYNC_SW264_FUNC_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW264_FUNC_0040, TestSize.Level1)
 {
@@ -446,9 +494,12 @@ HWTEST_F(SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW264_FUNC_0040, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_SWDECODE_BLANK_FRAME_0010
- * @tc.name      : VIDEO_SWDECODE_BLANK_FRAME_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_SWDECODE_BLANK_FRAME_0010
+ * @tc.number VIDEO_SWDECODE_BLANK_FRAME_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(SwdecFuncNdkTest, VIDEO_SWDECODE_BLANK_FRAME_0010, TestSize.Level1)
 {

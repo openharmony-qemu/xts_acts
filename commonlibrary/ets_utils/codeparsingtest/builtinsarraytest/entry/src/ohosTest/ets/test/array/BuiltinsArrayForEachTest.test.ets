@@ -40,12 +40,12 @@ export default function builtinsArrayForEachTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayForEachTest1001
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0100
-     * @tc.name builtinsArrayForEachTest1001
-     * @tc.desc Verify basic element iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Verify basic element iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayForEachTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr = [1, 2, 3];
@@ -55,12 +55,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1002
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0200
-     * @tc.name builtinsArrayForEachTest1002
-     * @tc.desc Verify parameters index and array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify parameters index and array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -74,12 +74,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1003
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0300
-     * @tc.name builtinsArrayForEachTest1003
-     * @tc.desc Verify array modification during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify array modification during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -90,12 +90,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1004
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0400
-     * @tc.name builtinsArrayForEachTest1004
-     * @tc.desc Verify element deletion handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify element deletion handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
@@ -108,12 +108,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1005
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0500
-     * @tc.name builtinsArrayForEachTest1005
-     * @tc.desc Verify sparse array handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify sparse array handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, , 3];
@@ -123,12 +123,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1006
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0600
-     * @tc.name builtinsArrayForEachTest1006
-     * @tc.desc Verify nested array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify nested array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, [, 3], 4];
@@ -141,12 +141,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1007
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0700
-     * @tc.name builtinsArrayForEachTest1007
-     * @tc.desc Verify empty array handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify empty array handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let callCount = 0;
@@ -158,12 +158,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1008
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0800
-     * @tc.name builtinsArrayForEachTest1008
-     * @tc.desc Verify iteration over nested empty arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify iteration over nested empty arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[], [1], [2]];
@@ -173,12 +173,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1009
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0900
-     * @tc.name builtinsArrayForEachTest1009
-     * @tc.desc Verify null/undefined handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify null/undefined handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [null, [undefined, 3]];
@@ -191,12 +191,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1010
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_1000
-     * @tc.name builtinsArrayForEachTest1010
-     * @tc.desc Verify object element handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify object element handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FlatObj = {
@@ -209,12 +209,12 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayForEachTest1011
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_1100
-     * @tc.name builtinsArrayForEachTest1011
-     * @tc.desc Verify string array iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify string array iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = ['abc', 'bcd', 'cde'];

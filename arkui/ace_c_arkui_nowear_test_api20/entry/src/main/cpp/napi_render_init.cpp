@@ -55,6 +55,10 @@ namespace ArkUICapiTest
             nullptr, napi_default, nullptr},
             {"dialogGetStateTest", nullptr, DialogGetStateTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"dialogGetStateErrorCode_001", nullptr, DialogGetStateTest::GetStateErrorCode_001, nullptr, nullptr,
+                nullptr, napi_default, nullptr},
+            {"dialogGetStateErrorCode_002", nullptr, DialogGetStateTest::GetStateErrorCode_002, nullptr, nullptr,
+                nullptr, napi_default, nullptr},
             {"imageDraggableEventTest", nullptr, ImageDraggableEventTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };

@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
+import { URL4 } from '../../test/Config.test'
 import image from '@ohos.multimedia.image';
 const EVENT_ID_SET_EIMIT_KEY = 142015;
 
@@ -40,6 +41,9 @@ struct httpAuthHandler {
   @State isSave:number = -1;
   @State isCode:number = -1;
   no_error: string = "no error happened"
+  @State isHttpAuthInfoSavedReturnTrueStr: string = 'false'
+  @State isHttpAuthInfoSavedReturnTrue: boolean = false
+
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -134,6 +138,29 @@ struct httpAuthHandler {
               }
               break;
             }
+            case 'testIsHttpAuthInfoSavedReturnTrue': {
+              try {
+                this.isHttpAuthInfoSavedReturnTrueStr = 'false'
+                this.isHttpAuthInfoSavedReturnTrue = false
+                this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSavedReturnTrue'
+                this.isSave = -1;
+                this.controller.loadUrl(URL4)
+                await Utils.waitForExist(()=>this.isSave, 'testIsHttpAuthInfoSavedReturnTrue_01', 1);
+                this.isSave = -1;
+                this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSavedReturnTrue'
+                this.controller.loadUrl(URL4)
+                await Utils.waitForExist(()=>this.isSave, 'testIsHttpAuthInfoSavedReturnTrue_02', 1);
+                this.isSave = -1;
+                await Utils.waitForExist(()=>this.isHttpAuthInfoSavedReturnTrueStr, 'testIsHttpAuthInfoSavedReturnTrue_03', 'true');
+                webView.WebDataBase.deleteHttpAuthCredentials()
+                this.isSave = -1;
+                Utils.emitEvent(this.isHttpAuthInfoSavedReturnTrue, 142055)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 142055)
+              }
+              break;
+            }
 
           }
         })
@@ -165,6 +192,18 @@ struct httpAuthHandler {
               this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack = event.handler.isHttpAuthInfoSaved()
               this.HttpAuthHandlerCallBack = ''
               this.isSave = 1;
+            }
+            if (this.HttpAuthHandlerCallBack === 'isHttpAuthInfoSavedReturnTrue') {
+                let isHttpAuthInfoSaved = event.handler.isHttpAuthInfoSaved()
+                console.info('[HttpAuthHandler] isHttpAuthInfoSaved:' + isHttpAuthInfoSaved)
+                this.isSave = 1
+                if (isHttpAuthInfoSaved === false) {
+                    webView.WebDataBase.saveHttpAuthCredentials(event.host, event.realm, '2222', '2222')
+                    event.handler.cancel()
+                } else if (isHttpAuthInfoSaved === true) {
+                    this.isHttpAuthInfoSavedReturnTrue = true
+                    this.isHttpAuthInfoSavedReturnTrueStr = 'true'
+                }
             }
           }
           return true

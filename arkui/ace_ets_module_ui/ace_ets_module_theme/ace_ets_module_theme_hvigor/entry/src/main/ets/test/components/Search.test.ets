@@ -70,13 +70,13 @@ export default function SearchThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsSearchThemeColors_0100
-      * @tc.name      : ActsSearchThemeColors_0100
-      * @tc.desc      : Сheck system colors values of the Search
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsSearchThemeColors_0100
+     * @tc.number ActsSearchThemeColors_0100
+     * @tc.desc   Сheck system colors values of the Search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsSearchThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsSearchThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -101,13 +101,13 @@ export default function SearchThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsSearchThemeColors_0200
-      * @tc.name      : ActsSearchThemeColors_0200
-      * @tc.desc      : Сheck custom colors values of the Search
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsSearchThemeColors_0200
+     * @tc.number ActsSearchThemeColors_0200
+     * @tc.desc   Сheck custom colors values of the Search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsSearchThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsSearchThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -133,14 +133,13 @@ export default function SearchThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsSearchThemeColors_0300
-      * @tc.name      : ActsSearchThemeColors_0300
-      * @tc.desc      : Сheck system colors values of the Search
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsSearchThemeColors_0300
+     * @tc.number ActsSearchThemeColors_0300
+     * @tc.desc   Сheck system colors values of the Search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsSearchThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsSearchThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

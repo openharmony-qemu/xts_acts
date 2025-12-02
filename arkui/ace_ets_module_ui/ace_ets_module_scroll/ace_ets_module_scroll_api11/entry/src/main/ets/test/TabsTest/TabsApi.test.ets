@@ -46,10 +46,12 @@ export default function TabsApi() {
     });
 
     /**
-     * @tc.number      TabsApi_001
-     * @tc.name        TabsApi_001
-     * @tc.desc        Tabs customContentTransition test
-     * @tc.level       Level 2
+     * @tc.name   TabsApi_001
+     * @tc.number TabsApi_001
+     * @tc.desc   Tabs customContentTransition test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TabsApi_001', Level.LEVEL1, async (done: Function) => {
       console.info('[TabsApi_001] START');

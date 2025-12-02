@@ -25,13 +25,13 @@ export default function TestInvalidateAttributes(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestInvalidateAttributes_0100
-     * @tc.name       : TestInvalidateAttributes_001
-     * @tc.desc       : Test InvalidateAttributes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestInvalidateAttributes_001
+     * @tc.number SUB_ARKUI_CAPI_TestInvalidateAttributes_0100
+     * @tc.desc   Test InvalidateAttributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestInvalidateAttributes_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestInvalidateAttributes()).assertEqual(0)

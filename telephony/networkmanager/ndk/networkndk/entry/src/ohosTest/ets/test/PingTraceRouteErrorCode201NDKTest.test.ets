@@ -55,12 +55,12 @@ export default function PingTraceRouteErrorCode201NDKTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerTraceRouteErrorCode201_0100
      * @tc.number SUB_NetworkManager_TraceRoute_ErrorCode201_0100
-     * @tc.name testNetworkManagerTraceRouteErrorCode201_0100
-     * @tc.desc Test TraceRoute Error Code 201
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test TraceRoute Error Code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerTraceRouteErrorCode201_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerTraceRouteErrorCode201_0100';

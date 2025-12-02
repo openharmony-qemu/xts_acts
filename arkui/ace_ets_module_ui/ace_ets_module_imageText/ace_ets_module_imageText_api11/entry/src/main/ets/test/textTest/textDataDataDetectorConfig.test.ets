@@ -47,12 +47,12 @@ export default function textDataDataDetectorConfig() {
     });
 
     /**
-     * @tc.number    textDataDataDetectorConfig_0001
-     * @tc.name      textDataDataDetectorConfig_0001
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   textDataDataDetectorConfig_0001
+     * @tc.number textDataDataDetectorConfig_0001
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textDataDataDetectorConfig_0001', Level.LEVEL1, async (done: Function) => {
       console.info('[textDataDataDetectorConfig_0001] START');
@@ -70,12 +70,12 @@ export default function textDataDataDetectorConfig() {
     });
 
     /**
-     * @tc.number    textDataDataDetectorConfig_0002
-     * @tc.name      textDataDataDetectorConfig_0002
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   textDataDataDetectorConfig_0002
+     * @tc.number textDataDataDetectorConfig_0002
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textDataDataDetectorConfig_0002', Level.LEVEL1, async (done: Function) => {
       console.info('[textDataDataDetectorConfig_0002] START');
@@ -93,12 +93,12 @@ export default function textDataDataDetectorConfig() {
 
 
     /**
-     * @tc.number    textDataDataDetectorConfig_0003
-     * @tc.name      textDataDataDetectorConfig_0003
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   textDataDataDetectorConfig_0003
+     * @tc.number textDataDataDetectorConfig_0003
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textDataDataDetectorConfig_0003', Level.LEVEL1, async (done: Function) => {
       console.info('[textDataDataDetectorConfig_0003] START');
@@ -117,12 +117,12 @@ export default function textDataDataDetectorConfig() {
 
 
     /**
-     * @tc.number    textDataDataDetectorConfig_0004
-     * @tc.name      textDataDataDetectorConfig_0004
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   textDataDataDetectorConfig_0004
+     * @tc.number textDataDataDetectorConfig_0004
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textDataDataDetectorConfig_0004', Level.LEVEL1, async (done: Function) => {
       console.info('[textDataDataDetectorConfig_0004] START');

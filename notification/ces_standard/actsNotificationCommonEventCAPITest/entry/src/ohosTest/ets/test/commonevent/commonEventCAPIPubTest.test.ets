@@ -11,42 +11,42 @@ function sleep(ms: number) {
 export default function commonEventCAPIPubTest() {
 
   describe('commonEventCAPIPubTest', (done: Function) => {
-    /*
-      * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0100
-      * @tc.name      : 应用发布公共事件，发布带publish的事件，公共事件的结果是否符合预期结果
-      * @tc.desc      : C API publish
-      * @tc.size      : Large-scaleTest
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0100
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0100
+     * @tc.desc   C API publish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0100', Level.LEVEL0, (done: Function) => {
       let result: number = testNapi.publish();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0100 " + result)
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-      * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0200
-      * @tc.name      : 应用发布公共事件，发布带publishWIthinfo的事件，有序公共事件的结果是否符合预期结果
-      * @tc.desc      : C API publishWithInfo
-      * @tc.size      : Large-scaleTest
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0200
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0200
+     * @tc.desc   C API publishWithInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0200', Level.LEVEL0, (done: Function) => {
       let result: number = testNapi.publishWithInfo();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0200 " + result)
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-      * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0300
-      * @tc.name      : 应用发布公共事件，发布带ordered的事件，有序公共事件的结果是否符合预期结果
-      * @tc.desc      : C API publish ordered event
-      * @tc.size      : Large-scaleTest
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0300
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0300
+     * @tc.desc   C API publish ordered event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0300', Level.LEVEL0, async (done: Function) => {
       let result: number = testNapi.isOrderedCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0300 " + result)
@@ -57,14 +57,14 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-      * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0400
-      * @tc.name      : 应用发布公共事件，发布FinishCommonEvent，公共事件的结果是否符合预期结果
-      * @tc.desc      : C API 发布FinishCommonEvent
-      * @tc.size      : Large-scaleTest
-      * @tc.type      : Function test
-      * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0400
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0400
+     * @tc.desc   C API 发布FinishCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0400', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.finishCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0400 " + result)
@@ -75,14 +75,14 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-      * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0500
-      * @tc.name      : 应用发布公共事件，发布带AbortCommonEvent的事件，有序公共事件的结果是否符合预期结果
-      * @tc.desc      : C API 发布FinishCommonEvent
-      * @tc.size      : Large-scaleTest
-      * @tc.type      : Function test
-      * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0500
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0500
+     * @tc.desc   C API 发布FinishCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0500', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.abortCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0500 " + result)
@@ -93,14 +93,14 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0600
-     * @tc.name      : 应用发布公共事件，发布带GetAbortCommonEvent的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API 发布GetAbortCommonEvent
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-   */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0600
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0600
+     * @tc.desc   C API 发布GetAbortCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0600', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.getAbortCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0600 " + result)
@@ -111,14 +111,14 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0700
-     * @tc.name      : 应用发布公共事件，发布带ClearAbortCommonEvent的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API ClearAbortCommonEvent
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0700
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0700
+     * @tc.desc   C API ClearAbortCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0700', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.clearAbortCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0700 " + result)
@@ -129,14 +129,14 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0800
-     * @tc.name      : 应用发布公共事件，发布带GetCodeFromSubscriber的事件，公共事件的结果是否符合预期结果
-     * @tc.desc      : C API GetCodeFromSubscriber
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0800
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0800
+     * @tc.desc   C API GetCodeFromSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0800', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.subscriberCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0800 " + result)
@@ -148,14 +148,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_0900
-     * @tc.name      : 应用发布公共事件，发布带SetCodeToSubscriber的事件，公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetCodeToSubscriber
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_0900
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_0900
+     * @tc.desc   C API SetCodeToSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_0900', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.subscriberCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_0900 " + result)
@@ -167,14 +167,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1000
-     * @tc.name      : 应用发布公共事件，发布带GetDataFromSubscriber的事件，公共事件的结果是否符合预期结果
-     * @tc.desc      : C API GetDataFromSubscriber
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1000
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1000
+     * @tc.desc   C API GetDataFromSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1000', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.subscriberCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1000 " + result)
@@ -185,14 +185,14 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1100
-     * @tc.name      : 应用发布公共事件，发布带SetDataToSubscriber的事件，公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetDataToSubscriber
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1100
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1100
+     * @tc.desc   C API SetDataToSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1100', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.subscriberCommonEvent();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1100 " + result)
@@ -203,28 +203,28 @@ export default function commonEventCAPIPubTest() {
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1200
-     * @tc.name      : 应用发布公共事件，发布带CreatePublishInfo的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API CreatePublishInfo
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1200
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1200
+     * @tc.desc   C API CreatePublishInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1200', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.createPublishInfo();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1200 " + result)
       expect(result === SUCCESS).assertTrue()
       done();
     })
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1300
-     * @tc.name      : 应用发布公共事件，发布DestroyPublishInfo的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API DestroyPublishInfo
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1300
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1300
+     * @tc.desc   C API DestroyPublishInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1300', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.destroyParameters();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1300 " + result)
@@ -233,14 +233,14 @@ export default function commonEventCAPIPubTest() {
     })
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1900
-     * @tc.name      : 应用发布公共事件，发布带CreateParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API CreateParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1900
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1900
+     * @tc.desc   C API CreateParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1900', Level.LEVEL1, async (done: Function) => {
       let result: number = testNapi.createParameters();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1900 " + result)
@@ -248,14 +248,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2000
-     * @tc.name      : 应用发布公共事件，发布带DestroyParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API DestroyParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2000
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2000
+     * @tc.desc   C API DestroyParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2000', Level.LEVEL1, async (done: Function) => {
       let result: number = testNapi.destroyParameters();
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2000 " + result)
@@ -263,14 +263,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2800
-     * @tc.name      : 应用发布公共事件，发布带SetBoolArrayToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API setBoolArrayToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2800
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2800
+     * @tc.desc   C API setBoolArrayToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2800', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setBoolArrayToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2800 " + result)
@@ -278,14 +278,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2700
-     * @tc.name      : 应用发布公共事件，发布带SetBoolToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API setBoolToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2700
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2700
+     * @tc.desc   C API setBoolToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2700', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setBoolToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2700 " + result)
@@ -293,14 +293,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_3000
-     * @tc.name      : 应用发布公共事件，发布带SetCharArrayToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API setCharArrayToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_3000
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_3000
+     * @tc.desc   C API setCharArrayToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_3000', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setCharArrayToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_3000 " + result)
@@ -308,14 +308,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2900
-     * @tc.name      : 应用发布公共事件，发布带SetCharToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetCharToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2900
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2900
+     * @tc.desc   C API SetCharToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2900', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setCharToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2900 " + result)
@@ -323,14 +323,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2600
-     * @tc.name      : 应用发布公共事件，发布带SetDoubleArrayToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetDoubleArrayToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2600
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2600
+     * @tc.desc   C API SetDoubleArrayToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2600', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setCharToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2600 " + result)
@@ -338,14 +338,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2500
-     * @tc.name      : 应用发布公共事件，发布带SetDoubleToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetDoubleToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2500
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2500
+     * @tc.desc   C API SetDoubleToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2500', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setDoubleToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2500 " + result)
@@ -353,14 +353,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2300
-     * @tc.name      : 应用发布公共事件，发布带SetILongToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API setLongToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2300
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2300
+     * @tc.desc   C API setLongToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2300', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setLongToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2300 " + result)
@@ -368,14 +368,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2200
-     * @tc.name      : 应用发布公共事件，发布带SetIntArrayToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetIntArrayToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2200
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2200
+     * @tc.desc   C API SetIntArrayToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2200', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setIntArrayToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2200 " + result)
@@ -383,14 +383,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2100
-     * @tc.name      : 应用发布公共事件，发布带SetIntToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetIntToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2100
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2100
+     * @tc.desc   C API SetIntToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2100', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setIntToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2100 " + result)
@@ -398,14 +398,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_2400
-     * @tc.name      : 应用发布公共事件，发布带SetLongArrayToParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetLongArrayToParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_2400
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_2400
+     * @tc.desc   C API SetLongArrayToParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_2400', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setLongArrayToParameters()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_2400 " + result)
@@ -413,14 +413,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1400
-     * @tc.name      : 应用发布公共事件，发布带SetPublishInfoBundleName的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetPublishInfoBundleName
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1400
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1400
+     * @tc.desc   C API SetPublishInfoBundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1400', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setPublishInfoBundleName()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1400 " + result)
@@ -433,14 +433,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1600
-     * @tc.name      : 应用发布公共事件，发布带SetPublishInfoCode的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetPublishInfoCode
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1600
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1600
+     * @tc.desc   C API SetPublishInfoCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1600', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setPublishInfoCode()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1600 " + result)
@@ -454,14 +454,14 @@ export default function commonEventCAPIPubTest() {
 
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1800
-     * @tc.name      : 应用发布公共事件，发布带SetPublishInfoParameters的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetPublishInfoParameters
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1800
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1800
+     * @tc.desc   C API SetPublishInfoParameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1800', Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1800 start" )
       let result: number = testNapi.setPublishInfoParameters()
@@ -474,14 +474,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1500
-     * @tc.name      : 应用发布公共事件，发布带SetPublishInfoPermissions的事件，有序公共事件的结果是否符合预期结果
-     * @tc.desc      : C API SetPublishInfoPermissions
-     * @tc.size      : Large-scaleTest
-     * @tc.type      : Function test
-     * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1500
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1500
+     * @tc.desc   C API SetPublishInfoPermissions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1500', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setPublishInfoPermissions()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1500 " + result)
@@ -489,14 +489,14 @@ export default function commonEventCAPIPubTest() {
       done();
     })
 
-    /*
- * @tc.number    : Sub_Notification_Ces_CommonEvent_Pub_1700
- * @tc.name      : 应用发布公共事件，发布带SetPublishInfoData的事件，有序公共事件的结果是否符合预期结果
- * @tc.desc      : C API SetPublishInfoData
- * @tc.size      : Large-scaleTest
- * @tc.type      : Function test
- * @tc.level     : Level 2
-*/
+    /**
+     * @tc.name   Sub_Notification_Ces_CommonEvent_Pub_1700
+     * @tc.number Sub_Notification_Ces_CommonEvent_Pub_1700
+     * @tc.desc   C API SetPublishInfoData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ces_CommonEvent_Pub_1700', Level.LEVEL2, async (done: Function) => {
       let result: number = testNapi.setPublishInfoData()
       console.log(TAG + "Sub_Notification_Ces_CommonEvent_Pub_1700 " + result)

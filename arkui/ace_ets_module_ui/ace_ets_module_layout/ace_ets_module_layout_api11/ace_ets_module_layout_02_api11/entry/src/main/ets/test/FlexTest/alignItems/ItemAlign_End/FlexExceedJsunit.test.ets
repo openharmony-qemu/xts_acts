@@ -47,9 +47,12 @@ export default function flexExceed_EndJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignEndSetMarPad
      * @tc.number SUB_ACE_FLEXALIGNITEMS_END_0600
-     * @tc.name testFlexItemAlignEndSetMarPad
-     * @tc.desc Subcomponent inside when parent component set margin and padding.
+     * @tc.desc   Subcomponent inside when parent component set margin and padding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignEndSetMarPad',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignEndSetMarPad START');

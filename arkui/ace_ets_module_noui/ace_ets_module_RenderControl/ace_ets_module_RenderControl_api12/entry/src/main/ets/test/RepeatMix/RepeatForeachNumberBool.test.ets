@@ -59,12 +59,12 @@ export default function RepeatForeachNumberBool() {
     });
 
     /**
+     * @tc.name   RepeatForeachNumberBool_001
      * @tc.number RepeatForeachNumberBool_001
-     * @tc.name RepeatForeachNumberBool_001
-     * @tc.desc Test RepeatForeachNumberBool component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatForeachNumberBool component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatForeachNumberBool_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatForeachNumberBool_001] START');

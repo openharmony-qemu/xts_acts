@@ -89,12 +89,12 @@ export default function getTest () {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Asset_Get_MemberType_001
-     * @tc.name      : get_image_uri_001
-     * @tc.desc      : image get photoKeys.URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_uri_001
+     * @tc.number Sub_Photo_Access_Sendable_Asset_Get_MemberType_001
+     * @tc.desc   image get photoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_uri_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_uri_001';
@@ -107,12 +107,12 @@ export default function getTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Asset_Get_MemberType_002
-     * @tc.name      : get_video_uri_001
-     * @tc.desc      : video get photoKeys.URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_photo_type_001
+     * @tc.number Sub_Photo_Access_Sendable_Asset_Get_MemberType_002
+     * @tc.desc   video get photoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_photo_type_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_photo_type_001';
@@ -125,12 +125,12 @@ export default function getTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Asset_Get_MemberType_003
-     * @tc.name      : get_image_title_001
-     * @tc.desc      : image get photoKeys.TITLE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_title_001
+     * @tc.number Sub_Photo_Access_Sendable_Asset_Get_MemberType_003
+     * @tc.desc   image get photoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_title_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_image_title_001';
@@ -143,12 +143,12 @@ export default function getTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Asset_Get_MemberType_004
-     * @tc.name      : get_video_title_001
-     * @tc.desc      : video get photoKeys.TITLE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_title_001
+     * @tc.number Sub_Photo_Access_Sendable_Asset_Get_MemberType_004
+     * @tc.desc   video get photoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_title_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'get_video_title_001';
@@ -160,12 +160,12 @@ export default function getTest () {
       await checkPhotoKeysValue(done, testNum, fetchOps, key, value);
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_0000
-     * @tc.name      : sendable_get_assets_error_000
-     * @tc.desc      : get assets with title set to fetchColumns by mistake
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_get_assets_error_000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_0000
+     * @tc.desc   get assets with title set to fetchColumns by mistake
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_get_assets_error_000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -189,12 +189,12 @@ export default function getTest () {
     });
 
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_SET_ASSETS_0000
-     * @tc.name      : sendable_set_assets_000
-     * @tc.desc      : Set and get assets title to verify consistency
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_set_assets_000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_SET_ASSETS_0000
+     * @tc.desc   Set and get assets title to verify consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_set_assets_000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -218,12 +218,12 @@ export default function getTest () {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_SENADABLE_SET_ERROR_0000
-     * @tc.name      : sendable_error_set_assets_title_undefined
-     * @tc.desc      : Set undefined title to verify error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_error_set_assets_title_undefined_000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_SENADABLE_SET_ERROR_0000
+     * @tc.desc   Set undefined title to verify error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_error_set_assets_title_undefined_000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -247,12 +247,12 @@ export default function getTest () {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_SENADABLE_ERROR_0100
-     * @tc.name      : sendable_error_set_assets_key_invalid
-     * @tc.desc      : Set invalid key to verify error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_error_set_assets_key_invalid_001
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_SENADABLE_ERROR_0100
+     * @tc.desc   Set invalid key to verify error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_error_set_assets_key_invalid_001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -277,12 +277,12 @@ export default function getTest () {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_SENADABLE_SET_ERROR_0200
-     * @tc.name      : sendable_error_set_assets_key_undefined
-     * @tc.desc      : Set undefined key to verify error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_error_set_assets_key_undefined_002
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_SENADABLE_SET_ERROR_0200
+     * @tc.desc   Set undefined key to verify error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_error_set_assets_key_undefined_002', Level.LEVEL0, async (done: Function) => {
       try {

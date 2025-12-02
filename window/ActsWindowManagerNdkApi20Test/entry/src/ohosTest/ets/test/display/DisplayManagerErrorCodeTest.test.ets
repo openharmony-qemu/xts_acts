@@ -22,12 +22,12 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default function DisplayManagerErrorCodeTest() {
   describe('DisplayManagerErrorCodeTest', () => {
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0300
-     * @tc.name    : testNativeDisplayManagerErrorCode0300
-     * @tc.desc    : Test the NativeDisplayManager_ErrorCode401.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplayManagerErrorCode0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0300
+     * @tc.desc   Test the NativeDisplayManager_ErrorCode401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplayManagerErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0300';
@@ -47,12 +47,12 @@ export default function DisplayManagerErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0400
-     * @tc.name    : testNativeDisplayManagerErrorCode0400
-     * @tc.desc    : Test the NativeDisplayManager_ErrorCode801.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplayManagerErrorCode0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0400
+     * @tc.desc   Test the NativeDisplayManager_ErrorCode801.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplayManagerErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0400';
@@ -82,12 +82,12 @@ export default function DisplayManagerErrorCodeTest() {
     }
   })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0800
-     * @tc.name    : testNativeDisplayManagerErrorCode0800
-     * @tc.desc    : Test the NativeDisplayManager_ErrorCode1400004.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNativeDisplayManagerErrorCode0800
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0800
+     * @tc.desc   Test the NativeDisplayManager_ErrorCode1400004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeDisplayManagerErrorCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_ARKUI_ACE_ENGINE_DISPLAY_MANAGER_ERROR_0800';

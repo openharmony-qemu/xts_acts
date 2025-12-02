@@ -47,11 +47,13 @@ export default function ObserverApi() {
       console.info("ObserverApi after each called");
     });
 
-    /*
-     * @tc.number      ObserverApi_001
-     * @tc.name        ObserverApi_001
-     * @tc.desc        Navigation RouterPageState test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   ObserverApi_001
+     * @tc.number ObserverApi_001
+     * @tc.desc   Navigation RouterPageState test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ObserverApi_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ObserverApi_001] START');
@@ -106,11 +108,13 @@ export default function ObserverApi() {
     });
 
 
-    /*
-     * @tc.number      ObserverApi_002
-     * @tc.name        ObserverApi_002
-     * @tc.desc        Navigation RouterPageState2 test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   ObserverApi_002
+     * @tc.number ObserverApi_002
+     * @tc.desc   Navigation RouterPageState2 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ObserverApi_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ObserverApi_002] START');

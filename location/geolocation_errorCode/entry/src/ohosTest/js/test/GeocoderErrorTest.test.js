@@ -86,7 +86,6 @@ export default function geolocationTest_GeoErr() {
 
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0400
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0400
          * @tc.desc   Incorrect input parameters are used to invoke the reverse geocoding service.
@@ -116,7 +115,6 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0500
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0500
          * @tc.desc   Incorrect input parameters are used to invoke the reverse geocoding service.
@@ -140,7 +138,6 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0600
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0600
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -170,7 +167,6 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0700
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0700
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -194,7 +190,6 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_Addbeaconfence_0100
          * @tc.number SUB_HSS_Addbeaconfence_0100
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -247,7 +242,6 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_Addbeaconfence_0200
          * @tc.number SUB_HSS_Addbeaconfence_0200
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -306,7 +300,6 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_Removebeaconfence_0100
          * @tc.number SUB_HSS_Removebeaconfence_0100
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -351,7 +344,6 @@ export default function geolocationTest_GeoErr() {
         
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_HSS_isBeaconFenceSupported_0100
          * @tc.number SUB_HSS_isBeaconFenceSupported_0100
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
@@ -1021,13 +1013,13 @@ export default function geolocationTest_GeoErr() {
                   
   
          /**
-         * @tc.name   SUB_HSS_getGeofenceSupportedCoordTypes_0600
-         * @tc.number  SUB_HSS_getGeofenceSupportedCoordTypes_0600
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getGeofenceSupportedCoordTypes_0600
+          * @tc.number SUB_HSS_getGeofenceSupportedCoordTypes_0600
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_getGeofenceSupportedCoordTypes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getGeofenceSupportedCoordTypes_0600: " + isAcessToken);
@@ -1055,13 +1047,13 @@ export default function geolocationTest_GeoErr() {
         
 
          /**
-         * @tc.name   SUB_HSS_isGeocoderAvailable_0001
-         * @tc.number  SUB_HSS_isGeocoderAvailable_0001
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_isGeocoderAvailable_0001
+          * @tc.number SUB_HSS_isGeocoderAvailable_0001
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_isGeocoderAvailable_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_isGeocoderAvailable_0001: " + isAcessToken);
@@ -1085,13 +1077,13 @@ export default function geolocationTest_GeoErr() {
  
         
          /**
-         * @tc.name   SUB_HSS_getAddressesFromLocationName_0005
-         * @tc.number SUB_HSS_getAddressesFromLocationName_0005
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getAddressesFromLocationName_0005
+          * @tc.number SUB_HSS_getAddressesFromLocationName_0005
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_getAddressesFromLocationName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getAddressesFromLocationName_0005: " + isAcessToken);
@@ -1120,13 +1112,13 @@ export default function geolocationTest_GeoErr() {
 
         
          /**
-         * @tc.name   SUB_HSS_getAddressesFromLocationName_0900
-         * @tc.number SUB_HSS_getAddressesFromLocationName_0900
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getAddressesFromLocationName_0900
+          * @tc.number SUB_HSS_getAddressesFromLocationName_0900
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_getAddressesFromLocationName_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getAddressesFromLocationName_0900: " + isAcessToken);
@@ -1154,13 +1146,13 @@ export default function geolocationTest_GeoErr() {
         });       
 
          /**
-         * @tc.name   SUB_HSS_getAddressesFromLocationName_1100
-         * @tc.number SUB_HSS_getAddressesFromLocationName_1100
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getAddressesFromLocationName_1100
+          * @tc.number SUB_HSS_getAddressesFromLocationName_1100
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_getAddressesFromLocationName_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getAddressesFromLocationName_1100: " + isAcessToken);
@@ -1189,13 +1181,13 @@ export default function geolocationTest_GeoErr() {
         }); 
 
          /**
-         * @tc.name   SUB_HSS_getAddressesFromLocation_0001
-         * @tc.number SUB_HSS_getAddressesFromLocation_0001
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getAddressesFromLocation_0001
+          * @tc.number SUB_HSS_getAddressesFromLocation_0001
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_getAddressesFromLocation_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getAddressesFromLocation_0001: " + isAcessToken);
@@ -1223,13 +1215,13 @@ export default function geolocationTest_GeoErr() {
                
            
          /**
-         * @tc.name   SUB_HSS_getAddressesFromLocation_0200
-         * @tc.number SUB_HSS_getAddressesFromLocation_0200
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getAddressesFromLocation_0200
+          * @tc.number SUB_HSS_getAddressesFromLocation_0200
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_getAddressesFromLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getAddressesFromLocation_0200: " + isAcessToken);
@@ -1257,15 +1249,44 @@ export default function geolocationTest_GeoErr() {
             }            
         });   
         
-                  
          /**
-         * @tc.name   SUB_HSS_locationEnabledChange_0300
-         * @tc.number SUB_HSS_locationEnabledChange_0300
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_getAddressesFromLocation_0300
+          * @tc.number SUB_HSS_getAddressesFromLocation_0300
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+         it('SUB_HSS_getAddressesFromLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getAddressesFromLocation_0300: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                try {
+                    geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                        console.info('getAddressesFromLocation0200: data=' + JSON.stringify(data));
+                        expect(types.length>0).assertTrue();
+                    });
+                } catch (err) {
+                    console.error("errCode:" + err.code + ", message:"  + err.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });  
+       
+         /**
+          * @tc.name   SUB_HSS_locationEnabledChange_0300
+          * @tc.number SUB_HSS_locationEnabledChange_0300
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_locationEnabledChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_locationEnabledChange_0300: " + isAcessToken);
@@ -1320,13 +1341,13 @@ export default function geolocationTest_GeoErr() {
         });        
         
          /**
-         * @tc.name   SUB_HSS_isGeoServiceAvailable_0002
-         * @tc.number SUB_HSS_isGeoServiceAvailable_0002
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_isGeoServiceAvailable_0002
+          * @tc.number SUB_HSS_isGeoServiceAvailable_0002
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_isGeoServiceAvailable_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_isGeoServiceAvailable_0002: " + isAcessToken);
@@ -1346,13 +1367,13 @@ export default function geolocationTest_GeoErr() {
          
         
          /**
-         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0003
-         * @tc.number SUB_geolocation_getAddressesFromLocationName_0003
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_geolocation_getAddressesFromLocationName_0003
+          * @tc.number SUB_geolocation_getAddressesFromLocationName_0003
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_geolocation_getAddressesFromLocationName_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_geolocation_getAddressesFromLocationName_0003: " + isAcessToken);
@@ -1372,13 +1393,13 @@ export default function geolocationTest_GeoErr() {
         });   
         
          /**
-         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0004
-         * @tc.number SUB_geolocation_getAddressesFromLocationName_0004
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_geolocation_getAddressesFromLocationName_0004
+          * @tc.number SUB_geolocation_getAddressesFromLocationName_0004
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_geolocation_getAddressesFromLocationName_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_getAddressesFromLocationName_0004: " + isAcessToken);
@@ -1396,16 +1417,43 @@ export default function geolocationTest_GeoErr() {
                 done();
             }            
         });   
-               
+
         
          /**
-         * @tc.name   SUB_geolocation_getAddressesFromLocation_0006
-         * @tc.number SUB_geolocation_getAddressesFromLocation_0006
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_geolocation_getAddressesFromLocationName_0005
+          * @tc.number SUB_geolocation_getAddressesFromLocationName_0005
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
+         it('SUB_geolocation_getAddressesFromLocationName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocationName_0005: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geocodeRequest = {"description": "111", "maxItems": 1,"minLatitude":0,"minLongitude":0};
+                geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                    console.info('geolocationgetAddressesFromLocationName0005: data=' + JSON.stringify(data));
+                    expect(data).assertEqual(undefined);
+                });
+                await sleep(1000);
+                done();
+            }            
+        });   
+        
+        
+         /**
+          * @tc.name   SUB_geolocation_getAddressesFromLocation_0006
+          * @tc.number SUB_geolocation_getAddressesFromLocation_0006
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_geolocation_getAddressesFromLocation_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_geolocation_getAddressesFromLocation_0006: " + isAcessToken);
@@ -1426,13 +1474,13 @@ export default function geolocationTest_GeoErr() {
 
 
          /**
-         * @tc.name   SUB_geolocation_getAddressesFromLocation_0007
-         * @tc.number SUB_geolocation_getAddressesFromLocation_0007
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_geolocation_getAddressesFromLocation_0007
+          * @tc.number SUB_geolocation_getAddressesFromLocation_0007
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_geolocation_getAddressesFromLocation_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_geolocation_getAddressesFromLocation_0007: " + isAcessToken);
@@ -1452,13 +1500,13 @@ export default function geolocationTest_GeoErr() {
         }); 
         
          /**
-         * @tc.name   SUB_geolocation_getAddressesFromLocation_0008
-         * @tc.number SUB_geolocation_getAddressesFromLocation_0008
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_geolocation_getAddressesFromLocation_0008
+          * @tc.number SUB_geolocation_getAddressesFromLocation_0008
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_geolocation_getAddressesFromLocation_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_geolocation_getAddressesFromLocation_0008: " + isAcessToken);
@@ -1478,13 +1526,13 @@ export default function geolocationTest_GeoErr() {
         });   
         
          /**
-         * @tc.name   SUB_HSS_requestEnableLocation_0002
-         * @tc.number SUB_HSS_requestEnableLocation_0002
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_requestEnableLocation_0002
+          * @tc.number SUB_HSS_requestEnableLocation_0002
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_requestEnableLocation_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_requestEnableLocation_0002: " + isAcessToken);
@@ -1503,13 +1551,13 @@ export default function geolocationTest_GeoErr() {
         });   
         
          /**
-         * @tc.name   SUB_HSS_locationServiceState_0001
-         * @tc.number SUB_HSS_locationServiceState_0001
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
+          * @tc.name   SUB_HSS_locationServiceState_0001
+          * @tc.number SUB_HSS_locationServiceState_0001
+          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_locationServiceState_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
             console.info("SUB_HSS_locationServiceState_0001: " + isAcessToken);

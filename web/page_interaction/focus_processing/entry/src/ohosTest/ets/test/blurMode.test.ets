@@ -59,11 +59,14 @@ export default function blurModeTest() {
     })
 
 
-    /*
-  *tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_001
-  *tc.name blurMode01
-  *tc.desic test blurMode01 interface when choose callback mode.
-  */
+    /**
+     * @tc.name   blurMode01
+     * @tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_001
+     * @tc.desc   blurMode01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blurMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="blurMode01";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
@@ -74,11 +77,14 @@ export default function blurModeTest() {
       done();
     })
 
-    /*
-   *tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_002
-   *tc.name blurMode02
-   *tc.desic test blurMode02 interface when choose callback mode.
-   */
+    /**
+     * @tc.name   blurMode02
+     * @tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_002
+     * @tc.desc   blurMode02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('blurMode02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="blurMode02";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);

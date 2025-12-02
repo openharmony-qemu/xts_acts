@@ -28,6 +28,14 @@ export default function DragEndPendingTest(){
       done()
     })
 
+    /**
+     * @tc.name   DragEndPendingTest_a
+     * @tc.number DragEndPendingTest_a
+     * @tc.desc   DragEndPendingTest_a
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DragEndPendingTest_a',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.DragEndPendingTest_a()).assertEqual(0)
       console.log('DragEndPendingTest_a will drag and check:: ')
@@ -36,6 +44,14 @@ export default function DragEndPendingTest(){
       done()
     })
 
+    /**
+     * @tc.name   DragEndPendingTest_a1
+     * @tc.number DragEndPendingTest_a1
+     * @tc.desc   DragEndPendingTest_a1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DragEndPendingTest_a1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.DragEndPendingTest_a1()).assertEqual(0)
       console.log('DragEndPendingTest_a1 will drag and check:: ')
@@ -44,6 +60,14 @@ export default function DragEndPendingTest(){
       done()
     })
 
+    /**
+     * @tc.name   DragEndPendingTest_b
+     * @tc.number DragEndPendingTest_b
+     * @tc.desc   DragEndPendingTest_b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DragEndPendingTest_b',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.DragEndPendingTest_b()).assertEqual(0)
       console.log('DragEndPendingTest_b will drag and check:: ')
@@ -52,6 +76,14 @@ export default function DragEndPendingTest(){
       done()
     })
 
+    /**
+     * @tc.name   DragEndPendingTest_c
+     * @tc.number DragEndPendingTest_c
+     * @tc.desc   DragEndPendingTest_c
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DragEndPendingTest_c',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.DragEndPendingTest_c()).assertEqual(0)
       console.log('DragEndPendingTest_c will drag and check:: ')

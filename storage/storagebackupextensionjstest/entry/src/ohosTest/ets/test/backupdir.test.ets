@@ -72,14 +72,13 @@ export default function backupdirTest(){
 describe('backupdir_js_test',async () => {
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0100
-   * @tc.name test_Backup_Backupdir_001
-   * @tc.desc Test backupdir() interfaces
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 1
-   * @tc.require
-   */
+    * @tc.name   test_Backup_Backupdir_001
+    * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0100
+    * @tc.desc   Test backupdir() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it("test_Backup_Backupdir_001", Level.LEVEL1, () => {
       try {
          let backupdir = new MyBackupExtAbility();
@@ -95,14 +94,13 @@ describe('backupdir_js_test',async () => {
    });
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0200
-   * @tc.name test_Backup_OnBackupEx_001
-   * @tc.desc Test onBackupEx() interfaces
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_Backup_OnBackupEx_001
+    * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0200
+    * @tc.desc   Test onBackupEx() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it("test_Backup_OnBackupEx_001", Level.LEVEL3, () => {
       try {
          let BackupExtensionAbility = new MyBackupExtAbility();
@@ -116,14 +114,13 @@ describe('backupdir_js_test',async () => {
    });
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0200
-   * @tc.name test_Backup_OnRestoreEx_001
-   * @tc.desc Test onRestoreEx() interfaces
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_Backup_OnRestoreEx_001
+    * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0200
+    * @tc.desc   Test onRestoreEx() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it("test_Backup_OnRestoreEx_001", Level.LEVEL3, () => {
       try {
          let BackupExtensionAbility = new MyBackupExtAbility();
@@ -137,13 +134,12 @@ describe('backupdir_js_test',async () => {
    });
 
    /**
+    * @tc.name   test_Backup_OnProcess_001
     * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_0300
-    * @tc.name test_Backup_OnProcess_001
-    * @tc.desc Test onRestoreEx() interfaces
-    * @tc.size MEDIUM
-    * @tc.type Function
-    * @tc.level Level 3
-    * @tc.require
+    * @tc.desc   Test onRestoreEx() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it("test_Backup_OnProcess_001", Level.LEVEL3, () => {
       try {

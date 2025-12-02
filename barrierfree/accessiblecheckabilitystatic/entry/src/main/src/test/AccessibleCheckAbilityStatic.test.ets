@@ -10,14 +10,14 @@ export default function abilityTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
 
-    /*
-      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
-      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
-      * @tc.desc    The result of isOpenAccessibilitySync() should be boolean type.
-      * @tc.size    MEDIUMTEST
-      * @tc.type    User
-      * @tc.level   Level 0
-      */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500
+     * @tc.desc   The result of isOpenAccessibilitySync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500');
       try {
@@ -32,14 +32,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
-      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600
-      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600
-      * @tc.desc    The result of isOpenTouchGuideSync() should be boolean type.
-      * @tc.size    MEDIUMTEST
-      * @tc.type    User
-      * @tc.level   Level 0
-      */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600
+     * @tc.desc   The result of isOpenTouchGuideSync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600');
       try {

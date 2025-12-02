@@ -75,9 +75,12 @@ void H263SwdecFuncNdkTest::TearDown() {}
 
 namespace {
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SW263_FUNC_0010
- * @tc.name      : VIDEO_DECODE_SYNC_SW263_FUNC_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SW263_FUNC_0010
+ * @tc.number VIDEO_DECODE_SYNC_SW263_FUNC_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW263_FUNC_0010, TestSize.Level1)
 {
@@ -99,9 +102,12 @@ HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW263_FUNC_0010, TestSize.Level
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SW263_FUNC_0020
- * @tc.name      : VIDEO_DECODE_SYNC_SW263_FUNC_0020
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SW263_FUNC_0020
+ * @tc.number VIDEO_DECODE_SYNC_SW263_FUNC_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW263_FUNC_0020, TestSize.Level0)
 {
@@ -123,9 +129,12 @@ HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW263_FUNC_0020, TestSize.Level
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SW263_FUNC_0040
- * @tc.name      : VIDEO_DECODE_SYNC_SW263_FUNC_0040
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SW263_FUNC_0040
+ * @tc.number VIDEO_DECODE_SYNC_SW263_FUNC_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW263_FUNC_0040, TestSize.Level1)
 {
@@ -147,9 +156,12 @@ HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SW263_FUNC_0040, TestSize.Level
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SW263_BLANK_FRAME_0010
- * @tc.name      : VIDEO_DECODE_SW263_BLANK_FRAME_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SW263_BLANK_FRAME_0010
+ * @tc.number VIDEO_DECODE_SW263_BLANK_FRAME_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(H263SwdecFuncNdkTest, VIDEO_DECODE_SW263_BLANK_FRAME_0010, TestSize.Level0)
 {

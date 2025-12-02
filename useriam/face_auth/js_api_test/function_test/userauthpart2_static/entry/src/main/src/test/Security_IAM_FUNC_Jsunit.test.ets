@@ -59,7 +59,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_Func_Static_0102
      * @tc.number Security_IAM_Func_Static_0102
      * @tc.desc   Abnormal testing
@@ -123,7 +122,6 @@ export default function userauthTest_API9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_PIN_Kit_Func_Static_0104
      * @tc.number Security_IAM_PIN_Kit_Func_Static_0104
      * @tc.desc   Enumeration testing
@@ -144,7 +142,6 @@ export default function userauthTest_API9() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_PIN_Kit_Func_Static_0106
      * @tc.number Security_IAM_PIN_Kit_Func_Static_0106
      * @tc.desc   Enumeration testing
@@ -161,7 +158,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_Func_Static_0107
      * @tc.number Security_IAM_Func_Static_0107
      * @tc.desc   Enumeration testing
@@ -179,6 +175,7 @@ export default function userauthTest_API9() {
       expect('12500005').assertEqual(''+userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT);
       expect('12500006').assertEqual(''+userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT);
       expect('12500007').assertEqual(''+userAuth.UserAuthResultCode.BUSY);
+      expect('12500008').assertEqual(''+userAuth.UserAuthResultCode.INVALID_PARAMETERS);
       expect('12500009').assertEqual(''+userAuth.UserAuthResultCode.LOCKED);
       expect('12500010').assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
       expect('12500011').assertEqual(''+userAuth.UserAuthResultCode.CANCELED_FROM_WIDGET);
@@ -188,7 +185,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_skip_Static_0190
      * @tc.number SUB_Security_userIam_authWidget_Func_skip_Static_0190
      * @tc.desc   authWidget
@@ -228,7 +224,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0031
      * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0031
      * @tc.desc   authWidget
@@ -250,7 +245,6 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0032
      * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0032
      * @tc.desc   authWidget
@@ -304,7 +298,6 @@ export default function userauthTest_API9() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_UserAuth_FUNC_Static_0110
      * @tc.number SUB_Security_IAM_UserAuth_FUNC_Static_0110
      * @tc.desc   getAuthLockState parameter validity check
@@ -318,6 +311,7 @@ export default function userauthTest_API9() {
       let checkPin = checkSupportOrNot(userAuth.UserAuthType.PIN);
       let checkFingerprint = checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT);
       let authType:userAuth.UserAuthType[] = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN];
+      let permaentLockoutDuration:int[]  = [userAuth.PERMANENT_LOCKOUT_DURATION];
       if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
         for (let idx0 = 0; idx0 < authType.length; idx0++) {
           try {

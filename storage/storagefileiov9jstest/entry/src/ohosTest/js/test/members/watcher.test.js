@@ -62,13 +62,12 @@ import { Level } from '@ohos/hypium';
 export default function fileIOWatcher() {
   describe('fileIO_test_watcher', function () {
   /**
+   * @tc.name   fileIO_test_watcher_000
    * @tc.number SUB_DF_FILEIO_WATCHER_0000
-   * @tc.name fileIO_test_watcher_000
-   * @tc.desc Create multiple watcher events in multi-level directories.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Create multiple watcher events in multi-level directories.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_000', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_000';
@@ -113,14 +112,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_001
    * @tc.number SUB_DF_FILEIO_WATCHER_0100
-   * @tc.name fileIO_test_watcher_001
-   * @tc.desc Test watcher event '0x00000001': 'IN_ACCESS'
-   *    read a file, verifying the event is 'IN_ACCESS'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000001': 'IN_ACCESS'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_001', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_001';
@@ -146,14 +143,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_002
    * @tc.number SUB_DF_FILEIO_WATCHER_0200
-   * @tc.name fileIO_test_watcher_002
-   * @tc.desc Test watcher event '0x00000002': 'IN_MODIFY'
-   *    write a file, verifying the event is 'IN_MODIFY'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000002': 'IN_MODIFY'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_002', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_002';
@@ -179,14 +174,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_003
    * @tc.number SUB_DF_FILEIO_WATCHER_0300
-   * @tc.name fileIO_test_watcher_003
-   * @tc.desc Test watcher event '0x00000004': 'IN_ATTRIB'
-   * Modify time of the file, verifying the event is 'IN_ATTRIB'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000004': 'IN_ATTRIB'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_003', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_003';
@@ -211,14 +204,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_004
    * @tc.number SUB_DF_FILEIO_WATCHER_0400
-   * @tc.name fileIO_test_watcher_004
-   * @tc.desc Test watcher event '0x00000008': 'IN_CLOSE_WRITE'
-   *    open a file on read_write mode and then close the file.fd, verifying the event is 'IN_CLOSE_WRITE'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000008': 'IN_CLOSE_WRITE'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_004', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_004';
@@ -243,14 +234,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_005
    * @tc.number SUB_DF_FILEIO_WATCHER_0500
-   * @tc.name fileIO_test_watcher_005
-   * @tc.desc Test watcher event '0x00000020': 'IN_OPEN'
-   *    open a file on only read mode, verifying the event is 'IN_OPEN'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000020': 'IN_OPEN'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_005', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_005';
@@ -275,14 +264,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_006
    * @tc.number SUB_DF_FILEIO_WATCHER_0600
-   * @tc.name fileIO_test_watcher_006
-   * @tc.desc Test watcher event '0x00000040': 'IN_MOVED_FROM', '0x00000080': 'IN_MOVED_TO',
-   *    rename a file, verifying the event is 'IN_MOVED_FROM' and 'IN_MOVED_TO'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000040': 'IN_MOVED_FROM', '0x00000080': 'IN_MOVED_TO',
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_006', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_006';
@@ -317,14 +304,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_007
    * @tc.number SUB_DF_FILEIO_WATCHER_0700
-   * @tc.name fileIO_test_watcher_007
-   * @tc.desc Test watcher event '0x00000100': 'IN_CREATE'
-   *    open a nonexistent file on create mode, verifying the event is 'IN_CREATE'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000100': 'IN_CREATE'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_007', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_007';
@@ -348,14 +333,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_008
    * @tc.number SUB_DF_FILEIO_WATCHER_0800
-   * @tc.name fileIO_test_watcher_008
-   * @tc.desc Test watcher event '0x00000100': 'IN_CREATE'
-   *    open a nonexistent folder on create mode, verifying the event is 'IN_CREATE'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000100': 'IN_CREATE'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_008', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_008';
@@ -378,14 +361,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_009
    * @tc.number SUB_DF_FILEIO_WATCHER_0900
-   * @tc.name fileIO_test_watcher_009
-   * @tc.desc Test watcher event '0x00000200': 'IN_DELETE'
-   *    delete a file , verifying the event is 'IN_DELETE'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000200': 'IN_DELETE'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_009', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_009';
@@ -409,14 +390,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_010
    * @tc.number SUB_DF_FILEIO_WATCHER_1000
-   * @tc.name fileIO_test_watcher_010
-   * @tc.desc Test watcher event '0x00000200': 'IN_DELETE'
-   *    delete a directory , verifying the event is 'IN_DELETE'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000200': 'IN_DELETE'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_010', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_010';
@@ -440,14 +419,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_011
    * @tc.number SUB_DF_FILEIO_WATCHER_1100
-   * @tc.name fileIO_test_watcher_011
-   * @tc.desc Test watcher event '0x00000400': 'IN_DELETE_SELF'
-   *    delete watcher folder , verifying the event is 'IN_DELETE_SELF'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000400': 'IN_DELETE_SELF'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_011', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_011';
@@ -468,14 +445,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_012
    * @tc.number SUB_DF_FILEIO_WATCHER_1200
-   * @tc.name fileIO_test_watcher_012
-   * @tc.desc Test watcher event '0x00000800': 'IN_MOVE_SELF'
-   *    rename watcher folder , verifying the event is 'IN_MOVE_SELF'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000800': 'IN_MOVE_SELF'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_012', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_012';
@@ -497,14 +472,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_013
    * @tc.number SUB_DF_FILEIO_WATCHER_1300
-   * @tc.name fileIO_test_watcher_013
-   * @tc.desc Test watcher event '0x00000800': 'IN_MOVE_SELF'
-   *    rename watcher file , verifying the event is 'IN_MOVE_SELF'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000800': 'IN_MOVE_SELF'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_013', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_013';
@@ -527,14 +500,12 @@ export default function fileIOWatcher() {
 
 
   /**
+   * @tc.name   fileIO_test_watcher_014
    * @tc.number SUB_DF_FILEIO_WATCHER_1400
-   * @tc.name fileIO_test_watcher_014
-   * @tc.desc Test watcher event '0x00000010': 'IN_CLOSE_NOWRITE'
-   *    open a file on read only mode and then close the file.fd, verifying the event is 'IN_CLOSE_NOWRITE'.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test watcher event '0x00000010': 'IN_CLOSE_NOWRITE'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_014', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_014';
@@ -559,13 +530,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_015
    * @tc.number SUB_DF_FILEIO_WATCHER_1500
-   * @tc.name fileIO_test_watcher_015
-   * @tc.desc Create multiple watchers in the same directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Create multiple watchers in the same directory.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_watcher_015', Level.LEVEL0, async function (done) {
     let testNum = 'fileIO_test_watcher_015';
@@ -604,13 +574,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_016
    * @tc.number SUB_DF_FILEIO_WATCHER_1600
-   * @tc.name fileIO_test_watcher_016
-   * @tc.desc Same event, different callback function.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Same event, different callback function.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_016', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_016';
@@ -642,13 +611,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_017
    * @tc.number SUB_DF_FILEIO_WATCHER_1700
-   * @tc.name fileIO_test_watcher_017
-   * @tc.desc Same parameter, throw errno.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Same parameter, throw errno.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_017', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_017';
@@ -671,13 +639,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_018
    * @tc.number SUB_DF_FILEIO_WATCHER_1800
-   * @tc.name fileIO_test_watcher_018
-   * @tc.desc Test Invalid parameter, events = string.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Invalid parameter, events = string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_018', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_018';
@@ -697,13 +664,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_019
    * @tc.number SUB_DF_FILEIO_WATCHER_1900
-   * @tc.name fileIO_test_watcher_019
-   * @tc.desc Test Invalid parameter, put a parameter in watcher.start.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Invalid parameter, put a parameter in watcher.start.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_019', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_019';
@@ -723,13 +689,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_020
    * @tc.number SUB_DF_FILEIO_WATCHER_2000
-   * @tc.name fileIO_test_watcher_020
-   * @tc.desc Test Invalid parameter, put a parameter in watcher.stop.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Invalid parameter, put a parameter in watcher.stop.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_020', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_020';
@@ -752,13 +717,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_021
    * @tc.number SUB_DF_FILEIO_WATCHER_2100
-   * @tc.name fileIO_test_watcher_021
-   * @tc.desc No watcher started.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   No watcher started.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_021', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_021';
@@ -778,13 +742,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_022
    * @tc.number SUB_DF_FILEIO_WATCHER_2200
-   * @tc.name fileIO_test_watcher_022
-   * @tc.desc Test Invalid parameter, callback = object.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Invalid parameter, callback = object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_022', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_022';
@@ -804,13 +767,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_023
    * @tc.number SUB_DF_FILEIO_WATCHER_2300
-   * @tc.name fileIO_test_watcher_023
-   * @tc.desc Test Invalid parameter, events = -1
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Invalid parameter, events = -1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_023', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_023';
@@ -831,13 +793,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_024
    * @tc.number SUB_DF_FILEIO_WATCHER_2400
-   * @tc.name fileIO_test_watcher_024
-   * @tc.desc Missing the third parametor.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Missing the third parametor.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_024', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_024';
@@ -856,13 +817,12 @@ export default function fileIOWatcher() {
   });
 
   /**
+   * @tc.name   fileIO_test_watcher_025
    * @tc.number SUB_DF_FILEIO_WATCHER_2500
-   * @tc.name fileIO_test_watcher_025
-   * @tc.desc The path point to nothing, no such file.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   The path point to nothing, no such file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_watcher_025', Level.LEVEL3, async function (done) {
     let testNum = 'fileIO_test_watcher_025';

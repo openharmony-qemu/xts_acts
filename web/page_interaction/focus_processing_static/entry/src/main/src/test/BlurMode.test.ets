@@ -58,13 +58,13 @@ export default function webViewSrollableJsunit() {
     })
 
 
-    /*
-     * @tc.number : SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_001
-	   * @tc.name : blurModeStatic01
-	   * @tc.desc : test blurMode01 interface when choose callback mode.
-	   * @tc.size : MediumTest
-	   * @tc.type : Function
-	   * @tc.level : Level 3
+    /**
+     * @tc.name   blurModeStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_001
+     * @tc.desc   test blurMode01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('blurModeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000)
@@ -92,13 +92,13 @@ export default function webViewSrollableJsunit() {
     })
 
 
-    /*
-     * @tc.number : SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_002
-     * @tc.name : blurModeStatic02
-     * @tc.desc : test blurMode02 interface when choose callback mode.
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   blurModeStatic02
+     * @tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_002
+     * @tc.desc   test blurMode02 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('blurModeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000)

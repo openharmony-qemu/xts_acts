@@ -51,15 +51,15 @@ export default function gridObjectSortComponentTest() {
       console.info('gridObjectSortComponentTest after each called');
     })
 
-    /**
-     * @tc.number gridObjectSortComponentTest
-     * @tc.name   GridObjectSortComponentTest_0200 item
-     * @tc.desc   Click gridObjectSortComponent
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
 
+    /**
+     * @tc.name   GridObjectSortComponentTest_0200
+     * @tc.number GridObjectSortComponentTest_0200
+     * @tc.desc   GridObjectSortComponentTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridObjectSortComponentTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       console.info('[GridObjectSortComponentTest_0200] START');

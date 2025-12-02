@@ -46,9 +46,12 @@ export default function flexBasis_Type() {
       console.info("flexBasis_Type after each called")
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0100
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0100
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis(100) , the height of column1 is 100vp
+     * @tc.desc   column1 is set to flexBasis(100) , the height of column1 is 100vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0100] START');
@@ -89,9 +92,12 @@ export default function flexBasis_Type() {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0200
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0200
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis(0) , the height of column1 is  the original height
+     * @tc.desc   column1 is set to flexBasis(0) , the height of column1 is  the original height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0200] START');
@@ -133,9 +139,12 @@ export default function flexBasis_Type() {
     });
 
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0300
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0300
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis('auto') , the height of column1 is  the original height
+     * @tc.desc   column1 is set to flexBasis('auto') , the height of column1 is  the original height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0300] START');
@@ -174,9 +183,12 @@ export default function flexBasis_Type() {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0400] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0400
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0400
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis('200vp') , the height of column1 is 200vp
+     * @tc.desc   column1 is set to flexBasis('200vp') , the height of column1 is 200vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0400',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0400] START');
@@ -216,9 +228,12 @@ export default function flexBasis_Type() {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0400] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0500
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0500
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis('200px') , the height of column1 is 200px
+     * @tc.desc   column1 is set to flexBasis('200px') , the height of column1 is 200px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0500',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0500] START');
@@ -258,9 +273,12 @@ export default function flexBasis_Type() {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0500] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0600
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0600
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis('200fp') , the height of column1 is 200fp
+     * @tc.desc   column1 is set to flexBasis('200fp') , the height of column1 is 200fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0600',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0600] START');
@@ -300,9 +318,12 @@ export default function flexBasis_Type() {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0600] END');
     });
     /**
+     * @tc.name   SUB_ACE_flexBasis_Type_TEST_0700
      * @tc.number SUB_ACE_flexBasis_Type_TEST_0700
-     * @tc.name testFlexBasis
-     * @tc.desc column1 is set to flexBasis('200lpx') , the height of column1 is 200lpx
+     * @tc.desc   column1 is set to flexBasis('200lpx') , the height of column1 is 200lpx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_flexBasis_Type_TEST_0700',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Type_TEST_0700] START');

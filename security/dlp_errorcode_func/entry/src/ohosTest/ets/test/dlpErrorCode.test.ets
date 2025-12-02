@@ -39,12 +39,12 @@ export default function dlpErrorCodeTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100
      * @tc.number SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100
-     * @tc.name test setSandboxAppConfig
-     * @tc.desc 普通应用调用setSandboxAppConfig接口，不传入参数，返回19100001
-     * @tc.size MediumTest
-     * @tc.level Level0
-     * @tc.type Function
+     * @tc.desc   普通应用调用setSandboxAppConfig接口，不传入参数，返回19100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_DataSecurity_DLP_setSandboxAppConfig_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

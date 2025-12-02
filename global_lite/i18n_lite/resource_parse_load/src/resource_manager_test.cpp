@@ -167,10 +167,13 @@ void ResourceManagerTest::TearDown(void)
     delete this->rm;
 }
 
-/*
- * @tc.name: ResourceManagerAddResourceTest001
- * @tc.desc: Test AddResource function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerAddResourceTest001
+ * @tc.number ResourceManagerAddResourceTest001
+ * @tc.desc   Test AddResource function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerAddResourceTest001, TestSize.Level1)
 {
@@ -179,10 +182,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerAddResourceTest001, TestSize.Level1
     ASSERT_TRUE(ret);
 };
 
-/*
- * @tc.name: ResourceManagerAddResourceTest002
- * @tc.desc: Test AddResource function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerAddResourceTest002
+ * @tc.number ResourceManagerAddResourceTest002
+ * @tc.desc   Test AddResource function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerAddResourceTest002, TestSize.Level1)
 {
@@ -192,10 +198,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerAddResourceTest002, TestSize.Level1
     ASSERT_TRUE(!ret);
 }
 
-/*
- * @tc.name: ResourceManagerAddResourceTest003
- * @tc.desc: Test AddResource function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerAddResourceTest003
+ * @tc.number ResourceManagerAddResourceTest003
+ * @tc.desc   Test AddResource function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerAddResourceTest003, TestSize.Level1)
 {
@@ -207,10 +216,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerAddResourceTest003, TestSize.Level1
     ASSERT_TRUE(!ret);
 }
 
-/*
- * @tc.name: ResourceManagerUpdateResConfigTest001
- * @tc.desc: Test UpdateResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerUpdateResConfigTest001
+ * @tc.number ResourceManagerUpdateResConfigTest001
+ * @tc.desc   Test UpdateResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest001, TestSize.Level1)
 {
@@ -228,10 +240,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest001, TestSize.Le
     EXPECT_EQ(SUCCESS, state);
 }
 
-/*
- * @tc.name: ResourceManagerUpdateResConfigTest002
- * @tc.desc: Test UpdateResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerUpdateResConfigTest002
+ * @tc.number ResourceManagerUpdateResConfigTest002
+ * @tc.desc   Test UpdateResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest002, TestSize.Level1)
 {
@@ -247,10 +262,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest002, TestSize.Le
     EXPECT_EQ(LOCALEINFO_IS_NULL, state);
 }
 
-/*
- * @tc.name: ResourceManagerUpdateResConfigTest003
- * @tc.desc: Test UpdateResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerUpdateResConfigTest003
+ * @tc.number ResourceManagerUpdateResConfigTest003
+ * @tc.desc   Test UpdateResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest003, TestSize.Level1)
 {
@@ -267,11 +285,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest003, TestSize.Le
     EXPECT_EQ(LOCALEINFO_IS_NULL, state);
 }
 
-/*
- * load a hap, defaultConfig set to en, then switch to zh
- * @tc.name: ResourceManagerUpdateResConfigTest004
- * @tc.desc: Test UpdateResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerUpdateResConfigTest004
+ * @tc.number ResourceManagerUpdateResConfigTest004
+ * @tc.desc   Test UpdateResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest004, TestSize.Level1)
 {
@@ -304,10 +324,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest004, TestSize.Le
     TestStringByName("app_name", "应用名称");
 }
 
-/*
- * @tc.name: ResourceManagerUpdateResConfigTest005
- * @tc.desc: Test UpdateResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerUpdateResConfigTest005
+ * @tc.number ResourceManagerUpdateResConfigTest005
+ * @tc.desc   Test UpdateResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest005, TestSize.Level1)
 {
@@ -329,10 +352,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerUpdateResConfigTest005, TestSize.Le
     EXPECT_EQ(HAP_INIT_FAILED, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetResConfigTest001
- * @tc.desc: Test GetResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetResConfigTest001
+ * @tc.number ResourceManagerGetResConfigTest001
+ * @tc.desc   Test GetResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetResConfigTest001, TestSize.Level1)
 {
@@ -345,10 +371,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetResConfigTest001, TestSize.Level
     EXPECT_EQ(DEVICE_NOT_SET, rc.GetDeviceType());
 }
 
-/*
- * @tc.name: ResourceManagerGetResConfigTest002
- * @tc.desc: Test GetResConfig function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetResConfigTest002
+ * @tc.number ResourceManagerGetResConfigTest002
+ * @tc.desc   Test GetResConfig function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetResConfigTest002, TestSize.Level1)
 {
@@ -373,10 +402,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetResConfigTest002, TestSize.Level
     EXPECT_EQ(DEVICE_CAR, rc.GetDeviceType());
 }
 
-/*
- * @tc.name: ResourceManagerGetStringByIdTest001
- * @tc.desc: Test GetStringById function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringByIdTest001
+ * @tc.number ResourceManagerGetStringByIdTest001
+ * @tc.desc   Test GetStringById function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByIdTest001, TestSize.Level1)
 {
@@ -391,10 +423,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByIdTest001, TestSize.Leve
     TestStringById("string_ref2", "XXXXXX All rights reserved. ©2011-2019");
 }
 
-/*
- * @tc.name: ResourceManagerGetStringByIdTest002
- * @tc.desc: Test GetStringById function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringByIdTest002
+ * @tc.number ResourceManagerGetStringByIdTest002
+ * @tc.desc   Test GetStringById function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByIdTest002, TestSize.Level1)
 {
@@ -409,10 +444,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByIdTest002, TestSize.Leve
     TestStringById("string_ref2", "$aaaaa");
 }
 
-/*
- * @tc.name: ResourceManagerGetStringByIdTest003
- * @tc.desc: Test GetStringById function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringByIdTest003
+ * @tc.number ResourceManagerGetStringByIdTest003
+ * @tc.desc   Test GetStringById function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByIdTest003, TestSize.Level1)
 {
@@ -423,10 +461,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByIdTest003, TestSize.Leve
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringByNameTest001
- * @tc.desc: Test GetStringByName function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringByNameTest001
+ * @tc.number ResourceManagerGetStringByNameTest001
+ * @tc.desc   Test GetStringByName function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByNameTest001, TestSize.Level1)
 {
@@ -441,10 +482,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByNameTest001, TestSize.Le
     TestStringByName("string_ref2", "XXXXXX All rights reserved. ©2011-2019");
 }
 
-/*
- * @tc.name: ResourceManagerGetStringByNameTest002
- * @tc.desc: Test GetStringByName function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringByNameTest002
+ * @tc.number ResourceManagerGetStringByNameTest002
+ * @tc.desc   Test GetStringByName function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByNameTest002, TestSize.Level1)
 {
@@ -459,10 +503,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByNameTest002, TestSize.Le
     TestStringByName("string_ref2", "$aaaaa");
 }
 
-/*
- * @tc.name: ResourceManagerGetStringByNameTest003
- * @tc.desc: Test GetStringByName function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringByNameTest003
+ * @tc.number ResourceManagerGetStringByNameTest003
+ * @tc.desc   Test GetStringByName function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByNameTest003, TestSize.Level1)
 {
@@ -473,10 +520,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringByNameTest003, TestSize.Le
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringFormatByIdTest001
- * @tc.desc: Test GetStringFormatById function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringFormatByIdTest001
+ * @tc.number ResourceManagerGetStringFormatByIdTest001
+ * @tc.desc   Test GetStringFormatById function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByIdTest001, TestSize.Level1)
 {
@@ -491,10 +541,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByIdTest001, TestSiz
     ASSERT_EQ("应用名称", outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringFormatByIdTest002
- * @tc.desc: Test GetStringFormatById function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringFormatByIdTest002
+ * @tc.number ResourceManagerGetStringFormatByIdTest002
+ * @tc.desc   Test GetStringFormatById function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByIdTest002, TestSize.Level1)
 {
@@ -505,10 +558,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByIdTest002, TestSiz
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringFormatByNameTest001
- * @tc.desc: Test GetStringFormatByName function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringFormatByNameTest001
+ * @tc.number ResourceManagerGetStringFormatByNameTest001
+ * @tc.desc   Test GetStringFormatByName function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByNameTest001, TestSize.Level1)
 {
@@ -521,10 +577,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByNameTest001, TestS
     ASSERT_EQ("应用名称", outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringFormatByNameTest002
- * @tc.desc: Test GetStringFormatByName function
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringFormatByNameTest002
+ * @tc.number ResourceManagerGetStringFormatByNameTest002
+ * @tc.desc   Test GetStringFormatByName function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByNameTest002, TestSize.Level1)
 {
@@ -535,10 +594,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringFormatByNameTest002, TestS
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringArrayByIdTest001
- * @tc.desc: Test GetStringArrayById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringArrayByIdTest001
+ * @tc.number ResourceManagerGetStringArrayByIdTest001
+ * @tc.desc   Test GetStringArrayById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByIdTest001, TestSize.Level1)
 {
@@ -561,10 +623,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByIdTest001, TestSize
     PrintVectorString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringArrayByIdTest002
- * @tc.desc: Test GetStringArrayById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringArrayByIdTest002
+ * @tc.number ResourceManagerGetStringArrayByIdTest002
+ * @tc.desc   Test GetStringArrayById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByIdTest002, TestSize.Level1)
 {
@@ -578,10 +643,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByIdTest002, TestSize
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringArrayByNameTest001
- * @tc.desc: Test GetStringArrayByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringArrayByNameTest001
+ * @tc.number ResourceManagerGetStringArrayByNameTest001
+ * @tc.desc   Test GetStringArrayByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByNameTest001, TestSize.Level1)
 {
@@ -597,10 +665,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByNameTest001, TestSi
     PrintVectorString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetStringArrayByNameTest002
- * @tc.desc: Test GetStringArrayByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetStringArrayByNameTest002
+ * @tc.number ResourceManagerGetStringArrayByNameTest002
+ * @tc.desc   Test GetStringArrayByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByNameTest002, TestSize.Level1)
 {
@@ -614,10 +685,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetStringArrayByNameTest002, TestSi
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByIdTest001
- * @tc.desc: Test GetPatternById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByIdTest001
+ * @tc.number ResourceManagerGetPatternByIdTest001
+ * @tc.desc   Test GetPatternById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest001, TestSize.Level1)
 {
@@ -634,10 +708,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest001, TestSize.Lev
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByIdTest002
- * @tc.desc: Test GetPatternById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByIdTest002
+ * @tc.number ResourceManagerGetPatternByIdTest002
+ * @tc.desc   Test GetPatternById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest002, TestSize.Level1)
 {
@@ -654,10 +731,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest002, TestSize.Lev
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByIdTest003
- * @tc.desc: Test GetPatternById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByIdTest003
+ * @tc.number ResourceManagerGetPatternByIdTest003
+ * @tc.desc   Test GetPatternById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest003, TestSize.Level1)
 {
@@ -674,10 +754,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest003, TestSize.Lev
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByIdTest004
- * @tc.desc: Test GetPatternById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByIdTest004
+ * @tc.number ResourceManagerGetPatternByIdTest004
+ * @tc.desc   Test GetPatternById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest004, TestSize.Level1)
 {
@@ -691,10 +774,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByIdTest004, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByNameTest001
- * @tc.desc: Test GetPatternByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByNameTest001
+ * @tc.number ResourceManagerGetPatternByNameTest001
+ * @tc.desc   Test GetPatternByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest001, TestSize.Level1)
 {
@@ -709,10 +795,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest001, TestSize.L
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByNameTest002
- * @tc.desc: Test GetPatternByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByNameTest002
+ * @tc.number ResourceManagerGetPatternByNameTest002
+ * @tc.desc   Test GetPatternByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest002, TestSize.Level1)
 {
@@ -727,10 +816,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest002, TestSize.L
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByNameTest003
- * @tc.desc: Test GetPatternByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByNameTest003
+ * @tc.number ResourceManagerGetPatternByNameTest003
+ * @tc.desc   Test GetPatternByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest003, TestSize.Level1)
 {
@@ -745,10 +837,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest003, TestSize.L
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetPatternByNameTest004
- * @tc.desc: Test GetPatternByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPatternByNameTest004
+ * @tc.number ResourceManagerGetPatternByNameTest004
+ * @tc.desc   Test GetPatternByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest004, TestSize.Level1)
 {
@@ -762,10 +857,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPatternByNameTest004, TestSize.L
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdTest001
- * @tc.desc: Test GetPluralStringById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdTest001
+ * @tc.number ResourceManagerGetPluralStringByIdTest001
+ * @tc.desc   Test GetPluralStringById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest001, TestSize.Level1)
 {
@@ -778,10 +876,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest001, TestSiz
     TestPluralStringById(quantity, "%d apples", false);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdTest002
- * @tc.desc: Test GetPluralStringById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdTest002
+ * @tc.number ResourceManagerGetPluralStringByIdTest002
+ * @tc.desc   Test GetPluralStringById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest002, TestSize.Level1)
 {
@@ -794,10 +895,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest002, TestSiz
     TestPluralStringById(quantity, "%d apples", false);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdTest003
- * @tc.desc: Test GetPluralStringById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdTest003
+ * @tc.number ResourceManagerGetPluralStringByIdTest003
+ * @tc.desc   Test GetPluralStringById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest003, TestSize.Level1)
 {
@@ -816,10 +920,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest003, TestSiz
     TestPluralStringById(quantity, "%d jabłek");
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdTest004
- * @tc.desc: Test GetPluralStringById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdTest004
+ * @tc.number ResourceManagerGetPluralStringByIdTest004
+ * @tc.desc   Test GetPluralStringById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest004, TestSize.Level1)
 {
@@ -839,10 +946,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest004, TestSiz
     TestPluralStringById(quantity, "other-%d");
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdTest005
- * @tc.desc: Test GetPluralStringById function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdTest005
+ * @tc.number ResourceManagerGetPluralStringByIdTest005
+ * @tc.desc   Test GetPluralStringById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest005, TestSize.Level1)
 {
@@ -854,10 +964,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdTest005, TestSiz
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByNameTest001
- * @tc.desc: Test GetPluralStringByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByNameTest001
+ * @tc.number ResourceManagerGetPluralStringByNameTest001
+ * @tc.desc   Test GetPluralStringByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameTest001, TestSize.Level1)
 {
@@ -870,10 +983,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameTest001, TestS
     TestPluralStringByName(quantity, "%d apples", false);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByNameTest002
- * @tc.desc: Test GetPluralStringByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByNameTest002
+ * @tc.number ResourceManagerGetPluralStringByNameTest002
+ * @tc.desc   Test GetPluralStringByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameTest002, TestSize.Level1)
 {
@@ -885,10 +1001,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameTest002, TestS
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdFormatTest001
- * @tc.desc: Test GetPluralStringByIdFormat function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdFormatTest001
+ * @tc.number ResourceManagerGetPluralStringByIdFormatTest001
+ * @tc.desc   Test GetPluralStringByIdFormat function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdFormatTest001, TestSize.Level1)
 {
@@ -901,10 +1020,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdFormatTest001, T
     TestPluralStringById(quantity, "101 apples", true);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByIdFormatTest002
- * @tc.desc: Test GetPluralStringByIdFormat function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByIdFormatTest002
+ * @tc.number ResourceManagerGetPluralStringByIdFormatTest002
+ * @tc.desc   Test GetPluralStringByIdFormat function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdFormatTest002, TestSize.Level1)
 {
@@ -916,10 +1038,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByIdFormatTest002, T
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByNameFormatTest001
- * @tc.desc: Test GetPluralStringByNameFormat function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByNameFormatTest001
+ * @tc.number ResourceManagerGetPluralStringByNameFormatTest001
+ * @tc.desc   Test GetPluralStringByNameFormat function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameFormatTest001, TestSize.Level1)
 {
@@ -932,10 +1057,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameFormatTest001,
     TestPluralStringByName(quantity, "101 apples", true);
 }
 
-/*
- * @tc.name: ResourceManagerGetPluralStringByNameFormatTest002
- * @tc.desc: Test GetPluralStringByNameFormat function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetPluralStringByNameFormatTest002
+ * @tc.number ResourceManagerGetPluralStringByNameFormatTest002
+ * @tc.desc   Test GetPluralStringByNameFormat function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameFormatTest002, TestSize.Level1)
 {
@@ -947,10 +1075,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetPluralStringByNameFormatTest002,
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetThemeByIdTest001
- * @tc.desc: Test GetThemeById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetThemeByIdTest001
+ * @tc.number ResourceManagerGetThemeByIdTest001
+ * @tc.desc   Test GetThemeById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByIdTest001, TestSize.Level1)
 {
@@ -965,10 +1096,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByIdTest001, TestSize.Level
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetThemeByIdTest002
- * @tc.desc: Test GetThemeById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetThemeByIdTest002
+ * @tc.number ResourceManagerGetThemeByIdTest002
+ * @tc.desc   Test GetThemeById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByIdTest002, TestSize.Level1)
 {
@@ -980,10 +1114,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByIdTest002, TestSize.Level
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetThemeByNameTest001
- * @tc.desc: Test GetThemeByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetThemeByNameTest001
+ * @tc.number ResourceManagerGetThemeByNameTest001
+ * @tc.desc   Test GetThemeByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByNameTest001, TestSize.Level1)
 {
@@ -1000,10 +1137,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByNameTest001, TestSize.Lev
     PrintMapString(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetThemeByNameTest002
- * @tc.desc: Test GetThemeByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetThemeByNameTest002
+ * @tc.number ResourceManagerGetThemeByNameTest002
+ * @tc.desc   Test GetThemeByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByNameTest002, TestSize.Level1)
 {
@@ -1015,10 +1155,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetThemeByNameTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetBooleanByIdTest001
- * @tc.desc: Test GetBooleanById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetBooleanByIdTest001
+ * @tc.number ResourceManagerGetBooleanByIdTest001
+ * @tc.desc   Test GetBooleanById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByIdTest001, TestSize.Level1)
 {
@@ -1039,10 +1182,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByIdTest001, TestSize.Lev
     EXPECT_TRUE(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetBooleanByIdTest002
- * @tc.desc: Test GetBooleanById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetBooleanByIdTest002
+ * @tc.number ResourceManagerGetBooleanByIdTest002
+ * @tc.desc   Test GetBooleanById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByIdTest002, TestSize.Level1)
 {
@@ -1054,10 +1200,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByIdTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetBooleanByNameTest001
- * @tc.desc: Test GetBooleanByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetBooleanByNameTest001
+ * @tc.number ResourceManagerGetBooleanByNameTest001
+ * @tc.desc   Test GetBooleanByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByNameTest001, TestSize.Level1)
 {
@@ -1074,10 +1223,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByNameTest001, TestSize.L
     EXPECT_TRUE(outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetBooleanByNameTest002
- * @tc.desc: Test GetBooleanByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetBooleanByNameTest002
+ * @tc.number ResourceManagerGetBooleanByNameTest002
+ * @tc.desc   Test GetBooleanByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByNameTest002, TestSize.Level1)
 {
@@ -1089,10 +1241,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetBooleanByNameTest002, TestSize.L
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntegerByIdTest001
- * @tc.desc: Test GetIntegerById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntegerByIdTest001
+ * @tc.number ResourceManagerGetIntegerByIdTest001
+ * @tc.desc   Test GetIntegerById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByIdTest001, TestSize.Level1)
 {
@@ -1113,10 +1268,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByIdTest001, TestSize.Lev
     EXPECT_EQ(101, outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntegerByIdTest002
- * @tc.desc: Test GetIntegerById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntegerByIdTest002
+ * @tc.number ResourceManagerGetIntegerByIdTest002
+ * @tc.desc   Test GetIntegerById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByIdTest002, TestSize.Level1)
 {
@@ -1128,10 +1286,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByIdTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntegerByNameTest001
- * @tc.desc: Test GetIntegerByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntegerByNameTest001
+ * @tc.number ResourceManagerGetIntegerByNameTest001
+ * @tc.desc   Test GetIntegerByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByNameTest001, TestSize.Level1)
 {
@@ -1148,10 +1309,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByNameTest001, TestSize.L
     EXPECT_EQ(101, outValue);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntegerByNameTest002
- * @tc.desc: Test GetIntegerByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntegerByNameTest002
+ * @tc.number ResourceManagerGetIntegerByNameTest002
+ * @tc.desc   Test GetIntegerByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByNameTest002, TestSize.Level1)
 {
@@ -1163,10 +1327,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntegerByNameTest002, TestSize.L
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetFloatByIdTest001
- * @tc.desc: Test GetFloatById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetFloatByIdTest001
+ * @tc.number ResourceManagerGetFloatByIdTest001
+ * @tc.desc   Test GetFloatById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByIdTest001, TestSize.Level1)
 {
@@ -1187,10 +1354,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByIdTest001, TestSize.Level
     EXPECT_EQ(707, outValue); // 48vp
 }
 
-/*
- * @tc.name: ResourceManagerGetFloatByIdTest002
- * @tc.desc: Test GetFloatById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetFloatByIdTest002
+ * @tc.number ResourceManagerGetFloatByIdTest002
+ * @tc.desc   Test GetFloatById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByIdTest002, TestSize.Level1)
 {
@@ -1202,10 +1372,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByIdTest002, TestSize.Level
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetFloatByNameTest001
- * @tc.desc: Test GetFloatByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetFloatByNameTest001
+ * @tc.number ResourceManagerGetFloatByNameTest001
+ * @tc.desc   Test GetFloatByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByNameTest001, TestSize.Level1)
 {
@@ -1222,10 +1395,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByNameTest001, TestSize.Lev
     EXPECT_EQ(707, outValue); // 48vp
 }
 
-/*
- * @tc.name: ResourceManagerGetFloatByNameTest002
- * @tc.desc: Test GetFloatByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetFloatByNameTest002
+ * @tc.number ResourceManagerGetFloatByNameTest002
+ * @tc.desc   Test GetFloatByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByNameTest002, TestSize.Level1)
 {
@@ -1237,10 +1413,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetFloatByNameTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntArrayByIdTest001
- * @tc.desc: Test GetIntArrayById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntArrayByIdTest001
+ * @tc.number ResourceManagerGetIntArrayByIdTest001
+ * @tc.desc   Test GetIntArrayById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByIdTest001, TestSize.Level1)
 {
@@ -1258,10 +1437,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByIdTest001, TestSize.Le
     EXPECT_EQ(101, outValue[2]);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntArrayByIdTest002
- * @tc.desc: Test GetIntArrayById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntArrayByIdTest002
+ * @tc.number ResourceManagerGetIntArrayByIdTest002
+ * @tc.desc   Test GetIntArrayById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByIdTest002, TestSize.Level1)
 {
@@ -1273,10 +1455,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByIdTest002, TestSize.Le
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntArrayByNameTest001
- * @tc.desc: Test GetIntArrayByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntArrayByNameTest001
+ * @tc.number ResourceManagerGetIntArrayByNameTest001
+ * @tc.desc   Test GetIntArrayByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByNameTest001, TestSize.Level1)
 {
@@ -1292,10 +1477,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByNameTest001, TestSize.
     EXPECT_EQ(101, outValue[2]);
 }
 
-/*
- * @tc.name: ResourceManagerGetIntArrayByNameTest002
- * @tc.desc: Test GetIntArrayByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetIntArrayByNameTest002
+ * @tc.number ResourceManagerGetIntArrayByNameTest002
+ * @tc.desc   Test GetIntArrayByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByNameTest002, TestSize.Level1)
 {
@@ -1307,10 +1495,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetIntArrayByNameTest002, TestSize.
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetColorByIdTest001
- * @tc.desc: Test GetColorById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetColorByIdTest001
+ * @tc.number ResourceManagerGetColorByIdTest001
+ * @tc.desc   Test GetColorById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByIdTest001, TestSize.Level1)
 {
@@ -1331,10 +1522,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByIdTest001, TestSize.Level
     EXPECT_EQ(4279834905, outValue); // #191919
 }
 
-/*
- * @tc.name: ResourceManagerGetColorByIdTest002
- * @tc.desc: Test GetColorById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetColorByIdTest002
+ * @tc.number ResourceManagerGetColorByIdTest002
+ * @tc.desc   Test GetColorById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByIdTest002, TestSize.Level1)
 {
@@ -1346,10 +1540,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByIdTest002, TestSize.Level
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetColorByNameTest001
- * @tc.desc: Test GetColorByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetColorByNameTest001
+ * @tc.number ResourceManagerGetColorByNameTest001
+ * @tc.desc   Test GetColorByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByNameTest001, TestSize.Level1)
 {
@@ -1366,10 +1563,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByNameTest001, TestSize.Lev
     EXPECT_EQ(4279834905, outValue); // #191919
 }
 
-/*
- * @tc.name: ResourceManagerGetColorByNameTest002
- * @tc.desc: Test GetColorByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetColorByNameTest002
+ * @tc.number ResourceManagerGetColorByNameTest002
+ * @tc.desc   Test GetColorByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByNameTest002, TestSize.Level1)
 {
@@ -1381,10 +1581,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetColorByNameTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetProfileByIdTest001
- * @tc.desc: Test GetProfileById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetProfileByIdTest001
+ * @tc.number ResourceManagerGetProfileByIdTest001
+ * @tc.desc   Test GetProfileById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByIdTest001, TestSize.Level1)
 {
@@ -1405,10 +1608,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByIdTest001, TestSize.Lev
     delete tmp;
 }
 
-/*
- * @tc.name: ResourceManagerGetProfileByIdTest002
- * @tc.desc: Test GetProfileById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetProfileByIdTest002
+ * @tc.number ResourceManagerGetProfileByIdTest002
+ * @tc.desc   Test GetProfileById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByIdTest002, TestSize.Level1)
 {
@@ -1420,10 +1626,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByIdTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetProfileByNameTest001
- * @tc.desc: Test GetProfileByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetProfileByNameTest001
+ * @tc.number ResourceManagerGetProfileByNameTest001
+ * @tc.desc   Test GetProfileByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByNameTest001, TestSize.Level1)
 {
@@ -1442,10 +1651,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByNameTest001, TestSize.L
     delete tmp;
 }
 
-/*
- * @tc.name: ResourceManagerGetProfileByNameTest002
- * @tc.desc: Test GetProfileByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetProfileByNameTest002
+ * @tc.number ResourceManagerGetProfileByNameTest002
+ * @tc.desc   Test GetProfileByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByNameTest002, TestSize.Level1)
 {
@@ -1457,10 +1669,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetProfileByNameTest002, TestSize.L
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetMediaByIdTest001
- * @tc.desc: Test GetMediaById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetMediaByIdTest001
+ * @tc.number ResourceManagerGetMediaByIdTest001
+ * @tc.desc   Test GetMediaById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByIdTest001, TestSize.Level1)
 {
@@ -1481,10 +1696,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByIdTest001, TestSize.Level
     delete tmp;
 }
 
-/*
- * @tc.name: ResourceManagerGetMediaByIdTest002
- * @tc.desc: Test GetMediaById
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetMediaByIdTest002
+ * @tc.number ResourceManagerGetMediaByIdTest002
+ * @tc.desc   Test GetMediaById
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByIdTest002, TestSize.Level1)
 {
@@ -1496,10 +1714,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByIdTest002, TestSize.Level
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerGetMediaByNameTest001
- * @tc.desc: Test GetMediaByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetMediaByNameTest001
+ * @tc.number ResourceManagerGetMediaByNameTest001
+ * @tc.desc   Test GetMediaByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByNameTest001, TestSize.Level1)
 {
@@ -1518,10 +1739,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByNameTest001, TestSize.Lev
     delete tmp;
 }
 
-/*
- * @tc.name: ResourceManagerGetMediaByNameTest002
- * @tc.desc: Test GetMediaByName
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerGetMediaByNameTest002
+ * @tc.number ResourceManagerGetMediaByNameTest002
+ * @tc.desc   Test GetMediaByName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByNameTest002, TestSize.Level1)
 {
@@ -1533,10 +1757,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerGetMediaByNameTest002, TestSize.Lev
     ASSERT_EQ(NOT_FOUND, state);
 }
 
-/*
- * @tc.name: ResourceManagerResolveReferenceTest001
- * @tc.desc: Test ResolveReference function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerResolveReferenceTest001
+ * @tc.number ResourceManagerResolveReferenceTest001
+ * @tc.desc   Test ResolveReference function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerResolveReferenceTest001, TestSize.Level1)
 {
@@ -1622,10 +1849,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerResolveReferenceTest001, TestSize.L
     ASSERT_EQ(ERROR, ret);
 }
 
-/*
- * @tc.name: ResourceManagerResolveParentReferenceTest001
- * @tc.desc: Test ResolveParentReference function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerResolveParentReferenceTest001
+ * @tc.number ResourceManagerResolveParentReferenceTest001
+ * @tc.desc   Test ResolveParentReference function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerResolveParentReferenceTest001, TestSize.Level1)
 {
@@ -1674,11 +1904,13 @@ HWTEST_F(ResourceManagerTest, ResourceManagerResolveParentReferenceTest001, Test
     delete item;
 }
 
-/*
- * test res with same name in different resType
- * @tc.name: ResourceManagerSameNameTest001
- * @tc.desc: Test GetStringByName & GetBooleanByName & GetIntegerByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResourceManagerSameNameTest001
+ * @tc.number ResourceManagerSameNameTest001
+ * @tc.desc   Test GetStringByName & GetBooleanByName & GetIntegerByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResourceManagerTest, ResourceManagerSameNameTest001, TestSize.Level1)
 {

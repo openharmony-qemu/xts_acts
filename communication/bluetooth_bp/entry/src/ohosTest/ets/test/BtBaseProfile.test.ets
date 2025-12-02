@@ -135,7 +135,6 @@ describe('btBaseProfileTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0100
      * @tc.desc   Test getConnectedDevices api10.
@@ -161,7 +160,6 @@ describe('btBaseProfileTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0200
      * @tc.desc   Test getConnectionState api10.
@@ -187,7 +185,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0300
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0300
       * @tc.desc   Test on type: 'connectionStateChange' api10.
@@ -212,7 +209,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0400
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0400
       * @tc.desc   Test off type: 'connectionStateChange' api10.
@@ -237,7 +233,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1800
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1800
       * @tc.desc   Test on type: 'connectionStateChange' api10.
@@ -256,7 +251,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1900
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1900
       * @tc.desc   Test on type: 'connectionStateChange' api10.
@@ -275,7 +269,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0500
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0500
       * @tc.desc   Test getConnectedDevices api10.
@@ -296,7 +289,6 @@ describe('btBaseProfileTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0600
      * @tc.desc   Test getConnectionState api10.
@@ -317,7 +309,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0700
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0700
       * @tc.desc   Test on type: 'connectionStateChange' api10.
@@ -337,7 +328,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0800
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0800
       * @tc.desc   Test off type: 'connectionStateChange' api10.
@@ -357,7 +347,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0900
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0900
       * @tc.desc   Test getConnectedDevices api10.
@@ -378,7 +367,6 @@ describe('btBaseProfileTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1000
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1000
      * @tc.desc   Test getConnectionState api10.
@@ -399,7 +387,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1100
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1100
       * @tc.desc   Test on type: 'connectionStateChange' api10.
@@ -419,7 +406,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1200
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1200
       * @tc.desc   Test off type: 'connectionStateChange' api10.
@@ -439,7 +425,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1300
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1300
       * @tc.desc   Test getConnectedDevices api10.
@@ -460,7 +445,6 @@ describe('btBaseProfileTest', () => {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1400
      * @tc.desc   Test getConnectionState api10.
@@ -481,7 +465,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1500
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1500
       * @tc.desc   Test on type: 'connectionStateChange' api10.
@@ -501,7 +484,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1600
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1600
       * @tc.desc   Test off type: 'connectionStateChange' api10.
@@ -521,7 +503,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHA2DP_STATE_1700
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1700
       * @tc.desc   Test createA2dpSrcProfile/createHfpAgProfile/createHidHostProfile/createPanProfile api10.
@@ -585,7 +566,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_MAP_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_MAP_0100
       * @tc.desc   Test createMapMseProfile api11.
@@ -611,7 +591,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_PBAP_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTH_PBAP_0100
       * @tc.desc   Test createPbapServerProfile api11.
@@ -637,7 +616,6 @@ describe('btBaseProfileTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:46
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHPROFILE_CONSTANT_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHPROFILE_CONSTANT_0100
       * @tc.desc   Test DisconnectCause api12.

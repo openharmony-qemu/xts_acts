@@ -77,12 +77,12 @@ export default function assetGetNextObjectTest() {
     //image
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_NEXT_OBJECT_0000
-     * @tc.name      : getNextObject_callback_000
-     * @tc.desc      : getNextObject image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_NEXT_OBJECT_0000
+     * @tc.desc   getNextObject image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getNextObject_callback_000';
@@ -97,12 +97,12 @@ export default function assetGetNextObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_NEXT_OBJECT_0000
-     * @tc.name      : getNextObject_promise_000
-     * @tc.desc      : getNextObject image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_NEXT_OBJECT_0000
+     * @tc.desc   getNextObject image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getNextObject_promise_000';
@@ -118,12 +118,12 @@ export default function assetGetNextObjectTest() {
     //video
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_NEXT_OBJECT_0100
-     * @tc.name      : getNextObject_callback_001
-     * @tc.desc      : getNextObject video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_NEXT_OBJECT_0100
+     * @tc.desc   getNextObject video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getNextObject_callback_001';
@@ -138,12 +138,12 @@ export default function assetGetNextObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_NEXT_OBJECT_0100
-     * @tc.name      : getNextObject_promise_001
-     * @tc.desc      : getNextObject video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getNextObject_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_NEXT_OBJECT_0100
+     * @tc.desc   getNextObject video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNextObject_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getNextObject_promise_001';

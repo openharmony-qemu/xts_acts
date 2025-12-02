@@ -108,12 +108,12 @@ export default function getLastObjectTest() {
     });
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_LAST_OBJECT_001
-     * @tc.name      : fetchResult_getLastObject_promise_001
-     * @tc.desc      : getLastObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getLastObject_promise_001
+     * @tc.number FETCH_RESULT_GET_LAST_OBJECT_001
+     * @tc.desc   getLastObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getLastObject_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getLastObject_promise_001';
@@ -122,12 +122,12 @@ export default function getLastObjectTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_LAST_OBJECT_002
-     * @tc.name      : fetchResult_getLastObject_promise_002
-     * @tc.desc      : getLastObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getLastObject_promise_002
+     * @tc.number FETCH_RESULT_GET_LAST_OBJECT_002
+     * @tc.desc   getLastObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getLastObject_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getLastObject_promise_002';
@@ -136,12 +136,12 @@ export default function getLastObjectTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_LAST_OBJECT_003
-     * @tc.name      : fetchResult_getLastObject_promise_003
-     * @tc.desc      : getLastObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getLastObject_promise_003
+     * @tc.number FETCH_RESULT_GET_LAST_OBJECT_003
+     * @tc.desc   getLastObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getLastObject_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getLastObject_promise_003';
@@ -150,12 +150,12 @@ export default function getLastObjectTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_LAST_OBJECT_004
-     * @tc.name      : fetchResult_getLastObject_callback_001
-     * @tc.desc      : getLastObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getLastObject_callback_001
+     * @tc.number FETCH_RESULT_GET_LAST_OBJECT_004
+     * @tc.desc   getLastObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getLastObject_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getLastObject_callback_001';
@@ -164,12 +164,12 @@ export default function getLastObjectTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_LAST_OBJECT_005
-     * @tc.name      : fetchResult_getLastObject_callback_002
-     * @tc.desc      : getLastObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getLastObject_callback_002
+     * @tc.number FETCH_RESULT_GET_LAST_OBJECT_005
+     * @tc.desc   getLastObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getLastObject_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getLastObject_callback_002';
@@ -178,12 +178,12 @@ export default function getLastObjectTest() {
     })
 
     /**
-     * @tc.number    : FETCH_RESULT_GET_LAST_OBJECT_006
-     * @tc.name      : fetchResult_getLastObject_callback_003
-     * @tc.desc      : getLastObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   fetchResult_getLastObject_callback_003
+     * @tc.number FETCH_RESULT_GET_LAST_OBJECT_006
+     * @tc.desc   getLastObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchResult_getLastObject_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getLastObject_callback_003';

@@ -26,26 +26,26 @@ export default function commonAttrsFocusStatusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_FOCUSSTATUS_0100
-     * @tc.name       : testCommonAttrsFocusStatus001
-     * @tc.desc       : testing focusstatus for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsFocusStatus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FOCUSSTATUS_0100
+     * @tc.desc   testing focusstatus for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsFocusStatus001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsFocusStatus001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_FOCUSSTATUS_0200
-     * @tc.name       : testCommonAttrsFocusStatus002
-     * @tc.desc       : testing focusstatus for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsFocusStatus002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_FOCUSSTATUS_0200
+     * @tc.desc   testing focusstatus for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsFocusStatus002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`commonattrs/CommonAttrsFocusStatusTest`, done);

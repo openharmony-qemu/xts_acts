@@ -54,12 +54,12 @@ export default function RichEditor005() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
-     * @tc.desc  : By using emojis with symbols before and after, the del key can delete the emoji behind the cursor to test RichEditor emojis
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019
+     * @tc.desc   By using emojis with symbols before and after, the del key can delete the emoji behind the cursor to test RichEditor emojis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_0019 START');

@@ -88,12 +88,12 @@ export default function createPhotoOutputBackTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_001
-     * @tc.name      : createPhotoOutput_back_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPhotoOutput_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_001
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPhotoOutput_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPhotoOutput_back_001';
@@ -133,12 +133,12 @@ export default function createPhotoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_002
-     * @tc.name      : createPhotoOutput_back_002
-     * @tc.desc      : No abnormal scenarios-no photoProfile
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPhotoOutput_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_002
+     * @tc.desc   No abnormal scenarios-no photoProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPhotoOutput_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPhotoOutput_back_002';
@@ -166,12 +166,12 @@ export default function createPhotoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_003
-     * @tc.name      : createPhotoOutput_abnormal_back_001
-     * @tc.desc      : new photoProfiles -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createPhotoOutput_abnormal_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_003
+     * @tc.desc   new photoProfiles -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createPhotoOutput_abnormal_back_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'createPhotoOutput_abnormal_back_001';
@@ -180,12 +180,12 @@ export default function createPhotoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_004
-     * @tc.name      : createPhotoOutput_abnormal_back_002
-     * @tc.desc      : abnormal photoProfiles -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createPhotoOutput_abnormal_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_004
+     * @tc.desc   abnormal photoProfiles -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createPhotoOutput_abnormal_back_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createPhotoOutput_abnormal_back_002';
@@ -201,12 +201,12 @@ export default function createPhotoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_005
-     * @tc.name      : createPhotoOutput_abnormal_back_003
-     * @tc.desc      : photoProfiles->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createPhotoOutput_abnormal_back_003
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_005
+     * @tc.desc   photoProfiles->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createPhotoOutput_abnormal_back_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'createPhotoOutput_abnormal_back_003';
@@ -214,12 +214,12 @@ export default function createPhotoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_006
-     * @tc.name      : createPhotoOutput_abnormal_back_004
-     * @tc.desc      : photoProfiles->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createPhotoOutput_abnormal_back_004
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_006
+     * @tc.desc   photoProfiles->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createPhotoOutput_abnormal_back_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'createPhotoOutput_abnormal_back_004';
@@ -227,12 +227,12 @@ export default function createPhotoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_007
-     * @tc.name      : createPhotoOutput_abnormal_back_005
-     * @tc.desc      : no supported sceneMode: SECURE_PHOTO, normal outputCap list -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPhotoOutput_abnormal_back_005
+     * @tc.number CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_BACK_007
+     * @tc.desc   no supported sceneMode: SECURE_PHOTO, normal outputCap list -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPhotoOutput_abnormal_back_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPhotoOutput_abnormal_back_005';

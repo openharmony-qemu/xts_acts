@@ -47,12 +47,12 @@ export default function cachedShowGrid() {
     });
 
     /**
-     * @tc.number    cachedShowGrid_001
-     * @tc.name      cachedShowGrid_0100
-     * @tc.desc      Set the number of GridItems to be preloaded and display the preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowGrid_0100
+     * @tc.number cachedShowGrid_001
+     * @tc.desc   Set the number of GridItems to be preloaded and display the preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowGrid_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowGrid_0100] START');
@@ -70,12 +70,12 @@ export default function cachedShowGrid() {
     });
 
     /**
-     * @tc.number    cachedShowGrid_002
-     * @tc.name      cachedShowGrid_0200
-     * @tc.desc      Do not crop sub components, and do not display preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowGrid_0200
+     * @tc.number cachedShowGrid_002
+     * @tc.desc   Do not crop sub components, and do not display preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowGrid_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowGrid_0200] START');
@@ -105,12 +105,12 @@ export default function cachedShowGrid() {
     });
 
     /**
-     * @tc.number    cachedShowGrid_003
-     * @tc.name      cachedShowGrid_0300
-     * @tc.desc      Crop sub components without displaying preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowGrid_0300
+     * @tc.number cachedShowGrid_003
+     * @tc.desc   Crop sub components without displaying preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowGrid_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowGrid_0300] START');
@@ -140,12 +140,12 @@ export default function cachedShowGrid() {
     });
 
     /**
-     * @tc.number    cachedShowGrid_004
-     * @tc.name      cachedShowGrid_0400
-     * @tc.desc      Configure to display preloaded nodes and crop sub components.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowGrid_0400
+     * @tc.number cachedShowGrid_004
+     * @tc.desc   Configure to display preloaded nodes and crop sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowGrid_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowGrid_0400] START');
@@ -176,12 +176,12 @@ export default function cachedShowGrid() {
     });
 
     /**
-     * @tc.number    cachedShowGrid_005
-     * @tc.name      cachedShowGrid_0500
-     * @tc.desc      Do not crop the sub components, configure the property parameter 'show' as null.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowGrid_0500
+     * @tc.number cachedShowGrid_005
+     * @tc.desc   Do not crop the sub components, configure the property parameter 'show' as null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowGrid_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowGrid_0500] START');
@@ -211,12 +211,12 @@ export default function cachedShowGrid() {
     });
 
     /**
-     * @tc.number    cachedShowGrid_006
-     * @tc.name      cachedShowGrid_0600
-     * @tc.desc      Do not crop the sub components, configure the property parameter 'show' as undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowGrid_0600
+     * @tc.number cachedShowGrid_006
+     * @tc.desc   Do not crop the sub components, configure the property parameter 'show' as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowGrid_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowGrid_0600] START');

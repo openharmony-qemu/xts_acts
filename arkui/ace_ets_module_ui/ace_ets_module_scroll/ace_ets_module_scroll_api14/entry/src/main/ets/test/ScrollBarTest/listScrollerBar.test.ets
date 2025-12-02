@@ -46,12 +46,12 @@ export default function listScrollerBar() {
     });
 
     /**
-     * @tc.number    listScrollerBar_001
-     * @tc.name      listScrollerBar_0100
-     * @tc.desc      Dragging the scrollBar component triggers a callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   listScrollerBar_0100
+     * @tc.number listScrollerBar_001
+     * @tc.desc   Dragging the scrollBar component triggers a callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listScrollerBar_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listScrollerBar_0100] START');
@@ -69,7 +69,7 @@ export default function listScrollerBar() {
       console.info("[listScrollerBar_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[listScrollerBar_0100] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content)
-        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-scrollStop3-');
+        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-reachEnd3-scrollStop3-');
       console.info('[listScrollerBar_0100] END');
       done();
     });

@@ -83,14 +83,13 @@ export default function startAbilityOpenLink() {
       }, 1000);
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0400
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link has a
-     * corresponding UIAbility.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0400', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0400`;
@@ -136,14 +135,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0500
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link has no
-     * corresponding UIAbility.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0500', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0500`;
@@ -166,13 +164,13 @@ export default function startAbilityOpenLink() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0600
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link is undefined.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0600', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0600`;
@@ -191,13 +189,13 @@ export default function startAbilityOpenLink() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0700
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link is null.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0700', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0700`;
@@ -217,13 +215,13 @@ export default function startAbilityOpenLink() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link is only "https://".
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0800`;
@@ -242,13 +240,13 @@ export default function startAbilityOpenLink() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0900
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link is a normal string.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0900', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_0900`;
@@ -265,13 +263,13 @@ export default function startAbilityOpenLink() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1000
-     * @tc.name   : UIAbilityContext calls openLink with only one parameter, where the link does not start with "https".
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1000
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1000', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1000`;
@@ -315,14 +313,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1100
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format is correct and has a
-     * corresponding UIAbility, appLinkingOnly is set to true, and parameters are not configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1100', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1100`;
@@ -367,14 +364,13 @@ export default function startAbilityOpenLink() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1200
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format is correct but has no
-     * corresponding UIAbility, appLinkingOnly is set to true, and parameters are not configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1200', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1200`;
@@ -418,14 +414,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1300
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format only corresponds to a
-     * ServiceExtension, appLinkingOnly is set to true, and parameters are not configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1300
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1300', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1300`;
@@ -467,14 +462,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1400
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format only corresponds to a
-     * UIExtension, appLinkingOnly is set to true, and parameters are not configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1400', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1400`;
@@ -516,14 +510,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1500
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * appLinkingOnly is set to true, and parameters are configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1500', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1500`;
@@ -565,14 +558,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1600
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * appLinkingOnly is set to false, and parameters are configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1600', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1600`;
@@ -614,14 +606,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * appLinkingOnly is set to false, and parameters are not configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700`;
@@ -665,14 +656,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1800
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * appLinkingOnly is not configured, and parameters are configured.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1800
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1800', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1800`;
@@ -714,14 +704,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1900
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * and options are configured as undefined.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1900', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1900`;
@@ -763,14 +752,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2000
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * and options are configured as null.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2000
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2000', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2000`;
@@ -813,14 +801,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2100
-     * @tc.name   : UIAbilityContext calls openLink with two parameters: the link format has a corresponding UIAbility,
-     * and options are configured as an empty object.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2100', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2100`;
@@ -862,14 +849,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2200
-     * @tc.name   : UIAbilityContext calls openLink with three valid parameters, where terminateSelfWithResult is used
-     * to close the launched UIAbility.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2200', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2200`;
@@ -915,14 +901,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2300
-     * @tc.name   : UIAbilityContext calls openLink with three valid parameters, where terminateSelf is used to close
-     * the launched UIAbility.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2300
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2300', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2300`;
@@ -968,14 +953,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2400
-     * @tc.name   : UIAbilityContext calls openLink with the first two valid parameters, where the callback is
-     * undefined.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2400', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2400`;
@@ -1016,13 +1000,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2900
-     * @tc.name   : UIAbilityContext.startAbility is compatible with appLinking, and appLinkingOnly is set to true.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2900', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2900`;
@@ -1071,13 +1055,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000
-     * @tc.name   : UIAbilityContext.startAbility is compatible with appLinking, and appLinkingOnly is set to false.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000`;
@@ -1126,14 +1110,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3100
-     * @tc.name   : UIAbilityContext.startAbilityForResult is compatible with appLinking, and appLinkingOnly is set
-     * to true.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3100', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3100`;
@@ -1183,14 +1166,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3200
-     * @tc.name   : UIAbilityContext.startAbilityForResult is compatible with appLinking, and appLinkingOnly is
-     * set to false.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3200', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3200`;
@@ -1246,13 +1228,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3900
-     * @tc.name   : UIAbilityContext.openLink handles reserved parameters.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3900', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3900`;
@@ -1302,14 +1284,13 @@ export default function startAbilityOpenLink() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_4500
-     * @tc.name   : UIAbilityContext.startAbilityForResult is compatible with appLinking, and appLinkingOnly is set to
-     * true, but the target application does not exist.
-     * @tc.desc   : Function test
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_4500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_4500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_4500', 0, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_4500`;

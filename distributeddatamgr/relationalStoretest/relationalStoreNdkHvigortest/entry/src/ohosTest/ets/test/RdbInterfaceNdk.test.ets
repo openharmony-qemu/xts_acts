@@ -33,7 +33,6 @@ export default function rdbInterfaceNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Predicates_NotLike0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0100
      * @tc.desc   OH_Rdb_Predicates_NotLike0100
@@ -50,7 +49,6 @@ export default function rdbInterfaceNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Predicates_Glob0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0200
      * @tc.desc   OH_Rdb_Predicates_Glob0100
@@ -67,7 +65,6 @@ export default function rdbInterfaceNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Predicates_NotGlob0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0300
      * @tc.desc   OH_Rdb_Predicates_NotGlob0100
@@ -84,7 +81,6 @@ export default function rdbInterfaceNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Predicates_Having0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0400
      * @tc.desc   OH_Rdb_Predicates_Having0100
@@ -101,7 +97,6 @@ export default function rdbInterfaceNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_SetCryptoParam0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0500
      * @tc.desc   OH_Rdb_SetCryptoParam0100
@@ -118,7 +113,6 @@ export default function rdbInterfaceNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_InsertWithConflictResolution0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0600
      * @tc.desc   OH_Rdb_InsertWithConflictResolution0100
@@ -135,7 +129,6 @@ export default function rdbInterfaceNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_UpdateWithConflictResolution0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0700
      * @tc.desc   OH_Rdb_UpdateWithConflictResolution0100
@@ -150,7 +143,6 @@ export default function rdbInterfaceNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Attach0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0800
      * @tc.desc   OH_Rdb_Attach0100
@@ -166,7 +158,6 @@ export default function rdbInterfaceNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Detach0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_0900
      * @tc.desc   OH_Rdb_Detach0100
@@ -181,7 +172,6 @@ export default function rdbInterfaceNdkTest() {
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   OH_Rdb_Setlocale0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_1000
      * @tc.desc   OH_Rdb_Setlocale0100
@@ -195,6 +185,54 @@ export default function rdbInterfaceNdkTest() {
       expect(res).assertEqual(0);
       done();
     });
-
+    /**
+     * @tc.name   OH_Rdb_LockRow_0100
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_1200
+     * @tc.desc   OH_Rdb_LockRow_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Rdb_LockRow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testndk.OH_Rdb_LockRow_0100();
+      console.info(TAG + "OH_Rdb_LockRow_0100 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   OH_Rdb_CreateTransaction_0100
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_1300
+     * @tc.desc   OH_Rdb_CreateTransaction_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Rdb_CreateTransaction_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testndk.OH_Rdb_CreateTransaction_0100();
+      console.info(TAG + "OH_Rdb_CreateTransaction_0100 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+      /**
+       * @tc.name   OH_Rdb_NotSupport0100
+       * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_InterfaceTest_1100
+       * @tc.desc   OH_Rdb_NotSupport0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('OH_Rdb_NotSupport0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let res = testndk.OH_Rdb_NotSupport0100();
+        console.info(TAG + "OH_Rdb_NotSupport0100 res=" + res );
+        if(res == 0)
+        {
+          expect(res).assertEqual(0);
+          done();
+        }
+        else{
+          expect(res).assertEqual(1);
+          done();
+        }
+      });
   })
 }

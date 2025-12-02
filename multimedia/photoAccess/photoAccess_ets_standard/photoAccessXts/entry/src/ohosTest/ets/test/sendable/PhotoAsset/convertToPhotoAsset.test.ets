@@ -123,12 +123,12 @@ export default function sendableConvertToPhotoAssetTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_001
-     * @tc.name      : convertToPhotoAsset_sendable_001
-     * @tc.desc      : convertToPhotoAsset img uri test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_001
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_001
+     * @tc.desc   convertToPhotoAsset img uri test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_001';
@@ -137,12 +137,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_002
-     * @tc.name      : convertToPhotoAsset_sendable_002
-     * @tc.desc      : convertToPhotoAsset video uri test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_002
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_002
+     * @tc.desc   convertToPhotoAsset video uri test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_002';
@@ -151,12 +151,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_003
-     * @tc.name      : convertToPhotoAsset_sendable_003
-     * @tc.desc      : convertToPhotoAsset img photoType test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_003
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_003
+     * @tc.desc   convertToPhotoAsset img photoType test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_002';
@@ -165,12 +165,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_004
-     * @tc.name      : convertToPhotoAsset_sendable_004
-     * @tc.desc      : convertToPhotoAsset video photoType test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_004
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_004
+     * @tc.desc   convertToPhotoAsset video photoType test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_004';
@@ -179,12 +179,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_005
-     * @tc.name      : convertToPhotoAsset_sendable_005
-     * @tc.desc      : convertToPhotoAsset image displayName test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_005
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_005
+     * @tc.desc   convertToPhotoAsset image displayName test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_004';
@@ -193,12 +193,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_006
-     * @tc.name      : convertToPhotoAsset_sendable_006
-     * @tc.desc      : convertToPhotoAsset video displayName test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_006
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_006
+     * @tc.desc   convertToPhotoAsset video displayName test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_004';
@@ -207,12 +207,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_007
-     * @tc.name      : convertToPhotoAsset_sendable_007
-     * @tc.desc      : convertToPhotoAsset image size test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_007
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_007
+     * @tc.desc   convertToPhotoAsset image size test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_007';
@@ -221,12 +221,12 @@ export default function sendableConvertToPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_008
-     * @tc.name      : convertToPhotoAsset_sendable_008
-     * @tc.desc      : convertToPhotoAsset video size test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAsset_sendable_008
+     * @tc.number SENDABLE_PHOTO_ASSET_CONVERT_TO_SENDABLE_PHOTO_ASSET_008
+     * @tc.desc   convertToPhotoAsset video size test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAsset_sendable_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAsset_sendable_008';

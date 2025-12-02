@@ -66,12 +66,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1001
      * @tc.number TASKPOOL_TASKGROUP_ACT_1001
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1001
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskGroupActTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
@@ -104,12 +104,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1002
      * @tc.number TASKPOOL_TASKGROUP_ACT_1002
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1002
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupActTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -145,12 +145,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1003
      * @tc.number TASKPOOL_TASKGROUP_ACT_1003
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1003
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupActTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -182,12 +182,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1004
      * @tc.number TASKPOOL_TASKGROUP_ACT_1004
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1004
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupActTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -219,12 +219,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1005
      * @tc.number TASKPOOL_TASKGROUP_ACT_1005
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1005
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('taskPoolTaskGroupActTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -256,12 +256,12 @@ export default function taskPoolTaskGroupActTest() {
     // })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1006
      * @tc.number TASKPOOL_TASKGROUP_ACT_1006
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1006
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupActTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -293,12 +293,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1007
      * @tc.number TASKPOOL_TASKGROUP_ACT_1007
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1007
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupActTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
@@ -330,12 +330,12 @@ export default function taskPoolTaskGroupActTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupActTest1008
      * @tc.number TASKPOOL_TASKGROUP_ACT_1008
-     * @tc.name TASKPOOL_TASKGROUP_ACT_1008
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupActTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 

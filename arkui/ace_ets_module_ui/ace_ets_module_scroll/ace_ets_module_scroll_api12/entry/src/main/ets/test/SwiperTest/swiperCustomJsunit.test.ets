@@ -47,14 +47,14 @@ export default function swiperCustomJsunit() {
       console.info(" swiperCustomJsunit after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_SWIPER_swiperCustomJsunit_0100
-    * @tc.name  : swiperCustomJsunit_0100
-    * @tc.desc  : Set to disable component navigation point interaction function.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   swiperCustomJsunit_0100
+     * @tc.number SUB_ACE_SWIPER_swiperCustomJsunit_0100
+     * @tc.desc   Set to disable component navigation point interaction function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperCustomJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('swiperCustomJsunit_0100 START');
       let swiperOffset = CommonFunc.getComponentRectOnScreen('Swiper_Length');

@@ -73,13 +73,13 @@ describe("VibratorJsTest_misc_8", function () {
     const EFFECT_IDWARNING = "haptic.notice.warning"
     let TAG = ""
 
-    /*
-     * @tc.name:UniversalVibratorJsTest01
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0100
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest01
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest01"
@@ -122,13 +122,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest02
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0200
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest02
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest02"
@@ -173,13 +173,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest03
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0300
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest03
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0300
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest03"
@@ -222,13 +222,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest04
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0400
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest04
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0400
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest04"
@@ -288,13 +288,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest05
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0500
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest05
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0500
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest05"
@@ -354,13 +354,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest06
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0600
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest06
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0600
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest06"
@@ -420,13 +420,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest07
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0700
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest07
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0700
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest07"
@@ -486,13 +486,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest08
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0800
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest08
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0800
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest08"
@@ -552,13 +552,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest09
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0900
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest09
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_0900
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest09", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest09"
@@ -618,13 +618,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest10
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1000
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest10
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1000
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest10", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest10"
@@ -704,13 +704,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest11
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1100
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest11
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest11", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest11"
@@ -790,13 +790,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:UniversalVibratorJsTest12
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1200
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   UniversalVibratorJsTest12
+     * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_UniversalVibratoin_1200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("UniversalVibratorJsTest12", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>UniversalVibratorJsTest12"
@@ -876,13 +876,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:ReliabilityVibratorJsTest13
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Reliability_Test_0600
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   ReliabilityVibratorJsTest13
+     * @tc.number SUB_SensorSystem_Reliability_Test_0600
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ReliabilityVibratorJsTest13", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>ReliabilityVibratorJsTest13"
@@ -927,13 +927,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:ReliabilityVibratorJsTest14
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Reliability_Test_0700
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   ReliabilityVibratorJsTest14
+     * @tc.number SUB_SensorSystem_Reliability_Test_0700
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ReliabilityVibratorJsTest14", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>ReliabilityVibratorJsTest14"
@@ -978,13 +978,13 @@ describe("VibratorJsTest_misc_8", function () {
         }
     })
 
-    /*
-     * @tc.name:ReliabilityVibratorJsTest15
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Reliability_Test_0800
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   ReliabilityVibratorJsTest15
+     * @tc.number SUB_SensorSystem_Reliability_Test_0800
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ReliabilityVibratorJsTest15", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         TAG = "====>ReliabilityVibratorJsTest15"

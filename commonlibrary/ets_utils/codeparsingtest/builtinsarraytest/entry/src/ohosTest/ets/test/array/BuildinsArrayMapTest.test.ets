@@ -42,12 +42,12 @@ export default function builtinsArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsArrayMapTest1001
      * @tc.number SUB_BUILDINS_ARRAY_MAP_TEST_0100
-     * @tc.name buildinsArrayKeysTest1001
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayMapTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       let array = [1, 2, 3]
@@ -59,12 +59,12 @@ export default function builtinsArrayMapTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayMapTest1002
      * @tc.number SUB_BUILDINS_ARRAY_MAP_TEST_0200
-     * @tc.name buildinsArrayKeysTest1002
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [1, 2, 3]
@@ -77,12 +77,12 @@ export default function builtinsArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsArrayMapTest1003
      * @tc.number SUB_BUILDINS_ARRAY_MAP_TEST_0300
-     * @tc.name buildinsArrayKeysTest1003
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [1, , 3]
@@ -95,12 +95,12 @@ export default function builtinsArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsArrayMapTest1004
      * @tc.number SUB_BUILDINS_ARRAY_MAP_TEST_0400
-     * @tc.name buildinsArrayKeysTest1004
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = []
@@ -110,12 +110,12 @@ export default function builtinsArrayMapTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayMapTest1005
      * @tc.number SUB_BUILDINS_ARRAY_MAP_TEST_0500
-     * @tc.name buildinsArrayKeysTest1005
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayMapTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [[], [1], [2]]

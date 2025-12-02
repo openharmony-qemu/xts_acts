@@ -41,7 +41,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   disableBluetoothErrCode201Test
          * @tc.number disableBluetoothErrCode201Test
          * @tc.desc   Test disableBluetoothErrCode201Test API functionality
@@ -67,7 +66,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   enableBluetoothErrCode201Test
          * @tc.number enableBluetoothErrCode201Test
          * @tc.desc   Test enableBluetoothErrCode201Test API functionality
@@ -93,7 +91,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getRemoteDeviceNameErrCode201Test
          * @tc.number getRemoteDeviceNameErrCode201Test
          * @tc.desc   Test getRemoteDeviceNameErrCode201Test API functionality
@@ -120,7 +117,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getRemoteDeviceNameAliasErrCode201Test
          * @tc.number getRemoteDeviceNameAliasErrCode201Test
          * @tc.desc   Test getRemoteDeviceNameAliasErrCode201Test API functionality
@@ -147,7 +143,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   setBluetoothScanModeErrCode201Test
          * @tc.number setBluetoothScanModeErrCode201Test
          * @tc.desc   Test setBluetoothScanModeErrCode201Test API functionality
@@ -173,7 +168,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientCloseErrCode201Test
          * @tc.number clientCloseErrCode201Test
          * @tc.desc   Test clientCloseErrCode201Test API functionality
@@ -199,7 +193,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   serverCloseErrCode201Test
          * @tc.number serverCloseErrCode201Test
          * @tc.desc   Test serverCloseErrCode201Test API functionality
@@ -226,7 +219,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   clientConnectErrCode201Test
          * @tc.number clientConnectErrCode201Test
          * @tc.desc   Test clientConnectErrCode201Test API functionality
@@ -253,7 +245,6 @@ export default function btNopUiJsunit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   stopBleScanErrCode201Test
          * @tc.number stopBleScanErrCode201Test
          * @tc.desc   Test stopBleScanErrCode201Test API functionality

@@ -55,12 +55,12 @@ export default function RichEditorShortCutKeys001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_SHORTKCUTKEYS_0250
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_SHORTKCUTKEYS_0250
-     * @tc.desc  : Mouse cutting text+shortcut key pasting to test RichEditor shortCutKeys
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_SHORTKCUTKEYS_0250
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_SHORTKCUTKEYS_0250
+     * @tc.desc   Mouse cutting text+shortcut key pasting to test RichEditor shortCutKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_SHORTKCUTKEYS_0250',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_SHORTKCUTKEYS_0250 START');

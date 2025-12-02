@@ -26,39 +26,39 @@ export default function xComponentWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_XCOMPONENT_WIDTH_0100
-     * @tc.name: testXComponentWidth001
-     * @tc.desc: testing width for xComponent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testXComponentWidth001
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_WIDTH_0100
+     * @tc.desc   testing width for xComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_XCOMPONENT_WIDTH_0200
-     * @tc.name: testXComponentWidth002
-     * @tc.desc: testing width for xComponent with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testXComponentWidth002
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_WIDTH_0200
+     * @tc.desc   testing width for xComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_XCOMPONENT_WIDTH_0300
-     * @tc.name: testXComponentWidth003
-     * @tc.desc: testing width for xComponent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testXComponentWidth003
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_WIDTH_0300
+     * @tc.desc   testing width for xComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentWidth003()).assertEqual(0)

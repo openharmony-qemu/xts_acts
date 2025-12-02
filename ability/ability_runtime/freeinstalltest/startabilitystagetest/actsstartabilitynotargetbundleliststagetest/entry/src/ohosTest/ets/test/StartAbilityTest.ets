@@ -81,12 +81,13 @@ export default function startAbilityTest() {
 
 
 
-        /*
-         * @tc.number  FreeInstall_Stage_Local_StartAbility_2600
-         * @tc.name    Atomized services are not added to the white list, and cross application installation
-                       is not required
-         * @tc.desc    Function test
-         * @tc.level   0
+        /**
+         * @tc.name   FreeInstall_Stage_Local_StartAbility_2600
+         * @tc.number FreeInstall_Stage_Local_StartAbility_2600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("FreeInstall_Stage_Local_StartAbility_2600", Level.LEVEL0, async (done:Function) => {
             console.info("------------start FreeInstall_Stage_Local_StartAbility_2600-------------");
@@ -110,12 +111,13 @@ export default function startAbilityTest() {
             done();
         });
 
-        /*
-         * @tc.number  FreeInstall_Stage_Local_StartAbility_2700
-         * @tc.name    Atomized services are not added to the white list,
-                        and atomized HAP packages are pulled across applications
-         * @tc.desc    Function test
-         * @tc.level   0
+        /**
+         * @tc.name   FreeInstall_Stage_Local_StartAbility_2700
+         * @tc.number FreeInstall_Stage_Local_StartAbility_2700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("FreeInstall_Stage_Local_StartAbility_2700", Level.LEVEL0, async (done:Function) => {
             console.info("------------start FreeInstall_Stage_Local_StartAbility_2700-------------");
@@ -146,13 +148,14 @@ export default function startAbilityTest() {
             done();
         });
 
-        /*
-        * @tc.number  FreeInstall_Stage_Local_StartAbility_2800
-        * @tc.name    Atomized services are not added to the white list,
-                       same application pull up the different ability.
-        * @tc.desc    Function test
-        * @tc.level   0
-        */
+        /**
+         * @tc.name   FreeInstall_Stage_Local_StartAbility_2800
+         * @tc.number FreeInstall_Stage_Local_StartAbility_2800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("FreeInstall_Stage_Local_StartAbility_2800", Level.LEVEL0, async (done:Function) => {
             console.info("------------start FreeInstall_Stage_Local_StartAbility_2800-------------");
             TAG = "FreeInstall_Stage_Local_StartAbility_2800";

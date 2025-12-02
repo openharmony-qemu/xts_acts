@@ -55,12 +55,12 @@ export default function sheetSize1Jsunit() {
       done();
     });
     /**
+     * @tc.name   sheetSize1Jsunit_0100
      * @tc.number sheetSize1Jsunit_0100
-     * @tc.name sheetSize1Jsunit_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('sheetSize1Jsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the sheetSize of the bindSheet
@@ -76,12 +76,12 @@ export default function sheetSize1Jsunit() {
     });
 
     /**
+     * @tc.name   sheetSize1Jsunit_0200
      * @tc.number sheetSize1Jsunit_0200
-     * @tc.name sheetSize1Jsunit_0200
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('sheetSize1Jsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Get the sheetSize of the bindSheet

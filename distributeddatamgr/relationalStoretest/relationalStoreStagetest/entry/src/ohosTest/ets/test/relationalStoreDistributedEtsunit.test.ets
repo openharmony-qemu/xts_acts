@@ -59,7 +59,6 @@ describe('relationalStoreDistributedTest', () => {
 
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsApiTest_2700
      * @tc.desc   obtainDistributedTableName test
@@ -83,7 +82,6 @@ describe('relationalStoreDistributedTest', () => {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:52
       * @tc.name   SUB_DDM_AppDataFWK_ETSRDB_Distributed_obtainDistributedTableName_0200
       * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsApiTest_2800
       * @tc.desc   obtainDistributedTableName test

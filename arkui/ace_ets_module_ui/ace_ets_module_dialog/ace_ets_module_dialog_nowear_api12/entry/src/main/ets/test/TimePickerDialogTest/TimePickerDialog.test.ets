@@ -44,12 +44,12 @@ export default function TimePickerDialog() {
       console.info("TimePickerDialog after each called");
     });
     /**
-     * @tc.number    TimePickerDialog_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog_001
+     * @tc.number TimePickerDialog_001
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TimePickerDialog_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TimePickerDialog_001] START');

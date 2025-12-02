@@ -60,12 +60,12 @@ export default function getAssetsTest() {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Asset_001
-     * @tc.name      : getAssets_promise_000
-     * @tc.desc      : getAssets image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Get_Asset_001
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAssets_promise_000';
@@ -75,12 +75,12 @@ export default function getAssetsTest() {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Asset_002
-     * @tc.name      : getAssets_promise_001
-     * @tc.desc      : getAssets image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Asset_002
+     * @tc.desc   getAssets image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAssets_promise_001';
@@ -90,12 +90,12 @@ export default function getAssetsTest() {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Asset_003
-     * @tc.name      : getAssets_promise_004
-     * @tc.desc      : getAssets video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_004
+     * @tc.number Sub_Photo_Access_Sendable_Get_Asset_003
+     * @tc.desc   getAssets video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_004', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAssets_promise_004';
@@ -105,12 +105,12 @@ export default function getAssetsTest() {
     });
 
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_0000
-     * @tc.name      : sendable_get_assets_error_000
-     * @tc.desc      : get assets with invalid fetchColumns
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_get_assets_error_000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_0000
+     * @tc.desc   get assets with invalid fetchColumns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_get_assets_error_000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -130,12 +130,12 @@ export default function getAssetsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_0100
-     * @tc.name      : sendable_get_assets_error_001
-     * @tc.desc      : get assets with undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_get_assets_error_001
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_0100
+     * @tc.desc   get assets with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_get_assets_error_001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -150,12 +150,12 @@ export default function getAssetsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_ERROR_0000
-     * @tc.name      : sendable_get_albums_error_fetchOptions_undefined
-     * @tc.desc      : use undefined get albums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_get_albums_error_000
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_ERROR_0000
+     * @tc.desc   use undefined get albums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_get_albums_error_000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -170,12 +170,12 @@ export default function getAssetsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_ERROR_0100
-     * @tc.name      : sendable_get_albums_error_fetchOptions_undefined
-     * @tc.desc      : use undefined get albums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_get_albums_error_001
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_ERROR_0100
+     * @tc.desc   use undefined get albums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_get_albums_error_001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -190,12 +190,12 @@ export default function getAssetsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_ERROR_0200
-     * @tc.name      : sendable_get_albums_error_invalid_fetchColumns
-     * @tc.desc      : useless fetchColumns get albums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendable_get_albums_error_002
+     * @tc.number SUB_SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_ERROR_0200
+     * @tc.desc   useless fetchColumns get albums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendable_get_albums_error_002', Level.LEVEL0, async (done: Function) => {
       try {

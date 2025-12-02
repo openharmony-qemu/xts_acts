@@ -189,12 +189,12 @@ export default function reflect3Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   reflect3Test001
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00100
-     * @tc.name reflect3Test001
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_1();
@@ -202,24 +202,24 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test002
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00200
-     * @tc.name reflect3Test002
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_2();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect3Test003
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00300
-     * @tc.name reflect3Test003
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_3();
@@ -227,12 +227,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test004
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00400
-     * @tc.name reflect3Test004
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_4();
@@ -240,12 +240,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test005
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00500
-     * @tc.name reflect3Test005
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_5();
@@ -253,12 +253,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test006
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00600
-     * @tc.name reflect3Test006
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_6();
@@ -266,12 +266,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test007
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00700
-     * @tc.name reflect3Test007
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_7();
@@ -279,12 +279,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test008
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00800
-     * @tc.name reflect3Test008
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_8();
@@ -292,12 +292,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test009
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_00900
-     * @tc.name reflect3Test009
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_9();
@@ -305,12 +305,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test010
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01000
-     * @tc.name reflect3Test010
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_10();
@@ -318,12 +318,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test011
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01100
-     * @tc.name reflect3Test011
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_11();
@@ -331,12 +331,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test012
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01200
-     * @tc.name reflect3Test012
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_12();
@@ -344,12 +344,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test013
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01300
-     * @tc.name reflect3Test013
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_13();
@@ -357,12 +357,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test014
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01400
-     * @tc.name reflect3Test014
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_14();
@@ -370,12 +370,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test015
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01500
-     * @tc.name reflect3Test015
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_15();
@@ -383,12 +383,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test016
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01600
-     * @tc.name reflect3Test016
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_16();
@@ -396,12 +396,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test019
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_01900
-     * @tc.name reflect3Test019
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_19();
@@ -409,12 +409,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test020
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02000
-     * @tc.name reflect3Test020
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_20();
@@ -422,12 +422,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test021
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02100
-     * @tc.name reflect3Test021
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_21();
@@ -435,12 +435,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test022
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02200
-     * @tc.name reflect3Test022
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_22();
@@ -448,12 +448,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test023
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02300
-     * @tc.name reflect3Test023
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_23();
@@ -461,12 +461,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test024
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02400
-     * @tc.name reflect3Test024
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_24();
@@ -474,12 +474,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test025
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02500
-     * @tc.name reflect3Test025
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_25();
@@ -487,12 +487,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test026
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02600
-     * @tc.name reflect3Test026
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_26();
@@ -500,12 +500,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test027
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02700
-     * @tc.name reflect3Test027
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_27();
@@ -513,12 +513,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test028
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02800
-     * @tc.name reflect3Test028
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_28();
@@ -526,12 +526,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test029
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_02900
-     * @tc.name reflect3Test029
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_29();
@@ -539,12 +539,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test030
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03000
-     * @tc.name reflect3Test030
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_30();
@@ -552,12 +552,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test031
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03100
-     * @tc.name reflect3Test031
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_31();
@@ -565,12 +565,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test032
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03200
-     * @tc.name reflect3Test032
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_32();
@@ -578,12 +578,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test033
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03300
-     * @tc.name reflect3Test033
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_33();
@@ -591,12 +591,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test034
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03400
-     * @tc.name reflect3Test034
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_34();
@@ -604,12 +604,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test035
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03500
-     * @tc.name reflect3Test035
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_35();
@@ -617,12 +617,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test036
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03600
-     * @tc.name reflect3Test036
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_36();
@@ -630,12 +630,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test037
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03700
-     * @tc.name reflect3Test037
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_37();
@@ -643,12 +643,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test038
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03800
-     * @tc.name reflect3Test038
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_38();
@@ -656,12 +656,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test039
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_03900
-     * @tc.name reflect3Test039
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_39();
@@ -669,24 +669,24 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test040
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04000
-     * @tc.name reflect3Test040
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_40();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect3Test041
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04100
-     * @tc.name reflect3Test041
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_41();
@@ -694,12 +694,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test042
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04200
-     * @tc.name reflect3Test042
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_42();
@@ -707,12 +707,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test043
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04300
-     * @tc.name reflect3Test043
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_43();
@@ -720,12 +720,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test044
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04400
-     * @tc.name reflect3Test044
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_44();
@@ -733,12 +733,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test045
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04500
-     * @tc.name reflect3Test045
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_45();
@@ -746,12 +746,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test046
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04600
-     * @tc.name reflect3Test046
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_46();
@@ -759,12 +759,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test047
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04700
-     * @tc.name reflect3Test047
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_47();
@@ -772,12 +772,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test048
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04800
-     * @tc.name reflect3Test048
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_48();
@@ -785,12 +785,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test049
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_04900
-     * @tc.name reflect3Test049
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_49();
@@ -798,12 +798,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test050
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05000
-     * @tc.name reflect3Test050
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_50();
@@ -811,12 +811,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test051
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05100
-     * @tc.name reflect3Test051
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_51();
@@ -824,12 +824,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test052
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05200
-     * @tc.name reflect3Test052
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_52();
@@ -837,12 +837,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test053
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05300
-     * @tc.name reflect3Test053
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_53();
@@ -850,12 +850,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test054
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05400
-     * @tc.name reflect3Test054
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_54();
@@ -863,12 +863,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test055
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05500
-     * @tc.name reflect3Test055
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_55();
@@ -876,12 +876,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test056
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05600
-     * @tc.name reflect3Test056
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_56();
@@ -889,12 +889,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test057
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05700
-     * @tc.name reflect3Test057
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_57();
@@ -902,12 +902,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test058
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05800
-     * @tc.name reflect3Test058
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_58();
@@ -915,12 +915,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test059
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_05900
-     * @tc.name reflect3Test059
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_59();
@@ -928,24 +928,24 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test060
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06000
-     * @tc.name reflect3Test060
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_60();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect3Test061
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06100
-     * @tc.name reflect3Test061
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_61();
@@ -953,12 +953,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test062
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06200
-     * @tc.name reflect3Test062
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_62();
@@ -966,12 +966,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test063
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06300
-     * @tc.name reflect3Test063
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_63();
@@ -979,12 +979,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test064
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06400
-     * @tc.name reflect3Test064
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_64();
@@ -992,12 +992,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test065
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06500
-     * @tc.name reflect3Test065
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_65();
@@ -1005,12 +1005,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test066
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06600
-     * @tc.name reflect3Test066
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_66();
@@ -1018,12 +1018,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test067
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06700
-     * @tc.name reflect3Test067
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_67();
@@ -1031,12 +1031,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test068
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06800
-     * @tc.name reflect3Test068
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_68();
@@ -1044,12 +1044,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test069
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_06900
-     * @tc.name reflect3Test069
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_69();
@@ -1057,12 +1057,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test070
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07000
-     * @tc.name reflect3Test070
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_70();
@@ -1070,12 +1070,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test071
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07100
-     * @tc.name reflect3Test071
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_71();
@@ -1083,12 +1083,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test072
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07200
-     * @tc.name reflect3Test072
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_72();
@@ -1096,12 +1096,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test074
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07400
-     * @tc.name reflect3Test074
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_74();
@@ -1109,12 +1109,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test075
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07500
-     * @tc.name reflect3Test075
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_75();
@@ -1122,12 +1122,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test076
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07600
-     * @tc.name reflect3Test076
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_76();
@@ -1135,12 +1135,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test077
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07700
-     * @tc.name reflect3Test077
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_77();
@@ -1148,12 +1148,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test078
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07800
-     * @tc.name reflect3Test078
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_78();
@@ -1161,12 +1161,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test079
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_07900
-     * @tc.name reflect3Test079
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_79();
@@ -1174,24 +1174,24 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test080
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08000
-     * @tc.name reflect3Test080
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_80();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect3Test081
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08100
-     * @tc.name reflect3Test081
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_81();
@@ -1199,12 +1199,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test082
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08200
-     * @tc.name reflect3Test082
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_82();
@@ -1212,12 +1212,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test083
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08300
-     * @tc.name reflect3Test083
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_83();
@@ -1225,12 +1225,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test084
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08400
-     * @tc.name reflect3Test084
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_84();
@@ -1238,12 +1238,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test085
      * @tc.number SUB * SUB_BUILTINS_REFLECT3_TEST_08500
-     * @tc.name reflect3Test085
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_85();
@@ -1251,12 +1251,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test086
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08600
-     * @tc.name reflect3Test086
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_86();
@@ -1264,12 +1264,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test087
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08700
-     * @tc.name reflect3Test087
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_87();
@@ -1277,12 +1277,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test088
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08800
-     * @tc.name reflect3Test088
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_88();
@@ -1290,12 +1290,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test089
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_08900
-     * @tc.name reflect3Test089
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_89();
@@ -1303,12 +1303,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test090
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09000
-     * @tc.name reflect3Test090
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_90();
@@ -1316,12 +1316,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test091
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09100
-     * @tc.name reflect3Test091
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_91();
@@ -1329,12 +1329,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test092
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09200
-     * @tc.name reflect3Test092
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_92();
@@ -1342,12 +1342,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test093
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09300
-     * @tc.name reflect3Test093
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_93();
@@ -1355,12 +1355,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test094
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09400
-     * @tc.name reflect3Test094
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_94();
@@ -1368,12 +1368,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test095
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09500
-     * @tc.name reflect3Test095
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_95();
@@ -1381,12 +1381,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test097
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09700
-     * @tc.name reflect3Test097
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_97();
@@ -1394,12 +1394,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test098
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09800
-     * @tc.name reflect3Test098
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_98();
@@ -1407,12 +1407,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test099
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_09900
-     * @tc.name reflect3Test099
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_99();
@@ -1420,24 +1420,24 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test100
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10000
-     * @tc.name reflect3Test100
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_100();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect3Test101
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10100
-     * @tc.name reflect3Test101
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_101();
@@ -1445,12 +1445,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test102
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10200
-     * @tc.name reflect3Test102
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_102();
@@ -1458,12 +1458,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test103
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10300
-     * @tc.name reflect3Test103
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_103();
@@ -1471,12 +1471,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test104
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10400
-     * @tc.name reflect3Test104
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_104();
@@ -1484,12 +1484,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test105
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10500
-     * @tc.name reflect3Test105
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_105();
@@ -1497,12 +1497,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test106
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10600
-     * @tc.name reflect3Test106
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_106();
@@ -1510,12 +1510,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test107
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10700
-     * @tc.name reflect3Test107
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_107();
@@ -1523,12 +1523,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test108
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10800
-     * @tc.name reflect3Test108
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_108();
@@ -1536,12 +1536,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test109
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_10900
-     * @tc.name reflect3Test109
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_109();
@@ -1549,12 +1549,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test110
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11000
-     * @tc.name reflect3Test110
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_110();
@@ -1562,12 +1562,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test111
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11100
-     * @tc.name reflect3Test111
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_111();
@@ -1575,12 +1575,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test112
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11200
-     * @tc.name reflect3Test112
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_112();
@@ -1588,12 +1588,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test113
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11300
-     * @tc.name reflect3Test113
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_113();
@@ -1601,12 +1601,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test114
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11400
-     * @tc.name reflect3Test114
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_114();
@@ -1614,12 +1614,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test115
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11500
-     * @tc.name reflect3Test115
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_115();
@@ -1627,12 +1627,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test116
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11600
-     * @tc.name reflect3Test116
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_116();
@@ -1640,12 +1640,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test117
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11700
-     * @tc.name reflect3Test117
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_117();
@@ -1653,12 +1653,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test118
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11800
-     * @tc.name reflect3Test118
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_118();
@@ -1666,12 +1666,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test119
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_11900
-     * @tc.name reflect3Test119
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_119();
@@ -1679,12 +1679,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test120
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12000
-     * @tc.name reflect3Test120
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_120();
@@ -1692,12 +1692,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test121
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12100
-     * @tc.name reflect3Test121
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_121();
@@ -1705,12 +1705,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test123
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12300
-     * @tc.name reflect3Test123
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_123();
@@ -1718,12 +1718,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test124
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12400
-     * @tc.name reflect3Test124
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_124();
@@ -1731,24 +1731,24 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test125
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12500
-     * @tc.name reflect3Test125
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_125();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect3Test126
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12600
-     * @tc.name reflect3Test126
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_126();
@@ -1757,12 +1757,12 @@ export default function reflect3Test() {
 
 
     /**
+     * @tc.name   reflect3Test128
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12800
-     * @tc.name reflect3Test128
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_128();
@@ -1770,12 +1770,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test129
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_12900
-     * @tc.name reflect3Test129
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_129();
@@ -1783,12 +1783,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test130
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13000
-     * @tc.name reflect3Test130
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_130();
@@ -1796,12 +1796,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test131
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13100
-     * @tc.name reflect3Test131
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_131();
@@ -1809,12 +1809,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test132
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13200
-     * @tc.name reflect3Test132
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_132();
@@ -1822,12 +1822,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test133
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13300
-     * @tc.name reflect3Test133
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_133();
@@ -1835,12 +1835,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test134
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13400
-     * @tc.name reflect3Test134
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_134();
@@ -1848,12 +1848,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test135
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13500
-     * @tc.name reflect3Test135
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_135();
@@ -1861,12 +1861,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test136
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13600
-     * @tc.name reflect3Test136
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_136();
@@ -1874,12 +1874,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test137
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13700
-     * @tc.name reflect3Test137
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_137();
@@ -1887,12 +1887,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test138
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13800
-     * @tc.name reflect3Test138
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_138();
@@ -1900,12 +1900,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test139
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_13900
-     * @tc.name reflect3Test139
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_139();
@@ -1913,12 +1913,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test140
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14000
-     * @tc.name reflect3Test140
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_140();
@@ -1926,12 +1926,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test141
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14100
-     * @tc.name reflect3Test141
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_141();
@@ -1939,12 +1939,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test142
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14200
-     * @tc.name reflect3Test142
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_142();
@@ -1952,12 +1952,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test143
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14300
-     * @tc.name reflect3Test143
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_143();
@@ -1965,12 +1965,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test144
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14400
-     * @tc.name reflect3Test144
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_144();
@@ -1978,12 +1978,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test145
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14500
-     * @tc.name reflect3Test145
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_145();
@@ -1991,12 +1991,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test146
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14600
-     * @tc.name reflect3Test146
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_146();
@@ -2004,12 +2004,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test147
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14700
-     * @tc.name reflect3Test147
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_147();
@@ -2017,12 +2017,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test148
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14800
-     * @tc.name reflect3Test148
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_148();
@@ -2030,12 +2030,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test149
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_14900
-     * @tc.name reflect3Test149
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_149();
@@ -2043,12 +2043,12 @@ export default function reflect3Test() {
     });
 
     /**
+     * @tc.name   reflect3Test150
      * @tc.number SUB_BUILTINS_REFLECT3_TEST_15000
-     * @tc.name reflect3Test150
-     * @tc.desc test reflect defineProperty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect defineProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect3Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_defineProperty_150();

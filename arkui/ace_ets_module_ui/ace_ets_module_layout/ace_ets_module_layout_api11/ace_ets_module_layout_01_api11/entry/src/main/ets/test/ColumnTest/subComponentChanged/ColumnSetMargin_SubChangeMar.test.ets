@@ -45,9 +45,12 @@ export default function ColumnSetMargin_SubChangeMar() {
     });
 
     /**
-     * @tc.number    SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0700
-     * @tc.name      testColumnParentMarginSubMargin
-     * @tc.desc      Parent component and subcomponent both set margin.
+     * @tc.name   testColumnParentMarginSubMargin
+     * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0700
+     * @tc.desc   Parent component and subcomponent both set margin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnParentMarginSubMargin',  Level.LEVEL0, async () => {
       console.info('new testColumnParentMarginSubMargin START');

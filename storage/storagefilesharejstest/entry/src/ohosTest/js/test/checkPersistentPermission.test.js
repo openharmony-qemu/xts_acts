@@ -22,15 +22,13 @@ export default function FileSahre_CheckPersistentPermission_test() {
     describe('CheckPersistentPermission_test', function () {
       
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0100
-      * @tc.name FileShare_checkPersistentPermission_001
-      * @tc.desc Test checkPersistentPermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+       * @tc.name   FileShare_checkPersistentPermission_001
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0100
+       * @tc.desc   Test checkPersistentPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('FileShare_checkPersistentPermission_001', Level.LEVEL0, async function (done) {
         try {
         let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_checkPersistentPermission_001.txt";
@@ -83,15 +81,13 @@ export default function FileSahre_CheckPersistentPermission_test() {
       });
       
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0200
-      * @tc.name FileShare_checkPersistentPermission_002
-      * @tc.desc Test checkPersistentPermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE and WRITE_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+       * @tc.name   FileShare_checkPersistentPermission_002
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0200
+       * @tc.desc   Test checkPersistentPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('FileShare_checkPersistentPermission_002', Level.LEVEL0, async function (done) {
         try {
         let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_checkPersistentPermission_002.txt";
@@ -144,15 +140,13 @@ export default function FileSahre_CheckPersistentPermission_test() {
       });
       
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0300
-      * @tc.name FileShare_checkPersistentPermission_003
-      * @tc.desc Test checkPersistentPermission() interfaces
-      * Permissions not persisted and PolicyErrorCode is PERMISSION_NOT_PERSISTED.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 3
-      * @tc.require
-      */
+       * @tc.name   FileShare_checkPersistentPermission_003
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_CheckPersistentPermission_test_0300
+       * @tc.desc   Test checkPersistentPermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('FileShare_checkPersistentPermission_003', Level.LEVEL3, async function (done) {
         try {
         let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_checkPersistentPermission_003.txt";

@@ -52,6 +52,7 @@ export default function displayTest() {
     let context: common.UIAbilityContext;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -67,6 +68,12 @@ export default function displayTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.error(`beforeAll isPCStatus: `+ isPCStatus);
+      
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -83,12 +90,12 @@ export default function displayTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
-     * @tc.name   : testFoldAngleChange_On_Off
-     * @tc.desc   : register and unregister fold angle changes
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testFoldAngleChange_On_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
+     * @tc.desc   register and unregister fold angle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFoldAngleChange_On_Off', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testFoldAngleChange_On_Off';
@@ -120,12 +127,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_DMS_XTS_DISPLAY_JS_API_5110
-     * @tc.name   : testFoldAngleChange_ON_Off_Off
-     * @tc.desc   : repeat unregister fold angle changes
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testFoldAngleChange_ON_Off_Off
+     * @tc.number SUB_BASIC_WMS_DMS_XTS_DISPLAY_JS_API_5110
+     * @tc.desc   repeat unregister fold angle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFoldAngleChange_ON_Off_Off', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testFoldAngleChange_ON_Off_Off';
@@ -165,12 +172,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5120
-     * @tc.name   : testFoldAngleChange_Off
-     * @tc.desc   : unregister of the fold angle changes without register
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testFoldAngleChange_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5120
+     * @tc.desc   unregister of the fold angle changes without register
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFoldAngleChange_Off', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testFoldAngleChange_Off';
@@ -187,12 +194,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
-     * @tc.name   : testCaptureStatusChange_On_Off
-     * @tc.desc   : register and unregister capture status
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testCaptureStatusChange_On_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5130
+     * @tc.desc   register and unregister capture status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCaptureStatusChange_On_Off', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCaptureStatusChange_On_Off';
@@ -221,12 +228,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5140
-     * @tc.name   : testCaptureStatusChange_On_Off_Off
-     * @tc.desc   : repeat unregister capture status
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testCaptureStatusChange_On_Off_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5140
+     * @tc.desc   repeat unregister capture status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCaptureStatusChange_On_Off_Off', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCaptureStatusChange_On_Off_Off';
@@ -262,12 +269,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5150
-     * @tc.name   : testCaptureStatusChange_Off
-     * @tc.desc   : unregister the capture status of the device without register
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testCaptureStatusChange_Off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5150
+     * @tc.desc   unregister the capture status of the device without register
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCaptureStatusChange_Off', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCaptureStatusChange_Off';
@@ -284,12 +291,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5160
-     * @tc.name   : testIsCaptured
-     * @tc.desc   : check current device capture status
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testIsCaptured
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5160
+     * @tc.desc   check current device capture status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsCaptured', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsCaptured';
@@ -308,12 +315,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
-     * @tc.name   : test_getAvailableArea_default
-     * @tc.desc   : test_getAvailableArea_default
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   test_getAvailableArea_default
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
+     * @tc.desc   test_getAvailableArea_default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getAvailableArea_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_getAvailableArea_default';
@@ -352,12 +359,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0200
-     * @tc.name   : test_getAvailableArea_subWindow
-     * @tc.desc   : test_getAvailableArea_subWindow
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   test_getAvailableArea_subWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0200
+     * @tc.desc   test_getAvailableArea_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_getAvailableArea_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_getAvailableArea_subWindow';
@@ -435,12 +442,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0300
-     * @tc.name   : test_getAvailableArea_setWindowSystemBarEnable
-     * @tc.desc   : test_getAvailableArea_setWindowSystemBarEnable
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   test_getAvailableArea_setWindowSystemBarEnable
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0300
+     * @tc.desc   test_getAvailableArea_setWindowSystemBarEnable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_getAvailableArea_setWindowSystemBarEnable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_getAvailableArea_setWindowSystemBarEnable';
@@ -496,12 +503,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
-     * @tc.name   : test_getAvailableArea_ststus_bar_hide
-     * @tc.desc   : test_getAvailableArea_ststus_bar_hide
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   test_getAvailableArea_ststus_bar_hide
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
+     * @tc.desc   test_getAvailableArea_ststus_bar_hide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAvailableArea_ststus_bar_hide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'test_getAvailableArea_ststus_bar_hide';
@@ -571,12 +578,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
-     * @tc.name   : test_on_availableAreaChange
-     * @tc.desc   : test_on_availableAreaChange
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   test_on_availableAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
+     * @tc.desc   test_on_availableAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_on_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_on_availableAreaChange';
@@ -606,12 +613,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
-     * @tc.name   : test_on_availableAreaChange_triggers
-     * @tc.desc   : test_on_availableAreaChange_triggers
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   test_on_availableAreaChange_triggers
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
+     * @tc.desc   test_on_availableAreaChange_triggers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_on_availableAreaChange_triggers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_on_availableAreaChange_triggers';
@@ -664,12 +671,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
-     * @tc.name   : test_on_availableAreaChange_Two_callback
-     * @tc.desc   : test_on_availableAreaChange_Two_callback
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   test_on_availableAreaChange_Two_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
+     * @tc.desc   test_on_availableAreaChange_Two_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_on_availableAreaChange_Two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_on_availableAreaChange_Two_callback';
@@ -729,12 +736,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
-     * @tc.name   : test_on_availableAreaChange_off_callback1
-     * @tc.desc   : test_on_availableAreaChange_off_callback1
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   test_on_availableAreaChange_off_callback1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
+     * @tc.desc   test_on_availableAreaChange_off_callback1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_on_availableAreaChange_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_on_availableAreaChange_off_callback1';
@@ -795,12 +802,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
-     * @tc.name   : test_on_availableAreaChange_off_callback_all
-     * @tc.desc   : test_on_availableAreaChange_off_callback_all
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   test_on_availableAreaChange_off_callback_all
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
+     * @tc.desc   test_on_availableAreaChange_off_callback_all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_on_availableAreaChange_off_callback_all', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'test_on_availableAreaChange_off_callback_all';
@@ -860,12 +867,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
-     * @tc.name   : test_off_availableAreaChange
-     * @tc.desc   : test_off_availableAreaChange
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   test_off_availableAreaChange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
+     * @tc.desc   test_off_availableAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_off_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_off_availableAreaChange';
@@ -891,12 +898,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
-     * @tc.name   : testGetAllDisplayPhysicalResolution
-     * @tc.desc   : get all display physical resolution
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testGetAllDisplayPhysicalResolution
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
+     * @tc.desc   get all display physical resolution
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetAllDisplayPhysicalResolution', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetAllDisplayPhysicalResolution';
@@ -925,13 +932,13 @@ export default function displayTest() {
     })
 
     /**
-         * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5180
-         * @tc.name   : testGetAvailableWidthAndHeight
-         * @tc.desc   : get display available width and height
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 0
-         */
+     * @tc.name   testGetAvailableWidthAndHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5180
+     * @tc.desc   get display available width and height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetAvailableWidthAndHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testGetAvailableWidthAndHeight';
       console.info(`jsunittets ${caseName} begin`);
@@ -949,12 +956,12 @@ export default function displayTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FOLDSTATUS_0100
-     * @tc.name      : test_FoldStatus_enum
-     * @tc.desc      : test_FoldStatus_enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_FoldStatus_enum
+     * @tc.number SUB_BASIC_WMS_FOLDSTATUS_0100
+     * @tc.desc   test_FoldStatus_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FoldStatus_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_FoldStatus_enum';
@@ -970,12 +977,12 @@ export default function displayTest() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0100
-     * @tc.name      : test_CreateVirtualScreen_ErrorCode1400001
-     * @tc.desc      : test_CreateVirtualScreen_ErrorCode1400001 when got invalid size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_CreateVirtualScreen_ErrorCode1400001
+     * @tc.number SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0100
+     * @tc.desc   test_CreateVirtualScreen_ErrorCode1400001 when got invalid size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_CreateVirtualScreen_ErrorCode1400001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_CreateVirtualScreen_ErrorCode1400001 ';
@@ -1012,12 +1019,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0200
-     * @tc.name      : test_CreateVirtualScreen_ErrorCode401
-     * @tc.desc      : test_CreateVirtualScreen_ErrorCode_401 when got arguments with null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_CreateVirtualScreen_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0200
+     * @tc.desc   test_CreateVirtualScreen_ErrorCode_401 when got arguments with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_CreateVirtualScreen_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_CreateVirtualScreen_ErrorCode401 ';
@@ -1040,12 +1047,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_0100
-     * @tc.name      : test_CreateVirtualScreen01
-     * @tc.desc      : test_CreateVirtualScreen01 
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_CreateVirtualScreen01
+     * @tc.number SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_0100
+     * @tc.desc   test_CreateVirtualScreen01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_CreateVirtualScreen01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_CreateVirtualScreen01 ';
@@ -1082,12 +1089,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0100
-     * @tc.name      : test_DestroyVirtualScreenErrorcode401
-     * @tc.desc      : test_DestroyVirtualScreenErrorcode_401 when got invalid screendId like -1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_DestroyVirtualScreenErrorcode401
+     * @tc.number SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0100
+     * @tc.desc   test_DestroyVirtualScreenErrorcode_401 when got invalid screendId like -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_DestroyVirtualScreenErrorcode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_DestroyVirtualScreenErrorcode401 ';
@@ -1104,12 +1111,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0200
-     * @tc.name      : test_DestroyVirtualScreenErrorcode401_02
-     * @tc.desc      : test_DestroyVirtualScreenErrorcode_401 when destroy a screen that has already been destroyed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_DestroyVirtualScreenErrorcode401_02
+     * @tc.number SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0200
+     * @tc.desc   test_DestroyVirtualScreenErrorcode_401 when destroy a screen that has already been destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_DestroyVirtualScreenErrorcode401_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_DestroyVirtualScreenErrorcode401_02 ';
@@ -1154,12 +1161,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_0100
-     * @tc.name      : test_MakeUniqueErrorcode_401
-     * @tc.desc      : test_MakeUniqueErrorcode_401 when got invalid screenId like -1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_MakeUniqueErrorcode_401
+     * @tc.number SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_0100
+     * @tc.desc   test_MakeUniqueErrorcode_401 when got invalid screenId like -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_MakeUniqueErrorcode_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_MakeUniqueErrorcode_401 ';
@@ -1180,12 +1187,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_0200
-     * @tc.name      : test_MakeUniqueErrorcode_1400001
-     * @tc.desc      : test_MakeUniqueErrorcode_1400001 when makeUnique a virtual screen that has already been destroyed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_MakeUniqueErrorcode_1400001
+     * @tc.number SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_0200
+     * @tc.desc   test_MakeUniqueErrorcode_1400001 when makeUnique a virtual screen that has already been destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_MakeUniqueErrorcode_1400001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_MakeUniqueErrorcode_1400001 ';
@@ -1225,12 +1232,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_MAKEUNIQUE_0100
-     * @tc.name      : test_MakeUnique_01
-     * @tc.desc      : test_MakeUnique_01
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_MakeUnique_01
+     * @tc.number SUB_BASIC_WMS_MAKEUNIQUE_0100
+     * @tc.desc   test_MakeUnique_01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_MakeUnique_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_MakeUnique_01 ';
@@ -1273,12 +1280,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_0100
-     * @tc.name      : test_setVirtualScreenSurface_ErrorCode401
-     * @tc.desc      : test_setVirtualScreenSurface_ErrorCode401 when got a invalid screenId like -1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setVirtualScreenSurface_ErrorCode401
+     * @tc.number SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_0100
+     * @tc.desc   test_setVirtualScreenSurface_ErrorCode401 when got a invalid screenId like -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setVirtualScreenSurface_ErrorCode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401 ';
@@ -1295,12 +1302,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_0200
-     * @tc.name      : test_setVirtualScreenSurface_ErrorCode401_02
-     * @tc.desc      : test_setVirtualScreenSurface_ErrorCode401 when got non existent surfaceId like ''
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_setVirtualScreenSurface_ErrorCode401_02
+     * @tc.number SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_0200
+     * @tc.desc   test_setVirtualScreenSurface_ErrorCode401 when got non existent surfaceId like ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setVirtualScreenSurface_ErrorCode401_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_02 ';
@@ -1336,12 +1343,12 @@ export default function displayTest() {
 
 
     /**
-     * @tc.number    : testGetDisplayByIdSyncErrCode401_0100
-     * @tc.name      : getDisplayByIdSync
-     * @tc.desc      : getDisplayByIdSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   getDisplayByIdSync
+     * @tc.number testGetDisplayByIdSyncErrCode401_0100
+     * @tc.desc   getDisplayByIdSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDisplayByIdSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "getDisplayByIdSync";
@@ -1360,12 +1367,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : testOnFoldAngleChangeErrCode401_0100
-     * @tc.name      : on_foldAngleChange
-     * @tc.desc      : on_foldAngleChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   on_foldAngleChange
+     * @tc.number testOnFoldAngleChangeErrCode401_0100
+     * @tc.desc   on_foldAngleChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('on_foldAngleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "on_foldAngleChange";
@@ -1385,12 +1392,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : testOffFoldAngleChangeErrCode401_0100
-     * @tc.name      : off_foldAngleChange
-     * @tc.desc      : off_foldAngleChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   off_foldAngleChange
+     * @tc.number testOffFoldAngleChangeErrCode401_0100
+     * @tc.desc   off_foldAngleChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('off_foldAngleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "off_foldAngleChange";
@@ -1410,12 +1417,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : testOnCaptureStatusChangeErrCode401_0100
-     * @tc.name      : on_captureStatusChange
-     * @tc.desc      : on_captureStatusChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   on_captureStatusChange
+     * @tc.number testOnCaptureStatusChangeErrCode401_0100
+     * @tc.desc   on_captureStatusChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('on_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "on_captureStatusChange";
@@ -1435,12 +1442,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : testOffCaptureStatusChangeErrCode401_0100
-     * @tc.name      : off_captureStatusChange
-     * @tc.desc      : off_captureStatusChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   off_captureStatusChange
+     * @tc.number testOffCaptureStatusChangeErrCode401_0100
+     * @tc.desc   off_captureStatusChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('off_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "off_captureStatusChange";
@@ -1460,12 +1467,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : testOnAvailableAreaChangeErrCode401_0100
-     * @tc.name      : on_availableAreaChange
-     * @tc.desc      : on_availableAreaChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   on_availableAreaChange
+     * @tc.number testOnAvailableAreaChangeErrCode401_0100
+     * @tc.desc   on_availableAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('on_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "on_availableAreaChange";
@@ -1487,12 +1494,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : testOffAvailableAreaChangeErrCode401_0100
-     * @tc.name      : off_availableAreaChange
-     * @tc.desc      : off_availableAreaChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   off_availableAreaChange
+     * @tc.number testOffAvailableAreaChangeErrCode401_0100
+     * @tc.desc   off_availableAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('off_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "off_availableAreaChange";
@@ -1515,12 +1522,12 @@ export default function displayTest() {
 
 
     /**
-     * @tc.number : SUB_BASIC_WMS_GET_CUTOUT_INFO_0100
-     * @tc.name   : test_GetCutoutInfo
-     * @tc.desc   : test_GetCutoutInfo
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   test_GetCutoutInfo
+     * @tc.number SUB_BASIC_WMS_GET_CUTOUT_INFO_0100
+     * @tc.desc   test_GetCutoutInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_GetCutoutInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_GetCutoutInfo';
@@ -1544,12 +1551,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ScreenShape_0100
-     * @tc.name       : test_ScreenShape_0100
-     * @tc.desc       : test_ScreenShape_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   test_ScreenShape_0100
+     * @tc.number SUB_BASIC_WMS_ScreenShape_0100
+     * @tc.desc   test_ScreenShape_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_ScreenShape_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_ScreenShape_0100";
@@ -1567,12 +1574,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_DisplaySourceMode_0100
-     * @tc.name      : test_DisplaySourceMode_enum
-     * @tc.desc      : test_DisplaySourceMode_enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_DisplaySourceMode_enum
+     * @tc.number SUB_BASIC_WMS_DisplaySourceMode_0100
+     * @tc.desc   test_DisplaySourceMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_DisplaySourceMode_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_DisplaySourceMode_enum';
@@ -1587,12 +1594,12 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_DisplaySourceMode_0200
-     * @tc.name      : test_display_DisplaySourceMode
-     * @tc.desc      : test_display_DisplaySourceMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_display_DisplaySourceMode
+     * @tc.number SUB_BASIC_WMS_DisplaySourceMode_0200
+     * @tc.desc   test_display_DisplaySourceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_display_DisplaySourceMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_display_DisplaySourceMode';
@@ -1606,12 +1613,12 @@ export default function displayTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_add_401_0100
-     * @tc.name       : testOnaddErrCode401_0100
-     * @tc.desc       : testOnaddErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnaddErrCode401_0100
+     * @tc.number SUB_BASIC_WMS_ON_add_401_0100
+     * @tc.desc   testOnaddErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnaddErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnaddErrCode401_0100";
@@ -1633,12 +1640,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_add_401_0200
-     * @tc.name       : testoffaddErrCode401_0100
-     * @tc.desc       : testoffaddErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testoffaddErrCode401_0100
+     * @tc.number SUB_BASIC_WMS_ON_add_401_0200
+     * @tc.desc   testoffaddErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testoffaddErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testoffaddErrCode401_0100";
@@ -1660,12 +1667,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_foldStatusChange_401_0100
-     * @tc.name       : testonfoldStatusChange401_0100
-     * @tc.desc       : testonfoldStatusChange401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testonfoldStatusChange401_0100
+     * @tc.number SUB_BASIC_WMS_ON_foldStatusChange_401_0100
+     * @tc.desc   testonfoldStatusChange401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testonfoldStatusChange401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testonfoldStatusChange401_0100";
@@ -1686,12 +1693,12 @@ export default function displayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_foldStatusChange_401_0200
-     * @tc.name       : testofffoldStatusChange401_0100
-     * @tc.desc       : testofffoldStatusChange401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testofffoldStatusChange401_0100
+     * @tc.number SUB_BASIC_WMS_ON_foldStatusChange_401_0200
+     * @tc.desc   testofffoldStatusChange401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testofffoldStatusChange401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testofffoldStatusChange401_0100";
@@ -1712,12 +1719,12 @@ export default function displayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_displayModeChange_401_0100
-     * @tc.name       : testondisplayModeChange401
-     * @tc.desc       : testondisplayModeChange401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testondisplayModeChange401
+     * @tc.number SUB_BASIC_WMS_ON_displayModeChange_401_0100
+     * @tc.desc   testondisplayModeChange401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testondisplayModeChange401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testondisplayModeChange401";
@@ -1737,12 +1744,12 @@ export default function displayTest() {
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_displayModeChange_401_0200
-     * @tc.name       : testoffdisplayModeChange401
-     * @tc.desc       : testoffdisplayModeChange401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testoffdisplayModeChange401
+     * @tc.number SUB_BASIC_WMS_ON_displayModeChange_401_0200
+     * @tc.desc   testoffdisplayModeChange401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testoffdisplayModeChange401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testoffdisplayModeChange401";
@@ -1764,12 +1771,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0100
-     * @tc.name       : testMainScreenSupportRefreshRate
-     * @tc.desc       : 验证主屏刷新率支持的档位
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMainScreenSupportRefreshRate
+     * @tc.number SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0100
+     * @tc.desc   验证主屏刷新率支持的档位
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMainScreenSupportRefreshRate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testMainScreenSupportRefreshRate";
@@ -1802,12 +1809,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0200
-     * @tc.name       : testVirtualScreenSupportRefreshRate
-     * @tc.desc       : 验证虚拟屏刷新率支持的档位
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testVirtualScreenSupportRefreshRate
+     * @tc.number SUB_BASIC_WMS_DMS_REFRESH_LEVEL_0200
+     * @tc.desc   验证虚拟屏刷新率支持的档位
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testVirtualScreenSupportRefreshRate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testVirtualScreenSupportRefreshRate";
@@ -1846,12 +1853,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0100
-     * @tc.name       : testConvertRelativeToGlobalCoordinatewithPositionOutofRange
-     * @tc.desc       : 验证convertRelativeToGlobalCoordinate接口position超出int32报1400004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConvertRelativeToGlobalCoordinatewithPositionOutofRange
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0100
+     * @tc.desc   验证convertRelativeToGlobalCoordinate接口position超出int32报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConvertRelativeToGlobalCoordinatewithPositionOutofRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertRelativeToGlobalCoordinatewithPositionOutofRange";
@@ -1880,12 +1887,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0200
-     * @tc.name       : testConvertRelativeToGlobalCoordinatewithInvalidDisplayid
-     * @tc.desc       : 验证convertRelativeToGlobalCoordinate接口display<0或>=0且display不存在报1400004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConvertRelativeToGlobalCoordinatewithInvalidDisplayid
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0200
+     * @tc.desc   验证convertRelativeToGlobalCoordinate接口display<0或>=0且display不存在报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConvertRelativeToGlobalCoordinatewithInvalidDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertRelativeToGlobalCoordinatewithInvalidDisplayid";
@@ -1928,12 +1935,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0300
-     * @tc.name       : testConvertRelativeToGlobalCoordinatewithVirtualDisplay
-     * @tc.desc       : 验证虚拟屏调用convertRelativeToGlobalCoordinate接口报1400004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConvertRelativeToGlobalCoordinatewithVirtualDisplay
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0300
+     * @tc.desc   验证虚拟屏调用convertRelativeToGlobalCoordinate接口报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConvertRelativeToGlobalCoordinatewithVirtualDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertRelativeToGlobalCoordinatewithVirtualDisplay";
@@ -1989,12 +1996,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0400
-     * @tc.name       : testConvertRelativeToGlobalCoordinate
-     * @tc.desc       : 验证convertRelativeToGlobalCoordinate接口在除RK外的设备正常调用
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertRelativeToGlobalCoordinate
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0400
+     * @tc.desc   验证convertRelativeToGlobalCoordinate接口在除RK外的设备正常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertRelativeToGlobalCoordinate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testConvertRelativeToGlobalCoordinate";
@@ -2033,12 +2040,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0500
-     * @tc.name       : testConvertGlobalToRelativeCoordinatewithPositionOutofRange
-     * @tc.desc       : 验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConvertGlobalToRelativeCoordinatewithPositionOutofRange
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0500
+     * @tc.desc   验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConvertGlobalToRelativeCoordinatewithPositionOutofRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertGlobalToRelativeCoordinatewithPositionOutofRange";
@@ -2063,12 +2070,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0600
-     * @tc.name       : testConvertGlobalToRelativeCoordinatewithInvalidDisplayid
-     * @tc.desc       : 验证convertGlobalToRelativeCoordinate接口传入displayId<0报1400004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConvertGlobalToRelativeCoordinatewithInvalidDisplayid
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0600
+     * @tc.desc   验证convertGlobalToRelativeCoordinate接口传入displayId<0报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConvertGlobalToRelativeCoordinatewithInvalidDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertGlobalToRelativeCoordinatewithInvalidDisplayid";
@@ -2090,12 +2097,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0700
-     * @tc.name       : testConvertGlobalToRelativeCoordinatewithVirtualDisplay
-     * @tc.desc       : 验证虚拟屏调用convertGlobalToRelativeCoordinate接口报1400004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testConvertGlobalToRelativeCoordinatewithVirtualDisplay
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0700
+     * @tc.desc   验证虚拟屏调用convertGlobalToRelativeCoordinate接口报1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConvertGlobalToRelativeCoordinatewithVirtualDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertGlobalToRelativeCoordinatewithVirtualDisplay";
@@ -2147,12 +2154,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0800
-     * @tc.name       : testConvertGlobalToRelativeCoordinatewithDisplayid
-     * @tc.desc       : 验证convertGlobalToRelativeCoordinate接口，传入displayId，在除RK外的设备正常调用
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertGlobalToRelativeCoordinatewithDisplayid
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0800
+     * @tc.desc   验证convertGlobalToRelativeCoordinate接口，传入displayId，在除RK外的设备正常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertGlobalToRelativeCoordinatewithDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testConvertGlobalToRelativeCoordinatewithDisplayid";
@@ -2188,12 +2195,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CONVERTCOORDINATE_0900
-     * @tc.name       : testConvertGlobalToRelativeCoordinatewithoutDisplayid
-     * @tc.desc       : 验证convertGlobalToRelativeCoordinate接口，不传入displayId，在除RK外的设备正常调用
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConvertGlobalToRelativeCoordinatewithoutDisplayid
+     * @tc.number SUB_BASIC_WMS_CONVERTCOORDINATE_0900
+     * @tc.desc   验证convertGlobalToRelativeCoordinate接口，不传入displayId，在除RK外的设备正常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertGlobalToRelativeCoordinatewithoutDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testConvertGlobalToRelativeCoordinatewithoutDisplayid";
@@ -2229,12 +2236,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_0100
-     * @tc.name       : testGetLiveCreaseRegion
-     * @tc.desc       : 验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGetLiveCreaseRegion
+     * @tc.number SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_0100
+     * @tc.desc   验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLiveCreaseRegion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetLiveCreaseRegion";
@@ -2275,12 +2282,12 @@ export default function displayTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_0200
-     * @tc.name       : testGetLiveCreaseRegionwithVirtualScreen
-     * @tc.desc       : 验证虚拟盘折痕区域返回空
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGetLiveCreaseRegionwithVirtualScreen
+     * @tc.number SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_0200
+     * @tc.desc   验证虚拟盘折痕区域返回空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLiveCreaseRegionwithVirtualScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetLiveCreaseRegionwithVirtualScreen";
@@ -2330,12 +2337,12 @@ export default function displayTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ISFOLDABLE_0100
-     * @tc.name      : testisFoldable
-     * @tc.desc      : Test the function value of getSubWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testisFoldable
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ISFOLDABLE_0100
+     * @tc.desc   Test the function value of getSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testisFoldable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testisFoldable';
@@ -2350,13 +2357,13 @@ export default function displayTest() {
         done();
       }
     });
-     /**
-     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_0100
-     * @tc.name       testgetAllDisplay_promise_null
-     * @tc.desc       testgetAllDisplay_promise_null
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+    /**
+     * @tc.name   testgetAllDisplay_promise_null
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_0100
+     * @tc.desc   testgetAllDisplay_promise_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testgetAllDisplay_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testgetAllDisplay_promise_null';
@@ -2367,7 +2374,7 @@ export default function displayTest() {
           console.info(caseName+ ' current window stage event is HIDDEN');
           let displays = await display.getAllDisplay();
           console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
-          expect(displays.length).assertEqual(0);
+          expect(displays.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
           console.info(caseName+ ' restore success');
@@ -2391,12 +2398,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_0200
-     * @tc.name       testgetAllDisplay_Callback_null
-     * @tc.desc       testgetAllDisplay_Callback_null
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testgetAllDisplay_Callback_null
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_0200
+     * @tc.desc   testgetAllDisplay_Callback_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetAllDisplay_Callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testgetAllDisplay_Callback_null';
@@ -2417,7 +2424,7 @@ export default function displayTest() {
             }else {
               console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
               let displays = data;
-              expect(displays.length).assertEqual(0);
+              expect(displays.length).assertLargerOrEqual(1);
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
               console.info(caseName+ ' restore success');
@@ -2444,12 +2451,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAYS_0100
-     * @tc.name       testgetAllDisplays_Callback_null
-     * @tc.desc       testgetAllDisplays_Callback_null
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testgetAllDisplays_Callback_null
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETALLDISPLAYS_0100
+     * @tc.desc   testgetAllDisplays_Callback_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetAllDisplays_Callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testgetAllDisplays_Callback_null';
@@ -2470,7 +2477,7 @@ export default function displayTest() {
             }else {
               console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
               let displays = data;
-              expect(displays.length).assertEqual(0);
+              expect(displays.length).assertLargerOrEqual(1);
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
               console.info(caseName+ ' restore success');
@@ -2497,12 +2504,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAYS_0200
-     * @tc.name       testgetAllDisplays_promise_null
-     * @tc.desc       testgetAllDisplays_promise_null
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testgetAllDisplays_promise_null
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETALLDISPLAYS_0200
+     * @tc.desc   testgetAllDisplays_promise_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetAllDisplays_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testgetAllDisplays_promise_null';
@@ -2513,7 +2520,7 @@ export default function displayTest() {
           console.info(caseName+ ' current window stage event is HIDDEN');
           let displays = await display.getAllDisplays();
           console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
-          expect(displays.length).assertEqual(0);
+          expect(displays.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
           console.info(caseName+ ' restore success');
@@ -2537,12 +2544,12 @@ export default function displayTest() {
       }
     });
     /**
-     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_PHYSICAL_RESOLUTION_0100
-     * @tc.name       testgetAllDisplayPhysicalResolution_promise_null
-     * @tc.desc       testgetAllDisplayPhysicalResolution_promise_null
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testgetAllDisplayPhysicalResolution_promise_null
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_PHYSICAL_RESOLUTION_0100
+     * @tc.desc   testgetAllDisplayPhysicalResolution_promise_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetAllDisplayPhysicalResolution_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testgetAllDisplayPhysicalResolution_promise_null';
@@ -2553,7 +2560,7 @@ export default function displayTest() {
           console.info(caseName+ ' current window stage event is HIDDEN');
           let resolutionObjects = await display.getAllDisplayPhysicalResolution();
           console.info(caseName+` Succeeded in obtaining all the resolutionObjects . Data: ${JSON.stringify(resolutionObjects)}`);
-          expect(resolutionObjects.length).assertEqual(0);
+          expect(resolutionObjects.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
           console.info(caseName+ ' restore success');

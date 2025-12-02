@@ -34,6 +34,14 @@ export default function codeError2() {
       }
 
     })
+    /**
+     * @tc.name   UIExtension_startUIServiceExtensionAbility_801
+     * @tc.number UIExtension_startUIServiceExtensionAbility_801
+     * @tc.desc   UIExtension_startUIServiceExtensionAbility_801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIExtension_startUIServiceExtensionAbility_801', Level.LEVEL0, (done: Function) => {
       let tag = 'UIExtension_startUIServiceExtensionAbility_801';
       console.info(`${tag}-is begin`)
@@ -94,6 +102,14 @@ export default function codeError2() {
       };
     })
 
+    /**
+     * @tc.name   UIExtension_startUIServiceExtensionAbility_16000001
+     * @tc.number UIExtension_startUIServiceExtensionAbility_16000001
+     * @tc.desc   UIExtension_startUIServiceExtensionAbility_16000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIExtension_startUIServiceExtensionAbility_16000001', Level.LEVEL0, (done: Function) => {
       let tag = 'UIExtension_startUIServiceExtensionAbility_16000001';
       console.info(`${tag}-is begin`)
@@ -155,6 +171,14 @@ export default function codeError2() {
       };
     })
 
+    /**
+     * @tc.name   UIExtension_startUIServiceExtensionAbility_16000002
+     * @tc.number UIExtension_startUIServiceExtensionAbility_16000002
+     * @tc.desc   UIExtension_startUIServiceExtensionAbility_16000002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIExtension_startUIServiceExtensionAbility_16000002', Level.LEVEL0, (done: Function) => {
       let tag = 'UIExtension_startUIServiceExtensionAbility_16000002';
       console.info(`${tag}-is begin`)
@@ -214,6 +238,14 @@ export default function codeError2() {
       };
     })
 
+    /**
+     * @tc.name   UIExtension_connectUIServiceExtensionAbility_16000001
+     * @tc.number UIExtension_connectUIServiceExtensionAbility_16000001
+     * @tc.desc   UIExtension_connectUIServiceExtensionAbility_16000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIExtension_connectUIServiceExtensionAbility_16000001', Level.LEVEL0, (done: Function) => {
       let tag = 'UIExtension_connectUIServiceExtensionAbility_16000001';
       console.info(`${tag}-is begin`)
@@ -271,6 +303,14 @@ export default function codeError2() {
       };
     })
 
+    /**
+     * @tc.name   UIExtension_connectServiceExtensionAbility_16000002
+     * @tc.number UIExtension_connectServiceExtensionAbility_16000002
+     * @tc.desc   UIExtension_connectServiceExtensionAbility_16000002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIExtension_connectServiceExtensionAbility_16000002', Level.LEVEL0, (done: Function) => {
       let tag = 'UIExtension_connectUIServiceExtensionAbility_16000002';
       console.info(`${tag}-is begin`)

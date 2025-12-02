@@ -79,9 +79,12 @@ void HwEncFuncRoiTest::TearDown()
 }
 namespace {
 /**
- * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_001
- * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_001
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_001
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_001, TestSize.Level1)
 {
@@ -108,10 +111,12 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_002
- * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_002
- * _002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_002
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_002, TestSize.Level1)
 {
@@ -136,9 +141,12 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_003
- * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_003
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_003
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_003, TestSize.Level1)
 {
@@ -166,6 +174,14 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_003, TestSize.Level1)
 //  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_004
 //  * @tc.desc      : function test
 //  */
+/**
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_004
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_004
+ * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_004
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_004, TestSize.Level1)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -193,6 +209,14 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_004, TestSize.Level1)
 //  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_005
 //  * @tc.desc      : function test
 //  */
+/**
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_005
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_005
+ * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_005
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_005, TestSize.Level1)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -216,9 +240,12 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_006
- * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_006
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_006
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_006, TestSize.Level1)
 {
@@ -245,9 +272,12 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_006, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_007
- * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_007
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_007
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_007, TestSize.Level1)
 {
@@ -272,9 +302,12 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_007, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_008
- * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_008
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_008
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_008, TestSize.Level1)
 {
@@ -303,6 +336,14 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_008, TestSize.Level1)
 //  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_009
 //  * @tc.desc      : function test
 //  */
+/**
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_009
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_009
+ * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_009
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_009, TestSize.Level1)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -331,6 +372,14 @@ HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_009, TestSize.Level1)
 //  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_010
 //  * @tc.desc      : function test
 //  */
+/**
+ * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_010
+ * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_010
+ * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_010
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(HwEncFuncRoiTest, VIDEO_HW_ENCODE_ROI_FUNC_010, TestSize.Level1)
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);

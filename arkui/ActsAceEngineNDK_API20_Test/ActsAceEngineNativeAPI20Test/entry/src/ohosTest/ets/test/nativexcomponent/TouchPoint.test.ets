@@ -34,12 +34,12 @@ export default function TouchPointTest() {
       await Utils.pushPageNoClear(`NativeXComponent/TouchNativeXComponent`, done);
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWX_0100
-     * @tc.name    : testGetTouchPointWindowX001
-     * @tc.desc    : Test OH_NativeXComponent_GetTouchPointWindowX function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointWindowX001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWX_0100
+     * @tc.desc   Test OH_NativeXComponent_GetTouchPointWindowX function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointWindowX001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -56,12 +56,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWX_0200
-     * @tc.name    : testGetTouchPointWindowX002
-     * @tc.desc    : Test OH_NativeXComponent_GetTouchPointWindowX function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointWindowX002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWX_0200
+     * @tc.desc   Test OH_NativeXComponent_GetTouchPointWindowX function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointWindowX002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -78,12 +78,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWY_0100
-     * @tc.name    : testGetTouchPointWindowY001
-     * @tc.desc    : Test OH_NativeXComponent_GetTouchPointWindowY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointWindowY001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWY_0100
+     * @tc.desc   Test OH_NativeXComponent_GetTouchPointWindowY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointWindowY001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -100,12 +100,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWY_0200
-     * @tc.name    : testGetTouchPointWindowY002
-     * @tc.desc    : Test OH_NativeXComponent_GetTouchPointWindowY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointWindowY002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTWINDOWY_0200
+     * @tc.desc   Test OH_NativeXComponent_GetTouchPointWindowY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointWindowY002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -122,12 +122,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYX_0100
-     * @tc.name    : testGetTouchPointDisplayX001
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayX function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointDisplayX001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYX_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayX function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointDisplayX001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -144,12 +144,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYX_0200
-     * @tc.name    : testGetTouchPointDisplayX002
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayX function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointDisplayX002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYX_0200
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayX function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointDisplayX002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -166,12 +166,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYY_0100
-     * @tc.name    : testGetTouchPointDisplayY001
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointDisplayY001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYY_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointDisplayY001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -188,12 +188,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYY_0200
-     * @tc.name    : testGetTouchPointDisplayY002
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointDisplayY002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETTOUCHPOINTDISPLAYY_0200
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_OH_NativeXComponent_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointDisplayY002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -210,12 +210,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETHISTORICALPOINTS_0100
-     * @tc.name    : testGetHistoricalPoints
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetHistoricalPoints
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETHISTORICALPOINTS_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHistoricalPoints', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -232,12 +232,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_ID_0100
-     * @tc.name    : testHistoricalPointId
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointId
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_ID_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -254,12 +254,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SCREENX_0100
-     * @tc.name    : testHistoricalPointScreenX
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointScreenX
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SCREENX_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointScreenX', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -276,12 +276,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SCREENY_0100
-     * @tc.name    : testHistoricalPointScreenY
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointScreenY
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SCREENY_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointScreenY', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -298,12 +298,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_X_0100
-     * @tc.name    : testHistoricalPointX
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointX
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_X_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointX', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -320,12 +320,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_Y_0100
-     * @tc.name    : testHistoricalPointY
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointY
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_Y_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointY', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -342,12 +342,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TYPE_0100
-     * @tc.name    : testHistoricalPointType
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointType
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TYPE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointType', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -364,12 +364,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SIZE_0100
-     * @tc.name    : testHistoricalPointSize
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointSize
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SIZE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointSize', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -386,12 +386,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_FORCE_0100
-     * @tc.name    : testHistoricalPointForce
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointForce
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_FORCE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointForce', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -408,12 +408,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TIMESTAMP_0100
-     * @tc.name    : testHistoricalPointTimeStamp
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointTimeStamp
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TIMESTAMP_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointTimeStamp', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -430,12 +430,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TITLX_0100
-     * @tc.name    : testHistoricalPointTitlX
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointTitlX
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TITLX_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointTitlX', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -452,12 +452,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TITLY_0100
-     * @tc.name    : testHistoricalPointTitlY
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointTitlY
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_TITLY_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointTitlY', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -474,12 +474,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SOURCETOOL_0100
-     * @tc.name    : testHistoricalPointSourceTool
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testHistoricalPointSourceTool
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_HISTORICALPOINT_SOURCETOOL_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHistoricalPointSourceTool', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -496,12 +496,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SOURCETOOL_UNKNOWN_0100
-     * @tc.name    : testGetTouchEventSourceTool001
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchEventSourceTool001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SOURCETOOL_UNKNOWN_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchEventSourceTool001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -518,12 +518,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SOURCETOOL_FINGER_0100
-     * @tc.name    : testGetTouchEventSourceTool002
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchEventSourceTool002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SOURCETOOL_FINGER_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchEventSourceTool002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -540,12 +540,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SOURCETOOL_PEN_0100
-     * @tc.name    : testGetTouchEventSourceTool003
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchEventSourceTool003
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SOURCETOOL_PEN_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchEventSourceTool003', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -562,12 +562,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOOL_TYPE_FINGER_0100
-     * @tc.name    : testGetTouchPointToolTypeResult001
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointToolTypeResult001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOOL_TYPE_FINGER_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointToolTypeResult001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -584,12 +584,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOOL_TYPE_PEN_0100
-     * @tc.name    : testGetTouchPointToolTypeResult002
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchPointToolTypeResult002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOOL_TYPE_PEN_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchPointToolTypeResult002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -606,12 +606,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_TYPE_0100
-     * @tc.name    : testTouchPointType
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchPointType
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_TYPE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchPointType', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -628,12 +628,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_SIZE_0100
-     * @tc.name    : testTouchPointSize
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchPointSize
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_SIZE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchPointSize', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -650,12 +650,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_FORCE_0100
-     * @tc.name    : testTouchPointForce
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchPointForce
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_FORCE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchPointForce', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -672,12 +672,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_TIMESTAMP_0100
-     * @tc.name    : testTouchPointTimeStamp
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchPointTimeStamp
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_TIMESTAMP_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchPointTimeStamp', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -694,12 +694,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_ISPRESSED_0100
-     * @tc.name    : testTouchPointIsPressed
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchPointIsPressed
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHPOINT_ISPRESSED_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchPointIsPressed', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -716,12 +716,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_ID_0100
-     * @tc.name    : testTouchEventId
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchEventId
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_ID_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchEventId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -738,12 +738,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SIZE_0100
-     * @tc.name    : testTouchEventSize
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchEventSize
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_SIZE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchEventSize', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -760,12 +760,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_FORCE_0100
-     * @tc.name    : testTouchEventForce
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchEventForce
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_FORCE_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchEventForce', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -782,12 +782,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_DEVICEID_0100
-     * @tc.name    : testTouchEventDeviceId
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchEventDeviceId
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_DEVICEID_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchEventDeviceId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -804,12 +804,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_TIMESTAMP_0100
-     * @tc.name    : testTouchEventTimeStamp
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testTouchEventTimeStamp
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_TOUCHEVENT_TIMESTAMP_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchEventDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTouchEventTimeStamp', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -826,12 +826,12 @@ export default function TouchPointTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_SOURCE_TYPE_TOUCHSCREEN_0100
-     * @tc.name    : testGetTouchEventSourceType003
-     * @tc.desc    : Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetTouchEventSourceType003
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_SOURCE_TYPE_TOUCHSCREEN_0100
+     * @tc.desc   Test SUB_ARKUI_ACE_ENGINE_GetTouchPointDisplayY function works fine.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetTouchEventSourceType003', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

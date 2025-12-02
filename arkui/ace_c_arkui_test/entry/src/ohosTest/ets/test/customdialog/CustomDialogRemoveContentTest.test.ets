@@ -26,26 +26,26 @@ export default function customDialogRemoveContentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_REMOVECONTENT_0100
-     * @tc.name       : testCustomDialogRemoveContent001
-     * @tc.desc       : testing removetContent for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogRemoveContent001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_REMOVECONTENT_0100
+     * @tc.desc   testing removetContent for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogRemoveContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogRemoveContent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_REMOVECONTENT_0200
-     * @tc.name       : testCustomDialogRemoveContent002
-     * @tc.desc       : testing removetContent for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogRemoveContent002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_REMOVECONTENT_0200
+     * @tc.desc   testing removetContent for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogRemoveContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogRemoveContent002()).assertEqual(0)

@@ -47,9 +47,12 @@ export default function Grid_Row_Breakpoints_Quantity() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowBreakpoints_Quantity_0100
      * @tc.number SUB_ACE_GRIDROWBREAKPOTINS_0100
-     * @tc.name testBreakpoints
-     * @tc.desc The number of breakpoint ranges cannot exceed the number of values that can be taken
+     * @tc.desc   The number of breakpoint ranges cannot exceed the number of values that can be taken
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowBreakpoints_Quantity_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowBreakpoints_Quantity_0100 START');

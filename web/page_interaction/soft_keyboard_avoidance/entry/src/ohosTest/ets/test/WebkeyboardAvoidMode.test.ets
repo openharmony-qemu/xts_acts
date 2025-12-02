@@ -60,14 +60,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0100
-    * @tc.name       : testKeyboardAvoidMode0100
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0100
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0100
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0100';
       tcName = 'testKeyboardAvoidMode0100'
@@ -79,14 +79,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0200
-    * @tc.name       : testKeyboardAvoidMode0200
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0200
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0200
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0200';
       tcName = 'testKeyboardAvoidMode0200'
@@ -98,14 +98,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0300
-    * @tc.name       : testKeyboardAvoidMode0300
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0300
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0300
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0300';
       tcName = 'testKeyboardAvoidMode0300'
@@ -117,14 +117,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0400
-    * @tc.name       : testKeyboardAvoidMode0400
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0400
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0400
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0400';
       tcName = 'testKeyboardAvoidMode0400'
@@ -136,14 +136,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0500
-    * @tc.name       : testKeyboardAvoidMode0500
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0500
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0500
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0500';
       tcName = 'testKeyboardAvoidMode0500'
@@ -155,14 +155,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0600
-    * @tc.name       : testKeyboardAvoidMode0600
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0600
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0600
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0600';
       tcName = 'testKeyboardAvoidMode0600'
@@ -174,14 +174,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0700
-    * @tc.name       : testKeyboardAvoidMode0700
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0700
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0700
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0700';
       tcName = 'testKeyboardAvoidMode0700'
@@ -193,14 +193,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0800
-    * @tc.name       : testKeyboardAvoidMode0800
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0800
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0800
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0800';
       tcName = 'testKeyboardAvoidMode0800'
@@ -212,14 +212,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_0900
-    * @tc.name       : testKeyboardAvoidMode0900
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode0900
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_0900
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode0900';
       tcName = 'testKeyboardAvoidMode0900'
@@ -231,14 +231,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1000
-    * @tc.name       : testKeyboardAvoidMode1000
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1000
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1000
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1000';
       tcName = 'testKeyboardAvoidMode1000'
@@ -250,14 +250,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1100
-    * @tc.name       : testKeyboardAvoidMode1100
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1100
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1100
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1100';
       tcName = 'testKeyboardAvoidMode1100'
@@ -269,14 +269,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1200
-    * @tc.name       : testKeyboardAvoidMode1200
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1200
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1200
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1200';
       tcName = 'testKeyboardAvoidMode1200'
@@ -288,14 +288,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1300
-    * @tc.name       : testKeyboardAvoidMode1300
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1300
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1300
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1300';
       tcName = 'testKeyboardAvoidMode1300'
@@ -307,14 +307,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1400
-    * @tc.name       : testKeyboardAvoidMode1400
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1400
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1400
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1400';
       tcName = 'testKeyboardAvoidMode1400'
@@ -326,14 +326,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1500
-    * @tc.name       : testKeyboardAvoidMode1500
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1500
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1500
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1500';
       tcName = 'testKeyboardAvoidMode1500'
@@ -345,14 +345,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1600
-    * @tc.name       : testKeyboardAvoidMode1600
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1600
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1600
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1600';
       tcName = 'testKeyboardAvoidMode1600'
@@ -364,14 +364,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1700
-    * @tc.name       : testKeyboardAvoidMode1700
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1700
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1700
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1700';
       tcName = 'testKeyboardAvoidMode1700'
@@ -383,14 +383,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1800
-    * @tc.name       : testKeyboardAvoidMode1800
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1800
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1800
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1800';
       tcName = 'testKeyboardAvoidMode1800'
@@ -402,14 +402,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_1900
-    * @tc.name       : testKeyboardAvoidMode1900
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode1900
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_1900
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode1900';
       tcName = 'testKeyboardAvoidMode1900'
@@ -421,14 +421,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2000
-    * @tc.name       : testKeyboardAvoidMode2000
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2000
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2000
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2000';
       tcName = 'testKeyboardAvoidMode2000'
@@ -440,14 +440,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2100
-    * @tc.name       : testKeyboardAvoidMode2100
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2100
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2100
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2100';
       tcName = 'testKeyboardAvoidMode2100'
@@ -459,14 +459,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2200
-    * @tc.name       : testKeyboardAvoidMode2200
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2200
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2200
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2200';
       tcName = 'testKeyboardAvoidMode2200'
@@ -478,14 +478,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2300
-    * @tc.name       : testKeyboardAvoidMode2300
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2300
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2300
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2300';
       tcName = 'testKeyboardAvoidMode2300'
@@ -497,14 +497,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2400
-    * @tc.name       : testKeyboardAvoidMode2400
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2400
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2400
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2400';
       tcName = 'testKeyboardAvoidMode2400'
@@ -516,14 +516,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2500
-    * @tc.name       : testKeyboardAvoidMode2500
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2500
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2500
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2500';
       tcName = 'testKeyboardAvoidMode2500'
@@ -535,14 +535,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2600
-    * @tc.name       : testKeyboardAvoidMode2600
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2600
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2600
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2600';
       tcName = 'testKeyboardAvoidMode2600'
@@ -554,14 +554,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2700
-    * @tc.name       : testKeyboardAvoidMode2700
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2700
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2700
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2700';
       tcName = 'testKeyboardAvoidMode2700'
@@ -573,14 +573,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2800
-    * @tc.name       : testKeyboardAvoidMode2800
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2800
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2800
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2800';
       tcName = 'testKeyboardAvoidMode2800'
@@ -592,14 +592,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_2900
-    * @tc.name       : testKeyboardAvoidMode2900
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode2900
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_2900
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode2900';
       tcName = 'testKeyboardAvoidMode2900'
@@ -611,14 +611,14 @@ export default function WebkeyboardAvoidMode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_KEYBOARDAVOIDMODE_3000
-    * @tc.name       : testKeyboardAvoidMode3000
-    * @tc.desc       : test KeyboardAvoidMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   emitKeyboardAvoidMode3000
+     * @tc.number SUB_WEB_KEYBOARDAVOIDMODE_3000
+     * @tc.desc   test KeyboardAvoidMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('emitKeyboardAvoidMode3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'emitKeyboardAvoidMode3000';
       tcName = 'testKeyboardAvoidMode3000'

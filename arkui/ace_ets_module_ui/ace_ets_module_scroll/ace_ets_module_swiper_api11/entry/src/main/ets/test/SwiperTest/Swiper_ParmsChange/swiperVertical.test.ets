@@ -68,6 +68,14 @@ export default function swiperVertical() {
     //     * @tc.name      testSwipeSetVerticalFalse
     //     * @tc.desc      Set swiper's  vertical  value ' false '.
     //     */
+    /**
+     * @tc.name   testSwipeSetVerticalFalse
+     * @tc.number testSwipeSetVerticalFalse
+     * @tc.desc   testSwipeSetVerticalFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwipeSetVerticalFalse', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwipeSetVerticalFalse START');
     //      let strJson = getInspectorByKey('verticalkey');
@@ -120,6 +128,14 @@ export default function swiperVertical() {
     //     * @tc.name      testSwipeSetVerticalTrue
     //     * @tc.desc      Set swiper's  vertical  value ' true '.
     //     */
+    /**
+     * @tc.name   testSwipeSetVerticalTrue
+     * @tc.number testSwipeSetVerticalTrue
+     * @tc.desc   testSwipeSetVerticalTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwipeSetVerticalTrue', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwipeSetVerticalTrue START');
     //      globalThis.value.message.notify({name:'swiperVertical', value: true});

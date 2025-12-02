@@ -81,13 +81,13 @@ export default function windowEventTest() {
       
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
     })
-/**
-     * @tc.number    : SUB_BASIC_WMS_TOUCHOUTSIDE_0100
-     * @tc.name      : testTouchOutSide_0100
-     * @tc.desc      : 验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   testTouchOutSide_0100
+     * @tc.number SUB_BASIC_WMS_TOUCHOUTSIDE_0100
+     * @tc.desc   验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTouchOutSide_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTouchOutSide_0100 ';
@@ -141,12 +141,12 @@ export default function windowEventTest() {
     });
 
     /**
-     * @tc.number : SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
-     * @tc.name : testTouchOutSide_TopBar_0100
-     * @tc.desc : 验证点击窗口范围内的topbar区域不触发touchOutside回调
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   testTouchOutSide_TopBar_0100
+     * @tc.number SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
+     * @tc.desc   验证点击窗口范围内的topbar区域不触发touchOutside回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTouchOutSide_TopBar_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTouchOutSide_TopBar_0100 ';

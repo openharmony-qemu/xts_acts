@@ -48,13 +48,15 @@ export default function AlignContent_FlexAlign_End_Margin() {
       console.info("AlignContent_FlexAlign_End_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0500
-     * @tc.name testAlignContentEndFlexMarginSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End and
-     *               set the margin for the Flex component.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexMarginSatisfy
+     * @tc.number testAlignContentEndFlexMarginSatisfy
+     * @tc.desc   testAlignContentEndFlexMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexMarginSatisfy START');
       let strJson = getInspectorByKey('AlignContentFlexEndMargin_flex');

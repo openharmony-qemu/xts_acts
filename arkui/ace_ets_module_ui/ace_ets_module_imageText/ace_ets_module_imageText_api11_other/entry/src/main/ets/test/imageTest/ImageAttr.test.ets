@@ -47,10 +47,12 @@ export default function ImageAttr() {
     });
 
     /**
-     * @tc.number      ImageAttr_001
-     * @tc.name        ImageAttr_001
-     * @tc.desc        Image test
-     * @tc.level       Level 2
+     * @tc.name   ImageAttr_001
+     * @tc.number ImageAttr_001
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ImageAttr_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ImageAttr_001] START');
@@ -77,10 +79,12 @@ export default function ImageAttr() {
     });
 
     /**
-     * @tc.number      ImageAttr_002
-     * @tc.name        ImageAttr_002
-     * @tc.desc        Image test
-     * @tc.level       Level 2
+     * @tc.name   ImageAttr_002
+     * @tc.number ImageAttr_002
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ImageAttr_002', Level.LEVEL2, async (done: Function) => {
       console.info('[ImageAttr_002] START');

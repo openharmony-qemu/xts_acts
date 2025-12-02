@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
-import { Callback } from '@kit.BasicServicesKit';
+import { Callback } from '@ohos.base';
 
 const TAG = 'Notification';
 const TEST_SUITE_NAME = 'ActsEmitterPublishTest'
@@ -25,14 +25,14 @@ export default function ActsNotificationEmitterPublishTest() {
 
   describe('ActsNotificationEmitterPublishTest', () => {
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_0500
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_0500
-      * @tc.desc   : emitter.on 1   emitter.off 1   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
-      */
+    /**
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0500
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0500
+     * @tc.desc   emitter.on 1   emitter.off 1   emitter.emit 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Emitter_Publish_Emit_0500', Level.LEVEL2, (done: Function) => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0500'
       let eventId01: emitter.InnerEvent = {
@@ -71,14 +71,14 @@ export default function ActsNotificationEmitterPublishTest() {
       }
     })
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_0600
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_0600
-      * @tc.desc   : emitter.once 1   emitter.off 1   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
-      */
+    /**
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0600
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0600
+     * @tc.desc   emitter.once 1   emitter.off 1   emitter.emit 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Emitter_Publish_Emit_0600', Level.LEVEL2, (done: Function) => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0600'
       let eventId02: emitter.InnerEvent = {
@@ -117,14 +117,14 @@ export default function ActsNotificationEmitterPublishTest() {
       }
     })
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_0700
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_0700
-      * @tc.desc   : emitter.on 1   emitter.off 2   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
-      */
+    /**
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0700
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0700
+     * @tc.desc   emitter.on 1   emitter.off 2   emitter.emit 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Emitter_Publish_Emit_0700', Level.LEVEL2, (done: Function) => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0700'
       let eventId03: emitter.InnerEvent = {
@@ -163,14 +163,14 @@ export default function ActsNotificationEmitterPublishTest() {
       }
     })
 
-    /*
-      * @tc.number : Sub_Notification_Emitter_Publish_Emit_0800
-      * @tc.name   : Sub_Notification_Emitter_Publish_Emit_0800
-      * @tc.desc   : emitter.once 1   emitter.off 1   emitter.emit 1
-      * @tc.size   : MediumTest
-      * @tc.type   : Function
-      * @tc.level  : Level 2
-      */
+    /**
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_0800
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_0800
+     * @tc.desc   emitter.once 1   emitter.off 1   emitter.emit 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Emitter_Publish_Emit_0800', Level.LEVEL2, (done: Function) => {
       const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0800'
       let eventId04: emitter.InnerEvent = {

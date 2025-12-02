@@ -47,12 +47,14 @@ export default function SliderAttrs() {
     });
 
 
-    /*
-    * @tc.number      SliderAttrs_001
-    * @tc.name        SliderAttrs_001
-    * @tc.desc        Test selectedBorderRadius, minResponsiveDistance
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SliderAttrs_001
+     * @tc.number SliderAttrs_001
+     * @tc.desc   Test selectedBorderRadius, minResponsiveDistance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SliderAttrs_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAttrs_001] START');
       await Utils.sleep(1000);
@@ -70,12 +72,14 @@ export default function SliderAttrs() {
 
 
 
-    /*
-    * @tc.number      SliderAttrs_002
-    * @tc.name        SliderAttrs_002
-    * @tc.desc        Test SliderInteraction.SLIDE_AND_CLICK
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SliderAttrs_002
+     * @tc.number SliderAttrs_002
+     * @tc.desc   Test SliderInteraction.SLIDE_AND_CLICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SliderAttrs_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAttrs_002] START');
       await Utils.sleep(1000);
@@ -105,12 +109,14 @@ export default function SliderAttrs() {
 
 
 
-    /*
-    * @tc.number      SliderAttrs_003
-    * @tc.name        SliderAttrs_003
-    * @tc.desc        Test SliderInteraction.SLIDE_ONLY
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SliderAttrs_003
+     * @tc.number SliderAttrs_003
+     * @tc.desc   Test SliderInteraction.SLIDE_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SliderAttrs_003', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAttrs_003] START');
       await Utils.sleep(1000);

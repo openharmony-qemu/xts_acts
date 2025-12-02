@@ -45,14 +45,14 @@ export default function timePickerDialogHoverMode(){
       await CommonFunc.sleep(1000);
       console.info("MultiNavigation after each called");
     });
-    /* *
-    * @tc.number: timePickerDialogHoverMode_0100
-    * @tc.name  : timePickerDialogHoverMode_0100
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerDialogHoverMode_0100
+     * @tc.number timePickerDialogHoverMode_0100
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerDialogHoverMode_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('timePickerDialogHoverMode_0100 START');
       if(display.isFoldable() && display.getFoldStatus()==3){
@@ -78,14 +78,14 @@ export default function timePickerDialogHoverMode(){
       console.info('[timePickerDialogHoverMode_0100] END');
       done();
     });
-    /* *
-    * @tc.number: timePickerDialogHoverMode_0200
-    * @tc.name  : timePickerDialogHoverMode_0200
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerDialogHoverMode_0200
+     * @tc.number timePickerDialogHoverMode_0200
+     * @tc.desc   To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.BOTTOM_SCREEN)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerDialogHoverMode_0200', Level.LEVEL0, async (done:Function) =>{
       console.info('timePickerDialogHoverMode_0200 START');
       if(display.isFoldable() && display.getFoldStatus()==3){

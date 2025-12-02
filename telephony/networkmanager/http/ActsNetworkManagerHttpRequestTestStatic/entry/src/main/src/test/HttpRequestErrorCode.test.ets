@@ -79,13 +79,13 @@ export default function httpRequestErrorCodeTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0100
-         * @tc.name  :  testHttpRequestMethodErrorCode_static_0100
-         * @tc.desc  :  test http request(url, callback) with request error code 2300003
-         * @tc.size  :  MEDIUMTEST
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpRequestMethodErrorCode_static_0100
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0100
+         * @tc.desc   test http request(url, callback) with request error code 2300003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpRequestMethodErrorCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpRequestMethodErrorCode_static_0100';
@@ -125,13 +125,13 @@ export default function httpRequestErrorCodeTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0200
-         * @tc.name  :  testHttpRequestMethodErrorCode_static_0200
-         * @tc.desc  :  test http request(url, options, callback) with request error code 2300003
-         * @tc.size  :  MEDIUMTEST
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpRequestMethodErrorCode_static_0200
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0200
+         * @tc.desc   test http request(url, options, callback) with request error code 2300003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpRequestMethodErrorCode_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpRequestMethodErrorCode_static_0200';
@@ -172,13 +172,13 @@ export default function httpRequestErrorCodeTest() {
             }
         })
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0300
-         * @tc.name  :  testHttpRequestMethodErrorCode_static_0300
-         * @tc.desc  :  test http request(url, options, Promise) with request error code 2300003
-         * @tc.size  :  MEDIUMTEST
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpRequestMethodErrorCode_static_0300
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0300
+         * @tc.desc   test http request(url, options, Promise) with request error code 2300003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpRequestMethodErrorCode_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test03testHttpRequestMethodErrorCode_static_030000';
@@ -223,13 +223,13 @@ export default function httpRequestErrorCodeTest() {
 
 
 
-         /* *
-         * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0700
-         * @tc.name  :  testHttpRequestMethodErrorCode_static_0700
-         * @tc.desc  :  test http request(url, callback) with request error code 2300001
-         * @tc.size  :  smallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpRequestMethodErrorCode_static_0700
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0700
+         * @tc.desc   test http request(url, callback) with request error code 2300001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpRequestMethodErrorCode_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpRequestMethodErrorCode_static_0700';
@@ -269,14 +269,14 @@ export default function httpRequestErrorCodeTest() {
             }
         })
 
-        /* *
-           * @tc.number:  SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0800
-           * @tc.name  :  testHttpRequestMethodErrorCode_static_0800
-           * @tc.desc  :  test http request(url, options, callback) with request error code 2300001
-           * @tc.size  :  MEDIUMTEST
-           * @tc.type  :  Function
-           * @tc.level :  level 3
-           */
+        /**
+         * @tc.name   testHttpRequestMethodErrorCode_static_0800
+         * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_0800
+         * @tc.desc   test http request(url, options, callback) with request error code 2300001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("testHttpRequestMethodErrorCode_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpRequestMethodErrorCode_static_0800';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');

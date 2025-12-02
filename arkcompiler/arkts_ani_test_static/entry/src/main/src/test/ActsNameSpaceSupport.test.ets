@@ -31,12 +31,12 @@ export default function nameSpaceSupportTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0100
-     * @tc.name      test_Namespace_Find_Function_0001
-     * @tc.desc      find function
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0001
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0100
+     * @tc.desc   find function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0200
-     * @tc.name      test_Namespace_Find_Function_0002
-     * @tc.desc      find function 01
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0002
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0200
+     * @tc.desc   find function 01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0300
-     * @tc.name      test_Namespace_Find_Function_0003
-     * @tc.desc      find function 02
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0003
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0300
+     * @tc.desc   find function 02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0400
-     * @tc.name      test_Namespace_Find_Function_0004
-     * @tc.desc      find function 03
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0004
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0400
+     * @tc.desc   find function 03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0500
-     * @tc.name      test_Namespace_Find_Function_0005
-     * @tc.desc      find function 04
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0005
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0500
+     * @tc.desc   find function 04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0600
-     * @tc.name      test_Namespace_Find_Function_0006
-     * @tc.desc      find function 05
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0006
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0600
+     * @tc.desc   find function 05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0700
-     * @tc.name      test_Namespace_Find_Function_0007
-     * @tc.desc      duplicate no signature
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0007
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0700
+     * @tc.desc   duplicate no signature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0800
-     * @tc.name      test_Namespace_Find_Function_0008
-     * @tc.desc      check initialization
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Function_0008
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDFUNCTION_0800
+     * @tc.desc   check initialization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Function_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0100
-     * @tc.name      test_Namespace_Find_Variable_0001
-     * @tc.desc      get int variable 1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0001
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0100
+     * @tc.desc   get int variable 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0200
-     * @tc.name      test_Namespace_Find_Variable_0002
-     * @tc.desc      variable env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0002
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0200
+     * @tc.desc   variable env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0300
-     * @tc.name      test_Namespace_Find_Variable_0003
-     * @tc.desc      get ref variable
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0003
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0300
+     * @tc.desc   get ref variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0400
-     * @tc.name      test_Namespace_Find_Variable_0004
-     * @tc.desc      invalid nev
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0004
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0400
+     * @tc.desc   invalid nev
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0500
-     * @tc.name      test_Namespace_Find_Variable_0005
-     * @tc.desc      invalid namespace
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0005
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0500
+     * @tc.desc   invalid namespace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0600
-     * @tc.name      test_Namespace_Find_Variable_0006
-     * @tc.desc      invalid variable name 1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0006
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0600
+     * @tc.desc   invalid variable name 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0700
-     * @tc.name      test_Namespace_Find_Variable_0007
-     * @tc.desc      invalid variable name 2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0007
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0700
+     * @tc.desc   invalid variable name 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0800
-     * @tc.name      test_Namespace_Find_Variable_0008
-     * @tc.desc      invalid variable name 3
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0008
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0800
+     * @tc.desc   invalid variable name 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0900
-     * @tc.name      test_Namespace_Find_Variable_0009
-     * @tc.desc      invalid variable name 4
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0009
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_0900
+     * @tc.desc   invalid variable name 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_1000
-     * @tc.name      test_Namespace_Find_Variable_0010
-     * @tc.desc      invalid args result
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0010
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_1000
+     * @tc.desc   invalid args result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_1100
-     * @tc.name      test_Namespace_Find_Variable_0011
-     * @tc.desc      check initialization
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Find_Variable_0011
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_FINDVARIABLE_1100
+     * @tc.desc   check initialization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Find_Variable_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0100
-     * @tc.name      test_Namespace_Combinatorial_0001
-     * @tc.desc      namespace combinatorial find 01
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0001
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0100
+     * @tc.desc   namespace combinatorial find 01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0200
-     * @tc.name      test_Namespace_Combinatorial_0002
-     * @tc.desc      namespace combinatorial find 02
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0002
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0200
+     * @tc.desc   namespace combinatorial find 02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0300
-     * @tc.name      test_Namespace_Combinatorial_0003
-     * @tc.desc      namespace combinatorial find 03
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0003
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0300
+     * @tc.desc   namespace combinatorial find 03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0400
-     * @tc.name      test_Namespace_Combinatorial_0004
-     * @tc.desc      namespace combinatorial find 04
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0004
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0400
+     * @tc.desc   namespace combinatorial find 04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0500
-     * @tc.name      test_Namespace_Combinatorial_0005
-     * @tc.desc      namespace combinatorial find 05
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0005
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0500
+     * @tc.desc   namespace combinatorial find 05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0600
-     * @tc.name      test_Namespace_Combinatorial_0006
-     * @tc.desc      namespace combinatorial find 06
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0006
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0600
+     * @tc.desc   namespace combinatorial find 06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0700
-     * @tc.name      test_Namespace_Combinatorial_0007
-     * @tc.desc      namespace combinatorial find 07
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0007
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0700
+     * @tc.desc   namespace combinatorial find 07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0800
-     * @tc.name      test_Namespace_Combinatorial_0008
-     * @tc.desc      namespace combinatorial find 08
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0008
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0800
+     * @tc.desc   namespace combinatorial find 08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0900
-     * @tc.name      test_Namespace_Combinatorial_0009
-     * @tc.desc      namespace combinatorial find 09
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0009
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_0900
+     * @tc.desc   namespace combinatorial find 09
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function nameSpaceSupportTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_1000
-     * @tc.name      test_Namespace_Combinatorial_0010
-     * @tc.desc      namespace combinatorial find 10
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Namespace_Combinatorial_0010
+     * @tc.number SUB_ANI_NAMESPACESUPPORT_NAMESPACE_COMBINATORIAL_1000
+     * @tc.desc   namespace combinatorial find 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Namespace_Combinatorial_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -26,39 +26,39 @@ export default function textTextShadowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTSHADOW_0100
-     * @tc.name       : testTextTextShadow001
-     * @tc.desc       : testing textShadow for text with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextShadow001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTSHADOW_0100
+     * @tc.desc   testing textShadow for text with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextShadow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTSHADOW_0200
-     * @tc.name       : testTextTextShadow002
-     * @tc.desc       : testing textShadow for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextShadow002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTSHADOW_0200
+     * @tc.desc   testing textShadow for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextShadow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_TEXTSHADOW_0300
-     * @tc.name       : testTextTextShadow003
-     * @tc.desc       : testing textShadow for text with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextTextShadow003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_TEXTSHADOW_0300
+     * @tc.desc   testing textShadow for text with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextTextShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextTextShadow003()).assertEqual(0)

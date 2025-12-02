@@ -26,26 +26,26 @@ export default function customComponentAccessibilityTextTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYTEXT_0100
-     * @tc.name       : testCustomComponentAccessibilityText001
-     * @tc.desc       : testing accessibilityText for CustomComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAccessibilityText001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYTEXT_0100
+     * @tc.desc   testing accessibilityText for CustomComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAccessibilityText001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAccessibilityText001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYTEXT_0200
-     * @tc.name       : testCustomComponentAccessibilityText002
-     * @tc.desc       : testing accessibilityText for CustomComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentAccessibilityText002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ACCESSIBILITYTEXT_0200
+     * @tc.desc   testing accessibilityText for CustomComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentAccessibilityText002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentAccessibilityText002()).assertEqual(0)

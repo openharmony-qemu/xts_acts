@@ -56,13 +56,13 @@ export default function SwiperAttribute_5() {
       console.info("SwiperAttribute_5 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ATTRIBUTE_0050
-     * @tc.name       : SwiperAttribute_0050
-     * @tc.desc       : change parent attribute and set parent margin to 20
-     * @tc.level      : Level 1
-     * @tc.type       : Function
-     * @tc.size       :
+    /**
+     * @tc.name   SwiperAttribute_0050
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ATTRIBUTE_0050
+     * @tc.desc   change parent attribute and set parent margin to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperAttribute_0050', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperAttribute_0050] START');

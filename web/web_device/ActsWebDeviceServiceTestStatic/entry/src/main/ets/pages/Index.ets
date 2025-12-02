@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-pl
 import hilog from '@ohos.hilog'
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
@@ -55,7 +55,7 @@ struct MyStateSample {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;

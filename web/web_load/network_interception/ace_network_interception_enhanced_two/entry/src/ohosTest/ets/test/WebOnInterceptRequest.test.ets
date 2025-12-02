@@ -54,14 +54,14 @@ export default function webOnInterceptRequestTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONINTERCEPTREQUEST_0100
-    * @tc.name        : testOnInterceptRequest001
-    * @tc.desc        : test onInterceptRequest normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnInterceptRequest001
+     * @tc.number SUB_WEB_ONINTERCEPTREQUEST_0100
+     * @tc.desc   test onInterceptRequest normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnInterceptRequest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnInterceptRequest001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -71,14 +71,14 @@ export default function webOnInterceptRequestTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONINTERCEPTREQUEST_0200
-    * @tc.name        : testOnInterceptRequest002
-    * @tc.desc        : test onInterceptRequest with return code 404
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnInterceptRequest002
+     * @tc.number SUB_WEB_ONINTERCEPTREQUEST_0200
+     * @tc.desc   test onInterceptRequest with return code 404
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnInterceptRequest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitOnInterceptRequest002", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;

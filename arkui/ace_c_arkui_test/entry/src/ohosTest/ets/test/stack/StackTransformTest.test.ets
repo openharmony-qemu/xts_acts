@@ -26,26 +26,26 @@ export default function stackTransformTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_TRANSFORM_0100
-     * @tc.name       : testStackTransform001
-     * @tc.desc       : testing transform for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackTransform001
+     * @tc.number SUB_ARKUI_CAPI_STACK_TRANSFORM_0100
+     * @tc.desc   testing transform for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackTransform001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackTransform001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_TRANSFORM_0200
-     * @tc.name       : testStackTransform002
-     * @tc.desc       : testing transform for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackTransform002
+     * @tc.number SUB_ARKUI_CAPI_STACK_TRANSFORM_0200
+     * @tc.desc   testing transform for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackTransform002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackTransform002()).assertEqual(0)

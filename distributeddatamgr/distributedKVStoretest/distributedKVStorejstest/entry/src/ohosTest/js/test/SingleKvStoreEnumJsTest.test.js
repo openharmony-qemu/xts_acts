@@ -19,7 +19,6 @@ export default function singleKvStoreEnumTest(){
 describe('singleKvStoreEnumTest', function () {
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_KEY_LENGTH_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0800
      * @tc.desc   Test Js Enum Value Constants.MAX_KEY_LENGTH
@@ -34,7 +33,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_VALUE_LENGTH_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1200
      * @tc.desc   Test Js Enum Value Constants.MAX_VALUE_LENGTH
@@ -50,7 +48,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_VALUE_LENGTH_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_2500
      * @tc.desc   Test Js Enum Value Constants.MAX_VALUE_LENGTH
@@ -68,7 +65,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_KEY_LENGTH_DEVICE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0900
      * @tc.desc   Test Js Enum Value Constants.MAX_KEY_LENGTH_DEVICE
@@ -83,7 +79,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_STORE_ID_LENGTH_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1100
      * @tc.desc   Test Js Enum Value Constants.MAX_STORE_ID_LENGTH
@@ -98,7 +93,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_QUERY_LENGTH_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1000
      * @tc.desc   Test Js Enum Value Constants.MAX_QUERY_LENGTH
@@ -113,7 +107,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_MAX_BATCH_SIZE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0700
      * @tc.desc   Test Js Enum Value Constants.MAX_BATCH_SIZE
@@ -128,7 +121,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_STRING_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_2100
      * @tc.desc   Test Js Enum Value Valuetype.STRING
@@ -143,7 +135,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_INTEGER_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0600
      * @tc.desc   Test Js Enum Value Valuetype.INTEGER
@@ -158,7 +149,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_FLOAT_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0500
      * @tc.desc   Test Js Enum Value Valuetype.FLOAT
@@ -173,7 +163,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_BYTEARRAY_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0200
      * @tc.desc   Test Js Enum Value Valuetype.BYTEARRAY
@@ -188,7 +177,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_BOOLEAN_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0100
      * @tc.desc   Test Js Enum Value Valuetype.BOOLEAN
@@ -203,7 +191,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_DOUBLE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0400
      * @tc.desc   Test Js Enum Value Valuetype.DOUBLE
@@ -218,7 +205,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_PULL_ONLY_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1300
      * @tc.desc   Test Js Enum Value Syncmode.PULL_ONLY
@@ -233,7 +219,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_PUSH_ONLY_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1400
      * @tc.desc   Test Js Enum Value Syncmode.PUSH_ONLY
@@ -248,7 +233,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_PUSH_PULL_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1500
      * @tc.desc   Test Js Enum Value Syncmode.PUSH_PULL
@@ -263,7 +247,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_SUBSCRIBE_TYPE_LOCAL_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_2300
      * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_LOCAL
@@ -278,7 +261,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_SUBSCRIBE_TYPE_REMOTE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_2400
      * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_REMOTE
@@ -293,7 +275,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_SUBSCRIBE_TYPE_ALL_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_2200
      * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_ALL
@@ -308,7 +289,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_DEVICE_COLLABORATION_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_0300
      * @tc.desc   Test Js Enum Value Kvstoretype.DEVICE_COLLABORATION
@@ -323,7 +303,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_SINGLE_VERSION_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_2000
      * @tc.desc   Test Js Enum Value Kvstoretype.SINGLE_VERSION
@@ -338,7 +317,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_S1_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1600
      * @tc.desc   Test Js Enum Value Securitylevel.S1
@@ -353,7 +331,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_S2_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1700
      * @tc.desc   Test Js Enum Value Securitylevel.S2
@@ -368,7 +345,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_S3_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1800
      * @tc.desc   Test Js Enum Value Securitylevel.S3
@@ -383,7 +359,6 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTOREENUM_S4_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSingleKvStoreEnumJsApiTest_1900
      * @tc.desc   Test Js Enum Value Securitylevel.S4

@@ -51,12 +51,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface25
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2500
-     * @tc.name testHiprofilerInterface25
-     * @tc.desc 验证getAppNativeMemInfoAsync接口调用返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoAsync接口调用返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiprofilerInterface25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2500 start");
@@ -87,12 +87,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface26
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2600
-     * @tc.name testHiprofilerInterface26
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口传入true返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口传入true返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiprofilerInterface26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2600 start");
@@ -123,12 +123,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface27
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2700
-     * @tc.name testHiprofilerInterface27
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口传入false返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口传入false返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiprofilerInterface27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2700 start");
@@ -159,12 +159,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface28
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2800
-     * @tc.name testHiprofilerInterface28
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口传入undefined值返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口传入undefined值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2800 start");
@@ -182,12 +182,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface29
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2900
-     * @tc.name testHiprofilerInterface29
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口不传参返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口不传参返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_2900 start");
@@ -218,12 +218,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface30
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3000
-     * @tc.name testHiprofilerInterface30
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入true返回内存值不一致
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入true返回内存值不一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3000 start");
@@ -269,12 +269,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface31
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3100
-     * @tc.name testHiprofilerInterface31
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入false返回内存值一致
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入false返回内存值一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3100 start");
@@ -318,12 +318,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface33
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3300
-     * @tc.name testHiprofilerInterface33
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入true稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入true稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3300 start");
@@ -357,12 +357,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface34
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3400
-     * @tc.name testHiprofilerInterface34
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入false稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入false稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3400 start");
@@ -396,12 +396,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface35
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3500
-     * @tc.name testHiprofilerInterface35
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口传入true返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口传入true返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3500 start");
@@ -432,12 +432,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface36
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3600
-     * @tc.name testHiprofilerInterface36
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口传入false返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口传入false返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3600 start");
@@ -468,12 +468,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface37
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3700
-     * @tc.name testHiprofilerInterface37
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入true返回内存值不一致
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入true返回内存值不一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3700 start");
@@ -519,12 +519,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface38
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3800
-     * @tc.name testHiprofilerInterface38
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入false返回内存值一致
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入false返回内存值一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3800 start");
@@ -568,12 +568,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface39
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_3900
-     * @tc.name testHiprofilerInterface39
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入true稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入true稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_3900 start");
@@ -607,12 +607,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface40
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4000
-     * @tc.name testHiprofilerInterface40
-     * @tc.desc 验证getAppNativeMemInfoWithCache接口连续传入false稳定性
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口连续传入false稳定性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4000 start");
@@ -646,12 +646,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testHiprofilerInterface41
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4100
-     * @tc.name testHiprofilerInterface41
-     * @tc.desc 验证getAppVMObjectUsedSize接口调用返回内存值正常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppVMObjectUsedSize接口调用返回内存值正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 start");
@@ -670,12 +670,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface42
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4200
-     * @tc.name testHiprofilerInterface42
-     * @tc.desc 验证getAppVMObjectUsedSize接口不连续调用测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppVMObjectUsedSize接口不连续调用测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 start");
@@ -698,12 +698,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface43
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4300
-     * @tc.name testHiprofilerInterface43
-     * @tc.desc 验证getAppVMObjectUsedSize接口连续调用测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getAppVMObjectUsedSize接口连续调用测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 start");
@@ -725,12 +725,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface44
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4400
-     * @tc.name testHiprofilerInterface44
-     * @tc.desc 验证getAppVMObjectUsedSize接口调用稳定性测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getAppVMObjectUsedSize接口调用稳定性测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4400 start");
@@ -751,12 +751,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface45
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4500
-     * @tc.name testHiprofilerInterface45
-     * @tc.desc 验证getGraphicsMemorySummary接口正常入参测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口正常入参测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4500 start");
@@ -778,12 +778,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface46
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4600
-     * @tc.name testHiprofilerInterface46
-     * @tc.desc 验证getGraphicsMemorySummary接口入参下边界值测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参下边界值测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4600 start");
@@ -805,12 +805,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface47
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4700
-     * @tc.name testHiprofilerInterface47
-     * @tc.desc 验证getGraphicsMemorySummary接口入参上边界值测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参上边界值测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4700 start");
@@ -832,12 +832,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface48
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4800
-     * @tc.name testHiprofilerInterface48
-     * @tc.desc 验证getGraphicsMemorySummary接口入参为空测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参为空测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4800 start");
@@ -859,12 +859,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface49
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_4900
-     * @tc.name testHiprofilerInterface49
-     * @tc.desc 验证getGraphicsMemorySummary接口入参下边界以下值测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参下边界以下值测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_4900 start");
@@ -886,12 +886,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface50
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5000
-     * @tc.name testHiprofilerInterface50
-     * @tc.desc 验证getGraphicsMemorySummary接口入参上边界以上值测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参上边界以上值测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5000 start");
@@ -913,12 +913,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface51
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5100
-     * @tc.name testHiprofilerInterface51
-     * @tc.desc 验证getGraphicsMemorySummary接口入参为undefined测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参为undefined测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5100 start");
@@ -935,12 +935,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface52
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5200
-     * @tc.name testHiprofilerInterface52
-     * @tc.desc 验证getGraphicsMemorySummary接口入参为null测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参为null测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5200 start");
@@ -957,12 +957,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface53
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5300
-     * @tc.name testHiprofilerInterface53
-     * @tc.desc 验证getGraphicsMemorySummary接口入参为负数测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证getGraphicsMemorySummary接口入参为负数测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5300 start");
@@ -984,12 +984,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface54
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5400
-     * @tc.name testHiprofilerInterface54
-     * @tc.desc 验证getGraphicsMemorySummary接口调用稳定性测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证getGraphicsMemorySummary接口调用稳定性测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5400 start");
@@ -1013,12 +1013,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface55
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5500
-     * @tc.name testHiprofilerInterface55
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为-5测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为-5测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 start");
@@ -1040,12 +1040,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface56
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5600
-     * @tc.name testHiprofilerInterface56
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为0测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为0测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 start");
@@ -1067,12 +1067,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface57
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5700
-     * @tc.name testHiprofilerInterface57
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为2测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为2测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 start");
@@ -1094,12 +1094,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface58
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5800
-     * @tc.name testHiprofilerInterface58
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为5测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为5测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 start");
@@ -1121,12 +1121,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface59
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5900
-     * @tc.name testHiprofilerInterface59
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为3600测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为3600测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_5900 start");
@@ -1148,12 +1148,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface60
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_6000
-     * @tc.name testHiprofilerInterface60
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为4000测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为4000测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_6000 start");
@@ -1175,12 +1175,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface61
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_6100
-     * @tc.name testHiprofilerInterface61
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary入参interval为5，summary为nullptr测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary入参interval为5，summary为nullptr测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHiprofilerInterface61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_6100 start");
@@ -1198,12 +1198,12 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   testHiprofilerInterface62
      * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_6200
-     * @tc.name testHiprofilerInterface62
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemorySummary接口调用稳定性测试
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemorySummary接口调用稳定性测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiprofilerInterface62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_DFX_DFR_Hiprofiler_Interface_6200 start");

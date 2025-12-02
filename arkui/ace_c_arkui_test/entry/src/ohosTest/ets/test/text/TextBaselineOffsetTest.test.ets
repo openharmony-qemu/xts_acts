@@ -26,39 +26,39 @@ export default function textBaselineOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BASELINEOFFSET_0100
-     * @tc.name       : testTextBaselineOffset001
-     * @tc.desc       : testing baselineoffset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBaselineOffset001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BASELINEOFFSET_0100
+     * @tc.desc   testing baselineoffset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBaselineOffset001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBaselineOffset001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BASELINEOFFSET_0200
-     * @tc.name       : testTextBaselineOffset002
-     * @tc.desc       : testing baselineoffset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBaselineOffset002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BASELINEOFFSET_0200
+     * @tc.desc   testing baselineoffset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBaselineOffset002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBaselineOffset002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BASELINEOFFSET_0300
-     * @tc.name       : testTextBaselineOffset003
-     * @tc.desc       : testing baselineoffset for text with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBaselineOffset003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BASELINEOFFSET_0300
+     * @tc.desc   testing baselineoffset for text with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBaselineOffset003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBaselineOffset003()).assertEqual(0)

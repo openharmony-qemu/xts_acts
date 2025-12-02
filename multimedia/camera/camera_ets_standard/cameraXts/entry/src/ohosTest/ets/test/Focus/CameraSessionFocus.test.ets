@@ -881,12 +881,12 @@ export default function CameraSessionFocusTest() {
     });
 
     /**
-     * @tc.number    : SESSION_FOCUS_001
-     * @tc.name      : isFocusModeSupported_photo_abnormal_001
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_001
+     * @tc.number SESSION_FOCUS_001
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_001';
@@ -894,12 +894,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_002
-     * @tc.name      : isFocusModeSupported_photo_abnormal_002
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_002
+     * @tc.number SESSION_FOCUS_002
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_002';
@@ -908,12 +908,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_003
-     * @tc.name      : isFocusModeSupported_photo_abnormal_003
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_003
+     * @tc.number SESSION_FOCUS_003
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_003';
@@ -921,12 +921,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_004
-     * @tc.name      : isFocusModeSupported_photo_abnormal_004
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_LOCKED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_004
+     * @tc.number SESSION_FOCUS_004
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_004', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_004';
@@ -934,12 +934,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_005
-     * @tc.name      : isFocusModeSupported_video_abnormal_001
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_001
+     * @tc.number SESSION_FOCUS_005
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_001';
@@ -947,12 +947,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_006
-     * @tc.name      : isFocusModeSupported_video_abnormal_002
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_002
+     * @tc.number SESSION_FOCUS_006
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_002';
@@ -961,12 +961,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_007
-     * @tc.name      : isFocusModeSupported_video_abnormal_003
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_003
+     * @tc.number SESSION_FOCUS_007
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_003';
@@ -974,12 +974,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_008
-     * @tc.name      : isFocusModeSupported_video_abnormal_004
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_LOCKED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_004
+     * @tc.number SESSION_FOCUS_008
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_004', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_004';
@@ -987,12 +987,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_009
-     * @tc.name      : isFocusModeSupported_secure_photo_abnormal_001
-     * @tc.desc      : No config, only isFocusModeSupported()-mode->FOCUS_MODE_MANUAL -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_secure_photo_abnormal_001
+     * @tc.number SESSION_FOCUS_009
+     * @tc.desc   No config, only isFocusModeSupported()-mode->FOCUS_MODE_MANUAL -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_secure_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_secure_photo_abnormal_001';
@@ -1000,12 +1000,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_010
-     * @tc.name      : isFocusModeSupported_secure_photo_abnormal_002
-     * @tc.desc      : No config, only isFocusModeSupported()-mode->FOCUS_MODE_CONTINUOUS_AUTO -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_secure_photo_abnormal_002
+     * @tc.number SESSION_FOCUS_010
+     * @tc.desc   No config, only isFocusModeSupported()-mode->FOCUS_MODE_CONTINUOUS_AUTO -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_secure_photo_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_secure_photo_abnormal_002';
@@ -1014,12 +1014,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_011
-     * @tc.name      : isFocusModeSupported_secure_photo_abnormal_003
-     * @tc.desc      : No config, only isFocusModeSupported()-mode->FOCUS_MODE_AUTO -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_secure_photo_abnormal_003
+     * @tc.number SESSION_FOCUS_011
+     * @tc.desc   No config, only isFocusModeSupported()-mode->FOCUS_MODE_AUTO -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_secure_photo_abnormal_003', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_secure_photo_abnormal_003';
@@ -1027,12 +1027,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_012
-     * @tc.name      : isFocusModeSupported_secure_photo_abnormal_004
-     * @tc.desc      : No config, only isFocusModeSupported()-mode->FOCUS_MODE_LOCKED -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_secure_photo_abnormal_004
+     * @tc.number SESSION_FOCUS_012
+     * @tc.desc   No config, only isFocusModeSupported()-mode->FOCUS_MODE_LOCKED -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_secure_photo_abnormal_004', Level.LEVEL0, (done: Function) => {
       const testName = 'isFocusModeSupported_secure_photo_abnormal_004';
@@ -1040,12 +1040,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_013
-     * @tc.name      : setFocusMode_photo_001
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_001
+     * @tc.number SESSION_FOCUS_013
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_001';
@@ -1053,12 +1053,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_014
-     * @tc.name      : setFocusMode_photo_002
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_002
+     * @tc.number SESSION_FOCUS_014
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_002';
@@ -1066,12 +1066,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_015
-     * @tc.name      : setFocusMode_photo_003
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_003
+     * @tc.number SESSION_FOCUS_015
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_003';
@@ -1079,12 +1079,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_016
-     * @tc.name      : setFocusMode_photo_004
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_LOCKED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_004
+     * @tc.number SESSION_FOCUS_016
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_004';
@@ -1092,12 +1092,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_017
-     * @tc.name      : setFocusMode_video_001
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_001
+     * @tc.number SESSION_FOCUS_017
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_001';
@@ -1105,12 +1105,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_018
-     * @tc.name      : setFocusMode_video_002
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_002
+     * @tc.number SESSION_FOCUS_018
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_002';
@@ -1118,12 +1118,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_019
-     * @tc.name      : setFocusMode_video_003
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_003
+     * @tc.number SESSION_FOCUS_019
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_003';
@@ -1131,12 +1131,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_020
-     * @tc.name      : setFocusMode_video_004
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_LOCKED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_004
+     * @tc.number SESSION_FOCUS_020
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_004';
@@ -1144,12 +1144,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_021
-     * @tc.name      : setFocusMode_photo_abnormal_001
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_001
+     * @tc.number SESSION_FOCUS_021
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_001';
@@ -1157,12 +1157,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_022
-     * @tc.name      : setFocusMode_photo_abnormal_002
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_002
+     * @tc.number SESSION_FOCUS_022
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_002';
@@ -1170,12 +1170,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_023
-     * @tc.name      : setFocusMode_photo_abnormal_003
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_003
+     * @tc.number SESSION_FOCUS_023
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_003';
@@ -1183,12 +1183,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_024
-     * @tc.name      : setFocusMode_photo_abnormal_004
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_004
+     * @tc.number SESSION_FOCUS_024
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_004';
@@ -1196,12 +1196,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_025
-     * @tc.name      : setFocusMode_video_abnormal_001
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_001
+     * @tc.number SESSION_FOCUS_025
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_001';
@@ -1209,12 +1209,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_026
-     * @tc.name      : setFocusMode_video_abnormal_002
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_002
+     * @tc.number SESSION_FOCUS_026
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_002';
@@ -1222,12 +1222,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_027
-     * @tc.name      : setFocusMode_video_abnormal_003
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_003
+     * @tc.number SESSION_FOCUS_027
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_003';
@@ -1235,12 +1235,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_028
-     * @tc.name      : setFocusMode_video_abnormal_004
-     * @tc.desc      : No config, only setFocusMode() -> error_code: 7400103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_004
+     * @tc.number SESSION_FOCUS_028
+     * @tc.desc   No config, only setFocusMode() -> error_code: 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_004';
@@ -1248,12 +1248,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_029
-     * @tc.name      : isFocusModeSupported_photo_001
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_001
+     * @tc.number SESSION_FOCUS_029
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_001';
@@ -1261,12 +1261,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_030
-     * @tc.name      : isFocusModeSupported_photo_002
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_002
+     * @tc.number SESSION_FOCUS_030
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_002';
@@ -1274,12 +1274,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_031
-     * @tc.name      : isFocusModeSupported_photo_003
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_003
+     * @tc.number SESSION_FOCUS_031
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_003';
@@ -1287,12 +1287,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_032
-     * @tc.name      : isFocusModeSupported_photo_004
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_LOCKED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_004
+     * @tc.number SESSION_FOCUS_032
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_004';
@@ -1300,12 +1300,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_033
-     * @tc.name      : isFocusModeSupported_video_001
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_001
+     * @tc.number SESSION_FOCUS_033
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_001';
@@ -1313,12 +1313,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_034
-     * @tc.name      : isFocusModeSupported_video_002
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_002
+     * @tc.number SESSION_FOCUS_034
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_002';
@@ -1326,12 +1326,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_035
-     * @tc.name      : isFocusModeSupported_video_003
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_003
+     * @tc.number SESSION_FOCUS_035
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_003';
@@ -1339,12 +1339,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_036
-     * @tc.name      : isFocusModeSupported_video_004
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_LOCKED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_004
+     * @tc.number SESSION_FOCUS_036
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_004';
@@ -1352,12 +1352,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_037
-     * @tc.name      : setFocusMode_photo_abnormal_005
-     * @tc.desc      : setFocusMode-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_005
+     * @tc.number SESSION_FOCUS_037
+     * @tc.desc   setFocusMode-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_005';
@@ -1365,12 +1365,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_038
-     * @tc.name      : setFocusMode_photo_abnormal_006
-     * @tc.desc      : setFocusMode-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_006
+     * @tc.number SESSION_FOCUS_038
+     * @tc.desc   setFocusMode-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_006';
@@ -1378,12 +1378,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_039
-     * @tc.name      : setFocusMode_photo_abnormal_007
-     * @tc.desc      : setFocusMode-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_abnormal_007
+     * @tc.number SESSION_FOCUS_039
+     * @tc.desc   setFocusMode-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_abnormal_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_abnormal_007';
@@ -1391,12 +1391,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_040
-     * @tc.name      : setFocusMode_video_abnormal_005
-     * @tc.desc      : setFocusMode-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_005
+     * @tc.number SESSION_FOCUS_040
+     * @tc.desc   setFocusMode-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_005';
@@ -1404,12 +1404,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_041
-     * @tc.name      : setFocusMode_video_abnormal_006
-     * @tc.desc      : setFocusMode-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_006
+     * @tc.number SESSION_FOCUS_041
+     * @tc.desc   setFocusMode-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_006';
@@ -1417,12 +1417,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_042
-     * @tc.name      : setFocusMode_video_abnormal_007
-     * @tc.desc      : setFocusMode-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_abnormal_007
+     * @tc.number SESSION_FOCUS_042
+     * @tc.desc   setFocusMode-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_abnormal_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_abnormal_007';
@@ -1430,12 +1430,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_043
-     * @tc.name      : isFocusModeSupported_photo_abnormal_005
-     * @tc.desc      : isFocusModeSupported-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_005
+     * @tc.number SESSION_FOCUS_043
+     * @tc.desc   isFocusModeSupported-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_005';
@@ -1443,12 +1443,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_044
-     * @tc.name      : isFocusModeSupported_photo_abnormal_006
-     * @tc.desc      : isFocusModeSupported-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_006
+     * @tc.number SESSION_FOCUS_044
+     * @tc.desc   isFocusModeSupported-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_006';
@@ -1456,12 +1456,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_045
-     * @tc.name      : isFocusModeSupported_photo_abnormal_007
-     * @tc.desc      : isFocusModeSupported-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_abnormal_007
+     * @tc.number SESSION_FOCUS_045
+     * @tc.desc   isFocusModeSupported-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_abnormal_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_abnormal_007';
@@ -1469,12 +1469,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_046
-     * @tc.name      : isFocusModeSupported_video_abnormal_005
-     * @tc.desc      : isFocusModeSupported-mode->invalid
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_005
+     * @tc.number SESSION_FOCUS_046
+     * @tc.desc   isFocusModeSupported-mode->invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_005';
@@ -1482,12 +1482,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_047
-     * @tc.name      : isFocusModeSupported_video_abnormal_006
-     * @tc.desc      : isFocusModeSupported-mode->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_006
+     * @tc.number SESSION_FOCUS_047
+     * @tc.desc   isFocusModeSupported-mode->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_006';
@@ -1495,12 +1495,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_048
-     * @tc.name      : isFocusModeSupported_video_abnormal_007
-     * @tc.desc      : isFocusModeSupported-mode->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_abnormal_007
+     * @tc.number SESSION_FOCUS_048
+     * @tc.desc   isFocusModeSupported-mode->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_abnormal_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_abnormal_007';
@@ -1508,12 +1508,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_049
-     * @tc.name      : getFocusMode_photo_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_photo_001
+     * @tc.number SESSION_FOCUS_049
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_photo_001';
@@ -1542,12 +1542,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_050
-     * @tc.name      : getFocusMode_video_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_video_001
+     * @tc.number SESSION_FOCUS_050
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_video_001';
@@ -1581,12 +1581,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_051
-     * @tc.name      : getFocusMode_photo_abnormal_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_photo_abnormal_001
+     * @tc.number SESSION_FOCUS_051
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_photo_abnormal_001';
@@ -1594,12 +1594,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_052
-     * @tc.name      : getFocusMode_video_abnormal_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_video_abnormal_001
+     * @tc.number SESSION_FOCUS_052
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_video_abnormal_001';
@@ -1607,12 +1607,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_053
-     * @tc.name      : getFocusMode_secure_photo_abnormal_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_secure_photo_abnormal_001
+     * @tc.number SESSION_FOCUS_053
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_secure_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_secure_photo_abnormal_001';
@@ -1620,12 +1620,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_054
-     * @tc.name      : isFocusModeSupported_photo_preconfig_001
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_preconfig_001
+     * @tc.number SESSION_FOCUS_054
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_preconfig_001';
@@ -1634,12 +1634,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_055
-     * @tc.name      : isFocusModeSupported_photo_preconfig_002
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_preconfig_002
+     * @tc.number SESSION_FOCUS_055
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_preconfig_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_preconfig_002';
@@ -1648,12 +1648,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_056
-     * @tc.name      : isFocusModeSupported_photo_preconfig_003
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_preconfig_003
+     * @tc.number SESSION_FOCUS_056
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_preconfig_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_preconfig_003';
@@ -1662,12 +1662,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_057
-     * @tc.name      : isFocusModeSupported_photo_preconfig_004
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_photo_preconfig_004
+     * @tc.number SESSION_FOCUS_057
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_photo_preconfig_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_photo_preconfig_004';
@@ -1676,12 +1676,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_058
-     * @tc.name      : isFocusModeSupported_video_preconfig_001
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_preconfig_001
+     * @tc.number SESSION_FOCUS_058
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_preconfig_001';
@@ -1690,12 +1690,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_059
-     * @tc.name      : isFocusModeSupported_video_preconfig_002
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_preconfig_002
+     * @tc.number SESSION_FOCUS_059
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_preconfig_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_preconfig_002';
@@ -1704,12 +1704,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_060
-     * @tc.name      : isFocusModeSupported_video_preconfig_003
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_preconfig_003
+     * @tc.number SESSION_FOCUS_060
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_preconfig_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_preconfig_003';
@@ -1718,12 +1718,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_061
-     * @tc.name      : isFocusModeSupported_video_preconfig_004
-     * @tc.desc      : isFocusModeSupported-mode->FOCUS_MODE_AUTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isFocusModeSupported_video_preconfig_004
+     * @tc.number SESSION_FOCUS_061
+     * @tc.desc   isFocusModeSupported-mode->FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isFocusModeSupported_video_preconfig_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'isFocusModeSupported_video_preconfig_004';
@@ -1732,12 +1732,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_062
-     * @tc.name      : getFocusMode_photo_preconfig_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_photo_preconfig_001
+     * @tc.number SESSION_FOCUS_062
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_photo_preconfig_001';
@@ -1746,12 +1746,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_063
-     * @tc.name      : getFocusMode_video_preconfig_001
-     * @tc.desc      : getFocusMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getFocusMode_video_preconfig_001
+     * @tc.number SESSION_FOCUS_063
+     * @tc.desc   getFocusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getFocusMode_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getFocusMode_video_preconfig_001';
@@ -1760,12 +1760,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_064
-     * @tc.name      : setFocusMode_photo_preconfig_001
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_photo_preconfig_001
+     * @tc.number SESSION_FOCUS_064
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_photo_preconfig_001';
@@ -1774,12 +1774,12 @@ export default function CameraSessionFocusTest() {
     })
 
     /**
-     * @tc.number    : SESSION_FOCUS_065
-     * @tc.name      : setFocusMode_video_preconfig_001
-     * @tc.desc      : setFocusMode-mode->FOCUS_MODE_MANUAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setFocusMode_video_preconfig_001
+     * @tc.number SESSION_FOCUS_065
+     * @tc.desc   setFocusMode-mode->FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setFocusMode_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setFocusMode_video_preconfig_001';

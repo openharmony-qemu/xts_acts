@@ -47,16 +47,16 @@ export default function underlineColor() {
       console.info("underlineColor after each called");
     });
 
+
+
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name      testGetImageAttr010
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   underlineColor_0100
+     * @tc.number underlineColor_0100
+     * @tc.desc   underlineColor_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('underlineColor_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('underlineColor_0100 START');
       let driver = await Driver.create()

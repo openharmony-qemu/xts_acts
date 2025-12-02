@@ -66,12 +66,12 @@ export default function getAllPropertiesTest() {
     });
 
     /**
-     * @tc.number    : METADATA_GET_ALL_PROPERTIES_001
-     * @tc.name      : getAllProperties_promise_001
-     * @tc.desc      : getAllProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAllProperties_promise_001
+     * @tc.number METADATA_GET_ALL_PROPERTIES_001
+     * @tc.desc   getAllProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAllProperties_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAllProperties_promise_001';
@@ -80,12 +80,12 @@ export default function getAllPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_GET_ALL_PROPERTIES_002
-     * @tc.name      : getAllProperties_promise_002
-     * @tc.desc      : getAllProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAllProperties_promise_002
+     * @tc.number METADATA_GET_ALL_PROPERTIES_002
+     * @tc.desc   getAllProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAllProperties_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAllProperties_promise_002';
@@ -94,12 +94,12 @@ export default function getAllPropertiesTest() {
     })
 
     /**
-     * @tc.number    : METADATA_GET_ALL_PROPERTIES_003
-     * @tc.name      : getAllProperties_promise_003
-     * @tc.desc      : getAllProperties
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAllProperties_promise_003
+     * @tc.number METADATA_GET_ALL_PROPERTIES_003
+     * @tc.desc   getAllProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAllProperties_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAllProperties_promise_003';

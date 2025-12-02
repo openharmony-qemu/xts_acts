@@ -26,52 +26,52 @@ export default function spanBaseLineOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0100
-     * @tc.name       : testSpanBaseLineOffset001
-     * @tc.desc       : testing baselineOffset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanBaseLineOffset001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0100
+     * @tc.desc   testing baselineOffset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanBaseLineOffset001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanBaseLineOffset001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0200
-     * @tc.name       : testSpanBaseLineOffset002
-     * @tc.desc       : testing baselineOffset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanBaseLineOffset002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0200
+     * @tc.desc   testing baselineOffset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanBaseLineOffset002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanBaseLineOffset002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0300
-     * @tc.name       : testSpanBaseLineOffset003
-     * @tc.desc       : testing baselineOffset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanBaseLineOffset003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0300
+     * @tc.desc   testing baselineOffset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanBaseLineOffset003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanBaseLineOffset003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0400
-     * @tc.name       : testSpanBaseLineOffset004
-     * @tc.desc       : testing baselineOffset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanBaseLineOffset004
+     * @tc.number SUB_ARKUI_CAPI_SPAN_BASELINE_OFFSET_0400
+     * @tc.desc   testing baselineOffset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanBaseLineOffset004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanBaseLineOffset004()).assertEqual(0)

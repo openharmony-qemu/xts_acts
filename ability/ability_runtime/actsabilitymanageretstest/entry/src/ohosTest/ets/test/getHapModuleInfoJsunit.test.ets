@@ -198,10 +198,12 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getHapModuleInfo_test_0100
-     * @tc.name: getHapModuleInfo:Obtains the HapModuleInfo object of the application.
-     * @tc.desc: Check the return type of the interface (by Promise)
-     * @tc.level  0
+     * @tc.name   context_getHapModuleInfo_test_0100
+     * @tc.number context_getHapModuleInfo_test_0100
+     * @tc.desc   Check the return type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getHapModuleInfo_test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getHapModuleInfo_test_0100] START');
@@ -225,10 +227,12 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getHapModuleInfo_test_0200
-     * @tc.name: getHapModuleInfo:Obtains the HapModuleInfo object of the application.
-     * @tc.desc: Check the return type of the interface (by Callback)
-     * @tc.level  0
+     * @tc.name   context_getHapModuleInfo_test_0200
+     * @tc.number context_getHapModuleInfo_test_0200
+     * @tc.desc   Check the return type of the interface (by Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getHapModuleInfo_test_0200', Level.LEVEL0, async (done: Function) => {
       let callback: ESObject;

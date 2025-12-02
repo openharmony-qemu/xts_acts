@@ -31,11 +31,13 @@ export default function WorkerTransmitTest() {
       console.info("TransContext end")
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Stage_StageContextSupportsWorker_0100
-     * @tc.name    .
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Stage_StageContextSupportsWorker_0100
+     * @tc.number SUB_AA_AMS_Stage_StageContextSupportsWorker_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Stage_StageContextSupportsWorker_0100', Level.LEVEL0, async (done : Function) => {
       TAG = 'SUB_AA_AMS_Stage_StageContextSupportsWorker_0100 == '
@@ -83,11 +85,13 @@ export default function WorkerTransmitTest() {
       done()
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Stage_StageContextSupportsWorker_0300
-     * @tc.name    .
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Stage_StageContextSupportsWorker_0300
+     * @tc.number SUB_AA_AMS_Stage_StageContextSupportsWorker_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Stage_StageContextSupportsWorker_0300', Level.LEVEL0, async (done : Function) => {
       TAG = 'SUB_AA_AMS_Stage_StageContextSupportsWorker_0300 == '
@@ -135,11 +139,13 @@ export default function WorkerTransmitTest() {
       done()
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Stage_StageContextSupportsWorker_0400
-     * @tc.name    .
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Stage_StageContextSupportsWorker_0400
+     * @tc.number SUB_AA_AMS_Stage_StageContextSupportsWorker_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Stage_StageContextSupportsWorker_0400', Level.LEVEL0, async (done : Function) => {
       TAG = 'SUB_AA_AMS_Stage_StageContextSupportsWorker_0400 == '
@@ -187,12 +193,14 @@ export default function WorkerTransmitTest() {
       done()
     })
 
-    /*
-    * @tc.number  SUB_AA_AMS_Stage_StageContextSupportsWorker_0800
-    * @tc.name    .
-    * @tc.desc    Function test
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_AMS_Stage_StageContextSupportsWorker_0800
+     * @tc.number SUB_AA_AMS_Stage_StageContextSupportsWorker_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AMS_Stage_StageContextSupportsWorker_0800', Level.LEVEL0, async (done : Function) => {
       TAG = 'SUB_AA_AMS_Stage_StageContextSupportsWorker_0800 == '
       console.info(TAG + "start")

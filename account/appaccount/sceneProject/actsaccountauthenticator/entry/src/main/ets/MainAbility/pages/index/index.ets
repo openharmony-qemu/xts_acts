@@ -31,6 +31,8 @@ struct Index {
         await accountMgr.setAppAccess("zhangsan", "com.example.actsaccountoperatetest", true);
         console.info('====>ServiceAbility setAppAccess stagetest zhangsan');
         await accountMgr.setAppAccess("zhangsan", "com.example.accounttstest", true);
+        console.info('====>ServiceAbility setAppAccess actsaccountoperatetest zhangsan');
+        await accountMgr.setAppAccess("zhangsan", "com.example.actsaccountoperatetest.static", true);
         console.info('====>ServiceAbility addAccount 02 onStart');
         accountMgr.createAccount("lisi", async (err)=>{
             console.info('====>ServiceAbility setAppAccess actsaccounttest lisi');
@@ -39,11 +41,15 @@ struct Index {
             await accountMgr.setAppAccess("lisi", "com.example.actsaccountoperatetest", true);
             console.info('====>ServiceAbility setAppAccess stagetest lisi');
             await accountMgr.setAppAccess("lisi", "com.example.accounttstest", true);
+            console.info('====>ServiceAbility setAppAccess actsaccountoperatetest lisi');
+            await accountMgr.setAppAccess("lisi", "com.example.actsaccountoperatetest.static", true);
             console.info('====>ServiceAbility addAccount 03 onStart');
             accountMgr.createAccount("wangwu", async (err)=>{
                 console.info('====>ServiceAbility enableAppAccess 03 onStart');
                 console.info('====>ServiceAbility setAppAccess actsaccounttest wangwu');
                 await accountMgr.setAppAccess("wangwu", "com.example.actsaccounttest", true)
+                console.info('====>ServiceAbility setAppAccess actsaccountoperatetest wangwu');
+                await accountMgr.setAppAccess("wangwu", "com.example.actsaccountoperatetest.static", true);
                 console.info('====>ServiceAbility setAppAccess stagetest wangwu');
                 await accountMgr.setAppAccess("wangwu", "com.example.accounttstest", true)
                 console.info('====>ServiceAbility setAppAccess actsaccountoperatetest wangwu');

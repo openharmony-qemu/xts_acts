@@ -24,12 +24,12 @@ export default function ActsOsAccountNdkTest() {
   describe('ActsOsAccountNdkTest', () => {
 
     /**
-     * @tc.number  : SUB_Account_OsAccount_GetName_0100
-     * @tc.name    : test OH_OsAccount_GetName Test Normal Scene
-     * @tc.desc    : Gets the name of the OS account to which the caller process belongs.
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Account_OsAccount_GetName_0100
+     * @tc.number SUB_Account_OsAccount_GetName_0100
+     * @tc.desc   Gets the name of the OS account to which the caller process belongs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Account_OsAccount_GetName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -45,12 +45,12 @@ export default function ActsOsAccountNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Account_OsAccount_GetName_0200
-     * @tc.name    : test OH_OsAccount_GetName Test 12300002 length is zero Scene
-     * @tc.desc    : Gets the name of the OS account to which the caller process belongs.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Account_OsAccount_GetName_0200
+     * @tc.number SUB_Account_OsAccount_GetName_0200
+     * @tc.desc   Gets the name of the OS account to which the caller process belongs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Account_OsAccount_GetName_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -67,12 +67,12 @@ export default function ActsOsAccountNdkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Account_OsAccount_GetName_0300
-     * @tc.name    : test OH_OsAccount_GetName Test 12300002 Buffer is nullptr Scene
-     * @tc.desc    : Gets the name of the OS account to which the caller process belongs.
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Account_OsAccount_GetName_0300
+     * @tc.number SUB_Account_OsAccount_GetName_0300
+     * @tc.desc   Gets the name of the OS account to which the caller process belongs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Account_OsAccount_GetName_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

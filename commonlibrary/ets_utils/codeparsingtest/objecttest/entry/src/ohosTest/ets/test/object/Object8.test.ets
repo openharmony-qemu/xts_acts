@@ -218,12 +218,12 @@ export default function Object8Test() {
     })
 
     /**
+     * @tc.name   Object8Test001
      * @tc.number SUB_BUILTINS_Object8_TEST_0100
-     * @tc.name Object8Test001
-     * @tc.desc test object fromEntries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testMapToObject();
@@ -231,24 +231,24 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test002
      * @tc.number SUB_BUILTINS_Object8_TEST_0200
-     * @tc.name Object8Test002
-     * @tc.desc test object fromEntries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testArrayToObject();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object8Test003
      * @tc.number SUB_BUILTINS_Object8_TEST_0300
-     * @tc.name Object8Test003
-     * @tc.desc test object fromEntries for object transformation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries for object transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn03_testObjectTransformation();
@@ -256,12 +256,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test004
      * @tc.number SUB_BUILTINS_Object8_TEST_0400
-     * @tc.name Object8Test004
-     * @tc.desc test object fromEntries with empty map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testEmptyMapToObject();
@@ -269,12 +269,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test005
      * @tc.number SUB_BUILTINS_Object8_TEST_0500
-     * @tc.name Object8Test005
-     * @tc.desc test object fromEntries with number key array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with number key array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn05_testNumberKeyArrayToObject();
@@ -282,12 +282,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test006
      * @tc.number SUB_BUILTINS_Object8_TEST_0600
-     * @tc.name Object8Test006
-     * @tc.desc test object fromEntries with boolean key array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with boolean key array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testBooleanKeyArrayToObject();
@@ -295,12 +295,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test007
      * @tc.number SUB_BUILTINS_Object8_TEST_0700
-     * @tc.name Object8Test007
-     * @tc.desc test object fromEntries with duplicate keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with duplicate keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testDuplicateKeyInMap();
@@ -308,12 +308,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test008
      * @tc.number SUB_BUILTINS_Object8_TEST_0800
-     * @tc.name Object8Test008
-     * @tc.desc test object fromEntries with duplicate keys in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with duplicate keys in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testDuplicateKeyInArray();
@@ -321,12 +321,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test009
      * @tc.number SUB_BUILTINS_Object8_TEST_0900
-     * @tc.name Object8Test009
-     * @tc.desc test object fromEntries with undefined value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with undefined value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testUndefinedValueInMap();
@@ -334,12 +334,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test010
      * @tc.number SUB_BUILTINS_Object8_TEST_1000
-     * @tc.name Object8Test010
-     * @tc.desc test object fromEntries with null value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with null value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testNullValueInArray();
@@ -347,12 +347,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test011
      * @tc.number SUB_BUILTINS_Object8_TEST_1100
-     * @tc.name Object8Test011
-     * @tc.desc test object fromEntries with object value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testObjectValueInMap();
@@ -360,12 +360,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test012
      * @tc.number SUB_BUILTINS_Object8_TEST_1200
-     * @tc.name Object8Test012
-     * @tc.desc test object fromEntries with array value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn12_testArrayValueInArray();
@@ -373,12 +373,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test013
      * @tc.number SUB_BUILTINS_Object8_TEST_1300
-     * @tc.name Object8Test013
-     * @tc.desc test object fromEntries with symbol key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with symbol key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testSymbolKeyInArray();
@@ -386,12 +386,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test014
      * @tc.number SUB_BUILTINS_Object8_TEST_1400
-     * @tc.name Object8Test014
-     * @tc.desc test object fromEntries with mixed keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testMixedKeysInMap();
@@ -399,12 +399,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test015
      * @tc.number SUB_BUILTINS_Object8_TEST_1500
-     * @tc.name Object8Test015
-     * @tc.desc test object fromEntries with function value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with function value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testFunctionValueInMap();
@@ -412,12 +412,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test016
      * @tc.number SUB_BUILTINS_Object8_TEST_1600
-     * @tc.name Object8Test016
-     * @tc.desc test object fromEntries with date value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with date value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testDateValueInArray();
@@ -425,12 +425,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test017
      * @tc.number SUB_BUILTINS_Object8_TEST_1700
-     * @tc.name Object8Test017
-     * @tc.desc test object fromEntries with empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testEmptyArrayToObject();
@@ -438,12 +438,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test018
      * @tc.number SUB_BUILTINS_Object8_TEST_1800
-     * @tc.name Object8Test018
-     * @tc.desc test object fromEntries with invalid entry length 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with invalid entry length 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn18_testInvalidEntryLength1();
@@ -451,12 +451,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test019
      * @tc.number SUB_BUILTINS_Object8_TEST_1900
-     * @tc.name Object8Test019
-     * @tc.desc test object fromEntries with invalid entry length 3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with invalid entry length 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testInvalidEntryLength3();
@@ -464,12 +464,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test020
      * @tc.number SUB_BUILTINS_Object8_TEST_2000
-     * @tc.name Object8Test020
-     * @tc.desc test object fromEntries with NaN key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with NaN key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testNaNKeyInArray();
@@ -477,12 +477,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test021
      * @tc.number SUB_BUILTINS_Object8_TEST_2100
-     * @tc.name Object8Test021
-     * @tc.desc test object fromEntries with Infinity key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Infinity key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn21_testInfinityKeyInArray();
@@ -490,12 +490,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test022
      * @tc.number SUB_BUILTINS_Object8_TEST_2200
-     * @tc.name Object8Test022
-     * @tc.desc test object fromEntries with BigInt key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with BigInt key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testBigIntKeyInMap();
@@ -503,12 +503,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test023
      * @tc.number SUB_BUILTINS_Object8_TEST_2300
-     * @tc.name Object8Test023
-     * @tc.desc test object fromEntries with filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testWithFilter();
@@ -516,12 +516,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test024
      * @tc.number SUB_BUILTINS_Object8_TEST_2400
-     * @tc.name Object8Test024
-     * @tc.desc test object fromEntries with nested array value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested array value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testNestedArrayValue();
@@ -529,24 +529,24 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test025
      * @tc.number SUB_BUILTINS_Object8_TEST_2500
-     * @tc.name Object8Test025
-     * @tc.desc test object fromEntries with object key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testObjectKeyInMap();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object8Test026
      * @tc.number SUB_BUILTINS_Object8_TEST_2600
-     * @tc.name Object8Test026
-     * @tc.desc test object fromEntries with RegExp value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testRegExpValueInMap();
@@ -554,12 +554,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test027
      * @tc.number SUB_BUILTINS_Object8_TEST_2700
-     * @tc.name Object8Test027
-     * @tc.desc test object fromEntries with Set value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testSetValueInArray();
@@ -567,12 +567,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test028
      * @tc.number SUB_BUILTINS_Object8_TEST_2800
-     * @tc.name Object8Test028
-     * @tc.desc test object fromEntries with WeakMap key error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with WeakMap key error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testWeakMapKeyError();
@@ -580,12 +580,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test029
      * @tc.number SUB_BUILTINS_Object8_TEST_2900
-     * @tc.name Object8Test029
-     * @tc.desc test object fromEntries with generator iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with generator iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testGeneratorIterator();
@@ -593,12 +593,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test030
      * @tc.number SUB_BUILTINS_Object8_TEST_3000
-     * @tc.name Object8Test030
-     * @tc.desc test object fromEntries with empty string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testEmptyStringKey();
@@ -606,12 +606,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test031
      * @tc.number SUB_BUILTINS_Object8_TEST_3100
-     * @tc.name Object8Test031
-     * @tc.desc test object fromEntries with undefined key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with undefined key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testUndefinedKeyInArray();
@@ -619,12 +619,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test032
      * @tc.number SUB_BUILTINS_Object8_TEST_3200
-     * @tc.name Object8Test032
-     * @tc.desc test object fromEntries with null key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with null key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testNullKeyInArray();
@@ -632,12 +632,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test033
      * @tc.number SUB_BUILTINS_Object8_TEST_3300
-     * @tc.name Object8Test033
-     * @tc.desc test object fromEntries with Symbol value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Symbol value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testSymbolValueInMap();
@@ -645,12 +645,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test034
      * @tc.number SUB_BUILTINS_Object8_TEST_3400
-     * @tc.name Object8Test034
-     * @tc.desc test object fromEntries with key rename using map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with key rename using map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testKeyRenameWithMap();
@@ -658,12 +658,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test035
      * @tc.number SUB_BUILTINS_Object8_TEST_3500
-     * @tc.name Object8Test035
-     * @tc.desc test object fromEntries with nested object value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested object value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testNestedObjectValueInMap();
@@ -671,12 +671,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test036
      * @tc.number SUB_BUILTINS_Object8_TEST_3600
-     * @tc.name Object8Test036
-     * @tc.desc test object fromEntries with non-array entry in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with non-array entry in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testNonArrayEntryInArray();
@@ -684,12 +684,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test037
      * @tc.number SUB_BUILTINS_Object8_TEST_3700
-     * @tc.name Object8Test037
-     * @tc.desc test object fromEntries with BigInt value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with BigInt value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testBigIntValueInArray();
@@ -697,12 +697,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test038
      * @tc.number SUB_BUILTINS_Object8_TEST_3800
-     * @tc.name Object8Test038
-     * @tc.desc test object fromEntries with RegExp key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn38_testRegExpKeyInMap();
@@ -710,12 +710,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test039
      * @tc.number SUB_BUILTINS_Object8_TEST_3900
-     * @tc.name Object8Test039
-     * @tc.desc test object fromEntries with Date key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Date key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testDateKeyInArray();
@@ -723,12 +723,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test040
      * @tc.number SUB_BUILTINS_Object8_TEST_4000
-     * @tc.name Object8Test040
-     * @tc.desc test object fromEntries with reduce
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with reduce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testWithReduce();
@@ -736,12 +736,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test041
      * @tc.number SUB_BUILTINS_Object8_TEST_4100
-     * @tc.name Object8Test041
-     * @tc.desc test object fromEntries with Set key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn41_testSetKeyInArray();
@@ -749,12 +749,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test042
      * @tc.number SUB_BUILTINS_Object8_TEST_4200
-     * @tc.name Object8Test042
-     * @tc.desc test object fromEntries with function key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with function key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn42_testFunctionKeyInMap();
@@ -762,12 +762,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test043
      * @tc.number SUB_BUILTINS_Object8_TEST_4300
-     * @tc.name Object8Test043
-     * @tc.desc test object fromEntries with empty object value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty object value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testEmptyObjectValueInArray();
@@ -775,12 +775,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test044
      * @tc.number SUB_BUILTINS_Object8_TEST_4400
-     * @tc.name Object8Test044
-     * @tc.desc test object fromEntries with empty map value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty map value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testEmptyMapValueInMap();
@@ -788,12 +788,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test045
      * @tc.number SUB_BUILTINS_Object8_TEST_4500
-     * @tc.name Object8Test045
-     * @tc.desc test object fromEntries with long string key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with long string key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testLongStringKeyInArray();
@@ -801,12 +801,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test046
      * @tc.number SUB_BUILTINS_Object8_TEST_4600
-     * @tc.name Object8Test046
-     * @tc.desc test object fromEntries with array key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testArrayKeyInMap();
@@ -814,12 +814,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test047
      * @tc.number SUB_BUILTINS_Object8_TEST_4700
-     * @tc.name Object8Test047
-     * @tc.desc test object fromEntries with NaN value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with NaN value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testNaNValueInArray();
@@ -827,12 +827,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test048
      * @tc.number SUB_BUILTINS_Object8_TEST_4800
-     * @tc.name Object8Test048
-     * @tc.desc test object fromEntries with Infinity value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Infinity value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testInfinityValueInMap();
@@ -840,12 +840,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test049
      * @tc.number SUB_BUILTINS_Object8_TEST_4900
-     * @tc.name Object8Test049
-     * @tc.desc test object fromEntries with find
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with find
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testWithFind();
@@ -853,12 +853,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test050
      * @tc.number SUB_BUILTINS_Object8_TEST_5000
-     * @tc.name Object8Test050
-     * @tc.desc test object fromEntries with boolean value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with boolean value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testBooleanValueInMap();
@@ -867,12 +867,12 @@ export default function Object8Test() {
 
 
     /**
+     * @tc.name   Object8Test053
      * @tc.number SUB_BUILTINS_Object8_TEST_5300
-     * @tc.name Object8Test053
-     * @tc.desc test object fromEntries with nested array key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested array key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn53_testNestedArrayKeyInMap();
@@ -880,12 +880,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test055
      * @tc.number SUB_BUILTINS_Object8_TEST_5500
-     * @tc.name Object8Test055
-     * @tc.desc test object fromEntries with Error value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Error value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testErrorValueInMap();
@@ -893,12 +893,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test056
      * @tc.number SUB_BUILTINS_Object8_TEST_5600
-     * @tc.name Object8Test056
-     * @tc.desc test object fromEntries with mixed key types in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed key types in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn56_testMixedKeyTypesInArray();
@@ -906,12 +906,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test057
      * @tc.number SUB_BUILTINS_Object8_TEST_5700
-     * @tc.name Object8Test057
-     * @tc.desc test object fromEntries with slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testWithSlice();
@@ -919,12 +919,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test058
      * @tc.number SUB_BUILTINS_Object8_TEST_5800
-     * @tc.name Object8Test058
-     * @tc.desc test object fromEntries with mixed BigInt and Number in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed BigInt and Number in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn58_testMixedBigIntNumberInMap();
@@ -932,12 +932,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test059
      * @tc.number SUB_BUILTINS_Object8_TEST_5900
-     * @tc.name Object8Test059
-     * @tc.desc test object fromEntries with Promise value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Promise value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn59_testPromiseValueInArray();
@@ -945,24 +945,24 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test060
      * @tc.number SUB_BUILTINS_Object8_TEST_6000
-     * @tc.name Object8Test060
-     * @tc.desc test object fromEntries with TypedArray value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with TypedArray value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn60_testTypedArrayValueInMap();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object8Test061
      * @tc.number SUB_BUILTINS_Object8_TEST_6100
-     * @tc.name Object8Test061
-     * @tc.desc test object fromEntries with Symbol key in map not captured by Object.keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Symbol key in map not captured by Object.keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn61_testSymbolKeyInMapUncapturedByKeys();
@@ -970,12 +970,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test062
      * @tc.number SUB_BUILTINS_Object8_TEST_6200
-     * @tc.name Object8Test062
-     * @tc.desc test object fromEntries with template literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with template literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn62_testTemplateLiteralKeyInArray();
@@ -983,12 +983,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test063
      * @tc.number SUB_BUILTINS_Object8_TEST_6300
-     * @tc.name Object8Test063
-     * @tc.desc test object fromEntries with Error key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Error key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn63_testErrorKeyInMap();
@@ -996,12 +996,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test064
      * @tc.number SUB_BUILTINS_Object8_TEST_6400
-     * @tc.name Object8Test064
-     * @tc.desc test object fromEntries with modifying key and value using map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with modifying key and value using map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn64_testModifyKeyAndValueWithMap();
@@ -1009,12 +1009,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test065
      * @tc.number SUB_BUILTINS_Object8_TEST_6500
-     * @tc.name Object8Test065
-     * @tc.desc test object fromEntries with empty string value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty string value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn65_testEmptyStringValueInArray();
@@ -1022,12 +1022,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test066
      * @tc.number SUB_BUILTINS_Object8_TEST_6600
-     * @tc.name Object8Test066
-     * @tc.desc test object fromEntries with TypedArray key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with TypedArray key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn66_testTypedArrayKeyInMap();
@@ -1035,12 +1035,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test067
      * @tc.number SUB_BUILTINS_Object8_TEST_6700
-     * @tc.name Object8Test067
-     * @tc.desc test object fromEntries with nested two-length array entry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested two-length array entry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn67_testNestedTwoLengthArrayEntry();
@@ -1048,12 +1048,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test068
      * @tc.number SUB_BUILTINS_Object8_TEST_6800
-     * @tc.name Object8Test068
-     * @tc.desc test object fromEntries with Promise key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Promise key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testPromiseKeyInArray();
@@ -1061,12 +1061,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test070
      * @tc.number SUB_BUILTINS_Object8_TEST_7000
-     * @tc.name Object8Test070
-     * @tc.desc test object fromEntries with filtering empty values using filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with filtering empty values using filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn70_testFilterEmptyValuesWithFilter();
@@ -1074,12 +1074,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test071
      * @tc.number SUB_BUILTINS_Object8_TEST_7100
-     * @tc.name Object8Test071
-     * @tc.desc test object fromEntries with number and string key consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with number and string key consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testNumberStringKeyConsistency();
@@ -1087,12 +1087,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test072
      * @tc.number SUB_BUILTINS_Object8_TEST_7200
-     * @tc.name Object8Test072
-     * @tc.desc test object fromEntries with Map key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Map key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testMapKeyInMap();
@@ -1100,12 +1100,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test073
      * @tc.number SUB_BUILTINS_Object8_TEST_7300
-     * @tc.name Object8Test073
-     * @tc.desc test object fromEntries with shared Symbol key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with shared Symbol key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn73_testSharedSymbolKeyInArray();
@@ -1113,12 +1113,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test074
      * @tc.number SUB_BUILTINS_Object8_TEST_7400
-     * @tc.name Object8Test074
-     * @tc.desc test object fromEntries with RegExp value method in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp value method in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn74_testRegExpValueMethodInArray();
@@ -1126,12 +1126,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test075
      * @tc.number SUB_BUILTINS_Object8_TEST_7500
-     * @tc.name Object8Test075
-     * @tc.desc test object fromEntries with mixed BigInt and string key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed BigInt and string key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn75_testMixedBigIntStringKeyInMap();
@@ -1139,12 +1139,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test076
      * @tc.number SUB_BUILTINS_Object8_TEST_7600
-     * @tc.name Object8Test076
-     * @tc.desc test object fromEntries with array-like entry in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array-like entry in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testArrayLikeEntryInArray();
@@ -1152,12 +1152,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test077
      * @tc.number SUB_BUILTINS_Object8_TEST_7700
-     * @tc.name Object8Test077
-     * @tc.desc test object fromEntries with Date value method in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Date value method in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn77_testDateValueMethodInMap();
@@ -1165,12 +1165,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test078
      * @tc.number SUB_BUILTINS_Object8_TEST_7800
-     * @tc.name Object8Test078
-     * @tc.desc test object fromEntries with empty Set key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty Set key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testEmptySetKeyInMap();
@@ -1178,12 +1178,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test079
      * @tc.number SUB_BUILTINS_Object8_TEST_7900
-     * @tc.name Object8Test079
-     * @tc.desc test object fromEntries with converting value to array using map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with converting value to array using map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn79_testConvertValueToArrayWithMap();
@@ -1191,12 +1191,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test080
      * @tc.number SUB_BUILTINS_Object8_TEST_8000
-     * @tc.name Object8Test080
-     * @tc.desc test object fromEntries with undefined value vs non-existent property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with undefined value vs non-existent property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testUndefinedValueVsNonExistent();
@@ -1204,12 +1204,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test081
      * @tc.number SUB_BUILTINS_Object8_TEST_8100
-     * @tc.name Object8Test081
-     * @tc.desc test object fromEntries with function value with parameters in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with function value with parameters in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn81_testFunctionValueWithParamsInMap();
@@ -1217,12 +1217,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test082
      * @tc.number SUB_BUILTINS_Object8_TEST_8200
-     * @tc.name Object8Test082
-     * @tc.desc test object fromEntries with special character key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with special character key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn82_testSpecialCharKeyInArray();
@@ -1230,12 +1230,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test083
      * @tc.number SUB_BUILTINS_Object8_TEST_8300
-     * @tc.name Object8Test083
-     * @tc.desc test object fromEntries with Set value method in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set value method in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn83_testSetValueMethodInMap();
@@ -1243,12 +1243,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test084
      * @tc.number SUB_BUILTINS_Object8_TEST_8400
-     * @tc.name Object8Test084
-     * @tc.desc test object fromEntries with nested object key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested object key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn84_testNestedObjectKeyInMap();
@@ -1256,12 +1256,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test085
      * @tc.number SUB_BUILTINS_Object8_TEST_8500
-     * @tc.name Object8Test085
-     * @tc.desc test object fromEntries with counting values using reduce
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with counting values using reduce
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn85_testCountValuesWithReduce();
@@ -1269,12 +1269,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test086
      * @tc.number SUB_BUILTINS_Object8_TEST_8600
-     * @tc.name Object8Test086
-     * @tc.desc test object fromEntries with TypedArray value properties in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with TypedArray value properties in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn86_testTypedArrayValuePropsInArray();
@@ -1282,12 +1282,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test087
      * @tc.number SUB_BUILTINS_Object8_TEST_8700
-     * @tc.name Object8Test087
-     * @tc.desc test object fromEntries with boolean key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with boolean key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testBooleanKeyInMap();
@@ -1295,12 +1295,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test088
      * @tc.number SUB_BUILTINS_Object8_TEST_8800
-     * @tc.name Object8Test088
-     * @tc.desc test object fromEntries with generator entry in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with generator entry in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn88_testGeneratorEntryInArray();
@@ -1308,12 +1308,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test089
      * @tc.number SUB_BUILTINS_Object8_TEST_8900
-     * @tc.name Object8Test089
-     * @tc.desc test object fromEntries with Error value properties in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Error value properties in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn89_testErrorValuePropsInArray();
@@ -1321,24 +1321,24 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test090
      * @tc.number SUB_BUILTINS_Object8_TEST_9000
-     * @tc.name Object8Test090
-     * @tc.desc test object fromEntries with multiple NaN keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with multiple NaN keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn90_testMultipleNaNKeysInMap();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object8Test091
      * @tc.number SUB_BUILTINS_Object8_TEST_9100
-     * @tc.name Object8Test091
-     * @tc.desc test object fromEntries with ArrayBuffer value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with ArrayBuffer value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn91_testArrayBufferValueInArray();
@@ -1346,12 +1346,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test092
      * @tc.number SUB_BUILTINS_Object8_TEST_9200
-     * @tc.name Object8Test092
-     * @tc.desc test object fromEntries with DataView key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with DataView key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testDataViewKeyInMap();
@@ -1359,12 +1359,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test093
      * @tc.number SUB_BUILTINS_Object8_TEST_9300
-     * @tc.name Object8Test093
-     * @tc.desc test object fromEntries with converting key to Symbol using map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with converting key to Symbol using map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn93_testConvertKeyToSymbolWithMap();
@@ -1372,12 +1372,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test094
      * @tc.number SUB_BUILTINS_Object8_TEST_9400
-     * @tc.name Object8Test094
-     * @tc.desc test object fromEntries with Unicode character key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Unicode character key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testUnicodeCharKeyInArray();
@@ -1385,12 +1385,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test095
      * @tc.number SUB_BUILTINS_Object8_TEST_9500
-     * @tc.name Object8Test095
-     * @tc.desc test object fromEntries with empty ArrayBuffer key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty ArrayBuffer key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn95_testEmptyArrayBufferKeyInMap();
@@ -1398,12 +1398,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test096
      * @tc.number SUB_BUILTINS_Object8_TEST_9600
-     * @tc.name Object8Test096
-     * @tc.desc test object fromEntries with Map value method in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Map value method in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn96_testMapValueMethodInArray();
@@ -1411,12 +1411,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test097
      * @tc.number SUB_BUILTINS_Object8_TEST_9700
-     * @tc.name Object8Test097
-     * @tc.desc test object fromEntries with arrow function value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with arrow function value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn97_testArrowFunctionValueInMap();
@@ -1424,12 +1424,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test098
      * @tc.number SUB_BUILTINS_Object8_TEST_9800
-     * @tc.name Object8Test098
-     * @tc.desc test object fromEntries with nested array-like entry
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested array-like entry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn98_testNestedArrayLikeEntry();
@@ -1437,12 +1437,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test099
      * @tc.number SUB_BUILTINS_Object8_TEST_9900
-     * @tc.name Object8Test099
-     * @tc.desc test object fromEntries with DataView value method in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with DataView value method in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testDataViewValueMethodInMap();
@@ -1450,12 +1450,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test100
      * @tc.number SUB_BUILTINS_Object8_TEST_10000
-     * @tc.name Object8Test100
-     * @tc.desc test object fromEntries with multiple Symbol keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with multiple Symbol keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn100_testMultipleSymbolKeysInMap();
@@ -1463,12 +1463,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test101
      * @tc.number SUB_BUILTINS_Object8_TEST_10100
-     * @tc.name Object8Test101
-     * @tc.desc test object fromEntries with filtering non-string keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with filtering non-string keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn101_testFilterNonStringKeys();
@@ -1476,12 +1476,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test102
      * @tc.number SUB_BUILTINS_Object8_TEST_10200
-     * @tc.name Object8Test102
-     * @tc.desc test object fromEntries with leading zero number string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with leading zero number string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn102_testLeadingZeroNumberStringKey();
@@ -1489,12 +1489,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test103
      * @tc.number SUB_BUILTINS_Object8_TEST_10300
-     * @tc.name Object8Test103
-     * @tc.desc test object fromEntries with RegExp with flags value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp with flags value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn103_testRegExpWithFlagsValueInMap();
@@ -1502,12 +1502,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test104
      * @tc.number SUB_BUILTINS_Object8_TEST_10400
-     * @tc.name Object8Test104
-     * @tc.desc test object fromEntries with Set containing Symbol value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set containing Symbol value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn104_testSetWithSymbolValueInArray();
@@ -1515,12 +1515,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test105
      * @tc.number SUB_BUILTINS_Object8_TEST_10500
-     * @tc.name Object8Test105
-     * @tc.desc test object fromEntries with different Date keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with different Date keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn105_testDifferentDateKeysInMap();
@@ -1528,12 +1528,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test107
      * @tc.number SUB_BUILTINS_Object8_TEST_10700
-     * @tc.name Object8Test107
-     * @tc.desc test object fromEntries with large BigInt value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with large BigInt value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn107_testLargeBigIntValueInMap();
@@ -1541,12 +1541,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test108
      * @tc.number SUB_BUILTINS_Object8_TEST_10800
-     * @tc.name Object8Test108
-     * @tc.desc test object fromEntries with different Object keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with different Object keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testDifferentObjectKeysInMap();
@@ -1554,12 +1554,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test109
      * @tc.number SUB_BUILTINS_Object8_TEST_10900
-     * @tc.name Object8Test109
-     * @tc.desc test object fromEntries with converting value to Promise using map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with converting value to Promise using map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn109_testConvertValueToPromiseWithMap();
@@ -1567,12 +1567,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test110
      * @tc.number SUB_BUILTINS_Object8_TEST_11000
-     * @tc.name Object8Test110
-     * @tc.desc test object fromEntries with whitespace string key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with whitespace string key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn110_testWhitespaceStringKey();
@@ -1580,12 +1580,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test111
      * @tc.number SUB_BUILTINS_Object8_TEST_11100
-     * @tc.name Object8Test111
-     * @tc.desc test object fromEntries with different TypedArray values in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with different TypedArray values in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn111_testDifferentTypedArrayValuesInMap();
@@ -1593,12 +1593,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test112
      * @tc.number SUB_BUILTINS_Object8_TEST_11200
-     * @tc.name Object8Test112
-     * @tc.desc test object fromEntries with different Error values in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with different Error values in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn112_testDifferentErrorValuesInArray();
@@ -1606,12 +1606,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test113
      * @tc.number SUB_BUILTINS_Object8_TEST_11300
-     * @tc.name Object8Test113
-     * @tc.desc test object fromEntries with positive and negative Infinity keys in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with positive and negative Infinity keys in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn113_testPosNegInfinityKeysInMap();
@@ -1619,12 +1619,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test115
      * @tc.number SUB_BUILTINS_Object8_TEST_11500
-     * @tc.name Object8Test115
-     * @tc.desc test object fromEntries with nested Map value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested Map value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn115_testNestedMapValueInMap();
@@ -1632,12 +1632,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test116
      * @tc.number SUB_BUILTINS_Object8_TEST_11600
-     * @tc.name Object8Test116
-     * @tc.desc test object fromEntries with key for Symbol key in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with key for Symbol key in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn116_testKeyForSymbolKeyInMap();
@@ -1645,12 +1645,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test117
      * @tc.number SUB_BUILTINS_Object8_TEST_11700
-     * @tc.name Object8Test117
-     * @tc.desc test object fromEntries with filtering function values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with filtering function values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testFilterFunctionValues();
@@ -1658,12 +1658,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test118
      * @tc.number SUB_BUILTINS_Object8_TEST_11800
-     * @tc.name Object8Test118
-     * @tc.desc test object fromEntries with escape character key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with escape character key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn118_testEscapeCharKeyInArray();
@@ -1671,12 +1671,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test119
      * @tc.number SUB_BUILTINS_Object8_TEST_11900
-     * @tc.name Object8Test119
-     * @tc.desc test object fromEntries with empty Set value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty Set value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn119_testEmptySetValueInMap();
@@ -1684,24 +1684,24 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test120
      * @tc.number SUB_BUILTINS_Object8_TEST_12000
-     * @tc.name Object8Test120
-     * @tc.desc test object fromEntries with ArrayBuffer with view in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with ArrayBuffer with view in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testArrayBufferWithViewInMap();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object8Test121
      * @tc.number SUB_BUILTINS_Object8_TEST_12100
-     * @tc.name Object8Test121
-     * @tc.desc test object fromEntries with object literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn121_testObjectLiteralKeyInArray();
@@ -1709,12 +1709,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test122
      * @tc.number SUB_BUILTINS_Object8_TEST_12200
-     * @tc.name Object8Test122
-     * @tc.desc test object fromEntries with array literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn122_testArrayLiteralKeyInArray();
@@ -1722,12 +1722,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test123
      * @tc.number SUB_BUILTINS_Object8_TEST_12300
-     * @tc.name Object8Test123
-     * @tc.desc test object fromEntries with object literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn123_testObjectLiteralValueInMap();
@@ -1735,12 +1735,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test124
      * @tc.number SUB_BUILTINS_Object8_TEST_12400
-     * @tc.name Object8Test124
-     * @tc.desc test object fromEntries with array literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn124_testArrayLiteralValueInMap();
@@ -1748,12 +1748,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test125
      * @tc.number SUB_BUILTINS_Object8_TEST_12500
-     * @tc.name Object8Test125
-     * @tc.desc test object fromEntries with boolean literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with boolean literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn125_testBooleanLiteralKeyInArray();
@@ -1761,12 +1761,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test126
      * @tc.number SUB_BUILTINS_Object8_TEST_12600
-     * @tc.name Object8Test126
-     * @tc.desc test object fromEntries with number literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with number literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn126_testNumberLiteralKeyInArray();
@@ -1774,12 +1774,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test127
      * @tc.number SUB_BUILTINS_Object8_TEST_12700
-     * @tc.name Object8Test127
-     * @tc.desc test object fromEntries with string literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with string literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn127_testStringLiteralValueInMap();
@@ -1787,12 +1787,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test128
      * @tc.number SUB_BUILTINS_Object8_TEST_12800
-     * @tc.name Object8Test128
-     * @tc.desc test object fromEntries with null literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with null literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn128_testNullLiteralKeyInArray();
@@ -1800,12 +1800,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test129
      * @tc.number SUB_BUILTINS_Object8_TEST_12900
-     * @tc.name Object8Test129
-     * @tc.desc test object fromEntries with undefined literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with undefined literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn129_testUndefinedLiteralKeyInArray();
@@ -1813,12 +1813,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test130
      * @tc.number SUB_BUILTINS_Object8_TEST_13000
-     * @tc.name Object8Test130
-     * @tc.desc test object fromEntries with Symbol literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Symbol literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn130_testSymbolLiteralValueInMap();
@@ -1826,12 +1826,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test131
      * @tc.number SUB_BUILTINS_Object8_TEST_13100
-     * @tc.name Object8Test131
-     * @tc.desc test object fromEntries with nested object literal value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested object literal value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn131_testNestedObjectLiteralValueInArray();
@@ -1839,12 +1839,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test132
      * @tc.number SUB_BUILTINS_Object8_TEST_13200
-     * @tc.name Object8Test132
-     * @tc.desc test object fromEntries with nested array literal value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with nested array literal value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testNestedArrayLiteralValueInArray();
@@ -1852,12 +1852,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test133
      * @tc.number SUB_BUILTINS_Object8_TEST_13300
-     * @tc.name Object8Test133
-     * @tc.desc test object fromEntries with BigInt literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with BigInt literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn133_testBigIntLiteralValueInMap();
@@ -1865,12 +1865,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test134
      * @tc.number SUB_BUILTINS_Object8_TEST_13400
-     * @tc.name Object8Test134
-     * @tc.desc test object fromEntries with RegExp literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn134_testRegExpLiteralKeyInArray();
@@ -1878,12 +1878,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test135
      * @tc.number SUB_BUILTINS_Object8_TEST_13500
-     * @tc.name Object8Test135
-     * @tc.desc test object fromEntries with RegExp literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn135_testRegExpLiteralValueInMap();
@@ -1891,12 +1891,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test136
      * @tc.number SUB_BUILTINS_Object8_TEST_13600
-     * @tc.name Object8Test136
-     * @tc.desc test object fromEntries with Date literal value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Date literal value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn136_testDateLiteralValueInArray();
@@ -1904,12 +1904,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test137
      * @tc.number SUB_BUILTINS_Object8_TEST_13700
-     * @tc.name Object8Test137
-     * @tc.desc test object fromEntries with Set literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn137_testSetLiteralValueInMap();
@@ -1917,12 +1917,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test138
      * @tc.number SUB_BUILTINS_Object8_TEST_13800
-     * @tc.name Object8Test138
-     * @tc.desc test object fromEntries with Map literal value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Map literal value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn138_testMapLiteralValueInArray();
@@ -1930,12 +1930,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test139
      * @tc.number SUB_BUILTINS_Object8_TEST_13900
-     * @tc.name Object8Test139
-     * @tc.desc test object fromEntries with function literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with function literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn139_testFunctionLiteralKeyInArray();
@@ -1943,12 +1943,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test140
      * @tc.number SUB_BUILTINS_Object8_TEST_14000
-     * @tc.name Object8Test140
-     * @tc.desc test object fromEntries with function literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with function literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn140_testFunctionLiteralValueInMap();
@@ -1956,12 +1956,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test141
      * @tc.number SUB_BUILTINS_Object8_TEST_14100
-     * @tc.name Object8Test141
-     * @tc.desc test object fromEntries with template literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with template literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn141_testTemplateLiteralKeyInArray();
@@ -1969,12 +1969,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test142
      * @tc.number SUB_BUILTINS_Object8_TEST_14200
-     * @tc.name Object8Test142
-     * @tc.desc test object fromEntries with template literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with template literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn142_testTemplateLiteralValueInMap();
@@ -1982,12 +1982,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test143
      * @tc.number SUB_BUILTINS_Object8_TEST_14300
-     * @tc.name Object8Test143
-     * @tc.desc test object fromEntries with empty object literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty object literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn143_testEmptyObjectLiteralKeyInArray();
@@ -1995,12 +1995,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test144
      * @tc.number SUB_BUILTINS_Object8_TEST_14400
-     * @tc.name Object8Test144
-     * @tc.desc test object fromEntries with empty array literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty array literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn144_testEmptyArrayLiteralValueInMap();
@@ -2008,12 +2008,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test145
      * @tc.number SUB_BUILTINS_Object8_TEST_14500
-     * @tc.name Object8Test145
-     * @tc.desc test object fromEntries with NaN literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with NaN literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn145_testNaNLiteralKeyInArray();
@@ -2021,12 +2021,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test146
      * @tc.number SUB_BUILTINS_Object8_TEST_14600
-     * @tc.name Object8Test146
-     * @tc.desc test object fromEntries with NaN literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with NaN literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn146_testNaNLiteralValueInMap();
@@ -2034,12 +2034,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test147
      * @tc.number SUB_BUILTINS_Object8_TEST_14700
-     * @tc.name Object8Test147
-     * @tc.desc test object fromEntries with Infinity literal key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Infinity literal key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testInfinityLiteralKeyInArray();
@@ -2047,12 +2047,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test148
      * @tc.number SUB_BUILTINS_Object8_TEST_14800
-     * @tc.name Object8Test148
-     * @tc.desc test object fromEntries with Infinity literal value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Infinity literal value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn148_testInfinityLiteralValueInMap();
@@ -2060,12 +2060,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test149
      * @tc.number SUB_BUILTINS_Object8_TEST_14900
-     * @tc.name Object8Test149
-     * @tc.desc test object fromEntries with mixed literal keys in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed literal keys in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn149_testMixedLiteralKeysInArray();
@@ -2073,24 +2073,24 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test150
      * @tc.number SUB_BUILTINS_Object8_TEST_15000
-     * @tc.name Object8Test150
-     * @tc.desc test object fromEntries with mixed literal values in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed literal values in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn150_testMixedLiteralValuesInMap();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object8Test151
      * @tc.number SUB_BUILTINS_Object8_TEST_15100
-     * @tc.name Object8Test151
-     * @tc.desc test object fromEntries with computed property name key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with computed property name key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn151_testComputedPropNameKeyInArray();
@@ -2098,12 +2098,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test152
      * @tc.number SUB_BUILTINS_Object8_TEST_15200
-     * @tc.name Object8Test152
-     * @tc.desc test object fromEntries with object literal containing getter in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object literal containing getter in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn152_testObjectLiteralWithGetterInMap();
@@ -2111,12 +2111,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test153
      * @tc.number SUB_BUILTINS_Object8_TEST_15300
-     * @tc.name Object8Test153
-     * @tc.desc test object fromEntries with object literal containing setter in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object literal containing setter in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn153_testObjectLiteralWithSetterInArray();
@@ -2124,12 +2124,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test154
      * @tc.number SUB_BUILTINS_Object8_TEST_15400
-     * @tc.name Object8Test154
-     * @tc.desc test object fromEntries with array literal containing empty value in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array literal containing empty value in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn154_testArrayLiteralWithEmptyInMap();
@@ -2137,12 +2137,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test155
      * @tc.number SUB_BUILTINS_Object8_TEST_15500
-     * @tc.name Object8Test155
-     * @tc.desc test object fromEntries with array literal containing nested object in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with array literal containing nested object in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn155_testArrayLiteralWithNestedObjInArray();
@@ -2150,12 +2150,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test156
      * @tc.number SUB_BUILTINS_Object8_TEST_15600
-     * @tc.name Object8Test156
-     * @tc.desc test object fromEntries with shared Symbol literal in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with shared Symbol literal in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn156_testSharedSymbolLiteralInMap();
@@ -2163,12 +2163,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test157
      * @tc.number SUB_BUILTINS_Object8_TEST_15700
-     * @tc.name Object8Test157
-     * @tc.desc test object fromEntries with BigInt literal with calculation in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with BigInt literal with calculation in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn157_testBigIntLiteralWithCalcInArray();
@@ -2176,12 +2176,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test158
      * @tc.number SUB_BUILTINS_Object8_TEST_15800
-     * @tc.name Object8Test158
-     * @tc.desc test object fromEntries with RegExp literal with dynamic source in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with RegExp literal with dynamic source in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn158_testRegExpLiteralWithDynamicSourceInMap();
@@ -2189,12 +2189,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test159
      * @tc.number SUB_BUILTINS_Object8_TEST_15900
-     * @tc.name Object8Test159
-     * @tc.desc test object fromEntries with Date literal with calculation in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Date literal with calculation in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn159_testDateLiteralWithCalcInArray();
@@ -2202,12 +2202,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test160
      * @tc.number SUB_BUILTINS_Object8_TEST_16000
-     * @tc.name Object8Test160
-     * @tc.desc test object fromEntries with Set literal containing Symbol in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set literal containing Symbol in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn160_testSetLiteralWithSymbolInMap();
@@ -2215,12 +2215,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test161
      * @tc.number SUB_BUILTINS_Object8_TEST_16100
-     * @tc.name Object8Test161
-     * @tc.desc test object fromEntries with Map literal containing object key in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Map literal containing object key in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn161_testMapLiteralWithObjectKeyInArray();
@@ -2228,12 +2228,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test162
      * @tc.number SUB_BUILTINS_Object8_TEST_16200
-     * @tc.name Object8Test162
-     * @tc.desc test object fromEntries with arrow function containing closure in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with arrow function containing closure in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn162_testArrowFunctionWithClosureInMap();
@@ -2241,12 +2241,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test163
      * @tc.number SUB_BUILTINS_Object8_TEST_16300
-     * @tc.name Object8Test163
-     * @tc.desc test object fromEntries with multi-line template literal in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with multi-line template literal in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn163_testMultiLineTemplateLiteralInArray();
@@ -2254,12 +2254,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test164
      * @tc.number SUB_BUILTINS_Object8_TEST_16400
-     * @tc.name Object8Test164
-     * @tc.desc test object fromEntries with empty object containing __proto__ in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with empty object containing __proto__ in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn164_testEmptyObjectWithProtoInMap();
@@ -2267,12 +2267,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test165
      * @tc.number SUB_BUILTINS_Object8_TEST_16500
-     * @tc.name Object8Test165
-     * @tc.desc test object fromEntries with Array.from array-like in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Array.from array-like in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn165_testArrayFromArrayLikeInArray();
@@ -2280,12 +2280,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test166
      * @tc.number SUB_BUILTINS_Object8_TEST_16600
-     * @tc.name Object8Test166
-     * @tc.desc test object fromEntries with NaN from calculation in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with NaN from calculation in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn166_testNaNFromCalcInMap();
@@ -2293,12 +2293,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test167
      * @tc.number SUB_BUILTINS_Object8_TEST_16700
-     * @tc.name Object8Test167
-     * @tc.desc test object fromEntries with Infinity from calculation in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Infinity from calculation in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn167_testInfinityFromCalcInArray();
@@ -2306,12 +2306,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test168
      * @tc.number SUB_BUILTINS_Object8_TEST_16800
-     * @tc.name Object8Test168
-     * @tc.desc test object fromEntries with mixed literal containing Symbol key object in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with mixed literal containing Symbol key object in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn168_testMixedLiteralWithSymbolKeyObjInMap();
@@ -2319,12 +2319,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test169
      * @tc.number SUB_BUILTINS_Object8_TEST_16900
-     * @tc.name Object8Test169
-     * @tc.desc test object fromEntries with frozen object literal in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with frozen object literal in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn169_testFrozenObjectLiteralInArray();
@@ -2332,12 +2332,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test170
      * @tc.number SUB_BUILTINS_Object8_TEST_17000
-     * @tc.name Object8Test170
-     * @tc.desc test object fromEntries with frozen array literal in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with frozen array literal in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn170_testFrozenArrayLiteralInMap();
@@ -2345,12 +2345,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test171
      * @tc.number SUB_BUILTINS_Object8_TEST_17100
-     * @tc.name Object8Test171
-     * @tc.desc test object fromEntries with frozen RegExp literal in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with frozen RegExp literal in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn171_testFrozenRegExpLiteralInArray();
@@ -2359,12 +2359,12 @@ export default function Object8Test() {
 
 
     /**
+     * @tc.name   Object8Test173
      * @tc.number SUB_BUILTINS_Object8_TEST_17300
-     * @tc.name Object8Test173
-     * @tc.desc test object fromEntries with Set containing deleted element in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with Set containing deleted element in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn173_testSetWithDeletedElemInArray();
@@ -2372,12 +2372,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test174
      * @tc.number SUB_BUILTINS_Object8_TEST_17400
-     * @tc.name Object8Test174
-     * @tc.desc test object fromEntries with cleared Map literal in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with cleared Map literal in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn174_testClearedMapLiteralInMap();
@@ -2385,12 +2385,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test175
      * @tc.number SUB_BUILTINS_Object8_TEST_17500
-     * @tc.name Object8Test175
-     * @tc.desc test object fromEntries with function containing this binding in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with function containing this binding in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn175_testFunctionWithThisBindingInArray();
@@ -2398,12 +2398,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test176
      * @tc.number SUB_BUILTINS_Object8_TEST_17600
-     * @tc.name Object8Test176
-     * @tc.desc test object fromEntries with template literal containing expression in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with template literal containing expression in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn176_testTemplateWithExpressionInMap();
@@ -2411,12 +2411,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test177
      * @tc.number SUB_BUILTINS_Object8_TEST_17700
-     * @tc.name Object8Test177
-     * @tc.desc test object fromEntries with object containing nested array in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with object containing nested array in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn177_testObjectWithNestedArrayInArray();
@@ -2424,12 +2424,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test178
      * @tc.number SUB_BUILTINS_Object8_TEST_17800
-     * @tc.name Object8Test178
-     * @tc.desc test object fromEntries with sorted array literal in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with sorted array literal in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn178_testSortedArrayLiteralInMap();
@@ -2437,12 +2437,12 @@ export default function Object8Test() {
     });
 
     /**
+     * @tc.name   Object8Test180
      * @tc.number SUB_BUILTINS_Object8_TEST_18000
-     * @tc.name Object8Test180
-     * @tc.desc test object fromEntries with all basic types in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object fromEntries with all basic types in map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object8Test180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn180_testAllBasicTypesInMap();

@@ -27,14 +27,14 @@ export default function textInputInputFilterTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_INPUTFILTER_0100
-    * @tc.name       : testTextInputInputFilter001
-    * @tc.desc       : test inputFilter event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputInputFilter001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_INPUTFILTER_0100
+     * @tc.desc   test inputFilter event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputInputFilter001', Level.LEVEL1, async (done: Function) => {
       let driver:Driver = Driver.create();
       let textInput:Component = await driver.findComponent(ON.type('TextInput'));

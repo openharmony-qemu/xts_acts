@@ -51,12 +51,15 @@ export default function Row_Margin() {
       console.info("Row_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ROW_PARENTCOMPONENTCHANGED_0600
-     * @tc.name testParentComponentChangedRowMargin
-     * @tc.desc Setting the Margin for the Row component
-     */
 
+    /**
+     * @tc.name   testParentComponentChangedRowMargin
+     * @tc.number testParentComponentChangedRowMargin
+     * @tc.desc   testParentComponentChangedRowMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testParentComponentChangedRowMargin',  Level.LEVEL0, async (done: Function) => {
       console.info('testParentComponentChangedRowMargin START');
       globalThis.value.message.notify({

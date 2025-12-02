@@ -48,10 +48,12 @@ export default function FocusScopeId015() {
     });
 
     /**
-     * @tc.number    FocusScopeId015_0100
-     * @tc.name      FocusScopeId015_0100
-     * @tc.desc      Test focusScopeId
-     * @tc.level     Level 2
+     * @tc.name   FocusScopeId015_0100
+     * @tc.number FocusScopeId015_0100
+     * @tc.desc   Test focusScopeId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusScopeId015_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[FocusScopeId015_0100] START');

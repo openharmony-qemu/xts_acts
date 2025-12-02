@@ -54,14 +54,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0100
-     * @tc.desc: Call the startAbilityForResultAsCaller interface of UIExtensionAbility, and all parameters are
-     * valid (want parameters). Call this application ability successfully.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0100
+     * @tc.desc   Call the startAbilityForResultAsCaller interface of UIExtensionAbility, and all parameters are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -102,14 +101,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0200
-     * @tc.desc: Call the startAbilityForResultAsCaller interface of UIExtensionAbility, all parameters are
-     * valid (want parameters), and call other applications successfully.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0200
+     * @tc.desc   Call the startAbilityForResultAsCaller interface of UIExtensionAbility, all parameters are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -150,14 +148,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0400
-     * @tc.desc: Calling the startAbilityForResultAsCaller interface of UIExtensionAbility, the want parameter is
-     * invalid, and the call failed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0400
+     * @tc.desc   Calling the startAbilityForResultAsCaller interface of UIExtensionAbility, the want parameter is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0400', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -203,14 +200,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0500
-     * @tc.desc: In non-system application, calling the startAbilityForResultAsCaller interface of UIExtensionAbility,
-     * the parameters are valid (want and callback parameters), and the call fails.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0500
+     * @tc.desc   In non-system application, calling the startAbilityForResultAsCaller interface of UIExtensionAbility,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0500', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -256,14 +252,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0600
-     * @tc.desc: The method of implicit startup is used to call the startAbilityForResultAsCaller interface of
-     * UIExtensionAbility, and the call is successful.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0600
+     * @tc.desc   The method of implicit startup is used to call the startAbilityForResultAsCaller interface of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0600', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -305,15 +300,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0700
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0700
-     * @tc.desc: When the Ability permission cannot be pulled up in the background, the startAbilityForResultAsCaller
-     * in UIExtensionAbility is called from the background, and the parameters are valid (want parameters), and the
-     * call fails.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0700
+     * @tc.desc   When the Ability permission cannot be pulled up in the background, the startAbilityForResultAsCaller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0700', Level.LEVEL0, async (done: Function) => {
       if (deviceSupport === 'false') {
@@ -371,14 +364,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1100
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1100
-     * @tc.desc: When calling the startAbilityForResult of UIExtensionAbility to pull up the non-existent UIAbility,
-     * an error is returned.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1100
+     * @tc.desc   When calling the startAbilityForResult of UIExtensionAbility to pull up the non-existent UIAbility,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -419,13 +411,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1200
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1200
-     * @tc.desc: Calling startAbilityForResult of UIExtensionAbility to pull up invisibility returns an error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1200
+     * @tc.desc   Calling startAbilityForResult of UIExtensionAbility to pull up invisibility returns an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -472,14 +464,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1300
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1300
-     * @tc.desc: An internal error is returned when the startAbilityForResult of UIExtensionAbility is called and
-     * the value of the abilityName in want is not passed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1300
+     * @tc.desc   An internal error is returned when the startAbilityForResult of UIExtensionAbility is called and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1300', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -525,14 +516,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1400
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1400
-     * @tc.desc: It can be started normally when the startAbilityForResult of UIExtensionAbility is called
-     * and options is undefined.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1400
+     * @tc.desc   It can be started normally when the startAbilityForResult of UIExtensionAbility is called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1400', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -578,13 +568,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1500
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1500
-     * @tc.desc: StartAbilityForResult of UIExtensionAbility can be started normally when options is null.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1500
+     * @tc.desc   StartAbilityForResult of UIExtensionAbility can be started normally when options is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1500', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -630,13 +620,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1600
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1600
-     * @tc.desc: Error returned when calling startAbilityForResult of UIExtensionAbility and want is null.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1600
+     * @tc.desc   Error returned when calling startAbilityForResult of UIExtensionAbility and want is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1600', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -682,13 +672,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1700
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1700
-     * @tc.desc: Error returned when calling startAbilityForResult of UIExtensionAbility and want is empty.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1700
+     * @tc.desc   Error returned when calling startAbilityForResult of UIExtensionAbility and want is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1700', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -734,14 +724,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1800
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1800
-     * @tc.desc: An error is returned when calling the startAbilityForResult of UIExtensionAbility and
-     * bundleName is not passed in want.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1800
+     * @tc.desc   An error is returned when calling the startAbilityForResult of UIExtensionAbility and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1800', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -787,14 +776,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1900
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1900
-     * @tc.desc: Call startAbilityForResult of UIExtensionAbility to pull up invisibility when you have permission
-     * to pull up invisibility.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1900
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1900
+     * @tc.desc   Call startAbilityForResult of UIExtensionAbility to pull up invisibility when you have permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1900', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -834,14 +822,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2000
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2000
-     * @tc.desc: The caller receives the return value -1 when calling the startAbilityForResult of
-     * UIExtensionAbility to pull up the ability and kill it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2000
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2000
+     * @tc.desc   The caller receives the return value -1 when calling the startAbilityForResult of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2000', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -890,14 +877,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2100
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2100
-     * @tc.desc: The caller will not be pulled up again when the startAbilityForResult of UIExtensionAbility is
-     * called to pull up the ability and then the caller is killed and then the pulled party is killed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2100
+     * @tc.desc   The caller will not be pulled up again when the startAbilityForResult of UIExtensionAbility is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -963,16 +949,14 @@ export default function abilityTest() {
       };
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0800
-    * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0800
-    * @tc.desc: Call startAbilityforresultscaler in UIExtensionAbility from the background when you have the
-    * permission to pull up the ability from the background. All parameters are valid (want parameters), and the
-    * call is successful.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0800
+     * @tc.desc   Call startAbilityforresultscaler in UIExtensionAbility from the background when you have the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0800', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -1025,15 +1009,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0900
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0900
-     * @tc.desc: Pull up UIExtensibility through the component, call the startAbilityForResult of UIExtensibility to
-     * pull up UIExtensibility, and the want obtained by UIExtensibility is the information for pulling up
-     * UIExtensibility application.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0900
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0900
+     * @tc.desc   Pull up UIExtensibility through the component, call the startAbilityForResult of UIExtensibility to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0900', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -1076,15 +1058,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0300
-     * @tc.desc: Call the startAbilityForResultAsCaller interface of UIExtensionAbility, all parameters are
-     * valid (want parameters), the calling ability is successful, and the parameters returned by
-     * terminateSelfWithResult can be received.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0300
+     * @tc.desc   Call the startAbilityForResultAsCaller interface of UIExtensionAbility, all parameters are
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0300', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;

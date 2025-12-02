@@ -48,12 +48,12 @@ export default function RotationGestureHandlerTest() {
     });
 
     /**
-     * @tc.number    RotationGestureHandler_0010
-     * @tc.name      RotationGestureHandlerOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RotationGestureHandler_0010
+     * @tc.number RotationGestureHandler_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RotationGestureHandler_0010', Level.LEVEL0, async (done: Function) => {
       console.info('RotationGestureHandler_0010 START');

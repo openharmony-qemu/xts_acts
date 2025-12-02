@@ -23,10 +23,13 @@ export default function getAppCloneIdentity() {
     describe('ActsBmsgetAppCloneIdentityTest', function () {
 
         /**
-        * @tc.number GetAppCloneIdentity_0100
-        * @tc.name BUNDLE::getAppCloneIdentity_0100
-        * @tc.desc Test GetAppCloneIdentity interfaces with other hap.
-        */
+         * @tc.name   getAppCloneIdentity_0100
+         * @tc.number GetAppCloneIdentity_0100
+         * @tc.desc   Test GetAppCloneIdentity interfaces with other hap.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getAppCloneIdentity_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let dataInfo = bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
             let data : void | bundleManager.AppCloneIdentity = await bundleManager.getAppCloneIdentity(dataInfo.appInfo.uid).catch(err => {

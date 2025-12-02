@@ -23,10 +23,12 @@ export default function missionManagerTest() {
   describe('missionManagerTest', () => {
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0100
-     * @tc.name: missionManager.on system interface interception test
-     * @tc.desc: Test the third-party application call missionManager.on will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0100
+     * @tc.number System_API_Test_Mission_Manager_0100
+     * @tc.desc   Test the third-party application call missionManager.on will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0100';
@@ -64,10 +66,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0200
-     * @tc.name: callback form getMissionInfo system interface interception test
-     * @tc.desc: Test the third-party application call getMissionInfo will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0200
+     * @tc.number System_API_Test_Mission_Manager_0200
+     * @tc.desc   Test the third-party application call getMissionInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0200';
@@ -81,10 +85,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0300
-     * @tc.name: promise form getMissionInfo system interface interception test
-     * @tc.desc: Test the third-party application call getMissionInfo will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0300
+     * @tc.number System_API_Test_Mission_Manager_0300
+     * @tc.desc   Test the third-party application call getMissionInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0300';
@@ -104,10 +110,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0400
-     * @tc.name: callback form getMissionInfos system interface interception test
-     * @tc.desc: Test the third-party application call getMissionInfos will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0400
+     * @tc.number System_API_Test_Mission_Manager_0400
+     * @tc.desc   Test the third-party application call getMissionInfos will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0400';
@@ -121,10 +129,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0500
-     * @tc.name: promise form getMissionInfos system interface interception test
-     * @tc.desc: Test the third-party application call getMissionInfos will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0500
+     * @tc.number System_API_Test_Mission_Manager_0500
+     * @tc.desc   Test the third-party application call getMissionInfos will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0500';
@@ -144,10 +154,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0600
-     * @tc.name: callback form getMissionSnapShot system interface interception test
-     * @tc.desc: Test the third-party application call getMissionSnapShot will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0600
+     * @tc.number System_API_Test_Mission_Manager_0600
+     * @tc.desc   Test the third-party application call getMissionSnapShot will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0600';
@@ -161,10 +173,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0700
-     * @tc.name: promise form isRequestPublishFormSupported system interface interception test
-     * @tc.desc: Test the third-party application call isRequestPublishFormSupported will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0700
+     * @tc.number System_API_Test_Mission_Manager_0700
+     * @tc.desc   Test the third-party application call isRequestPublishFormSupported will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0700';
@@ -184,10 +198,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0800
-     * @tc.name: promise form getLowResolutionMissionSnapShot system interface interception test
-     * @tc.desc: Test the third-party application call getLowResolutionMissionSnapShot will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0800
+     * @tc.number System_API_Test_Mission_Manager_0800
+     * @tc.desc   Test the third-party application call getLowResolutionMissionSnapShot will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0800';
@@ -201,10 +217,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_0900
-     * @tc.name: promise form getLowResolutionMissionSnapShot system interface interception test
-     * @tc.desc: Test the third-party application call getLowResolutionMissionSnapShot will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_0900
+     * @tc.number System_API_Test_Mission_Manager_0900
+     * @tc.desc   Test the third-party application call getLowResolutionMissionSnapShot will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_0900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0900';
@@ -224,10 +242,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1000
-     * @tc.name: callback form lockMission system interface interception test
-     * @tc.desc: Test the third-party application call lockMission will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1000
+     * @tc.number System_API_Test_Mission_Manager_1000
+     * @tc.desc   Test the third-party application call lockMission will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1000', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1000';
@@ -240,10 +260,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1100
-     * @tc.name: promise form lockMission system interface interception test
-     * @tc.desc: Test the third-party application call lockMission will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1100
+     * @tc.number System_API_Test_Mission_Manager_1100
+     * @tc.desc   Test the third-party application call lockMission will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1100';
@@ -262,10 +284,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1200
-     * @tc.name: callback form unlockMission system interface interception test
-     * @tc.desc: Test the third-party application call unlockMission will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1200
+     * @tc.number System_API_Test_Mission_Manager_1200
+     * @tc.desc   Test the third-party application call unlockMission will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1200';
@@ -278,10 +302,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1300
-     * @tc.name: promise form unlockMission system interface interception test
-     * @tc.desc: Test the third-party application call unlockMission will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1300
+     * @tc.number System_API_Test_Mission_Manager_1300
+     * @tc.desc   Test the third-party application call unlockMission will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1300';
@@ -300,10 +326,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1400
-     * @tc.name: callback form clearMission system interface interception test
-     * @tc.desc: Test the third-party application call clearMission will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1400
+     * @tc.number System_API_Test_Mission_Manager_1400
+     * @tc.desc   Test the third-party application call clearMission will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1400';
@@ -316,10 +344,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1500
-     * @tc.name: promise form clearMission system interface interception test
-     * @tc.desc: Test the third-party application call clearMission will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1500
+     * @tc.number System_API_Test_Mission_Manager_1500
+     * @tc.desc   Test the third-party application call clearMission will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1500';
@@ -338,10 +368,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1600
-     * @tc.name: callback form clearAllMissions system interface interception test
-     * @tc.desc: Test the third-party application call clearAllMissions will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1600
+     * @tc.number System_API_Test_Mission_Manager_1600
+     * @tc.desc   Test the third-party application call clearAllMissions will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1600';
@@ -353,10 +385,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1700
-     * @tc.name: promise form clearAllMissions system interface interception test
-     * @tc.desc: Test the third-party application call clearAllMissions will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1700
+     * @tc.number System_API_Test_Mission_Manager_1700
+     * @tc.desc   Test the third-party application call clearAllMissions will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1700';
@@ -374,10 +408,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1800
-     * @tc.name: callback form moveMissionToFront system interface interception test
-     * @tc.desc: Test the third-party application call moveMissionToFront will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1800
+     * @tc.number System_API_Test_Mission_Manager_1800
+     * @tc.desc   Test the third-party application call moveMissionToFront will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1800';
@@ -390,10 +426,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_1900
-     * @tc.name: promise form moveMissionToFront system interface interception test
-     * @tc.desc: Test the third-party application call moveMissionToFront will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_1900
+     * @tc.number System_API_Test_Mission_Manager_1900
+     * @tc.desc   Test the third-party application call moveMissionToFront will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_1900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1900';
@@ -412,10 +450,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2000
-     * @tc.name: Multi-parameter moveMissionToFront system interface interception test in the form of callback
-     * @tc.desc: Test the third-party application call moveMissionToFront will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2000
+     * @tc.number System_API_Test_Mission_Manager_2000
+     * @tc.desc   Test the third-party application call moveMissionToFront will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2000', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2000';
@@ -430,10 +470,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2100
-     * @tc.name: Multi-parameter moveMissionToFront system interface interception test in the form of promise
-     * @tc.desc: Test the third-party application call moveMissionToFront will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2100
+     * @tc.number System_API_Test_Mission_Manager_2100
+     * @tc.desc   Test the third-party application call moveMissionToFront will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2100';
@@ -454,10 +496,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2200
-     * @tc.name: callback form moveMissionsToForeground system interface interception test
-     * @tc.desc: Test the third-party application call moveMissionsToForeground will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2200
+     * @tc.number System_API_Test_Mission_Manager_2200
+     * @tc.desc   Test the third-party application call moveMissionsToForeground will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2200';
@@ -470,10 +514,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2300
-     * @tc.name: promise form moveMissionsToForeground system interface interception test
-     * @tc.desc: Test the third-party application call moveMissionsToForeground will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2300
+     * @tc.number System_API_Test_Mission_Manager_2300
+     * @tc.desc   Test the third-party application call moveMissionsToForeground will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2300';
@@ -492,10 +538,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2400
-     * @tc.name: Multi-parameter moveMissionsToForeground system interface interception test in the form of callback
-     * @tc.desc: Test the third-party application call moveMissionsToForeground will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2400
+     * @tc.number System_API_Test_Mission_Manager_2400
+     * @tc.desc   Test the third-party application call moveMissionsToForeground will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2400';
@@ -509,10 +557,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2500
-     * @tc.name: Multi-parameter moveMissionsToForeground system interface interception test in the form of promise
-     * @tc.desc: Test the third-party application call moveMissionsToForeground will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2500
+     * @tc.number System_API_Test_Mission_Manager_2500
+     * @tc.desc   Test the third-party application call moveMissionsToForeground will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2500';
@@ -532,10 +582,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2600
-     * @tc.name: callback form moveMissionsToBackground system interface interception test
-     * @tc.desc: Test the third-party application call moveMissionsToBackground will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2600
+     * @tc.number System_API_Test_Mission_Manager_2600
+     * @tc.desc   Test the third-party application call moveMissionsToBackground will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2600';
@@ -548,10 +600,12 @@ export default function missionManagerTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Mission_Manager_2700
-     * @tc.name: promise form moveMissionsToBackground system interface interception test
-     * @tc.desc: Test the third-party application call moveMissionsToBackground will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Mission_Manager_2700
+     * @tc.number System_API_Test_Mission_Manager_2700
+     * @tc.desc   Test the third-party application call moveMissionsToBackground will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Mission_Manager_2700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_2700';

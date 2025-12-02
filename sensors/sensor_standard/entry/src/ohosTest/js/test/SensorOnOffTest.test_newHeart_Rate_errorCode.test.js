@@ -154,14 +154,14 @@ describe("SensorJsTest_sensor_58", function () {
         console.info('afterEach called')
     })
 
-    /*
-    * @tc.number: SensorOnOff_ErrCode_Test_0023
-    * @tc.name: SensorOnOff_ErrCode_Test_0023
-    * @tc.desc:Verification results of the incorrect parameters of the test interface
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0023
+     * @tc.number SensorOnOff_ErrCode_Test_0023
+     * @tc.desc   Verification results of the incorrect parameters of the test interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("SensorOnOff_ErrCode_Test_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try{
             sensor.getSingleSensor(sensor.SensorId.HEART_RATE,(error, data) => {
@@ -187,13 +187,13 @@ describe("SensorJsTest_sensor_58", function () {
         }
     })
 
-    /*
-     * @tc.number:SensorOnOff_ErrCode_Test_0024
-     * @tc.name: SensorOnOff_ErrCode_Test_0024
-     * @tc.desc: Functional Use Cases
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_ErrCode_Test_0024
+     * @tc.number SensorOnOff_ErrCode_Test_0024
+     * @tc.desc   Functional Use Cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_ErrCode_Test_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------SensorOnOff_ErrCode_Test_0024--------------');

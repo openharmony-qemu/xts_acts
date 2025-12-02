@@ -45,13 +45,13 @@ export default function searchFontScaleTest() {
       console.info("searchFontScaleTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         searchFontScaleTest0001
-     * @tc.desic        Test searchFontScaleTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   searchFontScaleTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0001',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -66,13 +66,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         searchFontScaleTest0002
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.string')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   searchFontScaleTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0002',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -87,13 +87,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         searchFontScaleTest0003
-     * @tc.desic        Test searchFontScaleTest Normal value 
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   searchFontScaleTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0003',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -108,13 +108,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         searchFontScaleTest0004
-     * @tc.desic        Test searchFontScaleTest abnormal value :less than minimum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   searchFontScaleTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0004',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -129,13 +129,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0004] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         searchFontScaleTest0005
-     * @tc.desic        Test searchFontScaleTest abnormal value :Greater than maximum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   searchFontScaleTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0005',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -150,13 +150,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0005] end");
     });
 
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         searchFontScaleTest0006
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.boolean')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   searchFontScaleTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0006',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -171,13 +171,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0006] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         searchFontScaleTest0007
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.color')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   searchFontScaleTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0007',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -192,13 +192,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0007] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         searchFontScaleTest0008
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.float')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   searchFontScaleTest0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0008',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -213,13 +213,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0008] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         searchFontScaleTest0009
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.integer')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   searchFontScaleTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0009',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -235,13 +235,13 @@ export default function searchFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         searchFontScaleTest00010
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.intarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   searchFontScaleTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0010',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -256,13 +256,13 @@ export default function searchFontScaleTest() {
         console.info("[searchFontScaleTest0010] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         searchFontScaleTest0011
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.pattern')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   searchFontScaleTest0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0011',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -278,13 +278,13 @@ export default function searchFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         searchFontScaleTest0012
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.plural')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0012
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   searchFontScaleTest0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0012',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -300,13 +300,13 @@ export default function searchFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0013
-     * @tc.name         searchFontScaleTest0013
-     * @tc.desic        Test searchFontScaleTest reference value :$r('app.strarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   searchFontScaleTest0013
+     * @tc.number SUB_ACE_BASIC_ETS_API_0013
+     * @tc.desc   searchFontScaleTest0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchFontScaleTest0013',  Level.LEVEL0, async () => {
         let driver = Driver.create();

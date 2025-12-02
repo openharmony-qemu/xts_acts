@@ -47,12 +47,12 @@ export default function ChipTest0010() {
     });
 
     /**
-     * @tc.number    ChipTest0010_001
-     * @tc.name      ChipTest0010_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ChipTest0010_001
+     * @tc.number ChipTest0010_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ChipTest0010_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ChipTest0010_001] START');

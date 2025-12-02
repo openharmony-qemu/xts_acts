@@ -58,13 +58,13 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
         done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getHttpBodyStream_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getHttpBodyStream
-     *@tc.desc test SdkSchemeHandler_getHttpBodyStream
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getHttpBodyStream
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getHttpBodyStream_API_0001
+     * @tc.desc   test SdkSchemeHandler_getHttpBodyStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_getHttpBodyStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getHttpBodyStream"
@@ -75,13 +75,13 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SchemeHandler_getSize_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getSize
-     *@tc.desc test SdkSchemeHandler_getSize
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getSize
+     * @tc.number SUB_ACE_WEB_SchemeHandler_getSize_API_0001
+     * @tc.desc   test SdkSchemeHandler_getSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_getSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getSize"
@@ -92,13 +92,13 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_getPosition_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_getPosition
-     *@tc.desc test SdkSchemeHandler_getPosition
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_getPosition
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_getPosition_API_0001
+     * @tc.desc   test SdkSchemeHandler_getPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_getPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getPosition"
@@ -110,13 +110,13 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_isChunked_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isChunked
-     *@tc.desc test SdkSchemeHandler_isChunked
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isChunked
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isChunked_API_0001
+     * @tc.desc   test SdkSchemeHandler_isChunked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isChunked', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_isChunked"
@@ -129,13 +129,13 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_isEof_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isEof
-     *@tc.desc test SdkSchemeHandler_isEof
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isEof
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isEof_API_0001
+     * @tc.desc   test SdkSchemeHandler_isEof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isEof', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_isEof"
@@ -146,13 +146,13 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_isInMemory
-     *@tc.desc test SdkSchemeHandler_isInMemory
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isInMemory
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_API_0001
+     * @tc.desc   test SdkSchemeHandler_isInMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isInMemory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_isInMemory"

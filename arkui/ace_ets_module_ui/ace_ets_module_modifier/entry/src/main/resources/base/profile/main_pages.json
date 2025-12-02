@@ -75,6 +75,10 @@
         "MainAbility/pages/scrollNestedScroll",
         "MainAbility/pages/scrollEnablePaging",
         "MainAbility/pages/gridNestedScroll",
-        "MainAbility/pages/listNestedScroll"
+        "MainAbility/pages/listNestedScroll",
+        "MainAbility/pages/Draw/DrawModifierOneTest",
+        "MainAbility/pages/Draw/DrawModifierTwoTest",
+        "MainAbility/pages/Draw/DrawForegroundTest",
+        "MainAbility/pages/useEffect/useEffectIndex"
     ]
 }

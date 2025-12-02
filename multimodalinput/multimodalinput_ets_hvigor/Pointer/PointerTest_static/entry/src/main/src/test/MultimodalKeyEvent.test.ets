@@ -40,7 +40,6 @@ export default function MultimodalKeyEventTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KeyEvent_Action_0100
      * @tc.number SUB_MMI_Input_Api_KeyEvent_Action_0100
      * @tc.desc   Test KeyEvent Action
@@ -66,7 +65,6 @@ export default function MultimodalKeyEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KeyEvent_Key_0100
      * @tc.number SUB_MMI_Input_Api_KeyEvent_Key_0100
      * @tc.desc   Test KeyEvent Key
@@ -97,7 +95,6 @@ export default function MultimodalKeyEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_KeyEvent_Key_0200
      * @tc.number SUB_MMI_Input_Api_KeyEvent_Key_0200
      * @tc.desc   Test KeyEvent

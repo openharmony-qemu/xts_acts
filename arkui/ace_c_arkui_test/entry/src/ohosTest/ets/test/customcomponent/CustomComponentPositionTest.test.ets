@@ -26,26 +26,26 @@ export default function customComponentPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_POSITION_0100
-     * @tc.name       : testCustomComponentPosition001
-     * @tc.desc       : testing position for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentPosition001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_POSITION_0100
+     * @tc.desc   testing position for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_POSITION_0200
-     * @tc.name       : testCustomComponentPosition002
-     * @tc.desc       : testing position for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentPosition002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_POSITION_0200
+     * @tc.desc   testing position for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentPosition002()).assertEqual(0)

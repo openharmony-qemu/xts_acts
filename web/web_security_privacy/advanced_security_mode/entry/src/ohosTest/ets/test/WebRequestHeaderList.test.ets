@@ -49,12 +49,12 @@ export default function webRequestHeaderList() {
 
 
     /**
+     * @tc.name   testWebView_getSecurityLevel0001
      * @tc.number SUB_ACE_WEB_getSecurityLevel_SDK_0001
-     * @tc.name testWebView_getSecurityLevel0001
-     * @tc.desc test getSecurityLevel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test getSecurityLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getSecurityLevel0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       emitKey = "emitGetSecurityLevelError";
@@ -64,12 +64,12 @@ export default function webRequestHeaderList() {
     });
 
     /**
+     * @tc.name   testWebView_onFirstContentfulPaint_navigationStartTick
      * @tc.number SUB_ACE_WEB_ONFIRSTCONTENTFULPAINT_0001
-     * @tc.name testWebView_onFirstContentfulPaint_navigationStartTick
-     * @tc.desc test onOverrideUrlLoading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onOverrideUrlLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_onFirstContentfulPaint_navigationStartTick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       emitKey = "emitNavigationStartTick";

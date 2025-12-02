@@ -25,12 +25,12 @@ export default function timerfdNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIMERFD_TIMERFDCREATE_0100
-     * @tc.name       : testMuslTimerfdTimerfdCreate001
-     * @tc.desc       : test timerfd_create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimerfdTimerfdCreate001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMERFD_TIMERFDCREATE_0100
+     * @tc.desc   test timerfd_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimerfdTimerfdCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -40,12 +40,12 @@ export default function timerfdNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIMERFD_TIMERFDGETTIME_0100
-     * @tc.name       : testMuslTimerfdTimerfdGettime001
-     * @tc.desc       : test timerfd_gettime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimerfdTimerfdGettime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMERFD_TIMERFDGETTIME_0100
+     * @tc.desc   test timerfd_gettime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimerfdTimerfdGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;
@@ -54,12 +54,12 @@ export default function timerfdNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIMERFD_TIMERFDSETTIME_0100
-     * @tc.name       : testMuslTimerfdTimerfdSettime001
-     * @tc.desc       : test timerfd_settime
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimerfdTimerfdSettime001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMERFD_TIMERFDSETTIME_0100
+     * @tc.desc   test timerfd_settime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimerfdTimerfdSettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 1;

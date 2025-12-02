@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import InputPresetTest from './PresetTest/InputPresetTest.test';
 import searchTest from './TextChangeObserverTest/search.test';
 import textAreaTest from './TextChangeObserverTest/textArea.test';
 import textInputTest from './TextChangeObserverTest/textInput.test';
@@ -20,8 +20,10 @@ import richEditorTest from './TextChangeObserverTest/richEditor.test';
 import imageAltTest from './Image/imageAltTest.test';
 import minLines from './TextTest/minLines.test';
 import richEditorSupportSvg2Test from './richEditorSupportSvg2Test/richEditorSupportSvg2.test';
+import scrollbarTest from './scrollbarTest/scrollbarTest.test';
 
 export default function testsuite() {
+  InputPresetTest();
   searchTest();
   textAreaTest();
   textInputTest();
@@ -29,4 +31,5 @@ export default function testsuite() {
   imageAltTest();
   minLines();
   richEditorSupportSvg2Test();
+  scrollbarTest()
 }

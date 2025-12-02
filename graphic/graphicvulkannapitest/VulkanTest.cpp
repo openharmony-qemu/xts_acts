@@ -257,10 +257,12 @@ void VulkanLoaderUnitTest::TearDownTestCase()
 }
 
 /**
- * @tc.name: Load base Vulkan functions
- * @tc.desc: Load base Vulkan functions
- * @tc.type: FUNC
- * @tc.require: issueI6SKRO
+ * @tc.name   LoadBaseFuncPtr
+ * @tc.number LoadBaseFuncPtr
+ * @tc.desc   Load base Vulkan functions
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(VulkanLoaderUnitTest, LoadBaseFuncPtr, Function | MediumTest | Level1)
 {
@@ -292,10 +294,12 @@ HWTEST_F(VulkanLoaderUnitTest, LoadBaseFuncPtr, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.name: load instance based function pointer
- * @tc.desc: load instance based function pointer
- * @tc.type: FUNC
- * @tc.require: issueI6SKRO
+ * @tc.name   LoadInstanceFuncPtr
+ * @tc.number LoadInstanceFuncPtr
+ * @tc.desc   load instance based function pointer
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(VulkanLoaderUnitTest, LoadInstanceFuncPtr, Function | MediumTest | Level1)
 {
@@ -355,10 +359,12 @@ HWTEST_F(VulkanLoaderUnitTest, LoadInstanceFuncPtr, Function | MediumTest | Leve
 }
 
 /**
- * @tc.name: test vkEnumeratePhysicalDevices
- * @tc.desc: test vkEnumeratePhysicalDevices
- * @tc.type: FUNC
- * @tc.require: issueI6SKRO
+ * @tc.name   vkEnumeratePhysicalDevices_Test
+ * @tc.number vkEnumeratePhysicalDevices_Test
+ * @tc.desc   test vkEnumeratePhysicalDevices
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(VulkanLoaderUnitTest, vkEnumeratePhysicalDevices_Test, Function | MediumTest | Level1)
 {
@@ -387,10 +393,12 @@ HWTEST_F(VulkanLoaderUnitTest, vkEnumeratePhysicalDevices_Test, Function | Mediu
 }
 
 /**
- * @tc.name: test vkCreateDevice
- * @tc.desc: test vkCreateDevice
- * @tc.type: FUNC
- * @tc.require: issueI6SKRO
+ * @tc.name   vkCreateDevice_Test
+ * @tc.number vkCreateDevice_Test
+ * @tc.desc   test vkCreateDevice
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(VulkanLoaderUnitTest, vkCreateDevice_Test, Function | MediumTest | Level1)
 {
@@ -430,10 +438,12 @@ HWTEST_F(VulkanLoaderUnitTest, vkCreateDevice_Test, Function | MediumTest | Leve
 }
 
 /**
- * @tc.name: test vkCreateDevice
- * @tc.desc: test vkCreateDevice
- * @tc.type: FUNC
- * @tc.require: issueI6SKRO
+ * @tc.name   getNativeBufferPropertiesOHOS_Test
+ * @tc.number getNativeBufferPropertiesOHOS_Test
+ * @tc.desc   test vkCreateDevice
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(VulkanLoaderUnitTest, getNativeBufferPropertiesOHOS_Test, Function | MediumTest | Level1)
 {
@@ -483,10 +493,12 @@ HWTEST_F(VulkanLoaderUnitTest, getNativeBufferPropertiesOHOS_Test, Function | Me
 }
 
 /**
- * @tc.name: test vkCreateDevice
- * @tc.desc: test vkCreateDevice
- * @tc.type: FUNC
- * @tc.require: issueI6SKRO
+ * @tc.name   getMemoryNativeBufferOHOS_Test
+ * @tc.number getMemoryNativeBufferOHOS_Test
+ * @tc.desc   test vkCreateDevice
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(VulkanLoaderUnitTest, getMemoryNativeBufferOHOS_Test, Function | MediumTest | Level1)
 {

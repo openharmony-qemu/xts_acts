@@ -26,14 +26,14 @@ export default function customComponentOnDrawFrontTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONDRAW_FRONT_0100
-    * @tc.name       : testCustomComponentOnDrawFront001
-    * @tc.desc       : test onDrawFront event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnDrawFront001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONDRAW_FRONT_0100
+     * @tc.desc   test onDrawFront event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCustomComponentOnDrawFront001', Level.LEVEL0, async (done: Function) => {
       expect(Utils.getComponentInfoByKey('OnDrawTest').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()

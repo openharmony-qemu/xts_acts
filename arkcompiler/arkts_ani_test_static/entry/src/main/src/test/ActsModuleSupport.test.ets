@@ -31,12 +31,12 @@ export default function moduleSupportTest() {
     }
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FINDFUNCTION_0100
-     * @tc.name       test_Module_FindFunction_0001
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_FindFunction_0001
+     * @tc.number SUB_ANI_MODULE_FINDFUNCTION_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_FindFunction_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FINDVARABLE_0100
-     * @tc.name       test_Module_FindVariable_0001
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_FindVariable_0001
+     * @tc.number SUB_ANI_MODULE_FINDVARABLE_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_FindVariable_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FINDCLASS_0100
-     * @tc.name       test_Module_FindClass_0001
-     * @tc.desc       find class
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_FindClass_0001
+     * @tc.number SUB_ANI_MODULE_FINDCLASS_0100
+     * @tc.desc   find class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_FindClass_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FINDINTERFACE_0100
-     * @tc.name       test_Module_FindInterface_0001
-     * @tc.desc       find interface
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_FindInterface_0001
+     * @tc.number SUB_ANI_MODULE_FINDINTERFACE_0100
+     * @tc.desc   find interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_FindInterface_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FINDABSTARCTCLASS_0100
-     * @tc.name       test_Module_FindAbstractClass_0001
-     * @tc.desc       find abstract class
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_FindAbstractClass_0001
+     * @tc.number SUB_ANI_MODULE_FINDABSTARCTCLASS_0100
+     * @tc.desc   find abstract class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_FindAbstractClass_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FINDFINALCLASS_0100
-     * @tc.name       test_Module_FindFinalClass_0001
-     * @tc.desc       find final class
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_FindFinalClass_0001
+     * @tc.number SUB_ANI_MODULE_FINDFINALCLASS_0100
+     * @tc.desc   find final class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_FindFinalClass_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_INVALID_ARG_DESCRIPTOR_0100
-     * @tc.name       test_Module_Invalid_Arg_Descriptor_0001
-     * @tc.desc       invalid arg descriptor
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Invalid_Arg_Descriptor_0001
+     * @tc.number SUB_ANI_MODULE_INVALID_ARG_DESCRIPTOR_0100
+     * @tc.desc   invalid arg descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Invalid_Arg_Descriptor_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_MANY_DESCRIPTOR_0100
-     * @tc.name       test_Module_Many_Descriptor_0001
-     * @tc.desc       module many descriptor
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Many_Descriptor_0001
+     * @tc.number SUB_ANI_MODULE_MANY_DESCRIPTOR_0100
+     * @tc.desc   module many descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Many_Descriptor_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_ALLTYPE_0100
-     * @tc.name       test_Module_AllType_0001
-     * @tc.desc       test all type
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_AllType_0001
+     * @tc.number SUB_ANI_MODULE_ALLTYPE_0100
+     * @tc.desc   test all type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_AllType_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_B_IN_NAMESPACE_A_0100
-     * @tc.name       test_Module_Find_B_In_Namespace_A
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_B_In_Namespace_A
+     * @tc.number SUB_ANI_MODULE_FIND_B_IN_NAMESPACE_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_B_In_Namespace_A", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_B_EXTENDS_A_0100
-     * @tc.name       Module_Find_B_Extends_A
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   Module_Find_B_Extends_A
+     * @tc.number SUB_ANI_MODULE_FIND_B_EXTENDS_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Module_Find_B_Extends_A", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_C_EXTENDS_B_EXTENDS_A_0100
-     * @tc.name       test_Module_Find_C_Extends_B_Extends_A
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_C_Extends_B_Extends_A
+     * @tc.number SUB_ANI_MODULE_FIND_C_EXTENDS_B_EXTENDS_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_C_Extends_B_Extends_A", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_GENERIC_CLASS_0100
-     * @tc.name       test_Module_Find_Generic_Class
-     * @tc.desc       find generic vlass
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Generic_Class
+     * @tc.number SUB_ANI_MODULE_FIND_GENERIC_CLASS_0100
+     * @tc.desc   find generic vlass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Generic_Class", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_COMBINATION_0100
-     * @tc.name       test_Module_Find_Combination_0001
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Combination_0001
+     * @tc.number SUB_ANI_MODULE_FIND_COMBINATION_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Combination_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_COMBINATION_0200
-     * @tc.name       test_Module_Find_Combination_0002
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Combination_0002
+     * @tc.number SUB_ANI_MODULE_FIND_COMBINATION_0200
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Combination_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_ENUM_0100
-     * @tc.name       test_Module_Find_enum_0001
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_enum_0001
+     * @tc.number SUB_ANI_MODULE_FIND_ENUM_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_enum_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_INVALID_ARGS_0100
-     * @tc.name       test_Module_Find_Enum_Invalid_Args
-     * @tc.desc       test invalid args
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Enum_Invalid_Args
+     * @tc.number SUB_ANI_MODULE_FIND_INVALID_ARGS_0100
+     * @tc.desc   test invalid args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Enum_Invalid_Args", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_ENUM_MANY_DESCRIPTOR_0100
-     * @tc.name       test_Module_Find_Enum_Many_Descriptor
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Enum_Many_Descriptor
+     * @tc.number SUB_ANI_MODULE_FIND_ENUM_MANY_DESCRIPTOR_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Enum_Many_Descriptor", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_ENUM_B_IN_NAMESPACE_A_0100
-     * @tc.name       test_Module_Find_Enum_B_In_Namespace_A
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Enum_B_In_Namespace_A
+     * @tc.number SUB_ANI_MODULE_FIND_ENUM_B_IN_NAMESPACE_A_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Enum_B_In_Namespace_A", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_ENUM_COMBINE_SCENCES_0100
-     * @tc.name       test_Module_Find_Enum_Combine_Scenes_0001
-     * @tc.desc       find enum combine scenes
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Enum_Combine_Scenes_0001
+     * @tc.number SUB_ANI_MODULE_FIND_ENUM_COMBINE_SCENCES_0100
+     * @tc.desc   find enum combine scenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Enum_Combine_Scenes_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_ENUM_COMBINE_SCENCES_0200
-     * @tc.name       test_Module_Find_Enum_Combine_Scenes_0002
-     * @tc.desc       find enum combine scenes
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Enum_Combine_Scenes_0002
+     * @tc.number SUB_ANI_MODULE_FIND_ENUM_COMBINE_SCENCES_0200
+     * @tc.desc   find enum combine scenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Enum_Combine_Scenes_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_ENUM_COMBINE_SCENCES_0300
-     * @tc.name       test_Module_Find_Enum_Combine_Scenes_0003
-     * @tc.desc       find enum combine scenes
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Enum_Combine_Scenes_0003
+     * @tc.number SUB_ANI_MODULE_FIND_ENUM_COMBINE_SCENCES_0300
+     * @tc.desc   find enum combine scenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Enum_Combine_Scenes_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_INVALID_0100
-     * @tc.name       test_Module_Find_Function_Invalid_Arg_ModuleName
-     * @tc.desc       test invalid arg module name
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_Invalid_Arg_ModuleName
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_INVALID_0100
+     * @tc.desc   test invalid arg module name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_Invalid_Arg_ModuleName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_INVALID_ARG_SIGNATURE_0100
-     * @tc.name       test_Module_Find_Function_Invalid_Arg_Signature
-     * @tc.desc       invalid arg signature
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_Invalid_Arg_Signature
+     * @tc.number SUB_ANI_MODULE_FIND_INVALID_ARG_SIGNATURE_0100
+     * @tc.desc   invalid arg signature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_Invalid_Arg_Signature", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUN_INVALID_MODULE_0100
-     * @tc.name       test_Module_Find_Function_Invalid_Arg_Module
-     * @tc.desc       invalid module
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_Invalid_Arg_Module
+     * @tc.number SUB_ANI_MODULE_FIND_FUN_INVALID_MODULE_0100
+     * @tc.desc   invalid module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_Invalid_Arg_Module", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUN_INVALID_ARG_NAME_0100
-     * @tc.name       test_Module_Find_Function_Invalid_Arg_Name
-     * @tc.desc       fun invalid arg name
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_Invalid_Arg_Name
+     * @tc.number SUB_ANI_MODULE_FIND_FUN_INVALID_ARG_NAME_0100
+     * @tc.desc   fun invalid arg name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_Invalid_Arg_Name", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_INVALID_AARG_NAMR_IN_NAMESPACE_0100
-     * @tc.name       test_Module_Invalid_Arg_Name_In_Namespace
-     * @tc.desc       invalid arg name in namespace
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Invalid_Arg_Name_In_Namespace
+     * @tc.number SUB_ANI_MODULE_INVALID_AARG_NAMR_IN_NAMESPACE_0100
+     * @tc.desc   invalid arg name in namespace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Invalid_Arg_Name_In_Namespace", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0100
-     * @tc.name       test_Module_Find_Function_0001
-     * @tc.desc       invalid arg result
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0001
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0100
+     * @tc.desc   invalid arg result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0200
-     * @tc.name       test_Module_Find_Function_0002
-     * @tc.desc       invalid env
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0002
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0200
+     * @tc.desc   invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0300
-     * @tc.name       test_Module_Find_Function_0003
-     * @tc.desc       duplicate no signature
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0003
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0300
+     * @tc.desc   duplicate no signature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -601,12 +601,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0400
-     * @tc.name       test_Module_Find_Function_0004
-     * @tc.desc       find function
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0004
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0400
+     * @tc.desc   find function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0500
-     * @tc.name       test_Module_Find_Function_0005
-     * @tc.desc       case many descriptor
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0005
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0500
+     * @tc.desc   case many descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,12 +639,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0600
-     * @tc.name       test_Module_Find_Function_0006
-     * @tc.desc       find func all type
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0006
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0600
+     * @tc.desc   find func all type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -658,12 +658,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_FUNCTION_0700
-     * @tc.name       test_Module_Find_Function_0007
-     * @tc.desc       MediumTest
-     * @tc.size       find func B in namespace A
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Function_0007
+     * @tc.number SUB_ANI_MODULE_FIND_FUNCTION_0700
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Function_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0100
-     * @tc.name       test_Module_Find_Variable_0001
-     * @tc.desc       get int variable
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0001
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0100
+     * @tc.desc   get int variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0200
-     * @tc.name       test_Module_Find_Variable_0002
-     * @tc.desc       get ref variable
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0002
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0200
+     * @tc.desc   get ref variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -715,12 +715,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0300
-     * @tc.name       test_Module_Find_Variable_0003
-     * @tc.desc       get invalid variable name
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0003
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0300
+     * @tc.desc   get invalid variable name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -734,12 +734,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0400
-     * @tc.name       test_Module_Find_Variable_0004
-     * @tc.desc       invalid args result
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0004
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0400
+     * @tc.desc   invalid args result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -753,12 +753,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0500
-     * @tc.name       test_Module_Find_Variable_0005
-     * @tc.desc       invalid env
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0005
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0500
+     * @tc.desc   invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -772,12 +772,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0600
-     * @tc.name       test_Module_Find_Variable_0006
-     * @tc.desc       invalid module
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0006
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0600
+     * @tc.desc   invalid module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -791,12 +791,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0700
-     * @tc.name       test_Module_Find_Variable_0007
-     * @tc.desc       find int variable
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0007
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0700
+     * @tc.desc   find int variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -810,12 +810,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0800
-     * @tc.name       test_Module_Find_Variable_0008
-     * @tc.desc       many descriptor
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0008
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0800
+     * @tc.desc   many descriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -829,12 +829,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_0900
-     * @tc.name       test_Module_Find_Variable_0009
-     * @tc.desc       find variable B in namespace A
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0009
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_0900
+     * @tc.desc   find variable B in namespace A
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -848,12 +848,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1000
-     * @tc.name       test_Module_Find_Variable_0010
-     * @tc.desc       find const variable
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0010
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1000
+     * @tc.desc   find const variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -867,12 +867,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1100
-     * @tc.name       test_Module_Find_Variable_0011
-     * @tc.desc       combine test boolean
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0011
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1100
+     * @tc.desc   combine test boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -886,12 +886,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1200
-     * @tc.name       test_Module_Find_Variable_0012
-     * @tc.desc       combine test char
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0012
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1200
+     * @tc.desc   combine test char
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -905,12 +905,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1300
-     * @tc.name       test_Module_Find_Variable_0013
-     * @tc.desc       combine test byte
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0013
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1300
+     * @tc.desc   combine test byte
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -924,12 +924,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1400
-     * @tc.name       test_Module_Find_Variable_0014
-     * @tc.desc       combine test short
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0014
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1400
+     * @tc.desc   combine test short
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -943,12 +943,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1500
-     * @tc.name       test_Module_Find_Variable_0015
-     * @tc.desc       combine test long
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0015
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1500
+     * @tc.desc   combine test long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1600
-     * @tc.name       test_Module_Find_Variable_0016
-     * @tc.desc       combine test float
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0016
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1600
+     * @tc.desc   combine test float
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -981,12 +981,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1700
-     * @tc.name       test_Module_Find_Variable_0017
-     * @tc.desc       combine test double
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0017
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1700
+     * @tc.desc   combine test double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1000,12 +1000,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1800
-     * @tc.name       test_Module_Find_Variable_0018
-     * @tc.desc       combine test int
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0018
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1800
+     * @tc.desc   combine test int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1019,12 +1019,12 @@ export default function moduleSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_MODULE_FIND_VARIABLE_1900
-     * @tc.name       test_Module_Find_Variable_0019
-     * @tc.desc       combine test ref
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Module_Find_Variable_0019
+     * @tc.number SUB_ANI_MODULE_FIND_VARIABLE_1900
+     * @tc.desc   combine test ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Module_Find_Variable_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

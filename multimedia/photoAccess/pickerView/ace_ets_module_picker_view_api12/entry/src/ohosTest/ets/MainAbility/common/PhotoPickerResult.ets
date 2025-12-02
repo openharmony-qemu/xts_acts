@@ -28,6 +28,7 @@ export class PhotoPickerResult {
   public maxVideoSelectNumber: number = 500;
   public itemType: string = '';
   public checkboxTextColor: string = '';
+  public uiComponentColorMode: number = 0;
   public pickerIndex: number = -1;
   public preselectedInfos: PreselectedInfo[] = [];
 }

@@ -41,12 +41,12 @@ export default function builtinsArrayToSplicedTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1001
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0100
-     * @tc.name builtinsArrayToSplicedTest1001
-     * @tc.desc Test basic splice with replacement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test basic splice with replacement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayToSplicedTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(toSplicedRes([1, 2, 3, 4, 5], 2, 2, 'a', 'b'))
@@ -56,12 +56,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1002
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0200
-     * @tc.name builtinsArrayToSplicedTest1002
-     * @tc.desc Test insertion at beginning
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test insertion at beginning
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([2, 3, 4], 0, 0, 1))
@@ -69,12 +69,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1003
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0300
-     * @tc.name builtinsArrayToSplicedTest1003
-     * @tc.desc Test insertion beyond array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test insertion beyond array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([1, 2], 2, 0, 3))
@@ -82,12 +82,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1004
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0400
-     * @tc.name builtinsArrayToSplicedTest1004
-     * @tc.desc Test empty array insertion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty array insertion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([], 0, 0, 1))
@@ -95,12 +95,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1005
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0500
-     * @tc.name builtinsArrayToSplicedTest1005
-     * @tc.desc Handle sparse arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Handle sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([1, , 3], 1, 1, 2))
@@ -108,12 +108,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1006
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0600
-     * @tc.name builtinsArrayToSplicedTest1006
-     * @tc.desc Insert undefined/null values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Insert undefined/null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([1, 2, 3, 4, 5], -2, 1))
@@ -125,12 +125,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1007
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0700
-     * @tc.name builtinsArrayToSplicedTest1007
-     * @tc.desc Insert number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Insert number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([1, 2, 3], 0, 3))
@@ -140,12 +140,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1008
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0800
-     * @tc.name builtinsArrayToSplicedTest1008
-     * @tc.desc Insert string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Insert string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSplicedRes([1, 2, 3], 1, 0, 'a', 'b'))
@@ -153,12 +153,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1009
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_0900
-     * @tc.name builtinsArrayToSplicedTest1009
-     * @tc.desc Handle special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Handle special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testData: SpliceString[] = [
@@ -246,12 +246,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1010
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_1000
-     * @tc.name builtinsArrayToSplicedTest1010
-     * @tc.desc Test number handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const numberTestData: SpliceNumber[] = [
@@ -345,12 +345,12 @@ export default function builtinsArrayToSplicedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSplicedTest1011
      * @tc.number SUB_BUILTINS_ARRAY_TOSPLICED_TEST_1100
-     * @tc.name builtinsArrayToSplicedTest1011
-     * @tc.desc Test boolean handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test boolean handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSplicedTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const booleanTestData: SpliceBoolean[] = [

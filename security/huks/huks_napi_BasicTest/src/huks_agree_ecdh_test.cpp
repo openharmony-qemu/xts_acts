@@ -92,9 +92,12 @@ static struct OH_Huks_Param g_agreeParams02Finish001[] = {
     {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
 
 /**
- * @tc.name: HuksAgreeECDHTest.Security_HUKS_NAPI_Agree_ECDH_0100
- * @tc.desc: alg-ECDH, pur-AGREE
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_Agree_ECDH_0100
+ * @tc.number Security_HUKS_NAPI_Agree_ECDH_0100
+ * @tc.desc   alg-ECDH, pur-AGREE
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HuksAgreeECDHTest, Security_HUKS_NAPI_Agree_ECDH_0100, TestSize.Level1)
 {

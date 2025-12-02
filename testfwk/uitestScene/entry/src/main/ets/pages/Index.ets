@@ -28,6 +28,7 @@ struct ScrollExample {
       Text('MainPage')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
+        .accessibilityDefaultFocus(true)
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           Column() {
@@ -103,7 +104,7 @@ struct ScrollExample {
             .type(ButtonType.Capsule)
             .margin({ top: 20 })
             .gesture(
-              TapGesture({ count: 1 })
+              TapGesture({ count: 2 })
                 .onAction(() => {
                   console.info('jump to third')
                   router.push({ uri: 'pages/third' })

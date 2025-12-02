@@ -28,12 +28,12 @@ export default function windowErrCode401_2() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
     })
     /**
-     * @tc.number     : testOnTouchOutsideErrCode401_0100
-     * @tc.name       : testOnTouchOutsideErrCode401_0100
-     * @tc.desc       : testOnTouchOutsideErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnTouchOutsideErrCode401_0100
+     * @tc.number testOnTouchOutsideErrCode401_0100
+     * @tc.desc   testOnTouchOutsideErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnTouchOutsideErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnTouchOutsideErrCode401_0100";
@@ -71,12 +71,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffTouchOutsideErrCode401_0100
-     * @tc.name       : testOffTouchOutsideErrCode401_0100
-     * @tc.desc       : testOffTouchOutsideErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffTouchOutsideErrCode401_0100
+     * @tc.number testOffTouchOutsideErrCode401_0100
+     * @tc.desc   testOffTouchOutsideErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffTouchOutsideErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffTouchOutsideErrCode401_0100";
@@ -114,12 +114,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnDisplayIdChangeErrCode401_0100
-     * @tc.name       : testOnDisplayIdChangeErrCode401_0100
-     * @tc.desc       : testOnDisplayIdChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnDisplayIdChangeErrCode401_0100
+     * @tc.number testOnDisplayIdChangeErrCode401_0100
+     * @tc.desc   testOnDisplayIdChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnDisplayIdChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnDisplayIdChangeErrCode401_0100";
@@ -157,12 +157,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffDisplayIdChangeErrCode401_0100
-     * @tc.name       : testOffDisplayIdChangeErrCode401_0100
-     * @tc.desc       : testOffDisplayIdChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffDisplayIdChangeErrCode401_0100
+     * @tc.number testOffDisplayIdChangeErrCode401_0100
+     * @tc.desc   testOffDisplayIdChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffDisplayIdChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffDisplayIdChangeErrCode401_0100";
@@ -200,12 +200,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnWindowVisibilityChangeErrCode401_0100
-     * @tc.name       : testOnWindowVisibilityChangeErrCode401_0100
-     * @tc.desc       : testOnWindowVisibilityChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnWindowVisibilityChangeErrCode401_0100
+     * @tc.number testOnWindowVisibilityChangeErrCode401_0100
+     * @tc.desc   testOnWindowVisibilityChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowVisibilityChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnWindowVisibilityChangeErrCode401_0100";
@@ -243,12 +243,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffWindowVisibilityChangeErrCode401_0100
-     * @tc.name       : testOffWindowVisibilityChangeErrCode401_0100
-     * @tc.desc       : testOffWindowVisibilityChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffWindowVisibilityChangeErrCode401_0100
+     * @tc.number testOffWindowVisibilityChangeErrCode401_0100
+     * @tc.desc   testOffWindowVisibilityChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffWindowVisibilityChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffWindowVisibilityChangeErrCode401_0100";
@@ -286,12 +286,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnSystemDensityChangeErrCode401_0100
-     * @tc.name       : testOnSystemDensityChangeErrCode401_0100
-     * @tc.desc       : testOnSystemDensityChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnSystemDensityChangeErrCode401_0100
+     * @tc.number testOnSystemDensityChangeErrCode401_0100
+     * @tc.desc   testOnSystemDensityChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnSystemDensityChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnSystemDensityChangeErrCode401_0100";
@@ -329,12 +329,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffSystemDensityChangeErrCode401_0100
-     * @tc.name       : testOffSystemDensityChangeErrCode401_0100
-     * @tc.desc       : testOffSystemDensityChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffSystemDensityChangeErrCode401_0100
+     * @tc.number testOffSystemDensityChangeErrCode401_0100
+     * @tc.desc   testOffSystemDensityChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffSystemDensityChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffSystemDensityChangeErrCode401_0100";
@@ -372,12 +372,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffNoInteractionDetectedErrCode401_0100
-     * @tc.name       : testOffNoInteractionDetectedErrCode401_0100
-     * @tc.desc       : testOffNoInteractionDetectedErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffNoInteractionDetectedErrCode401_0100
+     * @tc.number testOffNoInteractionDetectedErrCode401_0100
+     * @tc.desc   testOffNoInteractionDetectedErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffNoInteractionDetectedErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffNoInteractionDetectedErrCode401_0100";
@@ -415,12 +415,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnScreenshotErrCode401_0100
-     * @tc.name       : testOnScreenshotErrCode401_0100
-     * @tc.desc       : testOnScreenshotErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnScreenshotErrCode401_0100
+     * @tc.number testOnScreenshotErrCode401_0100
+     * @tc.desc   testOnScreenshotErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnScreenshotErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnScreenshotErrCode401_0100";
@@ -458,12 +458,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffScreenshotErrCode401_0100
-     * @tc.name       : testOffScreenshotErrCode401_0100
-     * @tc.desc       : testOffScreenshotErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffScreenshotErrCode401_0100
+     * @tc.number testOffScreenshotErrCode401_0100
+     * @tc.desc   testOffScreenshotErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffScreenshotErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffScreenshotErrCode401_0100";
@@ -501,12 +501,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnDialogTargetTouchErrCode401_0100
-     * @tc.name       : testOnDialogTargetTouchErrCode401_0100
-     * @tc.desc       : testOnDialogTargetTouchErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnDialogTargetTouchErrCode401_0100
+     * @tc.number testOnDialogTargetTouchErrCode401_0100
+     * @tc.desc   testOnDialogTargetTouchErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnDialogTargetTouchErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnDialogTargetTouchErrCode401_0100";
@@ -544,12 +544,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffDialogTargetTouchErrCode401_0100
-     * @tc.name       : testOffDialogTargetTouchErrCode401_0100
-     * @tc.desc       : testOffDialogTargetTouchErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffDialogTargetTouchErrCode401_0100
+     * @tc.number testOffDialogTargetTouchErrCode401_0100
+     * @tc.desc   testOffDialogTargetTouchErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffDialogTargetTouchErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffDialogTargetTouchErrCode401_0100";
@@ -587,12 +587,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnWindowEventErrCode401_0100
-     * @tc.name       : testOnWindowEventErrCode401_0100
-     * @tc.desc       : testOnWindowEventErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnWindowEventErrCode401_0100
+     * @tc.number testOnWindowEventErrCode401_0100
+     * @tc.desc   testOnWindowEventErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowEventErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnWindowEventErrCode401_0100";
@@ -630,12 +630,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffWindowEventErrCode401_0100
-     * @tc.name       : testOffWindowEventErrCode401_0100
-     * @tc.desc       : testOffWindowEventErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffWindowEventErrCode401_0100
+     * @tc.number testOffWindowEventErrCode401_0100
+     * @tc.desc   testOffWindowEventErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffWindowEventErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffWindowEventErrCode401_0100";
@@ -673,12 +673,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnWindowStatusChangeErrCode401_0100
-     * @tc.name       : testOnWindowStatusChangeErrCode401_0100
-     * @tc.desc       : testOnWindowStatusChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnWindowStatusChangeErrCode401_0100
+     * @tc.number testOnWindowStatusChangeErrCode401_0100
+     * @tc.desc   testOnWindowStatusChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowStatusChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnWindowStatusChangeErrCode401_0100";
@@ -716,12 +716,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffWindowStatusChangeErrCode401_0100
-     * @tc.name       : testOffWindowStatusChangeErrCode401_0100
-     * @tc.desc       : testOffWindowStatusChangeErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffWindowStatusChangeErrCode401_0100
+     * @tc.number testOffWindowStatusChangeErrCode401_0100
+     * @tc.desc   testOffWindowStatusChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffWindowStatusChangeErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffWindowStatusChangeErrCode401_0100";
@@ -759,12 +759,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOnSubWindowCloseErrCode401_0100
-     * @tc.name       : testOnSubWindowCloseErrCode401_0100
-     * @tc.desc       : testOnSubWindowCloseErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnSubWindowCloseErrCode401_0100
+     * @tc.number testOnSubWindowCloseErrCode401_0100
+     * @tc.desc   testOnSubWindowCloseErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnSubWindowCloseErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnSubWindowCloseErrCode401_0100";
@@ -802,12 +802,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testOffSubWindowCloseErrCode401_0100
-     * @tc.name       : testOffSubWindowCloseErrCode401_0100
-     * @tc.desc       : testOffSubWindowCloseErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffSubWindowCloseErrCode401_0100
+     * @tc.number testOffSubWindowCloseErrCode401_0100
+     * @tc.desc   testOffSubWindowCloseErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffSubWindowCloseErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffSubWindowCloseErrCode401_0100";
@@ -845,12 +845,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowTopmostPromiseErrCode401_0100
-     * @tc.name       : testSetWindowTopmostPromiseErrCode401_0100
-     * @tc.desc       : testSetWindowTopmostPromiseErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowTopmostPromiseErrCode401_0100
+     * @tc.number testSetWindowTopmostPromiseErrCode401_0100
+     * @tc.desc   testSetWindowTopmostPromiseErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTopmostPromiseErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       {
@@ -894,12 +894,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowFocusablePromiseErrCode401_0100
-     * @tc.name       : testSetWindowFocusablePromiseErrCode401_0100
-     * @tc.desc       : testSetWindowFocusablePromiseErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowFocusablePromiseErrCode401_0100
+     * @tc.number testSetWindowFocusablePromiseErrCode401_0100
+     * @tc.desc   testSetWindowFocusablePromiseErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusablePromiseErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowFocusablePromiseErrCode401_0100";
@@ -938,12 +938,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowFocusableCallbackErrCode401_0100
-     * @tc.name       : testSetWindowFocusableCallbackErrCode401_0100
-     * @tc.desc       : testSetWindowFocusableCallbackErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowFocusableCallbackErrCode401_0100
+     * @tc.number testSetWindowFocusableCallbackErrCode401_0100
+     * @tc.desc   testSetWindowFocusableCallbackErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowFocusableCallbackErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowFocusableCallbackErrCode401_0100";
@@ -986,12 +986,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowKeepScreenOnPromiseErrCode401_0100
-     * @tc.name       : testSetWindowKeepScreenOnPromiseErrCode401_0100
-     * @tc.desc       : testSetWindowKeepScreenOnPromiseErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowKeepScreenOnPromiseErrCode401_0100
+     * @tc.number testSetWindowKeepScreenOnPromiseErrCode401_0100
+     * @tc.desc   testSetWindowKeepScreenOnPromiseErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowKeepScreenOnPromiseErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowKeepScreenOnPromiseErrCode401_0100";
@@ -1030,12 +1030,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowKeepScreenOnCallbackErrCode401_0100
-     * @tc.name       : testSetWindowKeepScreenOnCallbackErrCode401_0100
-     * @tc.desc       : testSetWindowKeepScreenOnCallbackErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowKeepScreenOnCallbackErrCode401_0100
+     * @tc.number testSetWindowKeepScreenOnCallbackErrCode401_0100
+     * @tc.desc   testSetWindowKeepScreenOnCallbackErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowKeepScreenOnCallbackErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowKeepScreenOnCallbackErrCode401_0100";
@@ -1078,12 +1078,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowPrivacyModePromiseErrCode401_0100
-     * @tc.name       : testSetWindowPrivacyModePromiseErrCode401_0100
-     * @tc.desc       : testSetWindowPrivacyModePromiseErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowPrivacyModePromiseErrCode401_0100
+     * @tc.number testSetWindowPrivacyModePromiseErrCode401_0100
+     * @tc.desc   testSetWindowPrivacyModePromiseErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowPrivacyModePromiseErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowPrivacyModePromiseErrCode401_0100";
@@ -1122,12 +1122,12 @@ export default function windowErrCode401_2() {
       }
     })
     /**
-     * @tc.number     : testSetWindowPrivacyModeCallbackErrCode401_0100
-     * @tc.name       : testSetWindowPrivacyModeCallbackErrCode401_0100
-     * @tc.desc       : testSetWindowPrivacyModeCallbackErrCode401_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowPrivacyModeCallbackErrCode401_0100
+     * @tc.number testSetWindowPrivacyModeCallbackErrCode401_0100
+     * @tc.desc   testSetWindowPrivacyModeCallbackErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowPrivacyModeCallbackErrCode401_0100', Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowPrivacyModeCallbackErrCode401_0100";

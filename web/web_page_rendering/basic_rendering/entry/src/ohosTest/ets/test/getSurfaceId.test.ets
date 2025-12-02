@@ -39,25 +39,39 @@ export default function getSurfaceId() {
       await waitForComponent("getSurfaceIdButton");
       done();
     });
+    /**
+     * @tc.name   emitGetSurfaceId0100
+     * @tc.number emitGetSurfaceId0100
+     * @tc.desc   emitGetSurfaceId0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitGetSurfaceId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetSurfaceId0100', 150000);
       Utils.registerEvent("emitGetSurfaceId0100", true, 150010, done);
       sendEventByKey('getSurfaceIdButton', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_GETSURFACEID_API_0200
-     *tc.name testGetSurfaceId
-     *tc.desc getSurfaceId
+    /**
+     * @tc.name   emitGetSurfaceId0200
+     * @tc.number SUB_ACE_BASIC_ETS_GETSURFACEID_API_0200
+     * @tc.desc   getSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitGetSurfaceId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetSurfaceId0200', 150000);
       Utils.registerEvent("emitGetSurfaceId0200", "17100001", 150020, done);
       sendEventByKey('getSurfaceIdButton', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_GETSURFACEID_API_0300
-     *tc.name testGetSurfaceId
-     *tc.desc getSurfaceId
+    /**
+     * @tc.name   emitGetSurfaceId0300
+     * @tc.number SUB_ACE_BASIC_ETS_GETSURFACEID_API_0300
+     * @tc.desc   getSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitGetSurfaceId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitGetSurfaceId0300', 150000);

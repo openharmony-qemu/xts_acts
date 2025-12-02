@@ -50,12 +50,12 @@ export default function ExceptionPromptTestTwo() {
     })
 
     /**
+     * @tc.name   exceptionPromptTestTwo_0100
      * @tc.number ExceptionPromptTestTwo
-     * @tc.name   ExceptionPromptTestTwo_0100
      * @tc.desc   Test ExceptionPrompt
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('exceptionPromptTestTwo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[exceptionPromptTestTwo_0100] START');

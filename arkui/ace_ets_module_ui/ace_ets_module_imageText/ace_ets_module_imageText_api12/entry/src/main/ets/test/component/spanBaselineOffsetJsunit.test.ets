@@ -51,14 +51,14 @@ export default function spanBaselineOffsetJsunit() {
       }
       done();
     })
-    /*
-    * @tc.number
-    * @tc.name       : SpanBaselineOffsetJsunit_0101
-    * @tc.desc       : test prefetchResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SpanBaselineOffsetJsunit_0101
+     * @tc.number SpanBaselineOffsetJsunit_0101
+     * @tc.desc   test prefetchResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SpanBaselineOffsetJsunit_0101',  Level.LEVEL0, async (done: Function) => {
       console.info('[SpanBaselineOffsetJsunit_0101] START');
       let strJson = getInspectorByKey('SpanBaselineOffsetKey001');
@@ -68,14 +68,14 @@ export default function spanBaselineOffsetJsunit() {
       console.info('[SpanBaselineOffsetJsunit_0101] END**********************************');
       done();
     });
-    /*
-    * @tc.number 
-    * @tc.name       : SpanBaselineOffsetJsunit_0102
-    * @tc.desc       : test prefetchResource
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SpanBaselineOffsetJsunit_0102
+     * @tc.number SpanBaselineOffsetJsunit_0102
+     * @tc.desc   test prefetchResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SpanBaselineOffsetJsunit_0102',  Level.LEVEL0, async (done: Function) => {
       console.info('[SpanBaselineOffsetJsunit_0102] START');
       let strJson = getInspectorByKey('SpanBaselineOffsetKey002');

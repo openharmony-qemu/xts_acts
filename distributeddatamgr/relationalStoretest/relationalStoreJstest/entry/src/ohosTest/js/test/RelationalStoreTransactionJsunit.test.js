@@ -54,7 +54,6 @@ export default function relationalStoreTransactionTest() {
         console.info(TAG + "*************Unit Test Begin*************");
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionInsert0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0100
          * @tc.desc   RelationalStore transaction insert & commit, the result comes out is 3 items;
@@ -93,7 +92,6 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionInsert0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0200
          * @tc.desc   RelationalStore transaction insert & commit, the result comes out is 3 items;
@@ -148,7 +146,6 @@ export default function relationalStoreTransactionTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionInsert0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0300
          * @tc.desc   while using transaction to insert values, querying the db,
@@ -200,7 +197,6 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionRollBack0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0400
          * @tc.desc   the classical transaction scenario, when we insert or commit the value,
@@ -238,7 +234,6 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionMulti0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0500
          * @tc.desc   the classical transaction scenario, when we insert or commit the value,
@@ -289,7 +284,6 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionMulti0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0600
          * @tc.desc   the classical transaction scenario, when we insert or commit the value,
@@ -343,7 +337,6 @@ export default function relationalStoreTransactionTest() {
             }
         })
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionMulti0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0700
          * @tc.desc   the classical transaction scenario, when we insert or commit the value,
@@ -401,7 +394,6 @@ export default function relationalStoreTransactionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbTransactionDelete0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0800
          * @tc.desc   the classical transaction scenario, when we delete or commit the value,

@@ -265,12 +265,12 @@ export default function Demo1() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_CameraCuttingAndVideo0100
-     * @tc.name       : testCameraCuttingAndVideo0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testCameraCuttingAndVideo0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_CameraCuttingAndVideo0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCameraCuttingAndVideo0100', Level.LEVEL0, () => {
       //拍照

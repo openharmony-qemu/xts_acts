@@ -43,12 +43,12 @@ export default function arcScrollBar() {
     });
 
     /**
-     * @tc.number    arcScrollBar_001
-     * @tc.name      arcScrollBar_0100
-     * @tc.desc      ArcScrollBar component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcScrollBar_0100
+     * @tc.number arcScrollBar_001
+     * @tc.desc   ArcScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcScrollBar_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[arcScrollBar_0100] START');

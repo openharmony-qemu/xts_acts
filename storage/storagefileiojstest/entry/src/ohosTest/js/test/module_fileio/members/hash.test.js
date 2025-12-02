@@ -24,13 +24,12 @@ describe('fileio_hash', function () {
   console.log('fileio_hash test start');
 
   /**
+   * @tc.name   fileio_test_hash_async_000
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0000
-   * @tc.name fileio_test_hash_async_000
-   * @tc.desc Test hashAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test hashAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_hash_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_hash_async_000');
@@ -49,13 +48,12 @@ describe('fileio_hash', function () {
   });
 
   /**
+   * @tc.name   fileio_test_hash_async_001
    * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0100
-   * @tc.name fileio_test_hash_async_001
-   * @tc.desc Test hashAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test hashAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_hash_async_001', Level.LEVEL0, async function (done) {
     console.log('fileio_hash test fileio_test_hash_async_001 start');

@@ -64,6 +64,14 @@ export default function ObjectLinkCanJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   ObjectLinkCanJsunit_0100
+     * @tc.number ObjectLinkCanJsunit_0100
+     * @tc.desc   ObjectLinkCanJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkCanJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkCanJsunit_0100 START');
@@ -87,6 +95,14 @@ export default function ObjectLinkCanJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkCanJsunit_0200
+     * @tc.number ObjectLinkCanJsunit_0200
+     * @tc.desc   ObjectLinkCanJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkCanJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkCanJsunit_0200 START');
@@ -110,6 +126,14 @@ export default function ObjectLinkCanJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkCanJsunit_0300
+     * @tc.number ObjectLinkCanJsunit_0300
+     * @tc.desc   ObjectLinkCanJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkCanJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkCanJsunit_0300 START');

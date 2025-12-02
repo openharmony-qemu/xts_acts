@@ -98,9 +98,12 @@ export default function swiperSecTest() {
 
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0100
      * @tc.number ArkUX_Stage_Swiper_showBackground_0100
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to true
+     * @tc.desc   Set the isShowBoard property parameter to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -113,9 +116,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0200
      * @tc.number ArkUX_Stage_Swiper_showBackground_0200
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to 1
+     * @tc.desc   Set the isShowBoard property parameter to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -128,9 +134,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0300
      * @tc.number ArkUX_Stage_Swiper_showBackground_0300
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to "true"
+     * @tc.desc   Set the isShowBoard property parameter to "true"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -143,9 +152,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0400
      * @tc.number ArkUX_Stage_Swiper_showBackground_0400
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to "false"
+     * @tc.desc   Set the isShowBoard property parameter to "false"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -158,9 +170,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0500
      * @tc.number ArkUX_Stage_Swiper_showBackground_0500
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to 0
+     * @tc.desc   Set the isShowBoard property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -173,9 +188,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0600
      * @tc.number ArkUX_Stage_Swiper_showBackground_0600
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to false
+     * @tc.desc   Set the isShowBoard property parameter to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -188,9 +206,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0700
      * @tc.number ArkUX_Stage_Swiper_showBackground_0700
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to ""
+     * @tc.desc   Set the isShowBoard property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0700', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -203,9 +224,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0800
      * @tc.number ArkUX_Stage_Swiper_showBackground_0800
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to undefined
+     * @tc.desc   Set the isShowBoard property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0800', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -218,9 +242,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_showBackground_0900
      * @tc.number ArkUX_Stage_Swiper_showBackground_0900
-     * @tc.name Tests whether baseboard is displayed in swiper arrow style
-     * @tc.desc Set the isShowBoard property parameter to null
+     * @tc.desc   Set the isShowBoard property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_showBackground_0900', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -233,9 +260,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0100
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0100
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true
+     * @tc.desc   Set the isSidebarMiddle property parameter to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -248,9 +278,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0200
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0200
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to 1
+     * @tc.desc   Set the isSidebarMiddle property parameter to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -263,9 +296,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0300
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0300
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to "true"
+     * @tc.desc   Set the isSidebarMiddle property parameter to "true"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -278,9 +314,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0400
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0400
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to "false"
+     * @tc.desc   Set the isSidebarMiddle property parameter to "false"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -293,9 +332,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0500
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0500
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to 0
+     * @tc.desc   Set the isSidebarMiddle property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -308,9 +350,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0600
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0600
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to false
+     * @tc.desc   Set the isSidebarMiddle property parameter to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -323,9 +368,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0700
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0700
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to ""
+     * @tc.desc   Set the isSidebarMiddle property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0700', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -338,9 +386,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0800
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0800
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to undefined
+     * @tc.desc   Set the isSidebarMiddle property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0800', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -353,9 +404,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsSidebarMiddle_0900
      * @tc.number ArkUX_Stage_Swiper_IsSidebarMiddle_0900
-     * @tc.name Tests whether arrows are centered in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to null
+     * @tc.desc   Set the isSidebarMiddle property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsSidebarMiddle_0900', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -368,9 +422,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0100
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0100
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to 34
+     * @tc.desc   Set the backgroundSize property parameter to 34
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -388,9 +445,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0200
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0200
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to "20px"
+     * @tc.desc   Set the backgroundSize property parameter to "20px"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -408,9 +468,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0300
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0300
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to "48%"
+     * @tc.desc   Set the backgroundSize property parameter to "48%"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -429,9 +492,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0400
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0400
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to ""
+     * @tc.desc   Set the backgroundSize property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -449,9 +515,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0500
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0500
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and backgroundSize property parameter to "-2"
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and backgroundSize property parameter to "-2"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -469,9 +538,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0600
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0600
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to false and backgroundSize property parameter to "-2"
+     * @tc.desc   Set the isSidebarMiddle property parameter to false and backgroundSize property parameter to "-2"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -489,9 +561,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0700
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0700
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to "abc"
+     * @tc.desc   Set the backgroundSize property parameter to "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0700', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -509,9 +584,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0800
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0800
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to "1000%"
+     * @tc.desc   Set the backgroundSize property parameter to "1000%"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0800', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -529,9 +607,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_0900
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_0900
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the backgroundSize property parameter to "100fp"
+     * @tc.desc   Set the backgroundSize property parameter to "100fp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_0900', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -549,9 +630,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_1000
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_1000
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the baseboard size parameters twice normally
+     * @tc.desc   Set the baseboard size parameters twice normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_1000', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -575,9 +659,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_1100
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_1100
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the baseboard size parameters to normal before abnormal
+     * @tc.desc   Set the baseboard size parameters to normal before abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_1100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -601,9 +688,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundSize_1200
      * @tc.number ArkUX_Stage_Swiper_BackgroundSize_1200
-     * @tc.name Tests the backboard size in the swiper arrow style
-     * @tc.desc Set the baseboard size parameter to abnormal before normal
+     * @tc.desc   Set the baseboard size parameter to abnormal before normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundSize_1200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -627,9 +717,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0100
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0100
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to 0x00ff00
+     * @tc.desc   Set the backgroundColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -644,9 +737,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0200
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0200
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to "#FFFF0000"
+     * @tc.desc   Set the backgroundColor property parameter to "#FFFF0000"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -661,9 +757,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0300
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0300
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to "rgb(138,43,226)"
+     * @tc.desc   Set the backgroundColor property parameter to "rgb(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -678,9 +777,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0400
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0400
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to Color.Pink
+     * @tc.desc   Set the backgroundColor property parameter to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -695,10 +797,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0500
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0500
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and
-     *               backgroundColor property parameter to ""
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -714,10 +818,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0600
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0600
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to false and
-     *               backgroundColor property parameter to ""
+     * @tc.desc   Set the isSidebarMiddle property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -733,10 +839,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0700
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0700
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and
-     *               backgroundColor property parameter to null
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0700', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -752,10 +860,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0800
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0800
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to false and
-     *               backgroundColor property parameter to null
+     * @tc.desc   Set the isSidebarMiddle property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0800', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -771,9 +881,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_0900
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_0900
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to $r("app.color.swiper_BackgroundColor_test")
+     * @tc.desc   Set the backgroundColor property parameter to $r("app.color.swiper_BackgroundColor_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_0900', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -788,10 +901,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1000
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1000
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and
-     *               backgroundColor property parameter to "bgr(138,43,226)"
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1000', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -807,10 +922,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1100
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1100
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to false and
-     *               backgroundColor property parameter to "bgr(138,43,226)"
+     * @tc.desc   Set the isSidebarMiddle property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -826,10 +943,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1200
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1200
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and
-     *               backgroundColor property parameter to undefined
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -845,10 +964,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1300
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1300
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to false and
-     *               backgroundColor property parameter to undefined
+     * @tc.desc   Set the isSidebarMiddle property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -864,9 +985,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1400
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1400
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to normal twice
+     * @tc.desc   Set the backgroundColor property parameter to normal twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -886,9 +1010,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1500
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1500
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to normal first and then abnormal
+     * @tc.desc   Set the backgroundColor property parameter to normal first and then abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -909,9 +1036,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_BackgroundColor_1600
      * @tc.number ArkUX_Stage_Swiper_BackgroundColor_1600
-     * @tc.name Tests the backboard color in the swiper arrow style
-     * @tc.desc Set the backgroundColor property parameter to first exception and then normal
+     * @tc.desc   Set the backgroundColor property parameter to first exception and then normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_BackgroundColor_1600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -931,11 +1061,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0100
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0100
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the showBackground property parameter to false and
-     *          backgroundSize property parameter to 12 and
-     *          arrowSize property parameter to 34
+     * @tc.desc   Set the showBackground property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -953,11 +1084,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0200
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0200
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the showBackground property parameter to true and
-     *          backgroundSize property parameter to 12 and
-     *          arrowSize property parameter to 34
+     * @tc.desc   Set the showBackground property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -975,11 +1107,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0300
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0300
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the showBackground property parameter to false and
-     *          isSidebarMiddle property parameter to false and
-     *          arrowSize property parameter to "20px"
+     * @tc.desc   Set the showBackground property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -997,11 +1130,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0400
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0400
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the showBackground property parameter to true and
-     *          isSidebarMiddle property parameter to true and
-     *          arrowSize property parameter to "20px"
+     * @tc.desc   Set the showBackground property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1019,11 +1153,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0500
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0500
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the showBackground property parameter to true and
-     *          isSidebarMiddle property parameter to false and
-     *          arrowSize property parameter to "20px"
+     * @tc.desc   Set the showBackground property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1041,9 +1176,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0600
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0600
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrowSize property parameter to "48%"
+     * @tc.desc   Set the arrowSize property parameter to "48%"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1059,9 +1197,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0700
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0700
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrowSize property parameter to ""
+     * @tc.desc   Set the arrowSize property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0700', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1077,12 +1218,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0800
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0800
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and
-     *          showBackground property parameter to true and
-     *          backgroundSize property parameter to 12 and
-     *          arrowSize property parameter to "-2"
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0800', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1101,12 +1242,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_0900
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_0900
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the isSidebarMiddle property parameter to true and
-     *          showBackground property parameter to false and
-     *          backgroundSize property parameter to 12 and
-     *          arrowSize property parameter to "-2"
+     * @tc.desc   Set the isSidebarMiddle property parameter to true and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_0900', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1125,12 +1266,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1000
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1000
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the showBackground property parameter to false and
-     *          isSidebarMiddle property parameter to false and
-     *          backgroundSize property parameter to 12 and
-     *          arrowSize property parameter to "-2"
+     * @tc.desc   Set the showBackground property parameter to false and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1000', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1149,9 +1290,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1100
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1100
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrowSize property parameter to "abc"
+     * @tc.desc   Set the arrowSize property parameter to "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1167,9 +1311,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1200
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1200
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrowSize property parameter to "1000%"
+     * @tc.desc   Set the arrowSize property parameter to "1000%"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1185,9 +1332,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1300
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1300
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrowSize property parameter to "100fp"
+     * @tc.desc   Set the arrowSize property parameter to "100fp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1203,9 +1353,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1400
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1400
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrow size property parameter twice normally
+     * @tc.desc   Set the arrow size property parameter twice normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1226,9 +1379,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1500
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1500
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrow size property parameters to normal and then abnormal
+     * @tc.desc   Set the arrow size property parameters to normal and then abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1249,9 +1405,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowSize_1600
      * @tc.number ArkUX_Stage_Swiper_ArrowSize_1600
-     * @tc.name Tests the arrow size in the swiper arrow style
-     * @tc.desc Set the arrow size property parameter to abnormal and then normal
+     * @tc.desc   Set the arrow size property parameter to abnormal and then normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowSize_1600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1272,9 +1431,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0100
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0100
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to 0x00ff00
+     * @tc.desc   Set the arrow color property parameters to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1288,9 +1450,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0200
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0200
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to "#FFFF0000"
+     * @tc.desc   Set the arrow color property parameters to "#FFFF0000"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1304,9 +1469,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0300
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0300
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to "rgb(138,43,226)"
+     * @tc.desc   Set the arrow color property parameters to "rgb(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0300', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1320,9 +1488,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0400
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0400
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to Color.Pink
+     * @tc.desc   Set the arrow color property parameters to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0400', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1336,9 +1507,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0500
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0500
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to ""
+     * @tc.desc   Set the arrow color property parameters to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0500', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1352,9 +1526,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0600
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0600
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to null
+     * @tc.desc   Set the arrow color property parameters to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0600', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1368,9 +1545,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0700
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0700
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to $r("app.color.swiper_BackgroundColor_test")
+     * @tc.desc   Set the arrow color property parameters to $r("app.color.swiper_BackgroundColor_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0700', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1384,9 +1564,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0800
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0800
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to "bgr(138,43,226)"
+     * @tc.desc   Set the arrow color property parameters to "bgr(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0800', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1400,9 +1583,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_0900
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_0900
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to undefined
+     * @tc.desc   Set the arrow color property parameters to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_0900', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1416,9 +1602,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_1000
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_1000
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameter to normal twice
+     * @tc.desc   Set the arrow color property parameter to normal twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_1000', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1437,9 +1626,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_1100
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_1100
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameters to normal and then abnormal
+     * @tc.desc   Set the arrow color property parameters to normal and then abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_1100', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1458,9 +1650,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ArrowColor_1200
      * @tc.number ArkUX_Stage_Swiper_ArrowColor_1200
-     * @tc.name Tests the arrow color in the swiper arrow style
-     * @tc.desc Set the arrow color property parameter to abnormal and then normal
+     * @tc.desc   Set the arrow color property parameter to abnormal and then normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ArrowColor_1200', Level.LEVEL1, async () => {
       await setArrowStyle(
@@ -1479,9 +1674,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0100
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0100
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to true
+     * @tc.desc   Set the property parameter of the display arrow to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0100', Level.LEVEL1, async () => {
       await setBoolean("BoolTrue", true)
@@ -1491,9 +1689,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0200
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0200
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to false
+     * @tc.desc   Set the property parameter of the display arrow to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0200', Level.LEVEL1, async () => {
       await setBoolean("BoolFalse", false)
@@ -1503,9 +1704,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0300
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0300
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to "true"
+     * @tc.desc   Set the property parameter of the display arrow to "true"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0300', Level.LEVEL1, async () => {
       await setBoolean("BoolErrStr", "true")
@@ -1515,9 +1719,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0400
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0400
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to "false"
+     * @tc.desc   Set the property parameter of the display arrow to "false"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0400', Level.LEVEL1, async () => {
       await setBoolean("BoolErrStr", "false")
@@ -1527,9 +1734,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0500
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0500
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to undefined
+     * @tc.desc   Set the property parameter of the display arrow to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0500', Level.LEVEL1, async () => {
       await setBoolean("BoolErrUndefined", undefined)
@@ -1539,9 +1749,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0600
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0600
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to undefined
+     * @tc.desc   Set the property parameter of the display arrow to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0600', Level.LEVEL1, async () => {
       await setBoolean("BoolErrNull", null)
@@ -1551,9 +1764,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0700
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0700
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to ""
+     * @tc.desc   Set the property parameter of the display arrow to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0700', Level.LEVEL1, async () => {
       await setBoolean("BoolErrStr", "")
@@ -1563,9 +1779,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsArrow_0800
      * @tc.number ArkUX_Stage_Swiper_IsArrow_0800
-     * @tc.name Tests whether arrows are displayed in the swiper arrow style
-     * @tc.desc Set the property parameter of the display arrow to 1
+     * @tc.desc   Set the property parameter of the display arrow to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsArrow_0800', Level.LEVEL1, async () => {
       await setBoolean("BoolErrNum", 1)
@@ -1575,9 +1794,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0100
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0100
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to true
+     * @tc.desc   Set the isHoverShow property parameter to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0100', Level.LEVEL1, async () => {
       await setBoolean("BoolTrue", true)
@@ -1587,9 +1809,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0200
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0200
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to false
+     * @tc.desc   Set the isHoverShow property parameter to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0200', Level.LEVEL1, async () => {
       await setBoolean("BoolFalse", false)
@@ -1599,9 +1824,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0300
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0300
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to "true"
+     * @tc.desc   Set the isHoverShow property parameter to "true"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0300', Level.LEVEL1, async () => {
       await setBoolean("BoolErrStr", "true")
@@ -1611,9 +1839,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0400
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0400
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to "false"
+     * @tc.desc   Set the isHoverShow property parameter to "false"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0400', Level.LEVEL1, async () => {
       await setBoolean("BoolErrStr", "false")
@@ -1623,9 +1854,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0500
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0500
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to undefined
+     * @tc.desc   Set the isHoverShow property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0500', Level.LEVEL1, async () => {
       await setBoolean("BoolErrUndefined", undefined)
@@ -1635,9 +1869,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0600
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0600
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to null
+     * @tc.desc   Set the isHoverShow property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0600', Level.LEVEL1, async () => {
       await setBoolean("BoolErrNull", null)
@@ -1647,9 +1884,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0700
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0700
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to ""
+     * @tc.desc   Set the isHoverShow property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0700', Level.LEVEL1, async () => {
       await setBoolean("BoolErrStr", "")
@@ -1659,9 +1899,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_IsHoverShow_0800
      * @tc.number ArkUX_Stage_Swiper_IsHoverShow_0800
-     * @tc.name Tests whether arrows are displayed when the mouse hovers
-     * @tc.desc Set the isHoverShow property parameter to 1
+     * @tc.desc   Set the isHoverShow property parameter to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_IsHoverShow_0800', Level.LEVEL1, async () => {
       await setBoolean("BoolErrNum", 1)
@@ -1671,11 +1914,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_NotSet_0100
      * @tc.number ArkUX_Stage_Swiper_NotSet_0100
-     * @tc.name Tests the value of each attribute
-     *               when ArrowStyle exists and the attributes in ArrowStyle are not set
-     * @tc.desc Tests the value of each attribute
-     *               when ArrowStyle exists and the attributes in ArrowStyle are not set
+     * @tc.desc   Tests the value of each attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_NotSet_0100', Level.LEVEL1, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("SwiperD"))
@@ -1702,9 +1946,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_NotSet_0200
      * @tc.number ArkUX_Stage_Swiper_NotSet_0200
-     * @tc.name Tests the value of each attribute when ArrowStyle is true
-     * @tc.desc Tests the value of each attribute when ArrowStyle is true
+     * @tc.desc   Tests the value of each attribute when ArrowStyle is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_NotSet_0200', Level.LEVEL1, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("SwiperE"))
@@ -1731,9 +1978,12 @@ export default function swiperSecTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_NotSet_0300
      * @tc.number ArkUX_Stage_Swiper_NotSet_0300
-     * @tc.name Tests the value of each property when displayArrow is not set
-     * @tc.desc Tests the value of each property when displayArrow is not set
+     * @tc.desc   Tests the value of each property when displayArrow is not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_NotSet_0300', Level.LEVEL1, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("SwiperF"))

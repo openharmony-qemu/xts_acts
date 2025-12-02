@@ -104,12 +104,12 @@ export default function NativeJsonTest() {
       '{"big":1122334455667788999,"small":123,"deci":1234567890.0123456,"shortExp":1.79e+308,"longExp":1.7976931348623157e+308}'
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_JSON_PARSE_0100
-     * @tc.name       : testNativeJsonParse0001
-     * @tc.desc       : Test the JSON.parse() function with multiple scenarios.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNativeJsonParse0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_JSON_PARSE_0100
+     * @tc.desc   Test the JSON.parse() function with multiple scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeJsonParse0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testNativeJsonParse0001";
@@ -148,12 +148,12 @@ export default function NativeJsonTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_JSON_BIGINT_0100
-     * @tc.name       : testNativeJsonBigIntMode0001
-     * @tc.desc       : Test the JSON.parse() function with BigInt handling.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNativeJsonBigIntMode0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_JSON_BIGINT_0100
+     * @tc.desc   Test the JSON.parse() function with BigInt handling.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNativeJsonBigIntMode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNativeJsonBigIntMode0001";
@@ -178,12 +178,12 @@ export default function NativeJsonTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_JSON_STRINGIFY_0100
-     * @tc.name       : testNativeJsonStringify0001
-     * @tc.desc       : Test the JSON.stringify() function with multiple scenarios.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testNativeJsonStringify0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_JSON_STRINGIFY_0100
+     * @tc.desc   Test the JSON.stringify() function with multiple scenarios.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNativeJsonStringify0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testNativeJsonStringify0001";

@@ -49,9 +49,12 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirstWidth() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapChangeFirst
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_1300
-     * @tc.name testAlignSpaceAroundRowNoWrapChangeFirst
-     * @tc.desc Parent component fixed, child component binding width properties
+     * @tc.desc   Parent component fixed, child component binding width properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapChangeFirst',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapChangeFirst START');

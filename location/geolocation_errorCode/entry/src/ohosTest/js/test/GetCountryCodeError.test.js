@@ -82,7 +82,6 @@ export default function geolocationTest_counterr(){
         })  
     
          /**
-          * @generated.time 2025-11-09 20:53:27
           * @tc.name   SUB_HSS_LocationSystem_CountryCodeErr_0100
           * @tc.number SUB_HSS_LocationSystem_CountryCodeErr_0100
           * @tc.desc   Incorrect input parameter to obtain the country code information.

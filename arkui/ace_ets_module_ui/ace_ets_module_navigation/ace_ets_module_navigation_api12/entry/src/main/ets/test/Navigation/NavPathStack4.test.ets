@@ -45,9 +45,12 @@ export default function NavPathStack4() {
     });
 
     /**
+     * @tc.name   NavPathStack4_0100
      * @tc.number NavPathStack4_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavPathStack4_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStack4_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavPathStack4_0100 START');
@@ -68,9 +71,12 @@ export default function NavPathStack4() {
       done();
     });
     /**
+     * @tc.name   NavPathStack4_0200
      * @tc.number NavPathStack4_0200
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavPathStack4_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStack4_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('NavPathStack4_0200 START');

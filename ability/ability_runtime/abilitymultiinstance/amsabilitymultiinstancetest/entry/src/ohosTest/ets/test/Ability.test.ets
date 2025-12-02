@@ -123,11 +123,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }, 500);
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Multi_0100
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0100
+     * @tc.number ACTS_AbilityMultiInstance_Multi_0100
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0100', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0100====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -187,11 +190,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0200
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0200
+     * @tc.number ACTS_AbilityMultiInstance_Single_0200
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0200', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0200====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -252,11 +258,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0300
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0300
+     * @tc.number ACTS_AbilityMultiInstance_Single_0300
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0300', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0300====<begin');
       if (deviceSupport === 'false') {
@@ -311,11 +320,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0400
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0400
+     * @tc.number ACTS_AbilityMultiInstance_Single_0400
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0400', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0400====<begin');
       if (deviceSupport === 'false') {
@@ -370,11 +382,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       });
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0600
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0600
+     * @tc.number ACTS_AbilityMultiInstance_Single_0600
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0600', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0600====<begin');
       if (deviceSupport === 'false') {
@@ -429,11 +444,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0700
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0700
+     * @tc.number ACTS_AbilityMultiInstance_Single_0700
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0700', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0700====<begin');
       if (deviceSupport === 'false') {
@@ -488,11 +506,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       });
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0800
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0800
+     * @tc.number ACTS_AbilityMultiInstance_Single_0800
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0800', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0800====<begin');
       if (deviceSupport === 'false') {
@@ -547,11 +568,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_0900
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_0900
+     * @tc.number ACTS_AbilityMultiInstance_Single_0900
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_0900', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_0900====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -607,11 +631,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1000
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1000
+     * @tc.number ACTS_AbilityMultiInstance_Single_1000
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1000', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1000====<begin');
       if (deviceSupport === 'false') {
@@ -667,11 +694,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1100
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1100
+     * @tc.number ACTS_AbilityMultiInstance_Single_1100
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1100', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1100====<begin');
       if (deviceSupport === 'false') {
@@ -726,11 +756,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1200
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1200
+     * @tc.number ACTS_AbilityMultiInstance_Single_1200
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1200', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1200====<begin');
       if (deviceSupport === 'false') {
@@ -785,11 +818,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1300
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1300
+     * @tc.number ACTS_AbilityMultiInstance_Single_1300
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1300', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1300====<begin');
       if (deviceSupport === 'false') {
@@ -843,11 +879,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       });
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1400
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1400
+     * @tc.number ACTS_AbilityMultiInstance_Single_1400
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1400', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1400====<begin');
       if (deviceSupport === 'false') {
@@ -902,11 +941,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       });
     })
 
-    /*
-            * @tc.number: ACTS_AbilityMultiInstance_Single_1500
-            * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-            * @tc.desc: Check the event data of executor page ability publishes
-            */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1500
+     * @tc.number ACTS_AbilityMultiInstance_Single_1500
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1500', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1500====<begin');
       if (deviceSupport === 'false') {
@@ -960,11 +1002,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       })
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1600
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1600
+     * @tc.number ACTS_AbilityMultiInstance_Single_1600
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1600', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1600====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -1012,11 +1057,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       });
     })
 
-    /*
-    * @tc.number: ACTS_AbilityMultiInstance_Single_1700
-    * @tc.name: Connects a service ability, which is used to start a cloned page ability.
-    * @tc.desc: Check the event data of executor page ability publishes
-    */
+    /**
+     * @tc.name   ACTS_AbilityMultiInstance_Single_1700
+     * @tc.number ACTS_AbilityMultiInstance_Single_1700
+     * @tc.desc   Check the event data of executor page ability publishes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AbilityMultiInstance_Single_1700', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_AbilityMultiInstance_Single_1700====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;

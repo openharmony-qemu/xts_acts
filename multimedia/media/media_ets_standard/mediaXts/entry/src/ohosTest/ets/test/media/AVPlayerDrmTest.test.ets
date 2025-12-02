@@ -23,6 +23,8 @@ import { sleep } from "../common";
 import { drm } from "@kit.DrmKit";
 
 const TAG = LOG_TAG + 'AVPlayerDrmTest';
+const INITIALIZED = 'initialized';
+const PREPARED = 'prepared';
 
 let systemName: string = '';
 let isClearPlay = drm.isMediaKeySystemSupported("com.clearplay.drm");
@@ -51,12 +53,12 @@ export default function AVPlayerDrmTest() {
     });
 
     /**
-     * @tc.number    : AVPLAYER_DRM_TEST_001
-     * @tc.name      : setDecryptionConfig_001
-     * @tc.desc      : create AVPlayer to set DecryptionConfig
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setDecryptionConfig_001
+     * @tc.number AVPLAYER_DRM_TEST_001
+     * @tc.desc   create AVPlayer to set DecryptionConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setDecryptionConfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setDecryptionConfig_001';
@@ -85,17 +87,18 @@ export default function AVPlayerDrmTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_DRM_TEST_002
-     * @tc.name      : getMediaKeySystemInfos_001
-     * @tc.desc      : create AVPlayer to get MediaKeySystemInfos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getMediaKeySystemInfos_001
+     * @tc.number AVPLAYER_DRM_TEST_002
+     * @tc.desc   create AVPlayer to get MediaKeySystemInfos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaKeySystemInfos_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getMediaKeySystemInfos_001';
       console.info(TAG, testName + ' begin.');
       let drmMediaKeySystem: drm.MediaKeySystem;
+      let url = "https://hwposter-inland.hwcloudtest.cn/rem/DTA/20240117/h264-sm4c-ts/ChinaDRMLab_Promo_210525-264-30-480P-2000K.sm4c.ts"
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
       } catch (err) {
@@ -103,26 +106,45 @@ export default function AVPlayerDrmTest() {
         done();
       }
       let avPlayer: media.AVPlayer = await media.createAVPlayer();
+      avPlayer?.on('stateChange', async (state, reason) => {
+        switch (state) {
+          case INITIALIZED:
+            if (!avPlayer) {
+              console.info(TAG, testName + ` avPlayer is null`);
+            break;
+          }
+          console.info(TAG, testName + ` case INITIALIZED`);
+          avPlayer.prepare((err) => {
+            console.info(TAG, testName + ' case prepare called ' + err);
+            if (err != null) {
+              console.error(TAG, testName + ` case prepare error, errMessage is ${err.message}`);
+              expect().assertFail();
+              done();
+            } else if (avPlayer) {
+              console.info(TAG, testName + ' case avPlayer.duration: ' + avPlayer.duration);
+            }
+          });
+          break;
+        default:
+          break;
+        }
+      })  
       avPlayer.on('mediaKeySystemInfoUpdate', (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
         for (let i = 0; i < mediaKeySystemInfo.length; i++) {
           console.info(TAG,
             testName + ' getMediaKeySystemInfos item: ' + i + ', uuid: ' + mediaKeySystemInfo[i].uuid + ', pssh: ' +
             mediaKeySystemInfo[i].pssh);
         }
-      });
-      let infos: drm.MediaKeySystemInfo[] = avPlayer.getMediaKeySystemInfos();
-      if (infos && infos.length > 0) {
-        for (let i = 0; i < infos.length; i++) {
-          console.info(TAG,
-            testName + ' getMediaKeySystemInfos item: ' + i + ', uuid: ' + infos[i].uuid + ', pssh: ' + infos[i].pssh);
+        let infos: drm.MediaKeySystemInfo[] = avPlayer.getMediaKeySystemInfos();
+        if (infos && infos.length > 0) {
+          expect(infos.length>0).assertTrue();
+          }else {
+          console.error(TAG, testName + ' avPlayer getMediaKeySystemInfos failed.');
+          expect(infos).assertUndefined();
         }
-      } else {
-        console.error(TAG, testName + ' avPlayer getMediaKeySystemInfos failed.');
-        expect(infos).assertUndefined();
-      }
-      avPlayer.off('mediaKeySystemInfoUpdate');
-      drmMediaKeySystem!.destroy();
-      done();
+        done();
+      });
+      avPlayer.url = url
     })
   })
 }

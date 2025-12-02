@@ -5,6 +5,9 @@
       "testability/pages/jsMessageExt",
       "testability/pages/WebViewEnumAndFontLibrary",
       "testability/pages/webTwo",
-      "testability/pages/runJavaScriptErrorCode"
+      "testability/pages/runJavaScriptErrorCode",
+      "testability/pages/jsMessageExtTwo",
+      "testability/pages/jsMessageExtThree",
+      "testability/pages/jsMessageExtFour"
   ]
 }

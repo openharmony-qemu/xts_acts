@@ -46,6 +46,14 @@ export default function layoutConstraintsJsunit() {
       console.info("layoutConstraints after each called");
     });
 
+    /**
+     * @tc.name   testLayoutConstraints001
+     * @tc.number testLayoutConstraints001
+     * @tc.desc   testLayoutConstraints001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLayoutConstraints001', Level.LEVEL0, async (done: Function) => {
       console.info('[testLayoutConstraints001] START');
       await Utils.sleep(1000);
@@ -56,6 +64,14 @@ export default function layoutConstraintsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testLayoutConstraints002
+     * @tc.number testLayoutConstraints002
+     * @tc.desc   testLayoutConstraints002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLayoutConstraints002', Level.LEVEL0, async (done: Function) => {
       console.info('[testLayoutConstraints002] START');
       try {
@@ -81,6 +97,14 @@ export default function layoutConstraintsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testLayoutConstraints003
+     * @tc.number testLayoutConstraints003
+     * @tc.desc   testLayoutConstraints003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLayoutConstraints003', Level.LEVEL0, async (done: Function) => {
       console.info('[testLayoutConstraints003] START');
       await Utils.sleep(1000);
@@ -91,6 +115,14 @@ export default function layoutConstraintsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testLayoutConstraints004
+     * @tc.number testLayoutConstraints004
+     * @tc.desc   testLayoutConstraints004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLayoutConstraints004', Level.LEVEL0, async (done: Function) => {
       console.info('[testLayoutConstraints004] START');
       try {
@@ -116,6 +148,14 @@ export default function layoutConstraintsJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testLayoutConstraints005
+     * @tc.number testLayoutConstraints005
+     * @tc.desc   testLayoutConstraints005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLayoutConstraints005', Level.LEVEL0, async (done: Function) => {
       console.info('[testLayoutConstraints005] START');
       try {
@@ -141,6 +181,14 @@ export default function layoutConstraintsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testLayoutConstraints006
+     * @tc.number testLayoutConstraints006
+     * @tc.desc   testLayoutConstraints006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testLayoutConstraints006', Level.LEVEL0, async (done: Function) => {
       console.info('[testLayoutConstraints006] START');
       try {

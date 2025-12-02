@@ -47,14 +47,14 @@ export default function SearchAutoCapitalizationModeTest() {
       console.info("SearchAutoCapitalizationModeTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0010
-    * @tc.name         SearchAutoCapitalizationModeTest_0010
-    * @tc.desc         test Search autoCapitalizationMode: AutoCapitalizationMode.NONE
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0010
+     * @tc.desc   test Search autoCapitalizationMode: AutoCapitalizationMode.NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0010] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_NONE');
@@ -66,14 +66,14 @@ export default function SearchAutoCapitalizationModeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0020
-    * @tc.name         SearchAutoCapitalizationModeTest_0020
-    * @tc.desc         test Search autoCapitalizationMode: AutoCapitalizationMode.WORDS
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0020
+     * @tc.desc   test Search autoCapitalizationMode: AutoCapitalizationMode.WORDS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0020] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_WORDS');
@@ -85,14 +85,14 @@ export default function SearchAutoCapitalizationModeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0030
-    * @tc.name         SearchAutoCapitalizationModeTest_0030
-    * @tc.desc         test Search autoCapitalizationMode: AutoCapitalizationMode.SENTENCES
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0030
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0030
+     * @tc.desc   test Search autoCapitalizationMode: AutoCapitalizationMode.SENTENCES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0030] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_SENTENCES');
@@ -104,14 +104,14 @@ export default function SearchAutoCapitalizationModeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0040
-    * @tc.name         SearchAutoCapitalizationModeTest_0040
-    * @tc.desc         test Search autoCapitalizationMode: AutoCapitalizationMode.ALL_CHARACTERS
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0040
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0040
+     * @tc.desc   test Search autoCapitalizationMode: AutoCapitalizationMode.ALL_CHARACTERS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0040] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_ALL_CHARACTERS');
@@ -123,14 +123,14 @@ export default function SearchAutoCapitalizationModeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0050
-    * @tc.name         SearchAutoCapitalizationModeTest_0050
-    * @tc.desc         test Search autoCapitalizationMode: default
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0050
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0050
+     * @tc.desc   test Search autoCapitalizationMode: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0050] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_default');
@@ -142,14 +142,14 @@ export default function SearchAutoCapitalizationModeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0060
-    * @tc.name         SearchAutoCapitalizationModeTest_0060
-    * @tc.desc         test Search autoCapitalizationMode: undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0060
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0060
+     * @tc.desc   test Search autoCapitalizationMode: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0060] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_undefined');
@@ -161,14 +161,14 @@ export default function SearchAutoCapitalizationModeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0070
-    * @tc.name         SearchAutoCapitalizationModeTest_0070
-    * @tc.desc         test Search autoCapitalizationMode: 0
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   SearchAutoCapitalizationModeTest_0070
+     * @tc.number SUB_ACE_BASIC_ETS_API_SearchAutoCapitalizationModeTest_0070
+     * @tc.desc   test Search autoCapitalizationMode: 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SearchAutoCapitalizationModeTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchAutoCapitalizationModeTest_0070] START');
       let strJson = getInspectorByKey('Search_AutoCapitalizationMode_0');

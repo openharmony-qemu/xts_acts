@@ -26,91 +26,91 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0100
-     * @tc.name       : testTextInputClip001
-     * @tc.desc       : testing clip for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClip001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0100
+     * @tc.desc   testing clip for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0200
-     * @tc.name       : testTextInputClip002
-     * @tc.desc       : testing clip for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClip002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0200
+     * @tc.desc   testing clip for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0300
-     * @tc.name       : testTextInputClip003
-     * @tc.desc       : testing clip for textInput with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextInputClip003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0300
+     * @tc.desc   testing clip for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0400
-     * @tc.name       : testTextInputClip004
-     * @tc.desc       : testing clip for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClip004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0400
+     * @tc.desc   testing clip for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0500
-     * @tc.name       : testTextInputClip005
-     * @tc.desc       : testing clip for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClip005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0500
+     * @tc.desc   testing clip for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0600
-     * @tc.name       : testTextInputClip006
-     * @tc.desc       : testing clip for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClip006
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0600
+     * @tc.desc   testing clip for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0700
-     * @tc.name       : testTextInputClip007
-     * @tc.desc       : testing clip for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClip007
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLIP_0700
+     * @tc.desc   testing clip for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClip007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClip007()).assertEqual(0)

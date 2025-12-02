@@ -43,12 +43,12 @@ export default function arcSwiperEvent() {
     });
 
     /**
-     * @tc.number    arcSwiperEvent_001
-     * @tc.name      arcSwiperEvent_0100
-     * @tc.desc      Set the sliding switch function of disabled components.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcSwiperEvent_0100
+     * @tc.number arcSwiperEvent_001
+     * @tc.desc   Set the sliding switch function of disabled components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcSwiperEvent_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[arcSwiperEvent_0100] START');
@@ -83,12 +83,12 @@ export default function arcSwiperEvent() {
     });
 
     /**
-     * @tc.number    arcSwiperEvent_002
-     * @tc.name      arcSwiperEvent_0200
-     * @tc.desc      During the sliding process of the page, trigger callback events.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcSwiperEvent_0200
+     * @tc.number arcSwiperEvent_002
+     * @tc.desc   During the sliding process of the page, trigger callback events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcSwiperEvent_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[arcSwiperEvent_0200] START');

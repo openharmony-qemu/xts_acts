@@ -26,15 +26,14 @@ export default function imageAnimatorEventTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
-                       SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_FINISH_0100
-    * @tc.name       : testImageAnimatorOnStart001
-    * @tc.desc       : test OnStart and OnFinish event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testImageAnimatorOnStart001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
+     * @tc.desc   test OnStart and OnFinish event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testImageAnimatorOnStart001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ImageAnimatorOnCancelTest';
       await Utils.pushPage(`imageAnimator/${PAGE_TAG}`);
@@ -49,15 +48,14 @@ export default function imageAnimatorEventTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
-                       SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_PAUSE_0100
-    * @tc.name       : testImageAnimatorOnPause001
-    * @tc.desc       : test OnStart and OnPause event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testImageAnimatorOnPause001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
+     * @tc.desc   test OnStart and OnPause event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testImageAnimatorOnPause001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ImageAnimatorOnPauseTest';
       await Utils.pushPage(`imageAnimator/${PAGE_TAG}`);
@@ -72,15 +70,14 @@ export default function imageAnimatorEventTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
-                       SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_FINISH_0100
-    * @tc.name       : testImageAnimatorOnFinish001
-    * @tc.desc       : test OnStart and OnFinish event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testImageAnimatorOnFinish001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
+     * @tc.desc   test OnStart and OnFinish event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testImageAnimatorOnFinish001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ImageAnimatorOnFinishTest';
       await Utils.pushPage(`imageAnimator/${PAGE_TAG}`);
@@ -96,15 +93,14 @@ export default function imageAnimatorEventTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
-                       SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_REPEAT_0100
-    * @tc.name       : testImageAnimatorOnRepeat001
-    * @tc.desc       : test OnStart and OnRepeat event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testImageAnimatorOnRepeat001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_EVENT_ON_START_0100
+     * @tc.desc   test OnStart and OnRepeat event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testImageAnimatorOnRepeat001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ImageAnimatorOnRepeatTest';
       await Utils.pushPage(`imageAnimator/${PAGE_TAG}`);

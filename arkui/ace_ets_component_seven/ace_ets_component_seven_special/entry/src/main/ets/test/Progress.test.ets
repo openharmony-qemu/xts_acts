@@ -41,12 +41,12 @@ export default function progressStyleJsunit() {
     });
 
     /**
+     * @tc.name   testProgressStyle0001
      * @tc.number testProgressStyle0001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testProgressStyle0001', Level.LEVEL0, async (done: Function) => {
       console.info('testProgressStyle0001 START');
@@ -61,12 +61,12 @@ export default function progressStyleJsunit() {
     });
 
     /**
+     * @tc.name   testProgressStyle0002
      * @tc.number testProgressStyle0002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testProgressStyle0002', Level.LEVEL0, async (done: Function) => {
       console.info('testProgressStyle0002 START');
@@ -81,12 +81,12 @@ export default function progressStyleJsunit() {
     });
 
     /**
+     * @tc.name   testProgressStyle0003
      * @tc.number testProgressStyle0003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testProgressStyle0003', Level.LEVEL0, async (done: Function) => {
       console.info('testProgressStyle0003 START');

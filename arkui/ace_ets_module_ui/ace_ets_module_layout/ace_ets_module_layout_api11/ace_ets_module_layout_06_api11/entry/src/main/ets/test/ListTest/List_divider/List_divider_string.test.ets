@@ -64,9 +64,12 @@ export default function List_divider_string() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_string_0100
      * @tc.number SUB_ACE_List_divider_string_0100
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to 'abc'
+     * @tc.desc   Set strokeWidth to 'abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_string_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_string_0100] START');
@@ -88,9 +91,12 @@ export default function List_divider_string() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_string_0200
      * @tc.number SUB_ACE_List_divider_string_0200
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to '10%'
+     * @tc.desc   Set strokeWidth to '10%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_string_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_string_0200] START');
@@ -112,9 +118,12 @@ export default function List_divider_string() {
 
 
     /**
+     * @tc.name   SUB_ACE_List_divider_string_0300
      * @tc.number SUB_ACE_List_divider_string_0300
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to '10px'
+     * @tc.desc   Set strokeWidth to '10px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_string_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_string_0300] START');
@@ -135,9 +144,12 @@ export default function List_divider_string() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_divider_string_0400
      * @tc.number SUB_ACE_List_divider_string_0400
-     * @tc.name testListItem
-     * @tc.desc Set list to 2,set strokeWidth to '10px'
+     * @tc.desc   Set list to 2,set strokeWidth to '10px'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_string_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_string_0400] START');
@@ -161,9 +173,12 @@ export default function List_divider_string() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_divider_string_0500
      * @tc.number SUB_ACE_List_divider_string_0500
-     * @tc.name testListItem
-     * @tc.desc Set strokeWidth to '10abc'
+     * @tc.desc   Set strokeWidth to '10abc'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_string_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_string_0500] START');

@@ -42,12 +42,14 @@ export default function dateTimeOptions() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : dateTimeOptions_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   dateTimeOptions_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('dateTimeOptions_0100', Level.LEVEL1, async (done: Function) => {
       console.info('dateTimeOptions_0100 START');
       let driver = await Driver.create()

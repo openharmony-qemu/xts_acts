@@ -16,11 +16,13 @@
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "emitRegisterJavaScriptProxyTwo";
 
@@ -42,7 +44,7 @@ export default function webTwoJsunit() {
       } catch (err) {
         console.error('push webTwo page error: ' + err);
       }
-      await waitForComponent("webcomponenttwo");
+      await driver.waitForComponent(ON.id("webcomponenttwo"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {
@@ -54,15 +56,18 @@ export default function webTwoJsunit() {
       console.info('web beforeEach start');
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_005                                                                                                                                                             
-     *tc.name RegisterJavaScriptProxy                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   RegisterJavaScriptProxy
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_005
+     * @tc.desc   RegisterJavaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxyTwo", 172270)
       Utils.registerEvent("RegisterJavaScriptProxy", '\"okok\"', 172280, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webcomponenttwo');
     })
   })
 }

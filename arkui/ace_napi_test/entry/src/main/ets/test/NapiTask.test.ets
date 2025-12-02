@@ -601,12 +601,12 @@ export default function NapiTaskTest() {
     });
 
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0100
-     * @tc.name      : testExecuteTask0001
-     * @tc.desc      : NapiTaskTest getLastError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0100
+     * @tc.desc   NapiTaskTest getLastError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0001';
@@ -629,12 +629,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0200
-     * @tc.name      : testExecuteTask0002
-     * @tc.desc      : NapiTaskTest isError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0200
+     * @tc.desc   NapiTaskTest isError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0002';
@@ -657,12 +657,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0300
-     * @tc.name      : testExecuteTask0003
-     * @tc.desc      : NapiTaskTest createError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0300
+     * @tc.desc   NapiTaskTest createError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0003';
@@ -685,12 +685,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0400
-     * @tc.name      : testExecuteTask0004
-     * @tc.desc      : NapiTaskTest createRangeError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0400
+     * @tc.desc   NapiTaskTest createRangeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0004';
@@ -713,12 +713,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0500
-     * @tc.name      : testExecuteTask0005
-     * @tc.desc      : NapiTaskTest isExceptionPending
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0500
+     * @tc.desc   NapiTaskTest isExceptionPending
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0005';
@@ -741,12 +741,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0600
-     * @tc.name      : testExecuteTask0006
-     * @tc.desc      : NapiTaskTest createReference
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0600
+     * @tc.desc   NapiTaskTest createReference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0006';
@@ -769,12 +769,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0700
-     * @tc.name      : testExecuteTask0007
-     * @tc.desc      : NapiTaskTest referenceRefAndUnref
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0700
+     * @tc.desc   NapiTaskTest referenceRefAndUnref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0007';
@@ -797,12 +797,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0800
-     * @tc.name      : testExecuteTask0008
-     * @tc.desc      : NapiTaskTest createArrayAndGetLength
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0800
+     * @tc.desc   NapiTaskTest createArrayAndGetLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0008';
@@ -825,12 +825,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_0900
-     * @tc.name      : testExecuteTask0009
-     * @tc.desc      : NapiTaskTest createExternal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0009
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_0900
+     * @tc.desc   NapiTaskTest createExternal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0009';
@@ -853,12 +853,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1000
-     * @tc.name      : testExecuteTask0010
-     * @tc.desc      : NapiTaskTest createExternalArraybuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0010
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1000
+     * @tc.desc   NapiTaskTest createExternalArraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0010';
@@ -881,12 +881,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1100
-     * @tc.name      : testExecuteTask0011
-     * @tc.desc      : NapiTaskTest createObject
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0011
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1100
+     * @tc.desc   NapiTaskTest createObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0011';
@@ -909,12 +909,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1200
-     * @tc.name      : testExecuteTask0012
-     * @tc.desc      : NapiTaskTest createSymbol
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0012
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1200
+     * @tc.desc   NapiTaskTest createSymbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0012';
@@ -937,12 +937,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1300
-     * @tc.name      : testExecuteTask0013
-     * @tc.desc      : NapiTaskTest createTypeArray
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0013
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1300
+     * @tc.desc   NapiTaskTest createTypeArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0013';
@@ -965,12 +965,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1400
-     * @tc.name      : testExecuteTask0014
-     * @tc.desc      : NapiTaskTest getValueBool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0014
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1400
+     * @tc.desc   NapiTaskTest getValueBool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0014';
@@ -993,12 +993,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1500
-     * @tc.name      : testExecuteTask0015
-     * @tc.desc      : NapiTaskTest createAndGetInt32
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0015
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1500
+     * @tc.desc   NapiTaskTest createAndGetInt32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0015';
@@ -1021,12 +1021,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1600
-     * @tc.name      : testExecuteTask0016
-     * @tc.desc      : NapiTaskTest createAndGetUInt32
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0016
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1600
+     * @tc.desc   NapiTaskTest createAndGetUInt32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0016';
@@ -1049,12 +1049,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1700
-     * @tc.name      : testExecuteTask0017
-     * @tc.desc      : NapiTaskTest createAndGetInt64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0017
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1700
+     * @tc.desc   NapiTaskTest createAndGetInt64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0017';
@@ -1077,12 +1077,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1800
-     * @tc.name      : testExecuteTask0018
-     * @tc.desc      : NapiTaskTest createDouble
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0018
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1800
+     * @tc.desc   NapiTaskTest createDouble
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0018';
@@ -1105,12 +1105,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_1900
-     * @tc.name      : testExecuteTask0019
-     * @tc.desc      : NapiTaskTest createAndGetStringUtf16
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0019
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_1900
+     * @tc.desc   NapiTaskTest createAndGetStringUtf16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0019';
@@ -1133,12 +1133,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2000
-     * @tc.name      : testExecuteTask0020
-     * @tc.desc      : NapiTaskTest stringUtf16OfCase
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0020
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2000
+     * @tc.desc   NapiTaskTest stringUtf16OfCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0020';
@@ -1161,12 +1161,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2100
-     * @tc.name      : testExecuteTask0021
-     * @tc.desc      : NapiTaskTest getValueDouble
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0021
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2100
+     * @tc.desc   NapiTaskTest getValueDouble
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0021';
@@ -1189,12 +1189,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2200
-     * @tc.name      : testExecuteTask0022
-     * @tc.desc      : NapiTaskTest getValueExternal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0022
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2200
+     * @tc.desc   NapiTaskTest getValueExternal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0022';
@@ -1217,12 +1217,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2300
-     * @tc.name      : testExecuteTask0023
-     * @tc.desc      : NapiTaskTest getNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0023
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2300
+     * @tc.desc   NapiTaskTest getNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0023';
@@ -1245,12 +1245,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2400
-     * @tc.name      : testExecuteTask0024
-     * @tc.desc      : NapiTaskTest getUndefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0024
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2400
+     * @tc.desc   NapiTaskTest getUndefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0024';
@@ -1273,12 +1273,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2500
-     * @tc.name      : testExecuteTask0025
-     * @tc.desc      : NapiTaskTest coerceToBool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0025
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2500
+     * @tc.desc   NapiTaskTest coerceToBool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0025';
@@ -1301,12 +1301,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2600
-     * @tc.name      : testExecuteTask0026
-     * @tc.desc      : NapiTaskTest coerceToNumber
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0026
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2600
+     * @tc.desc   NapiTaskTest coerceToNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0026';
@@ -1329,12 +1329,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2700
-     * @tc.name      : testExecuteTask0027
-     * @tc.desc      : NapiTaskTest coerceToObject
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0027
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2700
+     * @tc.desc   NapiTaskTest coerceToObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0027';
@@ -1357,12 +1357,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2800
-     * @tc.name      : testExecuteTask0028
-     * @tc.desc      : NapiTaskTest coerceToString
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0028
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2800
+     * @tc.desc   NapiTaskTest coerceToString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0028';
@@ -1385,12 +1385,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_2900
-     * @tc.name      : testExecuteTask0029
-     * @tc.desc      : NapiTaskTest typeOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0029
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_2900
+     * @tc.desc   NapiTaskTest typeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0029';
@@ -1413,12 +1413,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3000
-     * @tc.name      : testExecuteTask0030
-     * @tc.desc      : NapiTaskTest isArray
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0030
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3000
+     * @tc.desc   NapiTaskTest isArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0030';
@@ -1441,12 +1441,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3100
-     * @tc.name      : testExecuteTask0031
-     * @tc.desc      : NapiTaskTest strictEquals
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0031
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3100
+     * @tc.desc   NapiTaskTest strictEquals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0031';
@@ -1469,12 +1469,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3200
-     * @tc.name      : testExecuteTask0032
-     * @tc.desc      : NapiTaskTest getPropertyNames
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0032
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3200
+     * @tc.desc   NapiTaskTest getPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0032';
@@ -1497,12 +1497,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3300
-     * @tc.name      : testExecuteTask0033
-     * @tc.desc      : NapiTaskTest setProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0033
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3300
+     * @tc.desc   NapiTaskTest setProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0033';
@@ -1525,12 +1525,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3400
-     * @tc.name      : testExecuteTask0034
-     * @tc.desc      : NapiTaskTest getProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0034
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3400
+     * @tc.desc   NapiTaskTest getProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0034';
@@ -1553,12 +1553,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3500
-     * @tc.name      : testExecuteTask0035
-     * @tc.desc      : NapiTaskTest hasProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0035
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3500
+     * @tc.desc   NapiTaskTest hasProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0035';
@@ -1581,12 +1581,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3600
-     * @tc.name      : testExecuteTask0036
-     * @tc.desc      : NapiTaskTest setAndDeleteProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0036
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3600
+     * @tc.desc   NapiTaskTest setAndDeleteProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0036';
@@ -1609,12 +1609,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3700
-     * @tc.name      : testExecuteTask0037
-     * @tc.desc      : NapiTaskTest hasOwnProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0037
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3700
+     * @tc.desc   NapiTaskTest hasOwnProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0037';
@@ -1637,12 +1637,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3800
-     * @tc.name      : testExecuteTask0038
-     * @tc.desc      : NapiTaskTest setNamedProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0038
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3800
+     * @tc.desc   NapiTaskTest setNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0038';
@@ -1665,12 +1665,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_3900
-     * @tc.name      : testExecuteTask0039
-     * @tc.desc      : NapiTaskTest getNamedProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0039
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_3900
+     * @tc.desc   NapiTaskTest getNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0039';
@@ -1693,12 +1693,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4000
-     * @tc.name      : testExecuteTask0040
-     * @tc.desc      : NapiTaskTest hasNamedProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0040
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4000
+     * @tc.desc   NapiTaskTest hasNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0040';
@@ -1721,12 +1721,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4100
-     * @tc.name      : testExecuteTask0041
-     * @tc.desc      : NapiTaskTest setElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0041
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4100
+     * @tc.desc   NapiTaskTest setElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0041';
@@ -1749,12 +1749,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4200
-     * @tc.name      : testExecuteTask0042
-     * @tc.desc      : NapiTaskTest getElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0042
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4200
+     * @tc.desc   NapiTaskTest getElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0042';
@@ -1777,12 +1777,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4300
-     * @tc.name      : testExecuteTask0043
-     * @tc.desc      : NapiTaskTest hasElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0043
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4300
+     * @tc.desc   NapiTaskTest hasElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0043';
@@ -1805,12 +1805,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4400
-     * @tc.name      : testExecuteTask0044
-     * @tc.desc      : NapiTaskTest deleteElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0044
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4400
+     * @tc.desc   NapiTaskTest deleteElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0044';
@@ -1833,12 +1833,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4500
-     * @tc.name      : testExecuteTask0045
-     * @tc.desc      : NapiTaskTest defineProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0045
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4500
+     * @tc.desc   NapiTaskTest defineProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0045';
@@ -1861,12 +1861,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4600
-     * @tc.name      : testExecuteTask0046
-     * @tc.desc      : NapiTaskTest callFunctionNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0046
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4600
+     * @tc.desc   NapiTaskTest callFunctionNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0046';
@@ -1889,12 +1889,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4700
-     * @tc.name      : testExecuteTask0047
-     * @tc.desc      : NapiTaskTest napiCreateFunctionFuncNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0047
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4700
+     * @tc.desc   NapiTaskTest napiCreateFunctionFuncNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0047';
@@ -1917,12 +1917,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4800
-     * @tc.name      : testExecuteTask0048
-     * @tc.desc      : NapiTaskTest napiGetCbInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0048
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4800
+     * @tc.desc   NapiTaskTest napiGetCbInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0048';
@@ -1945,12 +1945,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_4900
-     * @tc.name      : testExecuteTask0049
-     * @tc.desc      : NapiTaskTest unwrap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0049
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_4900
+     * @tc.desc   NapiTaskTest unwrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0049';
@@ -1973,12 +1973,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5000
-     * @tc.name      : testExecuteTask0050
-     * @tc.desc      : NapiTaskTest removeWrap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0050
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5000
+     * @tc.desc   NapiTaskTest removeWrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0050';
@@ -2001,12 +2001,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5100
-     * @tc.name      : testExecuteTask0051
-     * @tc.desc      : NapiTaskTest getVersionWrap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0051
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5100
+     * @tc.desc   NapiTaskTest getVersionWrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0051';
@@ -2029,12 +2029,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5200
-     * @tc.name      : testExecuteTask0052
-     * @tc.desc      : NapiTaskTest createPromise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0052
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5200
+     * @tc.desc   NapiTaskTest createPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0052';
@@ -2057,12 +2057,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5300
-     * @tc.name      : testExecuteTask0053
-     * @tc.desc      : NapiTaskTest resolveAndRejectDeferred
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0053
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5300
+     * @tc.desc   NapiTaskTest resolveAndRejectDeferred
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0053';
@@ -2085,12 +2085,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5400
-     * @tc.name      : testExecuteTask0054
-     * @tc.desc      : NapiTaskTest isPromise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0054
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5400
+     * @tc.desc   NapiTaskTest isPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0054';
@@ -2113,12 +2113,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5500
-     * @tc.name      : testExecuteTask0055
-     * @tc.desc      : NapiTaskTest napiCreateThreadsafeFunction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0055
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5500
+     * @tc.desc   NapiTaskTest napiCreateThreadsafeFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0055';
@@ -2141,12 +2141,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5600
-     * @tc.name      : testNapiDeleteSerializationData0056
-     * @tc.desc      : NapiTaskTest napiDeleteSerializationData
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiDeleteSerializationData0056
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5600
+     * @tc.desc   NapiTaskTest napiDeleteSerializationData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiDeleteSerializationData0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiDeleteSerializationData0056';
@@ -2169,12 +2169,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5700
-     * @tc.name      : testExecuteTask0057
-     * @tc.desc      : NapiTaskTest napiCallThreadsafeFunction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0057
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5700
+     * @tc.desc   NapiTaskTest napiCallThreadsafeFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0057';
@@ -2197,12 +2197,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5800
-     * @tc.name      : testExecuteTask0058
-     * @tc.desc      : NapiTaskTest napiAnotherThreadSafeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0058
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5800
+     * @tc.desc   NapiTaskTest napiAnotherThreadSafeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0058';
@@ -2225,12 +2225,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_5900
-     * @tc.name      : testExecuteTask0059
-     * @tc.desc      : NapiTaskTest napiRefThreadsafeFunction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0059
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_5900
+     * @tc.desc   NapiTaskTest napiRefThreadsafeFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0059';
@@ -2253,12 +2253,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6000
-     * @tc.name      : testExecuteTask0060
-     * @tc.desc      : NapiTaskTest napiCreateDate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0060
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6000
+     * @tc.desc   NapiTaskTest napiCreateDate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0060';
@@ -2281,12 +2281,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6100
-     * @tc.name      : testExecuteTask0061
-     * @tc.desc      : NapiTaskTest napiCreateBigintInt64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0061
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6100
+     * @tc.desc   NapiTaskTest napiCreateBigintInt64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0061';
@@ -2309,12 +2309,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6200
-     * @tc.name      : testExecuteTask0062
-     * @tc.desc      : NapiTaskTest napiCreateBigintUint64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0062
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6200
+     * @tc.desc   NapiTaskTest napiCreateBigintUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0062';
@@ -2337,12 +2337,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6300
-     * @tc.name      : testExecuteTask0063
-     * @tc.desc      : NapiTaskTest napiCreateBigintWords
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0063
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6300
+     * @tc.desc   NapiTaskTest napiCreateBigintWords
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0063';
@@ -2365,12 +2365,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6400
-     * @tc.name      : testExecuteTask0064
-     * @tc.desc      : NapiTaskTest GetAllPropertyNamesEnvNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0064
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6400
+     * @tc.desc   NapiTaskTest GetAllPropertyNamesEnvNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0064';
@@ -2393,12 +2393,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6500
-     * @tc.name      : testExecuteTask0065
-     * @tc.desc      : NapiTaskTest napiSetInstanceData
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testExecuteTask0065
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6500
+     * @tc.desc   NapiTaskTest napiSetInstanceData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExecuteTask0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testExecuteTask0065';
@@ -2421,12 +2421,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6600
-     * @tc.name      : testGetModuleFileName0066
-     * @tc.desc      : NapiTaskTest getModuleFileName
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testGetModuleFileName0066
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6600
+     * @tc.desc   NapiTaskTest getModuleFileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetModuleFileName0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testGetModuleFileName0066';
@@ -2449,12 +2449,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6700
-     * @tc.name      : testCreateAsyncResource0067
-     * @tc.desc      : NapiTaskTest createAsyncResource
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCreateAsyncResource0067
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6700
+     * @tc.desc   NapiTaskTest createAsyncResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateAsyncResource0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCreateAsyncResource0067';
@@ -2477,12 +2477,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6800
-     * @tc.name      : testAsyncWorkWithQos0068
-     * @tc.desc      : NapiTaskTest asyncWorkWithQos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testAsyncWorkWithQos0068
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6800
+     * @tc.desc   NapiTaskTest asyncWorkWithQos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAsyncWorkWithQos0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testAsyncWorkWithQos0068';
@@ -2505,12 +2505,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_6900
-     * @tc.name      : testNapiRunScriptPathEnvNull0069
-     * @tc.desc      : NapiTaskTest napiRunScriptPathEnvNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiRunScriptPathEnvNull0069
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_6900
+     * @tc.desc   NapiTaskTest napiRunScriptPathEnvNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiRunScriptPathEnvNull0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiRunScriptPathEnvNull0069';
@@ -2533,12 +2533,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_7000
-     * @tc.name      : testNapiLoadModule0070
-     * @tc.desc      : NapiTaskTest napiLoadModule
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiLoadModule0070
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7000
+     * @tc.desc   NapiTaskTest napiLoadModule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiLoadModule0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiLoadModule0070';
@@ -2561,12 +2561,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_7100
-     * @tc.name      : testCreateObjectWithProperties0071
-     * @tc.desc      : NapiTaskTest createObjectWithProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCreateObjectWithProperties0071
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7100
+     * @tc.desc   NapiTaskTest createObjectWithProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateObjectWithProperties0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCreateObjectWithProperties0071';
@@ -2589,12 +2589,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_7200
-     * @tc.name      : testCreateObjectWithNamedProperties0072
-     * @tc.desc      : NapiTaskTest createObjectWithNamedProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCreateObjectWithNamedProperties0072
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7200
+     * @tc.desc   NapiTaskTest createObjectWithNamedProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateObjectWithNamedProperties0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCreateObjectWithNamedProperties0072';
@@ -2617,12 +2617,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_7300
-     * @tc.name      : testCoerceToNativeBindingObjectEnvNull0073
-     * @tc.desc      : NapiTaskTest coerceToNativeBindingObjectEnvNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCoerceToNativeBindingObjectEnvNull0073
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7300
+     * @tc.desc   NapiTaskTest coerceToNativeBindingObjectEnvNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCoerceToNativeBindingObjectEnvNull0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testCoerceToNativeBindingObjectEnvNull0073';
@@ -2645,12 +2645,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_7400
-     * @tc.name      : testNapiSerialize0074
-     * @tc.desc      : NapiTaskTest napiSerialize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiSerialize0074
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7400
+     * @tc.desc   NapiTaskTest napiSerialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiSerialize0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiSerialize0074';
@@ -2673,12 +2673,12 @@ export default function NapiTaskTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_TASK_7500
-     * @tc.name      : testNapiDeSerialize0075
-     * @tc.desc      : NapiTaskTest napiDeSerialize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiDeSerialize0075
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_TASK_7500
+     * @tc.desc   NapiTaskTest napiDeSerialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiDeSerialize0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiDeSerialize0075';

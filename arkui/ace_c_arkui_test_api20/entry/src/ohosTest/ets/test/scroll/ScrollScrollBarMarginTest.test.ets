@@ -24,13 +24,13 @@ export default function scrollScrollBarMarginTest() {
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BarMarginScroll_001
-     * @tc.name: BarMarginScroll_001
-     * @tc.desc: Test changes of scroll bar margin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   BarMarginScroll_001
+     * @tc.number SUB_ARKUI_CAPI_BarMarginScroll_001
+     * @tc.desc   Test changes of scroll bar margin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BarMarginScroll_001', Level.LEVEL1, async (done: Function) => {
       console.info('BarMarginScroll_001 START');
@@ -66,13 +66,13 @@ export default function scrollScrollBarMarginTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BarMarginScroll_002
-     * @tc.name: BarMarginScroll_002
-     * @tc.desc: Test changes of scroll bar margin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   BarMarginScroll_002
+     * @tc.number SUB_ARKUI_CAPI_BarMarginScroll_002
+     * @tc.desc   Test changes of scroll bar margin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BarMarginScroll_002', Level.LEVEL1, async (done: Function) => {
       console.info('BarMarginScroll_002 START');
@@ -108,13 +108,13 @@ export default function scrollScrollBarMarginTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BarMarginScroll_003
-     * @tc.name: BarMarginScroll_003
-     * @tc.desc: Test changes of scroll bar margin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   BarMarginScroll_003
+     * @tc.number SUB_ARKUI_CAPI_BarMarginScroll_003
+     * @tc.desc   Test changes of scroll bar margin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BarMarginScroll_003', Level.LEVEL1, async (done: Function) => {
       console.info('BarMarginScroll_003 START');
@@ -149,13 +149,13 @@ export default function scrollScrollBarMarginTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BarMarginScroll_004
-     * @tc.name: BarMarginScroll_004
-     * @tc.desc: Test changes of scroll bar margin.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   BarMarginScroll_004
+     * @tc.number SUB_ARKUI_CAPI_BarMarginScroll_004
+     * @tc.desc   Test changes of scroll bar margin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BarMarginScroll_004', Level.LEVEL1, async (done: Function) => {
       console.info('BarMarginScroll_004 START');

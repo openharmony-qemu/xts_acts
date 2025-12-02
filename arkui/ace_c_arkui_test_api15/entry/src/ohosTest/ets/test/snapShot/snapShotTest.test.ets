@@ -35,13 +35,13 @@ export default function snapShotTest() {
       done()
     })
 
-    /*
-     * @tc.number     : snapShotTest001
-     * @tc.name       : snapShotTest001
-     * @tc.desc       : testing snapShot
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   snapShotTest001
+     * @tc.number snapShotTest001
+     * @tc.desc   testing snapShot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('snapShotTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'snapShotTest'

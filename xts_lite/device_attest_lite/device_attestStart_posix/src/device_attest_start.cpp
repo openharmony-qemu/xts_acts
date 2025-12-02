@@ -37,9 +37,12 @@ protected:
 };
 
 /**
- * @tc.number    : Sub_Device_Attest_Test_0100
- * @tc.name      : HiLog::Info parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   subDeviceAttestTest0100
+ * @tc.number Sub_Device_Attest_Test_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DeviceAttestStartTest, subDeviceAttestTest0100, Function | MediumTest | Level1)
 {

@@ -45,14 +45,14 @@ export default function graphicTextInterface() {
       pixel = await image.createPixelMap(color, opts);
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
-     * @tc.name      : testDecoration
-     * @tc.desc      : To test interface Decoration.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testDecoration
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
+     * @tc.desc   To test interface Decoration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testDecoration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testDecoration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testDecoration"
       console.info(msg + 'begin');
       try {
@@ -70,14 +70,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
-     * @tc.name      : testTextStyle
-     * @tc.desc      : To test interface TextStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
+     * @tc.desc   To test interface TextStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextStyle"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -113,14 +113,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
-     * @tc.name      : testParagraphStyle
-     * @tc.desc      : To test interface ParagraphStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testParagraphStyle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
+     * @tc.desc   To test interface ParagraphStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testParagraphStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testParagraphStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphStyle"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -169,14 +169,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
-     * @tc.name      : testPlaceholderSpan
-     * @tc.desc      : To test interface PlaceholderSpan.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPlaceholderSpan
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
+     * @tc.desc   To test interface PlaceholderSpan.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testPlaceholderSpan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPlaceholderSpan', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPlaceholderSpan"
       console.info(msg + 'begin');
       try {
@@ -195,14 +195,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
-     * @tc.name      : testRange
-     * @tc.desc      : To test interface Range.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
+     * @tc.desc   To test interface Range.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testRange"
       console.info(msg + 'begin');
       try {
@@ -218,14 +218,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
-     * @tc.name      : testTextBox
-     * @tc.desc      : To test interface TextBox.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextBox
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
+     * @tc.desc   To test interface TextBox.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextBox"
       console.info(msg + 'begin');
       try {
@@ -243,14 +243,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
-     * @tc.name      : testPositionWithAffinity
-     * @tc.desc      : To test interface PositionWithAffinity.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPositionWithAffinity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
+     * @tc.desc   To test interface PositionWithAffinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testPositionWithAffinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPositionWithAffinity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPositionWithAffinity"
       console.info(msg + 'begin');
       try {
@@ -264,14 +264,14 @@ export default function graphicTextInterface() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
-     * @tc.name      : testTextTab
-     * @tc.desc      : To test interface TextTab.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextTab
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
+     * @tc.desc   To test interface TextTab.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextTab', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextTab', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextTab"
       console.info(msg + 'begin');
       try {

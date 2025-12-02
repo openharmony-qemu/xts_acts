@@ -23,14 +23,14 @@ export default function graphicImageInterfaceTest() {
     beforeAll(async ()=> {
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_016
-     * @tc.name      : testCreatePremultipliedPixelMap_callback
-     * @tc.desc      : The transparent channel non-premultiplied mode of PixelMap is changed to premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through the callback function.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreatePremultipliedPixelMap_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_016
+     * @tc.desc   The transparent channel non-premultiplied mode of PixelMap is changed to premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through the callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCreatePremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreatePremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreatePremultipliedPixelMap_callback= "
       console.log(" www data 1" + msg + " begin ")
@@ -69,14 +69,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_017
-     * @tc.name      : testCreatePremultipliedPixelMap_promise
-     * @tc.desc      : Convert PixelMap data into a pre-multiply format based on transparency, save the converted data to another PixelMap, and return the result through Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreatePremultipliedPixelMap_promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_017
+     * @tc.desc   Convert PixelMap data into a pre-multiply format based on transparency, save the converted data to another PixelMap, and return the result through Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCreatePremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreatePremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreatePremultipliedPixelMap_promise= "
       console.log(" www data 2" + msg + " begin ")
@@ -113,14 +113,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_018
-     * @tc.name      : testCreateUnpremultipliedPixelMap_callback
-     * @tc.desc      : The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through the callback function.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateUnpremultipliedPixelMap_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_018
+     * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through the callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCreateUnpremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateUnpremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreateUnpremultipliedPixelMap_callback= "
       console.log(" www data 3" + msg + " begin ")
@@ -159,14 +159,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_019
-     * @tc.name      : testCreateUnpremultipliedPixelMap_promise
-     * @tc.desc      : The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateUnpremultipliedPixelMap_promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_019
+     * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCreateUnpremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateUnpremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreateUnpremultipliedPixelMap_promise= "
       console.log(" www data 4" + msg + " begin ")
@@ -203,14 +203,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_020
-     * @tc.name      : testWriteBufferToPixelsSync
-     * @tc.desc      : The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWriteBufferToPixelsSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_020
+     * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode. The converted data is stored in the target PixelMap and the result is returned through Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testWriteBufferToPixelsSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testWriteBufferToPixelsSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testWriteBufferToPixelsSync= "
 
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -241,14 +241,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_021
-     * @tc.name      : testReadPixelsSync_image
-     * @tc.desc      : Reads the image data in the area and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testReadPixelsSync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_021
+     * @tc.desc   Reads the image data in the area and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testReadPixelsSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testReadPixelsSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testReadPixelsSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -283,14 +283,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_022
-     * @tc.name      : testOpacitySync_image
-     * @tc.desc      : Sets the transparency ratio of PixelMap, initializes PixelMap, and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOpacitySync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_022
+     * @tc.desc   Sets the transparency ratio of PixelMap, initializes PixelMap, and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testOpacitySync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testOpacitySync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testOpacitySync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -316,14 +316,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_023
-     * @tc.name      : testCreateAlphaPixelmapSync_image
-     * @tc.desc      : Generate a PixelMap containing only the alpha channel information according to the alpha channel information. It can be used for shadow effect and the result of PixelMap type is returned synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateAlphaPixelmapSync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_023
+     * @tc.desc   Generate a PixelMap containing only the alpha channel information according to the alpha channel information. It can be used for shadow effect and the result of PixelMap type is returned synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCreateAlphaPixelmapSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateAlphaPixelmapSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreateAlphaPixelmapSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -349,14 +349,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_024
-     * @tc.name      : testTranslateSync_image
-     * @tc.desc      : The image is transformed according to the input coordinates and the result is returned synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTranslateSync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_024
+     * @tc.desc   The image is transformed according to the input coordinates and the result is returned synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTranslateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTranslateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testTranslateSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -383,14 +383,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_025
-     * @tc.name      : testRotateSync_image
-     * @tc.desc      : Rotates the picture according to the angle entered and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRotateSync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_025
+     * @tc.desc   Rotates the picture according to the angle entered and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testRotateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testRotateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testRotateSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -416,14 +416,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_026
-     * @tc.name      : testFlipSync_image
-     * @tc.desc      : Flips the image based on the conditions entered and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFlipSync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_026
+     * @tc.desc   Flips the image based on the conditions entered and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testFlipSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testFlipSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testFlipSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -450,14 +450,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_027
-     * @tc.name      : testCropSync_image
-     * @tc.desc      : Crops the picture to the size you enter.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCropSync_image
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_027
+     * @tc.desc   Crops the picture to the size you enter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testCropSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testCropSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testCropSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -483,14 +483,14 @@ export default function graphicImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_028
-     * @tc.name      : testSrcPixelFormat
-     * @tc.desc      : Crops the picture to the size you enter.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSrcPixelFormat
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_028
+     * @tc.desc   Crops the picture to the size you enter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testSrcPixelFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testSrcPixelFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testSrcPixelFormat= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {

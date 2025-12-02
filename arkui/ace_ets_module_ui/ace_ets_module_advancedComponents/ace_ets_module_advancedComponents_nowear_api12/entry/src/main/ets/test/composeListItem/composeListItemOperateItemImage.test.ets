@@ -50,12 +50,12 @@ export default function composeListItemOperateItemImage() {
     })
 
     /**
-     * @tc.number composeListItemOperateItemImage
      * @tc.name   composeListItemOperateItemImage_0100
+     * @tc.number composeListItemOperateItemImage
      * @tc.desc   Test composeListItemOperateItemImage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemOperateItemImage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

@@ -64,7 +64,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0100
      * @tc.number testPreferencesStorageType0100
      * @tc.desc   testPreferencesStorageType0100
@@ -100,7 +99,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0200
      * @tc.number testPreferencesStorageType0200
      * @tc.desc   testPreferencesStorageType0200
@@ -124,7 +122,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0300
      * @tc.number testPreferencesStorageType0300
      * @tc.desc   testPreferencesStorageType0300
@@ -148,7 +145,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0400
      * @tc.number testPreferencesStorageType0400
      * @tc.desc   testPreferencesStorageType0400
@@ -191,7 +187,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0500
      * @tc.number testPreferencesStorageType0500
      * @tc.desc   testPreferencesStorageType0500
@@ -220,7 +215,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0600
      * @tc.number testPreferencesStorageType0600
      * @tc.desc   testPreferencesStorageType0600
@@ -265,7 +259,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0700
      * @tc.number testPreferencesStorageType0700
      * @tc.desc   testPreferencesStorageType0700
@@ -301,7 +294,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0800
      * @tc.number testPreferencesStorageType0800
      * @tc.desc   testPreferencesStorageType0800
@@ -340,7 +332,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType0900
      * @tc.number testPreferencesStorageType0900
      * @tc.desc   testPreferencesStorageType0900
@@ -374,7 +365,6 @@ export default function PreferencesInterfaceTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesStorageType1000
      * @tc.number testPreferencesStorageType1000
      * @tc.desc   testPreferencesStorageType1000

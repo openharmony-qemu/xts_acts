@@ -22,12 +22,12 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 export default function SwiperMaxDisplayCountTest() {
   describe('SwiperMaxDisplayCountTest', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_SwiperMaxDisplayCountTest_0100
-     * @tc.name    : testArkUIACESwiperMaxDisplayCountTest0100
-     * @tc.desc    : testing OH_ArkUI_SwiperIndicator_SetMaxDisplayCount interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACESwiperMaxDisplayCountTest0100
+     * @tc.number SUB_ArkUI_ACE_SwiperMaxDisplayCountTest_0100
+     * @tc.desc   testing OH_ArkUI_SwiperIndicator_SetMaxDisplayCount interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACESwiperMaxDisplayCountTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -45,12 +45,12 @@ export default function SwiperMaxDisplayCountTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_SwiperMaxDisplayCountTest_0200
-     * @tc.name    : testArkUIACESwiperMaxDisplayCountTest0200
-     * @tc.desc    : testing OH_ArkUI_SwiperIndicator_SetMaxDisplayCount interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACESwiperMaxDisplayCountTest0200
+     * @tc.number SUB_ArkUI_ACE_SwiperMaxDisplayCountTest_0200
+     * @tc.desc   testing OH_ArkUI_SwiperIndicator_SetMaxDisplayCount interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACESwiperMaxDisplayCountTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

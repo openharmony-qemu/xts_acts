@@ -61,12 +61,12 @@ export default function backgroundBrightness() {
     });
 
     /**
+     * @tc.name   backgroundBrightness_0100
      * @tc.number backgroundBrightness_0100
-     * @tc.name backgroundBrightness_0100
-     * @tc.desc test api of systemBarEffect
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test api of systemBarEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundBrightness_0100', Level.LEVEL2, async (done: Function) => {
       console.info('backgroundBrightness_0100 START');

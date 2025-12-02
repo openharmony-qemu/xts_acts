@@ -160,7 +160,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutString001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1250
      * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 001
@@ -185,7 +184,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutString002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1260
      * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 002
@@ -211,7 +209,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutString003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1270
      * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 003
@@ -237,7 +234,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutString004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1280
      * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 004
@@ -274,7 +270,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetString001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0740
      * @tc.desc   Test Js Api DeviceKvStore.Get(String) testcase 001
@@ -307,7 +302,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetString002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0750
      * @tc.desc   Test Js Api DeviceKvStore.Get(String) testcase 002
@@ -331,7 +325,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1170
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 001
@@ -357,7 +350,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutInt002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1180
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 002
@@ -391,7 +383,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutInt003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1190
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 003
@@ -425,7 +416,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutInt004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1200
      * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 004
@@ -459,7 +449,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0550
      * @tc.desc   Test Js Api DeviceKvStore.Get(Int) testcase 001
@@ -492,7 +481,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1100
      * @tc.desc   Test Js Api DeviceKvStore.Put(Bool) testcase 001
@@ -518,7 +506,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0440
      * @tc.desc   Test Js Api DeviceKvStore.Get(Bool) testcase 001
@@ -552,7 +539,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1120
      * @tc.desc   Test Js Api DeviceKvStore.Put(Float) testcase 001
@@ -581,7 +567,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0510
      * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 001
@@ -618,7 +603,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetFloat002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0520
      * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 002
@@ -655,7 +639,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetFloat003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0530
      * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 003
@@ -692,7 +675,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteString001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0310
      * @tc.desc   Test Js Api DeviceKvStore.DeleteString() testcase 001
@@ -729,7 +711,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteString002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0320
      * @tc.desc   Test Js Api DeviceKvStore.DeleteString() testcase 002
@@ -769,7 +750,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteString003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0330
      * @tc.desc   Test Js Api DeviceKvStore.DeleteString() testcase 003
@@ -797,7 +777,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0280
      * @tc.desc   Test Js Api DeviceKvStore.DeleteInt() testcase 001
@@ -833,7 +812,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0250
      * @tc.desc   Test Js Api DeviceKvStore.DeleteFloat() testcase 001
@@ -869,7 +847,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0220
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBool() testcase 001
@@ -905,7 +882,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOnChange001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0860
      * @tc.desc   Test Js Api DeviceKvStore.OnChange() testcase 001
@@ -936,7 +912,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOnChange002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0870
      * @tc.desc   Test Js Api DeviceKvStore.OnChange() testcase 002
@@ -967,7 +942,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOnChange003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0880
      * @tc.desc   Test Js Api DeviceKvStore.OnChange() testcase 003
@@ -998,7 +972,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOnSyncComplete001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0920
      * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete() testcase 001
@@ -1034,7 +1007,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOnSyncComplete002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0930
      * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete() testcase 002
@@ -1070,7 +1042,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOnSyncComplete003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0940
      * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete() testcase 003
@@ -1106,7 +1077,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffChange001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0780
      * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 001
@@ -1130,7 +1100,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffChange002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0790
      * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 002
@@ -1158,7 +1127,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffChange003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0800
      * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 003
@@ -1187,7 +1155,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffChange004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0810
      * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 004
@@ -1211,7 +1178,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffSyncComplete001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0820
      * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 001
@@ -1235,7 +1201,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffSyncComplete002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0830
      * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 002
@@ -1263,7 +1228,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffSyncComplete003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0840
      * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 003
@@ -1292,7 +1256,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsOffSyncComplete004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0850
      * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 004
@@ -1316,7 +1279,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsSetSyncRange001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1450
      * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange() testcase 001
@@ -1346,7 +1308,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsSetSyncRange002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1460
      * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange() testcase 002
@@ -1376,7 +1337,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsSetSyncRange003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1470
      * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange() testcase 003
@@ -1406,7 +1366,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBatch001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0980
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 001
@@ -1449,7 +1408,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBatch002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0990
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 002
@@ -1499,7 +1457,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBatch003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1000
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 003
@@ -1549,7 +1506,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBatch004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1010
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 004
@@ -1599,7 +1555,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBatch005
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1020
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 005
@@ -1650,7 +1605,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsPutBatch006
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1030
      * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 006
@@ -1701,7 +1655,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteBatch001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0160
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch() testcase 001
@@ -1752,7 +1705,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteBatch002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0170
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch() testcase 002
@@ -1780,7 +1732,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsDeleteBatch003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0180
      * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch() testcase 003
@@ -1829,7 +1780,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsstartTransaction001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1510
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 001
@@ -1886,7 +1836,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsstartTransaction002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1520
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 002
@@ -1943,7 +1892,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsstartTransaction003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1530
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 003
@@ -1967,7 +1915,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsstartTransaction004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1540
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 004
@@ -1991,7 +1938,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsstartTransaction005
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1550
      * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 005
@@ -2015,7 +1961,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCommit001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0100
      * @tc.desc   Test Js Api DeviceKvStore.Commit() testcase 001
@@ -2039,7 +1984,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCommit002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0110
      * @tc.desc   Test Js Api DeviceKvStore.Commit() testcase 002
@@ -2063,7 +2007,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCommit003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0120
      * @tc.desc   Test Js Api DeviceKvStore.Commit() testcase 003
@@ -2087,7 +2030,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRollback001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1390
      * @tc.desc   Test Js Api DeviceKvStore.Rollback() testcase 001
@@ -2111,7 +2053,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRollback002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1400
      * @tc.desc   Test Js Api DeviceKvStore.Rollback() testcase 002
@@ -2135,7 +2076,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRollback003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1410
      * @tc.desc   Test Js Api DeviceKvStore.Rollback() testcase 003
@@ -2159,7 +2099,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsEnableSync001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0360
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 001
@@ -2187,7 +2126,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsEnableSync002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0370
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 002
@@ -2215,7 +2153,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsEnableSync003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0380
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 003
@@ -2239,7 +2176,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsEnableSync004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0390
      * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 004
@@ -2263,7 +2199,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRemoveDeviceData001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1310
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 001
@@ -2305,7 +2240,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRemoveDeviceData002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1320
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 002
@@ -2329,7 +2263,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRemoveDeviceData003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1330
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 003
@@ -2353,7 +2286,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsRemoveDeviceData004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1340
      * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 004
@@ -2377,7 +2309,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSet001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0580
      * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 001
@@ -2433,7 +2364,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSet002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0590
      * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 002
@@ -2470,7 +2400,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSet003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0600
      * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 003
@@ -2496,7 +2425,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSet004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0610
      * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 004
@@ -2522,7 +2450,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSet005
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0620
      * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 005
@@ -2582,7 +2509,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSet006
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0630
      * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 006
@@ -2642,7 +2568,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCloseResultSet001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0020
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 001
@@ -2669,7 +2594,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCloseResultSet002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0030
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 002
@@ -2706,7 +2630,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCloseResultSet003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0040
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 003
@@ -2733,7 +2656,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsCloseResultSet004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0050
      * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 004
@@ -2762,7 +2684,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSize001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0700
      * @tc.desc   Test Js Api DeviceKvStore.Get(ResultSize) testcase 001
@@ -2813,7 +2734,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetResultSize002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0710
      * @tc.desc   Test Js Api DeviceKvStore.Get(ResultSize) testcase 002
@@ -2863,7 +2783,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetEntries001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0470
      * @tc.desc   Test Js Api DeviceKvStore.GetEntries() testcase 001
@@ -2917,7 +2836,6 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeviceKvStoreEtsGetEntries002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0480
      * @tc.desc   Test Js Api DeviceKvStore.GetEntries() testcase 002

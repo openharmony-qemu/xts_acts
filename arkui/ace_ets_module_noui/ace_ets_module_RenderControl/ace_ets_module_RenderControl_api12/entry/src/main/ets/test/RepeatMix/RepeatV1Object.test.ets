@@ -59,12 +59,12 @@ export default function RepeatV1Object() {
     });
 
     /**
+     * @tc.name   RepeatV1Object_001
      * @tc.number RepeatV1Object_001
-     * @tc.name RepeatV1Object_001
-     * @tc.desc Test RepeatV1Object component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatV1Object component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatV1Object_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatV1Object_001] START');

@@ -223,12 +223,12 @@ export function cameraPicker() {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100
-      * @tc.desc   cameraPicker takePhoto api test
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100--------------");
@@ -255,12 +255,12 @@ export function cameraPicker() {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101
-      * @tc.desc   cameraPicker takePhoto api test
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101--------------");
@@ -288,12 +288,12 @@ export function cameraPicker() {
 
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102
-      * @tc.desc   cameraPicker takePhoto api test
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102--------------");
@@ -334,6 +334,14 @@ export function cameraPicker() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0103
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0103
+     * @tc.desc   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
     //   console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0103--------------");
     //   let uri: string = "fail_string";
@@ -360,12 +368,12 @@ export function cameraPicker() {
     // });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100
-      * @tc.desc   cameraPicker takePhoto api test
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100--------------");
@@ -394,12 +402,12 @@ export function cameraPicker() {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101
-      * @tc.desc   cameraPicker takePhoto api test
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101--------------");
@@ -426,12 +434,12 @@ export function cameraPicker() {
     });
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102
-      * @tc.desc   cameraPicker takePhoto api test
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102--------------");

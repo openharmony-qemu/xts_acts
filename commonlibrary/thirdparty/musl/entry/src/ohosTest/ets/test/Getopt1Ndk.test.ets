@@ -25,13 +25,13 @@ export default function muslGetopt1NdkTest() {
       await Utils.sleep(50)
     })
 
-    /**getopt
-     * @tc.number   : SUB_THIRDPARTY_MUSL_GETOPT_GETOPT_LONG_0200
-     * @tc.name     : testMuslGetoptGetoptLong002
-     * @tc.desc     : test getopt_long
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+    /**
+     * @tc.name   testMuslGetoptGetoptLong002
+     * @tc.number SUB_THIRDPARTY_MUSL_GETOPT_GETOPT_LONG_0200
+     * @tc.desc   test getopt_long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGetoptGetoptLong002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = getopt.getoptLong(-1);
@@ -39,13 +39,13 @@ export default function muslGetopt1NdkTest() {
       done()
     });
 
-    /**getopt
-     * @tc.number   : SUB_THIRDPARTY_MUSL_GETOPY_GETOPTLONG_ONLY_0200
-     * @tc.name     : testMuslGetoptGetoptLongOnly002
-     * @tc.desc     : test getopt_long_only
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+    /**
+     * @tc.name   testMuslGetoptGetoptLongOnly002
+     * @tc.number SUB_THIRDPARTY_MUSL_GETOPY_GETOPTLONG_ONLY_0200
+     * @tc.desc   test getopt_long_only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslGetoptGetoptLongOnly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = getopt.getoptLongOnly(-1);
