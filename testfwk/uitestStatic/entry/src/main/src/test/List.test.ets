@@ -17,7 +17,9 @@ import uitestDriverTest from './UitestDriver.test';
 import uitestEnumTest from './UitestEnum.test';
 import uitestOnTest from './UitestOn.test';
 import uitestUiWindowTest from './UitestUiWindow.test';
+import uitestTest_api22 from './UitestApi22.test';
 export default function testsuite() {
+  uitestTest_api22();
   uitestEnumTest();
   uitestComponentTest();
   uitestDriverTest();

@@ -15,7 +15,9 @@
 import uitestComponentErrorTest from './UitestComponentErrorCode.test'
 import uitestDriverErrorTest from './UitestDriverErrorCode.test'
 import uitestUiWindowErrorTest from './UitestUiWindowErrorCode.test'
+import uitest_Api22ErrorTest from './UitestApi22ErrorCode.test'
 export default function testsuite() {
+  uitest_Api22ErrorTest();
   uitestComponentErrorTest();
   uitestDriverErrorTest();
   uitestUiWindowErrorTest();
