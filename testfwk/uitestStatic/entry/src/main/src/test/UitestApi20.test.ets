@@ -103,7 +103,7 @@ export default function uitestEnumTest() {
 
     /**
      * @tc.number UitestTest_Api20_003
-     * @tc.name testTriggerCombineKeysWithId
+     * @tc.name testTriggerCombineKeysWithId_static
      * @tc.desc triggerCombineKeys test
      */
     it('testTriggerCombineKeysWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
@@ -456,7 +456,7 @@ export default function uitestEnumTest() {
 
     /**
      * @tc.number UitestTest_Api20_010
-     * @tc.name testGetDisplayRotationWithId
+     * @tc.name testGetDisplayRotationWithId_static
      * @tc.desc getDisplayRotation test
      */
     it('testGetDisplayRotationWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
@@ -728,7 +728,7 @@ export default function uitestEnumTest() {
 
     /**
      * @tc.number UitestTest_Api20_014
-     * @tc.name testCrownRotate
+     * @tc.name testCrownRotate_static
      * @tc.desc crownRotate test
      */
     it('testCrownRotate_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {

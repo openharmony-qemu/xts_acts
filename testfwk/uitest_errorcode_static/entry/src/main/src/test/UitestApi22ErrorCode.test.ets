@@ -430,7 +430,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.number UitestDriver_Api22ErrorTest_013
-     * @tc.name teTouchPadTwoFingersScroll_17000007
+     * @tc.name teTouchPadTwoFingersScroll_17000007_static
      * @tc.desc touchPadTwoFingersScroll 17000007 test.
      */
     it('teTouchPadTwoFingersScroll_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {

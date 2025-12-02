@@ -271,7 +271,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.number Uitest_Api20ErrorTest_017
-     * @tc.name test_driver_crownRotate_17000007
+     * @tc.name test_driver_crownRotate_17000007_static
      * @tc.desc crownRotate 17000007 test.
      */
     it('test_driver_crownRotate_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
