@@ -72,7 +72,7 @@ export default function WebViewContextMenuMediaType() {
     it('testContextMenuMediaTypeVideo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeVideo", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuMediaTypeVideo",  2, 20251103,  () => { isReturn = true });
+      Utils.registerEvent("testContextMenuMediaTypeVideo",  ContextMenuDataMediaType.VIDEO, 20251103,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", "testContextMenuMediaTypeVideo");
       await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeVideo" + '_returnCheck', true, 500);
       done();
@@ -90,7 +90,7 @@ export default function WebViewContextMenuMediaType() {
     it('testContextMenuMediaTypeText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeText", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuMediaTypeText",  0, 20251104,  () => { isReturn = true });
+      Utils.registerEvent("testContextMenuMediaTypeText",  ContextMenuDataMediaType.NONE, 20251104,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", "testContextMenuMediaTypeText");
       await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeText" + '_returnCheck', true, 500);
       done();
@@ -108,7 +108,7 @@ export default function WebViewContextMenuMediaType() {
     it('testContextMenuMediaTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuMediaTypeImage",  1, 20251105,  () => { isReturn = true });
+      Utils.registerEvent("testContextMenuMediaTypeImage",  ContextMenuDataMediaType.IMAGE, 20251105,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", "testContextMenuMediaTypeImage");
       await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeImage" + '_returnCheck', true, 500);
       done();
@@ -126,7 +126,7 @@ export default function WebViewContextMenuMediaType() {
     it('testContextMenuMediaTypeAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeAudio", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuMediaTypeAudio",  3, 20251106,  () => { isReturn = true });
+      Utils.registerEvent("testContextMenuMediaTypeAudio",  ContextMenuDataMediaType.AUDIO, 20251106,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", "testContextMenuMediaTypeAudio");
       await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeAudio" + '_returnCheck', true, 500);
       done();
@@ -144,7 +144,7 @@ export default function WebViewContextMenuMediaType() {
     it('testContextMenuMediaTypeCanvas', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeCanvas", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testContextMenuMediaTypeCanvas",  4, 20251107,  () => { isReturn = true });
+      Utils.registerEvent("testContextMenuMediaTypeCanvas",  ContextMenuDataMediaType.CANVAS , 20251107,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", "testContextMenuMediaTypeCanvas");
       await Utils.waitForExist(() => isReturn, "emitContextMenuMediaTypeCanvas" + '_returnCheck', true, 500);
       done();
