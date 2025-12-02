@@ -19,11 +19,6 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function nativeWindowTest() {
   describe('NativeWindowTest', () => {
-    const SUCCESS = 0;
-    const FAIL = -1;
-
-    // Native Window Test
-
     /**
      * @tc.name   testNativeWindowCreateNativeWindowNullptr
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_0100
