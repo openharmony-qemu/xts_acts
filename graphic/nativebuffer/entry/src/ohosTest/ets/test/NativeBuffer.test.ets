@@ -122,7 +122,6 @@ export default function nativeBufferTest() {
       done();
     });
 
-
     /**
      * @tc.name   testOHNativeBufferAlloc002
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NATIVE_BUFFER_ALLOC_0200
@@ -209,7 +208,6 @@ export default function nativeBufferTest() {
       expect(result).assertEqual(-1);
       done();
     });
-
 
     /**
      * @tc.name   testNativeBufferAllocNullptr
@@ -640,15 +638,10 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetColorSpaceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      // if (deviceTypeInfo == "default") {
-      //   expect(0).assertEqual(0);
-      //   done();
-      // } else {
-        let result: number = nativebuffer.oHNativeBufferSetColorSpaceAbnormal();
-        console.info('testNativeBufferSetColorSpaceAbnormal result: ' + result);
-        expect(result).assertEqual(40001000);
-        done();
-      // }
+      let result: number = nativebuffer.oHNativeBufferSetColorSpaceAbnormal();
+      console.info('testNativeBufferSetColorSpaceAbnormal result: ' + result);
+      expect(result).assertEqual(40001000);
+      done();
     });
 
     /**
@@ -865,6 +858,7 @@ export default function nativeBufferTest() {
         done();
       }
     });
+
     /**
      * @tc.name   testNativeBufferY8Y16USAGEandAlloc
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0914
@@ -885,6 +879,7 @@ export default function nativeBufferTest() {
         done();
       }
     });
+
     /**
      * @tc.name   testNativeBufferMapWaitFence0ms
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1000
@@ -895,11 +890,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFence0ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-          let result: number = nativebuffer.oHNativeBufferMapWaitFence0ms();
-          console.info("testNativeBufferMapWaitFence0ms result: " + result)
-          expect(result).assertEqual(0);
-          done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFence0ms();
+      console.info("testNativeBufferMapWaitFence0ms result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   testNativeBufferMapWaitFence100ms
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1001
@@ -910,11 +906,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFence100ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-          let result: number = nativebuffer.oHNativeBufferMapWaitFence100ms();
-          console.info("testNativeBufferMapWaitFence100ms result: " + result)
-          expect(result).assertEqual(0);
-          done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFence100ms();
+      console.info("testNativeBufferMapWaitFence100ms result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   testNativeBufferMapWaitFence5000ms
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1002
@@ -925,11 +922,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFence5000ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-          let result: number = nativebuffer.oHNativeBufferMapWaitFence5000ms();
-          console.info("testNativeBufferMapWaitFence5000ms result: " + result)
-          expect(result).assertEqual(0);
-          done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFence5000ms();
+      console.info("testNativeBufferMapWaitFence5000ms result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   testNativeBufferMapWaitFenceNullptr
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1003
@@ -940,11 +938,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-          let result: number = nativebuffer.oHNativeBufferMapWaitFenceNullptr();
-          console.info("testNativeBufferMapWaitFenceNullptr result: " + result)
-          expect(result).assertEqual(0);
-          done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFenceNullptr();
+      console.info("testNativeBufferMapWaitFenceNullptr result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   testNativeBufferMapWaitFenceAbnormal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1004
@@ -955,11 +954,12 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferMapWaitFenceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-          let result: number = nativebuffer.oHNativeBufferMapWaitFenceAbnormal();
-          console.info("testNativeBufferMapWaitFenceAbnormal result: " + result)
-          expect(result).assertEqual(0);
-          done();
-      });
+      let result: number = nativebuffer.oHNativeBufferMapWaitFenceAbnormal();
+      console.info("testNativeBufferMapWaitFenceAbnormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   testOHNativeBufferMetadataTypeEnumTraversal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1100
@@ -970,16 +970,17 @@ export default function nativeBufferTest() {
      */
     it('testOHNativeBufferMetadataTypeEnumTraversal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetMetadataValueEnumTraversal();
-          console.info("testOHNativeBufferMetadataType result: " + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetMetadataValueEnumTraversal();
+        console.info("testOHNativeBufferMetadataType result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNativeBufferSetMetadataValueREGION
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1200
@@ -990,15 +991,303 @@ export default function nativeBufferTest() {
      */
     it('testNativeBufferSetMetadataValueREGION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        if (deviceTypeInfo == "default") {
-          expect(0).assertEqual(0);
-          done();
-        } else {
-          let result: number = nativebuffer.oHNativeBufferSetMetadataValueREGION();
-          console.info("testNativeBufferSetMetadataValueREGION result: " + result)
-          expect(result).assertEqual(0);
-          done();
-        }
-      });
+      if (deviceTypeInfo == "default") {
+        expect(0).assertEqual(0);
+        done();
+      } else {
+        let result: number = nativebuffer.oHNativeBufferSetMetadataValueREGION();
+        console.info("testNativeBufferSetMetadataValueREGION result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNativeBufferIsSupportedNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1300
+     * @tc.desc   test OH_NativeBuffer_IsSupported
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testNativeBufferIsSupportedNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferIsSupportedNormal();
+      console.info("testNativeBufferIsSupportedNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferIsSupportedNull01
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1301
+     * @tc.desc   test OH_NativeBuffer_IsSupported
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferIsSupportedNull01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferIsSupportedNull01();
+      console.info("testNativeBufferIsSupportedNull01 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferIsSupportedNull02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1302
+     * @tc.desc   test OH_NativeBuffer_IsSupported
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferIsSupportedNull02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferIsSupportedNull02();
+      console.info("testNativeBufferIsSupportedNull02 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferIsSupportedAbnormal01
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1303
+     * @tc.desc   test OH_NativeBuffer_IsSupported
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferIsSupportedAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal01();
+      console.info("testNativeBufferIsSupportedAbnormal01 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferIsSupportedAbnormal02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1304
+     * @tc.desc   test OH_NativeBuffer_IsSupported
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferIsSupportedAbnormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferIsSupportedAbnormal02();
+      console.info("testNativeBufferIsSupportedAbnormal02 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferIsSupportedMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1305
+     * @tc.desc   test OH_NativeBuffer_IsSupported
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferIsSupportedMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferIsSupportedMultipleCalls();
+      console.info("testNativeBufferIsSupportedMultipleCalls result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferMapAndGetConfilgNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1400
+     * @tc.desc   test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testNativeBufferMapAndGetConfilgNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNormal();
+      console.info("testNativeBufferMapAndGetConfilgNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferMapAndGetConfilgNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1401
+     * @tc.desc   test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferMapAndGetConfilgNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgNull();
+      console.info("testNativeBufferMapAndGetConfilgNull result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferMapAndGetConfilgMultipleCalls01
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1402
+     * @tc.desc   test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferMapAndGetConfilgMultipleCalls01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls01();
+      console.info("testNativeBufferMapAndGetConfilgMultipleCalls01 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferMapAndGetConfilgMultipleCalls02
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1403
+     * @tc.desc   test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferMapAndGetConfilgMultipleCalls02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferMapAndGetConfilgMultipleCalls02();
+      console.info("testNativeBufferMapAndGetConfilgMultipleCalls02 result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferMapAll
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1404
+     * @tc.desc   test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferMapAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferMapAll();
+      console.info("testNativeBufferMapAll result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferMapAndUnmap
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1405
+     * @tc.desc   test OH_NativeBuffer_MapAndGetConfilg
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferMapAndUnmap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferMapAndUnmap();
+      console.info("testNativeBufferMapAndUnmap result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferWriteToParcelNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1500
+     * @tc.desc   test OH_NativeBuffer_WriteToParcel
+     * @tc.size   MediumTest
+     * @tc.type   Funct
+     * @tc.level  Level 0
+     */
+    it('testNativeBufferWriteToParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferWriteToParcelNormal();
+      console.info("testNativeBufferWriteToParcelNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     *@tc.name   testNativeBufferWriteToParcelNull
+     *@tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1501
+     *@tc.desc   test OH_NativeBuffer_WriteToParcel
+     *@tc.size   MediumTest
+     *@tc.type   Function
+     *@tc.level  Level 3
+     */
+    it('testNativeBufferWriteToParcelNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferWriteToParcelNull();
+      console.info("testNativeBufferWriteToParcelNull result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferReadFromParcelNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1600
+     * @tc.desc   test OH_NativeBuffer_WriteToParcel
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testNativeBufferReadFromParcelNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferReadFromParcelNormal();
+      console.info("testNativeBufferReadFromParcelNormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferReadFromParcelNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1601
+     * @tc.desc   test OH_NativeBuffer_WriteToParcel
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferReadFromParcelNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferReadFromParcelNull();
+      console.info("testNativeBufferReadFromParcelNull result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferReadFromParcelAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1602
+     * @tc.desc   test OH_NativeBuffer_WriteToParcel
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferReadFromParcelAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferReadFromParcelAbnnormal();
+      console.info("testNativeBufferReadFromParcelAbnnormal result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferWriteAndReadParcelMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1603
+     * @tc.desc   test OH_NativeBuffer_WriteToParcel
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeBufferWriteAndReadParcelMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferWriteAndReadParcelMultipleCalls();
+      console.info("testNativeBufferWriteAndReadParcelMultipleCalls result: " + result)
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }
