@@ -36,7 +36,7 @@ export default function AllowableMovementTest() {
     beforeEach(async (done: Function) => {
       console.info('AllowableMovement beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/LongPress/allowableMovement',
+        url: 'MainAbility/pages/LongPressGesture/allowableMovement',
       }
       try {
         router.clear();
@@ -60,14 +60,13 @@ export default function AllowableMovementTest() {
     });
 
     /**
-     * @tc.name   AllowableMovement_0100
-     * @tc.number sub_AllowableMovementTest_0010
-     * @tc.desc   api test AllowableMovement
+     * @tc.name  AllowableMovement_0100
+     * @tc.number  SUB_AllowableMovement_0100
+     * @tc.desc   test AllowableMovement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
     it('AllowableMovement_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(500);
       console.info('AllowableMovement_0100 START');
