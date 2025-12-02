@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "NotificationKit/notification.h"
 #include "hilog/log.h"
+#include "common.h"
 
 static napi_value IsNotificationEnabled(napi_env env, napi_callback_info info)
 {
