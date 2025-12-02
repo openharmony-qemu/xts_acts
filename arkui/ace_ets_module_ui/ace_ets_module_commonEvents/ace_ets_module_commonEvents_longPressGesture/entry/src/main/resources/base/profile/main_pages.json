@@ -7,6 +7,7 @@
         "MainAbility/pages/LongPressGesture/longPressGesture",
         "MainAbility/pages/LongPressGesture/LongPressGestureTemplate",
         "MainAbility/pages/LongPressGesture/LongPressGestureLongClickMouse",
-        "MainAbility/pages/LongPressGesture/LongPressGestureLongClick"
+        "MainAbility/pages/LongPressGesture/LongPressGestureLongClick",
+        "MainAbility/pages/LongPressGesture/allowableMovement"
     ]
 }
