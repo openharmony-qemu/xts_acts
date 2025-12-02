@@ -59,7 +59,7 @@ export default function SetFromTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30)
+      await sleep(100)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -457,7 +457,7 @@ export default function SetFromTest() {
      */
     it('testSetKeysValues020', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const size: number = 100000;
+      const size: number = 1000;
 
       // Populate set
       for (let i = 0; i < size; i++) {

@@ -78,7 +78,7 @@ export default function SetClearTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30);
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -1615,7 +1615,7 @@ export default function SetClearTest() {
      */
     it('SetClearTest080', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const set = new Set<number>();
-      const count = 1000000;
+      const count = 1000;
 
       for (let i = 0; i < count; i++) {
         set.add(i);

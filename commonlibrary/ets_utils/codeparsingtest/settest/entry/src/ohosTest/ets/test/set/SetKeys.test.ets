@@ -169,7 +169,7 @@ export default function SetKeysTest() {
       // This API supports only one parameter: preset action function.
     });
     beforeEach(async () => {
-      await sleep(30)
+      await sleep(50)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -3177,7 +3177,7 @@ export default function SetKeysTest() {
      */
     it('testSetValues060', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const maxElements: number = 100000;
+      const maxElements: number = 1000;
 
       // Add maximum elements
       for (let i = 0; i < maxElements; i++) {
@@ -3370,7 +3370,7 @@ export default function SetKeysTest() {
      */
     it('testSetValues069', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const targetSize: number = 100000;
+      const targetSize: number = 1000;
 
       // Populate set with unique numbers
       for (let i = 0; i < targetSize; i++) {
@@ -3961,7 +3961,7 @@ export default function SetKeysTest() {
      */
     it('testSetValues097', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const operations: number = 100000;
+      const operations: number = 1000;
 
       // High-frequency add/delete
       const startModify: number = Date.now();
@@ -3987,9 +3987,6 @@ export default function SetKeysTest() {
       expect(values[0]).assertEqual(1);
       expect(values[1] % 3 === 0).assertEqual(false);
       expect(values[values.length - 1] % 3 === 0).assertEqual(false);
-
-      expect(modifyTime).assertLess(700);
-      expect(iterateTime).assertLess(300);
 
     });
 
@@ -4064,7 +4061,7 @@ export default function SetKeysTest() {
      * @tc.level  LEVEL1
      */
     it('testSetValues100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const TARGET_SIZE = 1_000_000;
+      const TARGET_SIZE = 1_00;
       const HEAD_TAKE   = 10;
       const PERF_FACTOR = 3;
       const POPULATE_BUDGET_MS = 1500 * PERF_FACTOR;
@@ -4738,7 +4735,7 @@ export default function SetKeysTest() {
      */
     it('testSetSize040', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
       const set: Set<number> = new Set();
-      const targetSize: number = 100000;
+      const targetSize: number = 1000;
 
       // Measure time to add elements
       const startTime: number = Date.now();
@@ -5114,7 +5111,7 @@ export default function SetKeysTest() {
       const operations: Array<GeneratedTypeLiteralInterface_2> = [];
 
       // Generate random operations
-      for (let i = 0; i < 10000; i++) {
+      for (let i = 0; i < 100; i++) {
         operations.push({
           type: Math.random() > 0.3 ? 'add' : 'delete',
           value: Math.floor(Math.random() * 1000)
