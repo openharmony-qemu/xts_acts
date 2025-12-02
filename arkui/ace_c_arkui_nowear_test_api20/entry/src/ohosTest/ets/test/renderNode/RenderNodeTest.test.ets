@@ -25,7 +25,7 @@ export default function RenderNodeTest(){
       done();
     });
 
-    /*
+    /**
      * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0100
      * @tc.name       : testRenderNode001
      * @tc.desc       : Test InitModuleForArkTSEnv
@@ -38,7 +38,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-    /*
+    /**
      * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0900
      * @tc.name       : testRenderNode009
      * @tc.desc       : Test InitModuleForArkTSEnv
@@ -51,7 +51,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-    /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0200
     * @tc.name       : testRenderNode002
     * @tc.desc       : Test InitModuleForArkTSEnv
@@ -64,7 +64,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-    /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0300
     * @tc.name       : testRenderNode003
     * @tc.desc       : Test InitModuleForArkTSEnv
@@ -77,7 +77,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-        /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0400
     * @tc.name       : testRenderNode004
     * @tc.desc       : Test InitModuleForArkTSEnv
@@ -90,7 +90,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-        /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0500
     * @tc.name       : testRenderNode005
     * @tc.desc       : Test InitModuleForArkTSEnv
@@ -103,7 +103,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-        /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0600
     * @tc.name       : testRenderNode006
     * @tc.desc       : Test InitModuleForArkTSEnv
@@ -116,7 +116,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-        /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0700
     * @tc.name       : testRenderNode007
     * @tc.desc       : Test InitModuleForArkTSEnv
@@ -129,7 +129,7 @@ export default function RenderNodeTest(){
       done();
     })
 
-        /*
+   /**
     * @tc.number     : SUB_ARKUI_CAPI_testRenderNode_0800
     * @tc.name       : testRenderNode008
     * @tc.desc       : Test InitModuleForArkTSEnv
