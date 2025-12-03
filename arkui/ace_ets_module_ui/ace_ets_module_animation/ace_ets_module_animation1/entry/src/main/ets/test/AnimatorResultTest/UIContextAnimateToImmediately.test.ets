@@ -42,12 +42,12 @@ export default function UIContextAnimateToImmediately() {
       console.info("UIContextAnimateToImmediately after each called");
     });
     /*
-     * @tc.number     : UIContextAnimateToImmediately_0100
-     * @tc.name       : UIContextAnimateToImmediately_0100
-     * @tc.desc       : Test UIContext animateToImmediately
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.number     UIContextAnimateToImmediately_0100
+     * @tc.name       UIContextAnimateToImmediately_0100
+     * @tc.desc       Test UIContext animateToImmediately
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
      */
     it('UIContextAnimateToImmediately_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[UIContextAnimateToImmediately_0100] START');
