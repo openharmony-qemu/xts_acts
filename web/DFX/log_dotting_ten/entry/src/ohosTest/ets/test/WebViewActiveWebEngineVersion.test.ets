@@ -132,5 +132,32 @@ export default function WebViewActiveWebEngineVersion() {
       Utils.registerEvent('testActiveWebEngineVersion005', webview.ArkWebEngineVersion.M132, 20251218, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
+    /**
+     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0600
+     * @tc.name       testActiveWebEngineVersion006
+     * @tc.desc       WebEngineVersion
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testActiveWebEngineVersion006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitActiveWebEngineVersion006', 10)
+      Utils.registerEvent('testActiveWebEngineVersion006', webview.ArkWebEngineVersion.M132, 20251219, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+    /**
+     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0700
+     * @tc.name       testActiveWebEngineVersion007
+     * @tc.desc       WebEngineVersion
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testActiveWebEngineVersion007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitActiveWebEngineVersion007', 10)
+      Utils.registerEvent('testActiveWebEngineVersion007', webview.ArkWebEngineVersion.M132, 20251220, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+
   })
 }

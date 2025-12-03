@@ -16,3 +16,5 @@ export const add: (a: number, b: number) => number;
 export const test_ndk_setActiveWebEngineVersion: (a: number) => void;
 export const test_ndk_getActiveWebEngineVersion: () => number;
 export const test_ndk_setActiveWebEngineVersionEvergreen: () => void;
+export const test_ndk_setActiveWebEngineVersionEvergreen114: () => void;
+export const test_ndk_setActiveWebEngineVersionEvergreen132: () => void;

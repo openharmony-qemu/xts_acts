@@ -156,6 +156,41 @@ struct Index {
                 break;
               }
 
+              case 'emitActiveWebEngineVersion006': {
+                try {
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersionEvergreen132();
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    console.log('emitActiveWebEngineVersion00566' + tmp_result);
+                    Utils.emitEvent(tmp_result, 20251219);
+                  } else {
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251219);
+                  }
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
+              case 'emitActiveWebEngineVersion007': {
+                try {
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.test_ndk_setActiveWebEngineVersionEvergreen114();
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    console.log('emitActiveWebEngineVersion00566' + tmp_result);
+                    Utils.emitEvent(tmp_result, 20251220);
+                  } else {
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251220);
+                  }
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
+
 
             }
           })
