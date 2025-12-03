@@ -50,3 +50,4 @@ export const listWillStartDraggingTest: (a: string) => void;
 export const listDidStopDraggingTest: (a: string) => void;
 export const listWillStartFlingTest: (a: string) => void;
 export const listDidStopFlingTest: (a: string) => void;
+export const createImageSupportSvg2NativeRoot: (content: NodeContent, tag: string) => void;
