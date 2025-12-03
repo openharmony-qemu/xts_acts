@@ -53,6 +53,7 @@ import CapiPostAsyncUITask from './capi/CapiPostAsyncUITask.test'
 import CapiPostUITask from './capi/CapiPostUITask.test'
 import CapiPostUITaskAndWait from './capi/CapiPostUITaskAndWait.test'
 import ScrollZoomSampleTest from './scroll/ScrollZoomSampleTest.test'
+import AccessibilityProviderCreateTest from './Accessibility/AccessibilityProviderCreateTest.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -96,4 +97,5 @@ export default function testsuite() {
   CapiPostUITaskF();
   CapiPostUITaskAndWaitF();
   ScrollZoomSampleTest();
+  AccessibilityProviderCreateTest();
 }
