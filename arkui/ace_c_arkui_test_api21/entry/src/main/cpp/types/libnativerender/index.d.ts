@@ -38,7 +38,6 @@ export const setPositionEdges_top_left_bottom_right: () => void;
 export const getPositionEdges: ()=>string;
 export const reSetPositionEdges: () => void;
 export const copyPositionEdges: () => void;
-
 export const TestPositionEdgesGetTopErrorCode_001: () => void;
 export const TestPositionEdgesGetTopErrorCode_002: () => void;
 export const TestPositionEdgesGetLeftErrorCode_001: () => void;
@@ -54,6 +53,16 @@ export const textContentAlignTest: (a: string) => void;
 export const createPixelRoundNativeRoot: (content: NodeContent, tag: string) => void;
 export const setPixelRound: () => void;
 export const getPixelRound: ()=>string;
+export const TestPixelRoundPolicyGetTopErrorCode_001: () => void;
+export const TestPixelRoundPolicyGetTopErrorCode_002: () => void;
+export const TestPixelRoundPolicyGetStartErrorCode_001: () => void;
+export const TestPixelRoundPolicyGetStartErrorCode_002: () => void;
+export const TestPixelRoundPolicyGetBottomErrorCode_001: () => void;
+export const TestPixelRoundPolicyGetBottomErrorCode_002: () => void;
+export const TestPixelRoundPolicyGetEndErrorCode_001: () => void;
+export const TestPixelRoundPolicyGetEndErrorCode_002: () => void;
+export const TestPixelRoundPolicyCreateReturnNoNullptr: () => void;
+
 export const createColumnMatchParentNativeRoot: (content: NodeContent, tag: string) => void;
 export const createColumnWrapContentNativeRoot: (content: NodeContent, tag: string) => void;
 export const createColumnFixAtiDealSizeNativeRoot: (content: NodeContent, tag: string) => void;
