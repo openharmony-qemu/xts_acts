@@ -63,7 +63,7 @@ export default function MifareClassicErrorTest() {
                     expect(error.code).assertEqual(3100201);
                     console.info('beforeAll mifareClassic error' + error.code + error);
                 } else {
-                    expect.assertFail();
+                    expect().assertFail();
                     console.info('beforeAll mifareClassic Fail');
                 }
             }
