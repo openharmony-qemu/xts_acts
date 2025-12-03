@@ -164,6 +164,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "test_ndk_setActiveWebEngineVersion", nullptr, test_ndk_setActiveWebEngineVersion, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_getActiveWebEngineVersion", nullptr, test_ndk_getActiveWebEngineVersion, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_setActiveWebEngineVersionEvergreen", nullptr, test_ndk_setActiveWebEngineVersionEvergreen, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "test_ndk_setActiveWebEngineVersionEvergreen114", nullptr, test_ndk_setActiveWebEngineVersionEvergreen114, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "test_ndk_setActiveWebEngineVersionEvergreen132", nullptr, test_ndk_setActiveWebEngineVersionEvergreen132, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
