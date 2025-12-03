@@ -758,7 +758,7 @@ export default function preferenceTest() {
       dataPreferences.getPreferences(context, NAME1).then(async (preferences : dataPreferences.Preferences) => {
         hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success" + preferences);
         await preferences.put(KEY_TEST_STRING_ELEMENT, "test");
-        preferences.get(KEY_TEST_STRING_ELEMENT, "defaultvalue", (err: BusinessError | null, ret: Object|undefined) => {
+        preferences.get(KEY_TEST_STRING_ELEMENT, "defaultvalue", (err: BusinessError | null, ret: dataPreferences.ValueType | undefined) => {
           expect("test").assertEqual(ret);
         });
         await dataPreferences.deletePreferences(context, NAME1).then<void, void>((): void => {});
@@ -1158,7 +1158,7 @@ export default function preferenceTest() {
 
         await mPreferences.put("object_key", company);
         let compJson = await mPreferences.get("object_key", {});
-        let compJsonElement = JSON.parseJsonElement(compJson.toString());
+        let compJsonElement = JSON.parseJsonElement(compJson!.toString());
         expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
         expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
         expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
@@ -1229,6 +1229,76 @@ export default function preferenceTest() {
         expect().assertFail();
         done();
       }
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType001
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType001_basis_EtsApiTest_3500
+     * @tc.desc   Preferences Base DataType test int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_int');
+      let baseInt: int = 123;
+      await preferences.put('base_int', baseInt);
+      await preferences.flush();
+      let ret = preferences.getSync("base_int", 0);
+      expect(baseInt).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret instanceof int:" + (ret instanceof int));
+      expect(true).assertEqual(ret instanceof int);
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_int');
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType002
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType002_basis_EtsApiTest_3600
+     * @tc.desc   Preferences Base DataType test number/double
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_double');
+      let baseDouble: double = 1239999999.1;
+      await preferences.put('base_double', baseDouble);
+      await preferences.flush();
+      let ret = preferences.getSync("base_double", 0.0);
+      expect(baseDouble).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType002 key base_double, typeof(ret):" + typeof(ret));
+      expect(typeof(ret)).assertEqual("number");
+      let numberData: number = 777;
+      expect(true).assertEqual(typeof(ret) == typeof(numberData));
+      expect(true).assertEqual(typeof(ret) == typeof(baseDouble));
+      expect(true).assertEqual(typeof(numberData) == typeof(baseDouble));
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_double');
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-27 20:49:48
+     * @tc.name   PreferencesBaseDataType003
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferencesBaseDataType003_basis_EtsApiTest_3700
+     * @tc.desc   Preferences Base DataType test long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('PreferencesBaseDataType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_long');
+      let baseLong: long = 123888888888;
+      await preferences.put('base_long', baseLong);
+      await preferences.flush();
+      let ret = preferences.getSync("base_long", 0);
+      expect(baseLong).assertEqual(ret);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType003 key base_long, (ret instanceof long):" + (ret instanceof long));
+      expect(true).assertEqual(ret instanceof long);
+      await dataPreferences.deletePreferences(context, 'test_preferences_base_long');
+      done();
     })
   })
 }
