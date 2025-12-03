@@ -30,6 +30,7 @@ add_library(nativerender SHARED
     textLineHeight/LineHeightTest.cpp
     textArea/TextAreaBarStateTest.cpp
     scrollbarTest/ScrollBarTest.cpp
+    showCounterTest/ShowCounterTest.cpp
 )
 
 add_library(nativefunc SHARED
