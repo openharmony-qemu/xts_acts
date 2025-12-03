@@ -29,6 +29,7 @@ import MediaAVPlayerOff_trackChangeTest from './media/MediaAVPlayerOff_trackChan
 import MediaSourceSetMediaResourceLoaderDelegateTest from './media/MediaSourceSetMediaResourceLoaderDelegate.Test.test';
 import MediaVideoPlayerOn_audioInterruptTest from './media/MediaVideoPlayerOn_audioInterrupt.Test.test';
 import MediaVideoPlayerSeekTest from './media/MediaVideoPlayerSeek.Test.test';
+import AVPlayerSetSpeedTest from './media/AVPlayerSetSpeed.test';
 import RespondDataTest from './media/RespondDataTest.test';
 
 export default function testsuite() {
@@ -48,6 +49,7 @@ export default function testsuite() {
   MediaSourceSetMediaResourceLoaderDelegateTest();
   MediaVideoPlayerOn_audioInterruptTest();
   MediaVideoPlayerSeekTest();
+  AVPlayerSetSpeedTest();
   RespondDataTest();
 }
 
