@@ -75,77 +75,20 @@ napi_value test_ndk_setActiveWebEngineVersion(napi_env env, napi_callback_info i
 
 napi_value test_ndk_setActiveWebEngineVersionEvergreen(napi_env env, napi_callback_info info)
 {
-    napi_value thisVar = nullptr;
-    napi_value result = nullptr;
-    size_t argc = 1;
-    napi_value argv[1];
-    int webEngineVersion;
- 
-    napi_get_cb_info(env, info, &argc, argv, &thisVar, nullptr);
-    
-    if (argc != 1) {
-        napi_throw_error(env, nullptr, "Invalid number of arguments. Expected 1.");
-        return nullptr; // 返回 nullptr 是 N-API 的约定，表示错误已抛出
-    }
-    
-    napi_status status = napi_get_value_int32(env, argv[0], &webEngineVersion);
-    if(status != napi_ok) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return nullptr;
-    }
-    
     OH_NativeArkWeb_SetActiveWebEngineVersion(ArkWebEngineVersion::ARKWEB_EVERGREEN);
-    return result;
+    return nullptr;
 } 
 
 napi_value test_ndk_setActiveWebEngineVersionEvergreen114(napi_env env, napi_callback_info info)
 {
-    napi_value thisVar = nullptr;
-    napi_value result = nullptr;
-    size_t argc = 1;
-    napi_value argv[1];
-    int webEngineVersion;
- 
-    napi_get_cb_info(env, info, &argc, argv, &thisVar, nullptr);
-    
-    if (argc != 1) {
-        napi_throw_error(env, nullptr, "Invalid number of arguments. Expected 1.");
-        return nullptr; // 返回 nullptr 是 N-API 的约定，表示错误已抛出
-    }
-    
-    napi_status status = napi_get_value_int32(env, argv[0], &webEngineVersion);
-    if(status != napi_ok) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return nullptr;
-    }
-    
     OH_NativeArkWeb_SetActiveWebEngineVersion(ArkWebEngineVersion::ARKWEB_M114);
-    return result;
+    return nullptr;
 } 
 
 napi_value test_ndk_setActiveWebEngineVersionEvergreen132(napi_env env, napi_callback_info info)
 {
-    napi_value thisVar = nullptr;
-    napi_value result = nullptr;
-    size_t argc = 1;
-    napi_value argv[1];
-    int webEngineVersion;
- 
-    napi_get_cb_info(env, info, &argc, argv, &thisVar, nullptr);
-    
-    if (argc != 1) {
-        napi_throw_error(env, nullptr, "Invalid number of arguments. Expected 1.");
-        return nullptr; // 返回 nullptr 是 N-API 的约定，表示错误已抛出
-    }
-    
-    napi_status status = napi_get_value_int32(env, argv[0], &webEngineVersion);
-    if(status != napi_ok) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return nullptr;
-    }
-    
     OH_NativeArkWeb_SetActiveWebEngineVersion(ArkWebEngineVersion::ARKWEB_M132);
-    return result;
+    return nullptr;
 } 
 
 static napi_value IsActiveWebEngineEvergreen_c(napi_env env, napi_callback_info info)
