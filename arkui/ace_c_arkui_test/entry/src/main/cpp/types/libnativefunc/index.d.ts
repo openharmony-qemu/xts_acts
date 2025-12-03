@@ -6203,6 +6203,14 @@ export const testDrawableDescriptorCreate002: () => number;
 
 export const testDrawableDescriptorCreate003: () => number;
 
+export const testDrawableDescriptorCreate004: () => number;
+
+export const testDrawableDescriptorCreate005: () => number;
+
+export const testDrawableDescriptorCreate006: () => number;
+
+export const testDrawableDescriptorCreate007: () => number;
+
 export const testNodeContent001: () => number;
 
 export const testNodeContent002: () => number;
