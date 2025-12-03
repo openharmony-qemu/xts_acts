@@ -4816,7 +4816,7 @@ export default function Ason4Test() {
      */
     it('Ason4Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     const obj: CharCountSortCompare = {
-      strings: ["sample123", "sample", "test"],
+      strings: ["aasample123", "asample", "atest"],
       sorted: []
     };
     const json = ArkTSUtils.ASON.stringify(obj);
@@ -4855,8 +4855,8 @@ export default function Ason4Test() {
       sorted: temp
     };
 
-    expect(result.sorted[0]).assertEqual("test");
-    expect(result.sorted[2]).assertEqual("sample123");
+    expect(result.sorted[0]).assertEqual("atest");
+    expect(result.sorted[2]).assertEqual("aasample123");
   });
   })
 }
