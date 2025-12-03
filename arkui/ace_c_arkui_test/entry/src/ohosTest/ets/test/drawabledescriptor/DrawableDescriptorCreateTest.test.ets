@@ -65,52 +65,52 @@ export default function drawableDescriptorCreateTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0400
-     * @tc.name       : testDrawableDescriptorCreate004
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDrawableDescriptorCreate004
+     * @tc.number SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0400
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDrawableDescriptorCreate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDrawableDescriptorCreate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0500
-     * @tc.name       : testDrawableDescriptorCreate005
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDrawableDescriptorCreate005
+     * @tc.number SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0500
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDrawableDescriptorCreate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDrawableDescriptorCreate005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0600
-     * @tc.name       : testDrawableDescriptorCreate006
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDrawableDescriptorCreate006
+     * @tc.number SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0600
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDrawableDescriptorCreate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDrawableDescriptorCreate006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0700
-     * @tc.name       : testDrawableDescriptorCreate007
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDrawableDescriptorCreate007
+     * @tc.number SUB_ARKUI_CAPI_DRAWABLE_DESCRIPTOR_0700
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDrawableDescriptorCreate007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDrawableDescriptorCreate007()).assertEqual(0)
