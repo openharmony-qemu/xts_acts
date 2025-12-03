@@ -35,6 +35,7 @@ import dynamicXmlTest from './xml/DynamicXml';
 import convertXmlTest from './convertxml/ConvertXml.test';
 import ConvertXml2Test from './convertxml/ConvertXml2.test';
 import ConvertXml3Test from './convertxml/ConvertXml3.test';
+import ConvertXml4Test from './convertxml/ConvertXml4.test';
 import queueTest from './queue/Queue.test';
 import stackTest from './stack/Stack.test';
 import dequeTest from './deque/Deque.test';
@@ -77,6 +78,7 @@ export default function testsuite() {
   convertXmlTest();
   ConvertXml2Test();
   ConvertXml3Test();
+  ConvertXml4Test();
   queueTest();
   stackTest();
   dequeTest();

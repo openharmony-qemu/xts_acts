@@ -798,5 +798,47 @@ export default function ConvertXmlTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testLargeConvertToJSObject0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0101
+     * @tc.desc   Test the function of the interface largeConvertToJSObject.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLargeConvertToJSObject0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLargeConvertToJSObject0001';
+      try {
+        const xml = `<?xml version="1.0" encoding="utf-8"?>
+                      <note importance="high" logged="true">
+                          <title>Hello\r\nWorld</title>
+                          <todo><![CDATA[Work\r\n]]></todo>
+                      </note>`;
+        const conv = new convertxml.ConvertXML();
+        const options: convertxml.ConvertOptions = {
+          trim: false,
+          declarationKey: "_declaration",
+          instructionKey: "_instruction",
+          attributesKey: "_attributes",
+          textKey: "_text",
+          cdataKey: "_cdata",
+          doctypeKey: "_doctype",
+          commentKey: "_comment",
+          parentKey: "_parent",
+          typeKey: "_type",
+          nameKey: "_name",
+          elementsKey: "_elements"
+        };
+        const result = JSON.stringify(conv.largeConvertToJSObject(xml, options));
+        console.log(`${TAG}+${result}`);
+        const equal =
+          '{"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_parent":"note","_elements":[{"_type":"text","_text":"Hello\\nWorld"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"cdata","_cdata":"Work\\n"}]}]}]}';
+        expect(result.toString()).assertEqual(equal);
+      } catch (e) {
+        console.log((e as Error).toString());
+        console.error(`${TAG} failed: ${e.message}`);
+        expect().assertFail();
+      }
+    });
   })
 }
