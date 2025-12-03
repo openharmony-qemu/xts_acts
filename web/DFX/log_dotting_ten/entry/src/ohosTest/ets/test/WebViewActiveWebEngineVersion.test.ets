@@ -155,9 +155,21 @@ export default function WebViewActiveWebEngineVersion() {
      */
     it('testActiveWebEngineVersion007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion007', 10)
-      Utils.registerEvent('testActiveWebEngineVersion007', webview.ArkWebEngineVersion.M132, 20251220, done);
+      Utils.registerEvent('testActiveWebEngineVersion007', true, 20251220, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
-
+    /**
+     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0800
+     * @tc.name       testActiveWebEngineVersion008
+     * @tc.desc       WebEngineVersion
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testActiveWebEngineVersion008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitActiveWebEngineVersion008', 10)
+      Utils.registerEvent('testActiveWebEngineVersion008', true, 20251221, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
   })
 }
