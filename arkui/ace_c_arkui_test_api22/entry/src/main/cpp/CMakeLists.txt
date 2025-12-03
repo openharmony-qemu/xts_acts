@@ -31,6 +31,8 @@ add_library(nativerender SHARED
     textArea/TextAreaBarStateTest.cpp
     scrollbarTest/ScrollBarTest.cpp
     showCounterTest/ShowCounterTest.cpp
+    component/SwiperComponentTest.cpp
+    swiper/FinishAnimationTest.cpp
 )
 
 add_library(nativefunc SHARED
