@@ -63,13 +63,13 @@ export default function WebViewActiveWebEngineVersion() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0100
-    * @tc.name       : testActiveWebEngineVersion001
-    * @tc.desc       : WebEngineVersion
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    /**
+    * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0100
+    * @tc.name       testActiveWebEngineVersion001
+    * @tc.desc       WebEngineVersion
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      Level 0
     */
     it('testActiveWebEngineVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion001', 10)
@@ -77,13 +77,13 @@ export default function WebViewActiveWebEngineVersion() {
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0200
-    * @tc.name       : testActiveWebEngineVersion002
-    * @tc.desc       : WebEngineVersion
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 2
+    /**
+    * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0200
+    * @tc.name       testActiveWebEngineVersion002
+    * @tc.desc       WebEngineVersion
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      Level 2
     */
     it('testActiveWebEngineVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion002', 10)
@@ -91,13 +91,13 @@ export default function WebViewActiveWebEngineVersion() {
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0300
-    * @tc.name       : testActiveWebEngineVersion003
-    * @tc.desc       : WebEngineVersion
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    /**
+    * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0300
+    * @tc.name       testActiveWebEngineVersion003
+    * @tc.desc       WebEngineVersion
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      Level 0
     */
     it('testActiveWebEngineVersion003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion003', 10)
