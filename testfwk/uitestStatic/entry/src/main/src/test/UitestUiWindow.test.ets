@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
+import { beforeAll, afterAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, ResizeDirection } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
@@ -46,65 +46,75 @@ export default function uitestUiWindowTest() {
     beforeEach(async () => {
       await stopApplication('com.uitestScene.acts');
     })
+    afterAll(async () : Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      const driver = Driver.create();
+      await driver.delayMs(waitUiReadyMs);
+      let window = await driver.findWindow({bundleName:'com.uitestScene.acts'});
+      if (window != null) {
+        try {
+          await window.maximize();
+        } catch(error: BusinessError) {
+          hilog.info(domain, tag, `afterAll maximize error, ${JSON.stringify(error)}`);
+        }
+      }
+      await driver.delayMs(waitUiReadyMs);
+      await stopApplication('com.uitestScene.acts');
+    })
 
-    /**
-     * @tc.name   testSplit_static
-     * @tc.number uitestUiWindowTest_0001
-     * @tc.desc   change this UiWindow into split screen mode.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0001
+    * @tc.name: testSplit_static
+    * @tc.desc: change this UiWindow into split screen mode.
+    */
     it('testSplit_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       const driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs)
-      let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+      await driver.delayMs(waitUiReadyMs);
+      let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'});
       expect(window1 != null).assertTrue();
       try {
         if (window1 != null) {
           await window1.split();
         }
-        await driver.delayMs(waitUiReadyMs)
-        let bar = await driver.findComponent(ON.type('DecorBar'))
-        expect(bar == null).assertTrue()
+        await driver.delayMs(waitUiReadyMs);
+        let bar = await driver.findComponent(ON.type('DecorBar'));
+        expect(bar == null).assertTrue();
       }
       catch (err:BusinessError) {
         if (err.message == 'this device can not support this action') {
-          expect(window1 != null).assertTrue()
+          expect(window1 != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
         } else {
-          expect(false).assertTrue()
+          expect(false).assertTrue();
         }
       }
-      await stopApplication('com.uitestScene.acts')
+      await stopApplication('com.uitestScene.acts');
     })
 
     /**
-     * @tc.name   testResume
      * @tc.number uitestUiWindowTest_0002
-     * @tc.desc   change this UiWindow into split screen mode.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name testResume_static
+     * @tc.desc change this UiWindow into split screen mode.
      */
-    it('testResume', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testResume start `);
+    it('testResume_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testResume_static start `);
       const driver = Driver.create();
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'});
-      hilog.info(domain, tag, `testResume find window1 success, ${JSON.stringify(window1)}`);
-      expect(window1 != null).assertTrue();
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let window = await driver.findWindow({bundleName:'com.uitestScene.acts'});
+      expect(window != null).assertTrue();
       try {
-        if (window1 != null) {
-          await window1.resume();
-          hilog.info(domain, tag, `testResume split resume success`);
+        if (window != null) {
+          await window.resume();
+          await driver.delayMs(waitUiReadyMs);
         }
       }
-      catch (err:BusinessError) {
-        hilog.info(domain, tag, `testResume find window1 success, ${JSON.stringify(err)}`);
+      catch (err: BusinessError) {
+        hilog.info(domain, tag, `testResume_static resume error, ${JSON.stringify(err)}`);
         if (err.message == 'this device can not support this action') {
-          expect(window1 != null).assertTrue()
+          expect(window != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
         } else {
           expect(false).assertTrue()
         }
@@ -113,14 +123,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowResizeA_static
-     * @tc.number uitestUiWindowTest_0003
-     * @tc.desc   resize this UiWindow to the specified size for the specified direction.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0003
+    * @tc.name: testWindowResizeA_static
+    * @tc.desc: resize this UiWindow to the specified size for the specified direction.
+    */
     it('testWindowResizeA_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowResizeA_static start `);
       const driver = Driver.create();
@@ -184,7 +191,8 @@ export default function uitestUiWindowTest() {
       catch (err:BusinessError) {
         hilog.info(domain, tag, `testWindowResizeA_static error, ${ JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
+          expect(window != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
         } else {
           expect(false).assertTrue()
         }
@@ -193,14 +201,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowMoveTo_static
-     * @tc.number uitestUiWindowTest_0004
-     * @tc.desc   move this UiWindow to the specified points.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0004
+    * @tc.name: testWindowMoveTo_static
+    * @tc.desc: move this UiWindow to the specified points.
+    */
     it('testWindowMoveTo_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMoveTo_static start `);
       const driver = Driver.create();
@@ -236,7 +241,8 @@ export default function uitestUiWindowTest() {
       catch (err:BusinessError) {
         hilog.info(domain, tag, `testWindowMoveTo_static error, ${ JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
+          expect(err.code).assertEqual(DeviceErrorCode);
+          expect(window != null).assertTrue();
         } else {
           expect(false).assertTrue()
         }
@@ -246,12 +252,9 @@ export default function uitestUiWindowTest() {
     })
 
     /**
-     * @tc.name   testWindowMinimize_static
      * @tc.number uitestUiWindowTest_0005
-     * @tc.desc   minimize this UiWindow.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name testWindowMinimize_static
+     * @tc.desc minimize this UiWindow.
      */
     it('testWindowMinimize_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMinimize_static start `);
@@ -273,7 +276,8 @@ export default function uitestUiWindowTest() {
       catch (err:BusinessError) {
         hilog.info(domain, tag, `testWindowMinimize_static error, ${ JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
+          expect(window != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
         } else {
           expect(false).assertTrue()
         }
@@ -282,14 +286,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowMaximize_static
-     * @tc.number uitestUiWindowTest_0006
-     * @tc.desc   maximize this UiWindow.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0006
+    * @tc.name: testWindowMaximize_static
+    * @tc.desc: maximize this UiWindow.
+    */
     it('testWindowMaximize_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMaximize_static start `);
       const driver = Driver.create();
@@ -324,21 +325,19 @@ export default function uitestUiWindowTest() {
       catch (err:BusinessError) {
         hilog.info(domain, tag, `testWindowMaximize_static error, ${ JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
+          expect(window != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
         } else {
           expect(false).assertTrue()
         }
       }
     })
 
-    /**
-     * @tc.name   testWindowIsFocused
-     * @tc.number uitestUiWindowTest_0007
-     * @tc.desc   testWindowIsFocused.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0007
+    * @tc.name: testWindowIsFocused
+    * @tc.desc: testWindowIsFocused.
+    */
     it('testWindowIsFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowIsFocused start `);
       try {
@@ -363,14 +362,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowIsActive
-     * @tc.number uitestUiWindowTest_0008
-     * @tc.desc   testWindowIsFocused.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0008
+    * @tc.name: testWindowIsActive
+    * @tc.desc: testWindowIsFocused.
+    */
     it('testWindowIsActive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowIsActive start `);
       try {
@@ -395,14 +391,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowBundleName
-     * @tc.number uitestUiWindowTest_0009
-     * @tc.desc   testWindowBundleName.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0009
+    * @tc.name: testWindowBundleName
+    * @tc.desc: testWindowBundleName.
+    */
     it('testWindowBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowBundleName start `);
       try {
@@ -427,14 +420,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowBounds
-     * @tc.number uitestUiWindowTest_0010
-     * @tc.desc   getBounds test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0010
+    * @tc.name: testWindowBounds
+    * @tc.desc: getBounds test.
+    */
     it('testWindowBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowBounds start `);
       try {
@@ -459,14 +449,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testGetWindowMode_static
-     * @tc.number uitestUiWindowTest_0011
-     * @tc.desc   get the window mode of this UiWindow.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0011
+    * @tc.name: testGetWindowMode_static
+    * @tc.desc: get the window mode of this UiWindow.
+    */
     it('testGetWindowMode_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetWindowMode_static start `);
       const driver = Driver.create();
@@ -509,14 +496,11 @@ export default function uitestUiWindowTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /**
-     * @tc.name   testWindowTitle
-     * @tc.number uitestUiWindowTest_0012
-     * @tc.desc   get the window title of this UiWindow.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+    /*
+    * @tc.number: uitestUiWindowTest_0012
+    * @tc.name: testWindowTitle
+    * @tc.desc: get the window title of this UiWindow.
+    */
     it('testWindowTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowTitle start `);
       try {
@@ -542,12 +526,9 @@ export default function uitestUiWindowTest() {
     })
 
     /**
-     * @tc.name   testWindowClose_static
      * @tc.number uitestUiWindowTest_0013
-     * @tc.desc   close this UiWindow.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.name testWindowClose_static
+     * @tc.desc close this UiWindow.
      */
     it('testWindowClose_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowClose_static start `);
@@ -569,13 +550,14 @@ export default function uitestUiWindowTest() {
       catch (err: BusinessError) {
         hilog.info(domain, tag, `testWindowClose_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue()
+          expect(window != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
         } else {
-          expect(false).assertTrue()
+          expect(false).assertTrue();
         }
       }
       hilog.info(domain, tag, `testWindowClose_static end `);
-      await stopApplication('com.uitestScene.acts')
+      await stopApplication('com.uitestScene.acts');
     })
   })
 }
