@@ -26,6 +26,8 @@ interface myObj2 {
   "code": number
 }
 
+const SETTINGS_PARAM_INVALID_CODE:number = 16900010;
+
 export default function settingUiJsunit() {
   beforeAll(() => {
     console.info("beforeAll start");
@@ -2317,5 +2319,127 @@ export default function settingUiJsunit() {
           return;
         }
       });
+
+    /**
+     * @tc.name   openInputMethodSettings_invalid_context
+     * @tc.number openInputMethodSettings_invalid_context
+     * @tc.desc   openInputMethodSettings_invalid_context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_invalid_context', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let context = null;
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(context);
+      } catch (err) {
+        console.error("[openInputMethodSettings_invalid_context] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+    
+    /**
+     * @tc.name   openInputMethodSettings_valid_param
+     * @tc.number openInputMethodSettings_valid_param
+     * @tc.desc   openInputMethodSettings_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(mContext);
+      } catch (err) {
+        console.error("[openInputMethodSettings_valid_param] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_context
+     * @tc.number openInputMethodDetail_invalid_context
+     * @tc.desc   openInputMethodDetail_invalid_context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_context', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let context = null;
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(context, 'bundleName', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_context] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_bundleName
+     * @tc.number openInputMethodDetail_invalid_bundleName
+     * @tc.desc   openInputMethodDetail_invalid_bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_bundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, null, 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_bundleName] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_method
+     * @tc.number openInputMethodDetail_invalid_method
+     * @tc.desc   openInputMethodDetail_invalid_method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_method', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, 'bundleName', null);
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_method] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_valid_param
+     * @tc.number openInputMethodDetail_valid_param
+     * @tc.desc   openInputMethodDetail_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, 'bundleName', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_valid_param] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
   })
 }
