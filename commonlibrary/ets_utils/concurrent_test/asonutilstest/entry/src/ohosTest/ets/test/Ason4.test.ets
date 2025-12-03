@@ -1635,27 +1635,31 @@ export default function Ason4Test() {
      * @tc.level Level 1
      */
     it('Ason4Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: CharTypeCountCompare = { strings: ["aab1", "abc", "aaa"], typesCount: [] };
-      const json = ArkTSUtils.ASON.stringify(obj);
-      const parsed = ArkTSUtils.ASON.parse(json) as CharTypeCountCompare;
-      const typesCount: number[] = [];
-      parsed.strings.forEach(s => {
-        const chars: string[] = [];
-        for (let i = 0; i < s.length; i++) {
-          if (!chars.includes(s[i])) {
-            chars.push(s[i]);
-          }
+    const obj: CharTypeCountCompare = {
+      strings: ["apple123", "banana", "cherry"],
+      typesCount: []
+    };
+    const json = ArkTSUtils.ASON.stringify(obj);
+    const parsed = ArkTSUtils.ASON.parse(json) as CharTypeCountCompare;
+    const typesCount: number[] = [];
+    parsed.strings.forEach(s => {
+      const chars: string[] = [];
+      for (let i = 0; i < s.length; i++) {
+        if (!chars.includes(s[i])) {
+          chars.push(s[i]);
         }
-        typesCount.push(chars.length);
-      });
-      const result: CharTypeCountCompare = {
-        strings: parsed.strings,
-        typesCount: typesCount
-      };
-      expect(result.typesCount[0]).assertEqual(3);
-      expect(result.typesCount[1]).assertEqual(3);
-      expect(result.typesCount[2]).assertEqual(1);
+      }
+      typesCount.push(chars.length);
     });
+    const result: CharTypeCountCompare = {
+      strings: parsed.strings,
+      typesCount: typesCount
+    };
+
+    expect(result.typesCount[0]).assertEqual(7);
+    expect(result.typesCount[1]).assertEqual(3);
+    expect(result.typesCount[2]).assertEqual(5);
+  });
 
     /**
      * @tc.number SUB_BUILTINS_Ason4_TEST_2700
@@ -4811,47 +4815,48 @@ export default function Ason4Test() {
      * @tc.level Level 1
      */
     it('Ason4Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: CharCountSortCompare = { strings: ["aab1", "aaab", "ab"], sorted: [] };
-      const json = ArkTSUtils.ASON.stringify(obj);
+    const obj: CharCountSortCompare = {
+      strings: ["sample123", "sample", "test"],
+      sorted: []
+    };
+    const json = ArkTSUtils.ASON.stringify(obj);
+    const parsedData: CharCountSortCompare = ArkTSUtils.ASON.parse(json) as CharCountSortCompare;
+    const temp: string[] = [];
+    for (let i = 0; i < parsedData.strings.length; i++) {
+      temp.push(parsedData.strings[i]);
+    }
 
-      const parsedData: CharCountSortCompare = ArkTSUtils.ASON.parse(json) as CharCountSortCompare;
+    for (let i = 0; i < temp.length - 1; i++) {
+      for (let j = 0; j < temp.length - i - 1; j++) {
+        let countA = 0;
+        let countB = 0;
 
-      const temp: string[] = [];
-      for (let i = 0; i < parsedData.strings.length; i++) {
-        temp.push(parsedData.strings[i]);
-      }
-
-      for (let i = 0; i < temp.length - 1; i++) {
-        for (let j = 0; j < temp.length - i - 1; j++) {
-          let countA = 0;
-          let countB = 0;
-
-          for (let k = 0; k < temp[j].length; k++) {
-            if (temp[j][k] === 'a') {
-              countA++;
-            }
-          }
-
-          for (let k = 0; k < temp[j + 1].length; k++) {
-            if (temp[j + 1][k] === 'a') {
-              countB++;
-            }
-          }
-
-          if (countA > countB) {
-            const tempStr = temp[j];
-            temp[j] = temp[j + 1];
-            temp[j + 1] = tempStr;
+        for (let k = 0; k < temp[j].length; k++) {
+          if (temp[j][k] === 'a') {
+            countA++;
           }
         }
-      }
+        for (let k = 0; k < temp[j + 1].length; k++) {
+          if (temp[j + 1][k] === 'a') {
+            countB++;
+          }
+        }
 
-      const parsed: CharCountSortCompare = {
-        strings: parsedData.strings,
-        sorted: temp
-      };
-      expect(parsed.sorted[0]).assertEqual("ab");
-      expect(parsed.sorted[2]).assertEqual("aaab");
-    });
+        if (countA > countB) {
+          const tempStr = temp[j];
+          temp[j] = temp[j + 1];
+          temp[j + 1] = tempStr;
+        }
+      }
+    }
+
+    const result: CharCountSortCompare = {
+      strings: parsedData.strings,
+      sorted: temp
+    };
+
+    expect(result.sorted[0]).assertEqual("test");
+    expect(result.sorted[2]).assertEqual("sample123");
+  });
   })
 }
