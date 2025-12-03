@@ -48,7 +48,7 @@ export default function DrawableTabBarIndicatorPage() {
      * @tc.number    DrawableTabBarIndicatorPage_0100
      * @tc.name      DrawableTabBarIndicatorPage_0100
      * @tc.desc      test DrawableTabBarIndicator
-     * @tc.level     Level 21
+     * @tc.level     Level 1
      * @tc.type
      */
     it('DrawableTabBarIndicatorPage_0100', Level.LEVEL1, async (done: Function) => {
