@@ -687,9 +687,9 @@ export default function ActsReminderAgentManagerStaticTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
 
-        let parameters : Record<string, reminderAgentManager.RecordData> = {
-          'x': 1
-        }
+        // let parameters : Record<string, reminderAgentManager.RecordData> = {
+        //   'x': 1
+        // }
 
         let calendar: reminderAgentManager.ReminderRequestCalendar = {
           reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_CALENDAR,
@@ -708,7 +708,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           wantAgent: {
             pkgName: "com.acts.actsreminderagentmgr.static",
             abilityName: "EntryAbility",
-            parameters: parameters,
+            // parameters: parameters,
             uri:"#"
           },
           maxScreenWantAgent: {
