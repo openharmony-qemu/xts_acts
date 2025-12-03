@@ -14,7 +14,7 @@
  */
 import { SceneResourceFactory, Scene, RenderingPipelineType, Camera, VignetteSettings,
   PostProcessSettings,
-  ColorFringeSettings} from '@kit.ArkGraphics3D'
+  ColorFringeSettings, GeometryType} from '@kit.ArkGraphics3D'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 
 export default function scenePostProcessSettingTest() {
@@ -276,7 +276,7 @@ export default function scenePostProcessSettingTest() {
         console.info(msg + " vignetteDefaults.roundness not null");
         expect(vignetteDefaults.intensity != null).assertTrue();
         console.info(msg + " vignetteDefaults.intensity not null");
-        expect(Math.abs(vignetteDefaults.roundness! - 0.707)).assertLess(1e-6);
+        expect(Math.abs(vignetteDefaults.roundness! - Math.sqrt(0.5))).assertLess(1e-6);
         console.info(msg + " vignetteDefaults.roundness default value correct");
         expect(Math.abs(vignetteDefaults.intensity! - 0.4)).assertLess(1e-6);
         console.info(msg + " vignetteDefaults.intensity default value correct");
@@ -304,6 +304,7 @@ export default function scenePostProcessSettingTest() {
         expect(Math.abs(cam.postProcess!.colorFringe!.intensity - 0.9)).assertLess(1e-6);
         console.info(msg + " colorFringe intensity set and checked");
         console.info(msg + " Camera postProcess values updated successfully");
+        expect(GeometryType.CYLINDER).assertEqual(4);
 
         done();
       } catch (err) {
