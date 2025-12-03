@@ -23,18 +23,20 @@ export const getAbilityResourceInfo: (fileType: string) => [
   boolean
 ];
 
-export const getBundleNameTest: () => number;
+export const getBundleNameTest: (fileType: string) => number;
 
-export const getModuleNameTest: () => number;
+export const getModuleNameTest: (fileType: string) => number;
 
-export const getAbilityNameTest: () => number;
+export const getAbilityNameTest: (fileType: string) => number;
 
-export const getLabelTest: () => number;
+export const getLabelTest: (fileType: string) => number;
 
-export const getAppIndexTest: () => number;
+export const getAppIndexTest: (fileType: string) => number;
 
-export const checkDefaultAppTest: () => number;
+export const checkDefaultAppTest: (fileType: string) => number;
 
-export const getDrawableDescriptorTest: () => number;
+export const getDrawableDescriptorTest: (fileType: string) => number;
 
-export const abilityResourceInfoDestroyTest: () => number;
+export const abilityResourceInfoDestroyTest: (fileType: string) => number;
+
+export const getAbilityResourceErrorTest: (fileType: string) => number;
