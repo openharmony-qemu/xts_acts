@@ -38,6 +38,18 @@ export const setPositionEdges_top_left_bottom_right: () => void;
 export const getPositionEdges: ()=>string;
 export const reSetPositionEdges: () => void;
 export const copyPositionEdges: () => void;
+
+export const TestPositionEdgesGetTopErrorCode_001: () => void;
+export const TestPositionEdgesGetTopErrorCode_002: () => void;
+export const TestPositionEdgesGetLeftErrorCode_001: () => void;
+export const TestPositionEdgesGetLeftErrorCode_002: () => void;
+export const TestPositionEdgesGetBottomErrorCode_001: () => void;
+export const TestPositionEdgesGetBottomErrorCode_002: () => void;
+export const TestPositionEdgesGetRightErrorCode_001: () => void;
+export const TestPositionEdgesGetRightErrorCode_002: () => void;
+export const TestPositionEdgesCopyReturnNullptr: () => void;
+export const TestPositionEdgesCreateReturnNoNullptr: () => void;
+
 export const textContentAlignTest: (a: string) => void;
 export const createPixelRoundNativeRoot: (content: NodeContent, tag: string) => void;
 export const setPixelRound: () => void;
