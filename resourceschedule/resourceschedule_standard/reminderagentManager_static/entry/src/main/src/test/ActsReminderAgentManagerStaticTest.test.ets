@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2023 Huawei Device Co., Ltd.
+* Copyright (c) 2025 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -58,12 +58,12 @@ export default function ActsReminderAgentManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001
-     * @tc.desc:Test that publishReminder/cancelReminder callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001
+     * @tc.desc   Test that publishReminder/cancelReminder callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -164,12 +164,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002
-     * @tc.desc:Test that publishReminder/cancelReminder promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002
+     * @tc.desc   Test that publishReminder/cancelReminder promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -223,12 +223,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003
-     * @tc.desc:test publishReminder promise function and getValidReminders callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003
+     * @tc.desc   Test publishReminder promise function and getValidReminders callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -281,12 +281,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004
-     * @tc.desc:test publishReminder promise function and getValidReminders promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004
+     * @tc.desc   Test publishReminder promise function and getValidReminders promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -337,12 +337,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005
-     * @tc.desc:test publishReminder promise function and cancelAllReminders callback function
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005
+     * @tc.desc   Test publishReminder promise function and cancelAllReminders callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -397,12 +397,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006
-     * @tc.desc:test publishReminder promise function and cancelAllReminders promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006
+     * @tc.desc   Test publishReminder promise function and cancelAllReminders promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -457,12 +457,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007
-     * @tc.desc:test addNotificationSlot callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007
+     * @tc.desc   Test addNotificationSlot callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -492,12 +492,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008
-     * @tc.desc:test addNotificationSlot promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008
+     * @tc.desc   Test addNotificationSlot promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -525,12 +525,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009
-     * @tc.desc:test removeNotificationSlot callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009
+     * @tc.desc   Test removeNotificationSlot callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -556,12 +556,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010
-     * @tc.desc:test removeNotificationSlot promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010
+     * @tc.desc   Test removeNotificationSlot promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -585,12 +585,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011
-     * @tc.desc:test getAllValidReminders promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011
+     * @tc.desc   Test getAllValidReminders promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -633,12 +633,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012
-     * @tc.desc:test publishReminder/cancelAllReminders promise function and parameter is ReminderRequestTimer
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012
+     * @tc.desc   Test publishReminder/cancelAllReminders promise function and parameter is ReminderRequestTimer
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -676,20 +676,20 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013
-     * @tc.desc:test publishReminder/cancelAllReminders promise function and parameter is ReminderRequestCalendar
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013
+     * @tc.desc   Test publishReminder/cancelAllReminders promise function and parameter is ReminderRequestCalendar
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
 
-        // let parameters : Record<string, reminderAgentManager.RecordData> = {
-        //   'x': 1
-        // }
+        let parameters : Record<string, reminderAgentManager.RecordData> = {
+          'x': 1
+        }
 
         let calendar: reminderAgentManager.ReminderRequestCalendar = {
           reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_CALENDAR,
@@ -708,7 +708,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           wantAgent: {
             pkgName: "com.acts.actsreminderagentmgr.static",
             abilityName: "EntryAbility",
-            // parameters: parameters,
+            parameters: parameters,
             uri:"#"
           },
           maxScreenWantAgent: {
@@ -732,7 +732,7 @@ export default function ActsReminderAgentManagerStaticTest() {
             second: 10
           },
           ringDuration: 2 as long,
-          // ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_ALARM,
+          ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_ALARM,
           snoozeTimes: 1,
           timeInterval: 3 as long,
           title: "this is addExcludeDate title",
@@ -771,12 +771,12 @@ export default function ActsReminderAgentManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
-     * @tc.desc:Test that the reminderAgentManager enum ActionButtonType of ACTION_BUTTON_TYPE_CLOSE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
+     * @tc.desc   Test that the reminderAgentManager enum ActionButtonType of ACTION_BUTTON_TYPE_CLOSE
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014 begin---');
@@ -789,12 +789,12 @@ export default function ActsReminderAgentManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015
-     * @tc.desc:Test that the reminderAgentManager enum ActionButtonType of ACTION_BUTTON_TYPE_CLOSE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015
+     * @tc.desc   Test that the reminderAgentManager enum ActionButtonType of ACTION_BUTTON_TYPE_CLOSE
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015 begin---');
@@ -807,12 +807,12 @@ export default function ActsReminderAgentManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016
-     * @tc.desc:Test that the reminderAgentManager enum ActionButtonType of REMINDER_TYPE_TIMER
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016
+     * @tc.desc   Test that the reminderAgentManager enum ActionButtonType of REMINDER_TYPE_TIMER
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016 begin---');
@@ -825,12 +825,12 @@ export default function ActsReminderAgentManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017
-     * @tc.desc:Test that the reminderAgentManager enum ReminderType of REMINDER_TYPE_CALENDAR
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017
+     * @tc.desc   Test that the reminderAgentManager enum ReminderType of REMINDER_TYPE_CALENDAR
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017 begin---');
@@ -843,12 +843,12 @@ export default function ActsReminderAgentManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018
-     * @tc.desc:Test that the reminderAgentManager enum ReminderType of REMINDER_TYPE_ALARM
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018
+     * @tc.desc   Test that the reminderAgentManager enum ReminderType of REMINDER_TYPE_ALARM
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018 begin---');
@@ -861,12 +861,12 @@ export default function ActsReminderAgentManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019
-     * @tc.desc:Test that the addExcludeDate/getExcludeDates/deleteExcludeDates promise
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019
+     * @tc.desc   Test that the addExcludeDate/getExcludeDates/deleteExcludeDates promise
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 begin---');
