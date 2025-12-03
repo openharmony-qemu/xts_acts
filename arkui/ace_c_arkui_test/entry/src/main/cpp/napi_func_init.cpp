@@ -239,6 +239,7 @@
 #include "image/image_position_test.cpp"
 #include "image/image_radialgradient_test.cpp"
 #include "image/image_rotate_test.cpp"
+#include "image/ImageRotateorientationTest.cpp"
 #include "image/image_saturate_test.cpp"
 #include "image/image_scale_test.cpp"
 #include "image/image_shadow_test.cpp"
@@ -1381,6 +1382,8 @@ static napi_value Init(napi_env env, napi_value exports)
 
         {"testImageObjectFit018", nullptr, TestImageObjectFit018, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"testImageObjectFit019", nullptr, TestImageObjectFit019, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"testImageObjectRepeat001", nullptr, TestImageObjectRepeat001, nullptr, nullptr, nullptr, napi_default,
          nullptr},
 
@@ -1433,6 +1436,42 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testImageRotate003", nullptr, TestImageRotate003, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"testImageRotate004", nullptr, TestImageRotate004, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"testImageRotateOrientation001", nullptr, TestImageRotateOrientation001, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation002", nullptr, TestImageRotateOrientation002, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation003", nullptr, TestImageRotateOrientation003, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation004", nullptr, TestImageRotateOrientation004, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation005", nullptr, TestImageRotateOrientation005, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation006", nullptr, TestImageRotateOrientation006, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation007", nullptr, TestImageRotateOrientation007, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation008", nullptr, TestImageRotateOrientation008, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation009", nullptr, TestImageRotateOrientation009, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation010", nullptr, TestImageRotateOrientation010, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation011", nullptr, TestImageRotateOrientation011, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+
+        {"testImageRotateOrientation012", nullptr, TestImageRotateOrientation012, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
 
         {"testImageSaturate001", nullptr, TestImageSaturate001, nullptr, nullptr, nullptr, napi_default, nullptr},
 
@@ -2049,6 +2088,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testImageDynamicRangeMode003", nullptr, TestImageDynamicRangeMode003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testImageDynamicRangeMode004", nullptr, TestImageDynamicRangeMode004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageDynamicRangeMode005", nullptr, TestImageDynamicRangeMode005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testImageDynamicRangeMode006", nullptr, TestImageDynamicRangeMode006, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testImageHdrBrightness001", nullptr, TestImageHdrBrightness001, nullptr, nullptr, nullptr,
          napi_default, nullptr},

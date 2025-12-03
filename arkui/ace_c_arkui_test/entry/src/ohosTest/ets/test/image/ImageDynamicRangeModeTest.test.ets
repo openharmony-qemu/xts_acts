@@ -77,5 +77,31 @@ export default function imageDynamicRangeModeTest() {
       expect(nativeFunc.testImageDynamicRangeMode004()).assertEqual(0)
       done()
     })
+
+    /**
+     * @tc.name   testImageDynamicRangeMode005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0500
+     * @tc.desc   test the dynamic display range attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testImageDynamicRangeMode005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testImageDynamicRangeMode005()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   testImageDynamicRangeMode006
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0600
+     * @tc.desc   test the dynamic display range attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testImageDynamicRangeMode006', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testImageDynamicRangeMode006()).assertEqual(0)
+      done()
+    })
   })
 }

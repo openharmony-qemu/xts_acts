@@ -260,5 +260,18 @@ export default function imageObjectFitTest() {
       done()
     })
 
+    /**
+     * @tc.name   testImageObjectFit019
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTFIT_1900
+     * @tc.desc   testing objectfit for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testImageObjectFit019', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testImageObjectFit019()).assertEqual(0)
+      done()
+    })
+
   })
 }
