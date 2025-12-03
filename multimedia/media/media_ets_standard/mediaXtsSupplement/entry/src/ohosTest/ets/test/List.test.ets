@@ -30,6 +30,7 @@ import MediaSourceSetMediaResourceLoaderDelegateTest from './media/MediaSourceSe
 import MediaVideoPlayerOn_audioInterruptTest from './media/MediaVideoPlayerOn_audioInterrupt.Test.test';
 import MediaVideoPlayerSeekTest from './media/MediaVideoPlayerSeek.Test.test';
 import CreateMediaSourceTest from './media/CreateMediaSourceTest.test';
+import AVPlayerSetSpeedTest from './media/AVPlayerSetSpeed.test';
 import RespondDataTest from './media/RespondDataTest.test';
 
 export default function testsuite() {
@@ -51,6 +52,7 @@ export default function testsuite() {
   MediaVideoPlayerOn_audioInterruptTest();
   MediaVideoPlayerSeekTest();
   CreateMediaSourceTest();
+  AVPlayerSetSpeedTest();
   RespondDataTest();
 }
 

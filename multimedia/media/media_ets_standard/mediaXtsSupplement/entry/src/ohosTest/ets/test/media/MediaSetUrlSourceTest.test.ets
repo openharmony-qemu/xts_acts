@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium";
 import { media } from "@kit.MediaKit";
 import { url } from "@kit.ArkTS";
+import { sleep } from "../common";
 
 const TAG ='MediaXts.SetUrISource';
 async function testSetUrlSource(testName: string,callback:(avMetadataExtractor: media.AVMetadataExtractor)=>void,){
@@ -42,6 +43,7 @@ export default function SetUrISourceTest() {
       AppStorage.delete('testString');
       AppStorage.delete('testArray');
       console.info(TAG, 'afterAll case.');
+      await sleep(2000);
     });
 
     /**
@@ -55,9 +57,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_001',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_001';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource('', { "User-Agent": "User-Agent-Value" });
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
       })
         done();
@@ -79,9 +82,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_002',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_002';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource(null, { "User-Agent": "User-Agent-Value" });
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
         })
         done();
@@ -103,9 +107,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_003',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_003';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource(undefined, { "User-Agent": "User-Agent-Value" });
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
         })
         done();
@@ -127,9 +132,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_004',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_004';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource('https://hwposter-inland.hwcloudtest.cn/rem/ruanjie/h264_480x270_0.2m_30fp_cenc/dash.mpd', { });
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
         })
         done();
@@ -151,9 +157,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_005',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_005';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource('https://hwposter-inland.hwcloudtest.cn/rem/ruanjie/h264_480x270_0.2m_30fp_cenc/dash.mpd', null);
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
         })
         done();
@@ -175,9 +182,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_006',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_006';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource('https://hwposter-inland.hwcloudtest.cn/rem/ruanjie/h264_480x270_0.2m_30fp_cenc/dash.mpd', undefined);
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
         })
         done();
@@ -199,9 +207,10 @@ export default function SetUrISourceTest() {
     it ('MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_007',Level.LEVEL0,async (done : Function)=>{
       const testName = 'MUTI_MEDIA_AVMETADATA_EXTRACTOR_SETURI_SOURCE_007';
       try {
-        testSetUrlSource(testName,(AVMetadataExtractor) => {
+        testSetUrlSource(testName, async (AVMetadataExtractor) => {
           AVMetadataExtractor.setUrlSource('https://hwposter-inland.hwcloudtest.cn/rem/ruanjie/h264_480x270_0.2m_30fp_cenc/dash.mpd', {"User-Agent": "User-Agent-Value"});
           console.info(TAG, testName, 'succeed');
+          await AVMetadataExtractor.release()
           done();
         })
         done();
