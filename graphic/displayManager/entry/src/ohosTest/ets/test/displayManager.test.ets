@@ -21,6 +21,8 @@ import { Driver, ON } from '@ohos.UiTest';
 import { image } from '@kit.ImageKit';
 import { screenshot } from '@kit.ArkUI';
 import common from '@ohos.app.ability.common';
+import { StartOptions } from '@kit.AbilityKit';
+import floatingBall from '@ohos.window.floatingBall';
 import settings from '@ohos.settings';
 
 function checkIsCaptured() {
@@ -34,13 +36,45 @@ function checkIsCaptured() {
   return status;
 }
 
-
 async function sleep(time: number) {
   return new Promise < string > ((resolve, reject) => {
     setTimeout(() => {
       resolve("ok");
     }, time);
   })
+}
+
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartAbility'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStart') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility(caseName: string) {
+  let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
 }
 
 export default function displayTest() {
@@ -2581,6 +2615,372 @@ export default function displayTest() {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         expect(false).assertTrue();
         done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
+     * @tc.name       testGetBrightnessInfowithMainDisplayid
+     * @tc.desc       查询主屏亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testGetBrightnessInfowithMainDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testGetBrightnessInfowithMainDisplayid';
+      try {
+        let brightnessInfo = display.getBrightnessInfo(0);
+        console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+        expect(brightnessInfo.sdrNits).assertLarger(0);
+        expect(brightnessInfo.currentHeadroom).assertLarger(0);
+        expect(brightnessInfo.maxHeadroom).assertLarger(0);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code == 801) {
+          done()
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
+     * @tc.name       testGetBrightnessInfowithVirtualDisplayid
+     * @tc.desc       查询虚拟屏亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testGetBrightnessInfowithVirtualDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testGetBrightnessInfowithVirtualDisplayid';
+      try {
+        let option: display.VirtualScreenConfig = {
+          name: 'screen01',
+          width: 100,
+          height: 2340,
+          density: 2,
+          surfaceId: ''
+        };
+        let screenId: number = await display.createVirtualScreen(option);
+        console.log(caseName + ' success in createVirtualScreen ' + screenId);
+        let brightnessInfo = display.getBrightnessInfo(screenId);
+        await sleep(300)
+        console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+        expect(brightnessInfo.sdrNits).assertEqual(500);
+        expect(brightnessInfo.currentHeadroom).assertEqual(1);
+        expect(brightnessInfo.maxHeadroom).assertEqual(1);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code == 801) {
+          done()
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
+     * @tc.name       testGetBrightnessInfowithNonExistedDisplayId
+     * @tc.desc       查询大于0但不存在的屏幕亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testGetBrightnessInfowithNonExistedDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testGetBrightnessInfowithNonExistedDisplayId';
+      try {
+        let brightnessInfo = display.getBrightnessInfo(2000);
+        console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code == 801) {
+          done()
+        } else {
+          expect(e.code).assertEqual(1400004);
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
+     * @tc.name       testGetBrightnessInfowithNegativeDisplayId
+     * @tc.desc       查询小于0不存在的屏幕亮度信息
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testGetBrightnessInfowithNegativeDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testGetBrightnessInfowithNegativeDisplayId';
+      try {
+        let brightnessInfo = display.getBrightnessInfo(-1);
+        console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code == 801) {
+          done()
+        } else {
+          expect(e.code).assertEqual(1400004);
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0100
+     * @tc.name       testOnBrightnessInfoChange_0100
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消全部监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testOnBrightnessInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnBrightnessInfoChange_0100';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setWindowBrightness(0);
+        let brightnessChangeCount1 = 0;
+        let brightnessChangeCount2 = 0;
+        let callback1Triggered = false;
+        let callback2Triggered = false;
+
+        const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+          console.info(caseName + ' Callback1 triggered');
+          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+          brightnessChangeCount1 = brightnessChangeCount1 + 1;
+          callback1Triggered = true;
+          expect(displayId).assertEqual(0);
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        };
+
+        const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+          console.info(caseName + ' Callback2 triggered');
+          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+          brightnessChangeCount2 = brightnessChangeCount2 + 1;
+          callback2Triggered = true;
+          expect(displayId).assertEqual(0);
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+        };
+        display.on('brightnessInfoChange', callback1);
+        display.on('brightnessInfoChange', callback2);
+        console.info(caseName + ' Brightness change listeners registered successfully');
+        await windowClass.setWindowBrightness(0);
+        while (!callback1Triggered) {
+          await sleep(100);
+        }
+        console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        while (!callback2Triggered) {
+          await sleep(100);
+        }
+        console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+        expect(brightnessChangeCount1).assertLarger(0);
+        expect(brightnessChangeCount2).assertLarger(0);
+        display.off('brightnessInfoChange');
+        brightnessChangeCount1 = 0;
+        brightnessChangeCount2 = 0;
+        await windowClass.setWindowBrightness(1);
+        await sleep(3000);
+        console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        console.info(`${caseName} after off brightnessChangeCount2 = ${brightnessChangeCount2}`);
+        expect(brightnessChangeCount1).assertEqual(0);
+        expect(brightnessChangeCount2).assertEqual(0);
+        await windowClass.setWindowBrightness(-1);
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code == 801) {
+          done()
+        } else {
+          display.off('brightnessInfoChange');
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0200
+     * @tc.name       testOnBrightnessInfoChange_0200
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消指定监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testOnBrightnessInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnBrightnessInfoChange_0200';
+      try {
+        let windowClass = await windowStage.getMainWindow();
+        await windowClass.setWindowBrightness(0);
+        let brightnessChangeCount1 = 0;
+        let brightnessChangeCount2 = 0;
+        let callback1Triggered = false;
+        let callback2Triggered = false;
+
+        const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+          console.info(caseName + ' Callback1 triggered');
+          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+          brightnessChangeCount1 = brightnessChangeCount1 + 1;
+          callback1Triggered = true;
+          expect(displayId).assertEqual(0);
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        };
+
+        const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+          console.info(caseName + ' Callback2 triggered');
+          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+          brightnessChangeCount2 = brightnessChangeCount2 + 1;
+          callback2Triggered = true;
+          expect(displayId).assertEqual(0);
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+        };
+        display.on('brightnessInfoChange', callback1);
+        display.on('brightnessInfoChange', callback2);
+        console.info(caseName + ' Brightness change listeners registered successfully');
+        await windowClass.setWindowBrightness(0);
+        while (!callback1Triggered) {
+          await sleep(100);
+        }
+        console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        expect(brightnessChangeCount1).assertLarger(1);
+        while (!callback2Triggered) {
+          await sleep(100);
+        }
+        console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+        expect(brightnessChangeCount2).assertLarger(0);
+        display.off('brightnessInfoChange', callback1);
+        brightnessChangeCount1 = 0;
+        brightnessChangeCount2 = 0;
+        await windowClass.setWindowBrightness(1);
+        await sleep(3000);
+        console.info(`${caseName} after off callback1 brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        console.info(`${caseName} after off callback2 brightnessChangeCount2 = ${brightnessChangeCount2}`);
+        expect(brightnessChangeCount1).assertEqual(0);
+        expect(brightnessChangeCount2).assertLargerOrEqual(1);
+        await windowClass.setWindowBrightness(-1);
+        display.off('brightnessInfoChange');
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        display.off('brightnessInfoChange');
+        if (e.code == 801) {
+          done()
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0300
+     * @tc.name       testOnBrightnessInfoChange_0300
+     * @tc.desc       异源虚拟屏上调节窗口亮度触发屏幕亮度信息变化，触发主屏亮度信息改变
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testOnBrightnessInfoChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testOnBrightnessInfoChange_0300';
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        subWindowClass.setUIContent('testability/pages/getSurfaceId')
+        await subWindowClass.resizeAsync(1000, 1200);
+        await subWindowClass.moveWindowToAsync(100, 100)
+        subWindowClass.showWindow();
+
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('button'));
+
+        let screenId = 0;
+        if (btn == undefined) {
+          console.log(caseName + 'device not support');
+        } else {
+          await btn.click();
+          await sleep(1000);
+
+          let hw = await driver.findComponent(ON.id('testResult'));
+          let testNum = await hw.getText();
+          console.log(caseName + 'testResult : ' + testNum);
+          expect(testNum == 'success').assertTrue();
+          if (testNum == 'not support') {
+            await subWindowClass.destroyWindow();
+            done();
+          } else {
+            let screenIdStr = await driver.findComponent(ON.id('screenId'));
+            console.log(caseName + 'screenIdStr : ' + screenIdStr);
+            screenId = Number(screenIdStr);
+          }
+        }
+
+        let options: StartOptions = {
+          displayId: screenId
+        }
+        let windowStageStart = await startAbility(caseName, context, options);
+        let windowClass = windowStageStart.getMainWindowSync();
+
+        await windowClass.setWindowBrightness(0);
+        let brightnessChangeCount1 = 0;
+        let callback1Triggered = false;
+
+        const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+          console.info(caseName + ' Callback1 triggered');
+          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+          brightnessChangeCount1 = brightnessChangeCount1 + 1;
+          callback1Triggered = true;
+          expect(displayId).assertEqual(0);
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        };
+
+        display.on('brightnessInfoChange', callback1);
+        console.info(caseName + ' Brightness change listeners registered successfully');
+        await windowClass.setWindowBrightness(1);
+        while (!callback1Triggered) {
+          await sleep(100);
+        }
+        console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+        expect(brightnessChangeCount1).assertLargerOrEqual(1);
+        display.off('brightnessInfoChange', callback1);
+        await windowClass.setWindowBrightness(-1);
+        display.off('brightnessInfoChange');
+        await subWindowClass.destroyWindow();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await subWindowClass?.destroyWindow();
+        if (e.code == 801) {
+          done()
+        } else {
+          display.off('brightnessInfoChange');
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 

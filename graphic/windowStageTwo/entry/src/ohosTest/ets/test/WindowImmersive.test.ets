@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
+import StartTestAbility7 from '../testability/StartTestAbility7';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -48,6 +49,39 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
 
 async function terminateAbility(caseName: string) {
   let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+async function startAbility7(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility7'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest7') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility7(caseName: string) {
+  let pageContext = AppStorage.get('contextTest7') as common.UIAbilityContext
   await pageContext.terminateSelf().then(() => {
     console.log(`${caseName} terminateSelf success`);
   }).catch((err: BusinessError) => {
@@ -3493,6 +3527,56 @@ export default function windowImmersiveTest() {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(1300002);
         done()
+      }
+    });
+
+    
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_ROTATION_AVOIDAREACHANGE_1000
+     * @tc.name       testWindowAvoidareaChangeCutout_0100
+     * @tc.desc       横屏冷启动旋转窗口，正确获取挖孔避让区域
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testWindowAvoidareaChangeCutout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testWindowAvoidareaChangeCutout_0100';
+      if (isSupportRotate) {
+        let windowStageStart = await startAbility7(caseName, context);
+        let windowClass = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+        console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+        if (isInFreeWindowMode) {
+          await terminateAbility7(caseName);
+          done();
+        } else {
+          let displayClass = display.getDefaultDisplaySync();
+          let cutoutInfo = await displayClass.getCutoutInfo();
+          let arrayRect = cutoutInfo.boundingRects;
+          console.info(caseName + ' arrayRect: ' + JSON.stringify(arrayRect));
+          if (arrayRect.length == 0) {
+            await terminateAbility7(caseName);
+            done();
+          } else {
+            windowClass.on('avoidAreaChange', async (data) => {
+              console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
+            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
+              if(data.type == window.AvoidAreaType.TYPE_CUTOUT) {
+                expect(data.area!= null).assertTrue();
+                windowClass.off('avoidAreaChange');
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await sleep(1000);
+                await terminateAbility7(caseName);
+                done();
+              } else {
+                await sleep(3000)
+              }
+            });
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
+          }
+        }
+      } else {
+        done();
       }
     });
 
