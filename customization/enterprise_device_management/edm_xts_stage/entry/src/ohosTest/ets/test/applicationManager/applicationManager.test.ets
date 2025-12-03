@@ -2672,11 +2672,11 @@ export default function applicationManagerTest() {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let emptyBundles: Array<string> = applicationManager.getAllowedKioskApps(SELFWANT);
         expect(emptyBundles.length == 0).assertTrue();
-        let bundleName: Array<string> = [`${TEST_BUNDLENAME}`];
+        let bundleName: Array<string> = [`${'1265956504964495936'}`];
         applicationManager.setAllowedKioskApps(SELFWANT, bundleName);
         let bundleNames: Array<string> = applicationManager.getAllowedKioskApps(SELFWANT);
         expect(bundleNames.length > 0).assertTrue();
-        let isAllowed = applicationManager.isAppKioskAllowed(TEST_BUNDLENAME);
+        let isAllowed = applicationManager.isAppKioskAllowed('1265956504964495936');
         expect(isAllowed).assertTrue();
       } catch (error) {
         expect(error.code == 9200007).assertTrue();
