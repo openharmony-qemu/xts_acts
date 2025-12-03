@@ -51,10 +51,6 @@ callback: (resSpeed:media.PlaybackSpeed)=>void) {
           console.info(TAG, testName, 'State is prepared. Setting speed to', targetSpeed);
           avPlayer.setSpeed(targetSpeed);
           console.info(TAG, testName, 'setSpeed success');
-          // avPlayer.release();
-          //  closeFdNumber(rawFileContent);
-          //   done();
-          ;
           break;
         case 'initialized':
           avPlayer?.prepare();
@@ -99,10 +95,6 @@ async function setSpeedTestPlaying(done: Function,testName:string,FileName:strin
           console.info(TAG, testName, 'State is playing. Setting speed to', targetSpeed);
           avPlayer.setSpeed(targetSpeed);
           console.info(TAG, testName, 'setSpeed success');
-          // avPlayer.release();
-          //  closeFdNumber(rawFileContent);
-          //   done();
-          ;
           break;
         case 'prepared':
           avPlayer.play();
