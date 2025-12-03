@@ -66,6 +66,7 @@
         "MainAbility/pages/Tabs/barHeightNoMinHeightLimit",
         "MainAbility/pages/Tabs/animationCurve",
         "MainAbility/pages/Tabs/Tabs_onContentDidScroll/tabs_onContentDidScroll",
-        "MainAbility/pages/Tabs/Tabs_onContentDidScroll/tabs_undefined"
+        "MainAbility/pages/Tabs/Tabs_onContentDidScroll/tabs_undefined",
+        "MainAbility/pages/TabContent/DrawableTabBarIndicatorPage"
     ]
 }

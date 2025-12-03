@@ -139,6 +139,10 @@
     {
       "name": "prevMarginString",
       "value": "20px"
+    },
+    {
+      "name": "indicatorValue",
+      "value": "5.00vp"
     }
     
   ]
