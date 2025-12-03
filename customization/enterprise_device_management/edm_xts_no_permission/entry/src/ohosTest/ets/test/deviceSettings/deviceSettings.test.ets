@@ -24,6 +24,7 @@ import { BusinessError } from '@ohos.base';
 const ITEM_SCREEN_OFF: string = 'screenOff';
 const ITEM_POWER_POLICY: string = 'powerPolicy';
 const ITEM_DATE_TIME: string = 'dateTime';
+const ITEM_EYE_COMFORT: string = 'eyeComfort';
 
 export default function deviceSettingsTest() {
   describe('deviceSettings_test', () => {
@@ -49,6 +50,27 @@ export default function deviceSettingsTest() {
     });
 
     /**
+     * @tc.name   test_device_settings_get_value_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0200
+     * @tc.desc   test deviceSettings getValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        deviceSettings.getValue(SELFWANT, ITEM_EYE_COMFORT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   test_device_settings_set_value_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0100
      * @tc.desc   test deviceSettings setValue with normal admin
@@ -60,6 +82,27 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
       try {
         deviceSettings.setValue(SELFWANT, ITEM_SCREEN_OFF, '30000');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_0200
+     * @tc.desc   test deviceSettings setValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'on');
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 201).assertTrue();

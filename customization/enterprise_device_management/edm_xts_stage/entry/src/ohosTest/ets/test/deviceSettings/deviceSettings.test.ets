@@ -24,6 +24,7 @@ import { BusinessError } from '@ohos.base';
 const ITEM_SCREEN_OFF: string = 'screenOff';
 const ITEM_POWER_POLICY: string = 'powerPolicy';
 const ITEM_DATE_TIME: string = 'dateTime';
+const ITEM_EYE_COMFORT: string = 'eyeComfort';
 
 export default function deviceSettingsTest() {
   describe('deviceSettings_test', () => {
@@ -141,6 +142,88 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         deviceSettings.getValue(null, ITEM_SCREEN_OFF);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_get_value_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0700
+     * @tc.desc   test deviceSettings getValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.getValue(SELFWANT, ITEM_EYE_COMFORT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_get_value_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0800
+     * @tc.desc   test deviceSettings getValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.getValue(SELFWANT, ITEM_EYE_COMFORT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_get_value_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_0900
+     * @tc.desc   test deviceSettings getValue, item = eyeComfort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_0900", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'on');
+        let result: string = deviceSettings.getValue(SELFWANT, ITEM_EYE_COMFORT);
+        expect(result).assertEqual('on');
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_get_value_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_VALUE_JS_1000
+     * @tc.desc   test deviceSettings getValue with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_value_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.getValue(null, ITEM_EYE_COMFORT);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 401).assertTrue();
@@ -521,6 +604,89 @@ export default function deviceSettingsTest() {
       done();
     });
 
+    /**
+     * @tc.name   test_device_settings_set_value_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1700
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_1700", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'on');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1800
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_1800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'on');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_1900
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_1900
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_1900", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'off');
+        let result: string = deviceSettings.getValue(SELFWANT, ITEM_EYE_COMFORT);
+        expect(result).assertEqual('off');
+        expect(true).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_2000
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2000
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_2000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'onoff111');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+    
     /**
      * @tc.name   test_device_settings_set_home_wall_paper_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_HOME_WALL_PAPER_JS_0100
