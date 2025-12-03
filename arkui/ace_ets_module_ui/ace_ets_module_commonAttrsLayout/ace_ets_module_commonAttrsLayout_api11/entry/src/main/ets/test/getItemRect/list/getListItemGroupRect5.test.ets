@@ -48,12 +48,14 @@ export default function getListItemGroupRect5() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect5_0100
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set listDirection of list to Axis.Vertical
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect5_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect5_0100
+     * @tc.desc   set index to 0,set listDirection of list to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect5_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect5_0100] START');
@@ -109,12 +111,14 @@ export default function getListItemGroupRect5() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect5_0200
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set listDirection of list to Axis.Horizontal
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect5_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect5_0200
+     * @tc.desc   set index to 0,set listDirection of list to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect5_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect5_0200] START');

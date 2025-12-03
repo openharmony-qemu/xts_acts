@@ -21,7 +21,6 @@ export default function systemDateTimeSyncJsunit() {
     console.info('====>---------------systemDateTimeTest start-----------------------');
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTime_sync_0010
      * @tc.number SUB_systemDateTime_getTime_sync_0010
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -39,7 +38,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTime_sync_0020
      * @tc.number SUB_systemDateTime_getTime_sync_0020
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -57,7 +55,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTime_sync_0030
      * @tc.number SUB_systemDateTime_getTime_sync_0030
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
@@ -75,7 +72,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0050
      * @tc.number SUB_systemDateTime_getUptime_sync_0050
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -93,7 +89,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0060
      * @tc.number SUB_systemDateTime_getUptime_sync_0060
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -111,7 +106,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0070
      * @tc.number SUB_systemDateTime_getUptime_sync_0070
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -129,7 +123,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0090
      * @tc.number SUB_systemDateTime_getUptime_sync_0090
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
@@ -147,7 +140,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0100
      * @tc.number SUB_systemDateTime_getUptime_sync_0100
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -165,7 +157,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0110
      * @tc.number SUB_systemDateTime_getUptime_sync_0110
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -183,7 +174,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getTimezoneSync_sync_0130
      * @tc.number SUB_systemDateTime_getTimezoneSync_sync_0130
      * @tc.desc   Test systemTimeDate_setTimezone API functionality.
@@ -201,7 +191,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getUptime_sync_0150
      * @tc.number SUB_systemDateTime_getUptime_sync_0150
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -225,7 +214,6 @@ export default function systemDateTimeSyncJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_systemDateTime_getAutoTimeStatus_sync_0100
      * @tc.number SUB_systemDateTime_getAutoTimeStatus_sync_0100
      * @tc.desc   Test systemTimeDate_getAutoTimeStatus API functionality..

@@ -28,7 +28,7 @@ import hilog from '@ohos.hilog';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { Web } from '@ohos.arkui.component';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test.ets';
 import web_webview from '@ohos.web.webview'
 import { Callback } from '@ohos.base'
@@ -54,7 +54,7 @@ struct webviewTerminateRenderProcess {
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;

@@ -79,12 +79,12 @@ export default function ImageCreatorOnTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATOR_ON_001
-     * @tc.name      : ImageCreator_on_callback_001
-     * @tc.desc      : ImageCreator_on
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageCreator_on_callback_001
+     * @tc.number IMAGE_CREATOR_ON_001
+     * @tc.desc   ImageCreator_on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageCreator_on_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_on_callback_001';
@@ -96,12 +96,12 @@ export default function ImageCreatorOnTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATOR_ON_002
-     * @tc.name      : ImageCreator_on_callback_002
-     * @tc.desc      : ImageCreator_on
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   ImageCreator_on_callback_002
+     * @tc.number IMAGE_CREATOR_ON_002
+     * @tc.desc   ImageCreator_on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageCreator_on_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'ImageCreator_on_callback_002';

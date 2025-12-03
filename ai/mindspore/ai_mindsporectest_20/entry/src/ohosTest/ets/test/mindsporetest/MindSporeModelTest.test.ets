@@ -87,14 +87,14 @@ export default function MindSporeModelTest() {
       });
     })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGCREATE_0100
-       * @tc.name       : testOH_AI_TrainCfgCreate0100
-       * @tc.desc       : testing OH_AI_TrainCfgCreate interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgCreate0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGCREATE_0100
+     * @tc.desc   testing OH_AI_TrainCfgCreate interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgCreate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -110,14 +110,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGDESTROY_0100
-       * @tc.name       : testOH_AI_TrainCfgDestroy0100
-       * @tc.desc       : testing OH_AI_TrainCfgDestroy interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgDestroy0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGDESTROY_0100
+     * @tc.desc   testing OH_AI_TrainCfgDestroy interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgDestroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -133,14 +133,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETLOSSNAME_0100
-       * @tc.name       : testOH_AI_TrainCfgGetLossName0100
-       * @tc.desc       : testing OH_AI_TrainCfgGetLossName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgGetLossName0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETLOSSNAME_0100
+     * @tc.desc   testing OH_AI_TrainCfgGetLossName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgGetLossName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -156,14 +156,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETLOSSNAME_0200
-       * @tc.name       : testOH_AI_TrainCfgGetLossName0200
-       * @tc.desc       : testing OH_AI_TrainCfgGetLossName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgGetLossName0200
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETLOSSNAME_0200
+     * @tc.desc   testing OH_AI_TrainCfgGetLossName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgGetLossName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -179,14 +179,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETLOSSNAME_0300
-       * @tc.name       : testOH_AI_TrainCfgGetLossName0300
-       * @tc.desc       : testing OH_AI_TrainCfgGetLossName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgGetLossName0300
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETLOSSNAME_0300
+     * @tc.desc   testing OH_AI_TrainCfgGetLossName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgGetLossName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -202,14 +202,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGSETLOSSNAME_0100
-       * @tc.name       : testOH_AI_TrainCfgSetLossName0100
-       * @tc.desc       : testing OH_AI_TrainCfgSetLossName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgSetLossName0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGSETLOSSNAME_0100
+     * @tc.desc   testing OH_AI_TrainCfgSetLossName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgSetLossName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -225,14 +225,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETOPTIMIZATIONLEVEL_0100
-       * @tc.name       : testOH_AI_TrainCfgGetOptimizationLevel0100
-       * @tc.desc       : testing OH_AI_TrainCfgGetOptimizationLevel interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgGetOptimizationLevel0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETOPTIMIZATIONLEVEL_0100
+     * @tc.desc   testing OH_AI_TrainCfgGetOptimizationLevel interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgGetOptimizationLevel0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -248,14 +248,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETOPTIMIZATIONLEVEL_0200
-       * @tc.name       : testOH_AI_TrainCfgGetOptimizationLevel0200
-       * @tc.desc       : testing OH_AI_TrainCfgGetOptimizationLevel interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgGetOptimizationLevel0200
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGGETOPTIMIZATIONLEVEL_0200
+     * @tc.desc   testing OH_AI_TrainCfgGetOptimizationLevel interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgGetOptimizationLevel0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -271,14 +271,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGSETOPTIMIZATIONLEVEL_0100
-       * @tc.name       : testOH_AI_TrainCfgSetOptimizationLevel0100
-       * @tc.desc       : testing OH_AI_TrainCfgSetOptimizationLevel interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgSetOptimizationLevel0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGSETOPTIMIZATIONLEVEL_0100
+     * @tc.desc   testing OH_AI_TrainCfgSetOptimizationLevel interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgSetOptimizationLevel0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -294,14 +294,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINCFGSETOPTIMIZATIONLEVEL_0200
-       * @tc.name       : testOH_AI_TrainCfgSetOptimizationLevel0200
-       * @tc.desc       : testing OH_AI_TrainCfgSetOptimizationLevel interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainCfgSetOptimizationLevel0200
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINCFGSETOPTIMIZATIONLEVEL_0200
+     * @tc.desc   testing OH_AI_TrainCfgSetOptimizationLevel interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainCfgSetOptimizationLevel0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -317,14 +317,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINMODELBUILD_0100
-       * @tc.name       : testOH_AI_TrainModelBuild0100
-       * @tc.desc       : testing OH_AI_TrainModelBuild interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainModelBuild0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINMODELBUILD_0100
+     * @tc.desc   testing OH_AI_TrainModelBuild interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainModelBuild0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -340,14 +340,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_TRAINMODELBUILDFROMFILE_0100
-       * @tc.name       : testOH_AI_TrainModelBuildFromFile0100
-       * @tc.desc       : testing OH_AI_TrainModelBuildFromFile interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_TrainModelBuildFromFile0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_TRAINMODELBUILDFROMFILE_0100
+     * @tc.desc   testing OH_AI_TrainModelBuildFromFile interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_TrainModelBuildFromFile0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -363,14 +363,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_RUNSTEP_0100
-       * @tc.name       : testOH_AI_RunStep0100
-       * @tc.desc       : testing OH_AI_RunStep interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_RunStep0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_RUNSTEP_0100
+     * @tc.desc   testing OH_AI_RunStep interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_RunStep0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -386,14 +386,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelSetLearningRate_0100
-       * @tc.name       : testOH_AI_ModelSetLearningRate0100
-       * @tc.desc       : testing OH_AI_ModelSetLearningRate interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelSetLearningRate0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelSetLearningRate_0100
+     * @tc.desc   testing OH_AI_ModelSetLearningRate interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelSetLearningRate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         // let file = fs.openSync("/data/test/lenet_train.ms",fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE)
@@ -411,14 +411,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelGetLearningRate_0100
-       * @tc.name       : testOH_AI_ModelGetLearningRate0100
-       * @tc.desc       : testing OH_AI_ModelGetLearningRate interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelGetLearningRate0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelGetLearningRate_0100
+     * @tc.desc   testing OH_AI_ModelGetLearningRate interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelGetLearningRate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -434,14 +434,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelGetWeights_0100
-       * @tc.name       : testOH_AI_ModelGetWeights0100
-       * @tc.desc       : testing OH_AI_ModelGetWeights interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelGetWeights0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelGetWeights_0100
+     * @tc.desc   testing OH_AI_ModelGetWeights interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelGetWeights0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -457,14 +457,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelUpdateWeights_0100
-       * @tc.name       : testOH_AI_ModelUpdateWeights0100
-       * @tc.desc       : testing OH_AI_ModelUpdateWeights interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelUpdateWeights0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelUpdateWeights_0100
+     * @tc.desc   testing OH_AI_ModelUpdateWeights interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelUpdateWeights0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -480,14 +480,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelGetTrainMode_0100
-       * @tc.name       : testOH_AI_ModelGetTrainMode0100
-       * @tc.desc       : testing OH_AI_ModelGetTrainMode interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelGetTrainMode0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelGetTrainMode_0100
+     * @tc.desc   testing OH_AI_ModelGetTrainMode interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelGetTrainMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -503,14 +503,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelSetTrainMode_0100
-       * @tc.name       : testOH_AI_ModelSetTrainMode0100
-       * @tc.desc       : testing OH_AI_ModelSetTrainMode interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelSetTrainMode0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelSetTrainMode_0100
+     * @tc.desc   testing OH_AI_ModelSetTrainMode interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelSetTrainMode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -526,14 +526,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelSetupVirtualBatch_0100
-       * @tc.name       : testOH_AI_ModelSetupVirtualBatch0100
-       * @tc.desc       : testing OH_AI_ModelSetupVirtualBatch interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelSetupVirtualBatch0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelSetupVirtualBatch_0100
+     * @tc.desc   testing OH_AI_ModelSetupVirtualBatch interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelSetupVirtualBatch0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -549,14 +549,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ExportModel_0100
-       * @tc.name       : testOH_AI_ExportModel0100
-       * @tc.desc       : testing OH_AI_ExportModel interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ExportModel0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ExportModel_0100
+     * @tc.desc   testing OH_AI_ExportModel interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ExportModel0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let file1 = fs.openSync("/data/storage/el2/base/files/lenet_train_infer.ms", fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -573,14 +573,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ExportModelBuffer_0100
-       * @tc.name       : testOH_AI_ExportModelBuffer0100
-       * @tc.desc       : testing OH_AI_ExportModelBuffer interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ExportModelBuffer0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ExportModelBuffer_0100
+     * @tc.desc   testing OH_AI_ExportModelBuffer interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ExportModelBuffer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -596,14 +596,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ExportWeightsCollaborateWithMicro_0100
-       * @tc.name       : testOH_AI_ExportWeightsCollaborateWithMicro0100
-       * @tc.desc       : testing OH_AI_ExportWeightsCollaborateWithMicro interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ExportWeightsCollaborateWithMicro0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ExportWeightsCollaborateWithMicro_0100
+     * @tc.desc   testing OH_AI_ExportWeightsCollaborateWithMicro interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ExportWeightsCollaborateWithMicro0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let file = fs.openSync("/data/storage/el2/base/files/xiaoyi_train_codegen_net1.bin", fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -620,14 +620,14 @@ export default function MindSporeModelTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_AI_MINDSPORE_OH_AI_ModelLoadConfig_0100
-       * @tc.name       : testOH_AI_ModelLoadConfig0100
-       * @tc.desc       : testing OH_AI_ModelLoadConfig interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_AI_ModelLoadConfig0100
+     * @tc.number SUB_AI_MINDSPORE_OH_AI_ModelLoadConfig_0100
+     * @tc.desc   testing OH_AI_ModelLoadConfig interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_AI_ModelLoadConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       let file = fs.openSync("/data/storage/el2/base/files/ml_face_isface.config", fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);

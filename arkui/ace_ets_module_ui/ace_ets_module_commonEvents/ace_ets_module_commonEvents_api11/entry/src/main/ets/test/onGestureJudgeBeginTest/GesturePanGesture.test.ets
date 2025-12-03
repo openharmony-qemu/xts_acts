@@ -54,12 +54,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
     /**
-     * @tc.number    GesturePanGesture_0100
-     * @tc.name    GesturePanGesture_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   GesturePanGesture_0100
+     * @tc.number GesturePanGesture_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GesturePanGesture_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GesturePanGesture_0100 START');

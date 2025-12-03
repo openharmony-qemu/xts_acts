@@ -26,52 +26,52 @@ export default function swiperAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testSwiperAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for Swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for Swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testSwiperAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for Swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for Swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testSwiperAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for Swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for Swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testSwiperAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for Swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for Swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperAccessibilityGroup004()).assertEqual(0)

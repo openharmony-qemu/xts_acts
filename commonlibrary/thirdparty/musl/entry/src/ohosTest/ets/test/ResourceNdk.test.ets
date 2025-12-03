@@ -25,12 +25,12 @@ export default function resourceNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_SETPRIORITY_0100
-     * @tc.name       : testMuslResourceSetpriority001
-     * @tc.desc       : test setpriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceSetpriority001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_SETPRIORITY_0100
+     * @tc.desc   test setpriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceSetpriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.setpriority(-20);
@@ -39,12 +39,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_SETPRIORITY_0200
-     * @tc.name       : testMuslResourceSetpriority002
-     * @tc.desc       : test setpriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceSetpriority002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_SETPRIORITY_0200
+     * @tc.desc   test setpriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceSetpriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.setpriority(-19);
@@ -53,12 +53,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT_0100
-     * @tc.name       : testMuslResourceSetrlimit001
-     * @tc.desc       : test setrlimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceSetrlimit001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT_0100
+     * @tc.desc   test setrlimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceSetrlimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.setrlimit(1);
@@ -67,12 +67,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT_0200
-     * @tc.name       : testMuslResourceSetrlimit002
-     * @tc.desc       : test setrlimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceSetrlimit002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT_0200
+     * @tc.desc   test setrlimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceSetrlimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.setrlimit(0);
@@ -81,12 +81,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT64_0100
-     * @tc.name       : testMuslResourceSetrlimit64001
-     * @tc.desc       : test setrlimit64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceSetrlimit64001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT64_0100
+     * @tc.desc   test setrlimit64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceSetrlimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.setrlimit64(1);
@@ -95,12 +95,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT64_0200
-     * @tc.name       : testMuslResourceSetrlimit64002
-     * @tc.desc       : test setrlimit64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslResourceSetrlimit64002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_SETRLIMIT64_0200
+     * @tc.desc   test setrlimit64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceSetrlimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.setrlimit64(0);
@@ -109,12 +109,12 @@ export default function resourceNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETPRIORITY_0100
-     * @tc.name       : testMuslResourceGetPriority001
-     * @tc.desc       : test getpriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetPriority001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETPRIORITY_0100
+     * @tc.desc   test getpriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetPriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getPriority(0);
@@ -124,12 +124,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETPRIORITY_0200
-     * @tc.name       : testMuslResourceGetPriority002
-     * @tc.desc       : test getpriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetPriority002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETPRIORITY_0200
+     * @tc.desc   test getpriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetPriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getPriority(1);
@@ -139,12 +139,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETPRIORITY_0300
-     * @tc.name       : testMuslResourceGetPriority003
-     * @tc.desc       : test getpriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetPriority003
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETPRIORITY_0300
+     * @tc.desc   test getpriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetPriority003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getPriority(2);
@@ -154,12 +154,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT_0100
-     * @tc.name       : testMuslResourceGetRLimit001
-     * @tc.desc       : test getrlimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetRLimit001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT_0100
+     * @tc.desc   test getrlimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getRLimit(0);
@@ -169,12 +169,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT_0200
-     * @tc.name       : testMuslResourceGetRLimit002
-     * @tc.desc       : test getrlimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetRLimit002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT_0200
+     * @tc.desc   test getrlimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getRLimit(3);
@@ -184,12 +184,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT_0300
-     * @tc.name       : testMuslResourceGetRLimit003
-     * @tc.desc       : test getrlimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetRLimit003
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT_0300
+     * @tc.desc   test getrlimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRLimit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getRLimit(7);
@@ -199,12 +199,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETRUSAGE_0100
-     * @tc.name       : testMuslResourceGetRUsage001
-     * @tc.desc       : test getrusage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetRUsage001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRUSAGE_0100
+     * @tc.desc   test getrusage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getRUsage(0);
@@ -214,12 +214,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETRUSAGE_0200
-     * @tc.name       : testMuslResourceGetRUsage002
-     * @tc.desc       : test getrusage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetRUsage002
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRUSAGE_0200
+     * @tc.desc   test getrusage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getRUsage(-1);
@@ -229,12 +229,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_GETRUSAGE_0300
-     * @tc.name       : testMuslResourceGetRUsage003
-     * @tc.desc       : test getrusage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceGetRUsage003
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRUSAGE_0300
+     * @tc.desc   test getrusage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetRUsage003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getRUsage(1);
@@ -244,12 +244,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_PRLIMIT_0100
-     * @tc.name       : testMuslResourceprLimit001
-     * @tc.desc       : test prlimit
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceprLimit001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_PRLIMIT_0100
+     * @tc.desc   test prlimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceprLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.prLimit();
@@ -259,12 +259,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_RESOURCE_PRLIMIT64_0100
-     * @tc.name       : testMuslResourceprLimit64001
-     * @tc.desc       : test prlimit64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslResourceprLimit64001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_PRLIMIT64_0100
+     * @tc.desc   test prlimit64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceprLimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.prLimit64();
@@ -274,12 +274,12 @@ export default function resourceNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT64_0100
-     * @tc.name     : testMuslResourceGetrlimit64001
-     * @tc.desc     : test getrlimit64
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslResourceGetrlimit64001
+     * @tc.number SUB_THIRDPARTY_MUSL_RESOURCE_GETRLIMIT64_0100
+     * @tc.desc   test getrlimit64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslResourceGetrlimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = resource.getrlimit64();

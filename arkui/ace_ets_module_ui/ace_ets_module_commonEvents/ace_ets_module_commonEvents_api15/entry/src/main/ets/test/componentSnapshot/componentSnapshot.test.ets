@@ -41,13 +41,13 @@ export default function componentSnapshot() {
       done();
     });
 
-        /**
-     * @tc.number componentSnapshot_0100
+    /**
      * @tc.name   componentSnapshot_0100
-     * @tc.desc   test the componentSnapshot 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.number componentSnapshot_0100
+     * @tc.desc   test the componentSnapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('componentSnapshot_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[componentSnapshot_0100] START');
@@ -68,12 +68,12 @@ export default function componentSnapshot() {
     });
 
     /**
-     * @tc.number componentSnapshot_0200
      * @tc.name   componentSnapshot_0200
+     * @tc.number componentSnapshot_0200
      * @tc.desc   test the componentSnapshot error code
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('componentSnapshot_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[componentSnapshot_0200] START');

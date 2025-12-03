@@ -45,7 +45,6 @@ export default function usbNoPerCanIUseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testUsbNoPerCanIUse001
      * @tc.number SUB_Driver_Ext_USBNoPerCanIUse_0100
      * @tc.desc   OH_Usb_NoPerCanIUse face testing

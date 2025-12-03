@@ -23,13 +23,12 @@ export default function fileioTruncate() {
 describe('fileio_truncate', function () {
 
   /**
+   * @tc.name   fileio_truncate_async_000
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0000
-   * @tc.name fileio_truncate_async_000
-   * @tc.desc Test truncate() interfaces. Callback.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test truncate() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_truncate_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_truncate_async_000');
@@ -53,13 +52,12 @@ describe('fileio_truncate', function () {
   });
   
   /**
+   * @tc.name   fileio_truncate_async_001
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0100
-   * @tc.name fileio_truncate_async_001
-   * @tc.desc Test truncate() interfaces. Promise.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test truncate() interfaces. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_truncate_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_truncate_async_001');
@@ -89,13 +87,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_truncate_async_002
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0200
-   * @tc.name fileio_truncate_async_002
-   * @tc.desc Test truncate() interfaces. Callback.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test truncate() interfaces. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_truncate_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_truncate_async_002');
@@ -112,14 +109,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_truncate_async_003
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0300
-   * @tc.name fileio_truncate_async_003
-   * @tc.desc Test the truncate() interface. Promise.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_truncate_async_003', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_truncate_async_003');
@@ -141,14 +136,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_truncate_async_004
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0400
-   * @tc.name fileio_truncate_async_004
-   * @tc.desc Test the truncate() interface. Callback.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_truncate_async_004', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_truncate_async_004');
@@ -175,14 +168,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_truncate_async_005
    * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_0500
-   * @tc.name fileio_truncate_async_005
-   * @tc.desc Test the truncate() interface. Promise.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncate() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_truncate_async_005', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_truncate_async_005');
@@ -204,13 +195,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_truncate_sync_000
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0000
-   * @tc.name fileio_test_truncate_sync_000
-   * @tc.desc Test truncateSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test truncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_truncate_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_truncate_sync_000');
@@ -227,13 +217,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_truncate_sync_001
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0100
-   * @tc.name fileio_test_truncate_sync_001
-   * @tc.desc Test truncateSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test truncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_truncate_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_truncate_sync_001');
@@ -247,13 +236,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_truncate_sync_002
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0200
-   * @tc.name fileio_test_truncate_sync_002
-   * @tc.desc Test truncateSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test truncateSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_truncate_sync_002', Level.LEVEL0, function () {
     try {
@@ -265,14 +253,12 @@ describe('fileio_truncate', function () {
   });
 
   /**
+   * @tc.name   fileio_test_truncate_sync_003
    * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_0300
-   * @tc.name fileio_test_truncate_sync_003
-   * @tc.desc Test the truncateSync() interface.
-   * Use default truncateLen = 0.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the truncateSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_truncate_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_truncate_sync_003');

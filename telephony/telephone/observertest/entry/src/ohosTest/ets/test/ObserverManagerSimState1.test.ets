@@ -49,14 +49,14 @@ export default function observerManagerSimStateTest1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOn_0900
-    * @tc.name  : testTelephonyObserverSimStateChangeOn0900
-    * @tc.desc  : Subscribe to sim state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOn0900
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOn_0900
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOn0900';
       console.info(`${caseName} test start`);
@@ -74,14 +74,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-      * @tc.number: SUB_Telephony_Observer_SimStateChangeOnOptions_1700
-      * @tc.name  : testTelephonyObserverSimStateChangeOnOptions1700
-      * @tc.desc  : Subscribe to sim state change events with options.
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 1
-      */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions1700
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_1700
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOnOptions1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions1700';
       console.info(`${caseName} test start`);
@@ -101,14 +101,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOnOptions_1800
-    * @tc.name  : testTelephonyObserverSimStateChangeOnOptions1800
-    * @tc.desc  : Subscribe to sim state change events with options.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions1800
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_1800
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOnOptions1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions1800';
       console.info(`${caseName} test start`);
@@ -128,14 +128,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOnOptions_2000
-    * @tc.name  : testTelephonyObserverSimStateChangeOnOptions2000
-    * @tc.desc  : Subscribe to sim state change events with options.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions2000
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_2000
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOnOptions2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions2000';
       console.info(`${caseName} test start`);
@@ -155,14 +155,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOff_0300
-    * @tc.name  : testTelephonyObserverSimStateChangeOff0300
-    * @tc.desc  : Unsubscribe to sim state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOff0300
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0300
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0300';
       console.info(`${caseName} test start`);
@@ -186,14 +186,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOff_0400
-    * @tc.name  : testTelephonyObserverSimStateChangeOff0400
-    * @tc.desc  : Unsubscribe to sim state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOff0400
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0400
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOff0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0400';
       console.info(`${caseName} test start`);
@@ -215,14 +215,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Observer_SimStateChangeOff_0500
-    * @tc.name  : testTelephonyObserverSimStateChangeOff0500
-    * @tc.desc  : Unsubscribe to sim state change events.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 1
-    */
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOff0500
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0500
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTelephonyObserverSimStateChangeOff0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0500';
       console.info(`${caseName} test start`);

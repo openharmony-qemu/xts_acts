@@ -79,9 +79,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderIdProp
-         * @tc.desc      ACE
+         * @tc.name   testSliderIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderIdProp', Level.LEVEL0, async function(done) {
             console.info('testSliderIdProp START');
@@ -97,9 +100,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderClassProp
-         * @tc.desc      ACE
+         * @tc.name   testSliderClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderClassProp', Level.LEVEL0, async function(done) {
             console.info('testSliderClassProp START');
@@ -116,9 +122,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderClassPropNone START');
@@ -136,9 +145,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderRefProp
-         * @tc.desc      ACE
+         * @tc.name   testSliderRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderRefProp', Level.LEVEL0, async function(done) {
             console.info('testSliderRefProp START');
@@ -155,9 +167,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderRefPropNone START');
@@ -175,9 +190,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSliderDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSliderDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSliderDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSliderDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSliderFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testSliderFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSliderFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testSliderFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDataProp
-         * @tc.desc      ACE
+         * @tc.name   testSliderDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDataProp', Level.LEVEL0, async function(done) {
             console.info('testSliderDataProp START');
@@ -309,9 +345,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderDataPropNone START');
@@ -329,9 +368,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testSliderClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testSliderClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testSliderClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testSliderClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testSliderClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testSliderClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testSliderDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testSliderDirPropRtl START');
@@ -425,9 +479,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testSliderDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testSliderDirPropLtr START');
@@ -444,9 +501,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testSliderDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testSliderDirPropAuto START');
@@ -463,9 +523,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderDirPropNone START');
@@ -482,9 +545,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testSliderForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderForPropNull', Level.LEVEL0, async function(done) {
             console.info('testSliderForPropNull START');
@@ -502,9 +568,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testSliderForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderForPropOne', Level.LEVEL0, async function(done) {
             console.info('testSliderForPropOne START');
@@ -522,9 +591,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testSliderForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderForPropThree', Level.LEVEL0, async function(done) {
             console.info('testSliderForPropThree START');
@@ -542,9 +614,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSliderIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSliderIfPropTrue START');
@@ -562,9 +637,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSliderShowPropTrue START');
@@ -582,9 +660,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSliderShowPropFalse START');
@@ -602,9 +683,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testSliderShowPropNone START');
@@ -622,9 +706,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMin
-         * @tc.desc      ACE
+         * @tc.name   testSliderMin
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMin', Level.LEVEL0, async function(done) {
             console.info('testSliderMin START');
@@ -642,9 +729,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMax
-         * @tc.desc      ACE
+         * @tc.name   testSliderMax
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMax', Level.LEVEL0, async function(done) {
             console.info('testSliderMax START');
@@ -662,9 +752,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMaxNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderMaxNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMaxNone', Level.LEVEL0, async function(done) {
             console.info('testSliderMaxNone START');
@@ -682,9 +775,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderStep
-         * @tc.desc      ACE
+         * @tc.name   testSliderStep
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderStep', Level.LEVEL0, async function(done) {
             console.info('testSliderStep START');
@@ -702,9 +798,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderStepNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderStepNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderStepNone', Level.LEVEL0, async function(done) {
             console.info('testSliderStepNone START');
@@ -722,9 +821,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderValue
-         * @tc.desc      ACE
+         * @tc.name   testSliderValue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderValue', Level.LEVEL0, async function(done) {
             console.info('testSliderValue START');
@@ -742,9 +844,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderTypeContinuous
-         * @tc.desc      ACE
+         * @tc.name   testSliderTypeContinuous
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderTypeContinuous', Level.LEVEL0, async function(done) {
             console.info('testSliderTypeContinuous START');
@@ -762,9 +867,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderTypeIntermittent
-         * @tc.desc      ACE
+         * @tc.name   testSliderTypeIntermittent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderTypeIntermittent', Level.LEVEL0, async function(done) {
             console.info('testSliderTypeIntermittent START');
@@ -782,9 +890,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderTypeNone', Level.LEVEL0, async function(done) {
             console.info('testSliderTypeNone START');
@@ -802,9 +913,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMinicon
-         * @tc.desc      ACE
+         * @tc.name   testSliderMinicon
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMinicon', Level.LEVEL0, async function(done) {
             console.info('testSliderMinicon START');
@@ -822,9 +936,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMiniconNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderMiniconNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMiniconNone', Level.LEVEL0, async function(done) {
             console.info('testSliderMiniconNone START');
@@ -842,9 +959,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMaxicon
-         * @tc.desc      ACE
+         * @tc.name   testSliderMaxicon
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMaxicon', Level.LEVEL0, async function(done) {
             console.info('testSliderMaxicon START');
@@ -862,9 +982,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderMaxiconNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderMaxiconNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderMaxiconNone', Level.LEVEL0, async function(done) {
             console.info('testSliderMaxiconNone START');
@@ -882,9 +1005,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderModeInset
-         * @tc.desc      ACE
+         * @tc.name   testSliderModeOutset
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderModeOutset', Level.LEVEL0, async function(done) {
             console.info('testSliderModeOutset START');
@@ -902,9 +1028,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderModeInset
-         * @tc.desc      ACE
+         * @tc.name   testSliderModeInset
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderModeInset', Level.LEVEL0, async function(done) {
             console.info('testSliderModeInset START');
@@ -922,9 +1051,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderModeNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderModeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderModeNone', Level.LEVEL0, async function(done) {
             console.info('testSliderModeNone START');
@@ -942,9 +1074,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowstepsTrue
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowstepsTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowstepsTrue', Level.LEVEL0, async function(done) {
             console.info('testSliderShowstepsTrue START');
@@ -962,9 +1097,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowstepsFalse
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowstepsFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowstepsFalse', Level.LEVEL0, async function(done) {
             console.info('testSliderShowstepsFalse START');
@@ -982,9 +1120,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowstepsNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowstepsNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowstepsNone', Level.LEVEL0, async function(done) {
             console.info('testSliderShowstepsNone START');
@@ -1002,9 +1143,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowtipsTrue
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowtipsTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowtipsTrue', Level.LEVEL0, async function(done) {
             console.info('testSliderShowtipsTrue START');
@@ -1022,9 +1166,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowtipsFalse
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowtipsFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowtipsFalse', Level.LEVEL0, async function(done) {
             console.info('testSliderShowtipsFalse START');
@@ -1042,9 +1189,12 @@ export default function sliderPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSliderShowtipsNone
-         * @tc.desc      ACE
+         * @tc.name   testSliderShowtipsNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderShowtipsNone', Level.LEVEL0, async function(done) {
             console.info('testSliderShowtipsNone START');

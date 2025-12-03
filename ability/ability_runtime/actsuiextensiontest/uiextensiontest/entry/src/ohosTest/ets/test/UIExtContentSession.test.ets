@@ -51,12 +51,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0100
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0100
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0100
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0100';
@@ -121,12 +121,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0200
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0200
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0200
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0200';
@@ -191,12 +191,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0300
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0300
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0300';
@@ -261,12 +261,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0400
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0400
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0400';
@@ -331,12 +331,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0500
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0500
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0500
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0500';
@@ -400,12 +400,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0600
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0600
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0600
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0600';
@@ -469,12 +469,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0700
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0700
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0700
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0700';
@@ -538,12 +538,12 @@ export default function uiExtContentSessionTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0800
-     * @tc.name: LoadContentByName
-     * @tc.desc: Test load content by name.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0800
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0800
+     * @tc.desc   Test load content by name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIExtension_LoadContentByName_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'LoadContentByName_0800';

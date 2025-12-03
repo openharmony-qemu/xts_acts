@@ -80,9 +80,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupIdProp
-         * @tc.desc      ACE
+         * @tc.name   testPopupIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupIdProp', Level.LEVEL0, async function(done) {
             console.info('testPopupIdProp START');
@@ -98,9 +101,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupClassProp
-         * @tc.desc      ACE
+         * @tc.name   testPopupClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupClassProp', Level.LEVEL0, async function(done) {
             console.info('testPopupClassProp START');
@@ -116,9 +122,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupClassPropNone START');
@@ -137,9 +146,12 @@ export default function popupPropsJsTest() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupRefProp
-         * @tc.desc      ACE
+         * @tc.name   testPopupRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupRefProp', Level.LEVEL0, async function(done) {
             console.info('testPopupRefProp START');
@@ -156,9 +168,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupRefPropNone START');
@@ -176,9 +191,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPopupDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPopupDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPopupDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testPopupDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDataProp
-         * @tc.desc      ACE
+         * @tc.name   testPopupDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDataProp', Level.LEVEL0, async function(done) {
             console.info('testPopupDataProp START');
@@ -253,9 +280,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupDataPropNone START');
@@ -273,9 +303,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testPopupClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testPopupClickEffectPropSmall START');
@@ -292,9 +325,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testPopupClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testPopupClickEffectPropMedium START');
@@ -311,9 +347,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testPopupClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testPopupClickEffectPropLarge START');
@@ -330,9 +369,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupClickEffectPropNone START');
@@ -350,9 +392,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testPopupDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testPopupDirPropRtl START');
@@ -369,9 +414,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testPopupDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testPopupDirPropLtr START');
@@ -388,9 +436,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testPopupDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testPopupDirPropAuto START');
@@ -407,9 +458,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupDirPropNone START');
@@ -426,9 +480,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testPopupForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupForPropNull', Level.LEVEL0, async function(done) {
             console.info('testPopupForPropNull START');
@@ -446,9 +503,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPopupForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupForPropOne', Level.LEVEL0, async function(done) {
             console.info('testPopupForPropOne START');
@@ -466,9 +526,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPopupForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupForPropThree', Level.LEVEL0, async function(done) {
             console.info('testPopupForPropThree START');
@@ -486,9 +549,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPopupIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPopupIfPropTrue START');
@@ -507,9 +573,12 @@ export default function popupPropsJsTest() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPopupShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPopupShowPropTrue START');
@@ -527,9 +596,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPopupShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testPopupShowPropFalse START');
@@ -547,9 +619,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPopupShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testPopupShowPropNone START');
@@ -567,9 +642,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupTargetProp
-         * @tc.desc      ACE
+         * @tc.name   testPopupTargetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupTargetProp', Level.LEVEL0, async function(done) {
             console.info('testPopupTargetProp START');
@@ -587,9 +665,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPlacementPropLeft
-         * @tc.desc      ACE
+         * @tc.name   testPlacementPropLeft
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPlacementPropLeft', Level.LEVEL0, async function(done) {
             console.info('testPlacementPropLeft START');
@@ -607,9 +688,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPlacementPropRight
-         * @tc.desc      ACE
+         * @tc.name   testPlacementPropRight
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPlacementPropRight', Level.LEVEL0, async function(done) {
             console.info('testPlacementPropRight START');
@@ -627,9 +711,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPlacementPropTop
-         * @tc.desc      ACE
+         * @tc.name   testPlacementPropTop
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPlacementPropTop', Level.LEVEL0, async function(done) {
             console.info('testPlacementPropTop START');
@@ -647,9 +734,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testKeepAlivePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testKeepAlivePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testKeepAlivePropTrue', Level.LEVEL0, async function(done) {
             console.info('testKeepAlivePropTrue START');
@@ -667,9 +757,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testKeepAlivePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testKeepAlivePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testKeepAlivePropFalse', Level.LEVEL0, async function(done) {
             console.info('testKeepAlivePropFalse START');
@@ -687,9 +780,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testClickablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testClickablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testClickablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testClickablePropTrue START');
@@ -707,9 +803,12 @@ export default function popupPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testClickablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testClickablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testClickablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testClickablePropFalse START');
@@ -728,9 +827,12 @@ export default function popupPropsJsTest() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testArrowOffsetProp
-         * @tc.desc      ACE
+         * @tc.name   testArrowOffsetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testArrowOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testArrowOffsetProp START');

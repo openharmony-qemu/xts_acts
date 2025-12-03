@@ -37,9 +37,12 @@ using namespace testing::ext;
 
 #if defined(LITE_FS_NFS) || defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0100
- * @tc.name     basic function test : Test fcntl, use F_DUPFD to copy
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFcntl
+ * @tc.number SUB_KERNEL_FS_FCNTL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFcntl, Function | MediumTest | Level3)
 {
@@ -60,9 +63,12 @@ HWTEST_F(FileSystemTest, testFcntl, Function | MediumTest | Level3)
 #endif
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0110
- * @tc.name     basic function test : Test fcntl with F_GETFL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFcntlFgetfl
+ * @tc.number SUB_KERNEL_FS_FCNTL_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFcntlFgetfl, Function | MediumTest | Level3)
 {
@@ -81,9 +87,12 @@ HWTEST_F(FileSystemTest, testFcntlFgetfl, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0120
- * @tc.name     basic function test : Test fcntl with F_SETFL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFcntlFsetfl
+ * @tc.number SUB_KERNEL_FS_FCNTL_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFcntlFsetfl, Function | MediumTest | Level3)
 {
@@ -107,9 +116,12 @@ HWTEST_F(FileSystemTest, testFcntlFsetfl, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0200
- * @tc.name     basic function test : test lseek with SEEK_CUR
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testLseek
+ * @tc.number SUB_KERNEL_FS_FCNTL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testLseek, Function | MediumTest | Level3)
 {
@@ -139,9 +151,12 @@ HWTEST_F(FileSystemTest, testLseek, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0210
- * @tc.name     basic function test : test lseek wioth SEEK_SET
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testLseekSeekSet
+ * @tc.number SUB_KERNEL_FS_FCNTL_0210
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testLseekSeekSet, Function | MediumTest | Level3)
 {
@@ -170,9 +185,12 @@ HWTEST_F(FileSystemTest, testLseekSeekSet, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0220
- * @tc.name     basic function test : test lseek wioth SEEK_END
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testLseekSeekEnd
+ * @tc.number SUB_KERNEL_FS_FCNTL_0220
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testLseekSeekEnd, Function | MediumTest | Level3)
 {
@@ -197,9 +215,12 @@ HWTEST_F(FileSystemTest, testLseekSeekEnd, Function | MediumTest | Level3)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0300
- * @tc.name     basic function test : Use the fallocate function to pre-allocate large space to the file
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFallocate
+ * @tc.number SUB_KERNEL_FS_FCNTL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testFallocate, Function | MediumTest | Level2)
 {
@@ -243,9 +264,12 @@ HWTEST_F(FileSystemTest, testFallocate, Function | MediumTest | Level2)
 
 #if defined(LITE_FS_VFAT)
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0310
- * @tc.name     basic function test : Use the fallocate function to pre-allocate a small space to the file,
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testFallocateSmallSize
+ * @tc.number SUB_KERNEL_FS_FCNTL_0310
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testFallocateSmallSize, Function | MediumTest | Level2)
 {
@@ -288,9 +312,12 @@ HWTEST_F(FileSystemTest, testFallocateSmallSize, Function | MediumTest | Level2)
 #endif
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0400
- * @tc.name     basic function test : test open with O_RDWR O_CREAT O_EXCL when the file does not exist
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpen
+ * @tc.number SUB_KERNEL_FS_FCNTL_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testOpen, Function | MediumTest | Level2)
 {
@@ -300,9 +327,12 @@ HWTEST_F(FileSystemTest, testOpen, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0410
- * @tc.name     basic function test : test open with error number EEXIST
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpenEexist
+ * @tc.number SUB_KERNEL_FS_FCNTL_0410
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testOpenEexist, Function | MediumTest | Level2)
 {
@@ -318,9 +348,12 @@ HWTEST_F(FileSystemTest, testOpenEexist, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0420
- * @tc.name     basic function test : test open with error number EISDIR
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpenEisdir
+ * @tc.number SUB_KERNEL_FS_FCNTL_0420
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testOpenEisdir, Function | MediumTest | Level2)
 {
@@ -335,9 +368,12 @@ HWTEST_F(FileSystemTest, testOpenEisdir, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0430
- * @tc.name     basic function test : test open with error number ENOENT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpenEnoent
+ * @tc.number SUB_KERNEL_FS_FCNTL_0430
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testOpenEnoent, Function | MediumTest | Level2)
 {
@@ -350,9 +386,12 @@ HWTEST_F(FileSystemTest, testOpenEnoent, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_FCNTL_0440
- * @tc.name     basic function test : test open with error number ENAMETOOLONG
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpenEnametoolong
+ * @tc.number SUB_KERNEL_FS_FCNTL_0440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testOpenEnametoolong, Function | MediumTest | Level2)
 {

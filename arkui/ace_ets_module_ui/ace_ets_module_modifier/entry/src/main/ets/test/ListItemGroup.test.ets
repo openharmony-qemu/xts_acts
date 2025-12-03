@@ -42,12 +42,12 @@ export default function listItemGroupJsunit() {
     });
 
     /**
+     * @tc.name   testList_item_group0007
      * @tc.number testList_item_group0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set divider values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testList_item_group0007', Level.LEVEL0, async (done: Function) => {
       console.info('testList_item_group0007 START');
@@ -65,12 +65,12 @@ export default function listItemGroupJsunit() {
     });
 
     /**
+     * @tc.name   testList_item_group0008
      * @tc.number testList_item_group0008
-     * @tc.name Test the properties of components
-     * @tc.desc Change divider values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change divider values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testList_item_group0008', Level.LEVEL0, async (done: Function) => {
       console.info('testList_item_group0008 START');

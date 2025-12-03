@@ -26,49 +26,49 @@ export default function customComponentGetChildAtTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0001
-     * @tc.name       : testCustomComponentGetChildAt001
-     * @tc.desc       : testing childAt for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildAt001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0001
+     * @tc.desc   testing childAt for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildAt001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildAt001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0002
-     * @tc.name       : testCustomComponentGetChildAt002
-     * @tc.desc       : testing childAt for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildAt002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0002
+     * @tc.desc   testing childAt for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildAt002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildAt002()).assertEqual(0)
       done()
     }) 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0003
-     * @tc.name       : testCustomComponentGetChildAt003
-     * @tc.desc       : testing childAt for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildAt003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0003
+     * @tc.desc   testing childAt for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildAt003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildAt003()).assertEqual(0)
       done()
     }) 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0004
-     * @tc.name       : testCustomComponentGetChildAt004
-     * @tc.desc       : testing childAt for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetChildAt004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_CHILD_At_0004
+     * @tc.desc   testing childAt for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetChildAt004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetChildAt004()).assertEqual(0)

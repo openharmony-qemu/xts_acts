@@ -49,9 +49,12 @@ export default function flexAlign_SpaceBetween_fixedParentChangeFirstWidth() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapChangeFirstWidth
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_1300
-     * @tc.name testAlignSpaceBetweenRowNoWrapChangeFirstWidth
-     * @tc.desc Parent component fixed, child component binding width properties
+     * @tc.desc   Parent component fixed, child component binding width properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapChangeFirstWidth',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapChangeFirstWidth START');

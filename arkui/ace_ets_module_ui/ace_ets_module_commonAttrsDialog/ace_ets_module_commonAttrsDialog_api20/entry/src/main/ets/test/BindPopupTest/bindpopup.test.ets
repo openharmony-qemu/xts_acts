@@ -48,12 +48,14 @@ export default function BindPopupTest() {
       console.info('BindPopupTest after each called');
     })
 
-    /* *
-    * @tc.number: bindPopupTest_001
-    * @tc.name  : bindPopupTest_001
-    * @tc.desc  : Test the bindpopup component
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   bindPopupTest_001
+     * @tc.number bindPopupTest_001
+     * @tc.desc   Test the bindpopup component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('bindPopupTest_001', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

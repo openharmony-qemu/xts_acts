@@ -46,6 +46,14 @@ export default function gridItemOnSelectJsunit() {
     });
 
 
+    /**
+     * @tc.name   testgridItemOnSelect0001
+     * @tc.number testgridItemOnSelect0001
+     * @tc.desc   testgridItemOnSelect0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testgridItemOnSelect0001', Level.LEVEL1, async () => {
       console.info('testgridItemOnSelect testgridItemOnSelect0001 START');
       await Utils.sleep(2000);

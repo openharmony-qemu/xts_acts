@@ -14,7 +14,7 @@
  */
 export const getCapacity: () => number;
 
-export const getPluggedType: () => string;
+export const getPluggedType: () => BatteryInfo_BatteryPluggedType;
 
 export const commonEventKeyCapacity: () => string;
 
@@ -29,5 +29,7 @@ export enum BatteryInfo_BatteryPluggedType {
   
   USB,
   
-  WIRELESS
+  WIRELESS,
+
+  BUTT
 }

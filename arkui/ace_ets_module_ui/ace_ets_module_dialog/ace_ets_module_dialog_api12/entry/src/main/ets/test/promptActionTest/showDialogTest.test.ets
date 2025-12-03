@@ -54,13 +54,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_0100
      * @tc.number SUB_ACE_showDialogTest_0100
-     * @tc.name showDialogTest_0100
-     * @tc.desc To test default  showDialog backgroundBlurStyle  BlurStyle.Thin
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test default  showDialog backgroundBlurStyle  BlurStyle.Thin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0100 START');
       let driver = await Driver.create()
@@ -90,13 +90,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_0200
      * @tc.number SUB_ACE_showDialogTest_0200
-     * @tc.name showDialogTest_0200
-     * @tc.desc To test  showDialog backgroundBlurStyle  BlurStyle.Regular
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialog backgroundBlurStyle  BlurStyle.Regular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0200 START');
       let driver = await Driver.create()
@@ -130,13 +130,13 @@ export default function showDialogTest() {
     });
     
     /**
+     * @tc.name   showDialogTest_0300
      * @tc.number SUB_ACE_showDialogTest_0300
-     * @tc.name showDialogTest_0300
-     * @tc.desc To test  showDialogTest BlurStyle.BACKGROUND_THIN
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest BlurStyle.BACKGROUND_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0300 START');
       let driver = await Driver.create()
@@ -169,13 +169,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_0400
      * @tc.number SUB_ACE_showDialogTest_0400
-     * @tc.name showDialogTest_0400
-     * @tc.desc To test  showDialogTest BlurStyle.Thick
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest BlurStyle.Thick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0400 START');
       let driver = await Driver.create()
@@ -210,13 +210,13 @@ export default function showDialogTest() {
 
     
     /**
+     * @tc.name   showDialogTest_0500
      * @tc.number SUB_ACE_showDialogTest_0500
-     * @tc.name showDialogTest_0500
-     * @tc.desc To test  showDialogTest shadow backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest shadow backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0500 START');
       let driver = await Driver.create()
@@ -247,13 +247,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_0600
      * @tc.number SUB_ACE_showDialogTest_0600
-     * @tc.name showDialogTest_0600
-     * @tc.desc To test  showDialogTest backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0600 START');
       let driver = await Driver.create()
@@ -283,14 +283,14 @@ export default function showDialogTest() {
     });
 
 
-     /**
+    /**
+     * @tc.name   showDialogTest_0700
      * @tc.number SUB_ACE_showDialogTest_0700
-     * @tc.name showDialogTest_0700
-     * @tc.desc To test  showDialogTest backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0700 START');
       let driver = await Driver.create()
@@ -322,13 +322,13 @@ export default function showDialogTest() {
       done();
     });
     /**
+     * @tc.name   showDialogTest_0800
      * @tc.number SUB_ACE_showDialogTest_0800
-     * @tc.name showDialogTest_0800
-     * @tc.desc To test  showDialogTest backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0800 START');
       let driver = await Driver.create()
@@ -352,13 +352,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_0900
      * @tc.number SUB_ACE_showDialogTest_0900
-     * @tc.name showDialogTest_0900
-     * @tc.desc To test  showDialogTest backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_0900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_0900 START');
       let driver = await Driver.create()
@@ -389,13 +389,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_1000
      * @tc.number SUB_ACE_showDialogTest_1000
-     * @tc.name showDialogTest_1000
-     * @tc.desc To test  showDialogTest backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_1000', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_1000 START');
       let driver = await Driver.create()
@@ -425,13 +425,13 @@ export default function showDialogTest() {
       done();
     });
     /**
+     * @tc.name   showDialogTest_1100
      * @tc.number SUB_ACE_showDialogTest_1100
-     * @tc.name showDialogTest_1100
-     * @tc.desc To test  showDialogTest backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_1100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_1100 START');
       let driver = await Driver.create()
@@ -462,13 +462,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_1200
      * @tc.number SUB_ACE_showDialogTest_1200
-     * @tc.name showDialogTest_1200
-     * @tc.desc To test  showDialogTest backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_1200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_1200 START');
       let driver = await Driver.create()
@@ -500,13 +500,13 @@ export default function showDialogTest() {
     });
 
     /**
+     * @tc.name   showDialogTest_1300
      * @tc.number SUB_ACE_showDialogTest_1300
-     * @tc.name showDialogTest_1300
-     * @tc.desc To test  showDialogTest backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_1300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_1300 START');
       let driver = await Driver.create()
@@ -536,14 +536,14 @@ export default function showDialogTest() {
       console.info('showDialogTest_1300 END');
       done();
     });
-/**
+    /**
+     * @tc.name   showDialogTest_1400
      * @tc.number SUB_ACE_showDialogTest_1400
-     * @tc.name showDialogTest_1400
-     * @tc.desc To test  showDialogTest backgroundBlurStyle 
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showDialogTest backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showDialogTest_1400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showDialogTest_1400 START');
       let driver = await Driver.create()

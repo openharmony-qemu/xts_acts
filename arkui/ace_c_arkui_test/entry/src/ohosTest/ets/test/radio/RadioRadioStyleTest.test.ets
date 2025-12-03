@@ -26,65 +26,65 @@ export default function radioRadioStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_STYLE_0100
-     * @tc.name       : testRadioRadioStyle001
-     * @tc.desc       : testing Style for radio with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioRadioStyle001
+     * @tc.number SUB_ARKUI_CAPI_RADIO_STYLE_0100
+     * @tc.desc   testing Style for radio with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioRadioStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioRadioStyle001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_STYLE_0200
-     * @tc.name       : testRadioRadioStyle002
-     * @tc.desc       : testing Style for radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioRadioStyle002
+     * @tc.number SUB_ARKUI_CAPI_RADIO_STYLE_0200
+     * @tc.desc   testing Style for radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioRadioStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioRadioStyle002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_STYLE_0300
-     * @tc.name       : testRadioRadioStyle003
-     * @tc.desc       : testing Style for radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioRadioStyle003
+     * @tc.number SUB_ARKUI_CAPI_RADIO_STYLE_0300
+     * @tc.desc   testing Style for radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioRadioStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioRadioStyle003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_STYLE_0400
-     * @tc.name       : testRadioRadioStyle004
-     * @tc.desc       : testing Style for radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioRadioStyle004
+     * @tc.number SUB_ARKUI_CAPI_RADIO_STYLE_0400
+     * @tc.desc   testing Style for radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioRadioStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioRadioStyle004()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RADIO_STYLE_0500
-     * @tc.name       : testRadioRadioStyle005
-     * @tc.desc       : testing Style for radio with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRadioRadioStyle005
+     * @tc.number SUB_ARKUI_CAPI_RADIO_STYLE_0500
+     * @tc.desc   testing Style for radio with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadioRadioStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRadioRadioStyle005()).assertEqual(0)

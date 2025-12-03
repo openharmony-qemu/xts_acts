@@ -21,61 +21,61 @@ export default function listSpaceTest() {
 
   describe('ListSpaceTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SPACE_0001
-     * @tc.name       : testListSpace001
-     * @tc.desc       : testing space for list with 4 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSpace001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SPACE_0001
+     * @tc.desc   testing space for list with 4 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSpace001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSpace001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SPACE_0002
-     * @tc.name       : testListSpace002
-     * @tc.desc       : testing space for list with 1000 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSpace002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SPACE_0002
+     * @tc.desc   testing space for list with 1000 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSpace002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSpace002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SPACE_0003
-     * @tc.name       : testListSpace003
-     * @tc.desc       : testing space for list with -1 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSpace003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SPACE_0003
+     * @tc.desc   testing space for list with -1 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSpace003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSpace003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SPACE_0004
-     * @tc.name       : testListSpace004
-     * @tc.desc       : testing space for list with 0 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSpace004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SPACE_0004
+     * @tc.desc   testing space for list with 0 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSpace004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSpace004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SPACE_0005
-     * @tc.name       : testListSpace005
-     * @tc.desc       : testing space for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSpace005
+     * @tc.number SUB_ARKUI_CAPI_LIST_SPACE_0005
+     * @tc.desc   testing space for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSpace005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSpace005()).assertEqual(0)

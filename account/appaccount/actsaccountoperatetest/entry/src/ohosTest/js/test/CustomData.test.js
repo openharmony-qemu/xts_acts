@@ -18,12 +18,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function ActsAccountCustomData() {
     describe('ActsAccountCustomData', function () {
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0100
-        * @tc.name      : The correct calls setCustomData and getCustomData get the value
-        * @tc.desc      : The setCustomData setting valueis called when the forwarding parameters
-        *                 are correct, and then getCustomData is called for the value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0100
+         * @tc.number ActsAccountCustomData_0100
+         * @tc.desc   The setCustomData setting valueis called when the forwarding parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountCustomData_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountCustomData_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -50,12 +52,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0200
-        * @tc.name      : The correct calls setCustomData and getCustomData get the value
-        * @tc.desc      : The setCustomData setting value is called when the forwarding parameters
-        *                 are correct, and then getCustomData is called for the value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0200
+         * @tc.number ActsAccountCustomData_0200
+         * @tc.desc   The setCustomData setting value is called when the forwarding parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountCustomData_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountCustomData_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -102,11 +106,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0300
-        * @tc.name      : Get it directly without setting value
-        * @tc.desc      : Call getCustomData directly to get value without calling setCustomData(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0300
+         * @tc.number ActsAccountCustomData_0300
+         * @tc.desc   Call getCustomData directly to get value without calling setCustomData(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -129,11 +136,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0400
-        * @tc.name      : Get it directly without setting value
-        * @tc.desc      : Call getCustomData directly to get value without calling setCustomData(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0400
+         * @tc.number ActsAccountCustomData_0400
+         * @tc.desc   Call getCustomData directly to get value without calling setCustomData(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -170,12 +180,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0500
-        * @tc.name      : Call getCustomData to get value when passing in the error parameter
-        * @tc.desc      : After calling setCustomData setting value correctly,
-        *                 call the getCustomData of the pass error to check if you get the value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0500
+         * @tc.number ActsAccountCustomData_0500
+         * @tc.desc   After calling setCustomData setting value correctly,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -201,12 +213,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0600
-        * @tc.name      : Call getCustomData to get value when passing in the error parameter
-        * @tc.desc      : After calling setCustomData setting value correctly,
-        *                 call the getCustomData of the pass error to check if you get the value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0600
+         * @tc.number ActsAccountCustomData_0600
+         * @tc.desc   After calling setCustomData setting value correctly,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -241,13 +255,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0700
-        * @tc.name      : Whether getCustomData can get the correct value when calling setCustomData multiple times
-        * @tc.desc      : When the first setCustomData is called and the second setCustomData
-        *                 is called,the setting of the value is different if the call getCustomData
-        *                 can get the second value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0700
+         * @tc.number ActsAccountCustomData_0700
+         * @tc.desc   When the first setCustomData is called and the second setCustomData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -278,13 +293,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0800
-        * @tc.name      : Whether getCustomData can get the correct value when calling setCustomData multiple times
-        * @tc.desc      : When the first setCustomData is called and the second setCustomData
-        *                 is called,the setting of the value is different if the call getCustomData
-        *                 can get the second value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0800
+         * @tc.number ActsAccountCustomData_0800
+         * @tc.desc   When the first setCustomData is called and the second setCustomData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -328,13 +344,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_0900
-        * @tc.name      : Whether getCustomData can get the correct value when calling setCustomData multiple times
-        * @tc.desc      : When the first setCustomData is called and the second setCustomData
-        *                 is called,the setting of the value is same if the call getCustomData
-        *                 can get the second value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_0900
+         * @tc.number ActsAccountCustomData_0900
+         * @tc.desc   When the first setCustomData is called and the second setCustomData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -365,13 +382,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1000
-        * @tc.name      : Whether getCustomData can get the correct value when calling setCustomData multiple times
-        * @tc.desc      : When the first setCustomData is called and the second setCustomData
-        *                 is called,the setting of the value is same if the call getCustomData
-        *                 can get the second value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1000
+         * @tc.number ActsAccountCustomData_1000
+         * @tc.desc   When the first setCustomData is called and the second setCustomData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -417,12 +435,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1100
-        * @tc.name      : Call multiple setCustomData calls multiple times getCustomData gets the value separately
-        * @tc.desc      : Call setCustomData setting value again after calling setCustomData setting
-        *                 different value, and then call getCustomData twice to get the set value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1100
+         * @tc.number ActsAccountCustomData_1100
+         * @tc.desc   Call setCustomData setting value again after calling setCustomData setting
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -458,12 +478,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1200
-        * @tc.name      : Call multiple setCustomData calls multiple times getCustomData gets the value separately
-        * @tc.desc      : Call setCustomData setting value again after calling setCustomData setting
-        *                 different value, and then call getCustomData twice to get the set value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1200
+         * @tc.number ActsAccountCustomData_1200
+         * @tc.desc   Call setCustomData setting value again after calling setCustomData setting
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -512,11 +534,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1300
-        * @tc.name      : setCustomData setting value is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting value when the incoming parameter KEY is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1300
+         * @tc.number ActsAccountCustomData_1300
+         * @tc.desc   Call setCustomData setting value when the incoming parameter KEY is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -537,11 +562,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1400
-        * @tc.name      : setCustomData setting value is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting value when the incoming parameter KEY is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1400
+         * @tc.number ActsAccountCustomData_1400
+         * @tc.desc   Call setCustomData setting value when the incoming parameter KEY is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -575,11 +603,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1500
-        * @tc.name      : setCustomData setting key is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting key when the incoming parameter KEY is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1500
+         * @tc.number ActsAccountCustomData_1500
+         * @tc.desc   Call setCustomData setting key when the incoming parameter KEY is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1500 start====");
             var keyOverSize = "K"
@@ -605,11 +636,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1600
-        * @tc.name      : setCustomData setting key is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting key when the incoming parameter KEY is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1600
+         * @tc.number ActsAccountCustomData_1600
+         * @tc.desc   Call setCustomData setting key when the incoming parameter KEY is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1600 start====");
             var keyOverSize = "K"
@@ -647,11 +681,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1700
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming key is a space(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1700
+         * @tc.number ActsAccountCustomData_1700
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming key is a space(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -678,11 +715,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1800
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming key is a space(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1800
+         * @tc.number ActsAccountCustomData_1800
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming key is a space(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -720,11 +760,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_1900
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming value is null(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_1900
+         * @tc.number ActsAccountCustomData_1900
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming value is null(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_1900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -751,11 +794,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2000
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming value is null(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2000
+         * @tc.number ActsAccountCustomData_2000
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming value is null(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -800,11 +846,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2100
-        * @tc.name      : setCustomData setting value is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting value when the incoming parameter value is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2100
+         * @tc.number ActsAccountCustomData_2100
+         * @tc.desc   Call setCustomData setting value when the incoming parameter value is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2100 start====");
             var valueOverSize = "K"
@@ -829,11 +878,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2200
-        * @tc.name      : setCustomData setting value is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting value when the incoming parameter value is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2200
+         * @tc.number ActsAccountCustomData_2200
+         * @tc.desc   Call setCustomData setting value when the incoming parameter value is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2200 start====");
             var valueOverSize = "K"
@@ -870,11 +922,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2300
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming value is a space(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2300
+         * @tc.number ActsAccountCustomData_2300
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming value is a space(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -901,11 +956,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2400
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming value is a space(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2400
+         * @tc.number ActsAccountCustomData_2400
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming value is a space(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -943,11 +1001,14 @@ export default function ActsAccountCustomData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2500
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming name is null(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2500
+         * @tc.number ActsAccountCustomData_2500
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming name is null(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -968,11 +1029,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2600
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming name is null(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2600
+         * @tc.number ActsAccountCustomData_2600
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming name is null(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1006,11 +1070,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2700
-        * @tc.name      : setCustomData setting name is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting name when the incoming parameter name is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2700
+         * @tc.number ActsAccountCustomData_2700
+         * @tc.desc   Call setCustomData setting name when the incoming parameter name is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2700 start====");
             var nameOverSize = "n"
@@ -1035,11 +1102,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2800
-        * @tc.name      : setCustomData setting name is called when the argument is wrong
-        * @tc.desc      : Call setCustomData setting name when the incoming parameter name is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2800
+         * @tc.number ActsAccountCustomData_2800
+         * @tc.desc   Call setCustomData setting name when the incoming parameter name is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2800 start====");
             var nameOverSize = "n"
@@ -1077,11 +1147,14 @@ export default function ActsAccountCustomData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_2900
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming name is a space(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_2900
+         * @tc.number ActsAccountCustomData_2900
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming name is a space(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_2900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1107,11 +1180,14 @@ export default function ActsAccountCustomData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountCustomData_3000
-        * @tc.name      : setCustomData and getCustomData are called when the argument is spaced
-        * @tc.desc      : Call setCustomData and then getCustomData when the incoming name is a space(promise)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_3000
+         * @tc.number ActsAccountCustomData_3000
+         * @tc.desc   Call setCustomData and then getCustomData when the incoming name is a space(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_3000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1132,12 +1208,14 @@ export default function ActsAccountCustomData() {
         })
 
 
-        /*
-        * @tc.number    : ActsAccountCustomData_3100
-        * @tc.name      : The correct calls setCustomData and getCustomData get the value
-        * @tc.desc      : The setCustomData setting valueis called when the forwarding parameters
-        *                 are correct, and then getCustomData is called for the value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountCustomData_3100
+         * @tc.number ActsAccountCustomData_3100
+         * @tc.desc   The setCustomData setting valueis called when the forwarding parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountCustomData_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountCustomData_3100 start====");
             var appAccountManager = account.createAppAccountManager();

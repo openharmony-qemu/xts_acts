@@ -223,12 +223,12 @@ export default function audioRendererTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUMESYNC_0100
-     * @tc.name      : AudioRenderer -getMaxStreamVolumeSync
-     * @tc.desc      : AudioRenderer - getMaxStreamVolumeSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUMESYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUMESYNC_0100
+     * @tc.desc   AudioRenderer - getMaxStreamVolumeSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUMESYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -244,12 +244,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUMESYNC_0200
-     * @tc.name      : AudioRenderer -getMinStreamVolumeSync
-     * @tc.desc      : AudioRenderer - getMinStreamVolumeSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUMESYNC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUMESYNC_0200
+     * @tc.desc   AudioRenderer - getMinStreamVolumeSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUMESYNC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -266,12 +266,12 @@ export default function audioRendererTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0100
-     * @tc.name      : AudioRenderer -getMaxStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0100
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -292,12 +292,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0200
-     * @tc.name      : AudioRenderer -getMaxStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0200
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -319,12 +319,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0300
-     * @tc.name      : AudioRenderer -getMaxStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0300
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -379,12 +379,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0400
-     * @tc.name      : AudioRenderer -getMaxStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0400
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -413,12 +413,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0100
-     * @tc.name      : AudioRenderer -getMinStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0100
+     * @tc.desc   AudioRenderer - getMinStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -439,12 +439,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0200
-     * @tc.name      : AudioRenderer -getMinStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0200
+     * @tc.desc   AudioRenderer - getMinStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -466,12 +466,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0300
-     * @tc.name      : AudioRenderer -getMinStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0300
+     * @tc.desc   AudioRenderer - getMinStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -526,12 +526,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0400
-     * @tc.name      : AudioRenderer -getMinStreamVolume "unit_32" - promise
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "unit_32" - promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0400
+     * @tc.desc   AudioRenderer - getMinStreamVolume "unit_32" - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -560,12 +560,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0100
-     * @tc.name      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0100
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "uint_32" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       audioRen.getMaxStreamVolume((err: BusinessError, maxVolume: ESObject) => {
@@ -582,12 +582,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0200
-     * @tc.name      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0200
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "uint_32" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await renderPlay();
@@ -605,12 +605,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0300
-     * @tc.name      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0300
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "uint_32" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -672,12 +672,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0400
-     * @tc.name      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.desc      : AudioRenderer - getMaxStreamVolume "uint_32" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0400
+     * @tc.desc   AudioRenderer - getMaxStreamVolume "uint_32" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMAXSTREAMVOLUME_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       audioRen.getMaxStreamVolume((err: BusinessError, maxVolume: ESObject) => {
@@ -702,12 +702,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0100
-     * @tc.name      : AudioRenderer - getMinStreamVolume "float" - callback
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "float" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0100
+     * @tc.desc   AudioRenderer - getMinStreamVolume "float" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       audioRen.getMinStreamVolume((err: BusinessError, minVolume: ESObject) => {
@@ -724,12 +724,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0200
-     * @tc.name      : AudioRenderer - getMinStreamVolume "uint_32" - callback
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "uint_32" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0200
+     * @tc.desc   AudioRenderer - getMinStreamVolume "uint_32" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await renderPlay();
@@ -748,12 +748,12 @@ export default function audioRendererTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0300
-     * @tc.name      : AudioRenderer - getMinStreamVolume "uint_32" - callback
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "uint_32" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0300
+     * @tc.desc   AudioRenderer - getMinStreamVolume "uint_32" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -812,12 +812,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0400
-     * @tc.name      : AudioRenderer - getMinStreamVolume "float" - callback
-     * @tc.desc      : AudioRenderer - getMinStreamVolume "float" - callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0400
+     * @tc.desc   AudioRenderer - getMinStreamVolume "float" - callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETMINSTREAMVOLUME_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let minVolume = 1.0;

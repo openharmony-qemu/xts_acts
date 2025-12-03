@@ -43,12 +43,12 @@ export default function onKeyEventDispatchTest3() {
     });
 
     /**
-     * @tc.number onKeyEventDispatchTest3_0100
      * @tc.name   onKeyEventDispatchTest3_0100
+     * @tc.number onKeyEventDispatchTest3_0100
      * @tc.desc   test the onKeyEventDispatch api16 CallBack get getModifierKeyState when trigger keyboard key
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onKeyEventDispatchTest3_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[onKeyEventDispatchTest3_0100] START');

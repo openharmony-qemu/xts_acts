@@ -43,13 +43,13 @@ export default function webSocketNoPTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_ConnectCode201Callback_0100
-     * @tc.name  : testNetworkMgrWebSocketConnectCode201Callback_static_0100
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCode201Callback_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCode201Callback_0100
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrWebSocketConnectCode201Callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketConnectCode201Callback_static_0100';
@@ -70,13 +70,13 @@ export default function webSocketNoPTest() {
       }
     })
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Callback_0200
-     * @tc.name  : testNetworkMgrWebSocketConnectOptionsCode201Callback_static_0200
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectOptionsCode201Callback_static_0200
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Callback_0200
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrWebSocketConnectOptionsCode201Callback_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketConnectOptionsCode201Callback_static_0200';
@@ -98,13 +98,13 @@ export default function webSocketNoPTest() {
       }
     })
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Promise_0300
-     * @tc.name  : testNetworkMgrWebSocketConnectOptionsCode201Promise_static_0300
-     * @tc.desc  : Test code 201 of connect api with callback type
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectOptionsCode201Promise_static_0300
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectOptionsCode201Promise_0300
+     * @tc.desc   Test code 201 of connect api with callback type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrWebSocketConnectOptionsCode201Promise_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketConnectOptionsCode201Promise_static_0300';

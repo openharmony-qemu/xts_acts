@@ -43,7 +43,6 @@ export default function rdbstoreRekeyEtsTest() {
 
     console.log(TAG + "*************Unit Test Begin*************");
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0100
      * @tc.desc   invalid parameters test
@@ -76,7 +75,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0200
      * @tc.desc   invalid parameters test
@@ -110,7 +108,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0300
      * @tc.desc   invalid parameters test
@@ -145,7 +142,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0400
      * @tc.desc   invalid parameters test
@@ -180,7 +176,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0500
      * @tc.desc   invalid parameters test
@@ -214,7 +209,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0600
      * @tc.desc   non-encrypted database rekey test
@@ -245,7 +239,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0700
      * @tc.desc   exception iterationCount test
@@ -279,7 +272,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0800
      * @tc.desc   exception encryptionAlgo test
@@ -314,7 +306,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_0900
      * @tc.desc   exception hmacAlgo test
@@ -347,7 +338,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1000
      * @tc.desc   exception kdfAlgo test
@@ -381,7 +371,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1100
      * @tc.desc   exception cryptoPageSize test
@@ -414,7 +403,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1200
      * @tc.desc   custom encrypt rekey test
@@ -466,7 +454,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1300
      * @tc.desc   custom encrypt rekey test
@@ -500,7 +487,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1400
      * @tc.desc   rekey test
@@ -547,7 +533,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1500
      * @tc.desc   rekey test
@@ -586,7 +571,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1600
      * @tc.desc   transaction rekey test
@@ -634,7 +618,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1700
      * @tc.desc   transaction rekey test
@@ -682,7 +665,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1800
      * @tc.desc   other parameters rekey test
@@ -724,7 +706,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_1900
      * @tc.desc   other parameters rekey test
@@ -766,7 +747,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2000
      * @tc.desc   other parameters rekey test
@@ -808,7 +788,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2100
      * @tc.desc   other parameters rekey test
@@ -855,7 +834,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2200
      * @tc.desc   exception iterationCount test
@@ -895,7 +873,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2300
      * @tc.desc   exception encryptionAlgo test
@@ -935,7 +912,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0024
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2400
      * @tc.desc   exception hmacAlgo test
@@ -975,7 +951,6 @@ export default function rdbstoreRekeyEtsTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2500
      * @tc.desc   exception kdfAlgo test
@@ -1014,7 +989,6 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0025 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRekey0026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2600
      * @tc.desc   other parameters rekey test
@@ -1044,12 +1018,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0026 end *************");
     });
     /**
+     * @tc.name   testRekey0027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2700
-     * @tc.name testRekey0027
-     * @tc.desc rekey 14800011 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey 14800011 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekey0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekey0027 start *************");
@@ -1102,12 +1076,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0027 end *************");
     });
     /**
+     * @tc.name   testRekey0028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2800
-     * @tc.name testRekey0028
-     * @tc.desc rekey test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekey0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekey0028 start *************");
@@ -1173,12 +1147,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0028 end *************");
     });
     /**
+     * @tc.name   testRekey0029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2900
-     * @tc.name testRekey0029
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRekey0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRekey0029 start *************");
@@ -1235,12 +1209,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0029 end *************");
     });
     /**
+     * @tc.name   testRekey0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3000
-     * @tc.name testRekey0030
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRekey0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRekey0030 start *************");
@@ -1297,12 +1271,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0030 end *************");
     });
     /**
+     * @tc.name   testRekey0031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3100
-     * @tc.name testRekey0031
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRekey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRekey0031 start *************");
@@ -1360,12 +1334,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0031 end *************");
     });
     /**
+     * @tc.name   testRekey0032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3200
-     * @tc.name testRekey0032
-     * @tc.desc rekey test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rekey test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRekey0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRekey0032 start *************");
@@ -1423,12 +1397,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0032 end *************");
     });
     /**
+     * @tc.name   testRekey0033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3300
-     * @tc.name testRekey0033
-     * @tc.desc encryptionAlgo is plain_text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo is plain_text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRekey0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRekey0033 start *************");
@@ -1470,12 +1444,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0033 end *************");
     });
     /**
+     * @tc.name   testRekey0034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3400
-     * @tc.name testRekey0034
-     * @tc.desc all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekey0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekey0034 start *************");
@@ -1541,12 +1515,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0034 end *************");
     });
     /**
+     * @tc.name   testRekey0035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3500
-     * @tc.name testRekey0035
-     * @tc.desc encryptionAlgo all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encryptionAlgo all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekey0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekey0035 start *************");
@@ -1597,12 +1571,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0035 end *************");
     });
     /**
+     * @tc.name   testRekey0036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3600
-     * @tc.name testRekey0036
-     * @tc.desc hmacAlgo all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   hmacAlgo all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekey0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekey0036 start *************");
@@ -1653,12 +1627,12 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0036 end *************");
     });
     /**
+     * @tc.name   testRekey0037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3700
-     * @tc.name testRekey0037
-     * @tc.desc kdfAlgo all enum test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   kdfAlgo all enum test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRekey0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekey0037 start *************");

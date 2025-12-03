@@ -21,8 +21,8 @@ function buttonBuilder(text: string) {
     Button(`button ` + text)
       .borderWidth(2)
       .backgroundColor(Color.Orange)
-      .width('100%')
-      .height('100%')
+      .width(100)
+      .height(50)
       .id('nodeEventButton')
       .gesture(
         TapGesture()
@@ -34,8 +34,8 @@ function buttonBuilder(text: string) {
         console.log(`postTouchEvent Success`);
       })
   }
-  .width(500)
-  .height(300)
+  .width(300)
+  .height(50)
   .backgroundColor(Color.Gray)
 }
 
@@ -72,6 +72,7 @@ class MyNodeController extends NodeController {
     }
     let result = this.builderNode.postTouchEvent(event);
     console.info('result ' + result);
+    AppStorage.setOrCreate('lastPostTouchEventResult', result);
     return result;
   }
 }
@@ -84,15 +85,30 @@ struct MyComponent {
 
   build() {
     Column() {
-      Text(this.text1).id('node1Test').height('5%')
+      Text('textClick')
+        .id('textClick')
+        .height(50)
+        .width(100)
+        .backgroundColor(Color.Pink)
+        .onTouch((event) => {
+          if (event != undefined) {
+            this.nodeController.postTouchEvent(event, this.getUIContext());
+          }
+        })
       NodeContainer(this.nodeController)
-        .height(300)
-        .width(500)
+        .height(50)
+        .width(300)
+        .onTouch((event) => {
+          if (event != undefined) {
+            this.nodeController.postTouchEvent(event, this.getUIContext());
+          }
+        })
         .id('nodeTest')
 
+
       Column()
-        .width(500)
-        .height(300)
+        .width(300)
+        .height(50)
         .backgroundColor(Color.Pink)
         .onTouch((event) => {
           if (event != undefined) {

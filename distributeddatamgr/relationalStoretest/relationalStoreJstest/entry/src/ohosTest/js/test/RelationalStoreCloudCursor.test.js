@@ -100,7 +100,6 @@ export default function relationalStoreCloudCursor() {
         })
         console.log(TAG + "*************Unit Test Begin*************");
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbQueryWithCursor0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0100
          * @tc.desc   query with cursor, and get all columns.
@@ -136,7 +135,6 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbQueryWithCursor0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0200
          * @tc.desc   query with cursor, and specific columns.
@@ -175,7 +173,6 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbQueryWithCursor0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0300
          * @tc.desc   update data, and query with cursor.
@@ -223,7 +220,6 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbQueryWithCursor0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0400
          * @tc.desc   delete data, and query with cursor.
@@ -261,7 +257,6 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbQueryWithCursor0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0500
          * @tc.desc   query with cursor and origin.
@@ -300,7 +295,6 @@ export default function relationalStoreCloudCursor() {
             console.log(TAG + "************* testRdbQueryWithCursor0005 end *************");
         })
          /**
-          * @generated.time 2025-11-09 20:49:49
           * @tc.name   testRdbCleanDirtyData0001
           * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0600
           * @tc.desc   clean retain data with specified cursor promise.
@@ -329,7 +323,6 @@ export default function relationalStoreCloudCursor() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbCleanDirtyData0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0700
          * @tc.desc   clean retain data promise.
@@ -357,7 +350,6 @@ export default function relationalStoreCloudCursor() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbCleanDirtyData0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0800
          * @tc.desc   clean retain data callback.
@@ -385,7 +377,6 @@ export default function relationalStoreCloudCursor() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:49
           * @tc.name   testRdbCleanDirtyData0004
           * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0900
           * @tc.desc   clean retain data with specified cursor callback.
@@ -413,7 +404,6 @@ export default function relationalStoreCloudCursor() {
             console.log(TAG + "************* testRdbCleanDirtyData0004 end *************");
         })
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testRdbQueryWithCursor0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1000
      * @tc.desc   query with cursor and get all columns_OWNER_FIELD
@@ -451,7 +441,6 @@ export default function relationalStoreCloudCursor() {
         console.log(TAG + "************* testRdbQueryWithCursor0006 end *************");
       })
       /**
-       * @generated.time 2025-11-09 20:49:49
        * @tc.name   testRdbQueryWithCursor0007
        * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1100
        * @tc.desc   query with cursor and get all columns_PRIVILEGE_FIELD
@@ -489,7 +478,6 @@ export default function relationalStoreCloudCursor() {
         console.log(TAG + "************* testRdbQueryWithCursor0007 end *************");
       })
       /**
-       * @generated.time 2025-11-09 20:49:49
        * @tc.name   testRdbQueryWithCursor0008
        * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1200
        * @tc.desc   query with cursor and get all columns_SHARING_RESOURCE_FIELD
@@ -528,7 +516,6 @@ export default function relationalStoreCloudCursor() {
       })
 
         /**
-         * @generated.time 2025-11-09 20:49:49
          * @tc.name   testRdbQueryWithCursor0009
          * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0901
          * @tc.desc   query with cursor, and get all columns，and DATA_STATUS_FIELD

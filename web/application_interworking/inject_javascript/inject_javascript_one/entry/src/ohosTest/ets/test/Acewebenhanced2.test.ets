@@ -24,6 +24,7 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 
 export default function AceWeb() {
@@ -46,7 +47,7 @@ export default function AceWeb() {
       } catch (err) {
         console.error('push IndexOthers page error: ' + err);
       }
-      await waitForComponent("registerJavaScriptProxyAsyncMethodListButton");
+      await driver.waitForComponent(ON.id("registerJavaScriptProxyAsyncMethodListButton"), 10000);
       done()
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -75,12 +76,12 @@ export default function AceWeb() {
     })
 
     /**
+     * @tc.name   testAsyncMethodList0100
      * @tc.number Sub_WEB_javaScriptProxy_asyncMethodList_0100
-     * @tc.name testAsyncMethodList0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testAsyncMethodList0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAsyncMethodList0100", 172120);
@@ -88,16 +89,16 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
+     * @tc.name   testAsyncMethodList0200
      * @tc.number Sub_WEB_javaScriptProxy_asyncMethodList_0200
-     * @tc.name testAsyncMethodList0200
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testAsyncMethodList0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAsyncMethodList0200", 172120);
@@ -105,16 +106,16 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
+     * @tc.name   testRegisterJavaScriptProxyAsyncMethodList0100
      * @tc.number Sub_WEB_registerJavaScriptProxy_asyncMethodList_0100
-     * @tc.name testRegisterJavaScriptProxyAsyncMethodList0100
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRegisterJavaScriptProxyAsyncMethodList0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxyAsyncMethodList0100", 172120);
@@ -122,7 +123,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
   })

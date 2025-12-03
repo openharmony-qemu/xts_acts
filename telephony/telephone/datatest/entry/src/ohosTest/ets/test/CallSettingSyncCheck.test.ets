@@ -19,13 +19,13 @@ import data from '@ohos.telephony.data';
 export default function CallUXUsabilityOptimizationTest() {
   describe('CallUXUsabilityOptimizationTest', () => {
 
-     /**
-     * @tc.number : SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0100
-     * @tc.name   : testTelephonyDataIsCellularDataEnabledSync0100
-     * @tc.desc   : Sync checks if cellular data roaming service is enabled.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataEnabledSync0100
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0100
+     * @tc.desc   Sync checks if cellular data roaming service is enabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyDataIsCellularDataEnabledSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataEnabledSync0100';
@@ -43,15 +43,15 @@ export default function CallUXUsabilityOptimizationTest() {
       console.info(`${caseName} test end `);
     });
 
-     /**
-     * @tc.number : SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_0100
-     * @tc.name   : testTelephonyDataIsCellularDataRoamingEnabledSync0100
-     * @tc.desc   : Sync checks if cellular data roaming service is enabled.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     */
 
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabledSync0100
+     * @tc.number testTelephonyDataIsCellularDataRoamingEnabledSync0100
+     * @tc.desc   testTelephonyDataIsCellularDataRoamingEnabledSync0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testTelephonyDataIsCellularDataRoamingEnabledSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSync0100';
       console.info(`${caseName} test start `);

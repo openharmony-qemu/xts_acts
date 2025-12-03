@@ -25,12 +25,12 @@ export default function PathIterator() {
     })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0100
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0100
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0100
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -61,12 +61,12 @@ export default function PathIterator() {
       })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0200
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0200
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0200
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -91,12 +91,12 @@ export default function PathIterator() {
       })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -116,12 +116,12 @@ export default function PathIterator() {
       })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0400
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0400
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0400
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0400
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -141,12 +141,12 @@ export default function PathIterator() {
       })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0500
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0500
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0500
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0500
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -166,12 +166,12 @@ export default function PathIterator() {
       })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0600
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0600
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0600
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0600
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -213,12 +213,12 @@ export default function PathIterator() {
       })
 
     /**
-     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0700
-     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0700
-     * @tc.desc       test for pathIterator EnumValue
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0700
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0700
+     * @tc.desc   test for pathIterator EnumValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

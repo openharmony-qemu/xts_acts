@@ -57,14 +57,14 @@ export default function webAttributeTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_ONPAGEEND_0100
-    * @tc.name        : testOnPageEnd001
-    * @tc.desc        : test onPageEnd normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testOnPageEnd001
+     * @tc.number SUB_WEB_ONPAGEEND_0100
+     * @tc.desc   test onPageEnd normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnPageEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnPageEnd001", 141401)
       let isReturn = false;
@@ -74,14 +74,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPAGEEND_0200
-    * @tc.name        : testOnPageEnd002
-    * @tc.desc        : test onPageEnd with iframe
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnPageEnd002
+     * @tc.number SUB_WEB_ONPAGEEND_0200
+     * @tc.desc   test onPageEnd with iframe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnPageEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPageEnd002", 141401)
       let isReturn = false;
@@ -91,14 +91,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPAGEBEGIN_0100
-    * @tc.name        : testOnPageBegin001
-    * @tc.desc        : test onPageBegin normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnPageBegin001
+     * @tc.number SUB_WEB_ONPAGEBEGIN_0100
+     * @tc.desc   test onPageBegin normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnPageBegin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPageBegin001", 141401)
       let isReturn = false;
@@ -108,14 +108,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPAGEBEGIN_0200
-    * @tc.name        : testOnPageBegin002
-    * @tc.desc        : test onPageBegin with iframe
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnPageBegin002
+     * @tc.number SUB_WEB_ONPAGEBEGIN_0200
+     * @tc.desc   test onPageBegin with iframe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnPageBegin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnPageBegin002", 141401)
       let isReturn = false;
@@ -125,14 +125,14 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONPROGRESSCHANGE_0100
-    * @tc.name        : testOnProgressChange001
-    * @tc.desc        : test onProgressChange normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testOnProgressChange001
+     * @tc.number SUB_WEB_ONPROGRESSCHANGE_0100
+     * @tc.desc   test onProgressChange normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnProgressChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnProgressChange001", 141401)
       let isReturn = false;

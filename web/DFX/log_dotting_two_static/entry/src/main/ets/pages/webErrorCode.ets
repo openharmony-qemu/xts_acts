@@ -24,7 +24,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import webView from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
@@ -59,8 +59,8 @@ struct Index {
     console.info(':web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
       }
     }
   }

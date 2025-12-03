@@ -40,12 +40,12 @@ export default function setMeasureSizeTest() {
       done();
     });
     /**
-     * @tc.number    setMeasureSizeTest_0010
-     * @tc.name      setMeasureSizeTest_0010
-     * @tc.desc      frameNode: setMeasureSize
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setMeasureSizeTest_0010
+     * @tc.number setMeasureSizeTest_0010
+     * @tc.desc   frameNode: setMeasureSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMeasureSizeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('setMeasureSizeTest_0010 START');
@@ -62,12 +62,12 @@ export default function setMeasureSizeTest() {
       done();
     });
     /**
-     * @tc.number    setMeasureSizeTest_0020
-     * @tc.name      setMeasureSizeTest_0020
-     * @tc.desc      frameNode: onDraw
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setMeasureSizeTest_0020
+     * @tc.number setMeasureSizeTest_0020
+     * @tc.desc   frameNode: onDraw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMeasureSizeTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('setMeasureSizeTest_0020 START');

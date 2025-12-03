@@ -41,10 +41,13 @@ export default function ActsSubscriberTestOrder() {
         console.info('===============>unsubscribeCallback');
     }
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_CommonEvent_0950
-     * @tc.name      : verify subscribe and publish : Check subscribe same event and publish common ordered event
-     * @tc.desc      : Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_0950
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_0950
+     * @tc.desc   Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_0950', Level.LEVEL1, async function (done) {
         console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_0950 START`)
@@ -153,11 +156,13 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_0950 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Unsubscribe_2100
-     * @tc.name      : verify subscribe and publish : Check subscribe different event
-     *                 and twice publish common ordered event and check unsubscribe event
-     * @tc.desc      : Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Unsubscribe_2100
+     * @tc.number Sub_Notification_Ces_Subscriber_Unsubscribe_2100
+     * @tc.desc   Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Unsubscribe_2100', Level.LEVEL1, async function (done) {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Unsubscribe_2100 START`)
@@ -259,11 +264,13 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Unsubscribe_2100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_1000
-     * @tc.name      : verify subscribe and publish : Check subscribe different events
-     *                 and some publish common ordered events
-     * @tc.desc      : Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_1000
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_1000
+     * @tc.desc   Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_1000', Level.LEVEL1, async function (done) {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_1000 START`)
@@ -368,11 +375,13 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_1000 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_1100
-     * @tc.name      : verify subscribe and publish : Check subscribe same events
-     *                 and publish common ordered events and check abort event
-     * @tc.desc      : Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_1100
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_1100
+     * @tc.desc   Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_1100', Level.LEVEL1, async function (done) {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_1100 START`)
@@ -452,10 +461,13 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_1100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_1200
-     * @tc.name      : verify subscribe and publish : Check subscriber same events
-     * @tc.desc      : Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
+    /**
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_1200
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_1200
+     * @tc.desc   Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_1200', Level.LEVEL1, async function (done) {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_1200 START`)
@@ -540,10 +552,13 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_1100 END`)
     })
 
-    /*
-     * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600
-     * @tc.name: createSubscriber(subscribeInfo: CommonEventSubscribeInfo, undefined): Promise<CommonEventSubscriber>
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600
+     * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600
+     * @tc.desc   createSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600', Level.LEVEL2, async function (done) {
         console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600 START`)
@@ -570,10 +585,13 @@ export default function ActsSubscriberTestOrder() {
   
     })
 
-    /*
-     * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700
-     * @tc.name: createSubscriber(subscribeInfo: CommonEventSubscribeInfo, undefined): Promise<CommonEventSubscriber>
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700
+     * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700
+     * @tc.desc   createSubscriber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700', Level.LEVEL2, async function (done) {
         console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 START`)

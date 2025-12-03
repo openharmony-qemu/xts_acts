@@ -21,12 +21,12 @@ export default function AVCodeBaseThreeTest() {
   describe('AVCodeBaseThreeTest', () => {
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_100
-     * @tc.name     testAVCodeBaseThreeTest100
-     * @tc.desc     testing OH_VideoEncoder_FreeOutputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest100
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_100
+     * @tc.desc   testing OH_VideoEncoder_FreeOutputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest100';
@@ -43,12 +43,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_200
-     * @tc.name     testAVCodeBaseThreeTest200
-     * @tc.desc     testing OH_VideoEncoder_RegisterParameterCallback AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest200
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_200
+     * @tc.desc   testing OH_VideoEncoder_RegisterParameterCallback AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest200';
@@ -65,12 +65,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_300
-     * @tc.name     testAVCodeBaseThreeTest300
-     * @tc.desc     testing OH_VideoEncoder_SetParameter AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest300
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_300
+     * @tc.desc   testing OH_VideoEncoder_SetParameter AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest300';
@@ -87,12 +87,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_400
-     * @tc.name     testAVCodeBaseThreeTest400
-     * @tc.desc     testing OH_VideoEncoder_NotifyEndOfStream AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest400
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_400
+     * @tc.desc   testing OH_VideoEncoder_NotifyEndOfStream AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest400';
@@ -109,12 +109,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_500
-     * @tc.name     testAVCodeBaseThreeTest500
-     * @tc.desc     testing OH_VideoEncoder_PushInputData AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest500
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_500
+     * @tc.desc   testing OH_VideoEncoder_PushInputData AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest500';
@@ -131,12 +131,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_600
-     * @tc.name     testAVCodeBaseThreeTest600
-     * @tc.desc     testing OH_VideoEncoder_PushInputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest600
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_600
+     * @tc.desc   testing OH_VideoEncoder_PushInputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest600';
@@ -153,12 +153,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_700
-     * @tc.name     testAVCodeBaseThreeTest700
-     * @tc.desc     testing OH_VideoEncoder_PushInputParameter AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest700
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_700
+     * @tc.desc   testing OH_VideoEncoder_PushInputParameter AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest700';
@@ -175,12 +175,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_800
-     * @tc.name     testAVCodeBaseThreeTest800
-     * @tc.desc     testing OH_VideoEncoder_QueryInputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest800
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_800
+     * @tc.desc   testing OH_VideoEncoder_QueryInputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest800';
@@ -197,12 +197,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_900
-     * @tc.name     testAVCodeBaseThreeTest900
-     * @tc.desc     testing OH_VideoEncoder_QueryInputBuffer AV_ERR_TRY_AGAIN_LATER.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest900
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_900
+     * @tc.desc   testing OH_VideoEncoder_QueryInputBuffer AV_ERR_TRY_AGAIN_LATER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest900';
@@ -219,12 +219,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1000
-     * @tc.name     testAVCodeBaseThreeTest1000
-     * @tc.desc     testing OH_VideoEncoder_QueryInputBuffer AV_ERR_OPERATE_NOT_PERMIT.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1000
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1000
+     * @tc.desc   testing OH_VideoEncoder_QueryInputBuffer AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1000';
@@ -241,12 +241,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1100
-     * @tc.name     testAVCodeBaseThreeTest1100
-     * @tc.desc     testing OH_VideoEncoder_QueryOutputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1100
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1100
+     * @tc.desc   testing OH_VideoEncoder_QueryOutputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1100';
@@ -263,12 +263,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1200
-     * @tc.name     testAVCodeBaseThreeTest1200
-     * @tc.desc     testing OH_VideoEncoder_QueryOutputBuffer AV_ERR_TRY_AGAIN_LATER.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1200
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1200
+     * @tc.desc   testing OH_VideoEncoder_QueryOutputBuffer AV_ERR_TRY_AGAIN_LATER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1200';
@@ -285,12 +285,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1300
-     * @tc.name     testAVCodeBaseThreeTest1300
-     * @tc.desc     testing OH_VideoEncoder_QueryOutputBuffer AV_ERR_OPERATE_NOT_PERMIT.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1300
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1300
+     * @tc.desc   testing OH_VideoEncoder_QueryOutputBuffer AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1300';
@@ -308,12 +308,12 @@ export default function AVCodeBaseThreeTest() {
 
 
       /**
-       * @tc.number   SUB_AVCodeBaseThreeTest_Test_1400
-       * @tc.name     testAVCodeBaseThreeTest1400
-       * @tc.desc     testing OH_VideoDecoder_SetSurface AV_ERR_INVALID_STATE.
-       * @tc.level    Level3
-       * @tc.size     MediumTest
-       * @tc.type     Function
+       * @tc.name   testAVCodeBaseThreeTest1400
+       * @tc.number SUB_AVCodeBaseThreeTest_Test_1400
+       * @tc.desc   testing OH_VideoDecoder_SetSurface AV_ERR_INVALID_STATE.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testAVCodeBaseThreeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         TAG = 'testAVCodeBaseThreeTest1400';
@@ -330,12 +330,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1500
-     * @tc.name     testAVCodeBaseThreeTest1500
-     * @tc.desc     testing OH_VideoDecoder_SetParameter AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1500
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1500
+     * @tc.desc   testing OH_VideoDecoder_SetParameter AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1500';
@@ -352,12 +352,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1600
-     * @tc.name     testAVCodeBaseThreeTest1600
-     * @tc.desc     testing OH_VideoDecoder_PushInputData AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1600
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1600
+     * @tc.desc   testing OH_VideoDecoder_PushInputData AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1600';
@@ -374,12 +374,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1700
-     * @tc.name     testAVCodeBaseThreeTest1700
-     * @tc.desc     testing OH_VideoDecoder_RenderOutputData AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1700
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1700
+     * @tc.desc   testing OH_VideoDecoder_RenderOutputData AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1700';
@@ -396,12 +396,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1800
-     * @tc.name     testAVCodeBaseThreeTest1800
-     * @tc.desc     testing OH_VideoDecoder_FreeOutputData AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1800
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1800
+     * @tc.desc   testing OH_VideoDecoder_FreeOutputData AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1800';
@@ -418,12 +418,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_1900
-     * @tc.name     testAVCodeBaseThreeTest1900
-     * @tc.desc     testing OH_VideoDecoder_PushInputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest1900
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_1900
+     * @tc.desc   testing OH_VideoDecoder_PushInputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest1900';
@@ -440,12 +440,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2000
-     * @tc.name     testAVCodeBaseThreeTest2000
-     * @tc.desc     testing OH_VideoDecoder_RenderOutputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2000
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2000
+     * @tc.desc   testing OH_VideoDecoder_RenderOutputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2000';
@@ -462,12 +462,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2100
-     * @tc.name     testAVCodeBaseThreeTest2100
-     * @tc.desc     testing OH_VideoDecoder_RenderOutputBufferAtTime AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2100
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2100
+     * @tc.desc   testing OH_VideoDecoder_RenderOutputBufferAtTime AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2100';
@@ -484,12 +484,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2200
-     * @tc.name     testAVCodeBaseThreeTest2200
-     * @tc.desc     testing OH_VideoDecoder_FreeOutputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2200
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2200
+     * @tc.desc   testing OH_VideoDecoder_FreeOutputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2200';
@@ -506,12 +506,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2300
-     * @tc.name     testAVCodeBaseThreeTest2300
-     * @tc.desc     testing OH_VideoDecoder_QueryInputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2300
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2300
+     * @tc.desc   testing OH_VideoDecoder_QueryInputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2300';
@@ -528,12 +528,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2400
-     * @tc.name     testAVCodeBaseThreeTest2400
-     * @tc.desc     testing OH_VideoDecoder_QueryInputBuffer AV_ERR_TRY_AGAIN_LATER.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2400
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2400
+     * @tc.desc   testing OH_VideoDecoder_QueryInputBuffer AV_ERR_TRY_AGAIN_LATER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2400';
@@ -550,12 +550,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2500
-     * @tc.name     testAVCodeBaseThreeTest2500
-     * @tc.desc     testing OH_VideoDecoder_QueryInputBuffer AV_ERR_OPERATE_NOT_PERMIT.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2500
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2500
+     * @tc.desc   testing OH_VideoDecoder_QueryInputBuffer AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2500';
@@ -572,12 +572,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2600
-     * @tc.name     testAVCodeBaseThreeTest2600
-     * @tc.desc     testing OH_VideoDecoder_QueryOutputBuffer AV_ERR_INVALID_STATE.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2600
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2600
+     * @tc.desc   testing OH_VideoDecoder_QueryOutputBuffer AV_ERR_INVALID_STATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2600';
@@ -594,12 +594,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2700
-     * @tc.name     testAVCodeBaseThreeTest2700
-     * @tc.desc     testing OH_VideoDecoder_QueryOutputBuffer AV_ERR_TRY_AGAIN_LATER.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2700
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2700
+     * @tc.desc   testing OH_VideoDecoder_QueryOutputBuffer AV_ERR_TRY_AGAIN_LATER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2700';
@@ -616,12 +616,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2800
-     * @tc.name     testAVCodeBaseThreeTest2800
-     * @tc.desc     testing OH_VideoDecoder_QueryOutputBuffer AV_ERR_OPERATE_NOT_PERMIT.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2800
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2800
+     * @tc.desc   testing OH_VideoDecoder_QueryOutputBuffer AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2800';
@@ -638,12 +638,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_2900
-     * @tc.name     testAVCodeBaseThreeTest2900
-     * @tc.desc     testing VideoDecoder_Configure AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest2900
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_2900
+     * @tc.desc   testing VideoDecoder_Configure AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest2900';
@@ -660,12 +660,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_3000
-     * @tc.name     testAVCodeBaseThreeTest3000
-     * @tc.desc     testing VideoDecoder_Prepare AV_ERR_OPERATE_NOT_PERMIT.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest3000
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_3000
+     * @tc.desc   testing VideoDecoder_Prepare AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest3000';
@@ -682,12 +682,12 @@ export default function AVCodeBaseThreeTest() {
     });
 
     /**
-     * @tc.number   SUB_AVCodeBaseThreeTest_Test_3100
-     * @tc.name     testAVCodeBaseThreeTest3100
-     * @tc.desc     testing OH_VideoDecoder_Start AV_ERR_OPERATE_NOT_PERMIT.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVCodeBaseThreeTest3100
+     * @tc.number SUB_AVCodeBaseThreeTest_Test_3100
+     * @tc.desc   testing OH_VideoDecoder_Start AV_ERR_OPERATE_NOT_PERMIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAVCodeBaseThreeTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = 'testAVCodeBaseThreeTest3100';

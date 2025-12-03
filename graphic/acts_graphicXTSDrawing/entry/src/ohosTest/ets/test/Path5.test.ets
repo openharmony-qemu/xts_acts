@@ -40,12 +40,12 @@ export default function drawingTsPath5Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3900
-     * @tc.name      : testPathApproximateNormal
-     * @tc.desc      : testPathApproximateNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testPathApproximateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3900
+     * @tc.desc   testPathApproximateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPathApproximateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathApproximateNormal';
@@ -104,12 +104,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3901
-     * @tc.name      : testPathApproximateToNull
-     * @tc.desc      : testPathApproximateToNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPathApproximateToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3901
+     * @tc.desc   testPathApproximateToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathApproximateToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathApproximateToNull';
@@ -134,12 +134,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3902
-     * @tc.name      : testPathApproximateMultipleCalls
-     * @tc.desc      : testPathApproximateMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testPathApproximateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3902
+     * @tc.desc   testPathApproximateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPathApproximateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testPathApproximateMultipleCalls';
@@ -157,13 +157,13 @@ export default function drawingTsPath5Test() {
       }
 
     })
-	/**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3903
-     * @tc.name      : testPathApproximateAbnormal
-     * @tc.desc      : testPathApproximateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testPathApproximateAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_3903
+     * @tc.desc   testPathApproximateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathApproximateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathApproximateAbnormal';
@@ -186,12 +186,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4000
-     * @tc.name      : testPathInterpolateNormal
-     * @tc.desc      : testPathInterpolateNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testPathInterpolateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4000
+     * @tc.desc   testPathInterpolateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPathInterpolateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathInterpolateNormal';
@@ -255,12 +255,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4001
-     * @tc.name      : testPathInterpolateToNull
-     * @tc.desc      : testPathInterpolateToNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPathInterpolateToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4001
+     * @tc.desc   testPathInterpolateToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathInterpolateToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathInterpolateToNull';
@@ -319,12 +319,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4002
-     * @tc.name      : testPathInterpolateMultipleCalls
-     * @tc.desc      : testPathInterpolateMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPathInterpolateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4002
+     * @tc.desc   testPathInterpolateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathInterpolateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathInterpolateMultipleCalls';
@@ -347,13 +347,13 @@ export default function drawingTsPath5Test() {
         expect().assertFail()
       }
     })
-	/**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4003
-     * @tc.name      : testPathInterpolateAbnormal
-     * @tc.desc      : testPathInterpolateAbnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testPathInterpolateAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4003
+     * @tc.desc   testPathInterpolateAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathInterpolateAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathInterpolateAbnormal';
@@ -378,12 +378,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4100
-     * @tc.name      : testPathIsInterpolateNormal
-     * @tc.desc      : testPathIsInterpolateNormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testPathIsInterpolateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4100
+     * @tc.desc   testPathIsInterpolateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPathIsInterpolateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathIsInterpolateNormal';
@@ -432,12 +432,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4101
-     * @tc.name      : testPathIsInterpolateToNull
-     * @tc.desc      : testPathIsInterpolateToNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPathIsInterpolateToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4101
+     * @tc.desc   testPathIsInterpolateToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathIsInterpolateToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathIsInterpolateToNull';
@@ -460,12 +460,12 @@ export default function drawingTsPath5Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4102
-     * @tc.name      : testPathIsInterpolateMultipleCalls
-     * @tc.desc      : testPathIsInterpolateMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPathIsInterpolateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_4102
+     * @tc.desc   testPathIsInterpolateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPathIsInterpolateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathIsInterpolateMultipleCalls';

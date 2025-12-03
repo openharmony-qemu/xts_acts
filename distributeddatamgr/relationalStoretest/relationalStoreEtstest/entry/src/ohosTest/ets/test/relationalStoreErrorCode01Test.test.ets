@@ -43,7 +43,6 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -68,7 +67,6 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -97,7 +95,6 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -121,7 +118,6 @@ export default function relationalStoreErrorCode01Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback

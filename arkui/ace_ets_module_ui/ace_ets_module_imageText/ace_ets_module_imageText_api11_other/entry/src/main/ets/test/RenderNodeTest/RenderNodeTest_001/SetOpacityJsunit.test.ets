@@ -46,12 +46,12 @@ export default function SetOpacityJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_SetOpacityJsunit_001
-     * @tc.name      SetOpacityJsunit
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   SetOpacityJsunit_001
+     * @tc.number SUB_ACE_RICHEDITOR_SetOpacityJsunit_001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetOpacityJsunit_001', Level.LEVEL2, async (done: Function) => {
       console.info('[SetOpacityJsunit_001] START');

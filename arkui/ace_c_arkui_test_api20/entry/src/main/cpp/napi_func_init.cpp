@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "darkConfig/SetForceDarkConfigTest.cpp"
 #include "arkTSEnv/InitModuleForArkTSEnvTest.cpp"
+#include "Accessibility/AccessibilityProviderCreateTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -31,6 +32,8 @@ namespace ArkUICapiTest
             {"TestSetForceDarkConfig", nullptr, TestSetForceDarkConfig, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestInitModuleForArkTSEnv", nullptr, TestInitModuleForArkTSEnv, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"AccessibilityProviderCreateTest", nullptr, AccessibilityProviderCreateTest, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)

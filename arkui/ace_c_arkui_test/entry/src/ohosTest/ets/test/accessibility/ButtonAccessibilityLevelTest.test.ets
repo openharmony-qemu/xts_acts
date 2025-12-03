@@ -26,78 +26,78 @@ export default function buttonAccessibilityLevelTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0100
-     * @tc.name       : testButtonAccessibilityLevel001
-     * @tc.desc       : testing accessibilityLevel for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityLevel001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0100
+     * @tc.desc   testing accessibilityLevel for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityLevel001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityLevel001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0200
-     * @tc.name       : testButtonAccessibilityLevel002
-     * @tc.desc       : testing accessibilityLevel for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityLevel002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0200
+     * @tc.desc   testing accessibilityLevel for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityLevel002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityLevel002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0300
-     * @tc.name       : testButtonAccessibilityLevel003
-     * @tc.desc       : testing accessibilityLevel for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityLevel003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0300
+     * @tc.desc   testing accessibilityLevel for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityLevel003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityLevel003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0400
-     * @tc.name       : testButtonAccessibilityLevel004
-     * @tc.desc       : testing accessibilityLevel for Button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testButtonAccessibilityLevel004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0400
+     * @tc.desc   testing accessibilityLevel for Button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityLevel004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityLevel004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0500
-     * @tc.name       : testButtonAccessibilityLevel005
-     * @tc.desc       : testing accessibilityLevel for Button with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testButtonAccessibilityLevel005
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0500
+     * @tc.desc   testing accessibilityLevel for Button with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityLevel005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityLevel005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0600
-     * @tc.name       : testButtonAccessibilityLevel006
-     * @tc.desc       : testing accessibilityLevel for Button with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testButtonAccessibilityLevel006
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ACCESSIBILITYLEVEL_0600
+     * @tc.desc   testing accessibilityLevel for Button with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonAccessibilityLevel006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonAccessibilityLevel006()).assertEqual(0)

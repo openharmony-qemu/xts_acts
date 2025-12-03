@@ -57,4 +57,34 @@ class EntryAbility extends UIAbility {
   onBackground() {
     hilog.info(0x0000, 'testTag  EntryAbility', 'EntryAbility onBackground');
   }
+
+  onWillForeground(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability_test onWillForeground');
+  }
+
+  onDidForeground(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability_test onDidForeground');
+  }
+
+  onWillBackground(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability_test onWillBackground');
+  }
+
+  onDidBackground(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability_test onDidBackground');
+  }
+
+  onPrepareToTerminate() {
+    return false;
+  }
+
+  async onPrepareToTerminateAsync(): Promise<boolean> {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility onPrepareToTerminateAsync');
+    return false;
+  }
+
+  onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCollaborate');
+    return AbilityConstant.CollaborateResult.ACCEPT;
+  }
 }

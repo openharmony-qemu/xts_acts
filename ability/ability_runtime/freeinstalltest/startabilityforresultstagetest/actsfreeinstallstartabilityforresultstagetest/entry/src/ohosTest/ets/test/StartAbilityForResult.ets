@@ -83,11 +83,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_0100
-     * @tc.name: startAbilityForResult: Input empty deviceId,free install and start hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_0100
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_0100", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_0100-------------");
@@ -114,11 +116,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_0400
-     * @tc.name: startAbilityForResult: No deviceId,free install and start hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_0400
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_0400", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_0400-------------");
@@ -147,11 +151,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_0500
-     * @tc.name: startAbilityForResult: app already installed, start hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_0500
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_0500", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_0500-------------");
@@ -177,11 +183,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_0700
-     * @tc.name: startAbilityForResult: Free install and start feature hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_0700
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_0700", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_0700-------------");
@@ -217,11 +225,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_0800
-     * @tc.name: startAbilityForResult: Call by AsyncCallback,free install and start hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_0800
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_0800", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_0800-------------");
@@ -248,12 +258,14 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-    * @tc.number: FreeInstall_Stage_StartAbilityForResult_1200
-    * @tc.name: startAbilityForResult: Yuanzihua already installed,input wrong flags,start hap successfully.
-    * @tc.desc: Function test
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_1200
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("FreeInstall_Stage_StartAbilityForResult_1200", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_1200-------------");
       TAG = "FreeInstall_Stage_StartAbilityForResult_1200";
@@ -278,12 +290,14 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-    * @tc.number: FreeInstall_Stage_StartAbilityForResult_1400
-    * @tc.name: startAbilityForResult: Yuanzihua already installed,input wrong flags,add options,start hap successfully.
-    * @tc.desc: Function test
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_1400
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("FreeInstall_Stage_StartAbilityForResult_1400", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_1400-------------");
       TAG = "FreeInstall_Stage_StartAbilityForResult_1400";
@@ -312,12 +326,14 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-    * @tc.number: FreeInstall_Stage_StartAbilityForResult_1600
-    * @tc.name: startAbilityForResult: Yuanzihua already installed,input empty flags,start hap successfully.
-    * @tc.desc: Function test
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_1600
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_1600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("FreeInstall_Stage_StartAbilityForResult_1600", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_1600-------------");
       TAG = "FreeInstall_Stage_StartAbilityForResult_1600";
@@ -341,12 +357,14 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-    * @tc.number: FreeInstall_Stage_StartAbilityForResult_1800
-    * @tc.name: startAbilityForResult: Yuanzihua already installed,input empty flags,add options,start hap successfully.
-    * @tc.desc: Function test
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_1800
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("FreeInstall_Stage_StartAbilityForResult_1800", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_1800-------------");
       TAG = "FreeInstall_Stage_StartAbilityForResult_1800";
@@ -373,11 +391,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_2700
-     * @tc.name: startAbilityForResult: Input different moduleName(feature hap),install feature hap.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_2700
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_2700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_2700", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_2700-------------");
@@ -408,11 +428,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_2800
-     * @tc.name: startAbilityForResult: Input parameters extended information.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_2800
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_2800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_2800", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_2800-------------");
@@ -451,11 +473,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_2600
-     * @tc.name: startAbilityForResult: Same application,start feature hap(not added in "targetBundleList")
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_2600
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_2600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_2600", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_2600-------------");

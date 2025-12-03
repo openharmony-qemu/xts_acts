@@ -26,37 +26,37 @@ export default function customComponentGetLastChildTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_LAST_CHILD_0001
-     * @tc.name       : testCustomComponentGetLastChild001
-     * @tc.desc       : testing height for lastchild with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetLastChild001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_LAST_CHILD_0001
+     * @tc.desc   testing height for lastchild with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetLastChild001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetLastChild001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_LAST_CHILD_0002
-     * @tc.name       : testCustomComponentGetLastChild002
-     * @tc.desc       : testing height for lastchild with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetLastChild002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_LAST_CHILD_0002
+     * @tc.desc   testing height for lastchild with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetLastChild002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetLastChild002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_LAST_CHILD_0003
-     * @tc.name       : testCustomComponentGetLastChild003
-     * @tc.desc       : testing height for lastchild with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentGetLastChild003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GET_LAST_CHILD_0003
+     * @tc.desc   testing height for lastchild with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGetLastChild003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGetLastChild003()).assertEqual(0)

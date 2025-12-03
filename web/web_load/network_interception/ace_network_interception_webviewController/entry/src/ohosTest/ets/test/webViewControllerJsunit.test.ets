@@ -38,10 +38,13 @@ export default function webViewControllerJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0400
-     *tc.name testPageDown
-     *tc.desc Go pageDown
+    /**
+     * @tc.name   testPageDown
+     * @tc.number SUB_ACE_BASIC_ETS_API_0400
+     * @tc.desc   Go pageDown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPageDown',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("testPageDown", EVENT_ID_SET_EIMIT_KEY)
@@ -51,10 +54,13 @@ export default function webViewControllerJsunit() {
       await Utils.waitForExist(()=>isReturn, "testPageDown_checkReturn", 1, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTROLLERJSUNIT_API_1101
-     *tc.name testSetNetworkAvailable
-     *tc.desc test for setNetworkAvailable
+    /**
+     * @tc.name   testSetNetworkAvailable
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTROLLERJSUNIT_API_1101
+     * @tc.desc   test for setNetworkAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetNetworkAvailable',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("testSetNetworkAvailable", EVENT_ID_SET_EIMIT_KEY)
@@ -64,10 +70,13 @@ export default function webViewControllerJsunit() {
       await Utils.waitForExist(()=>isReturn, "testSetNetworkAvailable_checkReturn", 1, 1000);
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_1200
-     *tc.name testSetNetworkAvailableAgain
-     *tc.desc test for setNetworkAvailable again
+    /**
+     * @tc.name   testSetNetworkAvailableAgain
+     * @tc.number SUB_ACE_BASIC_ETS_API_1200
+     * @tc.desc   test for setNetworkAvailable again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetNetworkAvailableAgain',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("testSetNetworkAvailableAgain", EVENT_ID_SET_EIMIT_KEY)

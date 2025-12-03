@@ -46,10 +46,12 @@ export default function Row_Space() {
       console.info("Row_Space after each called")
     });
     /**
+     * @tc.name   testRowSpaceUnfill
      * @tc.number SUB_ACE_ROW_SPACE_TEST_0100
-     * @tc.name testRowSpaceUnfill
-     * @tc.desc The space of parent component set to 10,The child component is not fully filled with
-     *               the parent component
+     * @tc.desc   The space of parent component set to 10,The child component is not fully filled with
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSpaceUnfill',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowSpaceUnfill] START');
@@ -88,10 +90,12 @@ export default function Row_Space() {
       done();
     });
     /**
+     * @tc.name   testRowSpaceFill
      * @tc.number SUB_ACE_ROW_SPACE_TEST_0200
-     * @tc.name testRowSpaceFill
-     * @tc.desc The space of parent component set to 25,The child component is filled with
-     *               the parent component
+     * @tc.desc   The space of parent component set to 25,The child component is filled with
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSpaceFill',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowSpaceFill] START');
@@ -131,10 +135,12 @@ export default function Row_Space() {
       done();
     });
     /**
+     * @tc.name   testRowSpaceOverflow
      * @tc.number SUB_ACE_ROW_SPACE_TEST_0300
-     * @tc.name testRowSpaceOverflow
-     * @tc.desc The space of parent component set to 30,The child component is overflow with
-     *               the parent component
+     * @tc.desc   The space of parent component set to 30,The child component is overflow with
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSpaceOverflow',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowSpaceOverflow] START');

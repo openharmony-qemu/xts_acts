@@ -26,39 +26,39 @@ export default function textOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OFFSET_0100
-     * @tc.name       : testTextOffset001
-     * @tc.desc       : testing offset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextOffset001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OFFSET_0100
+     * @tc.desc   testing offset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOffset001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOffset001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OFFSET_0200
-     * @tc.name       : testTextOffset002
-     * @tc.desc       : testing offset for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextOffset002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OFFSET_0200
+     * @tc.desc   testing offset for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOffset002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOffset002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OFFSET_0300
-     * @tc.name       : testTextOffset003
-     * @tc.desc       : testing offset for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextOffset003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OFFSET_0300
+     * @tc.desc   testing offset for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOffset003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOffset003()).assertEqual(0)

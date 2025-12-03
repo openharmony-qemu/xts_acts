@@ -10,6 +10,8 @@ import SetHasTest from './set/SetHas.test';
 import SetKeysTest from './set/SetKeys.test';
 import SetSymbolTest from './set/SetSymbol.test';
 import SetSymbolIteratorTest from './set/Symboliterator.test';
+import SetComboTest from './set1/set_combo.test';
+
 
 export default function testsuite() {
   SetSetTest();
@@ -24,4 +26,5 @@ export default function testsuite() {
   SetKeysTest();
   SetSymbolTest();
   SetSymbolIteratorTest();
+  SetComboTest();
 }

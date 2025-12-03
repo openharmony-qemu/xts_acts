@@ -73,13 +73,13 @@ export default function dividerThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsDividerThemeColors_0100
-      * @tc.name      : ActsDividerThemeColors_0100
-      * @tc.desc      : check system colors values of the Divider component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsDividerThemeColors_0100
+     * @tc.number ActsDividerThemeColors_0100
+     * @tc.desc   check system colors values of the Divider component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsDividerThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsDividerThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -91,13 +91,13 @@ export default function dividerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsDividerThemeColors_0200
-      * @tc.name      : ActsDividerThemeColors_0200
-      * @tc.desc      : check custom colors values of the Divider component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsDividerThemeColors_0200
+     * @tc.number ActsDividerThemeColors_0200
+     * @tc.desc   check custom colors values of the Divider component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsDividerThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsDividerThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -110,14 +110,13 @@ export default function dividerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsDividerThemeColors_0300
-      * @tc.name      : ActsDividerThemeColors_0300
-      * @tc.desc      : check system colors values of the Divider component
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsDividerThemeColors_0300
+     * @tc.number ActsDividerThemeColors_0300
+     * @tc.desc   check system colors values of the Divider component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsDividerThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDividerThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);
@@ -132,13 +131,13 @@ export default function dividerThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsDividerThemeColors_0400
-      * @tc.name      : ActsDividerThemeColors_0400
-      * @tc.desc      : check custom colors values of the Divider component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsDividerThemeColors_0400
+     * @tc.number ActsDividerThemeColors_0400
+     * @tc.desc   check custom colors values of the Divider component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsDividerThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDividerThemeColors_0400`;
       console.info(`${SUITE} ${CASE} START`);
@@ -152,14 +151,13 @@ export default function dividerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsDividerThemeColors_0500
-      * @tc.name      : ActsDividerThemeColors_0500
-      * @tc.desc      : check system colors values of the Divider component
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsDividerThemeColors_0500
+     * @tc.number ActsDividerThemeColors_0500
+     * @tc.desc   check system colors values of the Divider component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsDividerThemeColors_0500`, Level.LEVEL0, async () => {
       const CASE: string = `ActsDividerThemeColors_0500`;
       console.info(`${SUITE} ${CASE} START`);

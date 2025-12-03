@@ -21,12 +21,12 @@ export default function DisplayManagerTest() {
   describe('DisplayManagerTest', () => {
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayId_0100
-     * @tc.name    : SUB_OH_GetDefaultDisplayId_0100
-     * @tc.desc    : Test GetDefaultDisplayId
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayId_0100
+     * @tc.number SUB_OH_GetDefaultDisplayId_0100
+     * @tc.desc   Test GetDefaultDisplayId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -43,12 +43,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayWidth_0200
-     * @tc.name    : SUB_OH_GetDefaultDisplayWidth_0200
-     * @tc.desc    : Test GetDefaultDisplayWidth
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayWidth_0200
+     * @tc.number SUB_OH_GetDefaultDisplayWidth_0200
+     * @tc.desc   Test GetDefaultDisplayWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayWidth_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -65,12 +65,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayHeight_0300
-     * @tc.name    : SUB_OH_GetDefaultDisplayHeight_0300
-     * @tc.desc    : Test GetDefaultDisplayHeight
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayHeight_0300
+     * @tc.number SUB_OH_GetDefaultDisplayHeight_0300
+     * @tc.desc   Test GetDefaultDisplayHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayHeight_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -87,12 +87,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayRotation_0400
-     * @tc.name    : SUB_OH_GetDefaultDisplayRotation_0400
-     * @tc.desc    : Test GetDefaultDisplayRotation
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayRotation_0400
+     * @tc.number SUB_OH_GetDefaultDisplayRotation_0400
+     * @tc.desc   Test GetDefaultDisplayRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayRotation_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -109,12 +109,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayOrientation_0500
-     * @tc.name    : SUB_OH_GetDefaultDisplayOrientation_0500
-     * @tc.desc    : Test GetDefaultDisplayOrientation
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayOrientation_0500
+     * @tc.number SUB_OH_GetDefaultDisplayOrientation_0500
+     * @tc.desc   Test GetDefaultDisplayOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayOrientation_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -131,12 +131,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayVirtualPixelRatio_0600
-     * @tc.name    : SUB_OH_GetDefaultDisplayVirtualPixelRatio_0600
-     * @tc.desc    : Test GetDefaultDisplayRotation
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayVirtualPixelRatio_0600
+     * @tc.number SUB_OH_GetDefaultDisplayVirtualPixelRatio_0600
+     * @tc.desc   Test GetDefaultDisplayRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayVirtualPixelRatio_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -153,12 +153,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayRefreshRate_0700
-     * @tc.name    : SUB_OH_GetDefaultDisplayRefreshRate_0700
-     * @tc.desc    : Test GetDefaultDisplayRefreshRate
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayRefreshRate_0700
+     * @tc.number SUB_OH_GetDefaultDisplayRefreshRate_0700
+     * @tc.desc   Test GetDefaultDisplayRefreshRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayRefreshRate_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -175,12 +175,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayDensityDpi_0800
-     * @tc.name    : SUB_OH_GetDefaultDisplayDensityDpi_0800
-     * @tc.desc    : Test GetDefaultDisplayDensityDpi
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayDensityDpi_0800
+     * @tc.number SUB_OH_GetDefaultDisplayDensityDpi_0800
+     * @tc.desc   Test GetDefaultDisplayDensityDpi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayDensityDpi_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -197,12 +197,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayDensityPixels_0900
-     * @tc.name    : SUB_OH_GetDefaultDisplayDensityPixels_0900
-     * @tc.desc    : Test GetDefaultDisplayDensityPixels
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayDensityPixels_0900
+     * @tc.number SUB_OH_GetDefaultDisplayDensityPixels_0900
+     * @tc.desc   Test GetDefaultDisplayDensityPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayDensityPixels_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -219,12 +219,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayScaledDensity_1000
-     * @tc.name    : SUB_OH_GetDefaultDisplayScaledDensity_1000
-     * @tc.desc    : Test GetDefaultDisplayScaledDensity
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayScaledDensity_1000
+     * @tc.number SUB_OH_GetDefaultDisplayScaledDensity_1000
+     * @tc.desc   Test GetDefaultDisplayScaledDensity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayScaledDensity_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -241,12 +241,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayDensityXdpi_1100
-     * @tc.name    : SUB_OH_GetDefaultDisplayDensityXdpi_1100
-     * @tc.desc    : Test GetDefaultDisplayDensityXdpi
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayDensityXdpi_1100
+     * @tc.number SUB_OH_GetDefaultDisplayDensityXdpi_1100
+     * @tc.desc   Test GetDefaultDisplayDensityXdpi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayDensityXdpi_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -263,12 +263,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDefaultDisplayDensityYdpi_1200
-     * @tc.name    : SUB_OH_GetDefaultDisplayDensityYdpi_1200
-     * @tc.desc    : Test GetDefaultDisplayDensityYdpi
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDefaultDisplayDensityYdpi_1200
+     * @tc.number SUB_OH_GetDefaultDisplayDensityYdpi_1200
+     * @tc.desc   Test GetDefaultDisplayDensityYdpi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDefaultDisplayDensityYdpi_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -285,12 +285,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreateDefaultDisplayCutoutInfo_1300
-     * @tc.name    : SUB_OH_CreateDefaultDisplayCutoutInfo_1300
-     * @tc.desc    : Test CreateDefaultDisplayCutoutInfo
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreateDefaultDisplayCutoutInfo_1300
+     * @tc.number SUB_OH_CreateDefaultDisplayCutoutInfo_1300
+     * @tc.desc   Test CreateDefaultDisplayCutoutInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreateDefaultDisplayCutoutInfo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -307,12 +307,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_DestroyDefaultDisplayCutoutInfoSuccess_1400
-     * @tc.name    : SUB_OH_DestroyDefaultDisplayCutoutInfoSuccess_1400
-     * @tc.desc    : Test DestroyDefaultDisplayCutoutInfoSuccess
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_DestroyDefaultDisplayCutoutInfoSuccess_1400
+     * @tc.number SUB_OH_DestroyDefaultDisplayCutoutInfoSuccess_1400
+     * @tc.desc   Test DestroyDefaultDisplayCutoutInfoSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_DestroyDefaultDisplayCutoutInfoSuccess_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -329,12 +329,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_DestroyDefaultDisplayCutoutInfoError_1500
-     * @tc.name    : SUB_OH_DestroyDefaultDisplayCutoutInfoError_1500
-     * @tc.desc    : Test DestroyDefaultDisplayCutoutInfoError
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_DestroyDefaultDisplayCutoutInfoError_1500
+     * @tc.number SUB_OH_DestroyDefaultDisplayCutoutInfoError_1500
+     * @tc.desc   Test DestroyDefaultDisplayCutoutInfoError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_DestroyDefaultDisplayCutoutInfoError_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -351,12 +351,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetFoldDisplayMode_1600
-     * @tc.name    : SUB_OH_GetFoldDisplayMode_1600
-     * @tc.desc    : Test GetFoldDisplayMode
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetFoldDisplayMode_1600
+     * @tc.number SUB_OH_GetFoldDisplayMode_1600
+     * @tc.desc   Test GetFoldDisplayMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetFoldDisplayMode_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -373,12 +373,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_RegisterDisplayChangeListener_1700
-     * @tc.name    : SUB_OH_RegisterDisplayChangeListener_1700
-     * @tc.desc    : Test RegisterDisplayChangeListener
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_RegisterDisplayChangeListener_1700
+     * @tc.number SUB_OH_RegisterDisplayChangeListener_1700
+     * @tc.desc   Test RegisterDisplayChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_RegisterDisplayChangeListener_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -395,12 +395,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_UnRegisterDisplayChangeListener_1800
-     * @tc.name    : SUB_OH_UnRegisterDisplayChangeListener_1800
-     * @tc.desc    : Test UnRegisterDisplayChangeListener
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_UnRegisterDisplayChangeListener_1800
+     * @tc.number SUB_OH_UnRegisterDisplayChangeListener_1800
+     * @tc.desc   Test UnRegisterDisplayChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_UnRegisterDisplayChangeListener_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -417,12 +417,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_RegisterFoldDisplayModeChangeListenerNoSupport_2000
-     * @tc.name    : SUB_OH_RegisterFoldDisplayModeChangeListenerNoSupport_2000
-     * @tc.desc    : Test RegisterFoldDisplayModeChangeListenerNoSupport
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_RegisterFoldDisplayModeChangeListenerNoSupport_2000
+     * @tc.number SUB_OH_RegisterFoldDisplayModeChangeListenerNoSupport_2000
+     * @tc.desc   Test RegisterFoldDisplayModeChangeListenerNoSupport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_RegisterFoldDisplayModeChangeListenerNoSupport_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -439,12 +439,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_RegisterFoldDisplayModeChangeListener_2100
-     * @tc.name    : SUB_OH_RegisterFoldDisplayModeChangeListenerInvalidParam_2100
-     * @tc.desc    : Test RegisterFoldDisplayModeChangeListenerInvalidParam
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_RegisterFoldDisplayModeChangeListenerInvalidParam_2100
+     * @tc.number SUB_OH_RegisterFoldDisplayModeChangeListener_2100
+     * @tc.desc   Test RegisterFoldDisplayModeChangeListenerInvalidParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_RegisterFoldDisplayModeChangeListenerInvalidParam_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -461,12 +461,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetAllDisplay_2300
-     * @tc.name    : SUB_OH_GetAllDisplay_2300
-     * @tc.desc    : Test GetAllDisplay
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetAllDisplay_2300
+     * @tc.number SUB_OH_GetAllDisplay_2300
+     * @tc.desc   Test GetAllDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetAllDisplay_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -483,12 +483,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_GetDisplayById_2400
-     * @tc.name    : SUB_OH_GetDisplayById_2400
-     * @tc.desc    : Test GetDisplayById
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_GetDisplayById_2400
+     * @tc.number SUB_OH_GetDisplayById_2400
+     * @tc.desc   Test GetDisplayById
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_GetDisplayById_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -505,12 +505,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_CreatePrimaryDisplay_2500
-     * @tc.name    : SUB_OH_CreatePrimaryDisplay_2500
-     * @tc.desc    : Test GetPrimaryDisplay
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_CreatePrimaryDisplay_2500
+     * @tc.number SUB_OH_CreatePrimaryDisplay_2500
+     * @tc.desc   Test GetPrimaryDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_CreatePrimaryDisplay_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -527,12 +527,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_RegisterAvailableAreaChangeListener_2600
-     * @tc.name    : SUB_OH_RegisterAvailableAreaChangeListener_2600
-     * @tc.desc    : Test RegisterAvailableAreaChangeListener
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_RegisterAvailableAreaChangeListener_2600
+     * @tc.number SUB_OH_RegisterAvailableAreaChangeListener_2600
+     * @tc.desc   Test RegisterAvailableAreaChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_RegisterAvailableAreaChangeListener_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -549,12 +549,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_DestroyAvailableArea_2900
-     * @tc.name    : SUB_OH_DestroyAvailableArea_2900
-     * @tc.desc    : Test DestroyAvailableArea
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_DestroyAvailableArea_2900
+     * @tc.number SUB_OH_DestroyAvailableArea_2900
+     * @tc.desc   Test DestroyAvailableArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_DestroyAvailableArea_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -571,12 +571,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_RegisterDisplayAddListener_3000
-     * @tc.name    : SUB_OH_RegisterDisplayAddListener_3000
-     * @tc.desc    : Test RegisterDisplayAddListener
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_RegisterDisplayAddListener_3000
+     * @tc.number SUB_OH_RegisterDisplayAddListener_3000
+     * @tc.desc   Test RegisterDisplayAddListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_RegisterDisplayAddListener_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -593,12 +593,12 @@ export default function DisplayManagerTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_RegisterDisplayRemoveListener_3200
-     * @tc.name    : SUB_OH_RegisterDisplayRemoveListener_3200
-     * @tc.desc    : Test RegisterDisplayRemoveListener
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_RegisterDisplayRemoveListener_3200
+     * @tc.number SUB_OH_RegisterDisplayRemoveListener_3200
+     * @tc.desc   Test RegisterDisplayRemoveListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_RegisterDisplayRemoveListener_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

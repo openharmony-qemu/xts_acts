@@ -39,12 +39,12 @@ export default function ActsDlpNDKTest() {
     })
 
     /**
+     * @tc.name   getDlpPermissionInfoTest
      * @tc.number getDlpPermissionInfoTest
-     * @tc.name getDlpPermissionInfoTest.
-     * @tc.desc Obtains the permission info of this DLP file.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Obtains the permission info of this DLP file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDlpPermissionInfoTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("=======> getDlpPermissionInfoTest  ==========");
@@ -64,12 +64,12 @@ export default function ActsDlpNDKTest() {
     })
 
     /**
+     * @tc.name   getOriginalFileNameTest
      * @tc.number getOriginalFileNameTest
-     * @tc.name getOriginalFileNameTest.
-     * @tc.desc Obtains the original file name from a DLP file name.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Obtains the original file name from a DLP file name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getOriginalFileNameTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> getOriginalFileNameTest  ==========");
@@ -90,12 +90,12 @@ export default function ActsDlpNDKTest() {
     })
     
     /**
+     * @tc.name   isInSandboxTest
      * @tc.number isInSandboxTest
-     * @tc.name isInSandboxTest.
-     * @tc.desc Checks whether current application is in the DLP sandbox.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Checks whether current application is in the DLP sandbox.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('isInSandboxTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> isInSandboxTest  ==========");
@@ -116,12 +116,12 @@ export default function ActsDlpNDKTest() {
     })
     
     /**
+     * @tc.name   setSandboxAppConfigTest
      * @tc.number setSandboxAppConfigTest
-     * @tc.name setSandboxAppConfigTest.
-     * @tc.desc Sets sandbox application configuration.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Sets sandbox application configuration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setSandboxAppConfigTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> setSandboxAppConfigTest  ==========");
@@ -142,12 +142,12 @@ export default function ActsDlpNDKTest() {
     })
     
     /**
+     * @tc.name   getSandboxAppConfigTest
      * @tc.number getSandboxAppConfigTest
-     * @tc.name getSandboxAppConfigTest.
-     * @tc.desc Obtains sandbox application configuration.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Obtains sandbox application configuration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getSandboxAppConfigTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> getSandboxAppConfigTest  ==========");
@@ -168,12 +168,12 @@ export default function ActsDlpNDKTest() {
     })
 
     /**
+     * @tc.name   cleanSandboxAppConfigTest
      * @tc.number cleanSandboxAppConfigTest
-     * @tc.name cleanSandboxAppConfigTest.
-     * @tc.desc Cleans sandbox application configuration.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Cleans sandbox application configuration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('cleanSandboxAppConfigTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("=======> cleanSandboxAppConfigTest  ==========");

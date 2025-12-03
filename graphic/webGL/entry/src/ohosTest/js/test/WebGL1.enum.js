@@ -50,9 +50,12 @@ export default function webgl1_enum() {
 
 
         /**
+         * @tc.name   webgl_test_enum
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_ENUM_0001
-         * @tc.name webgl_test_enum
-         * @tc.desc Test enum.
+         * @tc.desc   Test enum.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_enum] enum");

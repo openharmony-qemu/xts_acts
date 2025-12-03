@@ -60,12 +60,12 @@ export default function getAllObjectTest () {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_All_001
-     * @tc.name      : getAllObjects_promise_000
-     * @tc.desc      : getAllObjects image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAllObjects_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Get_All_001
+     * @tc.desc   getAllObjects image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAllObjects_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAllObjects_promise_000';
@@ -74,12 +74,12 @@ export default function getAllObjectTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_All_002
-     * @tc.name      : getAllObjects_promise_001
-     * @tc.desc      : getAllObjects video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAllObjects_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_All_002
+     * @tc.desc   getAllObjects video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAllObjects_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAllObjects_promise_001';

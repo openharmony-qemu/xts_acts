@@ -41,12 +41,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1001
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0100
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1001
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsReadonlyArrayLastIndexOfTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -59,12 +59,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1002
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0200
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1002
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsReadonlyArrayLastIndexOfTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -77,12 +77,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1003
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0300
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1003
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -95,12 +95,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1004
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0400
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1004
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -114,12 +114,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1005
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0500
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1005
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -133,12 +133,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1006
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0600
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1006
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -152,12 +152,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1007
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0700
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1007
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -170,12 +170,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1008
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0800
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1008
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -189,12 +189,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1009
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_0900
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1009
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -207,12 +207,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1010
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1000
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1010
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -225,12 +225,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1011
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1100
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1011
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -243,12 +243,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1012
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1200
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1012
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -261,12 +261,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1013
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1300
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1013
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -279,12 +279,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1014
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1400
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1014
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -297,12 +297,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1015
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1500
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1015
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -315,12 +315,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1016
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1600
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1016
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -333,12 +333,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1017
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1700
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1017
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -354,12 +354,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1018
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1800
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1018
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -373,12 +373,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1019
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_1900
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1019
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -393,12 +393,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1020
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_2000
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1020
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -411,12 +411,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1021
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_2100
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1021
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -429,12 +429,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1022
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_2200
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1022
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -449,12 +449,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1023
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_2300
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1023
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -472,12 +472,12 @@ export default function builtinsReadonlyArrayLastIndexOfTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayLastIndexOfTest1024
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_LAST_INDEX_OF_TEST_2400
-     * @tc.name buildinsReadonlyArrayLastIndexOfTest1024
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayLastIndexOfTest1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

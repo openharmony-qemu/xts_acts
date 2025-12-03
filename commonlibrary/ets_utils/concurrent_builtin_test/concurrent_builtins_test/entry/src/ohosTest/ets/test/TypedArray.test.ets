@@ -74,12 +74,12 @@ export default function TypedArrayTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
-     * @tc.name      : testTypedArrayFrom
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTypedArrayFrom
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayFrom', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -108,12 +108,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
-     * @tc.name      : testTypedArrayOf
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTypedArrayOf
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testTypedArrayOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -143,12 +143,12 @@ export default function TypedArrayTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
-     * @tc.name      : testCopyWithin
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCopyWithin
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCopyWithin', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -177,12 +177,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0301
-     * @tc.name      : testEntries
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testEntries
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0301
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testEntries', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -211,12 +211,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0302
-     * @tc.name      : testFill
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFill
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0302
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFill', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -245,12 +245,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
-     * @tc.name      : testFilter
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFilter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFilter', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -279,12 +279,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
-     * @tc.name      : testFind
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFind
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFind', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -313,12 +313,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
-     * @tc.name      : testFindIndex
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFindIndex
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFindIndex', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -347,12 +347,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
-     * @tc.name      : testForEach
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testForEach
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testForEach', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -381,12 +381,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
-     * @tc.name      : testIncludes
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIncludes
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIncludes', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -415,12 +415,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
-     * @tc.name      : testIndexOf
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testIndexOf
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testIndexOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
-     * @tc.name      : testMatchAll
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMatchAll
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testMatchAll', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -483,12 +483,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1200
-     * @tc.name      : testKeys
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testKeys
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testKeys', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -517,12 +517,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1300
-     * @tc.name      : testLastIndexOf
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testLastIndexOf
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testLastIndexOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -551,12 +551,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1400
-     * @tc.name      : testMap
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMap
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testMap', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -585,12 +585,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1500
-     * @tc.name      : testReduce
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testReduce
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testReduce', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -619,12 +619,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1600
-     * @tc.name      : testReduceRight
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testReduceRight
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testReduceRight', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -653,12 +653,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1700
-     * @tc.name      : testReverse
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testReverse
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testReverse', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -687,12 +687,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1800
-     * @tc.name      : testSet
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSet
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSet', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -721,12 +721,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1900
-     * @tc.name      : testSlice
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSlice
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_1900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSlice', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -755,12 +755,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2000
-     * @tc.name      : testSome
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSome
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2000
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSome', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -789,12 +789,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2100
-     * @tc.name      : testSort
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSort
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSort', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -823,12 +823,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2200
-     * @tc.name      : testSubarray
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSubarray
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSubarray', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -857,12 +857,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2300
-     * @tc.name      : testSymbolIterator
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSymbolIterator
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testSymbolIterator', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -891,12 +891,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2400
-     * @tc.name      : testToLocaleString
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testToLocaleString
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testToLocaleString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -925,12 +925,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2500
-     * @tc.name      : testToString
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testToString
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testToString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -959,12 +959,12 @@ export default function TypedArrayTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2600
-     * @tc.name      : testValues
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testValues
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TYPED_ARRAY_2600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testValues', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -28,14 +28,14 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 export default function EtherNetTest() {
   describe('EtherNetTest', () => {
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_GetMacAddress_0100
-    * @tc.name  : testNetworkMgrGetMacAddress0100
-    * @tc.desc  : getMacAddress
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testNetworkMgrGetMacAddress0100
+     * @tc.number SUB_NetworkMgr_GetMacAddress_0100
+     * @tc.desc   getMacAddress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testNetworkMgrGetMacAddress0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrGetMacAddress0100';
       console.info(`${caseName} test start `)
@@ -52,14 +52,14 @@ export default function EtherNetTest() {
       console.info(`${caseName} test end `)
     })
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_GetMacAddress_0200
-    * @tc.name  : testNetworkMgrGetMacAddress0200
-    * @tc.desc  : getMacAddress
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
-    */
+    /**
+     * @tc.name   testNetworkMgrGetMacAddress0200
+     * @tc.number SUB_NetworkMgr_GetMacAddress_0200
+     * @tc.desc   getMacAddress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testNetworkMgrGetMacAddress0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrGetMacAddress0200';
       console.info(`${caseName} test start `)

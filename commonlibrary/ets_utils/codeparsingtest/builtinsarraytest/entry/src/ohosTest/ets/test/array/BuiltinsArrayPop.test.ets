@@ -42,12 +42,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0100
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0100
-     * @tc.name builtinsArrayPopTest0100
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayPopTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0100';
@@ -70,12 +70,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0200
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0200
-     * @tc.name builtinsArrayPopTest0200
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0200';
@@ -98,12 +98,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0300
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0300
-     * @tc.name builtinsArrayPopTest0300
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0300';
@@ -126,12 +126,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0400
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0400
-     * @tc.name builtinsArrayPopTest0400
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0400';
@@ -154,12 +154,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0500
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0500
-     * @tc.name builtinsArrayPopTest0500
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0500';
@@ -182,12 +182,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0600
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0600
-     * @tc.name builtinsArrayPopTest0600
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0600';
@@ -219,12 +219,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0700
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0700
-     * @tc.name builtinsArrayPopTest0700
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0700';
@@ -247,12 +247,12 @@ export default function builtinsArrayPopTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayPopTest0800
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0800
-     * @tc.name builtinsArrayPopTest0800
-     * @tc.desc Testing pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayPopTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayPopTest0800';

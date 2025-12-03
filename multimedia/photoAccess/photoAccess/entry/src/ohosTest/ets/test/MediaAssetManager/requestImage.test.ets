@@ -33,12 +33,12 @@ export default function requestImageTest() {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0000
-     * @tc.name      : request_image_000
-     * @tc.desc      : request image with highQualityMode and originalMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0000
+     * @tc.desc   request image with highQualityMode and originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_000';
@@ -66,12 +66,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0100
-     * @tc.name      : request_image_001
-     * @tc.desc      : request image with FastMode and originalMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0100
+     * @tc.desc   request image with FastMode and originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_001';
@@ -99,12 +99,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0200
-     * @tc.name      : request_image_002
-     * @tc.desc      : request image with balanceMode and originalMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0200
+     * @tc.desc   request image with balanceMode and originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_002', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_002';
@@ -132,12 +132,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0300
-     * @tc.name      : request_image_003
-     * @tc.desc      : request image with highQualityMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0300
+     * @tc.desc   request image with highQualityMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_003', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_003';
@@ -165,12 +165,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0400
-     * @tc.name      : request_image_004
-     * @tc.desc      : request image with fastMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0400
+     * @tc.desc   request image with fastMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_004', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_004';
@@ -198,12 +198,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0500
-     * @tc.name      : request_image_005
-     * @tc.desc      : request image with balanceMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0500
+     * @tc.desc   request image with balanceMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_005', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_005';
@@ -231,12 +231,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0600
-     * @tc.name      : request_image_006
-     * @tc.desc      : request image error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_image_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_0600
+     * @tc.desc   request image error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_image_006', Level.LEVEL2, async (done: Function) => {
       let testNum = 'request_image_006';
@@ -265,12 +265,12 @@ export default function requestImageTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_QUICK_REQUEST_IMAGE_0001
-     * @tc.name      : quick_request_image_001
-     * @tc.desc      : quick request image with HIGH_QUALITY_MODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   quick_request_image_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_QUICK_REQUEST_IMAGE_0001
+     * @tc.desc   quick request image with HIGH_QUALITY_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('quick_request_image_001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'quick_request_image_001';
@@ -307,12 +307,12 @@ export default function requestImageTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_QUICK_REQUEST_IMAGE_0002
-     * @tc.name      : quick_request_image_002
-     * @tc.desc      : quick request image error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   quick_request_image_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_QUICK_REQUEST_IMAGE_0002
+     * @tc.desc   quick request image error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('quick_request_image_002', Level.LEVEL2, async (done: Function) => {
       let testNum = 'quick_request_image_002';

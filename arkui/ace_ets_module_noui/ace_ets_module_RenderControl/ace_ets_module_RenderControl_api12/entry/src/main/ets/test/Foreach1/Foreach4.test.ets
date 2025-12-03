@@ -59,12 +59,12 @@ export default function Foreach4() {
     });
 
     /**
+     * @tc.name   foreach4_001
      * @tc.number foreach4_001
-     * @tc.name foreach4_001
-     * @tc.desc add a new item to the foreach component and check whether the new item is added successfully
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   add a new item to the foreach component and check whether the new item is added successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach4_001', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach4_001] START');

@@ -81,12 +81,12 @@ export default function sendableCropTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_001
-     * @tc.name      : crop_sendable_promise_001
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_sendable_promise_001
+     * @tc.number PIXEL_MAP_CROP_001
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_sendable_promise_001';
@@ -97,12 +97,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_002
-     * @tc.name      : crop_sendable_promise_002
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_sendable_promise_002
+     * @tc.number PIXEL_MAP_CROP_002
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_sendable_promise_002';
@@ -113,12 +113,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_003 //TODO 传入的region里的height>PixelMap里的height报code为62980109 文档上没有 在Image错误码中为裁剪错误
-     * @tc.name      : crop_abnormal_sendable_promise_001
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_CROP_003 //TODO 传入的region里的height>PixelMap里的height报code为62980109 文档上没有 在Image错误码中为裁剪错误
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_001';
@@ -129,12 +129,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_004
-     * @tc.name      : crop_abnormal_sendable_promise_002
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_CROP_004
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_002';
@@ -145,12 +145,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_005
-     * @tc.name      : crop_abnormal_sendable_promise_003
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_CROP_005
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_003';
@@ -161,12 +161,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_006
-     * @tc.name      : crop_abnormal_sendable_promise_004
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_CROP_006
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_004';
@@ -177,12 +177,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_007
-     * @tc.name      : crop_abnormal_sendable_promise_005
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_005
+     * @tc.number PIXEL_MAP_CROP_007
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_005';
@@ -193,12 +193,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_008
-     * @tc.name      : crop_abnormal_sendable_promise_006
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_006
+     * @tc.number PIXEL_MAP_CROP_008
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_006';
@@ -209,12 +209,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_009
-     * @tc.name      : crop_abnormal_sendable_promise_007
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_007
+     * @tc.number PIXEL_MAP_CROP_009
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_007';
@@ -225,12 +225,12 @@ export default function sendableCropTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_CROP_010
-     * @tc.name      : crop_abnormal_sendable_promise_008
-     * @tc.desc      : crop
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   crop_abnormal_sendable_promise_008
+     * @tc.number PIXEL_MAP_CROP_010
+     * @tc.desc   crop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('crop_abnormal_sendable_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'crop_abnormal_sendable_promise_008';

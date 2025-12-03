@@ -19,11 +19,14 @@ let isEnabled = true;
 export default function getOverlayModuleInfo() {
   describe('getOverlayModuleInfo',  () =>{
 
-    /*
-         * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0100
-         * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0100
-         * @tc.desc: The query fails when the incoming moduleName is empty
-         */
+    /**
+     * @tc.name   Sub_Bms_Framework_Overlay_Query_static_0100
+     * @tc.number Sub_Bms_Framework_Overlay_Query_static_0100
+     * @tc.desc   The query fails when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Sub_Bms_Framework_Overlay_Query_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
@@ -68,10 +71,13 @@ export default function getOverlayModuleInfo() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0410
-     * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0410
-     * @tc.desc: The query fails when the incoming moduleName is not existed
+    /**
+     * @tc.name   Sub_Bms_Framework_Overlay_Query_static_0410
+     * @tc.number Sub_Bms_Framework_Overlay_Query_static_0410
+     * @tc.desc   The query fails when the incoming moduleName is not existed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Overlay_Query_static_0410", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -99,10 +105,13 @@ export default function getOverlayModuleInfo() {
         });
       })
 
-    /*
-     * @tc.number: SUB_BMS_APPINFO_OVERLAY_static_000X
-     * @tc.name: SUB_BMS_APPINFO_OVERLAY_static_000X
-     * @tc.desc: Query succeeded when the moduleName passed in is overlay
+    /**
+     * @tc.name   SUB_BMS_APPINFO_OVERLAY_static_000X
+     * @tc.number SUB_BMS_APPINFO_OVERLAY_static_000X
+     * @tc.desc   Query succeeded when the moduleName passed in is overlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_BMS_APPINFO_OVERLAY_static_000X", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

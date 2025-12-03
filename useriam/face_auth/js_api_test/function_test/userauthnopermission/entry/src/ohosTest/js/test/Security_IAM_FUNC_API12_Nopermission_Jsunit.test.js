@@ -20,7 +20,6 @@ export default function userauthTest_Nopermission_API12() {
     describe('userauthTest_Nopermission_API12', function () {
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_Security_IAM_Func_API12_0110
          * @tc.number SUB_Security_IAM_Func_API12_0110
          * @tc.desc   Unapplied permission call GetEnrolledState
@@ -41,7 +40,6 @@ export default function userauthTest_Nopermission_API12() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_Security_IAM_UserAuth_FUNC_0140
          * @tc.number SUB_Security_IAM_UserAuth_FUNC_0140
          * @tc.desc   getAuthLockState Nopermission

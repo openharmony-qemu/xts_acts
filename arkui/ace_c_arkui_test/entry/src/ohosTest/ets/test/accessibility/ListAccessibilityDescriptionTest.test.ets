@@ -26,26 +26,26 @@ export default function listAccessibilityDescriptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ACCESSIBILITYDESCRIPTION_0100
-     * @tc.name       : testListAccessibilityDescription001
-     * @tc.desc       : testing accessibilityDescription for List with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAccessibilityDescription001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ACCESSIBILITYDESCRIPTION_0100
+     * @tc.desc   testing accessibilityDescription for List with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAccessibilityDescription001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAccessibilityDescription001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ACCESSIBILITYDESCRIPTION_0200
-     * @tc.name       : testListAccessibilityDescription002
-     * @tc.desc       : testing accessibilityDescription for List with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAccessibilityDescription002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ACCESSIBILITYDESCRIPTION_0200
+     * @tc.desc   testing accessibilityDescription for List with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAccessibilityDescription002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAccessibilityDescription002()).assertEqual(0)

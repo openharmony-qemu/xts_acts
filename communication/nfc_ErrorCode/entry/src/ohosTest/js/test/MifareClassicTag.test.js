@@ -70,7 +70,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0100
          * @tc.desc   Test authenticateSector api by callback. The error code is 401
@@ -100,7 +99,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.desc   Test authenticateSector api. The error code is 401
@@ -135,7 +133,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0300
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0300
          * @tc.desc   Test readSingleBlock api. The error code is 401
@@ -169,7 +166,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0400
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0400
          * @tc.desc   Test readSingleBlock api. The error code is 401
@@ -208,7 +204,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0500
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0500
          * @tc.desc   Test writeSingleBlock api. The error code is 401
@@ -238,7 +233,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.desc   Test writeSingleBlock api. The error code is 401
@@ -273,7 +267,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0700
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0700
          * @tc.desc   Test incrementBlock api. The error code is 401
@@ -303,7 +296,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0800
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0800
          * @tc.desc   Test incrementBlock api. The error code is 401
@@ -338,7 +330,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_0900
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0900
          * @tc.desc   Test decrementBlock api. The error code is 401
@@ -368,7 +359,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1000
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1000
          * @tc.desc   Test decrementBlock api. The error code is 401
@@ -403,7 +393,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1100
          * @tc.desc   Test transferToBlock api. The error code is 401
@@ -432,7 +421,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1200
          * @tc.desc   Test transferToBlock api. The error code is 401
@@ -466,7 +454,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1300
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1300
          * @tc.desc   Test restoreFromBlock api. The error code is 401
@@ -495,7 +482,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1400
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1400
          * @tc.desc   Test restoreFromBlock api. The error code is 401
@@ -529,7 +515,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1500
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1500
          * @tc.desc   Test getBlockCountInSector api. The error code is 401
@@ -555,7 +540,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1600
          * @tc.desc   Test getBlockIndex api. The error code is 401
@@ -581,7 +565,6 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1700
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1700
          * @tc.desc   Test getSectorIndex api. The error code is 401
@@ -607,7 +590,6 @@ export default function MifareClassicErrorTest() {
         })
 
          /**
-          * @generated.time 2025-11-09 20:49:44
           * @tc.name   SUB_Communication_NFC_mifareClassic_js_1800
           * @tc.number SUB_Communication_NFC_mifareClassic_js_1800
           * @tc.desc   Test getMifareClassic api. The error code is 401

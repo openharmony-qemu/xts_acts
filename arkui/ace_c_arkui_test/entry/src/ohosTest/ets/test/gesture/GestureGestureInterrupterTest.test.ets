@@ -20,13 +20,13 @@ export default function gestureGestureInterrupterTest() {
 
   describe('GestureGestureInterrupterTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0100
-     * @tc.name       : testGestureGestureInterrupter001
-     * @tc.desc       : Test the functionality of gesture interrupter
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInterrupter001
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0100
+     * @tc.desc   Test the functionality of gesture interrupter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInterrupter001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureGestureInterrupterTest';
@@ -37,13 +37,13 @@ export default function gestureGestureInterrupterTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0200
-     * @tc.name       : testGestureGestureInterrupter002
-     * @tc.desc       : Test the functionality of gesture interrupter
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInterrupter002
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0200
+     * @tc.desc   Test the functionality of gesture interrupter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInterrupter002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureGestureInterrupterTest';
@@ -54,13 +54,13 @@ export default function gestureGestureInterrupterTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0300
-     * @tc.name       : testGestureGestureInterrupter003
-     * @tc.desc       : Test the functionality of gesture interrupter
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInterrupter003
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0300
+     * @tc.desc   Test the functionality of gesture interrupter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInterrupter003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureGestureInterrupterTest';
@@ -71,13 +71,13 @@ export default function gestureGestureInterrupterTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0400
-     * @tc.name       : testGestureGestureInterrupter004
-     * @tc.desc       : Test the functionality of gesture interrupter
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInterrupter004
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0400
+     * @tc.desc   Test the functionality of gesture interrupter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInterrupter004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureGestureInterrupterTest';
@@ -88,13 +88,13 @@ export default function gestureGestureInterrupterTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0500
-     * @tc.name       : testGestureGestureInterrupter005
-     * @tc.desc       : Test the functionality of gesture interrupter
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInterrupter005
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INTERRUPTER_0500
+     * @tc.desc   Test the functionality of gesture interrupter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInterrupter005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'GestureGestureInterrupterTest';

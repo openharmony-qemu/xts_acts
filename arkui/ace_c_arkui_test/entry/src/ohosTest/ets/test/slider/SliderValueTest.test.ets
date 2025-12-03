@@ -26,66 +26,66 @@ export default function sliderValueTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_VALUE_0100
-    * @tc.name: testSliderValue001
-    * @tc.desc: testing progress value for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderValue001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_VALUE_0100
+     * @tc.desc   testing progress value for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderValue001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderValue001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_VALUE_0200
-    * @tc.name: testSliderValue002
-    * @tc.desc: testing progress value for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderValue002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_VALUE_0200
+     * @tc.desc   testing progress value for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderValue002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderValue002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_VALUE_0300
-    * @tc.name: testSliderValue003
-    * @tc.desc: testing progress value for slider with negative value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderValue003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_VALUE_0300
+     * @tc.desc   testing progress value for slider with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderValue003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderValue003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_VALUE_0400
-    * @tc.name: testSliderValue004
-    * @tc.desc: testing progress value for slider with value greater than 100
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderValue004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_VALUE_0400
+     * @tc.desc   testing progress value for slider with value greater than 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderValue004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderValue004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_VALUE_0500
-    * @tc.name: testSliderValue005
-    * @tc.desc: testing progress value for slider with zero value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderValue005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_VALUE_0500
+     * @tc.desc   testing progress value for slider with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderValue005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderValue005()).assertEqual(0)
       done()

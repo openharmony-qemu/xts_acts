@@ -28,13 +28,13 @@ export default function DragActionRegisterStatusListenerTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragActionRegisterStatusListener_0100
-     * @tc.name       : DragActionRegisterStatusListenerTest001
-     * @tc.desc       : testing DragActionRegisterStatusListener
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionRegisterStatusListenerTest001
+     * @tc.number SUB_ARKUI_CAPI_DragActionRegisterStatusListener_0100
+     * @tc.desc   testing DragActionRegisterStatusListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionRegisterStatusListenerTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragActionRegisterStatusListenerTest001 START');

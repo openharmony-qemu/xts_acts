@@ -20,6 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -50,7 +51,7 @@ struct Index {
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;

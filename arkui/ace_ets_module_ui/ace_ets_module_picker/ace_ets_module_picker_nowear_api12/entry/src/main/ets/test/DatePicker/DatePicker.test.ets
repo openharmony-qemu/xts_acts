@@ -42,12 +42,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0021
      * @tc.number testDatePicker0021
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePicker0021', Level.LEVEL1, async (done: Function) => {
       console.info('[testDatePicker0021] START');
@@ -61,12 +61,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0022
      * @tc.number testDatePicker0022
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePicker0022', Level.LEVEL1, async (done: Function) => {
       console.info('[testDatePicker0022] START');
@@ -83,12 +83,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0023
      * @tc.number testDatePicker0023
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePicker0023', Level.LEVEL1, async (done: Function) => {
       console.info('[testDatePicker0023] START');
@@ -105,12 +105,12 @@ export default function datePickerJsunit() {
     });
 
     /**
+     * @tc.name   testDatePicker0024
      * @tc.number testDatePicker0024
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePicker0024', Level.LEVEL1, async (done: Function) => {
       console.info('[testDatePicker0024] START');

@@ -21,52 +21,52 @@ export default function indirectImport() {
   describe('ActIndirectImport', () => {
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0001
-     * @tc.name      : harImportHar
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   harImportHar
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0001
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('harImportHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await inderectHarImportHar()
       expect(res).assertTrue()
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0002
-     * @tc.name      : harImportHsp
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   harImportHsp
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0002
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('harImportHsp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await inderectHarImportHsp()
       expect(res).assertTrue()
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0003
-     * @tc.name      : hspImportHar
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   hspImportHar
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0003
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('hspImportHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await inderectHspImportHar()
       expect(res).assertTrue()
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0004
-     * @tc.name      : hspImportHsp
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   hspImportHsp
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_indirectImport_0004
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('hspImportHsp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await inderectHspImportHsp()
       expect(res).assertTrue()

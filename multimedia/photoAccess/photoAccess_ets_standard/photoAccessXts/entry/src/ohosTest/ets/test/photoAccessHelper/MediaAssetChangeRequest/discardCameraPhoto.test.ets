@@ -63,12 +63,12 @@ export default function MediaAssetChangeRequestDiscardCameraPhotoTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_DISCARD_CAMERA_PHOTO_001
-     * @tc.name      : MediaAssetChangeRequest_discardCameraPhoto_promise_001
-     * @tc.desc      : discardCameraPhoto
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_discardCameraPhoto_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_DISCARD_CAMERA_PHOTO_001
+     * @tc.desc   discardCameraPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_discardCameraPhoto_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_discardCameraPhoto_promise_001';

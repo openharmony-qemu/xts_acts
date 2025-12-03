@@ -55,56 +55,56 @@ export default function webAttribute() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWNEW_0100
-    * @tc.name       : testOnWindowNew001
-    * @tc.desc       : test onWindowNew
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnWindowNew001
+     * @tc.number SUB_WEB_ONWINDOWNEW_0100
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnWindowNew001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testOnWindowNew001", 133900)
       Utils.registerEvent("testOnWindowNew001", true, 133910, done);
       sendEventByKey('WebAttributeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWNEW_0200
-    * @tc.name       : testOnWindowNew002
-    * @tc.desc       : test onWindowNew
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnWindowNew002
+     * @tc.number SUB_WEB_ONWINDOWNEW_0200
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnWindowNew002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnWindowNew002", 133900)
       Utils.registerEvent("testOnWindowNew002", false, 133920, done);
       sendEventByKey('WebAttributeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONWINDOWNEW_0300
-    * @tc.name       : testOnWindowNew003
-    * @tc.desc       : test onWindowNew
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOnWindowNew003
+     * @tc.number SUB_WEB_ONWINDOWNEW_0300
+     * @tc.desc   test onWindowNew
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOnWindowNew003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testOnWindowNew003", 133900)
       Utils.registerEvent("testOnWindowNew003", false, 133930, done);
       sendEventByKey('WebAttributeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_MULTIWINDOWACCESS_0100
-    * @tc.name       : testMultiWindowAccess001
-    * @tc.desc       : test multiWindowAccess
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testMultiWindowAccess001
+     * @tc.number SUB_WEB_MULTIWINDOWACCESS_0100
+     * @tc.desc   test multiWindowAccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMultiWindowAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testMultiWindowAccess001", 133900)
       Utils.registerEvent("testMultiWindowAccess001", false, 133940, done);

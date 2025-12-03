@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium'
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -47,12 +48,12 @@ export default function UpdateConfigurationContentTest() {
     });
 
     /**
-     * @tc.number    UpdateConfigurationContentTest_0100
-     * @tc.name      UpdateConfigurationContentTest_0100
-     * @tc.desc      ReactiveComponentContent UpdateConfigurationContentTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UpdateConfigurationContentTest_0100
+     * @tc.number UpdateConfigurationContentTest_0100
+     * @tc.desc   ReactiveComponentContent UpdateConfigurationContentTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UpdateConfigurationContentTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UpdateConfigurationContentTest_0100 START');

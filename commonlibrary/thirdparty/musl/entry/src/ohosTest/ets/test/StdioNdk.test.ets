@@ -25,12 +25,12 @@ export default function stdioNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STDIO_VSPRINTFCHK_0100
-     * @tc.name       : testMuslStdioVsprintfChk001
-     * @tc.desc       : test vsprintfChk
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStdioVsprintfChk001
+     * @tc.number SUB_THIRDPARTY_MUSL_STDIO_VSPRINTFCHK_0100
+     * @tc.desc   test vsprintfChk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStdioVsprintfChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stdio.vsprintfChk();
@@ -38,12 +38,12 @@ export default function stdioNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STDIO_SETBUF_0100
-     * @tc.name       : testMuslStdioSetbuf001
-     * @tc.desc       : test setbuf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStdioSetbuf001
+     * @tc.number SUB_THIRDPARTY_MUSL_STDIO_SETBUF_0100
+     * @tc.desc   test setbuf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStdioSetbuf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stdio.setbuf();
@@ -52,12 +52,12 @@ export default function stdioNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STDIO_SETBUFFER_0100
-     * @tc.name       : testMuslStdioSetbuffer001
-     * @tc.desc       : test setbuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStdioSetbuffer001
+     * @tc.number SUB_THIRDPARTY_MUSL_STDIO_SETBUFFER_0100
+     * @tc.desc   test setbuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStdioSetbuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stdio.setbuffer();
@@ -66,12 +66,12 @@ export default function stdioNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STDIO_SETLINEBUF_0100
-     * @tc.name       : testMuslStdioSetlinebuf001
-     * @tc.desc       : test setlinebuf
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStdioSetlinebuf001
+     * @tc.number SUB_THIRDPARTY_MUSL_STDIO_SETLINEBUF_0100
+     * @tc.desc   test setlinebuf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStdioSetlinebuf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = stdio.setlinebuf();
@@ -80,12 +80,12 @@ export default function stdioNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_STDIO_FEOF_0100
-     * @tc.name       : testMuslStdioFEof001
-     * @tc.desc       : test feof
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslStdioFEof001
+     * @tc.number SUB_THIRDPARTY_MUSL_STDIO_FEOF_0100
+     * @tc.desc   test feof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStdioFEof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(stdio.feof()).assertEqual(0);

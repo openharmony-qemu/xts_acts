@@ -48,10 +48,12 @@ export default function queryNavigationInfoTest() {
     });
 
     /**
-     * @tc.number    queryNavigationInfoTest_0200
-     * @tc.name      queryNavigationInfoTest_0200
-     * @tc.desc      Test queryNavigationInfo return undefined
-     * @tc.level     Level 0
+     * @tc.name   queryNavigationInfoTest_0200
+     * @tc.number queryNavigationInfoTest_0200
+     * @tc.desc   Test queryNavigationInfo return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('queryNavigationInfoTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[queryNavigationInfoTest_0200] START');
@@ -72,10 +74,12 @@ export default function queryNavigationInfoTest() {
     });
 
     /**
-     * @tc.number    queryNavigationInfoTest_0100
-     * @tc.name      queryNavigationInfoTest_0100
-     * @tc.desc      Test queryNavigationInfo
-     * @tc.level     Level 1
+     * @tc.name   queryNavigationInfoTest_0100
+     * @tc.number queryNavigationInfoTest_0100
+     * @tc.desc   Test queryNavigationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('queryNavigationInfoTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[queryNavigationInfoTest_0100] START');

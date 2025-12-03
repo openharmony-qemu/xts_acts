@@ -117,9 +117,12 @@ static void ExecHksAesTest004(void const *argument)
 #ifndef _CUT_AUTHENTICATE_
 #ifndef _CUT_ED25519_
 /**
- * @tc.name: HksCipherTest.HksCipherTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksAesTest001
+ * @tc.number HksAesTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksAesTest, HksAesTest001, Level1)
 {
@@ -139,9 +142,12 @@ LITE_TEST_CASE(HksAesTest, HksAesTest001, Level1)
 }
 
 /**
- * @tc.name: HksCipherTest.HksCipherTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksAesTest002
+ * @tc.number HksAesTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksAesTest, HksAesTest002, Level1)
 {
@@ -161,9 +167,12 @@ LITE_TEST_CASE(HksAesTest, HksAesTest002, Level1)
 }
 
 /**
- * @tc.name: HksCipherTest.HksCipherTest003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksAesTest003
+ * @tc.number HksAesTest003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksAesTest, HksAesTest003, Level1)
 {
@@ -186,9 +195,12 @@ LITE_TEST_CASE(HksAesTest, HksAesTest003, Level1)
 #endif /* _CUT_AUTHENTICATE_ */
 
 /**
- * @tc.name: HksCipherTest.HksCipherTest004
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksAesTest004
+ * @tc.number HksAesTest004
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksAesTest, HksAesTest004, Level1)
 {    

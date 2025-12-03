@@ -67,6 +67,9 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.USE_FLOAT_BALL",
+      },
+      {
+        "name": "ohos.permission.CUSTOM_SCREEN_CAPTURE",
       }
     ]
   }

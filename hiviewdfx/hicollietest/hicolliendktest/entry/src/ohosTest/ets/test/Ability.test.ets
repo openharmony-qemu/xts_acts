@@ -23,12 +23,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_Subthread_C_0100
-     * @tc.name       : testHiCollieC001
-     * @tc.desc       : test OH_HiCollieStuckC
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC001
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_C_0100
+     * @tc.desc   test OH_HiCollieStuckC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testHiCollieStuckC();
@@ -37,12 +37,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_Subthread_C_0200
-     * @tc.name       : testHiCollieC002
-     * @tc.desc       : test OH_HiCollieStuckC
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC002
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_C_0200
+     * @tc.desc   test OH_HiCollieStuckC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testHiCollieJankC();
@@ -50,12 +50,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_Subthread_C_0300
-     * @tc.name       : testHiCollieC003
-     * @tc.desc       : test OH_HiCollieStuckC
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC003
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_C_0300
+     * @tc.desc   test OH_HiCollieStuckC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testJankCMThread();
@@ -64,12 +64,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_Subthread_C_0400
-     * @tc.name       : testHiCollieC004
-     * @tc.desc       : test OH_HiCollieStuckC
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC004
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_C_0400
+     * @tc.desc   test OH_HiCollieStuckC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testStuckCMThread();
@@ -78,12 +78,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_Subthread_C_0500
-     * @tc.name       : testHiCollieC005
-     * @tc.desc       : test OH_HiCollieStuckC
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC005
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_C_0500
+     * @tc.desc   test OH_HiCollieStuckC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testReportCMThread();
@@ -92,12 +92,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_Subthread_C_0600
-     * @tc.name       : testHiCollieC006
-     * @tc.desc       : test OH_HiCollieStuckC
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC006
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_C_0600
+     * @tc.desc   test OH_HiCollieStuckC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testJankCerr401();
@@ -106,12 +106,12 @@ export default function abilityTest() {
     });
    
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_SDK_0140
-     * @tc.name       : testHiCollieC007
-     * @tc.desc       : test OH_HiCollie_SetTimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC007
+     * @tc.number SUB_DFX_DFR_Hicollie_SDK_0140
+     * @tc.desc   test OH_HiCollie_SetTimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -125,12 +125,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_SDK_0130
-     * @tc.name       : testHiCollieC008
-     * @tc.desc       : test OH_HiCollie_SetTimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC008
+     * @tc.number SUB_DFX_DFR_Hicollie_SDK_0130
+     * @tc.desc   test OH_HiCollie_SetTimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -144,12 +144,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_SDK_0160
-     * @tc.name       : testHiCollieC009
-     * @tc.desc       : test OH_HiCollie_SetTimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC009
+     * @tc.number SUB_DFX_DFR_Hicollie_SDK_0160
+     * @tc.desc   test OH_HiCollie_SetTimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -163,12 +163,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_SDK_0150
-     * @tc.name       : testHiCollieC010
-     * @tc.desc       : test OH_HiCollie_SetTimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC010
+     * @tc.number SUB_DFX_DFR_Hicollie_SDK_0150
+     * @tc.desc   test OH_HiCollie_SetTimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -182,12 +182,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_SDK_0120
-     * @tc.name       : testHiCollieC011
-     * @tc.desc       : test OH_HiCollie_SetTimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC011
+     * @tc.number SUB_DFX_DFR_Hicollie_SDK_0120
+     * @tc.desc   test OH_HiCollie_SetTimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -203,12 +203,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_SDK_0170
-     * @tc.name       : testHiCollieC012
-     * @tc.desc       : test OH_HiCollie_SetTimer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC012
+     * @tc.number SUB_DFX_DFR_Hicollie_SDK_0170
+     * @tc.desc   test OH_HiCollie_SetTimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -224,12 +224,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_DFX_DFR_Hicollie_StuckDetectionWithTimeout_0220
-     * @tc.name       : testHiCollieC013
-     * @tc.desc       : test OH_HiCollie_Init_StuckDetectionWithTimeout
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHiCollieC013
+     * @tc.number SUB_DFX_DFR_Hicollie_StuckDetectionWithTimeout_0220
+     * @tc.desc   test OH_HiCollie_Init_StuckDetectionWithTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiCollieC013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let result:number = testNapi.testHiCollieStuckWithTimeoutNdk();
@@ -238,13 +238,13 @@ export default function abilityTest() {
     });
 	
     /**
-      * @tc.number     : SUB_DFX_DFR_Hicollie_StuckDetectionWithTimeout_0210
-      * @tc.name       : testHiCollieC014
-      * @tc.desc       : test OH_HiCollie_Init_StuckDetectionWithTimeout
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-    */
+     * @tc.name   testHiCollieC014
+     * @tc.number SUB_DFX_DFR_Hicollie_StuckDetectionWithTimeout_0210
+     * @tc.desc   test OH_HiCollie_Init_StuckDetectionWithTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHiCollieC014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let result:number = testNapi.testHiCollieStuckWithTimeoutNdk2();
         expect(result).assertEqual(401);
@@ -252,13 +252,13 @@ export default function abilityTest() {
     });
 	
     /**
-      * @tc.number     : SUB_DFX_DFR_Hicollie_StuckDetectionWithTimeout_0200
-      * @tc.name       : testHiCollieC015
-      * @tc.desc       : test OH_HiCollie_Init_StuckDetectionWithTimeout
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-    */
+     * @tc.name   testHiCollieC015
+     * @tc.number SUB_DFX_DFR_Hicollie_StuckDetectionWithTimeout_0200
+     * @tc.desc   test OH_HiCollie_Init_StuckDetectionWithTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testHiCollieC015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let result:number = testNapi.testHiCollieStuckWithTimeoutNdk1();
         expect(result).assertEqual(0);

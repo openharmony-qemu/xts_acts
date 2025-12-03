@@ -33,6 +33,9 @@
     "MainAbility/pages/RelativeContainer/RelativeContainerCNodePage",
     "MainAbility/pages/capi/ArkUIPostAsyncUITask",
     "MainAbility/pages/capi/ArkUIPostUITask",
-    "MainAbility/pages/capi/ArkUIPostUITaskAndWait"
+    "MainAbility/pages/capi/ArkUIPostUITaskAndWait",
+    "MainAbility/pages/scroll/ScrollZoomStartTest",
+    "MainAbility/pages/scroll/ScrollZoomDidTest",
+    "MainAbility/pages/scroll/ScrollZoomStopTest"
   ]
 }

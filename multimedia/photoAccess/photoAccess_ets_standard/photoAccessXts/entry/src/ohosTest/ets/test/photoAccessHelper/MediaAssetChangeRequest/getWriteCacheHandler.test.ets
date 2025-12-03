@@ -63,12 +63,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_001
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_001
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_001
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_001';
@@ -78,12 +78,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_002
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_002
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_002
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_002';
@@ -93,12 +93,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_003
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_003
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_003
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_003';
@@ -108,12 +108,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_004
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_004
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_004
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_004';
@@ -123,12 +123,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_005
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_005
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_005
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_005
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_005';
@@ -138,12 +138,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_006
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_006
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_006
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_006
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_006';
@@ -153,12 +153,12 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_007
-     * @tc.name      : MediaAssetChangeRequest_getWriteCacheHandler_promise_007
-     * @tc.desc      : getWriteCacheHandler
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_getWriteCacheHandler_promise_007
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_007
+     * @tc.desc   getWriteCacheHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_getWriteCacheHandler_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_getWriteCacheHandler_promise_007';

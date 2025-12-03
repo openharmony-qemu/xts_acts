@@ -26,38 +26,38 @@ export default function textScaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SCALE_0100
-     * @tc.name       : testTextScale001
-     * @tc.desc       : testing scale for text with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextScale001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SCALE_0100
+     * @tc.desc   testing scale for text with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextScale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SCALE_0200
-     * @tc.name       : testTextScale002
-     * @tc.desc       : testing scale for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextScale002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SCALE_0200
+     * @tc.desc   testing scale for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextScale002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SCALE_0300
-     * @tc.name       : testTextScale003
-     * @tc.desc       : testing scale for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextScale003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SCALE_0300
+     * @tc.desc   testing scale for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextScale003()).assertEqual(0)

@@ -22,12 +22,12 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 export default function CustomSpanMetricsTest() {
   describe('CustomSpanMetricsTest', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_CustomSpanMetricsTest_0100
-     * @tc.name    : testArkUIACECustomSpanMetricsTest0100
-     * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACECustomSpanMetricsTest0100
+     * @tc.number SUB_ArkUI_ACE_CustomSpanMetricsTest_0100
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACECustomSpanMetricsTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -43,12 +43,12 @@ export default function CustomSpanMetricsTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_CustomSpanMetricsTest_0200
-     * @tc.name    : testArkUIACECustomSpanMetricsTest0200
-     * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACECustomSpanMetricsTest0200
+     * @tc.number SUB_ArkUI_ACE_CustomSpanMetricsTest_0200
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACECustomSpanMetricsTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function CustomSpanMetricsTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_CustomSpanMetricsTest_0300
-     * @tc.name    : testArkUIACECustomSpanMetricsTest0300
-     * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetHeight interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACECustomSpanMetricsTest0300
+     * @tc.number SUB_ArkUI_ACE_CustomSpanMetricsTest_0300
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetHeight interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACECustomSpanMetricsTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -85,12 +85,12 @@ export default function CustomSpanMetricsTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_CustomSpanMetricsTest_0400
-     * @tc.name    : testArkUIACECustomSpanMetricsTest0400
-     * @tc.desc    : testing OH_ArkUI_CustomSpanMetrics_SetHeight interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACECustomSpanMetricsTest0400
+     * @tc.number SUB_ArkUI_ACE_CustomSpanMetricsTest_0400
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetHeight interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACECustomSpanMetricsTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

@@ -80,9 +80,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewIdProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewIdProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewIdProp START');
@@ -98,9 +101,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClassProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClassProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClassProp START');
@@ -117,9 +123,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClassPropNone START');
@@ -137,9 +146,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewRefProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewRefProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewRefProp START');
@@ -156,9 +168,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewRefPropNone START');
@@ -176,9 +191,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testPickerViewFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testPickerViewFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDataProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDataProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDataProp START');
@@ -310,9 +346,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDataPropNone START');
@@ -330,9 +369,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropRtl START');
@@ -426,9 +480,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropLtr START');
@@ -445,9 +502,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropAuto START');
@@ -464,9 +524,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDirPropNone START');
@@ -483,9 +546,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewForPropNull', Level.LEVEL0, async function(done) {
             console.info('testPickerViewForPropNull START');
@@ -503,9 +569,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewForPropOne', Level.LEVEL0, async function(done) {
             console.info('testPickerViewForPropOne START');
@@ -523,9 +592,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewForPropThree', Level.LEVEL0, async function(done) {
             console.info('testPickerViewForPropThree START');
@@ -543,9 +615,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPickerViewIfPropTrue START');
@@ -563,9 +638,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPickerViewShowPropTrue START');
@@ -583,9 +661,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testPickerViewShowPropFalse START');
@@ -603,9 +684,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewShowPropNone START');
@@ -623,9 +707,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewPickerViewText
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewPickerViewText
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewPickerViewText', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewText START');
@@ -643,9 +730,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewPickerViewTime
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewPickerViewTime
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewPickerViewTime', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewTime START');
@@ -663,9 +753,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewPickerViewDate
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewPickerViewDate
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewPickerViewDate', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewDate START');
@@ -683,9 +776,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewPickerViewDatetime
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewPickerViewDatetime
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewPickerViewDatetime', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewDatetime START');
@@ -703,9 +799,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewPickerViewMultiText
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewPickerViewMultiText
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewPickerViewMultiText', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewMultiText START');

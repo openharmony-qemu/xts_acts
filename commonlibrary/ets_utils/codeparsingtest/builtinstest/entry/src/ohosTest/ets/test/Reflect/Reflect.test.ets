@@ -61,12 +61,12 @@ export default function ReflectTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0100
-     * @tc.name       : testGet0001
-     * @tc.desc       : Test the function of the interface Reflect.get.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0100
+     * @tc.desc   Test the function of the interface Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testGet0001";
@@ -83,12 +83,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0200
-     * @tc.name       : testGet0002
-     * @tc.desc       : Test the function of the interface Reflect.get.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0200
+     * @tc.desc   Test the function of the interface Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGet0002";
@@ -102,12 +102,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0300
-     * @tc.name       : testHas0001
-     * @tc.desc       : Test the function of the interface Reflect.has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0300
+     * @tc.desc   Test the function of the interface Reflect.has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0001";
@@ -124,12 +124,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0400
-     * @tc.name       : testHas0002
-     * @tc.desc       : Test the function of the interface Reflect.has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0400
+     * @tc.desc   Test the function of the interface Reflect.has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0002";
@@ -146,12 +146,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0500
-     * @tc.name       : testHas0003
-     * @tc.desc       : Test the function of the interface Reflect.has.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0500
+     * @tc.desc   Test the function of the interface Reflect.has.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testHas0003";
@@ -168,12 +168,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0600
-     * @tc.name       : testOwnKeys0001
-     * @tc.desc       : Test the function of the interface Reflect.ownKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOwnKeys0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0600
+     * @tc.desc   Test the function of the interface Reflect.ownKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOwnKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testOwnKeys0001";
@@ -193,12 +193,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0700
-     * @tc.name       : testOwnKeys0002
-     * @tc.desc       : Test the function of the interface Reflect.ownKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOwnKeys0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0700
+     * @tc.desc   Test the function of the interface Reflect.ownKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOwnKeys0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testOwnKeys0002";
@@ -218,12 +218,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0800
-     * @tc.name       : testOwnKeys0003
-     * @tc.desc       : Test the function of the interface Reflect.ownKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOwnKeys0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0800
+     * @tc.desc   Test the function of the interface Reflect.ownKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOwnKeys0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testOwnKeys0003";
@@ -243,12 +243,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0900
-     * @tc.name       : testOwnKeys0004
-     * @tc.desc       : Test the function of the interface Reflect.ownKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOwnKeys0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_0900
+     * @tc.desc   Test the function of the interface Reflect.ownKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOwnKeys0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testOwnKeys0004";
@@ -263,12 +263,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_1000
-     * @tc.name       : testSet0001
-     * @tc.desc       : Test the function of the interface Reflect.set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_1000
+     * @tc.desc   Test the function of the interface Reflect.set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSet0001";
@@ -286,12 +286,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_1100
-     * @tc.name       : testSet0002
-     * @tc.desc       : Test the function of the interface Reflect.set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_1100
+     * @tc.desc   Test the function of the interface Reflect.set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSet0002";
@@ -307,12 +307,12 @@ export default function ReflectTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_1200
-     * @tc.name       : testSet0003
-     * @tc.desc       : Test the function of the interface Reflect.set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_REFLECT_1200
+     * @tc.desc   Test the function of the interface Reflect.set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSet0003";

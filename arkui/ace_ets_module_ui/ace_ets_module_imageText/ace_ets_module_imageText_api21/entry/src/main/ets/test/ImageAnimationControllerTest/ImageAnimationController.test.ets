@@ -46,12 +46,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest001
-     * @tc.name      ImageAnimationControllerTest001
-     * @tc.desc      test the getAnimationController()?.start()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest001
+     * @tc.number ImageAnimationControllerTest001
+     * @tc.desc   test the getAnimationController()?.start()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest001', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest001] START');
@@ -76,12 +76,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest002
-     * @tc.name      ImageAnimationControllerTest002
-     * @tc.desc      test the getAnimationController()?.stop()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest002
+     * @tc.number ImageAnimationControllerTest002
+     * @tc.desc   test the getAnimationController()?.stop()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest002', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest002] START');
@@ -106,12 +106,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest003
-     * @tc.name      ImageAnimationControllerTest003
-     * @tc.desc      test the getAnimationController()?.pause()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest003
+     * @tc.number ImageAnimationControllerTest003
+     * @tc.desc   test the getAnimationController()?.pause()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest003', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest003] START');
@@ -136,12 +136,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest004
-     * @tc.name      ImageAnimationControllerTest004
-     * @tc.desc      test the getAnimationController()?.resume()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest004
+     * @tc.number ImageAnimationControllerTest004
+     * @tc.desc   test the getAnimationController()?.resume()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest004', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest004] START');
@@ -166,12 +166,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest005
-     * @tc.name      ImageAnimationControllerTest005
-     * @tc.desc      test the getAnimationController()?.start()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest005
+     * @tc.number ImageAnimationControllerTest005
+     * @tc.desc   test the getAnimationController()?.start()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest005', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest005] START');
@@ -196,12 +196,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest006
-     * @tc.name      ImageAnimationControllerTest006
-     * @tc.desc      test the getAnimationController()?.stop()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest006
+     * @tc.number ImageAnimationControllerTest006
+     * @tc.desc   test the getAnimationController()?.stop()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest006', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest006] START');
@@ -226,12 +226,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest007
-     * @tc.name      ImageAnimationControllerTest007
-     * @tc.desc      test the getAnimationController()?.pause()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest007
+     * @tc.number ImageAnimationControllerTest007
+     * @tc.desc   test the getAnimationController()?.pause()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest007', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest007] START');
@@ -256,12 +256,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest008
-     * @tc.name      ImageAnimationControllerTest008
-     * @tc.desc      test the getAnimationController()?.resume()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest008
+     * @tc.number ImageAnimationControllerTest008
+     * @tc.desc   test the getAnimationController()?.resume()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest008', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest008] START');
@@ -286,12 +286,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest009
-     * @tc.name      ImageAnimationControllerTest009
-     * @tc.desc      test the getAnimationController()?.start()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest009
+     * @tc.number ImageAnimationControllerTest009
+     * @tc.desc   test the getAnimationController()?.start()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest009', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest009] START');
@@ -316,12 +316,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest010
-     * @tc.name      ImageAnimationControllerTest010
-     * @tc.desc      test the getAnimationController()?.stop()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest010
+     * @tc.number ImageAnimationControllerTest010
+     * @tc.desc   test the getAnimationController()?.stop()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest010', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest010] START');
@@ -346,12 +346,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest011
-     * @tc.name      ImageAnimationControllerTest011
-     * @tc.desc      test the getAnimationController()?.pause()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest011
+     * @tc.number ImageAnimationControllerTest011
+     * @tc.desc   test the getAnimationController()?.pause()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest011', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest011] START');
@@ -376,12 +376,12 @@ export default function ImageAnimationControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnimationControllerTest012
-     * @tc.name      ImageAnimationControllerTest012
-     * @tc.desc      test the getAnimationController()?.resume()
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageAnimationControllerTest012
+     * @tc.number ImageAnimationControllerTest012
+     * @tc.desc   test the getAnimationController()?.resume()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimationControllerTest012', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimationControllerTest012] START');

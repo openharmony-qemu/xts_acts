@@ -20,12 +20,12 @@ import Utils from "../common/Utils";
 export default function NodeAttribute() {
   describe('NodeAttribute', () => {
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_HALF_LEADING_0100
-     * @tc.name    : testCheckNodeTextHalfLeading
-     * @tc.desc    : Test get CheckNodeTextHalfLeading's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextHalfLeading
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_HALF_LEADING_0100
+     * @tc.desc   Test get CheckNodeTextHalfLeading's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextHalfLeading', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -41,12 +41,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_LINE_COUNT_0100
-     * @tc.name    : testCheckNodeTextLineCount
-     * @tc.desc    : Test get CheckNodeTextLineCount's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextLineCount
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_LINE_COUNT_0100
+     * @tc.desc   Test get CheckNodeTextLineCount's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextLineCount', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -62,12 +62,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_OPTIMIZE_TRAILING_SPACE_0100
-     * @tc.name    : testCheckNodeTextOptimizeTrailingSpace
-     * @tc.desc    : Test get CheckNodeTextOptimizeTrailingSpace's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextOptimizeTrailingSpace
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_OPTIMIZE_TRAILING_SPACE_0100
+     * @tc.desc   Test get CheckNodeTextOptimizeTrailingSpace's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextOptimizeTrailingSpace', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -83,12 +83,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_LINEAR_GRADIENT_0100
-     * @tc.name    : testCheckNodeTextLinearGradient
-     * @tc.desc    : Test get CheckNodeTextLinearGradient's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextLinearGradient
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_LINEAR_GRADIENT_0100
+     * @tc.desc   Test get CheckNodeTextLinearGradient's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextLinearGradient', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -104,12 +104,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_RADIAL_GRADIENT_0100
-     * @tc.name    : testCheckNodeTextRadialGradient
-     * @tc.desc    : Test get CheckNodeTextRadialGradient's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextRadialGradient
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_RADIAL_GRADIENT_0100
+     * @tc.desc   Test get CheckNodeTextRadialGradient's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextRadialGradient', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -125,12 +125,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_VERTICAL_ALIGN_0100
-     * @tc.name    : testCheckNodeTextVerticalAlign
-     * @tc.desc    : Test get CheckNodeTextVerticalAlign's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextVerticalAlign
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_VERTICAL_ALIGN_0100
+     * @tc.desc   Test get CheckNodeTextVerticalAlign's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextVerticalAlign', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -146,12 +146,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_HALF_LEADING_0100
-     * @tc.name    : testCheckNodeTextInputHalfLeading
-     * @tc.desc    : Test get CheckNodeTextInputHalfLeading's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextInputHalfLeading
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_HALF_LEADING_0100
+     * @tc.desc   Test get CheckNodeTextInputHalfLeading's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextInputHalfLeading', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -167,12 +167,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_KEYBOARD_APPEARANCE_0100
-     * @tc.name    : testCheckNodeTextInputKeyboardAppearance
-     * @tc.desc    : Test get CheckNodeTextInputKeyboardAppearance's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextInputKeyboardAppearance
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_KEYBOARD_APPEARANCE_0100
+     * @tc.desc   Test get CheckNodeTextInputKeyboardAppearance's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextInputKeyboardAppearance', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -188,12 +188,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION_0100
-     * @tc.name    : testCheckNodeTextInputEnableFillAnimation
-     * @tc.desc    : Test get CheckNodeTextInputEnableFillAnimation's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextInputEnableFillAnimation
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_ENABLE_FILL_ANIMATION_0100
+     * @tc.desc   Test get CheckNodeTextInputEnableFillAnimation's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextInputEnableFillAnimation', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -209,12 +209,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_LINE_HEIGHT_0100
-     * @tc.name    : testCheckNodeTextInputLineHeight
-     * @tc.desc    : Test get CheckNodeTextInputLineHeight's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextInputLineHeight
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_INPUT_LINE_HEIGHT_0100
+     * @tc.desc   Test get CheckNodeTextInputLineHeight's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextInputLineHeight', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -230,12 +230,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_INPUT_FILTER_0100
-     * @tc.name    : testCheckNodeTextAreaInputFilter
-     * @tc.desc    : Test get CheckNodeTextAreaInputFilter's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaInputFilter
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_INPUT_FILTER_0100
+     * @tc.desc   Test get CheckNodeTextAreaInputFilter's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaInputFilter', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -251,12 +251,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_CONTENT_TYPE_0100
-     * @tc.name    : testCheckNodeTextAreaContentType
-     * @tc.desc    : Test get CheckNodeTextAreaContentType's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaContentType
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_CONTENT_TYPE_0100
+     * @tc.desc   Test get CheckNodeTextAreaContentType's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaContentType', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -272,12 +272,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_HALF_LEADING_0100
-     * @tc.name    : testCheckNodeTextAreaHalfLeading
-     * @tc.desc    : Test get CheckNodeTextAreaHalfLeading's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaHalfLeading
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_HALF_LEADING_0100
+     * @tc.desc   Test get CheckNodeTextAreaHalfLeading's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaHalfLeading', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -293,12 +293,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_KEYBOARD_APPEARANCE_0100
-     * @tc.name    : testCheckNodeTextAreaKeyboardAppearance
-     * @tc.desc    : Test get CheckNodeTextAreaKeyboardAppearance's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaKeyboardAppearance
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_KEYBOARD_APPEARANCE_0100
+     * @tc.desc   Test get CheckNodeTextAreaKeyboardAppearance's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaKeyboardAppearance', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -314,12 +314,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_MAX_LINES_0100
-     * @tc.name    : testCheckNodeTextAreaMaxLines
-     * @tc.desc    : Test get CheckNodeTextAreaMaxLines's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaMaxLines
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_MAX_LINES_0100
+     * @tc.desc   Test get CheckNodeTextAreaMaxLines's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaMaxLines', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -335,12 +335,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_LINE_SPACING_0100
-     * @tc.name    : testCheckNodeTextAreaLineSpacing
-     * @tc.desc    : Test get CheckNodeTextAreaLineSpacing's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaLineSpacing
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_LINE_SPACING_0100
+     * @tc.desc   Test get CheckNodeTextAreaLineSpacing's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaLineSpacing', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -356,12 +356,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_MIN_LINES_0100
-     * @tc.name    : testCheckNodeTextAreaMinLines
-     * @tc.desc    : Test get CheckNodeTextAreaMinLines's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaMinLines
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_MIN_LINES_0100
+     * @tc.desc   Test get CheckNodeTextAreaMinLines's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaMinLines', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -377,12 +377,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_MAX_LINES_WITH_SCROLL_0100
-     * @tc.name    : testCheckNodeTextAreaMaxLinesWithScroll
-     * @tc.desc    : Test get CheckNodeTextAreaMaxLinesWithScroll's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaMaxLinesWithScroll
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_MAX_LINES_WITH_SCROLL_0100
+     * @tc.desc   Test get CheckNodeTextAreaMaxLinesWithScroll's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaMaxLinesWithScroll', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -398,12 +398,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_LINE_HEIGHT_0100
-     * @tc.name    : testCheckNodeTextAreaLineHeight
-     * @tc.desc    : Test get CheckNodeTextAreaLineHeight's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextAreaLineHeight
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_AREA_LINE_HEIGHT_0100
+     * @tc.desc   Test get CheckNodeTextAreaLineHeight's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextAreaLineHeight', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -419,12 +419,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE_0100
-     * @tc.name    : testCheckNodeTextPickSelectedBackgroundStyle
-     * @tc.desc    : Test get CheckNodeTextPickSelectedBackgroundStyle's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTextPickSelectedBackgroundStyle
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TEXT_PICKER_SELECTED_BACKGROUND_STYLE_0100
+     * @tc.desc   Test get CheckNodeTextPickSelectedBackgroundStyle's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTextPickSelectedBackgroundStyle', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -440,12 +440,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BORDER_WIDTH_PERCENT_0100
-     * @tc.name    : testCheckNodeBorderWidthPercent
-     * @tc.desc    : Test get CheckNodeBorderWidthPercent's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeBorderWidthPercent
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BORDER_WIDTH_PERCENT_0100
+     * @tc.desc   Test get CheckNodeBorderWidthPercent's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeBorderWidthPercent', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -461,12 +461,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_UNIQUE_ID_0100
-     * @tc.name    : testCheckNodeUniqueId
-     * @tc.desc    : Test get CheckNodeUniqueId's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeUniqueId
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_UNIQUE_ID_0100
+     * @tc.desc   Test get CheckNodeUniqueId's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeUniqueId', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -482,12 +482,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_FOCUS_BOX_0100
-     * @tc.name    : testCheckNodeFocusBox
-     * @tc.desc    : Test get CheckNodeFocusBox's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusBox
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_FOCUS_BOX_0100
+     * @tc.desc   Test get CheckNodeFocusBox's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusBox', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -503,12 +503,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CLICK_DISTANCE_0100
-     * @tc.name    : testCheckNodeClickDistance
-     * @tc.desc    : Test get CheckNodeClickDistance's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeClickDistance
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CLICK_DISTANCE_0100
+     * @tc.desc   Test get CheckNodeClickDistance's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeClickDistance', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -524,12 +524,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TAB_STOP_0100
-     * @tc.name    : testCheckNodeTabStop
-     * @tc.desc    : Test get CheckNodeTabStop's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTabStop
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TAB_STOP_0100
+     * @tc.desc   Test get CheckNodeTabStop's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTabStop', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -545,12 +545,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE_0100
-     * @tc.name    : testCheckNodeBackgroundImageResizableWithSlice
-     * @tc.desc    : Test get CheckNodeBackgroundImageResizableWithSlice's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeBackgroundImageResizableWithSlice
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE_0100
+     * @tc.desc   Test get CheckNodeBackgroundImageResizableWithSlice's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeBackgroundImageResizableWithSlice', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -566,12 +566,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_NEXT_FOCUS_0100
-     * @tc.name    : testCheckNodeNextFocus
-     * @tc.desc    : Test get CheckNodeNextFocus's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeNextFocus
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_NEXT_FOCUS_0100
+     * @tc.desc   Test get CheckNodeNextFocus's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeNextFocus', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -587,12 +587,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO_0100
-     * @tc.name    : testCheckNodeVisibleAreaApproximateChangeRatio
-     * @tc.desc    : Test get CheckNodeVisibleAreaApproximateChangeRatio's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeVisibleAreaApproximateChangeRatio
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_RATIO_0100
+     * @tc.desc   Test get CheckNodeVisibleAreaApproximateChangeRatio's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeVisibleAreaApproximateChangeRatio', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -610,12 +610,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TRANSLATE_WITH_PERCENT_0100
-     * @tc.name    : testCheckNodeTranslateWidthPercent
-     * @tc.desc    : Test get CheckNodeTranslateWidthPercent's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTranslateWidthPercent
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TRANSLATE_WITH_PERCENT_0100
+     * @tc.desc   Test get CheckNodeTranslateWidthPercent's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTranslateWidthPercent', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -633,12 +633,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_ROTATE_ANGLE_0100
-     * @tc.name    : testCheckNodeRotateAngle
-     * @tc.desc    : Test get CheckNodeRotateAngle's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeRotateAngle
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_ROTATE_ANGLE_0100
+     * @tc.desc   Test get CheckNodeRotateAngle's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeRotateAngle', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -654,12 +654,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_IMMUTABLE_FONT_WEIGHT_0100
-     * @tc.name    : testCheckNodeImmutableFontWeight
-     * @tc.desc    : Test get CheckNodeImmutableFontWeight's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeImmutableFontWeight
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_IMMUTABLE_FONT_WEIGHT_0100
+     * @tc.desc   Test get CheckNodeImmutableFontWeight's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeImmutableFontWeight', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -675,12 +675,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_IMAGE_SPAN_BASELINE_OFFSET_0100
-     * @tc.name    : testCheckNodeImageSpanBaselineOffset
-     * @tc.desc    : Test get CheckNodeImageSpanBaselineOffset's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeImageSpanBaselineOffset
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_IMAGE_SPAN_BASELINE_OFFSET_0100
+     * @tc.desc   Test get CheckNodeImageSpanBaselineOffset's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeImageSpanBaselineOffset', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -696,12 +696,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BUTTON_MIN_FONT_SCALE_0100
-     * @tc.name    : testCheckNodeButtonMinFontScale
-     * @tc.desc    : Test get CheckNodeButtonMinFontScale's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeButtonMinFontScale
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BUTTON_MIN_FONT_SCALE_0100
+     * @tc.desc   Test get CheckNodeButtonMinFontScale's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeButtonMinFontScale', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -717,12 +717,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BUTTON_MAX_FONT_SCALE_0100
-     * @tc.name    : testCheckNodeButtonMaxFontScale
-     * @tc.desc    : Test get CheckNodeButtonMaxFontScale's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeButtonMaxFontScale
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_BUTTON_MAX_FONT_SCALE_0100
+     * @tc.desc   Test get CheckNodeButtonMaxFontScale's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeButtonMaxFontScale', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -738,12 +738,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_SURFACE_SIZE_0100
-     * @tc.name    : testCheckNodeXComponentSurfaceSize
-     * @tc.desc    : Test get CheckNodeXComponentSurfaceSize's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeXComponentSurfaceSize
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_SURFACE_SIZE_0100
+     * @tc.desc   Test get CheckNodeXComponentSurfaceSize's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeXComponentSurfaceSize', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -761,12 +761,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_SURFACE_RECT_0100
-     * @tc.name    : testCheckNodeXComponentSurfaceRect
-     * @tc.desc    : Test get CheckNodeXComponentSurfaceRect's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeXComponentSurfaceRect
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_XCOMPONENT_SURFACE_RECT_0100
+     * @tc.desc   Test get CheckNodeXComponentSurfaceRect's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeXComponentSurfaceRect', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -784,12 +784,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_DATE_PICKER_CAN_LOOP_0100
-     * @tc.name    : testCheckNodeDatePickerCanLoop
-     * @tc.desc    : Test get CheckNodeDatePickerCanLoop's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeDatePickerCanLoop
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_DATE_PICKER_CAN_LOOP_0100
+     * @tc.desc   Test get CheckNodeDatePickerCanLoop's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeDatePickerCanLoop', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -805,12 +805,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_START_0100
-     * @tc.name    : testCheckNodeTimePickerStart
-     * @tc.desc    : Test get CheckNodeTimePickerStart's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTimePickerStart
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_START_0100
+     * @tc.desc   Test get CheckNodeTimePickerStart's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTimePickerStart', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -826,12 +826,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_END_0100
-     * @tc.name    : testCheckNodeTimePickerEnd
-     * @tc.desc    : Test get CheckNodeTimePickerEnd's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeTimePickerEnd
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_TIME_PICKER_END_0100
+     * @tc.desc   Test get CheckNodeTimePickerEnd's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeTimePickerEnd', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -847,12 +847,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SLIDER_PREFIX_0100
-     * @tc.name    : testCheckNodeSliderPrefix
-     * @tc.desc    : Test get CheckNodeSliderPrefix's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeSliderPrefix
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SLIDER_PREFIX_0100
+     * @tc.desc   Test get CheckNodeSliderPrefix's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeSliderPrefix', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -868,12 +868,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SLIDER_SUFFIX_0100
-     * @tc.name    : testCheckNodeSliderSuffix
-     * @tc.desc    : Test get CheckNodeSliderSuffix's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeSliderSuffix
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SLIDER_SUFFIX_0100
+     * @tc.desc   Test get CheckNodeSliderSuffix's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeSliderSuffix', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -889,12 +889,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_SELECTED_COLOR_0100
-     * @tc.name    : testCheckNodeCheckboxGroupSelectedColor
-     * @tc.desc    : Test get CheckNodeCheckboxGroupSelectedColor's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeCheckboxGroupSelectedColor
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_SELECTED_COLOR_0100
+     * @tc.desc   Test get CheckNodeCheckboxGroupSelectedColor's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeCheckboxGroupSelectedColor', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -910,12 +910,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_UNSELECTED_COLOR_0100
-     * @tc.name    : testCheckNodeCheckboxGroupUnselectedColor
-     * @tc.desc    : Test get CheckNodeCheckboxGroupUnselectedColor's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeCheckboxGroupUnselectedColor
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_UNSELECTED_COLOR_0100
+     * @tc.desc   Test get CheckNodeCheckboxGroupUnselectedColor's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeCheckboxGroupUnselectedColor', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -931,12 +931,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_MARK_0100
-     * @tc.name    : testCheckNodeCheckboxGroupMark
-     * @tc.desc    : Test get CheckNodeCheckboxGroupMark's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeCheckboxGroupMark
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_MARK_0100
+     * @tc.desc   Test get CheckNodeCheckboxGroupMark's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeCheckboxGroupMark', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -952,12 +952,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_SHAPE_0100
-     * @tc.name    : testCheckNodeCheckboxGroupShape
-     * @tc.desc    : Test get CheckNodeCheckboxGroupShape's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeCheckboxGroupShape
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_CHECKBOX_GROUP_SHAPE_0100
+     * @tc.desc   Test get CheckNodeCheckboxGroupShape's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeCheckboxGroupShape', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -973,12 +973,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_FLING_0100
-     * @tc.name    : testCheckNodeScrollFling
-     * @tc.desc    : Test get CheckNodeScrollFling's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeScrollFling
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_FLING_0100
+     * @tc.desc   Test get CheckNodeScrollFling's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeScrollFling', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -994,12 +994,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_FADING_EDGE_0100
-     * @tc.name    : testCheckNodeScrollFadingEdge
-     * @tc.desc    : Test get CheckNodeScrollFadingEdge's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeScrollFadingEdge
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_FADING_EDGE_0100
+     * @tc.desc   Test get CheckNodeScrollFadingEdge's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeScrollFadingEdge', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1015,12 +1015,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_FLING_SPEED_LIMIT_0100
-     * @tc.name    : testCheckNodeScrollFlingSpeedLimit
-     * @tc.desc    : Test get CheckNodeScrollFlingSpeedLimit's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeScrollFlingSpeedLimit
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_FLING_SPEED_LIMIT_0100
+     * @tc.desc   Test get CheckNodeScrollFlingSpeedLimit's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeScrollFlingSpeedLimit', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1036,12 +1036,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_CLIP_CONTENT_0100
-     * @tc.name    : testCheckNodeScrollClipContent
-     * @tc.desc    : Test get CheckNodeScrollClipContent's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeScrollClipContent
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_CLIP_CONTENT_0100
+     * @tc.desc   Test get CheckNodeScrollClipContent's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeScrollClipContent', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1057,12 +1057,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_BAR_MARGIN_0100
-     * @tc.name    : testCheckNodeScrollBarMargin
-     * @tc.desc    : Test get CheckNodeScrollBarMargin's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeScrollBarMargin
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SCROLL_BAR_MARGIN_0100
+     * @tc.desc   Test get CheckNodeScrollBarMargin's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeScrollBarMargin', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1078,12 +1078,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_LIST_STACK_FROM_END_0100
-     * @tc.name    : testCheckNodeListStackFromEnd
-     * @tc.desc    : Test get CheckNodeListStackFromEnd's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeListStackFromEnd
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_LIST_STACK_FROM_END_0100
+     * @tc.desc   Test get CheckNodeListStackFromEnd's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeListStackFromEnd', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1099,12 +1099,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_LIST_FOCUS_WRAP_MODE_0100
-     * @tc.name    : testCheckNodeListFocusWrapMode
-     * @tc.desc    : Test get CheckNodeListFocusWrapMode's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeListFocusWrapMode
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_LIST_FOCUS_WRAP_MODE_0100
+     * @tc.desc   Test get CheckNodeListFocusWrapMode's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeListFocusWrapMode', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1120,12 +1120,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_INDICATOR_INTERACTIVE_0100
-     * @tc.name    : testCheckNodeSwiperIndicatorInteractive
-     * @tc.desc    : Test get CheckNodeSwiperIndicatorInteractive's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeSwiperIndicatorInteractive
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_INDICATOR_INTERACTIVE_0100
+     * @tc.desc   Test get CheckNodeSwiperIndicatorInteractive's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeSwiperIndicatorInteractive', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1141,12 +1141,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_PAGE_FLIP_MODE_0100
-     * @tc.name    : testCheckNodeSwiperPageFlipMode
-     * @tc.desc    : Test get CheckNodeSwiperPageFlipMode's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeSwiperPageFlipMode
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_PAGE_FLIP_MODE_0100
+     * @tc.desc   Test get CheckNodeSwiperPageFlipMode's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeSwiperPageFlipMode', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1162,12 +1162,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_AUTO_FILL_0100
-     * @tc.name    : testCheckNodeSwiperAutoFill
-     * @tc.desc    : Test get CheckNodeSwiperAutoFill's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeSwiperAutoFill
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_AUTO_FILL_0100
+     * @tc.desc   Test get CheckNodeSwiperAutoFill's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeSwiperAutoFill', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1183,12 +1183,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_MAINTAIN_VISIBLE_CONTENT_POSITION_0100
-     * @tc.name    : testCheckNodeSwiperMaintainVisibleContentPosition
-     * @tc.desc    : Test get CheckNodeSwiperMaintainVisibleContentPosition's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeSwiperMaintainVisibleContentPosition
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_SWIPER_MAINTAIN_VISIBLE_CONTENT_POSITION_0100
+     * @tc.desc   Test get CheckNodeSwiperMaintainVisibleContentPosition's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeSwiperMaintainVisibleContentPosition', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1204,12 +1204,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_REFRESH_MAX_PULL_DOWN_DISTANCE_0100
-     * @tc.name    : testCheckNodeRefreshMaxPullDownDistance
-     * @tc.desc    : Test get CheckNodeRefreshMaxPullDownDistance's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeRefreshMaxPullDownDistance
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_REFRESH_MAX_PULL_DOWN_DISTANCE_0100
+     * @tc.desc   Test get CheckNodeRefreshMaxPullDownDistance's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeRefreshMaxPullDownDistance', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1225,12 +1225,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_WATER_FLOW_LAYOUT_MODE_0100
-     * @tc.name    : testCheckNodeWaterFlowLayoutMode
-     * @tc.desc    : Test get CheckNodeWaterFlowLayoutMode's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeWaterFlowLayoutMode
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_WATER_FLOW_LAYOUT_MODE_0100
+     * @tc.desc   Test get CheckNodeWaterFlowLayoutMode's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeWaterFlowLayoutMode', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1246,12 +1246,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_RELATIVE_CONTAINER_GUIDE_LINE_0100
-     * @tc.name    : testCheckNodeRelativeContainerGuideLine
-     * @tc.desc    : Test get CheckNodeRelativeContainerGuideLine's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeRelativeContainerGuideLine
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_RELATIVE_CONTAINER_GUIDE_LINE_0100
+     * @tc.desc   Test get CheckNodeRelativeContainerGuideLine's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeRelativeContainerGuideLine', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1267,12 +1267,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_RELATIVE_CONTAINER_BARRIER_0100
-     * @tc.name    : testCheckNodeRelativeContainerBarrier
-     * @tc.desc    : Test get CheckNodeRelativeContainerBarrier's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeRelativeContainerBarrier
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_RELATIVE_CONTAINER_BARRIER_0100
+     * @tc.desc   Test get CheckNodeRelativeContainerBarrier's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeRelativeContainerBarrier', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1288,12 +1288,12 @@ export default function NodeAttribute() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_EMBEDDED_COMPONENT_WANT_0100
-     * @tc.name    : testCheckNodeEmbeddedComponentWant
-     * @tc.desc    : Test get CheckNodeEmbeddedComponentWant's result.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeEmbeddedComponentWant
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_NODEATTRIBUTETYPE_NODE_EMBEDDED_COMPONENT_WANT_0100
+     * @tc.desc   Test get CheckNodeEmbeddedComponentWant's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeEmbeddedComponentWant', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

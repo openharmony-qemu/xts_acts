@@ -38,13 +38,13 @@ export default function webviewApi() {
       done();
     })
    
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0230
-     * @tc.name       : testWebResponse_GetError
-     * @tc.desc       : test WebResponse_GetError
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResponse_GetError
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0230
+     * @tc.desc   test WebResponse_GetError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResponse_GetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_GetError PASS');
@@ -53,13 +53,13 @@ export default function webviewApi() {
         sendEventByKey('webHostingButton', 10, '');
     })
      
-    /*
-     * @tc.number     : SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0300
-     * @tc.name       : testWebResponse_SetError
-     * @tc.desc       : test WebResponse_SetError
-     * @tc.size_t     : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testWebResponse_SetError
+     * @tc.number SUB_ACE_WEB_SCHEME_HANDLER_NAPI_0300
+     * @tc.desc   test WebResponse_SetError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebResponse_SetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResponse_SetError PASS');

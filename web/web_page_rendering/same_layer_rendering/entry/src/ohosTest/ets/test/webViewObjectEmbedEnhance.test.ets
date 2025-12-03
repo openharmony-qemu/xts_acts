@@ -47,13 +47,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
     });
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0014
-     *@tc.name testWebViewObjectEmbedAbc
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedAbc
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0014
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedAbc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedAbc"
@@ -62,13 +62,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_API_0005
-     *@tc.name testWebViewObjectEmbedId
-     *@tc.desc test objectEmbedId
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedId
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0005
+     * @tc.desc   test objectEmbedId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedId"
@@ -77,13 +77,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_API_0002
-     *@tc.name testWebViewObjectEmbedType
-     *@tc.desc test objectEmbedType
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedType
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0002
+     * @tc.desc   test objectEmbedType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedType"
@@ -92,13 +92,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_API_0003
-     *@tc.name testWebViewObjectEmbedSrc
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedSrc
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0003
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedSrc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedSrc"
@@ -107,13 +107,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_ENHANCE_API_0004
-     *@tc.name testWebViewObjectEmbedWidth
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedWidth
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_ENHANCE_API_0004
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedWidth"
@@ -122,13 +122,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0005
-     *@tc.name testWebViewObjectEmbedHeight
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedHeight
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0005
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedHeight"
@@ -137,13 +137,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0006
-     *@tc.name testWebViewObjectEmbedTagEmbed
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedTagEmbed
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0006
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedTagEmbed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedTagEmbed"
@@ -152,13 +152,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0007
-     *@tc.name testWebViewObjectEmbedTagObject
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedTagObject
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0007
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedTagObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedTagObject"
@@ -167,13 +167,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0008
-     *@tc.name testWebViewObjectEmbedPosition
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedPosition
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0008
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedPosition"
@@ -182,13 +182,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0009
-     *@tc.name testWebViewObjectEmbedUrl
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedUrl
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0009
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedUrl"
@@ -197,13 +197,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0010
-     *@tc.name testWebViewObjectEmbedParams
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedParams
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0010
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedParams"
@@ -212,13 +212,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0011
-     *@tc.name testWebViewObjectEmbedHasParams
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedHasParams
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0011
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedHasParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedHasParams"
@@ -227,13 +227,13 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0012
-     *@tc.name testWebViewObjectEmbedTest
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedTest
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0012
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedTest"

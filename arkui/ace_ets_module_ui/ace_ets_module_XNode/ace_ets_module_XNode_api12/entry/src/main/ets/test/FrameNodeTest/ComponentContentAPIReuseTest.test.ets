@@ -40,12 +40,12 @@ export default function ComponentContentAPIReuseTest() {
       done();
     });
     /**
-     * @tc.number    ComponentContentAPIReuseTest_0100
-     * @tc.name      ComponentContentAPIReuseTest_0100
-     * @tc.desc      frameNode: ComponentContentAPIReuse
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ComponentContentAPIReuseTest_0100
+     * @tc.number ComponentContentAPIReuseTest_0100
+     * @tc.desc   frameNode: ComponentContentAPIReuse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentContentAPIReuseTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ComponentContentAPIReuseTest_0100 START');

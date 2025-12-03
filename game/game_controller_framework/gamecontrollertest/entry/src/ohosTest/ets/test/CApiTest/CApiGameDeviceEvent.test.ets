@@ -19,7 +19,6 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGameDeviceEventTest() {
   describe('CApiGameDeviceEventTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceEvent_GetChangedType01
      * @tc.number OH_GameDevice_DeviceEvent_GetChangedType01
      * @tc.desc   get changed type success
@@ -36,7 +35,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceEvent_GetChangedType02
      * @tc.number OH_GameDevice_DeviceEvent_GetChangedType02
      * @tc.desc   get changed type failed, when deviceEvent is null
@@ -53,7 +51,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceEvent_GetDeviceInfo01
      * @tc.number OH_GameDevice_DeviceEvent_GetDeviceInfo01
      * @tc.desc   get deviceInfo success
@@ -70,7 +67,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceEvent_GetDeviceInfo02
      * @tc.number OH_GameDevice_DeviceEvent_GetDeviceInfo02
      * @tc.desc   get deviceInfo failed, when deviceEvent is null
@@ -87,7 +83,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DestroyDeviceInfo01
      * @tc.number OH_GameDevice_DestroyDeviceInfo01
      * @tc.desc   destroy device info success
@@ -104,7 +99,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DestroyDeviceInfo02
      * @tc.number OH_GameDevice_DestroyDeviceInfo02
      * @tc.desc   destroy device info failed, when deviceInfo is null
@@ -121,7 +115,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetDeviceId01
      * @tc.number OH_GameDevice_DeviceInfo_GetDeviceId01
      * @tc.desc   get deviceId success
@@ -138,7 +131,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetDeviceId02
      * @tc.number OH_GameDevice_DeviceInfo_GetDeviceId02
      * @tc.desc   get deviceId failed, when deviceEvent is null
@@ -155,7 +147,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetDeviceId03
      * @tc.number OH_GameDevice_DeviceInfo_GetDeviceId03
      * @tc.desc   get deviceId failed, when deviceId is null
@@ -172,7 +163,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetName01
      * @tc.number OH_GameDevice_DeviceInfo_GetName01
      * @tc.desc   get name success
@@ -189,7 +179,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetName02
      * @tc.number OH_GameDevice_DeviceInfo_GetName02
      * @tc.desc   get name failed, when deviceEvent is null
@@ -206,7 +195,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetName03
      * @tc.number OH_GameDevice_DeviceInfo_GetName03
      * @tc.desc   get name failed, when name is null
@@ -223,7 +211,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetProduct01
      * @tc.number OH_GameDevice_DeviceInfo_GetProduct01
      * @tc.desc   GetProduct success
@@ -240,7 +227,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetProduct02
      * @tc.number OH_GameDevice_DeviceInfo_GetProduct02
      * @tc.desc   GetProduct failed, device event null
@@ -257,7 +243,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetVersion01
      * @tc.number OH_GameDevice_DeviceInfo_GetVersion01
      * @tc.desc   GetVersion success
@@ -274,7 +259,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetVersion02
      * @tc.number OH_GameDevice_DeviceInfo_GetVersion02
      * @tc.desc   GetVersion failed, when deviceEvent is null
@@ -291,7 +275,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetPhys01
      * @tc.number OH_GameDevice_DeviceInfo_GetPhys01
      * @tc.desc   GetPhys success
@@ -308,7 +291,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetPhys02
      * @tc.number OH_GameDevice_DeviceInfo_GetPhys02
      * @tc.desc   GetPhys failed, when deviceEvent is null
@@ -325,7 +307,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetPhys03
      * @tc.number OH_GameDevice_DeviceInfo_GetPhys03
      * @tc.desc   GetPhys failed, when deviceEvent is null
@@ -342,7 +323,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetDeviceType01
      * @tc.number OH_GameDevice_DeviceInfo_GetDeviceType01
      * @tc.desc   GetDeviceType success
@@ -359,7 +339,6 @@ export default function CApiGameDeviceEventTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   OH_GameDevice_DeviceInfo_GetDeviceType02
      * @tc.number OH_GameDevice_DeviceInfo_GetDeviceType02
      * @tc.desc   GetDeviceType failed, when deviceEvent is null

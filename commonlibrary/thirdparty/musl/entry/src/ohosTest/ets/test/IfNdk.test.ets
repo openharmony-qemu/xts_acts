@@ -27,12 +27,12 @@ export default function muslIfNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_IF_IF_FREENAMEINDEX_0100
-     * @tc.name     : testMuslIf_If_Freenameindex001
-     * @tc.desc     : test if_freenameindex
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslIf_If_Freenameindex001
+     * @tc.number SUB_THIRDPARTY_MUSL_IF_IF_FREENAMEINDEX_0100
+     * @tc.desc   test if_freenameindex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIf_If_Freenameindex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = If.ifFreeNameIndex();
@@ -41,12 +41,12 @@ export default function muslIfNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_IF_IF_NAMEINDEX_0100
-     * @tc.name     : testMuslIf_If_Nameindex001
-     * @tc.desc     : test if_nameindex
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslIf_If_Nameindex001
+     * @tc.number SUB_THIRDPARTY_MUSL_IF_IF_NAMEINDEX_0100
+     * @tc.desc   test if_nameindex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIf_If_Nameindex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = If.ifNameIndex();

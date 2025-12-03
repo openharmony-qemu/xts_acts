@@ -38,12 +38,12 @@ export default function BackWithResultStaticTest() {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_BackWithResult_static_2900
-     * @tc.name       SUB_Ability_AbilityRuntime_BackWithResult_static_2900
-     * @tc.desc       Test backToCallerAbleWithResult when requestCode is undefined
-     * @tc.level      Level 3
-     * @tc.size       MediumTest
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_static_2900
+     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_static_2900
+     * @tc.desc   Test backToCallerAbleWithResult when requestCode is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_BackWithResult_static_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_BackWithResult_static_2900`;

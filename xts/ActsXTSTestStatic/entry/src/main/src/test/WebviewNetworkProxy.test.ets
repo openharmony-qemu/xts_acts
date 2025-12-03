@@ -49,7 +49,6 @@ export default function webviewNetworkProxy() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testNetworkProxySchemeFilterMatchAllSchemes
      * @tc.number SUB_WEB_NETWORKPROXY_0100
      * @tc.desc   test ProxySchemeFilter MATCH_ALL_SCHEMES
@@ -70,7 +69,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testNetworkProxySchemeFilterMatchHttp
      * @tc.number SUB_WEB_NETWORKPROXY_0200
      * @tc.desc   test ProxySchemeFilter MATCH_HTTP
@@ -90,7 +88,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testNetworkProxySchemeFilterMatchHttps
      * @tc.number SUB_WEB_NETWORKPROXY_0300
      * @tc.desc   test ProxySchemeFilter MATCH_HTTPS
@@ -110,7 +107,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testInsertProxyRule
      * @tc.number SUB_WEB_NETWORKPROXY_0400
      * @tc.desc   test insertProxyRule
@@ -130,7 +126,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testInsertDirectRule
      * @tc.number SUB_WEB_NETWORKPROXY_0500
      * @tc.desc   test insertDirectRule
@@ -150,7 +145,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testInsertBypassRule
      * @tc.number SUB_WEB_NETWORKPROXY_0600
      * @tc.desc   test insertBypassRule
@@ -170,7 +164,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testBypassHostnamesWithoutPeriod
      * @tc.number SUB_WEB_NETWORKPROXY_0700
      * @tc.desc   test bypassHostnamesWithoutPeriod
@@ -190,7 +183,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testClearImplicitRules
      * @tc.number SUB_WEB_NETWORKPROXY_0800
      * @tc.desc   test clearImplicitRules
@@ -210,7 +202,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testEnableReverseBypass
      * @tc.number SUB_WEB_NETWORKPROXY_0900
      * @tc.desc   test enableReverseBypass
@@ -230,7 +221,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testGetBypassRules
      * @tc.number SUB_WEB_NETWORKPROXY_1000
      * @tc.desc   test getBypassRules
@@ -250,7 +240,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testGetProxyRules
      * @tc.number SUB_WEB_NETWORKPROXY_1100
      * @tc.desc   test getProxyRules
@@ -270,7 +259,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testIsReverseBypassEnabled
      * @tc.number SUB_WEB_NETWORKPROXY_1200
      * @tc.desc   test isReverseBypassEnabled
@@ -290,7 +278,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testGetSchemeFilter
      * @tc.number SUB_WEB_NETWORKPROXY_1300
      * @tc.desc   test getSchemeFilter
@@ -310,7 +297,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testProxyGetUrl
      * @tc.number SUB_WEB_NETWORKPROXY_1300
      * @tc.desc   test getUrl
@@ -330,7 +316,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testApplyProxyOverride
      * @tc.number SUB_WEB_NETWORKPROXY_1500
      * @tc.desc   test applyProxyOverride
@@ -350,7 +335,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   testRemoveProxyOverride
      * @tc.number SUB_WEB_NETWORKPROXY_1600
      * @tc.desc   test removeProxyOverride
@@ -370,7 +354,6 @@ export default function webviewNetworkProxy() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   emitonSwitchNextPage
      * @tc.number emitonSwitchNextPage
      * @tc.desc   emitonSwitchNextPage

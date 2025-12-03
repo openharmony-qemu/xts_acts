@@ -30,14 +30,14 @@ export default function AudioRecorderEnumTest() {
     afterAll(() => {
       console.info('afterAll case');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_OUTPUT_FORMAT_0100
-        * @tc.name      : AudioOutputFormat
-        * @tc.desc      : AudioOutputFormat Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_OUTPUT_FORMAT_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_OUTPUT_FORMAT_0100
+     * @tc.desc   AudioOutputFormat Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_OUTPUT_FORMAT_0100', Level.LEVEL0, async (done: Function) => {
       expect(media.AudioOutputFormat.DEFAULT).assertEqual(0);
       expect(media.AudioOutputFormat.MPEG_4).assertEqual(2);
@@ -46,14 +46,14 @@ export default function AudioRecorderEnumTest() {
       expect(media.AudioOutputFormat.AAC_ADTS).assertEqual(6);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_ENCODER_0100
-        * @tc.name      : AudioOutputFormat
-        * @tc.desc      : AudioOutputFormat Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_ENCODER_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_ENCODER_0100
+     * @tc.desc   AudioOutputFormat Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_ENUM_AUDIO_ENCODER_0100', Level.LEVEL0, async (done: Function) => {
       expect(media.AudioEncoder.DEFAULT).assertEqual(0);
       expect(media.AudioEncoder.AMR_NB).assertEqual(1);
@@ -62,14 +62,14 @@ export default function AudioRecorderEnumTest() {
       expect(media.AudioEncoder.HE_AAC).assertEqual(4);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_DECODER_ENUM_CODECMIMETYPE_0100
-        * @tc.name      : CodecMimeType
-        * @tc.desc      : Test Enumerate CodecMimeType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_DECODER_ENUM_CODECMIMETYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_DECODER_ENUM_CODECMIMETYPE_0100
+     * @tc.desc   Test Enumerate CodecMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_DECODER_ENUM_CODECMIMETYPE_0100', Level.LEVEL0, async (done: Function) => {
       expect(media.CodecMimeType.AUDIO_AAC).assertEqual('audio/mp4a-latm');
       expect(media.CodecMimeType.AUDIO_VORBIS).assertEqual('audio/vorbis');

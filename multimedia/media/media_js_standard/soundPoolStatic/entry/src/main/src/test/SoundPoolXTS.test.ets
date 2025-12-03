@@ -177,10 +177,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise createSoundPool test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0100 in`);
@@ -202,10 +204,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0200
-      * @tc.desc    Function test. Error code: 5400101
-      *               : 002.test Promise createSoundPool test --Optional input maxStream is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0200
+     * @tc.desc   Function test. Error code: 5400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0200 in`);
@@ -228,10 +232,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async createSoundPool test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0100 in`);
@@ -259,10 +265,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise load(uri) test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0100 in`);
@@ -273,7 +281,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool?.on('error', (error: BusinessError) => {
+        soundPool?.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -299,10 +307,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0200
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 002.test Promise load(uri) test --Optional input uri is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0200
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0200 in`);
@@ -313,7 +323,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -338,10 +348,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0300
-      * @tc.desc    Function test
-      *               : 003.test Promise load(fd, offset, length) test --0 offset
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0300 in`);
@@ -352,7 +364,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -376,10 +388,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0400
-      * @tc.desc    Function test
-      *               : 004.test Promise load(fd, offset, length) test --1/3 length
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0400 in`);
@@ -390,7 +404,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -414,10 +428,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0500
-      * @tc.desc    Function test
-      *               : 005.test Promise load(fd, offset, length) test --length < fileSize
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0500 in`);
@@ -429,7 +445,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -470,10 +486,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0600
-      * @tc.desc    Function test
-      *               : 006.test Promise load(fd, offset, length) test --length > fileSize
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0600 in`);
@@ -485,7 +503,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -526,10 +544,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0700
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 007.test Promise load(fd, offset, length) test --Optional input fd is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0700
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0700 in`);
@@ -540,7 +560,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -563,10 +583,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0800
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 008.test Promise load(fd, offset, length) test --Optional input offset is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0800
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0800 in`);
@@ -577,7 +599,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -600,10 +622,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0900
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 009.test Promise load(fd, offset, length) test --Optional input length is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0900
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_0900 in`);
@@ -614,7 +638,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -637,10 +661,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async load(uri) test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0100 in`);
@@ -651,7 +677,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -679,10 +705,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0200
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 002.test Async load(uri) test --Optional input uri is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0200
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0200 in`);
@@ -693,7 +721,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -720,10 +748,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0300
-      * @tc.desc    Function test
-      *               : 003.test Async load(fd, offset, length) test --0 offset
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0300 in`);
@@ -734,7 +764,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -762,10 +792,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0400
-      * @tc.desc    Function test
-      *               : 004.test Async load(fd, offset, length) test --1/3 offset
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0400 in`);
@@ -776,7 +808,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -804,10 +836,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0500
-      * @tc.desc    Function test
-      *               : 005.test Async load(fd, offset, length) test --length < fileSize
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0500 in`);
@@ -819,7 +853,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -864,10 +898,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0600
-      * @tc.desc    Function test
-      *               : 006.test Async load(fd, offset, length) test --length > fileSize
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0600 in`);
@@ -879,7 +915,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -924,10 +960,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0700
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 007.test Async load(fd, offset, length) test --Optional input fd is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0700
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0700 in`);
@@ -938,7 +976,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -965,10 +1003,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0800
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 008.test Async load(fd, offset, length) test --Optional input offset is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0800
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0800 in`);
@@ -979,7 +1019,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1006,10 +1046,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0900
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 009.test Async load(fd, offset, length) test --Optional input length is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0900
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_LOAD_ASYNC_0900 in`);
@@ -1020,7 +1062,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1047,10 +1089,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise unload test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0100 in`);
@@ -1061,7 +1105,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1082,10 +1126,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0200
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 002.test Promise unload test --Optional input soundId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0200
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0200 in`);
@@ -1096,7 +1142,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1123,10 +1169,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Promise unload test --Optional input soundId is unloaded
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_0300 in`);
@@ -1137,7 +1185,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1163,10 +1211,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async unload test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0100 in`);
@@ -1177,7 +1227,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1202,10 +1252,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0200
-      * @tc.desc    Function test. Error code: 5400103
-      *               : 002.test Async unload test --Optional input soundId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0200
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0200 in`);
@@ -1216,7 +1268,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1246,10 +1298,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Async unload test --Optional input soundId is unloaded
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_UNLOAD_ASYNC_0300 in`);
@@ -1260,7 +1314,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1290,10 +1344,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise play(soundID) test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0100 in`);
@@ -1304,7 +1360,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1335,10 +1391,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Promise play(soundID) test --Optional input soundId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0200 in`);
@@ -1349,7 +1407,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1375,10 +1433,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Promise play(soundID) test --Optional input soundId is unloaded
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0300 in`);
@@ -1389,7 +1449,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1414,10 +1474,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0400
-      * @tc.desc    Function test
-      *               : 004.test Promise play(soundID, params) test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0400 in`);
@@ -1428,7 +1490,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1459,10 +1521,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0500
-      * @tc.desc    Function test. Error code: 401
-      *               : 005.test Promise play(soundID, params) test --Optional input soundId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0500 in`);
@@ -1473,7 +1537,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1498,10 +1562,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0600
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 006.test Promise play(soundID, params) test --Optional input soundId is unloaded
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0600
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0600 in`);
@@ -1512,7 +1578,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1537,10 +1603,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0700
-      * @tc.desc    Function test
-      *               : 007.test Promise play(soundID, params) test --Optional param.loop
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0700 in`);
@@ -1551,7 +1619,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1584,10 +1652,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0900
-      * @tc.desc    Function test
-      *               : 009.test Promise play(soundID, params) test --Optional param.leftVolume
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_0900 in`);
@@ -1598,7 +1668,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1631,10 +1701,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1000
-      * @tc.desc    Function test
-      *               : 010.test Promise play(soundID, params) test --Optional param.rightVolume
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1000 in`);
@@ -1645,7 +1717,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1678,10 +1750,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1100
-      * @tc.desc    Function test
-      *               : 011.test Promise play(soundID, params) test --Optional param.priority
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1100 in`);
@@ -1692,7 +1766,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1725,10 +1799,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1200
-      * @tc.desc    Function test
-      *               : 012.test Promise play(soundID, params) test --Optional param.parallelPlayFlag
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_1200 in`);
@@ -1739,7 +1815,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1772,10 +1848,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async play(soundID) test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0100 in`);
@@ -1786,7 +1864,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1822,10 +1900,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Async play(soundID) test --Optional input soundId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0200 in`);
@@ -1836,7 +1916,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1865,10 +1945,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Async play(soundID) test --Optional input soundId is unloaded
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0300 in`);
@@ -1879,7 +1961,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1908,10 +1990,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0400
-      * @tc.desc    Function test
-      *               : 004.test Async play(soundID, params) test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0400 in`);
@@ -1922,7 +2006,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1958,10 +2042,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0500
-      * @tc.desc    Function test. Error code: 401
-      *               : 005.test Async play(soundID, params) test --Optional input soundId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0500 in`);
@@ -1972,7 +2058,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2001,10 +2087,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0600
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 006.test Async play(soundID, params) test --Optional input soundId is unloaded
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0600
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0600 in`);
@@ -2015,7 +2103,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2044,10 +2132,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0700
-      * @tc.desc    Function test
-      *               : 007.test Async play(soundID, params) test --Optional param.loop
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0700 in`);
@@ -2058,7 +2148,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2096,10 +2186,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0900
-      * @tc.desc    Function test
-      *               : 009.test Async play(soundID, params) test --Optional param.leftVolume
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_0900 in`);
@@ -2110,7 +2202,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2148,10 +2240,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1000
-      * @tc.desc    Function test
-      *               : 010.test Async play(soundID, params) test --Optional param.rightVolume
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1000 in`);
@@ -2162,7 +2256,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2200,10 +2294,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1100
-      * @tc.desc    Function test
-      *               : 011.test Async play(soundID, params) test --Optional param.priority
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1100 in`);
@@ -2214,7 +2310,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2252,10 +2348,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1200
-      * @tc.desc    Function test
-      *               : 012.test Async play(soundID, params) test --Optional param.parallelPlayFlag
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1200 in`);
@@ -2266,7 +2364,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2304,10 +2402,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise stop test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0100 in`);
@@ -2319,7 +2419,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2341,10 +2441,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Promise stop test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0200 in`);
@@ -2356,7 +2458,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2383,10 +2485,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Promise stop test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0300 in`);
@@ -2398,7 +2502,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2425,10 +2529,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async stop test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0100 in`);
@@ -2440,7 +2546,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2466,10 +2572,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Async stop test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0200 in`);
@@ -2481,7 +2589,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2512,10 +2620,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Async stop test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_ASYNC_0300 in`);
@@ -2527,7 +2637,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2559,10 +2669,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise setLoop test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0100 in`);
@@ -2575,7 +2687,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2599,10 +2711,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Promise setLoop test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0200 in`);
@@ -2615,7 +2729,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2644,10 +2758,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Promise setLoop test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_0300 in`);
@@ -2660,7 +2776,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2690,10 +2806,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async setLoop test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0100 in`);
@@ -2706,7 +2824,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2734,10 +2852,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Async setLoop test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0200 in`);
@@ -2750,7 +2870,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2783,10 +2903,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0300
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 003.test Async setLoop test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0300
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETLOOP_ASYNC_0300 in`);
@@ -2799,7 +2921,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2833,10 +2955,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise setPriority test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0100 in`);
@@ -2849,7 +2973,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2873,10 +2997,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Promise setPriority test --Optional input priority is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0200 in`);
@@ -2888,7 +3014,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2917,10 +3043,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0300
-      * @tc.desc    Function test. Error code: 401
-      *               : 003.test Promise setPriority test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0300
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0300 in`);
@@ -2933,7 +3061,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2962,10 +3090,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0400
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 004.test Promise setPriority test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0400
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_0400 in`);
@@ -2978,7 +3108,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3008,10 +3138,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async setPriority test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0100 in`);
@@ -3024,7 +3156,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3052,10 +3184,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0200
-      * @tc.desc    Function test. Error code: 401
-      *               : 002.test Async setPriority test --Optional input priority is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0200
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0200 in`);
@@ -3067,7 +3201,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3100,10 +3234,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0300
-      * @tc.desc    Function test. Error code: 401
-      *               : 003.test Async setPriority test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0300
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0300 in`);
@@ -3116,7 +3252,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3149,10 +3285,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0400
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 004.test Async setPriority test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0400
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETPRIORITY_ASYNC_0400 in`);
@@ -3165,7 +3303,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3198,10 +3336,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise setVolume test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0100 in`);
@@ -3215,7 +3355,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3239,10 +3379,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0200
-      * @tc.desc    Function test
-      *               : 002.test Promise setVolume test --Optional input left volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0200 in`);
@@ -3255,7 +3397,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3279,10 +3421,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0300
-      * @tc.desc    Function test
-      *               : 003.test Promise setVolume test --Optional input left volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0300 in`);
@@ -3295,7 +3439,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3319,10 +3463,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0400
-      * @tc.desc    Function test
-      *               : 004.test Promise setVolume test --Optional input right volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0400 in`);
@@ -3335,7 +3481,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3359,10 +3505,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0500
-      * @tc.desc    Function test
-      *               : 005.test Promise setVolume test --Optional input right volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0500 in`);
@@ -3375,7 +3523,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3399,10 +3547,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0600
-      * @tc.desc    Function test. Error code: 401
-      *               : 006.test Promise setVolume test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0600 in`);
@@ -3416,7 +3566,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3445,10 +3595,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0700
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 007.test Promise setVolume test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0700
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_0700 in`);
@@ -3462,7 +3614,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3492,10 +3644,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Async setVolume test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0100 in`);
@@ -3509,7 +3663,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3538,10 +3692,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0200
-      * @tc.desc    Function test
-      *               : 002.test Async setVolume test --Optional input left volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0200 in`);
@@ -3554,7 +3710,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3582,10 +3738,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0300
-      * @tc.desc    Function test
-      *               : 003.test Async setVolume test --Optional input left volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0300 in`);
@@ -3598,7 +3756,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3626,10 +3784,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0400
-      * @tc.desc    Function test
-      *               : 004.test Async setVolume test --Optional input right volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0400 in`);
@@ -3642,7 +3802,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3670,10 +3830,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0500
-      * @tc.desc    Function test
-      *               : 005.test Async setVolume test --Optional input right volume is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0500 in`);
@@ -3686,7 +3848,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3714,10 +3876,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0600
-      * @tc.desc    Function test. Error code: 401
-      *               : 006.test Async setVolume test --Optional input streamId is invalid
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0600
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0600 in`);
@@ -3731,7 +3895,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3764,10 +3928,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0700
-      * @tc.desc    Function test. Error code: 5400102
-      *               : 007.test Async setVolume test --Optional input streamId is unplayed
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0700
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETVOLUME_ASYNC_0700 in`);
@@ -3781,7 +3947,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3815,10 +3981,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0100
-      * @tc.desc    Function test
-      *               : 001.test on('loadComplete') test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_0100 in`);
@@ -3829,12 +3997,12 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           done();
         })
@@ -3847,10 +4015,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0200
-      * @tc.desc    Function test
-      *               : 002.test on('playFinished') test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_0200 in`);
@@ -3862,12 +4032,12 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called!`);
           done();
         } as Callback<void>)
@@ -3884,10 +4054,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0300
-      * @tc.desc    Function test
-      *               : 003.test off('loadComplete') test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_0300 in`);
@@ -3899,22 +4071,22 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           flag = true;
         })
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           flag = true;
         })
         soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
         await sleep(500);
-        soundPool!!.off('loadComplete');
+        soundPool!!.offLoadComplete();
         flag = false;
         soundId = (await soundPool!!.load(fd2, 0, length2)) as int;
         await sleep(500);
@@ -3933,10 +4105,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0400
-      * @tc.desc    Function test
-      *               : 004.test off('playFinished') test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_0400 in`);
@@ -3949,16 +4123,16 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called`);
           flag = true;
         } as Callback<void>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called`);
           flag = true;
         } as Callback<void>)
@@ -3967,7 +4141,7 @@ export default function soundPoolTest() {
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(500);
         await soundPool!!.stop(streamId);
-        soundPool!!.off('playFinished');
+        soundPool!!.offPlayFinished();
         flag = false;
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(500);
@@ -3987,10 +4161,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_WITHOUT_LOAD_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_WITHOUT_LOAD_static_0100
-      * @tc.desc    Function test
-      *               : 001.test Promise play without load test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_WITHOUT_LOAD_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_WITHOUT_LOAD_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_WITHOUT_LOAD_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_WITHOUT_LOAD_0100 in`);
@@ -4002,7 +4178,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -4025,10 +4201,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_AFTER_UNLOAD_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_AFTER_UNLOAD_static_0100
-      * @tc.desc    Function test
-      *               : 002.test Async play after unload the soundId test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_AFTER_UNLOAD_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_AFTER_UNLOAD_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_AFTER_UNLOAD_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_AFTER_UNLOAD_0100 in`);
@@ -4039,7 +4217,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -4071,10 +4249,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_WITHOUT_PLAY_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_WITHOUT_PLAY_static_0100
-      * @tc.desc    Function test
-      *               : 003.test Promise stop without play test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_WITHOUT_PLAY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_WITHOUT_PLAY_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_WITHOUT_PLAY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_WITHOUT_PLAY_0100 in`);
@@ -4086,7 +4266,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -4111,10 +4291,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_STOP_PLAY_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_STOP_PLAY_static_0100
-      * @tc.desc    Function test
-      *               : 004.test Async create-load-play-stop-play-unload-release
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_STOP_PLAY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_STOP_PLAY_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_STOP_PLAY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_STOP_PLAY_0100 in`);
@@ -4126,7 +4308,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -4159,10 +4341,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_static_0100
-      * @tc.desc    Function test
-      *               : 005.test Promise play three sounds test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_0100 in`);
@@ -4175,7 +4359,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -4203,10 +4387,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_EXCEEDED_MAXSTREAMS_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_EXCEEDED_MAXSTREAMS_static_0100
-      * @tc.desc    Function test
-      *               : 006.test Promise play four sounds, but maxstreams = 3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_EXCEEDED_MAXSTREAMS_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_EXCEEDED_MAXSTREAMS_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_EXCEEDED_MAXSTREAMS_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_EXCEEDED_MAXSTREAMS_0100 in`);
@@ -4222,15 +4408,15 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           loadCount++;
         })
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called!`);
           time++;
         } as Callback<void>)
@@ -4271,10 +4457,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_STREAMID_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_STREAMID_static_0100
-      * @tc.desc    Function test
-      *               : test play finish with streamId
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_STREAMID_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_STREAMID_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_STREAMID_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_STREAMID_0100 in`);
@@ -4291,11 +4479,11 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinishedWithStreamId', (streamId: int) => {
+        soundPool!!.onPlayFinishedWithStreamId((streamId: int) => {
           console.info(`${TAG}: on playFinished called! streamId is: ${streamId}`);
           playStreamId_.push(streamId);
         });
@@ -4341,10 +4529,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_TWO_CALLBACK_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_TWO_CALLBACK_static_0100
-      * @tc.desc    Function test
-      *               : test play finish with streamId
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_TWO_CALLBACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_TWO_CALLBACK_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_TWO_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_FINISH_WITH_TWO_CALLBACK_0100 in`);
@@ -4361,15 +4551,15 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called!`);
           time++;
         } as Callback<void>)
-        soundPool!!.on('playFinishedWithStreamId', (streamId: int) => {
+        soundPool!!.onPlayFinishedWithStreamId((streamId: int) => {
           console.info(`${TAG}: on playFinished called! streamId is: ${streamId}`);
           playStreamId_.push(streamId);
         })
@@ -4423,10 +4613,12 @@ export default function soundPoolTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_MULTI_INSTANCE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_MULTI_INSTANCE_static_0100
-      * @tc.desc    Function test
-      *               : play four sounds, use two instances
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_MULTI_INSTANCE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_MULTI_INSTANCE_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_MULTI_INSTANCE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_MULTI_PLAY_MULTI_INSTANCE_0100 in`);
@@ -4447,27 +4639,27 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool1!!.on('error', (error: BusinessError) => {
+        soundPool1!!.onError((error: BusinessError) => {
           console.error(`${TAG}: soundPool1 onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool1!!.on('loadComplete', (soundId: int) => {
+        soundPool1!!.onLoadComplete((soundId: int) => {
           console.info(`${TAG}: soundPool1 on loadComplete called, soundId: ${soundId}`);
           loadCount1++;
         })
-        soundPool1!!.on('playFinished', () => {
+        soundPool1!!.onPlayFinished(() => {
           console.info(`${TAG}: soundPool1 on playFinished called!`);
           playTime1++;
         } as Callback<void>)
-        soundPool2!!.on('error', (error: BusinessError) => {
+        soundPool2!!.onError((error: BusinessError) => {
           console.error(`${TAG}: soundPool2 onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool2!!.on('loadComplete', (soundId: int) => {
+        soundPool2!!.onLoadComplete((soundId: int) => {
           console.info(`${TAG}: soundPool2 on loadComplete called, soundId: ${soundId}`);
           loadCount2++;
         })
-        soundPool2!!.on('playFinished', () => {
+        soundPool2!!.onPlayFinished(() => {
           console.info(`${TAG}: soundPool2 on playFinished called!`);
           playTime2++;
         } as Callback<void>)
@@ -4516,9 +4708,12 @@ export default function soundPoolTest() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100
-      * @tc.desc    Function test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0100 in`);
@@ -4531,7 +4726,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
           } as ErrorCallback<BusinessError>)
@@ -4558,9 +4753,12 @@ export default function soundPoolTest() {
     })
     
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500
-      * @tc.desc    Function test. Error code: 401
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0500 in`);
@@ -4573,7 +4771,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
           } as ErrorCallback<BusinessError>)
@@ -4605,9 +4803,12 @@ export default function soundPoolTest() {
     })
     
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0600
-      * @tc.desc    Function test. Error code: 5400102
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0600
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_0600 in`);
@@ -4620,7 +4821,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
           } as ErrorCallback<BusinessError>)
@@ -4653,9 +4854,12 @@ export default function soundPoolTest() {
     })
     
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0100
-      * @tc.desc    Function test
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0100 in`);
@@ -4668,7 +4872,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
             done();
@@ -4700,9 +4904,12 @@ export default function soundPoolTest() {
     })
     
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500
-      * @tc.desc    Function test. Error code: 401
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0500 in`);
@@ -4715,7 +4922,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
             done();
@@ -4752,9 +4959,12 @@ export default function soundPoolTest() {
     })
     
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0600
-      * @tc.desc    Function test. Error code: 5400102
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0600
+     * @tc.desc   Function test. Error code: 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETRATE_ASYNC_0600 in`);
@@ -4767,7 +4977,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
             done();

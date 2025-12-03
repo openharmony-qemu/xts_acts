@@ -38,13 +38,13 @@ const ExpectTrue = (n: boolean) => {
 
 export default function HttpRequestAndDestroyTest() {
   describe("HttpRequestAndDestroyTest", () => {
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_createHttp_0100
-     * @tc.name:    testNetworkMgrHttpCreateHttp0100
-     * @tc.desc:    test createHttp
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testNetworkMgrHttpCreateHttp0100
+     * @tc.number SUB_NetworkMgr_Http_createHttp_0100
+     * @tc.desc   test createHttp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpCreateHttp0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testHttpCreateHttp0100";
@@ -71,13 +71,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Request_0200
-     * @tc.name:    testNetworkMgrHttpRequest0200
-     * @tc.desc:    test Request
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testNetworkMgrHttpRequest0200
+     * @tc.number SUB_NetworkMgr_Http_Request_0200
+     * @tc.desc   test Request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequest0200";
@@ -114,13 +114,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Request_0300
-     * @tc.name:    testNetworkMgrHttpRequest0300
-     * @tc.desc:    test Request with options
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testNetworkMgrHttpRequest0300
+     * @tc.number SUB_NetworkMgr_Http_Request_0300
+     * @tc.desc   test Request with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequest0300";
@@ -172,13 +172,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Request_0400
-     * @tc.name:    testNetworkMgrHttpRequest0400
-     * @tc.desc:    test Request
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testNetworkMgrHttpRequest0400
+     * @tc.number SUB_NetworkMgr_Http_Request_0400
+     * @tc.desc   test Request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequest0400";
@@ -213,13 +213,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Request_0500
-     * @tc.name:    SUB_NetworkMgr_Http_Request_0500
-     * @tc.desc:    test Request with options
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequest0500
+     * @tc.number SUB_NetworkMgr_Http_Request_0500
+     * @tc.desc   test Request with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequest0500";
@@ -269,13 +269,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Request_0600
-     * @tc.name  :  testHttpRequest0600
-     * @tc.desc  :  test Request with illegal url
-     * @tc.size  :  MediumTest
-     * @tc.type  :  method
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequest0600
+     * @tc.number SUB_NetworkMgr_Http_Request_0600
+     * @tc.desc   test Request with illegal url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequest0600";
@@ -312,13 +312,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Request_0700
-     * @tc.name  :  testHttpRequest0700
-     * @tc.desc  :  test Request with illegal url
-     * @tc.size  :  MediumTest
-     * @tc.type  :  method
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequest0700
+     * @tc.number SUB_NetworkMgr_Http_Request_0700
+     * @tc.desc   test Request with illegal url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequest0700";
@@ -354,13 +354,13 @@ export default function HttpRequestAndDestroyTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Destroy_0800
-     * @tc.name:    testHttpDestroy0800
-     * @tc.desc:    test destroy
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpDestroy0800
+     * @tc.number SUB_NetworkMgr_Http_Destroy_0800
+     * @tc.desc   test destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDestroy0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDestroy0800";
@@ -396,13 +396,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Destroy_0900
-     * @tc.name:    testHttpDestroy0900
-     * @tc.desc:    test destroy
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpDestroy0900
+     * @tc.number SUB_NetworkMgr_Http_Destroy_0900
+     * @tc.desc   test destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDestroy0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDestroy0900";
@@ -436,13 +436,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Destroy_1000
-     * @tc.name:    testHttpDestroy1000
-     * @tc.desc:    test destroy in lifecycle 'headersReceive'
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpDestroy1000
+     * @tc.number SUB_NetworkMgr_Http_Destroy_1000
+     * @tc.desc   test destroy in lifecycle 'headersReceive'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDestroy1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDestroy1000";
@@ -482,13 +482,13 @@ export default function HttpRequestAndDestroyTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_Destroy_1100
-     * @tc.name:    testHttpDestroy1100
-     * @tc.desc:    test destroy after httpRequest send an success request
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpDestroy1100
+     * @tc.number SUB_NetworkMgr_Http_Destroy_1100
+     * @tc.desc   test destroy after httpRequest send an success request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpDestroy1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpDestroy1100";

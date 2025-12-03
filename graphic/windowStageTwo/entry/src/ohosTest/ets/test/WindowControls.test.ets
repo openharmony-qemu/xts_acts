@@ -88,12 +88,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0100
-     * @tc.name      : testSetStartWindowBackgroundColor_Null_401
-     * @tc.desc      : testSetStartWindowBackgroundColor_Null_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetStartWindowBackgroundColor_Null_401
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0100
+     * @tc.desc   testSetStartWindowBackgroundColor_Null_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetStartWindowBackgroundColor_Null_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_Null_401 ';
@@ -116,12 +116,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0200
-     * @tc.name      : testSetStartWindowBackgroundColor_Undefined_401
-     * @tc.desc      : testSetStartWindowBackgroundColor_Undefined_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetStartWindowBackgroundColor_Undefined_401
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0200
+     * @tc.desc   testSetStartWindowBackgroundColor_Undefined_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetStartWindowBackgroundColor_Undefined_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_Undefined_401 ';
@@ -144,12 +144,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0300
-     * @tc.name      : testSetStartWindowBackgroundColor_1300003
-     * @tc.desc      : testSetStartWindowBackgroundColor_1300003
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetStartWindowBackgroundColor_1300003
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0300
+     * @tc.desc   testSetStartWindowBackgroundColor_1300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetStartWindowBackgroundColor_1300003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_1300003 ';
@@ -176,12 +176,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0400
-     * @tc.name      : testSetStartWindowBackgroundColor_1300016
-     * @tc.desc      : testSetStartWindowBackgroundColor_1300016
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetStartWindowBackgroundColor_1300016
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0400
+     * @tc.desc   testSetStartWindowBackgroundColor_1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetStartWindowBackgroundColor_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_1300016 ';
@@ -207,12 +207,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0500
-     * @tc.name      : testSetStartWindowBackgroundColor_1300016_2
-     * @tc.desc      : testSetStartWindowBackgroundColor_1300016_2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetStartWindowBackgroundColor_1300016_2
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0500
+     * @tc.desc   testSetStartWindowBackgroundColor_1300016_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetStartWindowBackgroundColor_1300016_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_1300016_2 ';
@@ -238,12 +238,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0600
-     * @tc.name      : testSetStartWindowBackgroundColor_Call_Unstart
-     * @tc.desc      : testSetStartWindowBackgroundColor_Call_Unstart
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSetStartWindowBackgroundColor_Call_Unstart
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0600
+     * @tc.desc   testSetStartWindowBackgroundColor_Call_Unstart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetStartWindowBackgroundColor_Call_Unstart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_Call_Unstart ';
@@ -271,12 +271,12 @@ export default function windowControlsTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0700
-     * @tc.name      : testSetStartWindowBackgroundColor_Succeed
-     * @tc.desc      : testSetStartWindowBackgroundColor_Succeed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSetStartWindowBackgroundColor_Succeed
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_0700
+     * @tc.desc   testSetStartWindowBackgroundColor_Succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetStartWindowBackgroundColor_Succeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetStartWindowBackgroundColor_Succeed ';

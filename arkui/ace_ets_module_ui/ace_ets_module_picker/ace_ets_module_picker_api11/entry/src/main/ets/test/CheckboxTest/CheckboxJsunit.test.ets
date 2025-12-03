@@ -43,6 +43,14 @@ export default function checkboxJsunit() {
       console.info("checkbox after each called");
     });
 
+    /**
+     * @tc.name   testCheckbox_100
+     * @tc.number testCheckbox_100
+     * @tc.desc   testCheckbox_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckbox_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_100] START');
       await Utils.sleep(1000);
@@ -53,6 +61,14 @@ export default function checkboxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testCheckbox_200
+     * @tc.number testCheckbox_200
+     * @tc.desc   testCheckbox_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckbox_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_200] START');
       await Utils.sleep(1000);
@@ -63,6 +79,14 @@ export default function checkboxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testCheckbox_300
+     * @tc.number testCheckbox_300
+     * @tc.desc   testCheckbox_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckbox_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_300] START');
       await Utils.sleep(1000);
@@ -75,6 +99,14 @@ export default function checkboxJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testCheckbox_400
+     * @tc.number testCheckbox_400
+     * @tc.desc   testCheckbox_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckbox_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_400] START');
       await Utils.sleep(1000);

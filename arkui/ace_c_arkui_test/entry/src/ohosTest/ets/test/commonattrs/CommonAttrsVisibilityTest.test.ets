@@ -26,78 +26,78 @@ export default function commonAttrsVisibilityTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0100
-     * @tc.name       : testCommonAttrsVisibility001
-     * @tc.desc       : testing visibility for commonAttrs with valid value VISIBLE
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsVisibility001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0100
+     * @tc.desc   testing visibility for commonAttrs with valid value VISIBLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsVisibility001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsVisibility001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0200
-     * @tc.name       : testCommonAttrsVisibility002
-     * @tc.desc       : testing visibility for commonAttrs with valid value HIDDEN
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsVisibility002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0200
+     * @tc.desc   testing visibility for commonAttrs with valid value HIDDEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsVisibility002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsVisibility002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0300
-     * @tc.name       : testCommonAttrsVisibility003
-     * @tc.desc       : testing visibility for commonAttrs with valid value NONE
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsVisibility003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0300
+     * @tc.desc   testing visibility for commonAttrs with valid value NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsVisibility003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsVisibility003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0400
-     * @tc.name       : testCommonAttrsVisibility004
-     * @tc.desc       : testing visibility for commonAttrs with invalid value -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsVisibility004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0400
+     * @tc.desc   testing visibility for commonAttrs with invalid value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsVisibility004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsVisibility004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0500
-     * @tc.name       : testCommonAttrsVisibility005
-     * @tc.desc       : testing visibility for commonAttrs with invalid value 3
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsVisibility005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0500
+     * @tc.desc   testing visibility for commonAttrs with invalid value 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsVisibility005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsVisibility005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0600
-     * @tc.name       : testCommonAttrsVisibility006
-     * @tc.desc       : testing resetAttribute visibility for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsVisibility006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_VISIBILITY_0600
+     * @tc.desc   testing resetAttribute visibility for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsVisibility006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsVisibility006()).assertEqual(0)

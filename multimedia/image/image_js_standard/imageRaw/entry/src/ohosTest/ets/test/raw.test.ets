@@ -273,15 +273,12 @@ export default function imageRaw() {
         console.info(`${testNum} createPixelMap leave`);
       };
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0100
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0100", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -301,15 +298,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0200
-     * @tc.name      : createPixelMap - promise-cr2
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0200", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -328,15 +322,12 @@ export default function imageRaw() {
       createPixelMapPromise(done, "SUB_MULTIMEDIA_IMAGE_RAW_0200", "test.cr2", decodeOpts, packingPromise, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0300
-     * @tc.name      : createPixelMap - promise-dng
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0300", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -362,15 +353,12 @@ export default function imageRaw() {
       );
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0400
-     * @tc.name      : createPixelMap - promise-nrw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0400", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -390,15 +378,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0500
-     * @tc.name      : createPixelMap - promise-pef
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0500", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -418,15 +403,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0600
-     * @tc.name      : createPixelMap - promise-raf
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0600", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -446,15 +428,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0700
-     * @tc.name      : createPixelMap - promise-rw2
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0700", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -474,15 +453,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0800
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0800", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -509,15 +485,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_0900
-     * @tc.name      : createPixelMap - callback-cr2
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_0900", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -544,15 +517,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1000
-     * @tc.name      : createPixelMap - callback-dng
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1000", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -579,15 +549,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1100
-     * @tc.name      : createPixelMap - callback-nrw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1100", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -613,15 +580,12 @@ export default function imageRaw() {
       );
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1200
-     * @tc.name      : createPixelMap - callback-pef
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1200", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -647,15 +611,12 @@ export default function imageRaw() {
       );
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1300
-     * @tc.name      : createPixelMap - callback-raf
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1300", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -682,15 +643,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1400
-     * @tc.name      : createPixelMap - callback-rw2
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1400", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -717,14 +675,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1500
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1500", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -745,14 +701,12 @@ export default function imageRaw() {
       await createPixelMapCallBackErr(done, "SUB_MULTIMEDIA_IMAGE_RAW_1500", "test.arw", decodingOption);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1600
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1600", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -774,14 +728,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1700
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1700
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1700", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -803,14 +755,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1800
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1800
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1800", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -832,14 +782,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_1900
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_1900
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_1900", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -861,14 +809,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2000
-     * @tc.name      : createPixelMap - callback-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2000
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2000", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -890,14 +836,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2100
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2100", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -919,14 +863,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2200
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2200", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -948,14 +890,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2300
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2300", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -977,14 +917,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2400
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2400", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -1006,14 +944,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2500
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2500", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -1035,14 +971,12 @@ export default function imageRaw() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_RAW_2600
-     * @tc.name      : createPixelMap - promise-arw
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_2600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_RAW_2600", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {

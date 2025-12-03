@@ -89,7 +89,6 @@ export default function geolocationCApiTest() {
     afterAll(() => {
     })
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testOHLocationIsEnabled001
      * @tc.number SUB_HSS_LocationSystem_OH_LOCATION_IS_ENABLED_0001
      * @tc.desc   test OH_Location_Is_Enabled
@@ -105,7 +104,6 @@ export default function geolocationCApiTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   testOHLocationStartLocatingAndStopLocating001
      * @tc.number SUB_HSS_LocationSystem_OH_LOCATION_START_LOCATING_0001
      * @tc.desc   test OH_Location_Start_Locating

@@ -26,39 +26,39 @@ export default function scrollWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_WIDTH_0100
-     * @tc.name       : testScrollWidth001
-     * @tc.desc       : testing width for scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollWidth001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_WIDTH_0100
+     * @tc.desc   testing width for scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_WIDTH_0200
-     * @tc.name       : testScrollWidth002
-     * @tc.desc       : testing width for scroll with normal abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollWidth002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_WIDTH_0200
+     * @tc.desc   testing width for scroll with normal abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_WIDTH_0300
-     * @tc.name       : testScrollWidth003
-     * @tc.desc       : testing width for scroll with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollWidth003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_WIDTH_0300
+     * @tc.desc   testing width for scroll with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollWidth003()).assertEqual(0)

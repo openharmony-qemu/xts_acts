@@ -26,25 +26,25 @@ export default function customComponentMeasuredSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MEASURED_SIZE_0001
-     * @tc.name       : testCustomComponentMeasuredSize001
-     * @tc.desc       : testing height for measuredSize with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentMeasuredSize001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MEASURED_SIZE_0001
+     * @tc.desc   testing height for measuredSize with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMeasuredSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMeasuredSize001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MEASURED_SIZE_0002
-     * @tc.name       : testCustomComponentMeasuredSize002
-     * @tc.desc       : testing height for measuredSize with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentMeasuredSize002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MEASURED_SIZE_0002
+     * @tc.desc   testing height for measuredSize with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMeasuredSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMeasuredSize002()).assertEqual(0)

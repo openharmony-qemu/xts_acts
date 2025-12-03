@@ -24,12 +24,12 @@ export default function removeProcessorTest() {
     hilog.info(domain, tag, 'describe start');
 
     /**
+     * @tc.name   testRemoveProcessor01
      * @tc.number SUB_DFX_DFT_HiAppEvent_RemoveProcessor_0100
-     * @tc.name testRemoveProcessor01
-     * @tc.desc 验证removeProcessor接口移除数据处理者，processor已存在，删除成功，不存在、非法，删除失败
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证removeProcessor接口移除数据处理者，processor已存在，删除成功，不存在、非法，删除失败
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRemoveProcessor01', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testRemoveProcessor01 start');

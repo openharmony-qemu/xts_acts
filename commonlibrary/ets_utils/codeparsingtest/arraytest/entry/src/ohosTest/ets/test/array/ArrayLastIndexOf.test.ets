@@ -60,12 +60,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0001
-     * @tc.name testArrayLastIndexOf0001
-     * @tc.desc Verify lastIndexOf finds last occurrence of an element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf finds last occurrence of an element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3, 2];
@@ -74,12 +74,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0002
-     * @tc.name testArrayLastIndexOf0002
-     * @tc.desc Verify lastIndexOf returns -1 when element not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns -1 when element not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -88,12 +88,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0003
-     * @tc.name testArrayLastIndexOf0003
-     * @tc.desc Verify lastIndexOf with fromIndex parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3, 2, 4];
@@ -102,12 +102,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0004
-     * @tc.name testArrayLastIndexOf0004
-     * @tc.desc Verify lastIndexOf with fromIndex larger than length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex larger than length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -116,12 +116,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0005
-     * @tc.name testArrayLastIndexOf0005
-     * @tc.desc Verify lastIndexOf with negative fromIndex inside bounds
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with negative fromIndex inside bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [5, 6, 7, 8];
@@ -130,12 +130,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0006
-     * @tc.name testArrayLastIndexOf0006
-     * @tc.desc Verify lastIndexOf with negative fromIndex less than -length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with negative fromIndex less than -length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [9, 10, 11];
@@ -144,12 +144,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0007
-     * @tc.name testArrayLastIndexOf0007
-     * @tc.desc Verify lastIndexOf compares using strict equality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf compares using strict equality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, "1"];
@@ -158,12 +158,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0008
-     * @tc.name testArrayLastIndexOf0008
-     * @tc.desc Verify lastIndexOf cannot find NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf cannot find NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [NaN];
@@ -172,12 +172,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0009
-     * @tc.name testArrayLastIndexOf0009
-     * @tc.desc Verify lastIndexOf treats +0 and -0 as equal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf treats +0 and -0 as equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [0, -0, +0];
@@ -186,12 +186,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0010
-     * @tc.name testArrayLastIndexOf0010
-     * @tc.desc Verify lastIndexOf works on sparse arrays with undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf works on sparse arrays with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | undefined)[] = [];
@@ -201,12 +201,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0011
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0011
-     * @tc.name testArrayLastIndexOf0011
-     * @tc.desc Verify lastIndexOf returns last index in duplicate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns last index in duplicate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["a", "b", "a", "c", "a"];
@@ -215,12 +215,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0012
-     * @tc.name testArrayLastIndexOf0012
-     * @tc.desc Verify lastIndexOf returns -1 on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns -1 on empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [];
@@ -229,12 +229,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0013
-     * @tc.name testArrayLastIndexOf0013
-     * @tc.desc Verify lastIndexOf on array with booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array with booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -243,12 +243,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0014
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0014
-     * @tc.name testArrayLastIndexOf0014
-     * @tc.desc Verify lastIndexOf with fromIndex at 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex at 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -257,12 +257,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0015
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0015
-     * @tc.name testArrayLastIndexOf0015
-     * @tc.desc Verify lastIndexOf with fromIndex pointing to element not matching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex pointing to element not matching
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -271,12 +271,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0016
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0016
-     * @tc.name testArrayLastIndexOf0016
-     * @tc.desc Verify lastIndexOf returns -1 if fromIndex is negative and skips element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns -1 if fromIndex is negative and skips element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["x", "y"];
@@ -285,12 +285,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0017
-     * @tc.name testArrayLastIndexOf0017
-     * @tc.desc Verify lastIndexOf with mixed type elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with mixed type elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | string)[] = [1, "1", 1, "1"];
@@ -299,12 +299,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0018
-     * @tc.name testArrayLastIndexOf0018
-     * @tc.desc Verify lastIndexOf on array containing object references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array containing object references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Obj {
@@ -323,12 +323,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0019
-     * @tc.name testArrayLastIndexOf0019
-     * @tc.desc Verify lastIndexOf does not match structurally equal objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf does not match structurally equal objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Obj {
@@ -345,12 +345,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0020
-     * @tc.name testArrayLastIndexOf0020
-     * @tc.desc Verify lastIndexOf on array containing undefined values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array containing undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | undefined)[] = [1, undefined, 3, undefined];
@@ -359,12 +359,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0021
-     * @tc.name testArrayLastIndexOf0021
-     * @tc.desc Verify lastIndexOf skips empty slots in sparse arrays but finds real undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf skips empty slots in sparse arrays but finds real undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | undefined)[] = [];
@@ -374,12 +374,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0022
-     * @tc.name testArrayLastIndexOf0022
-     * @tc.desc Verify lastIndexOf does not find NaN since NaN !== NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf does not find NaN since NaN !== NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [NaN, 1, 2];
@@ -388,12 +388,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0023
-     * @tc.name testArrayLastIndexOf0023
-     * @tc.desc Verify lastIndexOf treats 0 and -0 as equal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf treats 0 and -0 as equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [0, -0, 0];
@@ -402,12 +402,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0024
-     * @tc.name testArrayLastIndexOf0024
-     * @tc.desc Verify lastIndexOf with fromIndex larger than array length behaves as if at end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex larger than array length behaves as if at end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -416,12 +416,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0025
-     * @tc.name testArrayLastIndexOf0025
-     * @tc.desc Verify lastIndexOf with negative fromIndex offsets from array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with negative fromIndex offsets from array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["x", "y", "z"];
@@ -430,12 +430,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0026
-     * @tc.name testArrayLastIndexOf0026
-     * @tc.desc Verify lastIndexOf with negative fromIndex smaller than -length returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with negative fromIndex smaller than -length returns -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [5, 6, 7];
@@ -444,12 +444,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0027
-     * @tc.name testArrayLastIndexOf0027
-     * @tc.desc Verify lastIndexOf with fromIndex as Infinity behaves like fromIndex at end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex as Infinity behaves like fromIndex at end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -458,12 +458,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0028
-     * @tc.name testArrayLastIndexOf0028
-     * @tc.desc Verify lastIndexOf with fromIndex as -Infinity always returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex as -Infinity always returns -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["a", "b"];
@@ -472,12 +472,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0029
-     * @tc.name testArrayLastIndexOf0029
-     * @tc.desc Verify lastIndexOf strict equality without type coercion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf strict equality without type coercion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (string | number)[] = [1, "1"];
@@ -486,12 +486,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0030
-     * @tc.name testArrayLastIndexOf0030
-     * @tc.desc Verify lastIndexOf finds correct element in large array performance case
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf finds correct element in large array performance case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = new Array(10000).fill(0);
@@ -501,12 +501,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0031
-     * @tc.name testArrayLastIndexOf0031
-     * @tc.desc Verify lastIndexOf returns first occurrence when scanning backwards
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns first occurrence when scanning backwards
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 1, 2, 1];
@@ -515,12 +515,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0032
-     * @tc.name testArrayLastIndexOf0032
-     * @tc.desc Verify lastIndexOf with boolean values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with boolean values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -529,24 +529,24 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0033
-     * @tc.name testArrayLastIndexOf0033
-     * @tc.desc Verify lastIndexOf works on frozen arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf works on frozen arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0033()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0034
-     * @tc.name testArrayLastIndexOf0034
-     * @tc.desc Verify lastIndexOf handles array with holes correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf handles array with holes correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | undefined)[] = [1, , 2, , 3];
@@ -555,12 +555,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0035
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0035
-     * @tc.name testArrayLastIndexOf0035
-     * @tc.desc Verify lastIndexOf returns -1 when value not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns -1 when value not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: string[] = ["x", "y", "z"];
@@ -569,12 +569,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0036
-     * @tc.name testArrayLastIndexOf0036
-     * @tc.desc Verify lastIndexOf with mixed types does not coerce numbers and strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with mixed types does not coerce numbers and strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | string)[] = [1, "2", 3];
@@ -583,36 +583,36 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0037
-     * @tc.name testArrayLastIndexOf0037
-     * @tc.desc Verify lastIndexOf can find object reference by identity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf can find object reference by identity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0037()).assertEqual(0);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0038
-     * @tc.name testArrayLastIndexOf0038
-     * @tc.desc Verify lastIndexOf does not match different object instances with same content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf does not match different object instances with same content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0038()).assertEqual(-1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0039
-     * @tc.name testArrayLastIndexOf0039
-     * @tc.desc Verify lastIndexOf with nested arrays compares by reference not content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with nested arrays compares by reference not content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const subArr: number[] = [1, 2];
@@ -622,12 +622,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0040
-     * @tc.name testArrayLastIndexOf0040
-     * @tc.desc Verify lastIndexOf respects fromIndex exactly when specified in middle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf respects fromIndex exactly when specified in middle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3, 2, 1];
@@ -636,12 +636,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0041
-     * @tc.name testArrayLastIndexOf0041
-     * @tc.desc Verify lastIndexOf works correctly on Int32Array (typed array)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf works correctly on Int32Array (typed array)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int32Array = new Int32Array([10, 20, 30, 20]);
@@ -650,12 +650,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0042
-     * @tc.name testArrayLastIndexOf0042
-     * @tc.desc Verify lastIndexOf returns -1 on typed array when not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf returns -1 on typed array when not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1.1, 2.2, 3.3]);
@@ -664,12 +664,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0043
-     * @tc.name testArrayLastIndexOf0043
-     * @tc.desc Verify lastIndexOf treats +0 and -0 as equal in typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf treats +0 and -0 as equal in typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array([0, -0]);
@@ -678,12 +678,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0044
-     * @tc.name testArrayLastIndexOf0044
-     * @tc.desc Verify subclassed array inherits lastIndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify subclassed array inherits lastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class MyArray<T> extends Array<T> {
@@ -695,96 +695,96 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0046
-     * @tc.name testArrayLastIndexOf0046
-     * @tc.desc Verify lastIndexOf on sealed array still works correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on sealed array still works correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0046()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0047
-     * @tc.name testArrayLastIndexOf0047
-     * @tc.desc Verify lastIndexOf on array with Object.create(null) prototype still works
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array with Object.create(null) prototype still works
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0047()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0048
-     * @tc.name testArrayLastIndexOf0048
-     * @tc.desc Verify lastIndexOf called on array-like object with numeric keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf called on array-like object with numeric keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0048()).assertEqual(2);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0051
-     * @tc.name testArrayLastIndexOf0051
-     * @tc.desc Verify lastIndexOf respects overridden length property on array-like
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf respects overridden length property on array-like
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0051()).assertEqual(-1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0052
-     * @tc.name testArrayLastIndexOf0052
-     * @tc.desc Verify lastIndexOf ignores non-numeric keys in array-like
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf ignores non-numeric keys in array-like
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0052()).assertEqual(0);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0053
-     * @tc.name testArrayLastIndexOf0053
-     * @tc.desc Verify lastIndexOf called on string (array-like behavior)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf called on string (array-like behavior)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0053()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0054
-     * @tc.name testArrayLastIndexOf0054
-     * @tc.desc Verify lastIndexOf with fromIndex as string convertible to number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with fromIndex as string convertible to number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0054()).assertEqual(0);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0055
-     * @tc.name testArrayLastIndexOf0055
-     * @tc.desc Verify lastIndexOf on Uint8Array with max value 255
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on Uint8Array with max value 255
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([0, 255, 128, 255]);
@@ -793,24 +793,24 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0056
-     * @tc.name testArrayLastIndexOf0056
-     * @tc.desc Verify lastIndexOf works on Proxy with custom length property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf works on Proxy with custom length property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0056()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0057
-     * @tc.name testArrayLastIndexOf0057
-     * @tc.desc Verify lastIndexOf does not confuse different NaN values in typed arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf does not confuse different NaN values in typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([NaN, NaN]);
@@ -819,24 +819,24 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0059
-     * @tc.name testArrayLastIndexOf0059
-     * @tc.desc Verify lastIndexOf does not access prototype chain values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf does not access prototype chain values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0059()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0061
-     * @tc.name testArrayLastIndexOf0061
-     * @tc.desc Should return -1 when element not found in empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return -1 when element not found in empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [];
@@ -845,12 +845,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0062
-     * @tc.name testArrayLastIndexOf0062
-     * @tc.desc Should return 0 when only element matches in single-element array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return 0 when only element matches in single-element array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [7];
@@ -859,12 +859,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0063
-     * @tc.name testArrayLastIndexOf0063
-     * @tc.desc Should return -1 when only element does not match in single-element array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return -1 when only element does not match in single-element array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [7];
@@ -873,12 +873,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0064
-     * @tc.name testArrayLastIndexOf0064
-     * @tc.desc Should return last occurrence index for duplicate elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return last occurrence index for duplicate elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 1, 2];
@@ -887,12 +887,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0065
-     * @tc.name testArrayLastIndexOf0065
-     * @tc.desc Should respect fromIndex=0 and return -1 if element not at index 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should respect fromIndex=0 and return -1 if element not at index 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -901,12 +901,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0066
-     * @tc.name testArrayLastIndexOf0066
-     * @tc.desc Should clamp fromIndex greater than length-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should clamp fromIndex greater than length-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -915,12 +915,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0067
-     * @tc.name testArrayLastIndexOf0067
-     * @tc.desc Should handle negative fromIndex correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle negative fromIndex correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -929,12 +929,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0068
-     * @tc.name testArrayLastIndexOf0068
-     * @tc.desc Should return -1 if fromIndex < -length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return -1 if fromIndex < -length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -943,12 +943,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0069
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0069
-     * @tc.name testArrayLastIndexOf0069
-     * @tc.desc Should not find NaN because strict equality is used
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should not find NaN because strict equality is used
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [NaN];
@@ -957,12 +957,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0070
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0070
-     * @tc.name testArrayLastIndexOf0070
-     * @tc.desc Should treat +0 and -0 as equal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should treat +0 and -0 as equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [0];
@@ -971,12 +971,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0071
-     * @tc.name testArrayLastIndexOf0071
-     * @tc.desc Should not match empty slots in sparse arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should not match empty slots in sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(5);
@@ -985,12 +985,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0072
-     * @tc.name testArrayLastIndexOf0072
-     * @tc.desc Should match explicit undefined element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should match explicit undefined element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | undefined)[] = [undefined];
@@ -999,12 +999,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0073
-     * @tc.name testArrayLastIndexOf0073
-     * @tc.desc Should handle large arrays with element at the end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle large arrays with element at the end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = new Array(100000).fill(0);
@@ -1014,24 +1014,24 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0074
-     * @tc.name testArrayLastIndexOf0074
-     * @tc.desc Should return correct index for frozen array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return correct index for frozen array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0074()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0075
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LASTINDEXOF_0075
-     * @tc.name testArrayLastIndexOf0075
-     * @tc.desc Should not be affected by array modifications after call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should not be affected by array modifications after call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1041,12 +1041,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0076
-     * @tc.name testArrayLastIndexOf0076
-     * @tc.desc Should find element after mapping TypedArray values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after mapping TypedArray values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int8Array = new Int8Array([1, 2, 3, 2]);
@@ -1056,12 +1056,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0077
-     * @tc.name testArrayLastIndexOf0077
-     * @tc.desc Should find element in TypedArray after fill
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element in TypedArray after fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint16Array = new Uint16Array([1, 2, 3, 4]);
@@ -1072,12 +1072,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0078
-     * @tc.name testArrayLastIndexOf0078
-     * @tc.desc Should find element after filtering TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after filtering TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array([1.5, 2.5, 3.5, 2.5]);
@@ -1087,12 +1087,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0079
-     * @tc.name testArrayLastIndexOf0079
-     * @tc.desc Should find element after slice on TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after slice on TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([10, 20, 30, 20]);
@@ -1102,12 +1102,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0080
-     * @tc.name testArrayLastIndexOf0080
-     * @tc.desc Should find element after reverse on TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after reverse on TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int16Array = new Int16Array([1, 2, 3, 2]);
@@ -1117,12 +1117,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0081
-     * @tc.name testArrayLastIndexOf0081
-     * @tc.desc Should find element after sort on TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after sort on TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint32Array = new Uint32Array([4, 1, 3, 1]);
@@ -1132,12 +1132,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0082
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0082
-     * @tc.name testArrayLastIndexOf0082
-     * @tc.desc Should find element after concat TypedArray with normal array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after concat TypedArray with normal array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float64Array = new Float64Array([1, 2, 3]);
@@ -1147,12 +1147,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0083
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0083
-     * @tc.name testArrayLastIndexOf0083
-     * @tc.desc Should find element after flatMap on nested TypedArray array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after flatMap on nested TypedArray array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array[] = [new Uint8Array([1, 2]), new Uint8Array([3, 2])];
@@ -1162,12 +1162,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0084
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0084
-     * @tc.name testArrayLastIndexOf0084
-     * @tc.desc Should find last occurrence of zero in TypedArray after map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find last occurrence of zero in TypedArray after map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int8Array = new Int8Array([0, 1, 0, 2]);
@@ -1177,12 +1177,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0085
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0085
-     * @tc.name testArrayLastIndexOf0085
-     * @tc.desc Should find element after filter + map on TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after filter + map on TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint16Array = new Uint16Array([1, 2, 3, 2]);
@@ -1194,24 +1194,24 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0086
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0086
-     * @tc.name testArrayLastIndexOf0086
-     * @tc.desc Verify lastIndexOf on TypedArray wrapped in Proxy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on TypedArray wrapped in Proxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0086()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0087
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0087
-     * @tc.name testArrayLastIndexOf0087
-     * @tc.desc Verify lastIndexOf after fill on TypedArray converted to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after fill on TypedArray converted to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint16Array = new Uint16Array([1, 2, 3, 2]);
@@ -1222,12 +1222,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0088
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0088
-     * @tc.name testArrayLastIndexOf0088
-     * @tc.desc Verify lastIndexOf after reverse and map on TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after reverse and map on TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array([1, 2, 3, 2]);
@@ -1237,12 +1237,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0089
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0089
-     * @tc.name testArrayLastIndexOf0089
-     * @tc.desc Verify lastIndexOf with sparse TypedArray array flattened
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with sparse TypedArray array flattened
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1: Int8Array = new Int8Array([1, 2]);
@@ -1254,12 +1254,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0090
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0090
-     * @tc.name testArrayLastIndexOf0090
-     * @tc.desc Verify lastIndexOf after slice + map on TypedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after slice + map on TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint32Array = new Uint32Array([10, 20, 30, 20]);
@@ -1269,12 +1269,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0091
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0091
-     * @tc.name testArrayLastIndexOf0091
-     * @tc.desc Verify lastIndexOf with TypedArray converted to array and filtered
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with TypedArray converted to array and filtered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int16Array = new Int16Array([1, 2, 3, 2]);
@@ -1284,12 +1284,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0092
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0092
-     * @tc.name testArrayLastIndexOf0092
-     * @tc.desc Verify lastIndexOf after concat TypedArray with normal array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after concat TypedArray with normal array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint16Array = new Uint16Array([1, 2, 3]);
@@ -1299,12 +1299,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0093
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0093
-     * @tc.name testArrayLastIndexOf0093
-     * @tc.desc Verify lastIndexOf on TypedArray after multiple transformations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on TypedArray after multiple transformations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int8Array = new Int8Array([1, 2, 3, 2]);
@@ -1317,12 +1317,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0094
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0094
-     * @tc.name testArrayLastIndexOf0094
-     * @tc.desc Verify lastIndexOf with TypedArray mapped to object array and find last index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with TypedArray mapped to object array and find last index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Wrapper {
@@ -1341,12 +1341,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0095
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0095
-     * @tc.name testArrayLastIndexOf0095
-     * @tc.desc Verify lastIndexOf after fill + map on TypedArray converted to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after fill + map on TypedArray converted to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([1, 2, 3, 2]);
@@ -1357,12 +1357,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0096
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0096
-     * @tc.name testArrayLastIndexOf0096
-     * @tc.desc Verify lastIndexOf on empty TypedArray after map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on empty TypedArray after map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array([]);
@@ -1372,12 +1372,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0097
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0097
-     * @tc.name testArrayLastIndexOf0097
-     * @tc.desc Verify lastIndexOf on TypedArray after flattening nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on TypedArray after flattening nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int8Array[] = [new Int8Array([1, 2]), new Int8Array([3, 1])];
@@ -1387,12 +1387,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0098
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0098
-     * @tc.name testArrayLastIndexOf0098
-     * @tc.desc Verify lastIndexOf after TypedArray converted and filtered for even numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after TypedArray converted and filtered for even numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint16Array = new Uint16Array([1, 2, 3, 4, 2]);
@@ -1402,12 +1402,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0099
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0099
-     * @tc.name testArrayLastIndexOf0099
-     * @tc.desc Verify lastIndexOf on TypedArray after map and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on TypedArray after map and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Int16Array = new Int16Array([5, 10, 5, 20]);
@@ -1417,12 +1417,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0100
-     * @tc.name testArrayLastIndexOf0100
-     * @tc.desc Verify lastIndexOf after TypedArray mapped, filtered, and reversed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after TypedArray mapped, filtered, and reversed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([1, 2, 3, 2]);
@@ -1435,12 +1435,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0101
-     * @tc.name testArrayLastIndexOf0101
-     * @tc.desc Verify lastIndexOf with NaN values in normal array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with NaN values in normal array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [NaN, 1, NaN];
@@ -1449,12 +1449,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0102
-     * @tc.name testArrayLastIndexOf0102
-     * @tc.desc Verify lastIndexOf with +0 and -0 values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with +0 and -0 values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [0, -0, 0];
@@ -1465,12 +1465,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0103
-     * @tc.name testArrayLastIndexOf0103
-     * @tc.desc Verify lastIndexOf on array with mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array with mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | string | boolean)[] = [1, "1", true, 1];
@@ -1483,24 +1483,24 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0104
-     * @tc.name testArrayLastIndexOf0104
-     * @tc.desc Verify lastIndexOf on frozen array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on frozen array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testArrayLastIndexOfJs0104()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0105
-     * @tc.name testArrayLastIndexOf0105
-     * @tc.desc Verify lastIndexOf on inherited array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on inherited array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class MyArray extends Array<number> {
@@ -1512,12 +1512,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0106
-     * @tc.name testArrayLastIndexOf0106
-     * @tc.desc Verify lastIndexOf with a large array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with a large array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [];
@@ -1529,12 +1529,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0107
-     * @tc.name testArrayLastIndexOf0107
-     * @tc.desc Verify lastIndexOf with sparse array having undefined slots
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf with sparse array having undefined slots
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | undefined)[] = [];
@@ -1546,12 +1546,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0108
-     * @tc.name testArrayLastIndexOf0108
-     * @tc.desc Verify lastIndexOf on array of objects by reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array of objects by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Item {
@@ -1570,12 +1570,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0109
-     * @tc.name testArrayLastIndexOf0109
-     * @tc.desc Verify lastIndexOf after map transformation preserving reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf after map transformation preserving reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       class Wrapper {
@@ -1593,12 +1593,12 @@ export default function ArrayLastIndexOfTest() {
     });
 
     /**
+     * @tc.name   testArrayLastIndexOf0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_LastIndexOf_0110
-     * @tc.name testArrayLastIndexOf0110
-     * @tc.desc Verify lastIndexOf on array of different falsy values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify lastIndexOf on array of different falsy values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: (number | null | undefined | boolean)[] = [0, false, null, undefined, 0];

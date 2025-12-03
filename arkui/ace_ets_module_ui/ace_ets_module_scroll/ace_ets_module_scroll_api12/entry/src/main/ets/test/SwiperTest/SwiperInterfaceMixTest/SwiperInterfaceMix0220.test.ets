@@ -57,12 +57,12 @@ export default function SwiperInterfaceMix0220() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_0220
      * @tc.number SWIPER_INTERFACEMIX_0220
-     * @tc.name step
-     * @tc.desc change
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_0220', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_0220 START");

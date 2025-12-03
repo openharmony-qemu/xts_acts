@@ -39,11 +39,14 @@ function sleep(nm: number) {
 export default function uitestComponentErrorTest() {
   describe('UitestComponentErrorTest', () => {
 
-    /*
-     * @tc.number: UitestComponentErrorTest_001
-     * @tc.name: test_scrollToTop_17000002
-     * @tc.desc: scrollToTop 17000002 test.
-    */
+    /**
+     * @tc.name   test_scrollToTop_17000002
+     * @tc.number UitestComponentErrorTest_001
+     * @tc.desc   scrollToTop 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_scrollToTop_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_scrollToTop_17000002 start`);
       try {
@@ -64,11 +67,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_scrollToTop_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_002
-    * @tc.name: test_scrollToTop_17000004
-    * @tc.desc: scrollToTop 17000004 test.
-    */
+    /**
+     * @tc.name   test_scrollToTop_17000004
+     * @tc.number UitestComponentErrorTest_002
+     * @tc.desc   scrollToTop 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_scrollToTop_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_scrollToTop_17000004 start');
       try {
@@ -89,11 +95,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-        * @tc.number: UitestComponentErrorTest_003
-        * @tc.name: test_scrollSearch_17000002
-        * @tc.desc: scrollSearch 17000002 test.
-        */
+    /**
+     * @tc.name   test_scrollSearch_17000002
+     * @tc.number UitestComponentErrorTest_003
+     * @tc.desc   scrollSearch 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_scrollSearch_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_scrollSearch_17000002 start`);
       try {
@@ -116,11 +125,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_scrollSearch_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_004
-    * @tc.name: test_scrollSearch_17000004
-    * @tc.desc: scrollSearch 17000004 test.
-    */
+    /**
+     * @tc.name   test_scrollSearch_17000004
+     * @tc.number UitestComponentErrorTest_004
+     * @tc.desc   scrollSearch 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_scrollSearch_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_scrollSearch_17000004 start');
       try {
@@ -140,11 +152,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_scrollSearch_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_005
-    * @tc.name: test_scrollToBottom_17000002
-    * @tc.desc: scrollToBottom 17000002 test.
-    */
+    /**
+     * @tc.name   test_scrollToBottom_17000002
+     * @tc.number UitestComponentErrorTest_005
+     * @tc.desc   scrollToBottom 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_scrollToBottom_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_scrollToBottom_17000002 start`);
       try {
@@ -166,11 +181,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_scrollToBottom_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_006
-    * @tc.name: test_scrollSearch_17000004
-    * @tc.desc: scrollToBottom 17000004 test.
-    */
+    /**
+     * @tc.name   test_scrollToBottom_17000004
+     * @tc.number UitestComponentErrorTest_006
+     * @tc.desc   scrollToBottom 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_scrollToBottom_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_scrollToBottom_17000004 start');
       const driver = Driver.create();
@@ -192,11 +210,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_scrollToBottom_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_007
-    * @tc.name: test_click_17000002
-    * @tc.desc: click 17000002 test.
-    */
+    /**
+     * @tc.name   test_click_17000002
+     * @tc.number UitestComponentErrorTest_007
+     * @tc.desc   click 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_click_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_click_17000002 start`);
       const driver = Driver.create();
@@ -218,11 +239,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_click_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_008
-    * @tc.name: test_click_17000004
-    * @tc.desc: click 17000004 test.
-    */
+    /**
+     * @tc.name   test_click_17000004
+     * @tc.number UitestComponentErrorTest_008
+     * @tc.desc   click 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_click_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_click_17000004 start');
       try {
@@ -243,11 +267,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_009
-    * @tc.name: test_doubleClick_17000002
-    * @tc.desc: doubleClick 17000002 test.
-    */
+    /**
+     * @tc.name   test_doubleClick_17000002
+     * @tc.number UitestComponentErrorTest_009
+     * @tc.desc   doubleClick 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_doubleClick_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_click_17000002 start`);
       const driver = Driver.create();
@@ -269,11 +296,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_click_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_010
-    * @tc.name: test_doubleClick_17000004
-    * @tc.desc: doubleClick 17000004 test.
-    */
+    /**
+     * @tc.name   test_doubleClick_17000004
+     * @tc.number UitestComponentErrorTest_010
+     * @tc.desc   doubleClick 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_doubleClick_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_click_17000004 start');
       try {
@@ -294,11 +324,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_011
-    * @tc.name: test_longClick_17000002
-    * @tc.desc: doubleClick 17000002 test.
-    */
+    /**
+     * @tc.name   test_longClick_17000002
+     * @tc.number UitestComponentErrorTest_011
+     * @tc.desc   doubleClick 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_longClick_17000002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_longClick_17000002 start`);
       const driver = Driver.create();
@@ -320,11 +353,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_longClick_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_012
-    * @tc.name: test_doubleClick_17000004
-    * @tc.desc: doubleClick 17000004 test.
-    */
+    /**
+     * @tc.name   test_longClick_17000004
+     * @tc.number UitestComponentErrorTest_012
+     * @tc.desc   doubleClick 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_longClick_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_longClick_17000004 start');
       try {
@@ -344,11 +380,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_longClick_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_013
-    * @tc.name: test_getId_17000002
-    * @tc.desc: getId 17000002 test.
-    */
+    /**
+     * @tc.name   test_getId_17000002
+     * @tc.number UitestComponentErrorTest_013
+     * @tc.desc   getId 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getId_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getId_17000002 start`);
       const driver = Driver.create();
@@ -370,11 +409,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getId_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_014
-    * @tc.name: test_getId_17000004
-    * @tc.desc: getId 17000004 test.
-    */
+    /**
+     * @tc.name   test_getId_17000004
+     * @tc.number UitestComponentErrorTest_014
+     * @tc.desc   getId 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getId_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_getId_17000004 start');
       const driver = Driver.create();
@@ -394,11 +436,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_getId_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_015
-    * @tc.name: test_getText_17000002
-    * @tc.desc: getText 17000002 test.
-    */
+    /**
+     * @tc.name   test_getText_17000002
+     * @tc.number UitestComponentErrorTest_015
+     * @tc.desc   getText 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getText_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getText_17000002 start`);
       try {
@@ -420,11 +465,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getText_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_016
-    * @tc.name: test_getId_17000004
-    * @tc.desc: getText 17000004 test.
-    */
+    /**
+     * @tc.name   test_getText_17000004
+     * @tc.number UitestComponentErrorTest_016
+     * @tc.desc   getText 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getText_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_getText_17000004 start');
       try {
@@ -444,11 +492,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_getText_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_017
-    * @tc.name: test_getText_17000002
-    * @tc.desc: getText 17000002 test.
-    */
+    /**
+     * @tc.name   test_getType_17000002
+     * @tc.number UitestComponentErrorTest_017
+     * @tc.desc   getText 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getType_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getType_17000002 start`);
       try {
@@ -470,11 +521,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getType_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_018
-    * @tc.name: test_getType_17000004
-    * @tc.desc: getText 17000004 test.
-    */
+    /**
+     * @tc.name   test_getType_17000004
+     * @tc.number UitestComponentErrorTest_018
+     * @tc.desc   getText 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getType_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_getType_17000004 start');
       try {
@@ -494,11 +548,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_getType_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_019
-    * @tc.name: test_getBounds_17000002
-    * @tc.desc: getBounds 17000002 test.
-    */
+    /**
+     * @tc.name   test_getBounds_17000002
+     * @tc.number UitestComponentErrorTest_019
+     * @tc.desc   getBounds 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getBounds_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getBounds_17000002 start`);
       try {
@@ -520,11 +577,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getBounds_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_020
-    * @tc.name: test_getBounds_17000004
-    * @tc.desc: getBounds 17000004 test.
-    */
+    /**
+     * @tc.name   test_getBounds_17000004
+     * @tc.number UitestComponentErrorTest_020
+     * @tc.desc   getBounds 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getBounds_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_getBounds_17000004 start');
       try {
@@ -544,11 +604,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_getBounds_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_021
-    * @tc.name: test_getBoundsCenter_17000002
-    * @tc.desc: getBoundsCenter 17000002 test.
-    */
+    /**
+     * @tc.name   test_getBoundsCenter_17000002
+     * @tc.number UitestComponentErrorTest_021
+     * @tc.desc   getBoundsCenter 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getBoundsCenter_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getBoundsCenter_17000002 start`);
       try {
@@ -570,11 +633,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getBoundsCenter_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_022
-    * @tc.name: test_getBounds_17000004
-    * @tc.desc: getBoundsCenter 17000004 test.
-    */
+    /**
+     * @tc.name   test_getBoundsCenter_17000004
+     * @tc.number UitestComponentErrorTest_022
+     * @tc.desc   getBoundsCenter 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getBoundsCenter_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_getBoundsCenter_17000004 start');
       try {
@@ -594,11 +660,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_getBoundsCenter_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_023
-    * @tc.name: test_isClickable_17000002
-    * @tc.desc: isClickable 17000002 test.
-    */
+    /**
+     * @tc.name   test_isClickable_17000002
+     * @tc.number UitestComponentErrorTest_023
+     * @tc.desc   isClickable 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isClickable_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isClickable_17000002 start`);
       try {
@@ -620,11 +689,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isClickable_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_024
-    * @tc.name: test_isClickable_17000004
-    * @tc.desc: isClickable 17000004 test.
-    */
+    /**
+     * @tc.name   test_isClickable_17000004
+     * @tc.number UitestComponentErrorTest_024
+     * @tc.desc   isClickable 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isClickable_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isClickable_17000004 start');
       try {
@@ -644,11 +716,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_isClickable_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_025
-    * @tc.name: test_isClickable_17000002
-    * @tc.desc: isLongClickable 17000002 test.
-    */
+    /**
+     * @tc.name   test_isLongClickable_17000002
+     * @tc.number UitestComponentErrorTest_025
+     * @tc.desc   isLongClickable 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isLongClickable_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isLongClickable_17000002 start`);
       try {
@@ -670,11 +745,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isLongClickable_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_026
-    * @tc.name: test_isClickable_17000004
-    * @tc.desc: isLongClickable 17000004 test.
-    */
+    /**
+     * @tc.name   test_isLongClickable_17000004
+     * @tc.number UitestComponentErrorTest_026
+     * @tc.desc   isLongClickable 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isLongClickable_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isLongClickable_17000004 start');
       try {
@@ -694,11 +772,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_isLongClickable_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_027
-    * @tc.name: test_isChecked_17000002
-    * @tc.desc: isChecked 17000002 test.
-    */
+    /**
+     * @tc.name   test_isChecked_17000002
+     * @tc.number UitestComponentErrorTest_027
+     * @tc.desc   isChecked 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isChecked_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isChecked_17000002 start`);
       try {
@@ -720,11 +801,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isChecked_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_028
-    * @tc.name: test_isChecked_17000004
-    * @tc.desc: isChecked 17000004 test.
-    */
+    /**
+     * @tc.name   test_isChecked_17000004
+     * @tc.number UitestComponentErrorTest_028
+     * @tc.desc   isChecked 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isChecked_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isChecked_17000004 start');
       try {
@@ -744,11 +828,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_isChecked_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_029
-    * @tc.name: test_isCheckable_17000002
-    * @tc.desc: isCheckable 17000002 test.
-    */
+    /**
+     * @tc.name   test_isCheckable_17000002
+     * @tc.number UitestComponentErrorTest_029
+     * @tc.desc   isCheckable 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isCheckable_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isCheckable_17000002 start`);
       try {
@@ -770,11 +857,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isCheckable_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_030
-    * @tc.name: test_isCheckable_17000004
-    * @tc.desc: isCheckable 17000004 test.
-    */
+    /**
+     * @tc.name   test_isCheckable_17000004
+     * @tc.number UitestComponentErrorTest_030
+     * @tc.desc   isCheckable 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isCheckable_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isCheckable_17000004 start');
       try {
@@ -794,11 +884,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_isCheckable_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_031
-    * @tc.name: test_isScrollable_17000002
-    * @tc.desc: isScrollable 17000002 test.
-    */
+    /**
+     * @tc.name   test_isScrollable_17000002
+     * @tc.number UitestComponentErrorTest_031
+     * @tc.desc   isScrollable 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isScrollable_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isScrollable_17000002 start`);
       try {
@@ -820,11 +913,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isScrollable_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_032
-    * @tc.name: test_isScrollable_17000004
-    * @tc.desc: isScrollable 17000004 test.
-    */
+    /**
+     * @tc.name   test_isScrollable_17000004
+     * @tc.number UitestComponentErrorTest_032
+     * @tc.desc   isScrollable 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isScrollable_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isScrollable_17000004 start');
       try {
@@ -843,11 +939,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_isScrollable_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_033
-    * @tc.name: test_isEnabled_17000002
-    * @tc.desc: isEnabled 17000002 test.
-    */
+    /**
+     * @tc.name   test_isEnabled_17000002
+     * @tc.number UitestComponentErrorTest_033
+     * @tc.desc   isEnabled 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isEnabled_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isEnabled_17000002 start`);
       try {
@@ -869,11 +968,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isEnabled_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_034
-    * @tc.name: test_isEnabled_17000004
-    * @tc.desc: isEnabled 17000004 test.
-    */
+    /**
+     * @tc.name   test_isEnabled_17000004
+     * @tc.number UitestComponentErrorTest_034
+     * @tc.desc   isEnabled 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isEnabled_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isEnabled_17000004 start');
       try {
@@ -892,11 +994,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_isEnabled_17000004 end');
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_035
-    * @tc.name: test_isEnabled_17000002
-    * @tc.desc: isFocused 17000002 test.
-    */
+    /**
+     * @tc.name   test_isFocused_17000002
+     * @tc.number UitestComponentErrorTest_035
+     * @tc.desc   isFocused 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isFocused_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isFocused_17000002 start`);
       try {
@@ -918,11 +1023,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isFocused_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_036
-    * @tc.name: test_isFocused_17000004
-    * @tc.desc: isFocused 17000004 test.
-    */
+    /**
+     * @tc.name   test_isFocused_17000004
+     * @tc.number UitestComponentErrorTest_036
+     * @tc.desc   isFocused 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isFocused_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isFocused_17000004 start');
       try {
@@ -942,11 +1050,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_037
-    * @tc.name: test_isSelected_17000002
-    * @tc.desc: isSelected 17000002 test.
-    */
+    /**
+     * @tc.name   test_isSelected_17000002
+     * @tc.number UitestComponentErrorTest_037
+     * @tc.desc   isSelected 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isSelected_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isSelected_17000002 start`);
       try {
@@ -968,11 +1079,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isSelected_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_038
-    * @tc.name: test_isSelected_17000004
-    * @tc.desc: isSelected 17000004 test.
-    */
+    /**
+     * @tc.name   test_isSelected_17000004
+     * @tc.number UitestComponentErrorTest_038
+     * @tc.desc   isSelected 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_isSelected_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_isSelected_17000004 start');
       try {
@@ -992,11 +1106,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_039
-    * @tc.name: test_inputText_17000002
-    * @tc.desc: inputText 17000002 test.
-    */
+    /**
+     * @tc.name   test_inputText_17000002
+     * @tc.number UitestComponentErrorTest_039
+     * @tc.desc   inputText 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_inputText_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_isSelected_17000002 start`);
       try {
@@ -1018,11 +1135,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_isSelected_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_040
-    * @tc.name: test_inputTextMode_801
-    * @tc.desc: inputText 801 test.
-    */
+    /**
+     * @tc.name   test_inputTextMode_801
+     * @tc.number UitestComponentErrorTest_040
+     * @tc.desc   inputText 801 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_inputTextMode_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_inputTextMode_801 start`);
       try {
@@ -1049,11 +1169,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_041
-    * @tc.name: test_inputTextMode_17000002
-    * @tc.desc: inputText 17000002 test.
-    */
+    /**
+     * @tc.name   test_inputTextMode_17000002
+     * @tc.number UitestComponentErrorTest_041
+     * @tc.desc   inputText 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_inputTextMode_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_inputTextMode_17000002 start`);
       try {
@@ -1077,11 +1200,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_inputTextMode_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_042
-    * @tc.name: test_inputTextMode_401
-    * @tc.desc: inputText 401 test.
-    */
+    /**
+     * @tc.name   test_inputTextMode_401
+     * @tc.number UitestComponentErrorTest_042
+     * @tc.desc   inputText 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_inputTextMode_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_inputTextMode_401 start`);
       const driver = Driver.create();
@@ -1114,11 +1240,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_043
-    * @tc.name: test_inputText_17000004
-    * @tc.desc: inputText 17000004 test.
-    */
+    /**
+     * @tc.name   test_inputText_17000004
+     * @tc.number UitestComponentErrorTest_043
+     * @tc.desc   inputText 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_inputText_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TestTag, 'test_isSelected_17000004 start');
       try {
@@ -1138,11 +1267,14 @@ export default function uitestComponentErrorTest() {
       done()
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_044
-    * @tc.name: test_clearText_17000002
-    * @tc.desc: clearText 17000002 test.
-    */
+    /**
+     * @tc.name   test_clearText_17000002
+     * @tc.number UitestComponentErrorTest_044
+     * @tc.desc   clearText 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_clearText_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(`${TestTag}, test_clearText_17000002 start`);
       try {
@@ -1165,11 +1297,14 @@ export default function uitestComponentErrorTest() {
       done()
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_045
-    * @tc.name: test_clearText_17000004
-    * @tc.desc: clearText 17000004 test.
-    */
+    /**
+     * @tc.name   test_clearText_17000004
+     * @tc.number UitestComponentErrorTest_045
+     * @tc.desc   clearText 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_clearText_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TestTag, 'test_clearText_17000004 start');
       try {
@@ -1189,11 +1324,14 @@ export default function uitestComponentErrorTest() {
       done()
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_046
-    * @tc.name: test_dragTo_17000002
-    * @tc.desc: dragTo 17000002 test.
-    */
+    /**
+     * @tc.name   test_dragTo_17000002
+     * @tc.number UitestComponentErrorTest_046
+     * @tc.desc   dragTo 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_dragTo_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_dragTo_17000002 start`);
       try {
@@ -1215,11 +1353,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_dragTo_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_047
-    * @tc.name: test_dragTo_17000004
-    * @tc.desc: dragTo 17000004 test.
-    */
+    /**
+     * @tc.name   test_dragTo_17000004
+     * @tc.number UitestComponentErrorTest_047
+     * @tc.desc   dragTo 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_dragTo_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(TestTag, 'test_dragTo_17000004 start');
       try {
@@ -1239,11 +1380,14 @@ export default function uitestComponentErrorTest() {
       console.log(TestTag, 'test_dragTo_17000004 end');
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_048
-   * @tc.name: test_pinchOut_17000002
-   * @tc.desc: pinchOut 17000002 test.
-   */
+    /**
+     * @tc.name   test_pinchOut_17000002
+     * @tc.number UitestComponentErrorTest_048
+     * @tc.desc   pinchOut 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_pinchOut_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_pinchOut_17000002 start`);
       try {
@@ -1265,11 +1409,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_pinchOut_17000002 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_049
-   * @tc.name: test_pinchOut_17000004
-   * @tc.desc: pinchOut 17000004 test.
-   */
+    /**
+     * @tc.name   test_pinchOut_17000004
+     * @tc.number UitestComponentErrorTest_049
+     * @tc.desc   pinchOut 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_pinchOut_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_pinchOut_17000004 start`);
       try {
@@ -1292,11 +1439,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_pinchOut_17000004 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_050
-   * @tc.name: test_pinchIn_17000002
-   * @tc.desc: pinchIn 17000002 test.
-   */
+    /**
+     * @tc.name   test_pinchIn_17000002
+     * @tc.number UitestComponentErrorTest_050
+     * @tc.desc   pinchIn 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_pinchIn_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_pinchIn_17000002 start`);
       try {
@@ -1318,11 +1468,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_pinchIn_17000002 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_051
-   * @tc.name: test_pinchOut_17000004
-   * @tc.desc: pinchIn 17000004 test.
-   */
+    /**
+     * @tc.name   test_pinchIn_17000004
+     * @tc.number UitestComponentErrorTest_051
+     * @tc.desc   pinchIn 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_pinchIn_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_pinchIn_17000004 start`);
       try {
@@ -1345,11 +1498,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_pinchIn_17000004 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_052
-   * @tc.name: test_getDescription_17000002
-   * @tc.desc: getDescription 17000002 test.
-   */
+    /**
+     * @tc.name   test_getDescription_17000002
+     * @tc.number UitestComponentErrorTest_052
+     * @tc.desc   getDescription 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getDescription_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getDescription_17000002 start`);
       try {
@@ -1371,11 +1527,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getDescription_17000002 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_053
-   * @tc.name: test_getDescription_17000004
-   * @tc.desc: getDescription 17000004 test.
-   */
+    /**
+     * @tc.name   test_getDescription_17000004
+     * @tc.number UitestComponentErrorTest_053
+     * @tc.desc   getDescription 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getDescription_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getDescription_17000004 start`);
       try {
@@ -1399,11 +1558,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getDescription_17000004 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_054
-   * @tc.name: test_getHint_17000002
-   * @tc.desc: getHint 17000002 test.
-   */
+    /**
+     * @tc.name   test_getHint_17000002
+     * @tc.number UitestComponentErrorTest_054
+     * @tc.desc   getHint 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getHint_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getHint_17000002 start`);
       try {
@@ -1425,11 +1587,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getHint_17000002 end`);
     })
 
-    /*
-   * @tc.number: UitestComponentErrorTest_055
-   * @tc.name: test_getHint_17000004
-   * @tc.desc: getHint 17000004 test.
-   */
+    /**
+     * @tc.name   test_getHint_17000004
+     * @tc.number UitestComponentErrorTest_055
+     * @tc.desc   getHint 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getHint_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getHint_17000004 start`);
       try {
@@ -1452,11 +1617,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_056
-    * @tc.name: test_inputTextMode_17000004
-    * @tc.desc: inputText 17000004 test.
-    */
+    /**
+     * @tc.name   test_inputTextMode_17000004
+     * @tc.number UitestComponentErrorTest_056
+     * @tc.desc   inputText 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_inputTextMode_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_inputTextMode_17000004 start`);
       try {
@@ -1478,11 +1646,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_inputTextMode_17000004 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_057
-    * @tc.name: test_getDisplayId_17000002
-    * @tc.desc: getDisplayId 17000002 test.
-    */
+    /**
+     * @tc.name   test_getDisplayId_17000002
+     * @tc.number UitestComponentErrorTest_057
+     * @tc.desc   getDisplayId 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getDisplayId_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getDisplayId_17000002 start`);
       try {
@@ -1504,11 +1675,14 @@ export default function uitestComponentErrorTest() {
     })
 
 
-    /*
-    * @tc.number: UitestComponentErrorTest_058
-    * @tc.name: test_getDisplayId_17000004
-    * @tc.desc: getDisplayId 17000004 test.
-    */
+    /**
+     * @tc.name   test_getDisplayId_17000004
+     * @tc.number UitestComponentErrorTest_058
+     * @tc.desc   getDisplayId 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getDisplayId_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getDisplayId_17000004 start`);
       try {
@@ -1529,11 +1703,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getDisplayId_17000004 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_059
-    * @tc.name: test_getOriginalText_17000002
-    * @tc.desc: getOriginalText 17000002 test.
-    */
+    /**
+     * @tc.name   test_getOriginalText_17000002
+     * @tc.number UitestComponentErrorTest_059
+     * @tc.desc   getOriginalText 17000002 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getOriginalText_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getOriginalText_17000002 start`);
       try {
@@ -1554,11 +1731,14 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getOriginalText_17000002 end`);
     })
 
-    /*
-    * @tc.number: UitestComponentErrorTest_060
-    * @tc.name: test_getOriginalText_17000004
-    * @tc.desc: getOriginalText 17000004 test.
-    */
+    /**
+     * @tc.name   test_getOriginalText_17000004
+     * @tc.number UitestComponentErrorTest_060
+     * @tc.desc   getOriginalText 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_getOriginalText_17000004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_getOriginalText_17000004 start`);
       try {

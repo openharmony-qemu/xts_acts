@@ -25,12 +25,12 @@ export default function muslSysMmanTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SYSMMAN_POSIX_MADVISE_0100
-     * @tc.name       : testMuslSysMmanPosixMadvise001
-     * @tc.desc       : test posixMadvise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslSysMmanPosixMadvise001
+     * @tc.number SUB_THIRDPARTY_MUSL_SYSMMAN_POSIX_MADVISE_0100
+     * @tc.desc   test posixMadvise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSysMmanPosixMadvise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(sysmman.posixMadvise()).assertEqual(1);

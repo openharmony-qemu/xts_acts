@@ -79,9 +79,12 @@ export default function menuPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuIdProp
-         * @tc.desc      ACE
+         * @tc.name   testMenuIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuIdProp', Level.LEVEL0, async function(done) {
             console.info('testMenuIdProp START');
@@ -96,6 +99,14 @@ export default function menuPropsJsTest() {
             done();
         });
 
+        /**
+         * @tc.name   testMenuClassProp
+         * @tc.number testMenuClassProp
+         * @tc.desc   testMenuClassProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testMenuClassProp', Level.LEVEL0, async function(done) {
             console.info('testMenuClassProp START');
             console.info("[menuProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -111,9 +122,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testMenuClassPropNone START');
@@ -131,9 +145,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuRefProp
-         * @tc.desc      ACE
+         * @tc.name   testMenuRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuRefProp', Level.LEVEL0, async function(done) {
             console.info('testMenuRefProp START');
@@ -150,9 +167,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testMenuRefPropNone START');
@@ -170,9 +190,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuDataProp
-         * @tc.desc      ACE
+         * @tc.name   testMenuDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuDataProp', Level.LEVEL0, async function(done) {
             console.info('testMenuDataProp START');
@@ -190,9 +213,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testMenuDataPropNone START');
@@ -210,9 +236,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testMenuClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testMenuClickEffectPropSmall START');
@@ -229,9 +258,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testMenuClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testMenuClickEffectPropMedium START');
@@ -248,9 +280,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testMenuClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testMenuClickEffectPropLarge START');
@@ -267,9 +302,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testMenuClickEffectPropNone START');
@@ -287,9 +325,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testMenuDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testMenuDirPropRtl START');
@@ -306,9 +347,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testMenuDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testMenuDirPropLtr START');
@@ -325,9 +369,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testMenuDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testMenuDirPropAuto START');
@@ -344,9 +391,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testMenuDirPropNone START');
@@ -363,9 +413,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testMenuForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuForPropNull', Level.LEVEL0, async function(done) {
             console.info('testMenuForPropNull START');
@@ -383,9 +436,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testMenuForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuForPropOne', Level.LEVEL0, async function(done) {
             console.info('testMenuForPropOne START');
@@ -403,9 +459,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testMenuForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuForPropThree', Level.LEVEL0, async function(done) {
             console.info('testMenuForPropThree START');
@@ -423,9 +482,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testMenuIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testMenuIfPropTrue START');
@@ -443,9 +505,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testMenuShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testMenuShowPropTrue START');
@@ -463,9 +528,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testMenuShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testMenuShowPropFalse START');
@@ -483,9 +551,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testMenuShowPropNone START');
@@ -505,9 +576,12 @@ export default function menuPropsJsTest() {
         //   特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuMenuTarget
-         * @tc.desc      ACE
+         * @tc.name   testMenuMenuTarget
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuMenuTarget', Level.LEVEL0, async function(done) {
             console.info('testMenuMenuTarget START');
@@ -525,9 +599,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuMenuTargetNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuMenuTargetNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuMenuTargetNone', Level.LEVEL0, async function(done) {
             console.info('testMenuMenuTargetNone START');
@@ -545,9 +622,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuTypeClick
-         * @tc.desc      ACE
+         * @tc.name   testMenuTypeClick
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuTypeClick', Level.LEVEL0, async function(done) {
             console.info('testMenuTypeClick START');
@@ -565,9 +645,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuTypeLongPress
-         * @tc.desc      ACE
+         * @tc.name   testMenuTypeLongPress
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuTypeLongPress', Level.LEVEL0, async function(done) {
             console.info('testMenuTypeLongPress START');
@@ -585,9 +668,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuTypeNone', Level.LEVEL0, async function(done) {
             console.info('testMenuTypeNone START');
@@ -605,9 +691,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuMenuTitle
-         * @tc.desc      ACE
+         * @tc.name   testMenuMenuTitle
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuMenuTitle', Level.LEVEL0, async function(done) {
             console.info('testMenuMenuTitle START');
@@ -625,9 +714,12 @@ export default function menuPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMenuMenuTitleNone
-         * @tc.desc      ACE
+         * @tc.name   testMenuMenuTitleNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMenuMenuTitleNone', Level.LEVEL0, async function(done) {
             console.info('testMenuMenuTitleNone START');

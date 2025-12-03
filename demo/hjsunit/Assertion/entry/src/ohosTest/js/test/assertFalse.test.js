@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertFalse', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertFalseSuccess
      * @tc.number assertFalseSuccess
      * @tc.desc   assertFalseSuccess
@@ -29,7 +28,6 @@ describe('assertFalse', function () {
         expect(d).assertFalse()
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertFalseFail
      * @tc.number assertFalseFail
      * @tc.desc   assertFalseFail

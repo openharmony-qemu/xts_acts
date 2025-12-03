@@ -25,13 +25,13 @@ export default function NodeUniqueIdTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_UNIQUEID_0100
-     * @tc.name       : testNodeUniqueId001
-     * @tc.desc       : testing Post On Idle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testNodeUniqueId001
+     * @tc.number SUB_ARKUI_CAPI_NODE_UNIQUEID_0100
+     * @tc.desc   testing Post On Idle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNodeUniqueId001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TestNodeUniqueId';

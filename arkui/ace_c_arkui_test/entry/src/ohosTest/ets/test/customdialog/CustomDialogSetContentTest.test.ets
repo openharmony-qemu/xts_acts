@@ -26,52 +26,52 @@ export default function customDialogSetContentTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0100
-     * @tc.name       : testCustomDialogSetContent001
-     * @tc.desc       : testing setContent for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContent001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0100
+     * @tc.desc   testing setContent for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0200
-     * @tc.name       : testCustomDialogSetContent002
-     * @tc.desc       : testing setContent for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContent002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0200
+     * @tc.desc   testing setContent for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContent002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0300
-     * @tc.name       : testCustomDialogSetContent003
-     * @tc.desc       : testing setContent for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContent003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0300
+     * @tc.desc   testing setContent for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContent003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0400
-     * @tc.name       : testCustomDialogSetContent004
-     * @tc.desc       : testing setContent for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogSetContent004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETCONTENT_0400
+     * @tc.desc   testing setContent for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogSetContent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogSetContent004()).assertEqual(0)

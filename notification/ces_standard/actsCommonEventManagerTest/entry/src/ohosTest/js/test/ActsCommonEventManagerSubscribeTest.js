@@ -24,10 +24,13 @@ export default function ActsCommonEventManagerSubscribeTest() {
       return new Promise(resolve => setTimeout(resolve, ms))
     }
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_1900
-     * @tc.name: isStickyCommonEvent isOrderedCommonEvent abortCommonEvent getAbortCommonEvent clearAbortCommonEvent
-     * @tc.desc: verify the callback function
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1900
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1900
+     * @tc.desc   verify the callback function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1900', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1900 START`)
@@ -135,10 +138,13 @@ export default function ActsCommonEventManagerSubscribeTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1900 END`)
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_2000
-     * @tc.name: isStickyCommonEvent isOrderedCommonEvent abortCommonEvent getAbortCommonEvent clearAbortCommonEvent
-     * @tc.desc: verify the promise function
+    /**
+     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_2000
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_2000
+     * @tc.desc   verify the promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_2000', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2000 START`)
@@ -234,11 +240,14 @@ export default function ActsCommonEventManagerSubscribeTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2000 END`)
     })
 
-        /*
-      * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
-      * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
-      * @tc.desc: verify the promise function
-      */
+        /**
+         * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
+         * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200
+         * @tc.desc   verify the promise function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200', Level.LEVEL2, async function (done) {
           console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1200 START`)
     
@@ -331,11 +340,14 @@ export default function ActsCommonEventManagerSubscribeTest() {
         })
 
 
-    /*
-      * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100
-      * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100
-      * @tc.desc: verify the promise function
-      */
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100
+     * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100
+     * @tc.desc   verify the promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST_1100 START`)
 

@@ -42,6 +42,14 @@ export default function loadingProgressJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   loadingProgressJsunit_0100
+     * @tc.number loadingProgressJsunit_0100
+     * @tc.desc   loadingProgressJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('loadingProgressJsunit_0100', Level.LEVEL2, async (done: Function) => {
        console.info('loadingProgressJsunit_0100 START');
        await CommonFunc.sleep(1000);
@@ -53,6 +61,14 @@ export default function loadingProgressJsunit() {
        done();
     });
 
+   /**
+    * @tc.name   loadingProgressJsunit_0200
+    * @tc.number loadingProgressJsunit_0200
+    * @tc.desc   loadingProgressJsunit_0200
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
    it('loadingProgressJsunit_0200', Level.LEVEL2, async (done: Function) => {
       console.info('loadingProgressJsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -67,6 +83,14 @@ export default function loadingProgressJsunit() {
       done();
     });
 
+  /**
+   * @tc.name   loadingProgressJsunit_0300
+   * @tc.number loadingProgressJsunit_0300
+   * @tc.desc   loadingProgressJsunit_0300
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
   it('loadingProgressJsunit_0300', Level.LEVEL2, async (done: Function) => {
       console.info('loadingProgressJsunit_0300 START');
       await CommonFunc.sleep(1000);

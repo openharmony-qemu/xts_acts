@@ -27,12 +27,12 @@ export default function muslStroptsNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_STROPTS_IOCTL_0100
-     * @tc.name     : testMuslStroptsIoctl001
-     * @tc.desc     : test ioctl
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslStroptsIoctl001
+     * @tc.number SUB_THIRDPARTY_MUSL_STROPTS_IOCTL_0100
+     * @tc.desc   test ioctl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslStroptsIoctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = stropts.ioctl();

@@ -39,12 +39,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0001
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0001
-     * @tc.desc Verify BigInt64Array and DataView share ArrayBuffer (bidirectional sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array and DataView share ArrayBuffer (bidirectional sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -60,12 +60,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0002
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0002
-     * @tc.desc Verify BigInt64Array (non-zero offset) and DataView share ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array (non-zero offset) and DataView share ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -86,12 +86,12 @@ export default function typeArrayBigInt64ArrayTest() {
   })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0003
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0003
-     * @tc.desc Verify SharedArrayBuffer sync between BigInt64Array and DataView (single thread)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify SharedArrayBuffer sync between BigInt64Array and DataView (single thread)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(16);
@@ -113,12 +113,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0004
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0004
-     * @tc.desc Verify BigInt64Array handles value overflow (clamped to min/max)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array handles value overflow (clamped to min/max)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -138,12 +138,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0006
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0006
-     * @tc.desc Verify BigInt64Array constructor with plain BigInt array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array constructor with plain BigInt array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const source: bigint[] = [10n, 20n, 30n];
@@ -160,12 +160,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0007
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0007
-     * @tc.desc Verify BigInt64Array constructor with ArrayBuffer (offset=0, length=0)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array constructor with ArrayBuffer (offset=0, length=0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -179,12 +179,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0008
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0008
-     * @tc.desc Verify BigInt64Array subarray and DataView share parent ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array subarray and DataView share parent ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -207,12 +207,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0009
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0009
-     * @tc.desc Verify BigInt64Array slice (new buffer) does NOT sync with original DataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice (new buffer) does NOT sync with original DataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -232,12 +232,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0010
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0010
-     * @tc.desc Verify DataView out-of-bounds BigInt64 read throws RangeError
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify DataView out-of-bounds BigInt64 read throws RangeError
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -258,12 +258,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0011
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0011
-     * @tc.desc Verify BigInt64Array set method with BigInt64Array source
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array set method with BigInt64Array source
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -282,12 +282,12 @@ export default function typeArrayBigInt64ArrayTest() {
       expect(dv.getBigInt64(8, true)).assertEqual(150n);
     })
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0013
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0013
-     * @tc.desc Verify BigInt64Array fill method with BigInt value (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill method with BigInt value (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -308,12 +308,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0014
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0014
-     * @tc.desc Verify BigInt64Array fill with negative range (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with negative range (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -332,12 +332,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0015
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0015
-     * @tc.desc Verify BigInt64Array copyWithin method (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin method (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -359,12 +359,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0016
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0016
-     * @tc.desc Verify BigInt64Array copyWithin with overlapping ranges
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with overlapping ranges
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -381,12 +381,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0017
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0017
-     * @tc.desc Verify BigInt64Array indexOf method (sync with DataView modifications)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array indexOf method (sync with DataView modifications)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -401,12 +401,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0018
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0018
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0018
-     * @tc.desc Verify BigInt64Array lastIndexOf method (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array lastIndexOf method (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -421,12 +421,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0019
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0019
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0019
-     * @tc.desc Verify BigInt64Array includes method (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array includes method (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -444,12 +444,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0020
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0020
-     * @tc.desc Verify BigInt64Array every method (sync with DataView modifications)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array every method (sync with DataView modifications)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -464,12 +464,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0021
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0021
-     * @tc.desc Verify BigInt64Array some method (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array some method (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -485,12 +485,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0022
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0022
-     * @tc.desc Verify BigInt64Array reduce method (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce method (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -508,12 +508,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0023
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0023
-     * @tc.desc Verify BigInt64Array reduce without initial value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce without initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -528,12 +528,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0024
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0024
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0024
-     * @tc.desc Verify BigInt64Array map method (new buffer, no sync with original)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array map method (new buffer, no sync with original)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -553,12 +553,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0025
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0025
-     * @tc.desc Verify BigInt64Array filter method (new buffer, no sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array filter method (new buffer, no sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -579,12 +579,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0026
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0026
-     * @tc.desc Verify BigInt64Array forEach method (modifies external variable)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array forEach method (modifies external variable)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -603,12 +603,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0027
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0027
-     * @tc.desc Verify BigInt64Array and DataView with multi-byte DataView operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array and DataView with multi-byte DataView operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -626,12 +626,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0028
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0028
-     * @tc.desc Verify BigInt64Array byteLength and byteOffset properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array byteLength and byteOffset properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -648,12 +648,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0029
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0029
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (cross-thread simulation)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (cross-thread simulation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(16);
@@ -673,12 +673,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0030
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0030
-     * @tc.desc Verify BigInt64Array out-of-bounds index returns undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array out-of-bounds index returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -695,12 +695,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0031
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0031
-     * @tc.desc Verify BigInt64Array conversion to plain BigInt array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array conversion to plain BigInt array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -720,12 +720,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0032
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0032
-     * @tc.desc Verify plain BigInt array conversion to BigInt64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify plain BigInt array conversion to BigInt64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const plainArr: bigint[] = [123n, 456n, 789n];
@@ -742,12 +742,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0033
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0033
-     * @tc.desc Verify BigInt64Array with DataView reading different data types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading different data types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -762,12 +762,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0034
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0034
-     * @tc.desc Verify DataView writing different types to BigInt64Array's buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify DataView writing different types to BigInt64Array's buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -783,12 +783,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0035
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0035
-     * @tc.desc Verify BigInt64Array with empty source array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array with empty source array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const plainArr: bigint[] = [];
@@ -807,12 +807,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0036
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0036
-     * @tc.desc Verify BigInt64Array with zero-length SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array with zero-length SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(0);
@@ -830,12 +830,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0037
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0037
-     * @tc.desc Verify BigInt64Array set method with out-of-bounds source (truncated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array set method with out-of-bounds source (truncated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -858,12 +858,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0038
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0038
-     * @tc.desc Verify BigInt64Array set method with negative offset (throws RangeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array set method with negative offset (throws RangeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -885,12 +885,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0040
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0040
-     * @tc.desc Verify BigInt64Array copyWithin with invalid indices (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with invalid indices (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -909,12 +909,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0041
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0041
-     * @tc.desc Verify BigInt64Array indexOf with start index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array indexOf with start index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -930,12 +930,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0042
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0042
-     * @tc.desc Verify BigInt64Array lastIndexOf with start index (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array lastIndexOf with start index (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -953,12 +953,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0043
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0043
-     * @tc.desc Verify BigInt64Array includes with start index (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array includes with start index (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -975,12 +975,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0044
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0044
-     * @tc.desc Verify BigInt64Array slice with start/end indices (new buffer, no sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with start/end indices (new buffer, no sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -1003,12 +1003,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0045
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0045
-     * @tc.desc Verify BigInt64Array slice with negative indices (new buffer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with negative indices (new buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -1027,12 +1027,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0046
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0046
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0046
-     * @tc.desc Verify BigInt64Array map with BigInt operations (new buffer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array map with BigInt operations (new buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1050,12 +1050,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0047
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0047
-     * @tc.desc Verify BigInt64Array filter with BigInt conditions (new buffer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array filter with BigInt conditions (new buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(32);
@@ -1074,12 +1074,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0048
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0048
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0048
-     * @tc.desc Verify BigInt64Array reduce with BigInt accumulator (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce with BigInt accumulator (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1096,12 +1096,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0049
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0049
-     * @tc.desc Verify BigInt64Array forEach modifies buffer (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array forEach modifies buffer (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(16);
@@ -1120,12 +1120,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0050
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0050
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0050
-     * @tc.desc Verify BigInt64Array with DataView reading partial bytes (no sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading partial bytes (no sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -1142,12 +1142,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0051
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0051
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0051
-     * @tc.desc Verify DataView writes partial bytes to BigInt64Array's buffer (sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify DataView writes partial bytes to BigInt64Array's buffer (sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(8);
@@ -1163,12 +1163,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0052
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0052
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0052
-     * @tc.desc Verify BigInt64Array with ArrayBuffer slice (new buffer, no sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with ArrayBuffer slice (new buffer, no sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const originalBuf: ArrayBuffer = new ArrayBuffer(24);
@@ -1189,12 +1189,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0053
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0053
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0053
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer slice (not supported, throws error)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer slice (not supported, throws error)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(16);
@@ -1207,12 +1207,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0054
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0054
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0054
-     * @tc.desc Verify BigInt64Array constructor with length parameter (zero-initialized)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array constructor with length parameter (zero-initialized)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const length: number = 3;
@@ -1232,12 +1232,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0055
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0055
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0055
-     * @tc.desc Verify BigInt64Array conversion to plain BigInt array via Array.from
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array conversion to plain BigInt array via Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1257,12 +1257,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0056
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0056
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0056
-     * @tc.desc Verify plain BigInt array conversion to BigInt64Array (truncates overflow)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify plain BigInt array conversion to BigInt64Array (truncates overflow)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const plainArr: bigint[] = [
@@ -1281,12 +1281,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0057
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0057
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0057
-     * @tc.desc Verify BigInt64Array with DataView reading/writing big-endian values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading/writing big-endian values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -1303,12 +1303,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0058
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0058
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0058
-     * @tc.desc Verify BigInt64Array out-of-bounds write (no effect on buffer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array out-of-bounds write (no effect on buffer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1325,12 +1325,12 @@ export default function typeArrayBigInt64ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0060
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0060
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0060
-     * @tc.desc Verify BigInt64Array fill with max/min values (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with max/min values (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1350,12 +1350,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0061
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0061
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0061
-     * @tc.desc Verify BigInt64Array copyWithin with negative start/end (sync with DataView)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with negative start/end (sync with DataView)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1374,12 +1374,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0065
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0065
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0065
-     * @tc.desc Verify BigInt64Array every with non-BigInt condition (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array every with non-BigInt condition (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1394,12 +1394,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0066
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0066
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0066
-     * @tc.desc Verify BigInt64Array some with non-BigInt condition (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array some with non-BigInt condition (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -1414,12 +1414,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0067
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0067
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0067
-     * @tc.desc Verify BigInt64Array reduce with non-BigInt accumulator (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce with non-BigInt accumulator (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1434,12 +1434,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0068
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0068
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0068
-     * @tc.desc Verify BigInt64Array map with non-BigInt return (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array map with non-BigInt return (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1455,12 +1455,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0069
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0069
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0069
-     * @tc.desc Verify BigInt64Array filter with non-BigInt condition (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array filter with non-BigInt condition (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -1476,12 +1476,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0070
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0070
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0070
-     * @tc.desc Verify BigInt64Array forEach with non-BigInt operation (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array forEach with non-BigInt operation (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1498,12 +1498,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0071
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0071
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0071
-     * @tc.desc Verify BigInt64Array with DataView reading signed/unsigned values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading signed/unsigned values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -1520,12 +1520,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0072
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0072
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0072
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (multi-view sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (multi-view sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -1549,12 +1549,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0073
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0073
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0073
-     * @tc.desc Verify BigInt64Array subarray with out-of-bounds indices (clamped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array subarray with out-of-bounds indices (clamped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1574,12 +1574,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0074
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0074
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0074
-     * @tc.desc Verify BigInt64Array slice with out-of-bounds indices (clamped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with out-of-bounds indices (clamped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1598,12 +1598,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0075
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0075
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0075
-     * @tc.desc Verify BigInt64Array set with out-of-bounds source (clamped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array set with out-of-bounds source (clamped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1621,12 +1621,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0076
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0076
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0076
-     * @tc.desc Verify BigInt64Array fill with out-of-bounds range (clamped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with out-of-bounds range (clamped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1644,12 +1644,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0077
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0077
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0077
-     * @tc.desc Verify BigInt64Array copyWithin with out-of-bounds indices (clamped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with out-of-bounds indices (clamped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1666,12 +1666,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0078
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0078
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0078
-     * @tc.desc Verify BigInt64Array indexOf with out-of-bounds start (returns -1)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array indexOf with out-of-bounds start (returns -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1685,12 +1685,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0079
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0079
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0079
-     * @tc.desc Verify BigInt64Array lastIndexOf with out-of-bounds start (clamped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array lastIndexOf with out-of-bounds start (clamped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1704,12 +1704,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0080
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0080
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0080
-     * @tc.desc Verify BigInt64Array includes with out-of-bounds start (returns false)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array includes with out-of-bounds start (returns false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(16);
@@ -1723,12 +1723,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0081
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0081
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0081
-     * @tc.desc Verify BigInt64Array with empty ArrayBuffer (all operations no-op or throw)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with empty ArrayBuffer (all operations no-op or throw)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyBuf: ArrayBuffer = new ArrayBuffer(0);
@@ -1766,12 +1766,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0082
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0082
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0082
-     * @tc.desc Verify SharedArrayBuffer sync between BigInt64Array and DataView (multi-view)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify SharedArrayBuffer sync between BigInt64Array and DataView (multi-view)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -1792,12 +1792,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0083
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0083
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0083
-     * @tc.desc Verify BigInt64Array subarray with zero length (no-op modifications)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array subarray with zero length (no-op modifications)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1822,12 +1822,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0084
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0084
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0084
-     * @tc.desc Verify BigInt64Array slice returns empty array for zero-length source
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice returns empty array for zero-length source
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyBuf: ArrayBuffer = new ArrayBuffer(0);
@@ -1862,12 +1862,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0085
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0085
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0085
-     * @tc.desc Verify BigInt64Array and DataView handle 64-bit sign bit correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array and DataView handle 64-bit sign bit correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -1890,12 +1890,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0086
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0086
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0086
-     * @tc.desc Verify BigInt64Array fill with same value multiple times (idempotency)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with same value multiple times (idempotency)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -1920,12 +1920,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0087
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0087
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0087
-     * @tc.desc Verify BigInt64Array copyWithin preserves source during overlapping copy
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin preserves source during overlapping copy
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -1949,12 +1949,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0088
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0088
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0088
-     * @tc.desc Verify BigInt64Array indexOf handles duplicate values correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array indexOf handles duplicate values correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -1971,12 +1971,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0089
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0089
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0089
-     * @tc.desc Verify BigInt64Array lastIndexOf handles duplicate values correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array lastIndexOf handles duplicate values correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -1992,12 +1992,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0090
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0090
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0090
-     * @tc.desc Verify BigInt64Array includes handles duplicate values correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array includes handles duplicate values correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(32);
@@ -2014,12 +2014,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0091
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0091
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0091
-     * @tc.desc Verify BigInt64Array every checks all elements (even after modifications)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array every checks all elements (even after modifications)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2039,12 +2039,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0092
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0092
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0092
-     * @tc.desc Verify BigInt64Array some detects first matching element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array some detects first matching element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -2064,12 +2064,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0093
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0093
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0093
-     * @tc.desc Verify BigInt64Array reduce accumulates correctly with modified elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce accumulates correctly with modified elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2097,12 +2097,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0094
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0094
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0094
-     * @tc.desc Verify BigInt64Array map applies transformation to each element
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array map applies transformation to each element
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2125,12 +2125,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0095
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0095
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0095
-     * @tc.desc Verify BigInt64Array filter retains only matching elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array filter retains only matching elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(32);
@@ -2154,12 +2154,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0096
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0096
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0096
-     * @tc.desc Verify BigInt64Array forEach iterates all elements (even modified)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array forEach iterates all elements (even modified)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2186,12 +2186,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0097
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0097
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0097
-     * @tc.desc Verify DataView throws on non-aligned offsets for BigInt64 access
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify DataView throws on non-aligned offsets for BigInt64 access
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -2215,12 +2215,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0098
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0098
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0098
-     * @tc.desc Verify BigInt64Array truncates when ArrayBuffer length is non-multiple of 8
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array truncates when ArrayBuffer length is non-multiple of 8
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -2246,12 +2246,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0099
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0099
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0099
-     * @tc.desc Verify BigInt64Array and DataView handle zero value correctly
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array and DataView handle zero value correctly
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -2277,12 +2277,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0100
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0100
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0100
-     * @tc.desc Verify BigInt64Array slice with same start and end returns empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with same start and end returns empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2307,12 +2307,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0101
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0101
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0101
-     * @tc.desc Verify BigInt64Array copyWithin with target=source is no-op
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with target=source is no-op
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2336,12 +2336,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0104
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0104
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0104
-     * @tc.desc Verify BigInt64Array set with out-of-bounds offset throws RangeError
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array set with out-of-bounds offset throws RangeError
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -2384,12 +2384,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0106
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0106
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0106
-     * @tc.desc Verify BigInt64Array subarray shares buffer with parent (sync modifications)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array subarray shares buffer with parent (sync modifications)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2421,12 +2421,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0107
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0107
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0107
-     * @tc.desc Verify BigInt64Array constructor with length parameter (zero-initialized)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify BigInt64Array constructor with length parameter (zero-initialized)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayBigInt64ArrayBufferDv0107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const length: number = 3;
@@ -2449,12 +2449,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0109
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0109
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0109
-     * @tc.desc Verify BigInt64Array conversion to plain BigInt array via Array.from (complete)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array conversion to plain BigInt array via Array.from (complete)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2473,12 +2473,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0110
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0110
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0110
-     * @tc.desc Verify BigInt64Array with ArrayBuffer slice (partial range, sync check)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with ArrayBuffer slice (partial range, sync check)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const originalBuf: ArrayBuffer = new ArrayBuffer(32);
@@ -2499,12 +2499,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0111
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0111
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0111
-     * @tc.desc Verify DataView writes BigInt64 values with different endianness (sync to typed array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify DataView writes BigInt64 values with different endianness (sync to typed array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -2521,12 +2521,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0112
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0112
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0112
-     * @tc.desc Verify BigInt64Array out-of-bounds read returns undefined (no throw)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array out-of-bounds read returns undefined (no throw)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -2546,12 +2546,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0113
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0113
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0113
-     * @tc.desc Verify BigInt64Array fill with start > end (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with start > end (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2574,12 +2574,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0114
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0114
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0114
-     * @tc.desc Verify BigInt64Array copyWithin with start > end (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with start > end (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2601,12 +2601,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0115
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0115
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0115
-     * @tc.desc Verify BigInt64Array includes with start > array length (returns false)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array includes with start > array length (returns false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: ArrayBuffer = new ArrayBuffer(16);
@@ -2623,12 +2623,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0116
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0116
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0116
-     * @tc.desc Verify BigInt64Array indexOf with start > array length (returns -1)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array indexOf with start > array length (returns -1)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2645,12 +2645,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0117
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0117
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0117
-     * @tc.desc Verify BigInt64Array lastIndexOf with start < 0 (clamped to 0)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array lastIndexOf with start < 0 (clamped to 0)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2667,12 +2667,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0118
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0118
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0118
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (cross-view modification sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (cross-view modification sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: ArrayBuffer = new ArrayBuffer(24);
@@ -2694,12 +2694,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0119
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0119
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0119
-     * @tc.desc Verify BigInt64Array forEach with index and array parameters (access correct values)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array forEach with index and array parameters (access correct values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2725,12 +2725,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0120
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0120
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0120
-     * @tc.desc Verify BigInt64Array map with index and array parameters (transformation uses index)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array map with index and array parameters (transformation uses index)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2750,12 +2750,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0121
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0121
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0121
-     * @tc.desc Verify BigInt64Array filter with index parameter (filters by index range)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array filter with index parameter (filters by index range)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: ArrayBuffer = new ArrayBuffer(32);
@@ -2773,12 +2773,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0122
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0122
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0122
-     * @tc.desc Verify BigInt64Array reduce with index and array parameters (tracks index)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce with index and array parameters (tracks index)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2801,12 +2801,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0123
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0123
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0123
-     * @tc.desc Verify BigInt64Array every with index parameter (checks value and index)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array every with index parameter (checks value and index)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -2823,12 +2823,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0124
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0124
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0124
-     * @tc.desc Verify BigInt64Array some with index parameter (checks value and index)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array some with index parameter (checks value and index)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: ArrayBuffer = new ArrayBuffer(24);
@@ -2845,12 +2845,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0125
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0125
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0125
-     * @tc.desc Verify BigInt64Array with DataView reading/writing 8-bit values (partial byte)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading/writing 8-bit values (partial byte)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -2870,12 +2870,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0126
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0126
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0126
-     * @tc.desc Verify BigInt64Array with DataView reading/writing 16-bit values (partial bytes)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading/writing 16-bit values (partial bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -2896,12 +2896,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0127
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0127
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0127
-     * @tc.desc Verify BigInt64Array with DataView reading/writing 32-bit values (partial bytes)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading/writing 32-bit values (partial bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -2921,12 +2921,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0128
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0128
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0128
-     * @tc.desc Verify BigInt64Array constructor with buffer, byteOffset, and length (valid range)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array constructor with buffer, byteOffset, and length (valid range)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -2950,12 +2950,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0129
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0129
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0129
-     * @tc.desc Verify BigInt64Array constructor with invalid byteOffset (throws RangeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array constructor with invalid byteOffset (throws RangeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -2992,12 +2992,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0130
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0130
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0130
-     * @tc.desc Verify BigInt64Array constructor with invalid length (throws RangeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array constructor with invalid length (throws RangeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3034,12 +3034,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0132
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0132
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0132
-     * @tc.desc Verify BigInt64Array slice with negative end index (clamped correctly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with negative end index (clamped correctly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3057,12 +3057,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0133
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0133
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0133
-     * @tc.desc Verify BigInt64Array slice with negative start index (clamped correctly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with negative start index (clamped correctly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3081,12 +3081,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0134
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0134
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0134
-     * @tc.desc Verify BigInt64Array copyWithin with negative target index (clamped correctly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with negative target index (clamped correctly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3105,12 +3105,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0135
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0135
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0135
-     * @tc.desc Verify BigInt64Array copyWithin with negative start/end indices (clamped correctly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with negative start/end indices (clamped correctly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3127,12 +3127,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0136
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0136
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0136
-     * @tc.desc Verify BigInt64Array fill with negative start index (clamped correctly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with negative start index (clamped correctly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3154,12 +3154,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0137
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0137
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0137
-     * @tc.desc Verify BigInt64Array fill with negative end index (clamped correctly)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with negative end index (clamped correctly)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3181,12 +3181,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0138
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0138
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0138
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (empty buffer, all operations no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (empty buffer, all operations no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptySab: SharedArrayBuffer = new SharedArrayBuffer(0);
@@ -3197,12 +3197,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0139
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0139
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0139
-     * @tc.desc Verify BigInt64Array with DataView reading signed 32-bit values (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading signed 32-bit values (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3219,12 +3219,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0140
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0140
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0140
-     * @tc.desc Verify BigInt64Array forEach stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array forEach stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3260,12 +3260,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0141
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0141
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0141
-     * @tc.desc Verify BigInt64Array map stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array map stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0141', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3306,12 +3306,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0142
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0142
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0142
-     * @tc.desc Verify BigInt64Array filter stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array filter stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -3350,12 +3350,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0143
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0143
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0143
-     * @tc.desc Verify BigInt64Array reduce stops if callback throws error
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array reduce stops if callback throws error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3397,12 +3397,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0144
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0144
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0144
-     * @tc.desc Verify BigInt64Array every stops early if callback returns false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array every stops early if callback returns false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3435,12 +3435,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0145
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0145
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0145
-     * @tc.desc Verify BigInt64Array some stops early if callback returns true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array some stops early if callback returns true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -3469,12 +3469,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0146
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0146
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0146
-     * @tc.desc Verify BigInt64Array with DataView writing float values (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView writing float values (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3494,12 +3494,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0147
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0147
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0147
-     * @tc.desc Verify BigInt64Array subarray with max length (covers remaining elements)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array subarray with max length (covers remaining elements)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -3519,12 +3519,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0148
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0148
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0148
-     * @tc.desc Verify BigInt64Array slice with max length (covers remaining elements)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with max length (covers remaining elements)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(32);
@@ -3546,12 +3546,12 @@ export default function typeArrayBigInt64ArrayTest() {
       expect(sliced1[2]).assertEqual(35n);
     })
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0151
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0151
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0151
-     * @tc.desc Verify BigInt64Array with DataView reading unsigned 32-bit values (coerced to BigInt)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading unsigned 32-bit values (coerced to BigInt)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3570,12 +3570,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0152
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0152
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0152
-     * @tc.desc Verify BigInt64Array copyWithin with target beyond array length (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with target beyond array length (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3595,12 +3595,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0153
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0153
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0153
-     * @tc.desc Verify BigInt64Array fill with target beyond array length (no-op)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with target beyond array length (no-op)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3623,12 +3623,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0154
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0154
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0154
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (multi-thread simulation: lock-free read)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (multi-thread simulation: lock-free read)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(8);
@@ -3649,12 +3649,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0155
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0155
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0155
-     * @tc.desc Verify BigInt64Array indexOf with non-integer start (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array indexOf with non-integer start (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3670,12 +3670,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0156
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0156
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0156
-     * @tc.desc Verify BigInt64Array lastIndexOf with non-integer start (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array lastIndexOf with non-integer start (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3691,12 +3691,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0157
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0157
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0157
-     * @tc.desc Verify BigInt64Array includes with non-integer start (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array includes with non-integer start (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(24);
@@ -3714,12 +3714,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0158
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0158
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0158
-     * @tc.desc Verify BigInt64Array with DataView writing 8-bit unsigned values (partial byte)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView writing 8-bit unsigned values (partial byte)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3748,12 +3748,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0159
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0159
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0159
-     * @tc.desc Verify BigInt64Array with DataView writing 16-bit unsigned values (partial bytes)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView writing 16-bit unsigned values (partial bytes)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3777,12 +3777,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0162
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0162
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0162
-     * @tc.desc Verify BigInt64Array with DataView reading 64-bit values in big-endian
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading 64-bit values in big-endian
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3800,12 +3800,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0163
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0163
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0163
-     * @tc.desc Verify BigInt64Array copyWithin with non-integer target/start/end (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array copyWithin with non-integer target/start/end (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3825,12 +3825,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0164
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0164
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0164
-     * @tc.desc Verify BigInt64Array fill with non-integer start/end (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array fill with non-integer start/end (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3851,12 +3851,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0165
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0165
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0165
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (empty buffer, multi-view consistency)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (empty buffer, multi-view consistency)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptySab: SharedArrayBuffer = new SharedArrayBuffer(0);
@@ -3887,12 +3887,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0166
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0166
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0166
-     * @tc.desc Verify BigInt64Array slice with non-integer start/end (coerced to integer)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array slice with non-integer start/end (coerced to integer)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3913,12 +3913,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0167
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0167
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0167
-     * @tc.desc Verify BigInt64Array with DataView reading 64-bit values in mixed endianness
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView reading 64-bit values in mixed endianness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3939,12 +3939,12 @@ export default function typeArrayBigInt64ArrayTest() {
       expect(bytes.toString()).assertEqual([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77].toString());
     })
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0169
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0169
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0169
-     * @tc.desc Verify BigInt64Array with DataView handling out-of-bounds 8-bit writes (clamped values)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView handling out-of-bounds 8-bit writes (clamped values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -3966,12 +3966,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0170
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0170
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0170
-     * @tc.desc Verify BigInt64Array entries() iterator returns [index, value] pairs consistently
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array entries() iterator returns [index, value] pairs consistently
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(24);
@@ -3998,12 +3998,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0171
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0171
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0171
-     * @tc.desc Verify BigInt64Array keys() iterator returns correct indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array keys() iterator returns correct indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab: SharedArrayBuffer = new SharedArrayBuffer(32);
@@ -4027,12 +4027,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0172
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0172
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0172
-     * @tc.desc Verify BigInt64Array values() iterator returns consistent values (buffer sync)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array values() iterator returns consistent values (buffer sync)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
@@ -4060,12 +4060,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0173
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0173
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0173
-     * @tc.desc Verify BigInt64Array with DataView writing 16-bit signed values (negative values)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView writing 16-bit signed values (negative values)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);
@@ -4093,12 +4093,12 @@ export default function typeArrayBigInt64ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0174
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0174
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0174
-     * @tc.desc Verify BigInt64Array with SharedArrayBuffer (simulated concurrent write-read)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify BigInt64Array with SharedArrayBuffer (simulated concurrent write-read)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayBigInt64ArrayBufferDv0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
       async (Done: Function) => {
@@ -4148,12 +4148,12 @@ export default function typeArrayBigInt64ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayBigInt64ArrayBufferDv0175
      * @tc.number SUB_BUILDINS_TYPEARRAY_BIGINT64ARRAY_BUFFER_DV_0175
-     * @tc.name TypeArrayBigInt64ArrayBufferDv0175
-     * @tc.desc Verify BigInt64Array with DataView handling 32-bit unsigned overflow
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify BigInt64Array with DataView handling 32-bit unsigned overflow
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayBigInt64ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buf: ArrayBuffer = new ArrayBuffer(8);

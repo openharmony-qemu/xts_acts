@@ -58,13 +58,15 @@ export default function onTouchIntercept() {
       console.info("onTouchIntercept after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_Common_onTouchIntercept_001
-     * @tc.desc onTouchIntercept test
-     * @tc.level Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   onTouchIntercept_001
+     * @tc.number onTouchIntercept_001
+     * @tc.desc   onTouchIntercept_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onTouchIntercept_001', Level.LEVEL0, async (done: Function) => {
       console.info('[onTouchIntercept_001] START');
 

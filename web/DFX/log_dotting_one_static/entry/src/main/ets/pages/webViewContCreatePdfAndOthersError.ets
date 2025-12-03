@@ -22,7 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Driver, ON, On } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from "../../../hypium/index";
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 
 @Entry
@@ -55,8 +55,8 @@ struct webViewContCreatePdfAndOthersError {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.["ACTION"] != null) {
-        this.str = "" + (eventData.data as Record<string , object>)?.["ACTION"];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.["ACTION"] != null) {
+        this.str = "" + (eventData.data as Record<string , RecordData>)?.["ACTION"];
       }
     }
   }

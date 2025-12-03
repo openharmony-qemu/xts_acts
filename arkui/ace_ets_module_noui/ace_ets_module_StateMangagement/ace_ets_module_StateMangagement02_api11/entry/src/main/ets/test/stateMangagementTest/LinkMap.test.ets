@@ -54,14 +54,14 @@ export default function LinkMap() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKMAP_0010
-    * @tc.name  : LinkMap_0100
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkMap_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKMAP_0010
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkMap_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LinkMap_0100 START');
       let driver: Driver = Driver.create();
@@ -80,14 +80,14 @@ export default function LinkMap() {
       console.info('[LinkMap_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKMAP_0020
-    * @tc.name  : LinkMap_0200
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkMap_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKMAP_0020
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkMap_0200', Level.LEVEL0, async (done: Function) => {
       console.info('LinkMap_0200 START');
       let driver: Driver = await Driver.create()
@@ -105,14 +105,14 @@ export default function LinkMap() {
       console.info('[LinkMap_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKMAP_0030
-    * @tc.name  : LinkMap_0300
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkMap_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKMAP_0030
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkMap_0300', Level.LEVEL0, async (done: Function) => {
       console.info('LinkMap_0300 START');
       let driver: Driver = await Driver.create()
@@ -130,14 +130,14 @@ export default function LinkMap() {
       console.info('[LinkMap_0300] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKMAP_0040
-    * @tc.name  : LinkMap_0400
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkMap_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKMAP_0040
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkMap_0400', Level.LEVEL0, async (done: Function) => {
       console.info('LinkMap_0400 START');
       let driver: Driver = await Driver.create()

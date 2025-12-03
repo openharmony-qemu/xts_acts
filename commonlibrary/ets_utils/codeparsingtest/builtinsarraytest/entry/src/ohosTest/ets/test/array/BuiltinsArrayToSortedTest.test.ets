@@ -40,24 +40,24 @@ export default function builtinsArrayToSortedTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1001
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0100
-     * @tc.name builtinsArrayToSortedTest1001
-     * @tc.desc Verify default numeric ascending order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Verify default numeric ascending order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayToSortedTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(toSortedRes([3, 1, 2])).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1002
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0200
-     * @tc.name builtinsArrayToSortedTest1002
-     * @tc.desc Test custom descending comparator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test custom descending comparator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = [3, 1, 2];
@@ -66,12 +66,12 @@ export default function builtinsArrayToSortedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1003
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0300
-     * @tc.name builtinsArrayToSortedTest1003
-     * @tc.desc Test empty array handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty array handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyArr: number[] = [];
@@ -79,24 +79,24 @@ export default function builtinsArrayToSortedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1004
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0400
-     * @tc.name builtinsArrayToSortedTest1004
-     * @tc.desc Verify single-element array remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify single-element array remains unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(toSortedRes([5])).assertDeepEquals([5]);
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1005
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0500
-     * @tc.name builtinsArrayToSortedTest1005
-     * @tc.desc Handle sparse arrays with undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Handle sparse arrays with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sparseArr = [1, , 3];
@@ -104,12 +104,12 @@ export default function builtinsArrayToSortedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1006
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0600
-     * @tc.name builtinsArrayToSortedTest1006
-     * @tc.desc Sort null/undefined per default coercion rules
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sort null/undefined per default coercion rules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, null, undefined, 3];
@@ -117,12 +117,12 @@ export default function builtinsArrayToSortedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1007
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0700
-     * @tc.name builtinsArrayToSortedTest1007
-     * @tc.desc Validate lexicographical string sorting
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Validate lexicographical string sorting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const months = ["Mar", "Jan", "Feb", "Dec"];
@@ -130,12 +130,12 @@ export default function builtinsArrayToSortedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1008
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0800
-     * @tc.name builtinsArrayToSortedTest1008
-     * @tc.desc Sort nested arrays with custom element comparison
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sort nested arrays with custom element comparison
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [[3], [1], [2]];
@@ -144,12 +144,12 @@ export default function builtinsArrayToSortedTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayToSortedTest1009
      * @tc.number SUB_BUILTINS_ARRAY_TOSORTED_TEST_0900
-     * @tc.name builtinsArrayToSortedTest1009
-     * @tc.desc Ensure new array instance is returned
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Ensure new array instance is returned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const original = [3, 1, 2];

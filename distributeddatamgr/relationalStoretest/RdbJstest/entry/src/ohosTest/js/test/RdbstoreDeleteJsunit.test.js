@@ -49,7 +49,6 @@ describe('rdbStoreDeleteTest', function () {
     console.info(TAG + '*************Unit Test Begin*************');
     
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDelete0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0100
      * @tc.desc   rdb delete test
@@ -102,7 +101,6 @@ describe('rdbStoreDeleteTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDelete0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0200
      * @tc.desc   rdb delete test
@@ -156,7 +154,6 @@ describe('rdbStoreDeleteTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDelete0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0300
      * @tc.desc   rdb delete test
@@ -214,7 +211,6 @@ describe('rdbStoreDeleteTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDelete0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0400
      * @tc.desc   rdb delete test
@@ -268,7 +264,6 @@ describe('rdbStoreDeleteTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDelete0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0500
      * @tc.desc   rdb delete test
@@ -323,7 +318,6 @@ describe('rdbStoreDeleteTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDelete0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0600
      * @tc.desc   rdb delete test
@@ -379,7 +373,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + '************* testRdbStoreDelete0006 end *************');
     })
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   dataRdbTest001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0700
          * @tc.desc   setDistributedTables success
@@ -416,7 +409,6 @@ describe('rdbStoreDeleteTest', function () {
           })
       
           /**
-           * @generated.time 2025-11-09 20:49:51
            * @tc.name   dataRdbTest002
            * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0800
            * @tc.desc   update success
@@ -461,7 +453,6 @@ describe('rdbStoreDeleteTest', function () {
           })
       
           /**
-           * @generated.time 2025-11-09 20:49:51
            * @tc.name   dataRdbTest003
            * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_0900
            * @tc.desc   query success
@@ -498,7 +489,6 @@ describe('rdbStoreDeleteTest', function () {
             console.info(TAG + "************* dataRdbTest003 end *************");
           })
           /**
-           * @generated.time 2025-11-09 20:49:51
            * @tc.name   dataRdbTest004
            * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1000
            * @tc.desc   querysql success
@@ -534,7 +524,6 @@ describe('rdbStoreDeleteTest', function () {
           })
       
           /**
-           * @generated.time 2025-11-09 20:49:51
            * @tc.name   dataRdbTest005
            * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1100
            * @tc.desc   executesql success
@@ -579,7 +568,6 @@ describe('rdbStoreDeleteTest', function () {
             console.info(TAG + "************* dataRdbTest005 end *************");
           })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   dataRdbTest006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1001
      * @tc.desc   isNotNull errcode is 401
@@ -612,7 +600,6 @@ describe('rdbStoreDeleteTest', function () {
       console.info(TAG + "************* dataRdbTest006 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   dataRdbTest007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1002
      * @tc.desc   batchInsert test
@@ -647,7 +634,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + "************* dataRdbTest007 end *************");
       })
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   dataRdbTest008
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1003
       * @tc.desc   batchInsert test
@@ -686,7 +672,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + "************* dataRdbTest008 end *************");
       })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   dataRdbTest009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1004
      * @tc.desc   update test
@@ -727,7 +712,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + "************* dataRdbTest009 end *************");
     })
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   dataRdbTest010
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1005
       * @tc.desc   delete success
@@ -761,7 +745,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + "************* dataRdbTest010 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   dataRdbTest011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1006
      * @tc.desc   querysql callback test
@@ -797,7 +780,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + "************* dataRdbTest011 end *************");
     })
       /**
-       * @generated.time 2025-11-09 20:49:51
        * @tc.name   dataRdbTest012
        * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1007
        * @tc.desc   querysql promise success
@@ -830,7 +812,6 @@ describe('rdbStoreDeleteTest', function () {
         console.info(TAG + "************* dataRdbTest012 end *************");
     })
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   dataRdbTest013
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1008
       * @tc.desc   goToFirstRow test
@@ -856,7 +837,6 @@ describe('rdbStoreDeleteTest', function () {
       console.info(TAG + "************* dataRdbTest013 end *************");
     })
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   dataRdbTest014
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBDeleteJsAPITest_1009
       * @tc.desc   goToNextRow test

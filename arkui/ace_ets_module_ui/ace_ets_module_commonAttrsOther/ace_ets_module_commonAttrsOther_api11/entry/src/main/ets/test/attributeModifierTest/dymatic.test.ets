@@ -42,14 +42,15 @@ export default function dymaticTest() {
       console.info("dymaticTest after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_dymaticTest_0100
-     * @tc.desc      test buttonControlSize
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   dymaticTest_0100
+     * @tc.number dymaticTest_0100
+     * @tc.desc   dymaticTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dymaticTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[dymaticTest_0100] START');
       await CommonFunc.sleep(2000);

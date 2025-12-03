@@ -40,12 +40,12 @@ export default function createNodeFlex() {
       done();
     });
     /**
-     * @tc.number    createNodeFlex_0100
-     * @tc.name      createNodeFlex_0100
-     * @tc.desc      frameNode: createNodeFlexToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeFlex_0100
+     * @tc.number createNodeFlex_0100
+     * @tc.desc   frameNode: createNodeFlexToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeFlex_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeFlex_0100 START');

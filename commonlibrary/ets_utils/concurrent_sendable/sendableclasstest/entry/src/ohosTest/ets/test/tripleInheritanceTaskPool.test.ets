@@ -181,12 +181,12 @@ export function testFourthLevelSendableClassOver0006(): boolean {
 export default function tripleInheritanceTaskPoolTest() {
   describe('ActsTripleInheritanceTaskPoolTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0100
-     * @tc.name       : testSendableTripleInheritanceTaskPool0001
-     * @tc.desc       : Test SendableTripleInheritanceTaskPool number is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableTripleInheritanceTaskPool0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0100
+     * @tc.desc   Test SendableTripleInheritanceTaskPool number is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableTripleInheritanceTaskPool0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableTripleInheritanceTaskPool0001';
@@ -209,12 +209,12 @@ export default function tripleInheritanceTaskPoolTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0200
-     * @tc.name       : testSendableTripleInheritanceTaskPool0002
-     * @tc.desc       : Test SendableTripleInheritanceTaskPool topLevelClassInstance is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableTripleInheritanceTaskPool0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0200
+     * @tc.desc   Test SendableTripleInheritanceTaskPool topLevelClassInstance is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableTripleInheritanceTaskPool0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableTripleInheritanceTaskPool0002';
@@ -237,12 +237,12 @@ export default function tripleInheritanceTaskPoolTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0300
-     * @tc.name       : testSendableTripleInheritanceTaskPool0003
-     * @tc.desc       : Test SendableTripleInheritanceTaskPool SendableConstEnum is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableTripleInheritanceTaskPool0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0300
+     * @tc.desc   Test SendableTripleInheritanceTaskPool SendableConstEnum is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableTripleInheritanceTaskPool0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableTripleInheritanceTaskPool0003';
@@ -265,12 +265,12 @@ export default function tripleInheritanceTaskPoolTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0400
-     * @tc.name       : testSendableTripleInheritanceTaskPool0004
-     * @tc.desc       : Test SendableTripleInheritanceTaskPool array is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableTripleInheritanceTaskPool0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0400
+     * @tc.desc   Test SendableTripleInheritanceTaskPool array is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableTripleInheritanceTaskPool0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableTripleInheritanceTaskPool0004';
@@ -293,12 +293,12 @@ export default function tripleInheritanceTaskPoolTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0500
-     * @tc.name       : testSendableTripleInheritanceTaskPool0005
-     * @tc.desc       : Test SendableTripleInheritanceTaskPool asyncLock is assigned directly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSendableTripleInheritanceTaskPool0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_TASK_POOL_0500
+     * @tc.desc   Test SendableTripleInheritanceTaskPool asyncLock is assigned directly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableTripleInheritanceTaskPool0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableTripleInheritanceTaskPool0005';
@@ -321,12 +321,12 @@ export default function tripleInheritanceTaskPoolTest() {
       console.info(`${caseName} test end`);
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0100
-     * @tc.name      : testSendableFourAttributeClass0001
-     * @tc.desc      : Test SendableFourAttributeClass myNumber is assigned directly and correctly.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSendableFourAttributeClass0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0100
+     * @tc.desc   Test SendableFourAttributeClass myNumber is assigned directly and correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClass0001';
@@ -350,12 +350,12 @@ export default function tripleInheritanceTaskPoolTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0200
-     * @tc.name      : testSendableFourAttributeClass0002
-     * @tc.desc      : Test SendableFourAttributeClass myEnum is assigned directly and correctly.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSendableFourAttributeClass0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0200
+     * @tc.desc   Test SendableFourAttributeClass myEnum is assigned directly and correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClass0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClass0002';
@@ -379,12 +379,12 @@ export default function tripleInheritanceTaskPoolTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0300
-     * @tc.name      : testSendableFourAttributeClass0003
-     * @tc.desc      : Test SendableFourAttributeClass myArray is assigned directly and correctly.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSendableFourAttributeClass0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0300
+     * @tc.desc   Test SendableFourAttributeClass myArray is assigned directly and correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClass0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClass0003';
@@ -408,12 +408,12 @@ export default function tripleInheritanceTaskPoolTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0400
-     * @tc.name      : testSendableFourAttributeClass0004
-     * @tc.desc      : Test SendableFourAttributeClass myAsyncLock is assigned directly and correctly.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSendableFourAttributeClass0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0400
+     * @tc.desc   Test SendableFourAttributeClass myAsyncLock is assigned directly and correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClass0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClass0004';
@@ -437,12 +437,12 @@ export default function tripleInheritanceTaskPoolTest() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0500
-     * @tc.name      : testSendableFourAttributeClass0005
-     * @tc.desc      : Test SendableFourAttributeClass myInheritedClass is assigned directly and correctly.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testSendableFourAttributeClass0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FOUR_ATTRIBUTE_TASK_POOL_0500
+     * @tc.desc   Test SendableFourAttributeClass myInheritedClass is assigned directly and correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSendableFourAttributeClass0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testSendableFourAttributeClass0005';
@@ -465,12 +465,12 @@ export default function tripleInheritanceTaskPoolTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0100
-     * @tc.name       : testFourthLevelSendableClassOver0001
-     * @tc.desc       : Test the effectiveness of the toString method of FourthLevelSendableClassOver.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOver0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0100
+     * @tc.desc   Test the effectiveness of the toString method of FourthLevelSendableClassOver.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOver0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOver0001';
@@ -494,12 +494,12 @@ export default function tripleInheritanceTaskPoolTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0200
-     * @tc.name       : testFourthLevelSendableClassOver0002
-     * @tc.desc       : Test the setting and logic of myNumber of FourthLevelSendableClassOver.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOver0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0200
+     * @tc.desc   Test the setting and logic of myNumber of FourthLevelSendableClassOver.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOver0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOver0002';
@@ -523,12 +523,12 @@ export default function tripleInheritanceTaskPoolTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0300
-     * @tc.name       : testFourthLevelSendableClassOver0003
-     * @tc.desc       : Test the setting of the myEnum property of FourthLevelSendableClassOver.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOver0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0300
+     * @tc.desc   Test the setting of the myEnum property of FourthLevelSendableClassOver.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOver0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOver0003';
@@ -552,12 +552,12 @@ export default function tripleInheritanceTaskPoolTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0400
-     * @tc.name       : testFourthLevelSendableClassOver0004
-     * @tc.desc       : Test the myArray property setting function of FourthLevelSendableClassOver.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOver0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0400
+     * @tc.desc   Test the myArray property setting function of FourthLevelSendableClassOver.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOver0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOver0004';
@@ -581,12 +581,12 @@ export default function tripleInheritanceTaskPoolTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0500
-     * @tc.name       : testFourthLevelSendableClassOver0005
-     * @tc.desc       : Test the setting of the myAsyncLock property of FourthLevelSendableClassOver.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOver0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0500
+     * @tc.desc   Test the setting of the myAsyncLock property of FourthLevelSendableClassOver.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOver0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOver0005';
@@ -610,12 +610,12 @@ export default function tripleInheritanceTaskPoolTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0600
-     * @tc.name       : testFourthLevelSendableClassOver0006
-     * @tc.desc       : Test FourthLevelSendableClassOver myInheritedClass is assigned directly and correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testFourthLevelSendableClassOver0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FOURTH_LEVEL_SENDABLE_CLASS_OVER_0600
+     * @tc.desc   Test FourthLevelSendableClassOver myInheritedClass is assigned directly and correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testFourthLevelSendableClassOver0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testFourthLevelSendableClassOver0006';

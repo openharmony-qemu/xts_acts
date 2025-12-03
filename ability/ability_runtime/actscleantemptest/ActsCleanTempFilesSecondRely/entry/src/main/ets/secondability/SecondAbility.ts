@@ -101,6 +101,9 @@ export default class SecondAbility extends UIAbility {
 
   onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+    commonEvent.publish('Ability_onDestroy_SecondAbility', (err) => {
+      console.log('Ability_onDestroy_SecondAbility publish err: ' + JSON.stringify(err));
+    });
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

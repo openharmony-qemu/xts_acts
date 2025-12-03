@@ -23,7 +23,6 @@ let TAG = "[ttt]"
 export default function UDMFApiDataStructTest() {
   describe('UDMFApiDataStructTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100
      * @tc.desc   Verify the properties of the PlainText type
@@ -83,7 +82,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200
      * @tc.desc   Verify the properties of the Hyperlink type
@@ -142,7 +140,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300
      * @tc.desc   Verify the properties of the HTML type
@@ -201,7 +198,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400
      * @tc.desc   Verify the properties of the OpenHarmonyAppItem type
@@ -270,7 +266,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500
      * @tc.desc   Verify the properties of the contentForm type
@@ -321,7 +316,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600
      * @tc.desc   Verify the properties of the contentForm type
@@ -374,7 +368,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700
      * @tc.desc   Verify the properties of the contentForm type
@@ -429,7 +422,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800
      * @tc.desc   Verify the properties of the contentForm type
@@ -485,7 +477,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900
      * @tc.desc   Verify the properties of the contentForm type
@@ -545,7 +536,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000
      * @tc.desc   Verify the properties of the contentForm type
@@ -606,7 +596,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100
      * @tc.desc   Verify the properties of the contentForm type
@@ -661,7 +650,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200
      * @tc.desc   Verify the properties of the contentForm type
@@ -711,7 +699,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300
      * @tc.desc   Verify the properties of the contentForm type
@@ -769,7 +756,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400
      * @tc.desc   Verify the properties of the contentForm type
@@ -823,7 +809,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500
      * @tc.desc   Verify the properties of the contentForm type
@@ -879,7 +864,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600
      * @tc.desc   Verify the properties of the contentForm type
@@ -934,7 +918,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700
      * @tc.desc   Verify the properties of the contentForm type
@@ -992,7 +975,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800
      * @tc.desc   Verify the properties of the contentForm type
@@ -1050,7 +1032,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900
      * @tc.desc   Verify the properties of the contentForm type
@@ -1109,7 +1090,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000
      * @tc.desc   Verify the properties of the contentForm type
@@ -1169,7 +1149,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100
      * @tc.desc   Verify the properties of the contentForm type
@@ -1230,7 +1209,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200
      * @tc.desc   Verify the properties of the contentForm type
@@ -1293,7 +1271,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300
      * @tc.desc   Verify the properties of the contentForm type
@@ -1345,7 +1322,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400
      * @tc.desc   Verify the properties of the contentForm type
@@ -1404,7 +1380,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500
      * @tc.desc   Verify the properties of the contentForm type
@@ -1471,7 +1446,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600
      * @tc.desc   Verify the properties of the contentForm type
@@ -1538,7 +1512,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700
      * @tc.desc   Verify the properties of the contentForm type
@@ -1605,7 +1578,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800
      * @tc.desc   Verify the properties of the contentForm type
@@ -1672,7 +1644,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900
      * @tc.desc   Verify the properties of the contentForm type
@@ -1739,7 +1710,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000
      * @tc.desc   Verify the properties of the contentForm type
@@ -1806,7 +1776,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100
      * @tc.desc   Verify the properties of the contentForm type
@@ -1873,7 +1842,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200
      * @tc.desc   Verify the properties of the contentForm type
@@ -1940,7 +1908,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300
      * @tc.desc   Verify the properties of the contentForm type
@@ -2007,7 +1974,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400
      * @tc.desc   Verify the properties of the contentForm type
@@ -2059,7 +2025,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500
      * @tc.desc   Verify the properties of the contentForm type
@@ -2111,7 +2076,6 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500 end");
     });
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600
      * @tc.desc   Verify the properties of the contentForm type
@@ -2165,7 +2129,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700
      * @tc.desc   Verify the properties of the contentForm type
@@ -2218,7 +2181,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800
      * @tc.desc   Verify the properties of the contentForm type
@@ -2271,7 +2233,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900
      * @tc.desc   Verify the properties of the contentForm type
@@ -2332,7 +2293,6 @@ export default function UDMFApiDataStructTest() {
     });
     
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
      * @tc.desc   Verify the properties of the contentForm type
@@ -2395,7 +2355,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
      * @tc.desc   Verify the properties of the contentForm type
@@ -2452,7 +2411,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
      * @tc.desc   Verify the properties of the contentForm type
@@ -2509,7 +2467,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
      * @tc.desc   Verify the properties of the contentForm type
@@ -2566,7 +2523,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
      * @tc.desc   Verify the properties of the contentForm type
@@ -2624,7 +2580,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
      * @tc.desc   Verify the properties of the contentForm type
@@ -2683,7 +2638,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
      * @tc.desc   Verify the properties of the contentForm type
@@ -2744,7 +2698,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
      * @tc.desc   Verify the properties of the contentForm type
@@ -2805,7 +2758,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
      * @tc.desc   Verify the properties of the contentForm type
@@ -2867,7 +2819,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
      * @tc.desc   Verify the properties of the contentForm type
@@ -2929,7 +2880,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
      * @tc.desc   Verify the properties of the contentForm type
@@ -2991,7 +2941,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
      * @tc.desc   Verify the properties of the contentForm type
@@ -3053,7 +3002,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
      * @tc.desc   Verify the properties of the contentForm type
@@ -3114,7 +3062,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
      * @tc.desc   Verify the properties of the contentForm type
@@ -3175,7 +3122,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
      * @tc.desc   Verify the properties of the contentForm type
@@ -3236,7 +3182,6 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
      * @tc.desc   Verify the properties of the contentForm type
@@ -3298,7 +3243,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
      * @tc.desc   Verify the properties of the contentForm type
@@ -3360,7 +3304,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
      * @tc.desc   Verify the properties of the contentForm type
@@ -3421,7 +3364,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
      * @tc.desc   Verify the properties of the contentForm type
@@ -3482,7 +3424,6 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
      * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
      * @tc.desc   Verify the properties of the contentForm type

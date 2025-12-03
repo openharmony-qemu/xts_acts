@@ -20,7 +20,7 @@ import Utils from '../../src/test/Util.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../hypium';
 import { State } from '@ohos.arkui.stateManagement'
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import {
   $rawfile,
   BarPosition,
@@ -73,7 +73,7 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

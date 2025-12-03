@@ -38,10 +38,13 @@ export default function DialogTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Dialog_Visual_0060
-     *@tc.name   Support modifying the change of Dialog component
-     *@tc.desc   Sets the Dialog property parameter to default value
+    /**
+     * @tc.name   ArkUX_Dialog_Visual_0060
+     * @tc.number ArkUX_Dialog_Visual_0060
+     * @tc.desc   Sets the Dialog property parameter to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Dialog_Visual_0060', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Dialog_Visual_0060 START');

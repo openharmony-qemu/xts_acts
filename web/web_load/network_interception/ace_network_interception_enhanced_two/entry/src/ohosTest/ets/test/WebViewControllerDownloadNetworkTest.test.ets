@@ -54,14 +54,14 @@ export default function webViewControllerDownloadNetworkTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_NETWORK_0100
-    * @tc.name        : testDownloadNetwork001
-    * @tc.desc        : test WebDownloadErrorCode.NETWORK_FAILED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadNetwork001
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_NETWORK_0100
+     * @tc.desc   test WebDownloadErrorCode.NETWORK_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadNetwork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadNetwork001", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;

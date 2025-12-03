@@ -27,14 +27,14 @@ export default function textAreaOnDeleteTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ONDELETE_0100
-    * @tc.name       : testTextAreaOnDelete001
-    * @tc.desc       : test onDelete event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnDelete001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONDELETE_0100
+     * @tc.desc   test onDelete event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnDelete001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnDeleteTestTextArea')
       await Utils.sleep(1000)

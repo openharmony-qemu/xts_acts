@@ -18,10 +18,12 @@ import webRequestHeaderList from './WebRequestHeaderList.test';
 import WebDownloadItem from './GetGuid.test';
 import Download from './Download.test';
 import lastErrorCode from './LastErrorCode.test';
+import WebDownloadErrorCodeEnum from './WebDownloadErrorCodeEnum.test';
 
 export default function testsuite() {
   webRequestHeaderList();
   WebDownloadItem();
   Download();
   lastErrorCode();
+  WebDownloadErrorCodeEnum()
 }

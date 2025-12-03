@@ -33,11 +33,14 @@ describe('hiSysEventErrcodeTest', function () {
         console.info('hiSysEventErrcodeTest afterEach called')
     })
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_2700
-	 * @tc.name testHiSysEventApi27
-	 * @tc.desc 验证调用write接口系统事件打点，领域名称长度超16个字符，忽略事件打点，错误码11200001
-	 */
+ /**
+  * @tc.name   testHiSysEventApi27
+  * @tc.number DFX_DFT_HiSysEvent_JS_2700
+  * @tc.desc   验证调用write接口系统事件打点，领域名称长度超16个字符，忽略事件打点，错误码11200001
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi27 start')
 		try {
@@ -71,11 +74,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_2800
-	 * @tc.name testHiSysEventApi28
-	 * @tc.desc 验证调用write接口系统事件打点，领域名称包含特殊字符，忽略事件打点，错误码11200001
-	 */
+ /**
+  * @tc.name   testHiSysEventApi28
+  * @tc.number DFX_DFT_HiSysEvent_JS_2800
+  * @tc.desc   验证调用write接口系统事件打点，领域名称包含特殊字符，忽略事件打点，错误码11200001
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi28 start')
 		try {
@@ -109,11 +115,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_2900
-	 * @tc.name testHiSysEventApi29
-	 * @tc.desc 验证调用write接口系统事件打点，领域名称为空，忽略事件打点，错误码11200001。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi29
+  * @tc.number DFX_DFT_HiSysEvent_JS_2900
+  * @tc.desc   验证调用write接口系统事件打点，领域名称为空，忽略事件打点，错误码11200001。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi29 start')
 		try {
@@ -147,11 +156,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3000
-	 * @tc.name testHiSysEventApi30
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件名称长度超32个字符，忽略事件打点，错误码11200002。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi30
+  * @tc.number DFX_DFT_HiSysEvent_JS_3000
+  * @tc.desc   验证调用write接口系统事件打点，系统事件名称长度超32个字符，忽略事件打点，错误码11200002。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi30 start')
 		try {
@@ -185,11 +197,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3100
-	 * @tc.name testHiSysEventApi31
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件名称包含特殊字符，忽略事件打点，错误码11200002。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi31
+  * @tc.number DFX_DFT_HiSysEvent_JS_3100
+  * @tc.desc   验证调用write接口系统事件打点，系统事件名称包含特殊字符，忽略事件打点，错误码11200002。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi31 start')
 		try {
@@ -223,11 +238,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3200
-	 * @tc.name testHiSysEventApi32
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件名称为空，忽略事件打点，错误码11200002。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi32
+  * @tc.number DFX_DFT_HiSysEvent_JS_3200
+  * @tc.desc   验证调用write接口系统事件打点，系统事件名称为空，忽略事件打点，错误码11200002。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi32 start')
 		try {
@@ -261,11 +279,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3500
-	 * @tc.name testHiSysEventApi35
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件总长度超过384K，忽略事件打点，错误码11200004。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi35
+  * @tc.number DFX_DFT_HiSysEvent_JS_3500
+  * @tc.desc   验证调用write接口系统事件打点，系统事件总长度超过384K，忽略事件打点，错误码11200004。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi35 start')
 		try {
@@ -303,11 +324,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3600
-	 * @tc.name testHiSysEventApi36
-	 * @tc.desc 验证调用write接口系统事件打点，领系统事件参数名称长度超32个字符，忽略事件打点，错误码11200051。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi36
+  * @tc.number DFX_DFT_HiSysEvent_JS_3600
+  * @tc.desc   验证调用write接口系统事件打点，领系统事件参数名称长度超32个字符，忽略事件打点，错误码11200051。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi36 start')
 		try {
@@ -341,11 +365,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3700
-	 * @tc.name testHiSysEventApi37
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件参数名称包含特殊字符，忽略事件打点，错误码11200051。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi37
+  * @tc.number DFX_DFT_HiSysEvent_JS_3700
+  * @tc.desc   验证调用write接口系统事件打点，系统事件参数名称包含特殊字符，忽略事件打点，错误码11200051。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi37 start')
 		try {
@@ -379,11 +406,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3800
-	 * @tc.name testHiSysEventApi38
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件参数名称为空，忽略事件打点，错误码11200051。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi38
+  * @tc.number DFX_DFT_HiSysEvent_JS_3800
+  * @tc.desc   验证调用write接口系统事件打点，系统事件参数名称为空，忽略事件打点，错误码11200051。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi38 start')
 		try {
@@ -417,11 +447,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_3900
-	 * @tc.name testHiSysEventApi39
-	 * @tc.desc 验证调用write接口系统事件打点，字符串类型的参数值的长度超过10K，忽略事件打点，错误码11200052。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi39
+  * @tc.number DFX_DFT_HiSysEvent_JS_3900
+  * @tc.desc   验证调用write接口系统事件打点，字符串类型的参数值的长度超过10K，忽略事件打点，错误码11200052。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi39 start')
 		try {
@@ -455,11 +488,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4000
-	 * @tc.name testHiSysEventApi40
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件的参数数量超过128个，忽略事件打点，错误码11200053。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi40
+  * @tc.number DFX_DFT_HiSysEvent_JS_4000
+  * @tc.desc   验证调用write接口系统事件打点，系统事件的参数数量超过128个，忽略事件打点，错误码11200053。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi40 start')
 		let largeParams = {}
@@ -491,11 +527,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-    /**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4100
-	 * @tc.name testHiSysEventApi41
-	 * @tc.desc 验证调用write接口系统事件打点，系统事件中有数组类型的参数值的长度超过100，忽略事件打点，错误码11200054。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi41
+  * @tc.number DFX_DFT_HiSysEvent_JS_4100
+  * @tc.desc   验证调用write接口系统事件打点，系统事件中有数组类型的参数值的长度超过100，忽略事件打点，错误码11200054。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi41 start')
 		let msgArray = []
@@ -532,11 +571,14 @@ describe('hiSysEventErrcodeTest', function () {
 			done()
 		}
 	})
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4200
-	 * @tc.name testHiSysEventApi42
-	 * @tc.desc 验证调用addWatcher接口添加系统事件监听者，监听者数量超过限制，拒绝添加此监听者，错误码11200101。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi42
+  * @tc.number DFX_DFT_HiSysEvent_JS_4200
+  * @tc.desc   验证调用addWatcher接口添加系统事件监听者，监听者数量超过限制，拒绝添加此监听者，错误码11200101。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi42 start')
         var watcher = []
@@ -576,11 +618,14 @@ describe('hiSysEventErrcodeTest', function () {
         done()
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4300
-	 * @tc.name testHiSysEventApi43
-	 * @tc.desc 验证调用addWatcher接口添加系统事件监听者，监听规则数量超过限制，拒绝添加此监听者，错误码11200102。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi43
+  * @tc.number DFX_DFT_HiSysEvent_JS_4300
+  * @tc.desc   验证调用addWatcher接口添加系统事件监听者，监听规则数量超过限制，拒绝添加此监听者，错误码11200102。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi43 start')
 		let msgArray = []
@@ -609,11 +654,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4400
-	 * @tc.name testHiSysEventApi44
-	 * @tc.desc 验证调用removeWatcher接口删除系统事件监听者，事件监听者为空，拒绝移除此监听者，错误码11200201。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi44
+  * @tc.number DFX_DFT_HiSysEvent_JS_4400
+  * @tc.desc   验证调用removeWatcher接口删除系统事件监听者，事件监听者为空，拒绝移除此监听者，错误码11200201。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi44 start')
 		let watcher11 = {
@@ -642,11 +690,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 1000)
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4500
-	 * @tc.name testHiSysEventApi45
-	 * @tc.desc 验证调用removeWatcher接口删除系统事件监听者，事件监听者不在监听队列，拒绝移除此监听者，错误码11200201。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi45
+  * @tc.number DFX_DFT_HiSysEvent_JS_4500
+  * @tc.desc   验证调用removeWatcher接口删除系统事件监听者，事件监听者不在监听队列，拒绝移除此监听者，错误码11200201。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi45 start')
 		let watcher11 = {
@@ -675,11 +726,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 1000)
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4600
-	 * @tc.name testHiSysEventApi46
-	 * @tc.desc 验证调用query接口查询系统事件，查询规则个数超过100个，忽略此次系统事件的查询，错误码11200301。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi46
+  * @tc.number DFX_DFT_HiSysEvent_JS_4600
+  * @tc.desc   验证调用query接口查询系统事件，查询规则个数超过100个，忽略此次系统事件的查询，错误码11200301。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi46 start')
 		setTimeout(() => {
@@ -713,11 +767,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 1000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4700
-	 * @tc.name testHiSysEventApi47
-	 * @tc.desc 验证调用query接口查询系统事件，事件领域名称长度超过16个字符，忽略此次系统事件的查询，错误码11200302。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi47
+  * @tc.number DFX_DFT_HiSysEvent_JS_4700
+  * @tc.desc   验证调用query接口查询系统事件，事件领域名称长度超过16个字符，忽略此次系统事件的查询，错误码11200302。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi47 start')
 		setTimeout(() => {
@@ -747,11 +804,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 2000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4800
-	 * @tc.name testHiSysEventApi48
-	 * @tc.desc 验证调用query接口查询系统事件，事件名称长度超过32个字符，忽略此次系统事件的查询，错误码11200302。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi48
+  * @tc.number DFX_DFT_HiSysEvent_JS_4800
+  * @tc.desc   验证调用query接口查询系统事件，事件名称长度超过32个字符，忽略此次系统事件的查询，错误码11200302。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi48 start')
 		setTimeout(() => {
@@ -781,11 +841,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 2000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_4900
-	 * @tc.name testHiSysEventApi49
-	 * @tc.desc 验证调用query接口查询系统事件，事件领域名称包含特殊字符，忽略此次系统事件的查询，错误码11200302。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi49
+  * @tc.number DFX_DFT_HiSysEvent_JS_4900
+  * @tc.desc   验证调用query接口查询系统事件，事件领域名称包含特殊字符，忽略此次系统事件的查询，错误码11200302。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi49 start')
 		setTimeout(() => {
@@ -815,11 +878,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 2000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5000
-	 * @tc.name testHiSysEventApi50
-	 * @tc.desc 验证调用query接口查询系统事件，事件名称包含特殊字符，忽略此次系统事件的查询，错误码11200302。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi50
+  * @tc.number DFX_DFT_HiSysEvent_JS_5000
+  * @tc.desc   验证调用query接口查询系统事件，事件名称包含特殊字符，忽略此次系统事件的查询，错误码11200302。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi50 start')
 		setTimeout(() => {
@@ -849,11 +915,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 2000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5100
-	 * @tc.name testHiSysEventApi51
-	 * @tc.desc 验证调用query接口查询系统事件，事件领域名称为空，忽略此次系统事件的查询，错误码11200302。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi51
+  * @tc.number DFX_DFT_HiSysEvent_JS_5100
+  * @tc.desc   验证调用query接口查询系统事件，事件领域名称为空，忽略此次系统事件的查询，错误码11200302。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi51 start')
 		setTimeout(() => {
@@ -883,11 +952,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 2000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5200
-	 * @tc.name testHiSysEventApi52
-	 * @tc.desc 验证调用query接口查询系统事件，事件名称为空，忽略此次系统事件的查询，错误码11200302。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi52
+  * @tc.number DFX_DFT_HiSysEvent_JS_5200
+  * @tc.desc   验证调用query接口查询系统事件，事件名称为空，忽略此次系统事件的查询，错误码11200302。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi52 start')
 		setTimeout(() => {
@@ -917,11 +989,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 2000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5300
-	 * @tc.name testHiSysEventApi53
-	 * @tc.desc 验证调用write接口，缺少write参数，无法打点，错误码401。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi53
+  * @tc.number DFX_DFT_HiSysEvent_JS_5300
+  * @tc.desc   验证调用write接口，缺少write参数，无法打点，错误码401。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi53 start')
 		try {
@@ -940,11 +1015,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5400
-	 * @tc.name testHiSysEventApi54
-	 * @tc.desc 验证调用query接口，缺少订阅规则，错误码401。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi54
+  * @tc.number DFX_DFT_HiSysEvent_JS_5400
+  * @tc.desc   验证调用query接口，缺少订阅规则，错误码401。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi54 start')
 		setTimeout(() => {
@@ -967,11 +1045,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}, 1000);
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5500
-	 * @tc.name testHiSysEventApi55
-	 * @tc.desc 验证调用addwatcher接口，缺少watcher参数，错误码401。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi55
+  * @tc.number DFX_DFT_HiSysEvent_JS_5500
+  * @tc.desc   验证调用addwatcher接口，缺少watcher参数，错误码401。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi55 start')
 		try {
@@ -1000,11 +1081,14 @@ describe('hiSysEventErrcodeTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5700
-	 * @tc.name testHiSysEventApi57
-	 * @tc.desc 验证调用query接口，查询频率超过限制，忽略此次查询，错误码11200304。。
-	 */
+ /**
+  * @tc.name   testHiSysEventApi57
+  * @tc.number DFX_DFT_HiSysEvent_JS_5700
+  * @tc.desc   验证调用query接口，查询频率超过限制，忽略此次查询，错误码11200304。。
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
 	it('testHiSysEventApi57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
 		console.info('testHiSysEventApi57 start')
 		try {

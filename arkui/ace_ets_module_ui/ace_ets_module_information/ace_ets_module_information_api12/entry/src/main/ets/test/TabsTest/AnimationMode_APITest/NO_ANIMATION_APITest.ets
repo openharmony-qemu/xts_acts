@@ -53,12 +53,12 @@ export default function NO_ANIMATION_APITest() {
       done();
     });
     /**
+     * @tc.name   NO_ANIMATION_APITest_0100
      * @tc.number NO_ANIMATION
-     * @tc.name NO_ANIMATION_APITest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('NO_ANIMATION_APITest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('NO_ANIMATION_APITest_0100 START');

@@ -16,7 +16,7 @@ import webView from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import {
@@ -63,7 +63,7 @@ struct WebViewZoomRatio {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

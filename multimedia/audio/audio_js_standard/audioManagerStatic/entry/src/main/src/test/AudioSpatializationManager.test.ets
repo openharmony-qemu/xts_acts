@@ -71,12 +71,12 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.number      SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
-     * @tc.name        SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
-     * @tc.desc        on(spatializationEnabledChangeForCurrentDevice)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
+     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
+     * @tc.desc   on(spatializationEnabledChangeForCurrentDevice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioManager = audio.getAudioManager();
@@ -96,12 +96,12 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.number      SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
-     * @tc.name        SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
-     * @tc.desc        off(spatializationEnabledChangeForCurrentDevice)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
+     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001
+     * @tc.desc   off(spatializationEnabledChangeForCurrentDevice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioManager = audio.getAudioManager();
@@ -121,12 +121,12 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.number      SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001
-     * @tc.name        SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001
-     * @tc.desc        isSpatializationEnabledForCurrentDevice
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001
+     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001
+     * @tc.desc   isSpatializationEnabledForCurrentDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -143,12 +143,12 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.number      SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_STATIC_001
-     * @tc.name        SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_STATIC_001
-     * @tc.desc        spatializationSupported
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_STATIC_001
+     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_STATIC_001
+     * @tc.desc   spatializationSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {

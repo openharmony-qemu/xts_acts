@@ -42,13 +42,13 @@ export default function enableFloatingDragBarTest() {
       done()
     });
     /**
+     * @tc.name   enableFloatingDragBarTest_0100
      * @tc.number enableFloatingDragBarTest_0100
-     * @tc.name enableFloatingDragBarTest_0100
-     * @tc.desc To test the sheetBorderWidth:10
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the sheetBorderWidth:10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enableFloatingDragBarTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('enableFloatingDragBarTest_0100 START');
       let driver = await Driver.create()

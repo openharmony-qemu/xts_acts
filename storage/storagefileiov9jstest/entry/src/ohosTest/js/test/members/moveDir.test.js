@@ -78,14 +78,12 @@ export default function fileIOMoveDir() {
     }
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_000
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0000
-   * @tc.name fileIO_test_moveDir_sync_000
-   * @tc.desc Test moveDirSync() interface.
-   * There is no target folder(src) under path dest.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_sync_000', Level.LEVEL0, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_000';
@@ -124,14 +122,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_001
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0100
-   * @tc.name fileIO_test_moveDir_sync_001
-   * @tc.desc Test moveDirSync() interface.
-   * There is a target folder(src) under path dest but it is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_sync_001', Level.LEVEL0, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_001';
@@ -172,14 +168,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_002
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0200
-   * @tc.name fileIO_test_moveDir_sync_002
-   * @tc.desc Test moveDirSync() interface.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_sync_002', Level.LEVEL0, async function () {
     let dpath = await readyFiles('fileIO_test_moveDir_sync_002');
@@ -207,14 +201,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_003
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0300
-   * @tc.name fileIO_test_moveDir_sync_003
-   * @tc.desc Test moveDirSync() interface.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_sync_003', Level.LEVEL0, async function () {
     let dpath = await readyFiles('fileIO_test_moveDir_sync_003');
@@ -242,14 +234,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_004
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0400
-   * @tc.name fileIO_test_moveDir_sync_004
-   * @tc.desc Test moveDirSync() interface.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_sync_004', Level.LEVEL0, async function () {
     let dpath = await readyFiles('fileIO_test_moveDir_async_008');
@@ -281,14 +271,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_005
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0500
-   * @tc.name fileIO_test_moveDir_sync_005
-   * @tc.desc Test moveDirSync() interface.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_sync_005', Level.LEVEL0, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_005';
@@ -321,14 +309,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_006
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0600
-   * @tc.name fileIO_test_moveDir_sync_006
-   * @tc.desc Test moveDirSync() interface.
-   * Src is empty and there is a target folder(src) under path dest but it is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_006', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_moveDir_sync_006');
@@ -355,14 +341,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_007
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0700
-   * @tc.name fileIO_test_moveDir_sync_007
-   * @tc.desc Test moveDirSync() interface.
-   * Src is empty and there is no target folder(src) under path dest.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_007', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_moveDir_sync_007');
@@ -387,14 +371,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_008
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0800
-   * @tc.name fileIO_test_moveDir_sync_008
-   * @tc.desc Test moveDirSync() interface.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_008', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_008';
@@ -420,14 +402,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_009
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0900
-   * @tc.name fileIO_test_moveDir_sync_009
-   * @tc.desc Test moveDirSync() interface.
-   * The path point to a file, not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_009', Level.LEVEL3, async function () {
     let dpath = await nextFileName('fileIO_test_moveDir_sync_009');
@@ -449,14 +429,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_010
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1000
-   * @tc.name fileIO_test_moveDir_sync_010
-   * @tc.desc Test moveDirSync() interface.
-   * Invalid path. Can not move the same path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_010', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_010';
@@ -481,14 +459,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_011
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1100
-   * @tc.name fileIO_test_moveDir_sync_011
-   * @tc.desc Test moveDirSync() interface.
-   * Invalid path. Can not move subPath.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_011', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_011';
@@ -517,14 +493,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_sync_012
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1200
-   * @tc.name fileIO_test_moveDir_sync_012
-   * @tc.desc Test moveDirSync() interface.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDirSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_sync_012', Level.LEVEL3, async function () {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_sync_012';
@@ -557,14 +531,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_000
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0000
-   * @tc.name fileIO_test_moveDir_async_000
-   * @tc.desc Test moveDir() interface.Promise.
-   * There is no target folder(src) under path dest.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_000', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_async_000';
@@ -604,14 +576,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_001
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0100
-   * @tc.name fileIO_test_moveDir_async_001
-   * @tc.desc Test moveDir() interface.Callback.
-   * There is no target folder(src) under path dest.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_001', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_async_001';
@@ -656,14 +626,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_002
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0200
-   * @tc.name fileIO_test_moveDir_async_002
-   * @tc.desc Test moveDir() interface.Promise.
-   * There is a target folder(src) under path dest but it is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDir() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_002', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_async_002';
@@ -705,14 +673,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_003
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0300
-   * @tc.name fileIO_test_moveDir_async_003
-   * @tc.desc Test moveDir() interface.Callback.
-   * There is a target folder(src) under path dest but it is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveDir() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_003', Level.LEVEL3, async function (done) {
     let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_moveDir_async_003';
@@ -759,14 +725,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_004
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0400
-   * @tc.name fileIO_test_moveDir_async_004
-   * @tc.desc Test moveFile() interface.Promise.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_004', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_004');
@@ -795,14 +759,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_005
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0500
-   * @tc.name fileIO_test_moveDir_async_005
-   * @tc.desc Test moveFile() interface.Callback.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_005', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_005');
@@ -836,14 +798,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_006
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0600
-   * @tc.name fileIO_test_moveDir_async_006
-   * @tc.desc Test moveFile() interface.Promise.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_006', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_006');
@@ -872,14 +832,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_007
    * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_0700
-   * @tc.name fileIO_test_moveDir_async_007
-   * @tc.desc Test moveFile() interface.Callback.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_REPLACE.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_007', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_007');
@@ -913,14 +871,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_008
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0800
-   * @tc.name fileIO_test_moveDir_async_008
-   * @tc.desc Test moveFile() interface.Promise.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_008', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_008');
@@ -953,14 +909,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_009
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_0900
-   * @tc.name fileIO_test_moveDir_async_009
-   * @tc.desc Test moveFile() interface.Callback.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_FILE_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_009', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_009');
@@ -996,14 +950,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_010
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1000
-   * @tc.name fileIO_test_moveDir_async_010
-   * @tc.desc Test moveFile() interface.Promise.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_010', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_010');
@@ -1020,14 +972,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_011
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1100
-   * @tc.name fileIO_test_moveDir_async_011
-   * @tc.desc Test moveFile() interface.Callback.
-   * There is a target folder(src) under path dest and it is not empty. Mode is DIRMODE_DIRECTORY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_moveDir_async_011', Level.LEVEL0, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_011');
@@ -1048,14 +998,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_012
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1200
-   * @tc.name fileIO_test_moveDir_async_012
-   * @tc.desc Test moveFile() interface.Promise.
-   * Src is empty and there is a target folder(src) under path dest but it is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_012', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_test_moveDir_async_012');
@@ -1083,14 +1031,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_013
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1300
-   * @tc.name fileIO_test_moveDir_async_013
-   * @tc.desc Test moveFile() interface.Callback.
-   * Src is empty and there is a target folder(src) under path dest but it is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_013', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_test_moveDir_async_013');
@@ -1123,14 +1069,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_014
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1400
-   * @tc.name fileIO_test_moveDir_async_014
-   * @tc.desc Test moveFile() interface.Promise.
-   * Src is empty and there is no target folder(src) under path dest.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_014', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_test_moveDir_async_014');
@@ -1156,14 +1100,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_015
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1500
-   * @tc.name fileIO_test_moveDir_async_015
-   * @tc.desc Test moveFile() interface.CallBack.
-   * Src is empty and there is no target folder(src) under path dest.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.CallBack.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_015', Level.LEVEL3, async function (done) {
     let dpath = await nextFileName('fileIO_test_moveDir_async_015');
@@ -1194,14 +1136,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_016
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1600
-   * @tc.name fileIO_test_moveDir_async_016
-   * @tc.desc Test moveFile() interface.Promise.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_016', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_016');
@@ -1219,14 +1159,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_017
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1700
-   * @tc.name fileIO_test_moveDir_async_017
-   * @tc.desc Test moveFile() interface.Callback.
-   * Invalid mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_017', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_017');
@@ -1245,14 +1183,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_018
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1800
-   * @tc.name fileIO_test_moveDir_async_018
-   * @tc.desc Test moveFile() interface.Promise.
-   * Invalid path.The path point to a file, not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_018', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_018');
@@ -1269,14 +1205,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_019
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_1900
-   * @tc.name fileIO_test_moveDir_async_019
-   * @tc.desc Test moveFile() interface.Callback.
-   * Invalid path.The path point to a file, not a directory.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_019', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_019');
@@ -1294,14 +1228,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_020
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_2000
-   * @tc.name fileIO_test_moveDir_async_020
-   * @tc.desc Test moveFile() interface.Promise.
-   * Invalid path. Can not move the same path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_020', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_020');
@@ -1318,14 +1250,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_021
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_2100
-   * @tc.name fileIO_test_moveDir_async_021
-   * @tc.desc Test moveFile() interface.Callback.
-   * Invalid path.Can not move the same path.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_021', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_021');
@@ -1346,14 +1276,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_022
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_2200
-   * @tc.name fileIO_test_moveDir_async_022
-   * @tc.desc Test moveFile() interface.Promise.
-   * Invalid path. Can not move subPath.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_022', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_023');
@@ -1370,14 +1298,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_023
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_2300
-   * @tc.name fileIO_test_moveDir_async_023
-   * @tc.desc Test moveFile() interface.Callback.
-   * Invalid path.Can not move subPath.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface.Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_023', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_023');
@@ -1398,14 +1324,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_024
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_2400
-   * @tc.name fileIO_test_moveDir_async_024
-   * @tc.desc Test moveFile() interface. Promise.
-   * Undefined option arguments, use default mode = DIRMODE_DIRECTORY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_024', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_024');
@@ -1422,14 +1346,12 @@ export default function fileIOMoveDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_moveDir_async_025
    * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_2500
-   * @tc.name fileIO_test_moveDir_async_025
-   * @tc.desc Test moveFile() interface. Callback.
-   * Undefined option arguments, use default mode = DIRMODE_DIRECTORY_THROW_ERR.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test moveFile() interface. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileIO_test_moveDir_async_025', Level.LEVEL3, async function (done) {
     let dpath = await readyFiles('fileIO_test_moveDir_async_025');

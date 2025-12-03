@@ -26,78 +26,78 @@ export default function toggleMarginTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_MARGIN_0100
-     * @tc.name       : testToggleMargin001
-     * @tc.desc       : testing margin for toggle with normal value (positive number)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleMargin001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_MARGIN_0100
+     * @tc.desc   testing margin for toggle with normal value (positive number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleMargin001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleMargin001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_MARGIN_0200
-     * @tc.name       : testToggleMargin002
-     * @tc.desc       : testing margin for toggle with normal value (negative number)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleMargin002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_MARGIN_0200
+     * @tc.desc   testing margin for toggle with normal value (negative number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleMargin002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleMargin002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_MARGIN_0300
-     * @tc.name       : testToggleMargin003
-     * @tc.desc       : testing margin for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleMargin003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_MARGIN_0300
+     * @tc.desc   testing margin for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleMargin003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleMargin003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_MARGIN_0400
-     * @tc.name       : testToggleMargin004
-     * @tc.desc       : testing margin for toggle with normal value (positive number)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleMargin004
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_MARGIN_0400
+     * @tc.desc   testing margin for toggle with normal value (positive number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleMargin004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleMargin004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_MARGIN_0500
-     * @tc.name       : testToggleMargin005
-     * @tc.desc       : testing margin for toggle with normal value (negative number)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleMargin005
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_MARGIN_0500
+     * @tc.desc   testing margin for toggle with normal value (negative number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleMargin005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleMargin005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_MARGIN_0600
-     * @tc.name       : testToggleMargin006
-     * @tc.desc       : testing margin for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleMargin006
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_MARGIN_0600
+     * @tc.desc   testing margin for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleMargin006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleMargin006()).assertEqual(0)

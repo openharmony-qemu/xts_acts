@@ -50,11 +50,13 @@ export default function NewApiCoverTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_ReisterLoopObserver_0100
-     * @tc.name    Test ReisterLoopObserver.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ReisterLoopObserver_0100
+     * @tc.number SUB_AA_ReisterLoopObserver_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ReisterLoopObserver_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_ReisterLoopObserver_0100 start");
@@ -77,11 +79,13 @@ export default function NewApiCoverTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_AA_ReisterErrorObserver_New_0100
-     * @tc.name    Test ReisterErrorObserver.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ReisterErrorObserver_New_0100
+     * @tc.number SUB_AA_ReisterErrorObserver_New_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ReisterErrorObserver_New_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_ReisterErrorObserver_New_0100 start");
@@ -113,11 +117,13 @@ export default function NewApiCoverTest() {
 
     });
 
-    /*
-     * @tc.number  SUB_AA_ReisterErrorObserver_0200
-     * @tc.name    Test unregisterErrorObserver with error number.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ReisterErrorObserver_New_0200
+     * @tc.number SUB_AA_ReisterErrorObserver_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ReisterErrorObserver_New_0200', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_ReisterErrorObserver_New_0200 start");
@@ -140,11 +146,13 @@ export default function NewApiCoverTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_AA_GetExtensionRunningInfos_0100
-     * @tc.name    Test getExtensionRunningInfos.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_GetExtensionRunningInfos_0100
+     * @tc.number SUB_AA_GetExtensionRunningInfos_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_GetExtensionRunningInfos_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_GetExtensionRunningInfos_0100 start");
@@ -169,10 +177,12 @@ export default function NewApiCoverTest() {
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200
-     * @tc.desc: Bundle Type cannot use restartSelfAtomicService.
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200
+     * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200
+     * @tc.desc   Bundle Type cannot use restartSelfAtomicService.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200', Level.LEVEL3, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200`;

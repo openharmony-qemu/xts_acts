@@ -20,10 +20,13 @@ import sim from '@ohos.telephony.sim'
 export default function telSyncTest() {
   describe('telSyncTest', () => {
     console.log("==========> Sync Test start ==========>");
-    /*
-     * @tc.number  SUB_Telephony_call_hasCallSync_0100
-     * @tc.name    Call interface hasCallSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_call_hasCallSync_0100
+     * @tc.number SUB_Telephony_call_hasCallSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Telephony_call_hasCallSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_Telephony_call_hasCallSync_0100';
@@ -45,10 +48,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_call_getCallStateSync_0100
-     * @tc.name    Call interface getCallStateSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_call_getCallStateSync_0100
+     * @tc.number SUB_Telephony_call_getCallStateSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_Telephony_call_getCallStateSync_0100';
@@ -70,10 +76,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100
-     * @tc.name    Call interface getISOCountryCodeForNetworkSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100
+     * @tc.number SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100';
@@ -111,10 +120,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_radio_getSignalInformationSync_0100
-     * @tc.name    Call interface getSignalInformationSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_radio_getSignalInformationSync_0100
+     * @tc.number SUB_Telephony_radio_getSignalInformationSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Telephony_radio_getSignalInformationSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_Telephony_radio_getSignalInformationSync_0100';
@@ -154,10 +166,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_radio_getOperatorNameSync_0100
-     * @tc.name    Call interface getOperatorNameSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_radio_getOperatorNameSync_0100
+     * @tc.number SUB_Telephony_radio_getOperatorNameSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Telephony_radio_getOperatorNameSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_Telephony_radio_getOperatorNameSync_0100';
@@ -194,11 +209,14 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-* @tc.number  SUB_Telephony_radio_getRadioTechSync_0100
-* @tc.name    Radio interface getRadioTechSync
-* @tc.desc    Function test
-*/
+    /**
+     * @tc.name   SUB_Telephony_radio_getRadioTechSync_0100
+     * @tc.number SUB_Telephony_radio_getRadioTechSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Telephony_radio_getRadioTechSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       try {
         let slotId = 0;
@@ -212,11 +230,14 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-* @tc.number  SUB_Telephony_radio_getRadioTechSync_0200
-* @tc.name    Radio interface getRadioTechSync
-* @tc.desc    Function test
-*/
+    /**
+     * @tc.name   SUB_Telephony_radio_getRadioTechSync_0200
+     * @tc.number SUB_Telephony_radio_getRadioTechSync_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Telephony_radio_getRadioTechSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
       try {
         let slotId = 0;
@@ -230,10 +251,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_isSimActiveSync_0100
-     * @tc.name    Call interface isSimActiveSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_isSimActiveSync_0100
+     * @tc.number SUB_Telephony_sim_isSimActiveSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_isSimActiveSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_isSimActiveSync_0100';
@@ -272,10 +296,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getISOCountryCodeForSimSync_0100
-     * @tc.name    Call interface getISOCountryCodeForSimSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getISOCountryCodeForSimSync_0100
+     * @tc.number SUB_Telephony_sim_getISOCountryCodeForSimSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getISOCountryCodeForSimSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_getISOCountryCodeForSimSync_0100';
@@ -316,10 +343,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getSimOperatorNumericSync_0100
-     * @tc.name    Call interface getSimOperatorNumericSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getSimOperatorNumericSync_0100
+     * @tc.number SUB_Telephony_sim_getSimOperatorNumericSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getSimOperatorNumericSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_getSimOperatorNumericSync_0100';
@@ -360,10 +390,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getSimSpnSync_0100
-     * @tc.name    Call interface getSimSpnSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getSimSpnSync_0100
+     * @tc.number SUB_Telephony_sim_getSimSpnSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getSimSpnSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_getSimSpnSync_0100';
@@ -402,10 +435,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getSimStateSync_0100
-     * @tc.name    Call interface getSimStateSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getSimStateSync_0100
+     * @tc.number SUB_Telephony_sim_getSimStateSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getSimStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_getSimStateSync_0100';
@@ -444,10 +480,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getCardTypeSync_0100
-     * @tc.name    Call interface getCardTypeSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getCardTypeSync_0100
+     * @tc.number SUB_Telephony_sim_getCardTypeSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getCardTypeSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_getCardTypeSync_0100';
@@ -470,10 +509,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_hasSimCardSync_0100
-     * @tc.name    Call interface hasSimCardSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_hasSimCardSync_0100
+     * @tc.number SUB_Telephony_sim_hasSimCardSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_hasSimCardSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_hasSimCardSync_0100';
@@ -511,10 +553,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getOpKeySync_0100
-     * @tc.name    Call interface getOpKeySync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getOpKeySync_0100
+     * @tc.number SUB_Telephony_sim_getOpKeySync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getOpKeySync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_getOpKeySync_0100';
@@ -545,10 +590,13 @@ export default function telSyncTest() {
       }
     });
 
-    /*
-     * @tc.number  SUB_Telephony_sim_getOpNameSync_0100
-     * @tc.name    Call interface getOpNameSync
-     * @tc.desc    Function test
+    /**
+     * @tc.name   SUB_Telephony_sim_getOpNameSync_0100
+     * @tc.number SUB_Telephony_sim_getOpNameSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Telephony_sim_getOpNameSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Telephony_sim_hasSimCardSync_0100';

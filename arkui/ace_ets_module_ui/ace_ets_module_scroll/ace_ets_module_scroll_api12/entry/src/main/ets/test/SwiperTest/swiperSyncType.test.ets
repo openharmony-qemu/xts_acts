@@ -46,12 +46,12 @@ export default function swiperSyncType() {
     });
 
     /**
-     * @tc.number    swiperSyncType_001
-     * @tc.name      swiperSyncType_001
-     * @tc.desc      Set SwinperDynamicSyncSceneType.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperSyncType_0100
+     * @tc.number swiperSyncType_001
+     * @tc.desc   Set SwinperDynamicSyncSceneType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperSyncType_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperSyncType_0100] START');
@@ -70,12 +70,12 @@ export default function swiperSyncType() {
     });
 
     /**
-     * @tc.number    swiperSyncType_002
-     * @tc.name      swiperSyncType_0200
-     * @tc.desc      Set SwinperDynamicSyncSceneType.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperSyncType_0200
+     * @tc.number swiperSyncType_002
+     * @tc.desc   Set SwinperDynamicSyncSceneType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('swiperSyncType_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[swiperSyncType_0200] START');

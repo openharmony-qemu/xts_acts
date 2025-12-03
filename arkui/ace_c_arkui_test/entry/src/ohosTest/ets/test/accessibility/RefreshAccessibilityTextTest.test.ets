@@ -26,26 +26,26 @@ export default function refreshAccessibilityTextTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_ACCESSIBILITYTEXT_0100
-     * @tc.name       : testRefreshAccessibilityText001
-     * @tc.desc       : testing accessibilityText for Refresh with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshAccessibilityText001
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_ACCESSIBILITYTEXT_0100
+     * @tc.desc   testing accessibilityText for Refresh with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshAccessibilityText001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshAccessibilityText001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_ACCESSIBILITYTEXT_0200
-     * @tc.name       : testRefreshAccessibilityText002
-     * @tc.desc       : testing accessibilityText for Refresh with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshAccessibilityText002
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_ACCESSIBILITYTEXT_0200
+     * @tc.desc   testing accessibilityText for Refresh with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshAccessibilityText002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshAccessibilityText002()).assertEqual(0)

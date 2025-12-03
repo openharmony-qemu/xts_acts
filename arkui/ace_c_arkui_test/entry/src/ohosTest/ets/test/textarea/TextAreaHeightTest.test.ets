@@ -26,39 +26,39 @@ export default function textAreaHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_HEIGHT_0100
-     * @tc.name: testTextAreaHeight001
-     * @tc.desc: testing height for textarea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaHeight001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_HEIGHT_0100
+     * @tc.desc   testing height for textarea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_HEIGHT_0200
-     * @tc.name: testTextAreaHeight002
-     * @tc.desc: testing height for textarea with large value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextAreaHeight002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_HEIGHT_0200
+     * @tc.desc   testing height for textarea with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_HEIGHT_0300
-     * @tc.name: testTextAreaHeight003
-     * @tc.desc: testing height for textarea with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaHeight003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_HEIGHT_0300
+     * @tc.desc   testing height for textarea with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaHeight003()).assertEqual(0)

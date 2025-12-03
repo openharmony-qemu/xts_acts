@@ -50,7 +50,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1900
          * @tc.desc   putSync StringArray interface test
@@ -71,7 +70,6 @@ export default function PreferencesSyncTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1700
          * @tc.desc   putSync numberArr interface test
@@ -92,7 +90,6 @@ export default function PreferencesSyncTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1300
          * @tc.desc   putSync boolArr interface test
@@ -113,7 +110,6 @@ export default function PreferencesSyncTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_GetAllSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0300
          * @tc.desc   getAllSync interface test
@@ -153,7 +149,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_ClearSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0100
          * @tc.desc   clearSync interface test
@@ -172,7 +167,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_HasSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2900
          * @tc.desc   hasSync interface test
@@ -189,7 +183,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_HasSync_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2700
          * @tc.desc   hasSync interface test
@@ -206,7 +199,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_HasSync_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2600
          * @tc.desc   hasSync interface test
@@ -223,7 +215,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_HasSync_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2500
          * @tc.desc   hasSync interface test
@@ -240,7 +231,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_HasSync_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2800
          * @tc.desc   hasSync interface test
@@ -257,7 +247,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_HasSync_0600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2400
          * @tc.desc   hasSync interface test
@@ -274,7 +263,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_GetSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0800
          * @tc.desc   getSync interface test
@@ -290,7 +278,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_GetSync_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0400
          * @tc.desc   getSync interface test
@@ -307,7 +294,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_GetSync_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0500
          * @tc.desc   getSync interface test
@@ -324,7 +310,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_GetSync_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0600
          * @tc.desc   getSync interface test
@@ -341,7 +326,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_GetSync_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0700
          * @tc.desc   getSync interface test
@@ -359,7 +343,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1200
          * @tc.desc   putSync interface test
@@ -379,7 +362,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1400
          * @tc.desc   putSync interface test
@@ -399,7 +381,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1500
          * @tc.desc   putSync interface test
@@ -419,7 +400,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1600
          * @tc.desc   putSync interface test
@@ -439,7 +419,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_PutSync_0800
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1800
          * @tc.desc   putSync interface test
@@ -459,7 +438,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_deleteSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0200
          * @tc.desc   deleteSync interface test
@@ -476,7 +454,6 @@ export default function PreferencesSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2000
          * @tc.desc   removePreferencesFromCacheSync interface test
@@ -507,7 +484,6 @@ export default function PreferencesSyncTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetAll0100
          * @tc.number testPreferencesGetAll0100
          * @tc.desc   testPreferencesGetAll0100

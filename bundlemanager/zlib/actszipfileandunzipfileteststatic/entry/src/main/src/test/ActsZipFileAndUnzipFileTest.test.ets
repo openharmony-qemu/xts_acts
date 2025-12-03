@@ -49,11 +49,14 @@ export default function ActsZlibTest() {
       hilog.info(domain, tag, 'beforeAll end');
     })
 
-    /*
-     * @tc.number: Sub_Bms_Zlib_Compress_Unusual_static_0100
-     * @tc.name: compressFileInFileNotExist_static
-     * @tc.desc: test compressFile when inFile is not exist 900001
-    */
+    /**
+     * @tc.name   compressFileInFileNotExist_static
+     * @tc.number Sub_Bms_Zlib_Compress_Unusual_static_0100
+     * @tc.desc   test compressFile when inFile is not exist 900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("compressFileInFileNotExist_static", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let path14 = "nonexist.txt";
       let zipDest = dir + "/compressFileInFileNotExist.zip";
@@ -83,11 +86,14 @@ export default function ActsZlibTest() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Zlib_Compress_Unusual_static_0200
-     * @tc.name: Sub_Bms_Zlib_Compress_Unusual_static_0200
-     * @tc.desc: test compressFile when outFile is not existed. 900002
-    */
+    /**
+     * @tc.name   Sub_Bms_Zlib_Compress_Unusual_static_0200
+     * @tc.number Sub_Bms_Zlib_Compress_Unusual_static_0200
+     * @tc.desc   test compressFile when outFile is not existed. 900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("Sub_Bms_Zlib_Compress_Unusual_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let path1: string = dir + "/compressFileOutFileNotExist.txt";
       let outFile: string = "/11111/22222.zip";
@@ -117,11 +123,14 @@ export default function ActsZlibTest() {
       })
     })
 
-      /*
-       * @tc.number: Sub_CompressFiles_static_0100
-       * @tc.name: compressFilesOutFileNotExist_static
-       * @tc.desc: test compressFiles 900002
-      */
+      /**
+       * @tc.name   compressFilesOutFileNotExist_static
+       * @tc.number Sub_CompressFiles_static_0100
+       * @tc.desc   test compressFiles 900002
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it("compressFilesOutFileNotExist_static", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           let pathDir12: string = dir;
@@ -132,12 +141,14 @@ export default function ActsZlibTest() {
           console.info(`beforeAll: filePath data: ${fpath}`);
           await zlib.compressFiles([fpath, pathDir12, pathDir12], "kkk", {}).then(() => {
             expect().assertFail();
+            done();
           }, (err: BusinessError): void => {
             hilog.info(domain, 'bmsTestTag',"005 compressFileOutFileNotExist zipFile fail: %{public}s ", JSON.stringify(err));
             expect(err.code).assertEqual(900002);
           })
           await zlib.compressFiles([""], zippath2, {}).then(() => {
             expect().assertFail();
+            done();
           },(err: BusinessError): void => {
             hilog.info(domain, 'bmsTestTag',`006 errData is errCode:${err.code}  message:${err.message}`);
             expect(err.code).assertEqual(900001);
@@ -145,16 +156,20 @@ export default function ActsZlibTest() {
         } catch (err: BusinessError) {
           console.info('fileio_test_stream_write_sync_000 has failed for ' + err);
           expect().assertFail();
+          done();
         }
         done();
       })
 
 
-      /*
-       * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_static_0200
-       * @tc.name: Sub_Bms_Zlib_Uncompress_Unusual_static_0200
-       * @tc.desc: test decompressFile when inFile is not exist 900001
-      */
+      /**
+       * @tc.name   Sub_Bms_Zlib_Uncompress_Unusual_static_0200
+       * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_static_0200
+       * @tc.desc   test decompressFile when inFile is not exist 900001
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('Sub_Bms_Zlib_Uncompress_Unusual_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
         let zipDest: string = dir + "/noneexist.zip";
         let unzipdir: string = dir + "/decompressFileInFileNotExist";
@@ -181,11 +196,14 @@ export default function ActsZlibTest() {
         })
       })
 
-      /*
-       * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_static_0400
-       * @tc.name: decompressFileOutFileNotExist_static
-       * @tc.desc: test decompressFile when outFile is not existed. 900002
-      */
+      /**
+       * @tc.name   decompressFileOutFileNotExist_static
+       * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_static_0400
+       * @tc.desc   test decompressFile when outFile is not existed. 900002
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('decompressFileOutFileNotExist_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
         console.info("==================decompressFileOutFileNotExist_static start==================");
         let path12: string = dir;
@@ -230,11 +248,14 @@ export default function ActsZlibTest() {
         console.info("==================decompressFileOutFileNotExist_static end==================");
       })
 
-    /*
-     * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_static_0610
-     * @tc.name: decompressFileInputNotZipPro_static
-     * @tc.desc: test decompressFile when input file is not zip (promise). 900003
-    */
+    /**
+     * @tc.name   decompressFileInputNotZipPro_static
+     * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_static_0610
+     * @tc.desc   test decompressFile when input file is not zip (promise). 900003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('decompressFileInputNotZipPro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info("==================decompressFileInputNotZipPro_static start==================");
       let path13: string = dir;
@@ -248,14 +269,17 @@ export default function ActsZlibTest() {
         } catch(error: BusinessError) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
+          done();
         }
       }).catch((err: BusinessError): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
+        done();
       });
       try {
         await zlib.decompressFile(path13, unzipdir1, {}).then(() => {
           expect().assertFail();
+          done();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, 'bmsTestTag',"011 decompressFileInputNotZipPro fail1: " + JSON.stringify(err));
           expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
@@ -263,16 +287,20 @@ export default function ActsZlibTest() {
       } catch (err: BusinessError) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
+        done();
       }
-      done();
       console.info("==================decompressFileInputNotZipPro_static end==================");
+      done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_static_0300
-     * @tc.name: decompressFileTest_static
-     * @tc.desc: test decompressFile when inFile and out file is valid
-    */
+    /**
+     * @tc.name   decompressFileTest_static
+     * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_static_0300
+     * @tc.desc   test decompressFile when inFile and out file is valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('decompressFileTest_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================decompressFileTestOutDir_static start==================");
       let path22 = dir;
@@ -359,11 +387,14 @@ export default function ActsZlibTest() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_static_0310
-     * @tc.name: decompressFileInputNotZipPro1_static
-     * @tc.desc: test decompressFile when input file is not zip (promise). 900003
-    */
+    /**
+     * @tc.name   decompressFileInputNotZipPro1_static
+     * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_static_0310
+     * @tc.desc   test decompressFile when input file is not zip (promise). 900003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('decompressFileInputNotZipPro1_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info("==================decompressFileInputNotZipPro1_static start==================");
       let path13: string = dir;
@@ -377,6 +408,7 @@ export default function ActsZlibTest() {
         } catch(error: BusinessError) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
+          done();
         }
       }).catch((err: BusinessError): void => {
         console.info("fileio mkdir failed with error:" + err);
@@ -391,16 +423,20 @@ export default function ActsZlibTest() {
       } catch (err: BusinessError) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
+        done();
       }
-      done();
       console.info("==================decompressFileInputNotZipPro1_static end==================");
+      done();
     })
 
-    /*
-     * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_static_0320
-     * @tc.name: decompressFileInputNotZipProcallback_static
-     * @tc.desc: test decompressFile when input file is not zip (promise). 900003
-    */
+    /**
+     * @tc.name   decompressFileInputNotZipProcallback_static
+     * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_static_0320
+     * @tc.desc   test decompressFile when input file is not zip (promise). 900003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('decompressFileInputNotZipProcallback_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info("==================decompressFileInputNotZipProcallback_static start==================");
       let path13: string = dir;
@@ -414,10 +450,12 @@ export default function ActsZlibTest() {
         } catch(error: BusinessError) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
+          done();
         }
       }).catch((err: BusinessError): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
+        done();
       });
       try {
         zlib.decompressFile(path13, unzipdir1, {}, (err: BusinessError | null): void => {
@@ -428,10 +466,10 @@ export default function ActsZlibTest() {
       } catch (err: BusinessError) {
         console.info("decompressFileInputNotZipProcallback catch1 : " + JSON.stringify(err));
         expect().assertFail();
+        done();
       }
-      done();
       console.info("==================decompressFileInputNotZipProcallback_static end==================");
+      done();
     })
   })
 }
-

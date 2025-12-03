@@ -22,13 +22,13 @@ const ERR_NOT_DEBUG_APP: string = 'Cannot debug applications using a release cer
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1700
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Execute aa appdebug -h command in developer mode to get help information.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1700
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1700
+     * @tc.desc   Execute aa appdebug -h command in developer mode to get help information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1700', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -55,14 +55,14 @@ export default function abilityTest() {
       })
     })
 
-    /*
-         * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1800
-         * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-         * @tc.desc: Execute aa appdebug -help command in developer mode to get help information.
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level: Level 1
-         */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1800
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1800
+     * @tc.desc   Execute aa appdebug -help command in developer mode to get help information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_1800', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let cmd = 'aa appdebug -help';
@@ -88,13 +88,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2000
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Execute aa appdebug -p command in developer mode to get help information.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2000
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2000
+     * @tc.desc   Execute aa appdebug -p command in developer mode to get help information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2000', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -121,13 +121,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2200
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Execute aa appdebug --h command in developer mode to get help information.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2200
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2200
+     * @tc.desc   Execute aa appdebug --h command in developer mode to get help information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2200', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -154,13 +154,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2300
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Execute aa appdebug --help command in developer mode to get help information.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2300
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2300
+     * @tc.desc   Execute aa appdebug --help command in developer mode to get help information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2300', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -187,14 +187,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2500
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Aa supports persistent setting in developer mode. DEBUG application waits for debugging mode and
-     * can't obtain setting information with error param.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2500
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2500
+     * @tc.desc   Aa supports persistent setting in developer mode. DEBUG application waits for debugging mode and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2500', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -211,13 +210,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2900
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Input incorrect bundle name, aa command cannot retrieve app
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2900
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2900
+     * @tc.desc   Input incorrect bundle name, aa command cannot retrieve app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_2900', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -234,13 +233,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3000
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Input incorrect bundle name, aa command cannot retrieve app
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3000
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3000
+     * @tc.desc   Input incorrect bundle name, aa command cannot retrieve app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3000', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -257,13 +256,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3600
-     * @tc.name: Aa supports setting DEBUG application waiting debugging mode.
-     * @tc.desc: Input release bundle name, aa command cannot retrieve app
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3600
+     * @tc.number SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3600
+     * @tc.desc   Input release bundle name, aa command cannot retrieve app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_aaSupportDebugWithWaiting_3600', Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();

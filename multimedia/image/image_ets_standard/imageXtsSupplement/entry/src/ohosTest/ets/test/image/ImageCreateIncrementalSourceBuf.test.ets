@@ -61,12 +61,12 @@ export default function ImageCreateIncrementalSourceBufTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_001
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_001
-     * @tc.desc       Test createImageReceiver with buf
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_001
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_001
+     * @tc.desc   Test createImageReceiver with buf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_001';
@@ -77,12 +77,12 @@ export default function ImageCreateIncrementalSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_002
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_002
-     * @tc.desc       Test createImageReceiver with buf
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_002
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_002
+     * @tc.desc   Test createImageReceiver with buf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_002', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_002';
@@ -93,12 +93,12 @@ export default function ImageCreateIncrementalSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_003
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_003
-     * @tc.desc       Test createImageReceiver with buf
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_003
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_003
+     * @tc.desc   Test createImageReceiver with buf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_003', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_003';
@@ -109,12 +109,12 @@ export default function ImageCreateIncrementalSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_004
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_004
-     * @tc.desc       Test createImageReceiver with buf
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_004
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_004
+     * @tc.desc   Test createImageReceiver with buf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_004', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_004';
@@ -125,12 +125,12 @@ export default function ImageCreateIncrementalSourceBufTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_005
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_005
-     * @tc.desc       Test createImageReceiver with buf
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_005
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_005
+     * @tc.desc   Test createImageReceiver with buf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_005', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_MEDIA_IMAGE_CREATE_INCREMENTAL_SOURCE_TEST_005';

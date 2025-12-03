@@ -24,7 +24,6 @@ async function stopApplication(bundleName: string) {
 export default function optionalSystemCapability() {
   describe('optionalSystemCapability', () => {
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerManagerQuery
      * @tc.number C-STD-SOFTWARE-00300
      * @tc.desc   【C-STD-SOFTWARE-00300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
@@ -52,7 +51,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCustomInputMethod
      * @tc.number C-STD-SOFTWARE-1300
      * @tc.desc   【C-STD-SOFTWARE-1302】必须支持第三方输入法应用。
@@ -83,7 +81,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testInputMethodEngine
      * @tc.number C-STD-SOFTWARE-1301
      * @tc.desc   【C-STD-SOFTWARE-1100】必须完整实现输入法管理框架。
@@ -100,7 +97,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testDefaultInputMethod
      * @tc.number C-STD-SOFTWARE-1302
      * @tc.desc   【C-STD-SOFTWARE-1302】必须预安装英文输入法应用。
@@ -127,7 +123,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testJPEGDecoding
      * @tc.number C-S-SOFTWARE-1003
      * @tc.desc   【C-S-SOFTWARE-1006】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
@@ -162,7 +157,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testGIFDecoding
      * @tc.number C-S-SOFTWARE-1004
      * @tc.desc   【C-S-SOFTWARE-1006】必须支持GIF格式解码，支持GIF(.gif)容器格式。
@@ -197,7 +191,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPNGDecoding
      * @tc.number C-S-SOFTWARE-1005
      * @tc.desc   【C-S-SOFTWARE-1005】必须支持PNG格式解码，支持PNG(.png)容器格式。
@@ -231,7 +224,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testBMPDecoding
      * @tc.number C-S-SOFTWARE-1006
      * @tc.desc   【C-S-SOFTWARE-1006】必须支持BMP格式解码，支持BMP(.bmp)容器格式。
@@ -266,7 +258,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testWEBPDecoding
      * @tc.number C-S-SOFTWARE-1007
      * @tc.desc   【C-S-SOFTWARE-1007】必须支持WebP格式解码，支持WebP(.webp)容器格式。
@@ -302,7 +293,6 @@ export default function optionalSystemCapability() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testJPEGPacker
      * @tc.number C-STD-SOFTWARE-1000
      * @tc.desc   【C-STD-SOFTWARE-1000】必须支持JPEG格式编码。
@@ -338,7 +328,6 @@ export default function optionalSystemCapability() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPNGPacker
      * @tc.number C-STD-SOFTWARE-1001
      * @tc.desc   【C-S-SOFTWARE-1001】必须支持PNG格式编码。
@@ -375,7 +364,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testWEBPPacker
      * @tc.number C-STD-SOFTWARE-1003
      * @tc.desc   【C-S-SOFTWARE-1003】必须支持WebP格式编码。
@@ -412,7 +400,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSetTime
      * @tc.number C-STD-SOFTWARE-1401
      * @tc.desc   【C-STD-SOFTWARE-1401】必须通过权限机制管控修改系统时间时区的行为。
@@ -435,7 +422,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testSetTimeOut
      * @tc.number C-STD-SOFTWARE-1400
      * @tc.desc   【 C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
@@ -461,7 +447,6 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testHomeEvent
      * @tc.number C-STD-SOFTWARE-1800
      * @tc.desc   【C-STD-SOFTWARE-1800】电源键, Home键, 静音键必须系统处理, 禁止发送给应用, 返回键必须发送到应用处理。

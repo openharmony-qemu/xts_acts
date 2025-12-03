@@ -33,30 +33,39 @@ export default function webJsunit() {
       console.info("web beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_022
-     *tc.name initialScale
-     *tc.desic Sets the initial scale for the Web
+    /**
+     * @tc.name   initialScale
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_022
+     * @tc.desc   initialScale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('initialScale', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitInitialScale",153080);
       Utils.registerEvent("initialScale", 120, 153090, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_023
-     *tc.name onScaleChange
-     *tc.desic Triggered when the scale of WebView changed
+    /**
+     * @tc.name   onScaleChange
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_023
+     * @tc.desc   onScaleChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onScaleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnscaleChange",153080);
       Utils.registerContainEvent("onScaleChange", "onScaleChange", 153100, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_049
-     *tc.name zoom
-     *tc.desic Let the Web zoom by
+    /**
+     * @tc.name   zoom
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_049
+     * @tc.desc   zoom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitZoom",153080);

@@ -26,52 +26,52 @@ export default function textInputClearButtonModeTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0100
-     * @tc.name       : testTextInputClearButtonMode001
-     * @tc.desc       : testing clearButtonMode for TextInput with ARKUI_CANCELBUTTON_STYLE_INPUT value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClearButtonMode001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0100
+     * @tc.desc   testing clearButtonMode for TextInput with ARKUI_CANCELBUTTON_STYLE_INPUT value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClearButtonMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClearButtonMode001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0200
-     * @tc.name       : testTextInputClearButtonMode002
-     * @tc.desc       : testing clearButtonMode for TextInput with ARKUI_CANCELBUTTON_STYLE_INVISIBLE value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClearButtonMode002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0200
+     * @tc.desc   testing clearButtonMode for TextInput with ARKUI_CANCELBUTTON_STYLE_INVISIBLE value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClearButtonMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClearButtonMode002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0300
-     * @tc.name       : testTextInputClearButtonMode003
-     * @tc.desc       : testing clearButtonMode for TextInput with ARKUI_CANCELBUTTON_STYLE_CONSTANT value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClearButtonMode003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0300
+     * @tc.desc   testing clearButtonMode for TextInput with ARKUI_CANCELBUTTON_STYLE_CONSTANT value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClearButtonMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClearButtonMode003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0400
-     * @tc.name       : testTextInputClearButtonMode004
-     * @tc.desc       : testing clearButtonMode for TextInput with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputClearButtonMode004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CLEARBUTTONMODE_0400
+     * @tc.desc   testing clearButtonMode for TextInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputClearButtonMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputClearButtonMode004()).assertEqual(0)

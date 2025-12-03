@@ -42,12 +42,12 @@ export default function alphabetBorderRadiusTest() {
     });
 
     /**
-     * @tc.number    alphabetBorderRadiusTest_001
-     * @tc.name      alphabetBorderRadiusTest_001
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetBorderRadiusTest_001
+     * @tc.number alphabetBorderRadiusTest_001
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetBorderRadiusTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetBorderRadiusTest_001] START');
@@ -63,12 +63,12 @@ export default function alphabetBorderRadiusTest() {
     });
 
     /**
-     * @tc.number    alphabetBorderRadiusTest_002
-     * @tc.name      alphabetBorderRadiusTest_002
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetBorderRadiusTest_002
+     * @tc.number alphabetBorderRadiusTest_002
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetBorderRadiusTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetBorderRadiusTest_002] START');
@@ -83,12 +83,12 @@ export default function alphabetBorderRadiusTest() {
       done();
     });
     /**
-     * @tc.number    alphabetBorderRadiusTest_003
-     * @tc.name      alphabetBorderRadiusTest_003
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetBorderRadiusTest_003
+     * @tc.number alphabetBorderRadiusTest_003
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetBorderRadiusTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetBorderRadiusTest_003] START');
@@ -108,12 +108,12 @@ export default function alphabetBorderRadiusTest() {
     });
 
     /**
-     * @tc.number    alphabetBorderRadiusTest_004
-     * @tc.name      alphabetBorderRadiusTest_004
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetBorderRadiusTest_004
+     * @tc.number alphabetBorderRadiusTest_004
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetBorderRadiusTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetBorderRadiusTest_004] START');
@@ -133,12 +133,12 @@ export default function alphabetBorderRadiusTest() {
     });
 
     /**
-     * @tc.number    alphabetBorderRadiusTest_005
-     * @tc.name      alphabetBorderRadiusTest_005
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetBorderRadiusTest_005
+     * @tc.number alphabetBorderRadiusTest_005
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetBorderRadiusTest_005', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetBorderRadiusTest_005] START');
@@ -162,12 +162,12 @@ export default function alphabetBorderRadiusTest() {
     });
 
     /**
-     * @tc.number    alphabetBorderRadiusTest_006
-     * @tc.name      alphabetBorderRadiusTest_006
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetBorderRadiusTest_006
+     * @tc.number alphabetBorderRadiusTest_006
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetBorderRadiusTest_006', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetBorderRadiusTest_006] START');

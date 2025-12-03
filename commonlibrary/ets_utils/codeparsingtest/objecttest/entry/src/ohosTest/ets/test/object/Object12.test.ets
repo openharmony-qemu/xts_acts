@@ -211,12 +211,12 @@ export default function Object12Test() {
     })
 
     /**
+     * @tc.name   Object12Test001
      * @tc.number SUB_BUILTINS_Object12_TEST_0100
-     * @tc.name Object12Test001
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn01_testEmptyObject();
@@ -224,24 +224,24 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test002
      * @tc.number SUB_BUILTINS_Object12_TEST_0200
-     * @tc.name Object12Test002
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn02_testStringPropertiesOnly();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object12Test003
      * @tc.number SUB_BUILTINS_Object12_TEST_0300
-     * @tc.name Object12Test003
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn03_testWithOwnSymbolProperties();
@@ -249,12 +249,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test004
      * @tc.number SUB_BUILTINS_Object12_TEST_0400
-     * @tc.name Object12Test004
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn04_testNonEnumerableSymbol();
@@ -262,12 +262,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test005
      * @tc.number SUB_BUILTINS_Object12_TEST_0500
-     * @tc.name Object12Test005
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn05_testMixedEnumerableSymbol();
@@ -275,12 +275,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test006
      * @tc.number SUB_BUILTINS_Object12_TEST_0600
-     * @tc.name Object12Test006
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn06_testPrototypeChainSymbol();
@@ -288,12 +288,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test007
      * @tc.number SUB_BUILTINS_Object12_TEST_0700
-     * @tc.name Object12Test007
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn07_testReturnArrayIndependence();
@@ -301,12 +301,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test008
      * @tc.number SUB_BUILTINS_Object12_TEST_0800
-     * @tc.name Object12Test008
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn08_testMultipleSameDescSymbol();
@@ -314,12 +314,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test009
      * @tc.number SUB_BUILTINS_Object12_TEST_0900
-     * @tc.name Object12Test009
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn09_testSharedSymbol();
@@ -327,12 +327,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test010
      * @tc.number SUB_BUILTINS_Object12_TEST_1000
-     * @tc.name Object12Test010
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn10_testNullParameter();
@@ -340,12 +340,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test011
      * @tc.number SUB_BUILTINS_Object12_TEST_1100
-     * @tc.name Object12Test011
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn11_testUndefinedParameter();
@@ -353,12 +353,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test012
      * @tc.number SUB_BUILTINS_Object12_TEST_1200
-     * @tc.name Object12Test012
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn12_testPrimitiveParameter();
@@ -366,12 +366,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test013
      * @tc.number SUB_BUILTINS_Object12_TEST_1300
-     * @tc.name Object12Test013
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn13_testPrimitivePrototypeSymbol();
@@ -379,12 +379,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test014
      * @tc.number SUB_BUILTINS_Object12_TEST_1400
-     * @tc.name Object12Test014
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn14_testSymbolWithUndefinedValue();
@@ -392,12 +392,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test015
      * @tc.number SUB_BUILTINS_Object12_TEST_1500
-     * @tc.name Object12Test015
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn15_testSymbolOrderConsistency();
@@ -405,12 +405,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test016
      * @tc.number SUB_BUILTINS_Object12_TEST_1600
-     * @tc.name Object12Test016
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn16_testDeletedSymbolProperty();
@@ -418,12 +418,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test017
      * @tc.number SUB_BUILTINS_Object12_TEST_1700
-     * @tc.name Object12Test017
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn17_testNonConfigurableSymbol();
@@ -431,12 +431,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test018
      * @tc.number SUB_BUILTINS_Object12_TEST_1800
-     * @tc.name Object12Test018
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn18_testMixedSymbolAndStringProp();
@@ -444,12 +444,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test019
      * @tc.number SUB_BUILTINS_Object12_TEST_1900
-     * @tc.name Object12Test019
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn19_testSymbolArrayIndexAccess();
@@ -457,12 +457,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test020
      * @tc.number SUB_BUILTINS_Object12_TEST_2000
-     * @tc.name Object12Test020
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn20_testArrayObjectSymbol();
@@ -470,12 +470,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test021
      * @tc.number SUB_BUILTINS_Object12_TEST_2100
-     * @tc.name Object12Test021
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn21_testFunctionObjectSymbol();
@@ -483,12 +483,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test022
      * @tc.number SUB_BUILTINS_Object12_TEST_2200
-     * @tc.name Object12Test022
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn22_testSymbolWithObjectValue();
@@ -496,12 +496,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test023
      * @tc.number SUB_BUILTINS_Object12_TEST_2300
-     * @tc.name Object12Test023
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn23_testMultipleCallsReturnDifferentArrays();
@@ -509,12 +509,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test024
      * @tc.number SUB_BUILTINS_Object12_TEST_2400
-     * @tc.name Object12Test024
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn24_testDateObjectSymbol();
@@ -522,12 +522,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test025
      * @tc.number SUB_BUILTINS_Object12_TEST_2500
-     * @tc.name Object12Test025
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn25_testSymbolFromObjectAssign();
@@ -535,12 +535,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test026
      * @tc.number SUB_BUILTINS_Object12_TEST_2600
-     * @tc.name Object12Test026
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn26_testRegExpObjectSymbol();
@@ -548,12 +548,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test027
      * @tc.number SUB_BUILTINS_Object12_TEST_2700
-     * @tc.name Object12Test027
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn27_testWritableSymbolProperty();
@@ -561,12 +561,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test028
      * @tc.number SUB_BUILTINS_Object12_TEST_2800
-     * @tc.name Object12Test028
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn28_testTenDifferentSymbols();
@@ -574,12 +574,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test029
      * @tc.number SUB_BUILTINS_Object12_TEST_2900
-     * @tc.name Object12Test029
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn29_testMapObjectSymbol();
@@ -587,24 +587,24 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test030
      * @tc.number SUB_BUILTINS_Object12_TEST_3000
-     * @tc.name Object12Test030
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn30_testSymbolWithSpecialChars();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object12Test031
      * @tc.number SUB_BUILTINS_Object12_TEST_3100
-     * @tc.name Object12Test031
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn31_testSymbolsFromDefineProperties();
@@ -612,12 +612,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test032
      * @tc.number SUB_BUILTINS_Object12_TEST_3200
-     * @tc.name Object12Test032
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn32_testSetObjectSymbol();
@@ -625,12 +625,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test033
      * @tc.number SUB_BUILTINS_Object12_TEST_3300
-     * @tc.name Object12Test033
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn33_testSymbolWithSymbolValue();
@@ -638,12 +638,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test034
      * @tc.number SUB_BUILTINS_Object12_TEST_3400
-     * @tc.name Object12Test034
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn34_testMultiLevelPrototypeSymbol();
@@ -651,12 +651,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test035
      * @tc.number SUB_BUILTINS_Object12_TEST_3500
-     * @tc.name Object12Test035
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn35_testPromiseObjectSymbol();
@@ -664,12 +664,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test036
      * @tc.number SUB_BUILTINS_Object12_TEST_3600
-     * @tc.name Object12Test036
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn36_testSymbolFromDestructuring();
@@ -677,12 +677,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test037
      * @tc.number SUB_BUILTINS_Object12_TEST_3700
-     * @tc.name Object12Test037
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn37_testFrozenObjectSymbol();
@@ -690,12 +690,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test039
      * @tc.number SUB_BUILTINS_Object12_TEST_3900
-     * @tc.name Object12Test039
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn39_testSymbolAndStringSameDesc();
@@ -703,12 +703,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test040
      * @tc.number SUB_BUILTINS_Object12_TEST_4000
-     * @tc.name Object12Test040
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn40_testSealedObjectSymbol();
@@ -716,12 +716,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test041
      * @tc.number SUB_BUILTINS_Object12_TEST_4100
-     * @tc.name Object12Test041
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn41_testArrayBufferSymbol();
@@ -729,12 +729,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test042
      * @tc.number SUB_BUILTINS_Object12_TEST_4200
-     * @tc.name Object12Test042
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn42_testSymbolNotInObjectKeys();
@@ -742,12 +742,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test043
      * @tc.number SUB_BUILTINS_Object12_TEST_4300
-     * @tc.name Object12Test043
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn43_testSymbolWithFunctionValue();
@@ -755,12 +755,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test044
      * @tc.number SUB_BUILTINS_Object12_TEST_4400
-     * @tc.name Object12Test044
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn44_testTypedArraySymbol();
@@ -768,12 +768,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test045
      * @tc.number SUB_BUILTINS_Object12_TEST_4500
-     * @tc.name Object12Test045
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn45_testSymbolNotInForIn();
@@ -781,12 +781,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test046
      * @tc.number SUB_BUILTINS_Object12_TEST_4600
-     * @tc.name Object12Test046
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn46_testDeletePartialSymbols();
@@ -794,12 +794,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test047
      * @tc.number SUB_BUILTINS_Object12_TEST_4700
-     * @tc.name Object12Test047
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn47_testErrorObjectSymbol();
@@ -807,12 +807,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test048
      * @tc.number SUB_BUILTINS_Object12_TEST_4800
-     * @tc.name Object12Test048
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn48_testSymbolNotInJsonStringify();
@@ -820,12 +820,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test049
      * @tc.number SUB_BUILTINS_Object12_TEST_4900
-     * @tc.name Object12Test049
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn49_testObjectWithNullPrototypeSymbol();
@@ -833,12 +833,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test050
      * @tc.number SUB_BUILTINS_Object12_TEST_5000
-     * @tc.name Object12Test050
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn50_testCustomClassInstanceSymbol();
@@ -846,12 +846,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test051
      * @tc.number SUB_BUILTINS_Object12_TEST_5100
-     * @tc.name Object12Test051
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn51_testWeakMapObjectSymbol();
@@ -859,12 +859,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test052
      * @tc.number SUB_BUILTINS_Object12_TEST_5200
-     * @tc.name Object12Test052
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn52_testSymbolWithArrayValue();
@@ -872,12 +872,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test053
      * @tc.number SUB_BUILTINS_Object12_TEST_5300
-     * @tc.name Object12Test053
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn53_testSymbolNotInGetOwnPropertyNames();
@@ -885,12 +885,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test054
      * @tc.number SUB_BUILTINS_Object12_TEST_5400
-     * @tc.name Object12Test054
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn54_testWeakSetObjectSymbol();
@@ -898,12 +898,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test055
      * @tc.number SUB_BUILTINS_Object12_TEST_5500
-     * @tc.name Object12Test055
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn55_testSymbolFromObjectCreateProps();
@@ -911,12 +911,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test056
      * @tc.number SUB_BUILTINS_Object12_TEST_5600
-     * @tc.name Object12Test056
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn56_testDataViewObjectSymbol();
@@ -924,12 +924,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test057
      * @tc.number SUB_BUILTINS_Object12_TEST_5700
-     * @tc.name Object12Test057
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn57_testIterateSymbolArray();
@@ -937,12 +937,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test058
      * @tc.number SUB_BUILTINS_Object12_TEST_5800
-     * @tc.name Object12Test058
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn58_testSetWithElementsSymbol();
@@ -950,12 +950,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test059
      * @tc.number SUB_BUILTINS_Object12_TEST_5900
-     * @tc.name Object12Test059
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn59_testSymbolWithGetter();
@@ -963,24 +963,24 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test060
      * @tc.number SUB_BUILTINS_Object12_TEST_6000
-     * @tc.name Object12Test060
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn60_testMapWithEntriesSymbol();
       expect(result).assertEqual(true);
     });
     /**
+     * @tc.name   Object12Test061
      * @tc.number SUB_BUILTINS_Object12_TEST_6100
-     * @tc.name Object12Test061
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Fn61_testHasOwnSymbolProperty();
@@ -988,12 +988,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test062
      * @tc.number SUB_BUILTINS_Object12_TEST_6200
-     * @tc.name Object12Test062
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn62_testTypeErrorInstanceSymbol();
@@ -1001,12 +1001,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test063
      * @tc.number SUB_BUILTINS_Object12_TEST_6300
-     * @tc.name Object12Test063
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn63_testSymbolWithSetter();
@@ -1014,12 +1014,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test065
      * @tc.number SUB_BUILTINS_Object12_TEST_6500
-     * @tc.name Object12Test065
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn65_testGetSymbolDescriptor();
@@ -1027,12 +1027,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test066
      * @tc.number SUB_BUILTINS_Object12_TEST_6600
-     * @tc.name Object12Test066
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn66_testDifferentLenArrayBufferSymbol();
@@ -1040,12 +1040,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test067
      * @tc.number SUB_BUILTINS_Object12_TEST_6700
-     * @tc.name Object12Test067
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn67_testSymbolFromClassMethod();
@@ -1053,12 +1053,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test068
      * @tc.number SUB_BUILTINS_Object12_TEST_6800
-     * @tc.name Object12Test068
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn68_testFloat64ArraySymbol();
@@ -1066,12 +1066,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test069
      * @tc.number SUB_BUILTINS_Object12_TEST_6900
-     * @tc.name Object12Test069
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn69_testPreventExtensionsSymbol();
@@ -1079,12 +1079,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test070
      * @tc.number SUB_BUILTINS_Object12_TEST_7000
-     * @tc.name Object12Test070
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn70_testPendingPromiseSymbol();
@@ -1092,12 +1092,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test071
      * @tc.number SUB_BUILTINS_Object12_TEST_7100
-     * @tc.name Object12Test071
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn71_testNonEnumNonConfigSymbol();
@@ -1105,12 +1105,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test072
      * @tc.number SUB_BUILTINS_Object12_TEST_7200
-     * @tc.name Object12Test072
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn72_testRegExpWithFlagsSymbol();
@@ -1118,12 +1118,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test073
      * @tc.number SUB_BUILTINS_Object12_TEST_7300
-     * @tc.name Object12Test073
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn73_testSymbolInSpreadOperator();
@@ -1131,12 +1131,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test074
      * @tc.number SUB_BUILTINS_Object12_TEST_7400
-     * @tc.name Object12Test074
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn74_testDifferentDateSymbol();
@@ -1144,12 +1144,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test075
      * @tc.number SUB_BUILTINS_Object12_TEST_7500
-     * @tc.name Object12Test075
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn75_testSymbolWithNullValue();
@@ -1157,12 +1157,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test076
      * @tc.number SUB_BUILTINS_Object12_TEST_7600
-     * @tc.name Object12Test076
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn76_testArrowFunctionSymbol();
@@ -1170,12 +1170,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test077
      * @tc.number SUB_BUILTINS_Object12_TEST_7700
-     * @tc.name Object12Test077
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn77_testFilterSymbolArray();
@@ -1183,12 +1183,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test078
      * @tc.number SUB_BUILTINS_Object12_TEST_7800
-     * @tc.name Object12Test078
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn78_testGeneratorFunctionSymbol();
@@ -1196,12 +1196,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test079
      * @tc.number SUB_BUILTINS_Object12_TEST_7900
-     * @tc.name Object12Test079
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn79_testMixedConfigSymbols();
@@ -1209,12 +1209,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test080
      * @tc.number SUB_BUILTINS_Object12_TEST_8000
-     * @tc.name Object12Test080
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn80_testAsyncFunctionSymbol();
@@ -1222,12 +1222,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test081
      * @tc.number SUB_BUILTINS_Object12_TEST_8100
-     * @tc.name Object12Test081
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn81_testAsyncGeneratorFunctionSymbol();
@@ -1235,12 +1235,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test082
      * @tc.number SUB_BUILTINS_Object12_TEST_8200
-     * @tc.name Object12Test082
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn82_testSymbolWithBigIntValue();
@@ -1248,12 +1248,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test083
      * @tc.number SUB_BUILTINS_Object12_TEST_8300
-     * @tc.name Object12Test083
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn83_testGetSymbolDescriptors();
@@ -1261,12 +1261,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test085
      * @tc.number SUB_BUILTINS_Object12_TEST_8500
-     * @tc.name Object12Test085
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn85_testSymbolFromStaticClassMethod();
@@ -1274,12 +1274,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test087
      * @tc.number SUB_BUILTINS_Object12_TEST_8700
-     * @tc.name Object12Test087
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn87_testFrozenSymbolValueUnchangeable();
@@ -1287,12 +1287,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test089
      * @tc.number SUB_BUILTINS_Object12_TEST_8900
-     * @tc.name Object12Test089
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn89_testCustomSymbolSameAsBuiltIn();
@@ -1300,12 +1300,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test091
      * @tc.number SUB_BUILTINS_Object12_TEST_9100
-     * @tc.name Object12Test091
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn91_testFindSymbolInArray();
@@ -1313,12 +1313,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test092
      * @tc.number SUB_BUILTINS_Object12_TEST_9200
-     * @tc.name Object12Test092
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn92_testIntlDateTimeFormatSymbol();
@@ -1326,12 +1326,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test093
      * @tc.number SUB_BUILTINS_Object12_TEST_9300
-     * @tc.name Object12Test093
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn93_testSymbolInProxyObject();
@@ -1339,12 +1339,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test094
      * @tc.number SUB_BUILTINS_Object12_TEST_9400
-     * @tc.name Object12Test094
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn94_testArrayBufferSliceSymbol();
@@ -1352,12 +1352,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test095
      * @tc.number SUB_BUILTINS_Object12_TEST_9500
-     * @tc.name Object12Test095
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn95_testSymbolInReflectOwnKeys();
@@ -1365,12 +1365,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test096
      * @tc.number SUB_BUILTINS_Object12_TEST_9600
-     * @tc.name Object12Test096
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn96_testTypedArraySubarraySymbol();
@@ -1378,12 +1378,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test097
      * @tc.number SUB_BUILTINS_Object12_TEST_9700
-     * @tc.name Object12Test097
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn97_testEnumNonConfigSymbol();
@@ -1391,12 +1391,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test098
      * @tc.number SUB_BUILTINS_Object12_TEST_9800
-     * @tc.name Object12Test098
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn98_testWeakMapWithEntriesSymbol();
@@ -1404,12 +1404,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test099
      * @tc.number SUB_BUILTINS_Object12_TEST_9900
-     * @tc.name Object12Test099
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn99_testSymbolAssignToFrozenObject();
@@ -1417,12 +1417,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test100
      * @tc.number SUB_BUILTINS_Object12_TEST_10000
-     * @tc.name Object12Test100
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn100_testWeakSetWithElementsSymbol();
@@ -1430,12 +1430,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test101
      * @tc.number SUB_BUILTINS_Object12_TEST_10100
-     * @tc.name Object12Test101
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn101_testSymbolWithSharedValue();
@@ -1443,12 +1443,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test102
      * @tc.number SUB_BUILTINS_Object12_TEST_10200
-     * @tc.name Object12Test102
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn102_testIntlNumberFormatSymbol();
@@ -1456,12 +1456,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test103
      * @tc.number SUB_BUILTINS_Object12_TEST_10300
-     * @tc.name Object12Test103
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn103_testSymbolNotInJsonParse();
@@ -1469,12 +1469,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test106
      * @tc.number SUB_BUILTINS_Object12_TEST_10600
-     * @tc.name Object12Test106
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn106_testDataViewWithOffsetSymbol();
@@ -1482,12 +1482,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test107
      * @tc.number SUB_BUILTINS_Object12_TEST_10700
-     * @tc.name Object12Test107
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn107_testEverySymbolInArray();
@@ -1495,12 +1495,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test108
      * @tc.number SUB_BUILTINS_Object12_TEST_10800
-     * @tc.name Object12Test108
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn108_testClosedRangeSymbol();
@@ -1508,12 +1508,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test109
      * @tc.number SUB_BUILTINS_Object12_TEST_10900
-     * @tc.name Object12Test109
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn109_testSymbolAddedByCall();
@@ -1521,12 +1521,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test111
      * @tc.number SUB_BUILTINS_Object12_TEST_11100
-     * @tc.name Object12Test111
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn111_testSymbolWithSetValue();
@@ -1534,12 +1534,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test112
      * @tc.number SUB_BUILTINS_Object12_TEST_11200
-     * @tc.name Object12Test112
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn112_testIntlRelativeTimeFormatSymbol();
@@ -1547,12 +1547,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test113
      * @tc.number SUB_BUILTINS_Object12_TEST_11300
-     * @tc.name Object12Test113
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn113_testSealedCheckWithSymbol();
@@ -1560,12 +1560,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test115
      * @tc.number SUB_BUILTINS_Object12_TEST_11500
-     * @tc.name Object12Test115
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn115_testSymbolInProxyWithSetHandler();
@@ -1573,12 +1573,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test116
      * @tc.number SUB_BUILTINS_Object12_TEST_11600
-     * @tc.name Object12Test116
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn116_testTypedArrayAfterModifySymbol();
@@ -1586,12 +1586,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test117
      * @tc.number SUB_BUILTINS_Object12_TEST_11700
-     * @tc.name Object12Test117
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn117_testPrototypeGetWithSymbol();
@@ -1599,12 +1599,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test118
      * @tc.number SUB_BUILTINS_Object12_TEST_11800
-     * @tc.name Object12Test118
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn118_testIntlLocaleSymbol();
@@ -1612,12 +1612,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test119
      * @tc.number SUB_BUILTINS_Object12_TEST_11900
-     * @tc.name Object12Test119
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn119_testNonWritableNonConfigSymbol();
@@ -1625,12 +1625,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test120
      * @tc.number SUB_BUILTINS_Object12_TEST_12000
-     * @tc.name Object12Test120
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn120_testWeakMapAfterDeleteSymbol();
@@ -1638,12 +1638,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test121
      * @tc.number SUB_BUILTINS_Object12_TEST_12100
-     * @tc.name Object12Test121
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn121_testSymbolWithMapValue();
@@ -1651,12 +1651,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test123
      * @tc.number SUB_BUILTINS_Object12_TEST_12300
-     * @tc.name Object12Test123
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn123_testReduceSymbolCount();
@@ -1664,12 +1664,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test124
      * @tc.number SUB_BUILTINS_Object12_TEST_12400
-     * @tc.name Object12Test124
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn124_testConfiguredNumberFormatSymbol();
@@ -1677,12 +1677,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test125
      * @tc.number SUB_BUILTINS_Object12_TEST_12500
-     * @tc.name Object12Test125
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn125_testStaticClassSymbol();
@@ -1690,12 +1690,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test126
      * @tc.number SUB_BUILTINS_Object12_TEST_12600
-     * @tc.name Object12Test126
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn126_testTransferredArrayBufferSymbol();
@@ -1703,12 +1703,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test127
      * @tc.number SUB_BUILTINS_Object12_TEST_12700
-     * @tc.name Object12Test127
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn127_testReflectGetWithSymbol();
@@ -1716,12 +1716,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test128
      * @tc.number SUB_BUILTINS_Object12_TEST_12800
-     * @tc.name Object12Test128
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn128_testStyledDateTimeFormatSymbol();
@@ -1729,12 +1729,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test129
      * @tc.number SUB_BUILTINS_Object12_TEST_12900
-     * @tc.name Object12Test129
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn129_testSymbolInProxyWithGetHandler();
@@ -1742,12 +1742,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test130
      * @tc.number SUB_BUILTINS_Object12_TEST_13000
-     * @tc.name Object12Test130
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn130_testWeakSetAfterDeleteSymbol();
@@ -1755,12 +1755,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test131
      * @tc.number SUB_BUILTINS_Object12_TEST_13100
-     * @tc.name Object12Test131
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn131_testSymbolWithWeakMapValue();
@@ -1768,12 +1768,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test132
      * @tc.number SUB_BUILTINS_Object12_TEST_13200
-     * @tc.name Object12Test132
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn132_testIntlDisplayNamesSymbol();
@@ -1781,12 +1781,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test133
      * @tc.number SUB_BUILTINS_Object12_TEST_13300
-     * @tc.name Object12Test133
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn133_testExtensibleCheckWithSymbol();
@@ -1794,12 +1794,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test135
      * @tc.number SUB_BUILTINS_Object12_TEST_13500
-     * @tc.name Object12Test135
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn135_testSymbolWithClassSetter();
@@ -1807,12 +1807,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test136
      * @tc.number SUB_BUILTINS_Object12_TEST_13600
-     * @tc.name Object12Test136
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn136_testDataViewMultiTypeRWSymbol();
@@ -1820,12 +1820,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test137
      * @tc.number SUB_BUILTINS_Object12_TEST_13700
-     * @tc.name Object12Test137
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn137_testIndexOfSymbolInArray();
@@ -1833,12 +1833,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test141
      * @tc.number SUB_BUILTINS_Object12_TEST_14100
-     * @tc.name Object12Test141
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn141_testSymbolWithWeakSetValue();
@@ -1846,12 +1846,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test143
      * @tc.number SUB_BUILTINS_Object12_TEST_14300
-     * @tc.name Object12Test143
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn143_testModifySymbolValueWithDefineProperty();
@@ -1859,12 +1859,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test144
      * @tc.number SUB_BUILTINS_Object12_TEST_14400
-     * @tc.name Object12Test144
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn144_testCurrencyNumberFormatSymbol();
@@ -1872,12 +1872,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test146
      * @tc.number SUB_BUILTINS_Object12_TEST_14600
-     * @tc.name Object12Test146
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn146_testCopiedTypedArraySymbol();
@@ -1885,12 +1885,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test147
      * @tc.number SUB_BUILTINS_Object12_TEST_14700
-     * @tc.name Object12Test147
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn147_testModifySymbolValueWithReflectSet();
@@ -1898,12 +1898,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test148
      * @tc.number SUB_BUILTINS_Object12_TEST_14800
-     * @tc.name Object12Test148
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn148_testTimeStyledDateTimeFormatSymbol();
@@ -1911,12 +1911,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test149
      * @tc.number SUB_BUILTINS_Object12_TEST_14900
-     * @tc.name Object12Test149
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn149_testFullConfigurableSymbol();
@@ -1924,12 +1924,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test150
      * @tc.number SUB_BUILTINS_Object12_TEST_15000
-     * @tc.name Object12Test150
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn150_testWeakMapAfterGcSymbol();
@@ -1937,12 +1937,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test151
      * @tc.number SUB_BUILTINS_Object12_TEST_15100
-     * @tc.name Object12Test151
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn151_testSymbolWithPromiseValue();
@@ -1950,12 +1950,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test152
      * @tc.number SUB_BUILTINS_Object12_TEST_15200
-     * @tc.name Object12Test152
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn152_testSensitiveCollatorSymbol();
@@ -1963,12 +1963,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test153
      * @tc.number SUB_BUILTINS_Object12_TEST_15300
-     * @tc.name Object12Test153
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn153_testLastIndexOfSymbolInArray();
@@ -1976,12 +1976,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test155
      * @tc.number SUB_BUILTINS_Object12_TEST_15500
-     * @tc.name Object12Test155
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn155_testSymbolInProxyWithHasHandler();
@@ -1989,12 +1989,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test156
      * @tc.number SUB_BUILTINS_Object12_TEST_15600
-     * @tc.name Object12Test156
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn156_testTypedArrayFromAbSymbol();
@@ -2002,12 +2002,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test157
      * @tc.number SUB_BUILTINS_Object12_TEST_15700
-     * @tc.name Object12Test157
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn157_testPreventExtensionsNewSymbol();
@@ -2015,12 +2015,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test158
      * @tc.number SUB_BUILTINS_Object12_TEST_15800
-     * @tc.name Object12Test158
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn158_testTypePluralRulesSymbol();
@@ -2029,12 +2029,12 @@ export default function Object12Test() {
 
 
     /**
+     * @tc.name   Object12Test160
      * @tc.number SUB_BUILTINS_Object12_TEST_16000
-     * @tc.name Object12Test160
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn160_testWeakSetAfterGcSymbol();
@@ -2042,12 +2042,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test161
      * @tc.number SUB_BUILTINS_Object12_TEST_16100
-     * @tc.name Object12Test161
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn161_testSymbolWithErrorValue();
@@ -2055,12 +2055,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test162
      * @tc.number SUB_BUILTINS_Object12_TEST_16200
-     * @tc.name Object12Test162
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn162_testNumberStyledRelativeTimeFormatSymbol();
@@ -2068,12 +2068,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test165
      * @tc.number SUB_BUILTINS_Object12_TEST_16500
-     * @tc.name Object12Test165
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn165_testSymbolFromArrowClassMethod();
@@ -2081,12 +2081,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test166
      * @tc.number SUB_BUILTINS_Object12_TEST_16600
-     * @tc.name Object12Test166
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn166_testZeroLengthDataViewSymbol();
@@ -2094,12 +2094,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test167
      * @tc.number SUB_BUILTINS_Object12_TEST_16700
-     * @tc.name Object12Test167
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn167_testConcatSymbolArray();
@@ -2107,12 +2107,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test168
      * @tc.number SUB_BUILTINS_Object12_TEST_16800
-     * @tc.name Object12Test168
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn168_testExtendedLocaleSymbol();
@@ -2120,12 +2120,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test169
      * @tc.number SUB_BUILTINS_Object12_TEST_16900
-     * @tc.name Object12Test169
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn169_testNonEnumWritableSymbol();
@@ -2133,12 +2133,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test170
      * @tc.number SUB_BUILTINS_Object12_TEST_17000
-     * @tc.name Object12Test170
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn170_testWeakMapAfterMultiOpsSymbol();
@@ -2146,12 +2146,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test173
      * @tc.number SUB_BUILTINS_Object12_TEST_17300
-     * @tc.name Object12Test173
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn173_testFrozenCannotModifyDescriptor();
@@ -2159,12 +2159,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test174
      * @tc.number SUB_BUILTINS_Object12_TEST_17400
-     * @tc.name Object12Test174
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn174_testFallbackDisplayNamesSymbol();
@@ -2172,12 +2172,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test175
      * @tc.number SUB_BUILTINS_Object12_TEST_17500
-     * @tc.name Object12Test175
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn175_testSymbolFromInheritedMethod();
@@ -2185,12 +2185,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test176
      * @tc.number SUB_BUILTINS_Object12_TEST_17600
-     * @tc.name Object12Test176
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn176_testZeroLengthTypedArraySymbol();
@@ -2198,12 +2198,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test177
      * @tc.number SUB_BUILTINS_Object12_TEST_17700
-     * @tc.name Object12Test177
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn177_testReflectDeleteSealedSymbol();
@@ -2211,12 +2211,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test179
      * @tc.number SUB_BUILTINS_Object12_TEST_17900
-     * @tc.name Object12Test179
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn179_testSymbolInProxyWithDeleteHandler();
@@ -2224,12 +2224,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test180
      * @tc.number SUB_BUILTINS_Object12_TEST_18000
-     * @tc.name Object12Test180
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn180_testWeakSetAfterMultiOpsSymbol();
@@ -2237,12 +2237,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test181
      * @tc.number SUB_BUILTINS_Object12_TEST_18100
-     * @tc.name Object12Test181
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn181_testSymbolWithArrayBufferValue();
@@ -2250,12 +2250,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test183
      * @tc.number SUB_BUILTINS_Object12_TEST_18300
-     * @tc.name Object12Test183
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn183_testSliceSymbolArray();
@@ -2263,12 +2263,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test184
      * @tc.number SUB_BUILTINS_Object12_TEST_18400
-     * @tc.name Object12Test184
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn184_testPercentNumberFormatSymbol();
@@ -2276,12 +2276,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test185
      * @tc.number SUB_BUILTINS_Object12_TEST_18500
-     * @tc.name Object12Test185
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn185_testSymbolFromStaticInheritedMethod();
@@ -2289,12 +2289,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test186
      * @tc.number SUB_BUILTINS_Object12_TEST_18600
-     * @tc.name Object12Test186
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn186_testDataViewFromTypedArraySymbol();
@@ -2302,12 +2302,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test187
      * @tc.number SUB_BUILTINS_Object12_TEST_18700
-     * @tc.name Object12Test187
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn187_testIsSealedCheckWithSymbol();
@@ -2315,12 +2315,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test188
      * @tc.number SUB_BUILTINS_Object12_TEST_18800
-     * @tc.name Object12Test188
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn188_testTimezoneDateTimeFormatSymbol();
@@ -2328,12 +2328,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test189
      * @tc.number SUB_BUILTINS_Object12_TEST_18900
-     * @tc.name Object12Test189
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn189_testSymbolInProxyWithDefineHandler();
@@ -2341,12 +2341,12 @@ export default function Object12Test() {
     });
 
     /**
+     * @tc.name   Object12Test190
      * @tc.number SUB_BUILTINS_Object12_TEST_19000
-     * @tc.name Object12Test190
-     * @tc.desc test object create
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object12Test190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = Fn190_testTypedArrayFromTypedArraySymbol();

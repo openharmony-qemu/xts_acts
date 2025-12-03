@@ -48,12 +48,12 @@ export default function ModifierTest() {
     });
 
     /**
-     * @tc.number    ModifierTest_0010
-     * @tc.name      ModifierTest_0010
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ModifierTest_0010
+     * @tc.number ModifierTest_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('EventLocationInfo_on_beforePanStart_0010 START');

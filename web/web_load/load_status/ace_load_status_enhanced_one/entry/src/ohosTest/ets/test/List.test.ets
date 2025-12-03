@@ -15,9 +15,15 @@
 import webAttributeTest from './WebAttributeTest.test'
 import webOnBeforeUnload from './WebOnBeforeUnload.test'
 import webAttributeEnhancedTest from './WebAttributeEnhancedTest.test'
+import webBlockNetworkSpecial from './WebBlockNetworkSpecial.test'
+import webMixedModeSpecial from './WebMixedModeSpecial.test'
+import webCacheModeSpecial from './WebCacheModeSpecial.test'
 
 export default function testsuite() {
   webAttributeTest()
   webOnBeforeUnload()
   webAttributeEnhancedTest()
+  webBlockNetworkSpecial()
+  webMixedModeSpecial()
+  webCacheModeSpecial()
 }

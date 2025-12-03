@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineFillProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineFillProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineFillProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineFillProp START');
@@ -104,9 +107,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineFillOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolylineFillOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineFillOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolylineFillOpacityPropOne START');
@@ -130,9 +136,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineFillOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolylineFillOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineFillOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolylineFillOpacityPropTwo START');
@@ -156,9 +165,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineFillOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolylineFillOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineFillOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolylineFillOpacityPropThree START');
@@ -182,9 +194,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineFillRulePropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolylineFillRulePropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineFillRulePropOne', Level.LEVEL0, async function(done) {
             console.info('testPolylineFillRulePropOne START');
@@ -208,9 +223,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineFillRulePropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolylineFillRulePropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineFillRulePropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolylineFillRulePropTwo START');
@@ -234,9 +252,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolylineOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolylineOpacityPropOne START');
@@ -260,9 +281,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolylineOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolylineOpacityPropTwo START');
@@ -286,9 +310,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolylineOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolylineOpacityPropThree START');
@@ -312,9 +339,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeProp START');
@@ -336,9 +366,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeDashArrayProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeDashArrayProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeDashArrayProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeDashArrayProp START');
@@ -362,9 +395,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeDashOffsetProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeDashOffsetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeDashOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeDashOffsetProp START');
@@ -389,9 +425,12 @@ export default function undo() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeLineJoinPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeLineJoinPropOne START');
@@ -415,9 +454,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeLineJoinPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeLineJoinPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeLineJoinPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeLineJoinPropTwo START');
@@ -441,9 +483,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeLineJoinPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeLineJoinPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeLineJoinPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeLineJoinPropThree START');
@@ -467,9 +512,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeLineCapPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeLineCapPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeLineCapPropOne START');
@@ -493,9 +541,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeLineCapPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeLineCapPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeLineCapPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeLineCapPropTwo START');
@@ -519,9 +570,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeLineCapPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeLineCapPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeLineCapPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeLineCapPropThree START');
@@ -545,9 +599,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeMiterLimitProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeMiterLimitProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeMiterLimitProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeMiterLimitProp START');
@@ -571,9 +628,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeOpacityPropOne START');
@@ -597,9 +657,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeOpacityPropTwo START');
@@ -623,9 +686,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeOpacityPropThree START');
@@ -649,9 +715,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineStrokeWidthProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineStrokeWidthProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineStrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineStrokeWidthProp START');
@@ -675,9 +744,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineTransformProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineTransformProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineTransformProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineTransformProp START');
@@ -699,9 +771,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylineIdProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylineIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylineIdProp', Level.LEVEL0, async function(done) {
             console.info('testPolylineIdProp START');
@@ -723,9 +798,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPolylinePointProp
-         * @tc.desc      ACE
+         * @tc.name   testPolylinePointProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPolylinePointProp', Level.LEVEL0, async function(done) {
             console.info('testPolylinePointProp START');

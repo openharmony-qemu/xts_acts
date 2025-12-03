@@ -14,11 +14,11 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { DeleteParam, SetParam } from './utils/huks/HuksOptionsUtils';
-import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils';
-import { GetDataBySize } from './utils/common/CommonUtils';
-import { Logger } from './utils/common/Logger';
-import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { DeleteParam, SetParam } from './utils/huks/HuksOptionsUtils.ets';
+import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils.ets';
+import { GetDataBySize } from './utils/common/CommonUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
+import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
 
 export default function SecurityHUKSKeyGenerateListAliasesTest() {
   let DEOption: huks.HuksOptions;
@@ -49,12 +49,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0100
-     * @tc.name   : test listAliases with de level, process success
-     * @tc.desc   : generate key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level2
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0100
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0100
+     * @tc.desc   generate key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0100";
@@ -82,12 +82,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0200
-     * @tc.name   : test listAliases with ce level, process success
-     * @tc.desc   : generate key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level1
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0200
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0200
+     * @tc.desc   generate key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0200";
@@ -115,12 +115,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0300
-     * @tc.name   : test listAliases with ece level, process success
-     * @tc.desc   : generate key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0300
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0300
+     * @tc.desc   generate key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0300";
@@ -148,12 +148,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400
-     * @tc.name   : test listAliases with default level, process success
-     * @tc.desc   : generate key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400
+     * @tc.desc   generate key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400";
@@ -176,12 +176,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0500
-     * @tc.name   : test listAliases with de level, process success
-     * @tc.desc   : generate key, delete some key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0500
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0500
+     * @tc.desc   generate key, delete some key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0500";
@@ -217,12 +217,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0600
-     * @tc.name   : test listAliases with ce level, process success
-     * @tc.desc   : generate key, delete some key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0600
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0600
+     * @tc.desc   generate key, delete some key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0600";
@@ -258,12 +258,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0700
-     * @tc.name   : test listAliases with ece level, process success
-     * @tc.desc   : generate key, delete all key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0700
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0700
+     * @tc.desc   generate key, delete all key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0700";
@@ -290,12 +290,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0800
-     * @tc.name   : test listAliases with default level, process success
-     * @tc.desc   : list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0800
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0800
+     * @tc.desc   list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0800";
@@ -310,12 +310,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0900
-     * @tc.name   : test listAliases with 2049 DE level key, process fail
-     * @tc.desc   : generate 2048 key, list aliases, generate one more key, list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0900
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0900
+     * @tc.desc   generate 2048 key, list aliases, generate one more key, list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0900";
@@ -356,12 +356,12 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
     })
 
     /**
-     * @tc.number : SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_1000
-     * @tc.name   : test listAliases with null, process fail
-     * @tc.desc   : list aliases
-     * @tc.size   : SmallTest
-     * @tc.type   : Function
-     * @tc.level  : Level3
+     * @tc.name   SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_1000
+     * @tc.number SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_1000
+     * @tc.desc   list aliases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_1000";

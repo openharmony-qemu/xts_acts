@@ -28,10 +28,13 @@ const ERROR_CODE = 401;
 
 export default function getTargetOverlayModuleInfos() {
   describe('getTargetOverlayModuleInfos', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0600
-     * @tc.name: GetTargetOverlayModuleInfosModuleNameIsNull
-     * @tc.desc: The query fails when the incoming moduleName is empty
+    /**
+     * @tc.name   GetTargetOverlayModuleInfosModuleNameIsNull
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0600
+     * @tc.desc   The query fails when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetTargetOverlayModuleInfosModuleNameIsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       try {
@@ -56,10 +59,13 @@ export default function getTargetOverlayModuleInfos() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0800
-     * @tc.name: GetTargetOverlayModuleInfosModuleNameNotInstall
-     * @tc.desc: The query fails when the incoming moduleName is not installed
+    /**
+     * @tc.name   GetTargetOverlayModuleInfosModuleNameNotInstall
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0800
+     * @tc.desc   The query fails when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetTargetOverlayModuleInfosModuleNameNotInstall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       try {
@@ -84,10 +90,13 @@ export default function getTargetOverlayModuleInfos() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0810
-     * @tc.name: GetTargetOverlayModuleInfosModuleNameNotOverlay
-     * @tc.desc: The query fails when the incoming moduleName is not overlay
+    /**
+     * @tc.name   GetTargetOverlayModuleInfosModuleNameNotOverlay
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0810
+     * @tc.desc   The query fails when the incoming moduleName is not overlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetTargetOverlayModuleInfosModuleNameNotOverlay', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       try {
@@ -114,14 +123,14 @@ export default function getTargetOverlayModuleInfos() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Overlay_Query_0910
-    * @tc.name:   Sub_Bms_Framework_Overlay_Query_0910
-    * @tc.desc:   test getTargetOverlayModuleInfos promise length
-    * @tc.size:   MediumTest
-    * @tc.type:   Function
-    * @tc.level:  Level 2
-   */
+        /**
+         * @tc.name   Sub_Bms_Framework_Overlay_Query_0910
+         * @tc.number Sub_Bms_Framework_Overlay_Query_0910
+         * @tc.desc   test getTargetOverlayModuleInfos promise length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Sub_Bms_Framework_Overlay_Query_0910', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done:Function) => {
           try {
             await overlay.getTargetOverlayModuleInfos(MODULE_NAME_TARGET).then(data => {
@@ -152,14 +161,14 @@ export default function getTargetOverlayModuleInfos() {
         })
     
     
-        /*
-         * @tc.number: Sub_Bms_Framework_Overlay_Query_0920
-         * @tc.name:   Sub_Bms_Framework_Overlay_Query_0920
-         * @tc.desc:   test getTargetOverlayModuleInfos callback length
-         * @tc.size:   MediumTest
-         * @tc.type:   Function
-         * @tc.level:  Level 2
-        */
+        /**
+         * @tc.name   Sub_Bms_Framework_Overlay_Query_0920
+         * @tc.number Sub_Bms_Framework_Overlay_Query_0920
+         * @tc.desc   test getTargetOverlayModuleInfos callback length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Sub_Bms_Framework_Overlay_Query_0920', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done:Function) => {
           try {
     

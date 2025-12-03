@@ -26,26 +26,26 @@ export default function imageAutoResizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_AUTORESIZE_0100
-     * @tc.name       : testImageAutoResize001
-     * @tc.desc       : testing autoresize for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageAutoResize001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_AUTORESIZE_0100
+     * @tc.desc   testing autoresize for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAutoResize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAutoResize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_AUTORESIZE_0200
-     * @tc.name       : testImageAutoResize002
-     * @tc.desc       : testing autoresize for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageAutoResize002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_AUTORESIZE_0200
+     * @tc.desc   testing autoresize for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAutoResize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAutoResize002()).assertEqual(0)

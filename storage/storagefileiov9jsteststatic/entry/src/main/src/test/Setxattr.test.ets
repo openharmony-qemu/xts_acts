@@ -28,14 +28,12 @@ export const FILE_CONTENT = 'hello world';
 export default function fileIOSetxattr() {
   describe('fileIO_test_setxattr', (): void => {
     /**
+     * @tc.name   test_FileIO_Setxattr_Async_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0100
-     * @tc.name test_FileIO_Setxattr_Async_Static_001
-     * @tc.desc Test setxattr() interface.
-     * Set file extension properties.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test setxattr() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FileIO_Setxattr_Async_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Async_Static_001');
@@ -59,14 +57,12 @@ export default function fileIOSetxattr() {
     });
 
     /**
+     * @tc.name   test_FileIO_Setxattr_Sync_Static_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Sync_0200
-     * @tc.name test_FileIO_Setxattr_Sync_Static_002
-     * @tc.desc Test setxattr() interface.
-     * The test file is not exist.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test setxattr() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FileIO_Setxattr_Sync_Static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Sync_Static_002');
@@ -87,14 +83,12 @@ export default function fileIOSetxattr() {
     });
 
     /**
+     * @tc.name   test_FileIO_Setxattr_Async_Static_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0300
-     * @tc.name test_FileIO_Setxattr_Async_Static_003
-     * @tc.desc Test setxattrSync() interface.
-     * Set file extension properties.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test setxattrSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FileIO_Setxattr_Async_Static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Async_Static_003');
@@ -113,14 +107,12 @@ export default function fileIOSetxattr() {
     });
 
     /**
+     * @tc.name   test_FileIO_Setxattr_Async_Static_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIo_SETXATTR_Async_0400
-     * @tc.name test_FileIO_Setxattr_Async_Static_004
-     * @tc.desc Test setxattrSync() interface.
-     * No such file or directory.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test setxattrSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FileIO_Setxattr_Async_Static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Setxattr_Async_Static_004');

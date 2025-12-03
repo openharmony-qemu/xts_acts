@@ -26,12 +26,6 @@ UINT16 g_cmsisTestMutexCount;
 osMutexId_t g_cmsisMutexId;
 osMutexAttr_t g_cmsisMutexAttr;
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisMutexFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, Cmsismutex, CmsisMutexFuncTestSuite);
 
 /**
@@ -82,9 +76,12 @@ static void CmsisMutexGetOwnerFunc001(void const *argument)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0100
- * @tc.name      : mutex operation for creat with NULL parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexNew001
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexNew001, Function | MediumTest | Level1)
 {
@@ -95,9 +92,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexNew001, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0200
- * @tc.name      : mutex operation for creat
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexNew002
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexNew002, Function | MediumTest | Level1)
 {
@@ -108,9 +108,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexNew002, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0300
- * @tc.name      : mutex operation for delete after creat mutex with NULL parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexDelete001
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete001, Function | MediumTest | Level1)
 {
@@ -125,9 +128,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete001, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0400
- * @tc.name      : mutex operation for delete
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexDelete002
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete002, Function | MediumTest | Level1)
 {
@@ -142,9 +148,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete002, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0500
- * @tc.name      : mutex operation for delete after mutex acquire and release
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexDelete003
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete003, Function | MediumTest | Level1)
 {
@@ -162,9 +171,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete003, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0600
- * @tc.name      : mutex delete operation with mutex_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexDelete004
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete004, Function | MediumTest | Level1)
 {
@@ -174,9 +186,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexDelete004, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0700
- * @tc.name      : mutex acquire operation with mutex_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexAcquire001
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexAcquire001, Function | MediumTest | Level1)
 {
@@ -186,9 +201,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexAcquire001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0800
- * @tc.name      : mutex operation for acquire
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexAcquire002
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexAcquire002, Function | MediumTest | Level1)
 {
@@ -205,9 +223,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexAcquire002, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_0900
- * @tc.name      : mutex operation for release
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexRelease001
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexRelease001, Function | MediumTest | Level1)
 {
@@ -229,9 +250,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexRelease001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_1000
- * @tc.name      : mutex release operation with mutex_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexRelease002
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexRelease002, Function | MediumTest | Level1)
 {
@@ -241,9 +265,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexRelease002, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_1100
- * @tc.name      : mutex operation for get owner
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexGetOwner001
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexGetOwner001, Function | MediumTest | Level1)
 {
@@ -261,9 +288,12 @@ LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexGetOwner001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MUTEX_OPERATION_1200
- * @tc.name      : mutex get owner operation with mutex_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMutexGetOwner002
+ * @tc.number SUB_KERNEL_CMSIS_MUTEX_OPERATION_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMutexFuncTestSuite, testOsMutexGetOwner002, Function | MediumTest | Level1)
 {

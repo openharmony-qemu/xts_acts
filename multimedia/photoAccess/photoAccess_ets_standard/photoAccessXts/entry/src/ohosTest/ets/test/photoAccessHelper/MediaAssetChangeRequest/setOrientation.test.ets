@@ -90,12 +90,12 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_001
-     * @tc.name      : MediaAssetChangeRequest_setOrientation_promise_001
-     * @tc.desc      : setOrientation
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_001
+     * @tc.desc   setOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setOrientation_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setOrientation_promise_001';
@@ -104,12 +104,12 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_002
-     * @tc.name      : MediaAssetChangeRequest_setOrientation_promise_002
-     * @tc.desc      : setOrientation
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_002
+     * @tc.desc   setOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setOrientation_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setOrientation_promise_002';
@@ -118,12 +118,12 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_003
-     * @tc.name      : MediaAssetChangeRequest_setOrientation_promise_003
-     * @tc.desc      : setOrientation
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_003
+     * @tc.desc   setOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setOrientation_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setOrientation_promise_003';
@@ -132,12 +132,12 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_004
-     * @tc.name      : MediaAssetChangeRequest_setOrientation_promise_004
-     * @tc.desc      : setOrientation
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_004
+     * @tc.desc   setOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_setOrientation_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setOrientation_promise_004';
@@ -146,12 +146,12 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_005  //TODO error.code is undefined
-     * @tc.name      : MediaAssetChangeRequest_setOrientation_Abnormal_promise_001
-     * @tc.desc      : setOrientation
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setOrientation_Abnormal_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_005  //TODO error.code is undefined
+     * @tc.desc   setOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_setOrientation_Abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setOrientation_Abnormal_promise_001';
@@ -160,12 +160,12 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     })*/
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_006   //TODO error.code is undefined
-     * @tc.name      : MediaAssetChangeRequest_setOrientation_Abnormal_promise_002
-     * @tc.desc      : setOrientation
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_setOrientation_Abnormal_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_006   //TODO error.code is undefined
+     * @tc.desc   setOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('MediaAssetChangeRequest_setOrientation_Abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MediaAssetChangeRequest_setOrientation_Abnormal_promise_002';

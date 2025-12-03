@@ -77,12 +77,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     });
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_001
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_001
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_001
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_001
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_001', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -99,12 +99,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_002
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_002
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_002
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_002
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_002', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -121,12 +121,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_003
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_003
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_003
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_003
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_003', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -143,12 +143,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_004
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_004
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_004
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_004
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_004', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -165,12 +165,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_005
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_005
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_005
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_005
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_005', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -187,12 +187,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_006
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_006
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_006
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_006
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_006', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -209,12 +209,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_007
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_007
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_007
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_007
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_007', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -231,12 +231,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_008
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_008
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_008
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_008
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_008', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -253,12 +253,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_009
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_009
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_009
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_009
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_009', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -275,12 +275,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_010
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_010
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_010
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_010
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_010', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -297,12 +297,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_011
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_011
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_011
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_011
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_011', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -319,12 +319,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_012
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_012
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_012
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_012
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_012', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -341,12 +341,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_013
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_013
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_013
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_013
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_013', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -363,12 +363,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_014
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_014
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_014
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_014
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_014', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -385,12 +385,12 @@ export default function ImageGetImagePropertySyncSUBFILE() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_015
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_015
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_015
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_015
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_015', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;

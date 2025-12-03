@@ -42,12 +42,12 @@ export default function polyLineJsunit() {
     });
 
     /**
+     * @tc.name   testpolyLine
      * @tc.number testpolyLine
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolyLine', Level.LEVEL0, async (done: Function) => {
       console.info('[testpolyLine] START');

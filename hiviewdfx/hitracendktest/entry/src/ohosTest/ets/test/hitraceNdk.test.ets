@@ -19,12 +19,12 @@ import hitracendk from 'libentry.so'
 export default function hitraceNdkTest() {
   describe('HiviewdfxHitraceTest', () => {
     /**
+     * @tc.name   testOHHiTraceCountTrace001
      * @tc.number SUB_HIVIEWDFX_HITRACE_TRACE_OH_HITRACE_COUNTTRACE_0100
-     * @tc.name testOHHiTraceCountTrace001
-     * @tc.desc test OH_HiTrace_CountTrace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test OH_HiTrace_CountTrace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHHiTraceCountTrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = hitracendk.oHHiTraceCountTrace();
@@ -33,12 +33,12 @@ export default function hitraceNdkTest() {
     });
 
     /**
+     * @tc.name   testOHHiTraceStartTrace001
      * @tc.number SUB_HIVIEWDFX_HITRACE_TRACE_OH_HITRACE_STARTTRACE_0100
-     * @tc.name testOHHiTraceStartTrace001
-     * @tc.desc test OH_HiTrace_StartTrace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test OH_HiTrace_StartTrace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHHiTraceStartTrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = hitracendk.oHHiTraceStartTrace();
@@ -47,12 +47,12 @@ export default function hitraceNdkTest() {
     });
 
     /**
+     * @tc.name   testOHHiTraceStartAsyncTrace001
      * @tc.number SUB_HIVIEWDFX_HITRACE_TRACE_OH_HITRACE_STARTASYNCTRACE_0100
-     * @tc.name testOHHiTraceStartAsyncTrace001
-     * @tc.desc test OH_HiTrace_StartAsyncTrace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test OH_HiTrace_StartAsyncTrace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHHiTraceStartAsyncTrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = hitracendk.oHHiTraceStartAsyncTrace();
@@ -61,12 +61,12 @@ export default function hitraceNdkTest() {
     });
     
     /**
+     * @tc.name   testOHHiTraceChainNd001
      * @tc.number SUB_DFX_DFT_HiTraceChain_C_0200
-     * @tc.name testOHHiTraceChainNd001
-     * @tc.desc test OH_HiTrace_BeginChain
-     * @tc.size MediumTest
-     * @tc.type  Function
-     * @tc.level Level 1
+     * @tc.desc   test OH_HiTrace_BeginChain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHHiTraceChainNd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let result: number = hitracendk.begin(); 
@@ -75,12 +75,12 @@ export default function hitraceNdkTest() {
     });
 
     /**
+     * @tc.name   testOHHiTraceChainNd002
      * @tc.number SUB_DFX_DFT_HiTraceChain_C_1000
-     * @tc.name testOHHiTraceChainNd002
-     * @tc.desc test OH_HiTrace_IsFlagEnabled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test OH_HiTrace_IsFlagEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHHiTraceChainNd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let result: number = hitracendk.beginflag(); 
@@ -89,12 +89,12 @@ export default function hitraceNdkTest() {
     });
 
     /**
+     * @tc.name   testOHHiTraceChainNd003
      * @tc.number SUB_DFX_DFT_HiTraceChain_C_0800
-     * @tc.name testOHHiTraceChainNd003
-     * @tc.desc test OH_HiTrace_Tracepoint
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test OH_HiTrace_Tracepoint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHHiTraceChainNd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let result: number = hitracendk.beginSpan(); 
@@ -102,6 +102,14 @@ export default function hitraceNdkTest() {
         done();
     });
 
+    /**
+     * @tc.name   testoHHiTraceCountTraceEx
+     * @tc.number testoHHiTraceCountTraceEx
+     * @tc.desc   testoHHiTraceCountTraceEx
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testoHHiTraceCountTraceEx', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let result: number = hitracendk.oHHiTraceCountTraceEx(); 
         expect(result).assertEqual(0);

@@ -67,12 +67,12 @@ export default function ActsGrammarTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_VARIABLE_0100
-     * @tc.name: testVariable001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testVariable001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_VARIABLE_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testVariable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testVariable001';
@@ -86,12 +86,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_VARIABLE_0200
-     * @tc.name: testVariable002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testVariable002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_VARIABLE_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testVariable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testVariable002';
@@ -105,12 +105,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0100
-     * @tc.name: testUnicode001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode001';
@@ -126,12 +126,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0200
-     * @tc.name: testUnicode002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode002';
@@ -145,12 +145,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0300
-     * @tc.name: testUnicode003
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode003
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode003';
@@ -164,12 +164,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0400
-     * @tc.name: testUnicode004
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode004
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0400
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode004';
@@ -183,12 +183,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0500
-     * @tc.name: testUnicode005
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode005
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0500
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode005';
@@ -202,12 +202,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0600
-     * @tc.name: testUnicode006
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode006
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0600
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode006';
@@ -221,12 +221,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0700
-     * @tc.name: testUnicode007
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode007
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0700
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode007';
@@ -240,12 +240,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0800
-     * @tc.name: testUnicode008
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode008
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0800
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode008';
@@ -259,12 +259,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0900
-     * @tc.name: testUnicode009
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode009
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_0900
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode009';
@@ -278,12 +278,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_1000
-     * @tc.name: testUnicode010
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode010
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_1000
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode010';
@@ -297,12 +297,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_1100
-     * @tc.name: testUnicode011
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode011
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_1100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode011';
@@ -318,12 +318,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_1200
-     * @tc.name: testUnicode012
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUnicode012
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_UNICODE_1200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnicode012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testUnicode012';
@@ -337,12 +337,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0100
-     * @tc.name: testPeriod001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod001';
@@ -359,12 +359,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0200
-     * @tc.name: testPeriod002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod002';
@@ -380,12 +380,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0300
-     * @tc.name: testPeriod003
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod003
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod003';
@@ -399,12 +399,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0400
-     * @tc.name: testPeriod004
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod004
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0400
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod004';
@@ -418,12 +418,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0500
-     * @tc.name: testPeriod005
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod005
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0500
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod005';
@@ -440,12 +440,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0600
-     * @tc.name: testPeriod006
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod006
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0600
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod006';
@@ -462,12 +462,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0700
-     * @tc.name: testPeriod007
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPeriod007
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_PERIOD_0700
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPeriod007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testPeriod007';
@@ -483,12 +483,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0100
-     * @tc.name: testExegesis001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis001';
@@ -503,12 +503,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0200
-     * @tc.name: testExegesis002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis002';
@@ -522,12 +522,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0300
-     * @tc.name: testExegesis003
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis003
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis003';
@@ -542,12 +542,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0400
-     * @tc.name: testExegesis004
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis004
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0400
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis004';
@@ -562,12 +562,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0500
-     * @tc.name: testExegesis005
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis005
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0500
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis005';
@@ -583,12 +583,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0600
-     * @tc.name: testExegesis006
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis006
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0600
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis006';
@@ -605,12 +605,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0700
-     * @tc.name: testExegesis007
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis007
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0700
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis007';
@@ -626,12 +626,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0800
-     * @tc.name: testExegesis008
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis008
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0800
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis008';
@@ -647,12 +647,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0900
-     * @tc.name: testExegesis009
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis009
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_0900
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis009';
@@ -667,12 +667,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_1000
-     * @tc.name: testExegesis010
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis010
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_1000
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis010';
@@ -688,12 +688,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_1100
-     * @tc.name: testExegesis011
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis011
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_1100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis011';
@@ -708,12 +708,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_1200
-     * @tc.name: testExegesis012
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testExegesis012
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_EXEGESIS_1200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExegesis012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testExegesis012';
@@ -729,12 +729,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_DECLARE_0100
-     * @tc.name: testDeclare001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testDeclare001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_DECLARE_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDeclare001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testDeclare001';
@@ -754,12 +754,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_DECLARE_0200
-     * @tc.name: testDeclare002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testDeclare002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_DECLARE_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDeclare002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testDeclare002';
@@ -776,12 +776,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_DECLARE_0300
-     * @tc.name: testDeclare003
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testDeclare003
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_DECLARE_0300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDeclare003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testDeclare003';
@@ -795,12 +795,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0100
-     * @tc.name: testType001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType001';
@@ -825,12 +825,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0200
-     * @tc.name: testType002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType002';
@@ -844,12 +844,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0300
-     * @tc.name: testType003
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType003
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType003';
@@ -886,12 +886,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0400
-     * @tc.name: testType004
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType004
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0400
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType004';
@@ -924,12 +924,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0500
-     * @tc.name: testType005
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType005
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0500
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType005';
@@ -962,12 +962,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0600
-     * @tc.name: testType006
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType006
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0600
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType006';
@@ -986,12 +986,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0700
-     * @tc.name: testType007
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType007
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0700
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType007';
@@ -1044,12 +1044,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0800
-     * @tc.name: testType008
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType008
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0800
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType008';
@@ -1069,12 +1069,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0900
-     * @tc.name: testType009
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType009
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_0900
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType009';
@@ -1096,12 +1096,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1000
-     * @tc.name: testType010
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType010
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1000
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType010';
@@ -1122,12 +1122,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1100
-     * @tc.name: testType011
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType011
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType011';
@@ -1147,12 +1147,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1200
-     * @tc.name: testType012
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType012
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType012';
@@ -1168,12 +1168,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1300
-     * @tc.name: testType013
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType013
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType013';
@@ -1189,12 +1189,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1400
-     * @tc.name: testType014
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType014
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1400
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType014';
@@ -1213,12 +1213,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1500
-     * @tc.name: testType015
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType015
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1500
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType015';
@@ -1245,12 +1245,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1600
-     * @tc.name: testType016
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testType016
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_TYPE_1600
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testType016';
@@ -1272,12 +1272,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0100
-     * @tc.name: testLiteral001
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral001
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0100
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral001';
@@ -1291,12 +1291,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0200
-     * @tc.name: testLiteral002
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral002
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0200
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral002';
@@ -1312,12 +1312,12 @@ export default function ActsGrammarTest() {
       done();
     });
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0300
-     * @tc.name: testLiteral003
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral003
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0300
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral003';
@@ -1343,12 +1343,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0400
-     * @tc.name: testLiteral004
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral004
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0400
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral004';
@@ -1365,12 +1365,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0500
-     * @tc.name: testLiteral005
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral005
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0500
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral005';
@@ -1387,12 +1387,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0600
-     * @tc.name: testLiteral006
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral006
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0600
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral006';
@@ -1423,12 +1423,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0700
-     * @tc.name: testLiteral007
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral007
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0700
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral007';
@@ -1445,12 +1445,12 @@ export default function ActsGrammarTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0800
-     * @tc.name: testLiteral008
-     * @tc.desc: Test syntax and data types
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testLiteral008
+     * @tc.number SUB_COMMONLIBRARY_BUILTIN_BASIC_LITERAL_0800
+     * @tc.desc   Test syntax and data types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLiteral008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       TAG = 'testLiteral008';

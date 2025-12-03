@@ -41,12 +41,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0100
      * @tc.number RatingJsunit_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set stars values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set stars values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[RatingJsunit_0100] START');
@@ -59,12 +59,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0200
      * @tc.number RatingJsunit_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set stepSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set stepSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
@@ -78,12 +78,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0300
      * @tc.number RatingJsunit_0300
-     * @tc.name Test the properties of components
-     * @tc.desc Set starStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set starStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[RatingJsunit_0300] START');
@@ -98,12 +98,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0400
      * @tc.number RatingJsunit_0400
-     * @tc.name Test the properties of components
-     * @tc.desc Set starStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set starStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[RatingJsunit_0400] START');

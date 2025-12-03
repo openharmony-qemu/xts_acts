@@ -21,7 +21,6 @@ export default function systemTimeNoPermissionJsunit() {
     console.info('====>---------------systemTimeNNoPermissionTest start-----------------------');
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Misc_systemTime_NoPermission_setTime_0010
      * @tc.number SUB_Misc_systemTime_NoPermission_setTime_0010
      * @tc.desc   Test systemTime_setTime API functionality.
@@ -53,7 +52,6 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Misc_systemTime_NoPermission_setTime_0020
      * @tc.number SUB_Misc_systemTime_NoPermission_setTime_0020
      * @tc.desc   Test systemTime_setTime API functionality.
@@ -79,7 +77,6 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Misc_systemTime_NoPermission_setDate_0010
      * @tc.number SUB_Misc_systemTime_NoPermission_setDate_0010
      * @tc.desc   Test systemTime_setDate API functionality.
@@ -111,7 +108,6 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Misc_systemTime_NoPermission_setDate_0020
      * @tc.number SUB_Misc_systemTime_NoPermission_setDate_0020
      * @tc.desc   Test systemTime_setDate API functionality.
@@ -137,7 +133,6 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Misc_systemTime_NoPermission_setTimezone_0010
      * @tc.number SUB_Misc_systemTime_NoPermission_setTimezone_0010
      * @tc.desc   Test systemTime_setTimezone API functionality.
@@ -168,7 +163,6 @@ export default function systemTimeNoPermissionJsunit() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Misc_systemTime_NoPermission_setTimezone_0020
      * @tc.number SUB_Misc_systemTime_NoPermission_setTimezone_0020
      * @tc.desc   Test systemTime_setTimezone API functionality.

@@ -117,12 +117,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_001
-     * @tc.name      : imageSource_updateData_promise_001
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_promise_001
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_001
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_promise_001';
@@ -137,12 +137,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_002
-     * @tc.name      : imageSource_updateData_promise_002
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_promise_002
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_002
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_promise_002';
@@ -157,12 +157,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_003
-     * @tc.name      : imageSource_updateData_promise_003
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_promise_003
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_003
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_promise_003';
@@ -177,12 +177,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_004
-     * @tc.name      : imageSource_updateData_promise_004
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_promise_004
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_004
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_promise_004';
@@ -197,12 +197,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_005
-     * @tc.name      : imageSource_updateData_promise_005
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_promise_005
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_005
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_promise_005';
@@ -217,12 +217,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_006
-     * @tc.name      : imageSource_updateData_abnormal_promise_001
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_abnormal_promise_001
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_006
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_abnormal_promise_001';
@@ -237,12 +237,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_007
-     * @tc.name      : imageSource_updateData_abnormal_promise_002
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_abnormal_promise_002
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_007
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_abnormal_promise_002';
@@ -257,12 +257,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_008
-     * @tc.name      : imageSource_updateData_abnormal_promise_003
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_abnormal_promise_003
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_008
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_abnormal_promise_003';
@@ -277,12 +277,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_009
-     * @tc.name      : imageSource_updateData_abnormal_promise_004
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_abnormal_promise_004
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_009
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_abnormal_promise_004';
@@ -297,12 +297,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_010
-     * @tc.name      : imageSource_updateData_callback_001
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_001
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_010
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_001';
@@ -317,12 +317,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_011
-     * @tc.name      : imageSource_updateData_callback_002
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_002
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_011
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_002';
@@ -337,12 +337,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_012
-     * @tc.name      : imageSource_updateData_callback_003
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_003
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_012
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_003';
@@ -357,12 +357,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_013
-     * @tc.name      : imageSource_updateData_callback_004
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_004
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_013
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_004';
@@ -377,12 +377,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_014
-     * @tc.name      : imageSource_updateData_callback_005
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_005
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_014
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_updateData_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_005';
@@ -397,12 +397,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_015
-     * @tc.name      : imageSource_updateData_callback_abnormal_001
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_abnormal_001
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_015
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_callback_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_abnormal_001';
@@ -417,12 +417,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_016
-     * @tc.name      : imageSource_updateData_callback_abnormal_002
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_abnormal_002
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_016
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_callback_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_abnormal_002';
@@ -437,12 +437,12 @@ export default function imageSourceUpdateDataPropertyTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_SOURCE_UPDATE_DATA_017
-     * @tc.name      : imageSource_updateData_callback_abnormal_003
-     * @tc.desc      : imageSource_updateData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_updateData_callback_abnormal_003
+     * @tc.number IMAGE_SOURCE_UPDATE_DATA_017
+     * @tc.desc   imageSource_updateData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imageSource_updateData_callback_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_updateData_callback_abnormal_003';

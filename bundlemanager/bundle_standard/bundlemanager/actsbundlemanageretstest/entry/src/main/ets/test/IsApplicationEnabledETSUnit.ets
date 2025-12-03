@@ -24,10 +24,13 @@ export default function IsApplicationEnabledETSUnit() {
 
     describe('isApplicationEnabled_test', function () {
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AppEnable_3000
-         * @tc.name: isApplicationEnabled : Get whether to enable a specified application
-         * @tc.desc: Check the return value of the interface (by promise)
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AppEnable_3000
+         * @tc.number Sub_Bms_Framework_Status_AppEnable_3000
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Sub_Bms_Framework_Status_AppEnable_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let timeOldStamp = await Utils.getNowTime();
@@ -48,10 +51,13 @@ export default function IsApplicationEnabledETSUnit() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AppEnable_2900
-         * @tc.name: isApplicationEnabled : Get whether to enable a specified application
-         * @tc.desc: Check the return value of the interface (by promise)
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AppEnable_2900
+         * @tc.number Sub_Bms_Framework_Status_AppEnable_2900
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Status_AppEnable_2900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await Bundle.isApplicationEnabled(BUNDLE_NAME_ERROR).then((data) => {
@@ -84,10 +90,13 @@ export default function IsApplicationEnabledETSUnit() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Status_AppEnable_3100
-         * @tc.name: isApplicationEnabled : Get whether to enable a specified application
-         * @tc.desc: Check the return value of the interface (by promise)
+        /**
+         * @tc.name   Sub_Bms_Framework_Status_AppEnable_3100
+         * @tc.number Sub_Bms_Framework_Status_AppEnable_3100
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('Sub_Bms_Framework_Status_AppEnable_3100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             let timeOldStamp = await Utils.getNowTime();

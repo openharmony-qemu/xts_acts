@@ -60,12 +60,12 @@ export default function webRequestHeaderList() {
 
 
     /**
+     * @tc.name   testWebView_onOverrideUrlLoading0003
      * @tc.number SUB_ACE_WEB_onOverrideUrlLoading_0003
-     * @tc.name testWebView_onOverrideUrlLoading0003
-     * @tc.desc test onOverrideUrlLoading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onOverrideUrlLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_onOverrideUrlLoading0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -85,12 +85,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_onOverrideUrlLoading0004
      * @tc.number SUB_ACE_WEB_onOverrideUrlLoading_0004
-     * @tc.name testWebView_onOverrideUrlLoading0004
-     * @tc.desc test onOverrideUrlLoading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onOverrideUrlLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_onOverrideUrlLoading0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -111,12 +111,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_onOverrideUrlLoading0006
      * @tc.number SUB_ACE_WEB_onOverrideUrlLoading_0006
-     * @tc.name testWebView_onOverrideUrlLoading0006
-     * @tc.desc test onOverrideUrlLoading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onOverrideUrlLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_onOverrideUrlLoading0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -137,12 +137,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_onOverrideUrlLoading0007
      * @tc.number SUB_ACE_WEB_onOverrideUrlLoading_0007
-     * @tc.name testWebView_onOverrideUrlLoading0007
-     * @tc.desc test onOverrideUrlLoading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onOverrideUrlLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_onOverrideUrlLoading0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -163,12 +163,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_onOverrideUrlLoading0008
      * @tc.number SUB_ACE_WEB_onOverrideUrlLoading_0008
-     * @tc.name testWebView_onOverrideUrlLoading0007
-     * @tc.desc test onOverrideUrlLoading
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onOverrideUrlLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_onOverrideUrlLoading0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

@@ -43,12 +43,12 @@ export default function customDialogKeyboardAvoidDistance() {
     });
 
     /**
-     * @tc.number    CustomDialogKeyboardAvoidDistance_0100
-     * @tc.name      CustomDialogKeyboardAvoidDistance_0100
-     * @tc.desc      set keyboardAvoidDistance:20vp,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   CustomDialogKeyboardAvoidDistance_0100
+     * @tc.number CustomDialogKeyboardAvoidDistance_0100
+     * @tc.desc   set keyboardAvoidDistance:20vp,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CustomDialogKeyboardAvoidDistance_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('CustomDialogKeyboardAvoidDistance_0100 START');
@@ -87,14 +87,14 @@ export default function customDialogKeyboardAvoidDistance() {
       done();
     });
 
-    /**
-     * @tc.number    customDialogKeyboardAvoidDistance_0200
-     * @tc.name      customDialogKeyboardAvoidDistance_0200
-     * @tc.desc      set keyboardAvoidDistance:undefined,levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+     /**
+      * @tc.name   CustomDialogKeyboardAvoidDistance_0200
+      * @tc.number customDialogKeyboardAvoidDistance_0200
+      * @tc.desc   set keyboardAvoidDistance:undefined,levelUniqueId: Abnormal value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('CustomDialogKeyboardAvoidDistance_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('CustomDialogKeyboardAvoidDistance_0200 START');
       await CommonFunc.sleep(1000);

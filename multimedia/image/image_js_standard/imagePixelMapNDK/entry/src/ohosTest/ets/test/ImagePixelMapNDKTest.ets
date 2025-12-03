@@ -376,13 +376,12 @@ export default function ImagePixelMapNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0100
-         * @tc.name      : createPixelMap
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.return pixelmap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0100
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -400,13 +399,12 @@ export default function ImagePixelMapNDKTest() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0200
-         * @tc.name      : initNativePixelMap
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.initNativePixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0200
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -414,13 +412,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0200', 'initNativePixelMap', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0300
-         * @tc.name      : createAlphaPixelMap
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.createAlphaPixelMap
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0300
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: Function) => {
@@ -428,13 +425,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0300', 'createAlphaPixelMap', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0400
-         * @tc.name      : getBytesNumberPerRow
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.getBytesNumberPerRow
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0400
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -442,13 +438,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0400', 'getBytesNumberPerRow', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0500
-         * @tc.name      : getIsEditable
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.getIsEditable
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0500
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -456,13 +451,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0500', 'getIsEditable', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0600
-         * @tc.name      : isSupportAlpha
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.isSupportAlpha
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0600
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -470,13 +464,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0600', 'isSupportAlpha', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0700
-         * @tc.name      : setAlphaAble
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setAlphaAble
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0700
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -484,13 +477,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0700', 'setAlphaAble', checkResult, 0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0800
-         * @tc.name      : setDensity
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setDensity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0800
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -498,13 +490,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0800', 'setDensity', checkResult, 360);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0900
-         * @tc.name      : getDensity
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.getDensity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0900
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -512,13 +503,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_0900', 'getDensity', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1000
-         * @tc.name      : setOpacity
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setOpacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1000
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -526,13 +516,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1000', 'setOpacity', checkResult, 0.5);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1100
-         * @tc.name      : scale
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.scale
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1100
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -540,13 +529,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1100', 'scale', checkResult, 1.5, 1.5);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1200
-         * @tc.name      : translate
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.translate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1200
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -554,13 +542,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1200', 'translate', checkResult, 2.0, 3.0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1300
-         * @tc.name      : rotate
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.rotate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1300
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -568,13 +555,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1300', 'rotate', checkResult, 90);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1400
-         * @tc.name      : flip
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.flip
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1400
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -582,13 +568,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1400', 'flip', checkResult, 1, 0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1500
-         * @tc.name      : crop
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.crop
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1500
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -596,13 +581,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1500', 'crop', checkResult, 0, 1, 3, 2);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1600
-         * @tc.name      : getImageInfo
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.getImageInfo
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1600
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -610,13 +594,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1600', 'getImageInfo', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1700
-         * @tc.name      : accessPixels
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.accessPixels
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1700
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -624,13 +607,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1700', 'accessPixels', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1800
-         * @tc.name      : unAccessPixels
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.unAccessPixels
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1800
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -638,13 +620,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_1800', 'unAccessPixels', checkResult);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0100
-         * @tc.name      : setAlphaAble_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setAlphaAble
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0100
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -652,13 +633,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0100', 'setAlphaAble', checkResult, 'a');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0200
-         * @tc.name      : setAlphaAble_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setAlphaAble
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0200
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -666,13 +646,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0200', 'setAlphaAble', checkResult, 66);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0300
-         * @tc.name      : setAlphaAble_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setAlphaAble
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0300
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -682,13 +661,12 @@ export default function ImagePixelMapNDKTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0400
-         * @tc.name      : setDensity_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setDensity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0400
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -698,13 +676,12 @@ export default function ImagePixelMapNDKTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0500
-         * @tc.name      : setDensity_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setDensity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0500
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -713,13 +690,12 @@ export default function ImagePixelMapNDKTest() {
                 'density');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0600
-         * @tc.name      : setDensity_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setDensity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0600
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -727,13 +703,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0600', 'setDensity', checkResult, true);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0700
-         * @tc.name      : setOpacity_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setOpacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0700
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -741,13 +716,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0700', 'setOpacity', checkResult, true);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0800
-         * @tc.name      : setOpacity_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setOpacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0800
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -755,13 +729,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0800', 'setOpacity', checkResult, 2);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0900
-         * @tc.name      : setOpacity_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.setOpacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0900
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -771,13 +744,12 @@ export default function ImagePixelMapNDKTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1000
-         * @tc.name      : scale_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.scale
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1000
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -787,13 +759,12 @@ export default function ImagePixelMapNDKTest() {
             }, 1.0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1100
-         * @tc.name      : scale_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.scale
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1100
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -801,13 +772,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1100', 'scale', checkResult, 1.0, null);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1200
-         * @tc.name      : scale_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.scale
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1200
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -815,13 +785,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1200', 'scale', checkResult, true, 1.0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1300
-         * @tc.name      : translate_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.translate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1300
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -831,13 +800,12 @@ export default function ImagePixelMapNDKTest() {
             }, 1.0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1400
-         * @tc.name      : translate_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.translate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1400
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -846,13 +814,12 @@ export default function ImagePixelMapNDKTest() {
                 null);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1500
-         * @tc.name      : translate_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.translate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1500
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -861,13 +828,12 @@ export default function ImagePixelMapNDKTest() {
                 1.0);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1600
-         * @tc.name      : rotate_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.rotate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1600
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -875,13 +841,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1600', 'rotate', checkResult, true);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1700
-         * @tc.name      : rotate_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.rotate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1700
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -889,13 +854,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1700', 'rotate', checkResult, null);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1800
-         * @tc.name      : rotate_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.rotate
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1800
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -903,13 +867,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1800', 'rotate', checkResult, 'a');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1900
-         * @tc.name      : flip_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.flip
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1900
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -919,13 +882,12 @@ export default function ImagePixelMapNDKTest() {
             });
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2000
-         * @tc.name      : flip_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.flip
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2000
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -933,13 +895,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2000', 'flip', checkResult, null);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2100
-         * @tc.name      : flip_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.flip
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2100
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -947,13 +908,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2100', 'flip', checkResult, 'a');
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2200
-         * @tc.name      : crop_1
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.crop
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2200
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -961,13 +921,12 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2200', 'crop', checkResult, 'a', 1, 3, 2);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2300
-         * @tc.name      : crop_2
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.crop
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2300
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -977,13 +936,12 @@ export default function ImagePixelMapNDKTest() {
             }, 3, 2);
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2400
-         * @tc.name      : crop_3
-         * @tc.desc      : 1.createPixelMap
-         *               : 2.crop
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2400
+         * @tc.desc   1.createPixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done:Function) => {
@@ -993,15 +951,12 @@ export default function ImagePixelMapNDKTest() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
-         * @tc.desc      : 1.create pixelmap object by imageSource
-         *                 2.set DecodingOptions
-         *                       desiredSize: {width: 256, height: 256},
-         *                       desiredPixelFormat: RGBA_8888
-         * @tc.size      : MediumTest
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+         * @tc.desc   1.create pixelmap object by imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100";
@@ -1029,12 +984,12 @@ export default function ImagePixelMapNDKTest() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
-         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
-         * @tc.desc      : 1.create pixelmap object by imageSource
-         * @tc.size      : MediumTest
-         * @tc.type      : Functional
-         * @tc.level     : Level 1
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+         * @tc.desc   1.create pixelmap object by imageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200', Level.LEVEL0, async (done: Function) => {
             let testNum = "SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200";

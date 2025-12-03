@@ -54,12 +54,14 @@ export default function comSizeAbilityTest_18() {
       }
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_47
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_47', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_47 START')
       await CommonFunc.sleep(1000);
@@ -98,12 +100,14 @@ export default function comSizeAbilityTest_18() {
       await CommonFunc.sleep(1000);
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_48
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_48', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_48 START')
       await CommonFunc.sleep(1000);
@@ -142,12 +146,14 @@ export default function comSizeAbilityTest_18() {
       await CommonFunc.sleep(1000);
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_49
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_49', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_49 START')
       await CommonFunc.sleep(1000);
@@ -186,12 +192,14 @@ export default function comSizeAbilityTest_18() {
       await CommonFunc.sleep(1000);
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_50
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_50', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_50 START')
       await CommonFunc.sleep(1000);

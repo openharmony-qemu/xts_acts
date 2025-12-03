@@ -54,98 +54,98 @@ export default function webMessageExt() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0100
-    * @tc.name       : testWebMessageExtSetType001
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0100
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType001", 119930)
       Utils.registerEvent("testWebMessageExtSetType001", '17100014', 119940, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0200
-    * @tc.name       : testWebMessageExtSetType002
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType002
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0200
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType002", 119930)
       Utils.registerEvent("testWebMessageExtSetType002", 1, 119950, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0300
-    * @tc.name       : testWebMessageExtSetType003
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType003
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0300
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType003", 119930)
       Utils.registerEvent("testWebMessageExtSetType003", 2, 119960, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0400
-    * @tc.name       : testWebMessageExtSetType004
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType004
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0400
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType004", 119930)
       Utils.registerEvent("testWebMessageExtSetType004", 3, 119970, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0500
-    * @tc.name       : testWebMessageExtSetType005
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType005
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0500
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType005", 119930)
       Utils.registerEvent("testWebMessageExtSetType005", 4, 119980, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0600
-    * @tc.name       : testWebMessageExtSetType006
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType006
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0600
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType006", 119930)
       Utils.registerEvent("`testWebMessageExtSetType006`", 5, 119990, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBMESSAGEEXT_SETTYPE_0700
-    * @tc.name       : testWebMessageExtSetType007
-    * @tc.desc       : test WebMessageExtSetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebMessageExtSetType007
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_0700
+     * @tc.desc   test WebMessageExtSetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebMessageExtSetType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetType007", 119930)
       Utils.registerEvent("testWebMessageExtSetType007", 6, 120000, done);

@@ -64,6 +64,8 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
   describe('displayAndWindowRefactorInterface_test', () => {
     console.log('describe displayAndWindowRefactorInterface_test start!!!')
     let isPCStatus: string = '';
+    let isAutoWindow: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       console.info('displayAndWindowRefactorInterface_test beforeAll begin');
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -71,15 +73,23 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       console.info('displayAndWindowRefactorInterface_test beforeAll end');
+
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0090
-     * @tc.name      : testCreateWindow_Type_Dialog
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testCreateWindow_Type_Dialog
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0090
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateWindow_Type_Dialog', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testCreateWindow_Type_Dialog';
@@ -104,12 +114,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0150
-     * @tc.name      : testCreateWindow_Same_Name_Wins_Promise
-     * @tc.desc      : Verify the scenario of creating a window with duplicate IDs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateWindow_Same_Name_Wins_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0150
+     * @tc.desc   Verify the scenario of creating a window with duplicate IDs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindow_Same_Name_Wins_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testCreateWindow_Same_Name_Wins_Promise';
@@ -150,12 +160,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0130
-     * @tc.name      : testCreateWindow_TwoTimes_TypeDialog
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateWindow_TwoTimes_TypeDialog
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0130
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindow_TwoTimes_TypeDialog', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCreateWindow_TwoTimes_TypeDialog';
@@ -204,12 +214,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0160
-     * @tc.name      : testCreateWindow_Type_Dialog_Win_Callback
-     * @tc.desc      : Verify the scenario of creating the system type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateWindow_Type_Dialog_Win_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0160
+     * @tc.desc   Verify the scenario of creating the system type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindow_Type_Dialog_Win_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (done: Function) => {
       let caseName = 'testCreateWindow_Type_Dialog_Win_Callback';
@@ -251,12 +261,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0140
-     * @tc.name      : testCreateWindow_Same_Name_Wins_Callback
-     * @tc.desc      : Verify the scenario of creating a window with duplicate IDs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateWindow_Same_Name_Wins_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0140
+     * @tc.desc   Verify the scenario of creating a window with duplicate IDs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindow_Same_Name_Wins_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCreateWindow_Same_Name_Wins_Callback';
@@ -301,12 +311,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0660
-     * @tc.name      : testGetWindowAvoidArea_Type_System
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidArea_Type_System
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0660
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidArea_Type_System', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_System';
@@ -337,12 +347,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0640
-     * @tc.name      : testGetWindowAvoidArea_Type_CutOut
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidArea_Type_CutOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0640
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidArea_Type_CutOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_CutOut';
@@ -373,12 +383,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0670
-     * @tc.name      : testGetWindowAvoidArea_Type_System_Gesture
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidArea_Type_System_Gesture
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0670
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidArea_Type_System_Gesture', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_System_Gesture';
@@ -408,12 +418,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0650
-     * @tc.name      : testGetWindowAvoidArea_Type_Keyboard
-     * @tc.desc      : Obtain the area that the window content avoids
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowAvoidArea_Type_Keyboard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0650
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowAvoidArea_Type_Keyboard', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_Keyboard';
@@ -443,12 +453,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0690
-     * @tc.name      : testGetWindowPropertiesTest
-     * @tc.desc      : Gets the properties of the current window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetWindowPropertiesTest
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0690
+     * @tc.desc   Gets the properties of the current window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWindowPropertiesTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowPropertiesTest';
@@ -488,12 +498,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0520
-     * @tc.name      : testGetLastWindow_Promise
-     * @tc.desc      : Get the final show window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testGetLastWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0520
+     * @tc.desc   Get the final show window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetLastWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testGetLastWindow_Promise';
@@ -516,12 +526,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0510
-     * @tc.name      : testGetLastWindow_Callback
-     * @tc.desc      : Get the final show window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLastWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0510
+     * @tc.desc   Get the final show window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetLastWindow_Callback';
@@ -548,12 +558,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2120
-     * @tc.name      : testShowWindowTest_Callback_Form
-     * @tc.desc      : show window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testShowWindowTest_Callback_Form
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2120
+     * @tc.desc   show window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShowWindowTest_Callback_Form', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testShowWindowTest_Callback_Form';
@@ -577,12 +587,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2110
-     * @tc.name      : testShowWindowTest_Promise_Form
-     * @tc.desc      : show window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testShowWindowTest_Promise_Form
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2110
+     * @tc.desc   show window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShowWindowTest_Promise_Form', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testShowWindowTest_Promise_Form';
@@ -616,12 +626,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0980
-     * @tc.name      : testMoveWindowTo_X_Val300_Y_Val300_Promise
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_X_Val300_Y_Val300_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0980
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_X_Val300_Y_Val300_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testMoveWindowTo_X_Val300_Y_Val300_Promise';
@@ -658,12 +668,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0940
-     * @tc.name      : testMoveWindowTo_X_Val100_Y_Val50_Promise
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_X_Val100_Y_Val50_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0940
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_X_Val100_Y_Val50_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testMoveWindowTo_X_Val100_Y_Val50_Promise';
@@ -700,12 +710,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0960
-     * @tc.name      : testMoveWindowTo_X_Val20000_Y_Val20000_Promise
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_X_Val20000_Y_Val20000_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0960
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_X_Val20000_Y_Val20000_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowTo_X_Val20000_Y_Val20000_Promise';
@@ -742,12 +752,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0920
-     * @tc.name      : testMoveWindowTo_XYVal_Is_Negative_Num_Promise
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_XYVal_Is_Negative_Num_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0920
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_XYVal_Is_Negative_Num_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowTo_XYVal_Is_Negative_Num_Promise';
@@ -784,12 +794,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0970
-     * @tc.name      : testMoveWindowTo_X_Val300_Y_Va300_Callback
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_X_Val300_Y_Va300_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0970
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_X_Val300_Y_Va300_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_X_Val300_Y_Va300_Callback';
@@ -831,12 +841,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0930
-     * @tc.name      : testMoveWindowTo_X_Val100_Y_Va50_Callback
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_X_Val100_Y_Va50_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0930
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_X_Val100_Y_Va50_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_X_Val100_Y_Va50_Callback';
@@ -878,12 +888,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0950
-     * @tc.name      : testMoveWindowTo_X_Val20000_Y_Val20000_Callback
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_X_Val20000_Y_Val20000_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0950
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_X_Val20000_Y_Val20000_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_X_Val20000_Y_Val20000_Callback';
@@ -924,12 +934,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0910
-     * @tc.name      : testMoveWindowTo_XYVal_Is_Negative_Num_Callback
-     * @tc.desc      : Set the position of a window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowTo_XYVal_Is_Negative_Num_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0910
+     * @tc.desc   Set the position of a window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowTo_XYVal_Is_Negative_Num_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testMoveWindowTo_XYVal_Is_Negative_Num_Callback';
@@ -970,12 +980,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1060
-     * @tc.name      : testResize_X_Val200_Y_Val600_Promise
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_X_Val200_Y_Val600_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1060
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_X_Val200_Y_Val600_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async  ()=> {
       let caseName = 'testResize_X_Val200_Y_Val600_Promise';
@@ -1010,12 +1020,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1040
-     * @tc.name      : testResize_X_Val20000_Y_Val20000_Promise
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_X_Val20000_Y_Val20000_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1040
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_X_Val20000_Y_Val20000_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testResize_X_Val20000_Y_Val20000_Promise';
@@ -1050,12 +1060,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1020
-     * @tc.name      : testResize_XY_Value_Is_Zero_Promise
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_XY_Value_Is_Zero_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1020
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_XY_Value_Is_Zero_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testResize_XY_Value_Is_Zero_Promise';
@@ -1091,12 +1101,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1010
-     * @tc.name      : testResize_XY_Value_Is_Negative_Num_Promise
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_XY_Value_Is_Negative_Num_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1010
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_XY_Value_Is_Negative_Num_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testResize_XY_Value_Is_Negative_Num_Promise';
@@ -1133,12 +1143,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1030
-     * @tc.name      : testResize_X_Val100_Y_Val100_Multi_Set_Promise
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_X_Val100_Y_Val100_Multi_Set_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1030
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_X_Val100_Y_Val100_Multi_Set_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async  ()=>{
       let caseName = 'testResize_X_Val100_Y_Val100_Multi_Set_Promise';
@@ -1170,12 +1180,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1050
-     * @tc.name      : testResize_X_Val200_Y_Val200_Callback
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_X_Val200_Y_Val200_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1050
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_X_Val200_Y_Val200_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_X_Val200_Y_Val200_Callback';
@@ -1217,12 +1227,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       ;
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name      : testResize_Set_Diff_XY_In_Turn
-     * @tc.desc      : Set the size of a window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResize_Set_Diff_XY_In_Turn
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   Set the size of a window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_Set_Diff_XY_In_Turn', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_Set_Diff_XY_In_Turn';
@@ -1256,12 +1266,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1910
-     * @tc.name      : testSetWindowSystemBarEnable_Empty_Promise
-     * @tc.desc      : Set the visible mode of navigation bar and status bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnable_Empty_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1910
+     * @tc.desc   Set the visible mode of navigation bar and status bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnable_Empty_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testSetWindowSystemBarEnable_Empty_Promise';
@@ -1293,12 +1303,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1920
-     * @tc.name      : testSetWindowSystemBarEnable_StatusAndNavigation_Promise
-     * @tc.desc      : Set the visible mode of navigation bar and status bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnable_StatusAndNavigation_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1920
+     * @tc.desc   Set the visible mode of navigation bar and status bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnable_StatusAndNavigation_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testSetWindowSystemBarEnable_StatusAndNavigation_Promise';
@@ -1330,12 +1340,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1930
-     * @tc.name      : testSetWindowSystemBarEnable_Status_Promise
-     * @tc.desc      : Set the visible mode of navigation bar and status bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnable_Status_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1930
+     * @tc.desc   Set the visible mode of navigation bar and status bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnable_Status_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testSetWindowSystemBarEnable_Status_Promise';
@@ -1367,12 +1377,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1940
-     * @tc.name      : testSetWindowSystemBarEnable_Navigation_Promise
-     * @tc.desc      : Set the visible mode of navigation bar and status bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnable_Navigation_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1940
+     * @tc.desc   Set the visible mode of navigation bar and status bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnable_Navigation_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testSetWindowSystemBarEnable_Navigation_Promise';
@@ -1404,12 +1414,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1950
-     * @tc.name      : testSetWindowSystemBarEnable_StatusAndNavigation_Callback
-     * @tc.desc      : Set the visible mode of navigation bar and status bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnable_StatusAndNavigation_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1950
+     * @tc.desc   Set the visible mode of navigation bar and status bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnable_StatusAndNavigation_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowSystemBarEnable_StatusAndNavigation_Callback';
@@ -1453,12 +1463,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1960
-     * @tc.name      : testSetWindowSystemBarEnable_Empty_Callback
-     * @tc.desc      : Set the visible mode of navigation bar and status bar
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowSystemBarEnable_Empty_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1960
+     * @tc.desc   Set the visible mode of navigation bar and status bar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowSystemBarEnable_Empty_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowSystemBarEnable_Empty_Callback';
@@ -1502,12 +1512,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0130
-     * @tc.name      : testCreateWindow_Not_Exist_WinType_Promise
-     * @tc.desc      : Verify the scenario of creating a window of a type that does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateWindow_Not_Exist_WinType_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0130
+     * @tc.desc   Verify the scenario of creating a window of a type that does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindow_Not_Exist_WinType_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testCreateWindow_Not_Exist_WinType_Promise';
@@ -1533,12 +1543,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0120
-     * @tc.name      : testCreateWindow_Not_Exist_WinType_Callback
-     * @tc.desc      : Verify the scenario of creating a window of a type that does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateWindow_Not_Exist_WinType_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0120
+     * @tc.desc   Verify the scenario of creating a window of a type that does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateWindow_Not_Exist_WinType_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCreateWindow_Not_Exist_WinType_Callback';
@@ -1569,12 +1579,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       };
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1770
-     * @tc.name      : testSetWindowLayoutFullScreen_True_Promise
-     * @tc.desc      : set the property of the window can layout in full screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLayoutFullScreen_True_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1770
+     * @tc.desc   set the property of the window can layout in full screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLayoutFullScreen_True_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testSetWindowLayoutFullScreen_True_Promise';
@@ -1614,12 +1624,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1780
-     * @tc.name      : testSetWindowLayoutFullScreen_False_Promise
-     * @tc.desc      : set the property of the window can layout in full screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLayoutFullScreen_False_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1780
+     * @tc.desc   set the property of the window can layout in full screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLayoutFullScreen_False_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testSetWindowLayoutFullScreen_False_Promise';
@@ -1660,12 +1670,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1790
-     * @tc.name      : testSetWindowLayoutFullScreen_True_Callback
-     * @tc.desc      : set the property of the window can layout in full screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLayoutFullScreen_True_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1790
+     * @tc.desc   set the property of the window can layout in full screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLayoutFullScreen_True_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowLayoutFullScreen_True_Callback';
@@ -1721,12 +1731,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
-     * @tc.name      : testSetWindowLayoutFullScreen_False_Callback
-     * @tc.desc      : set the property of the window can layout in full screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLayoutFullScreen_False_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
+     * @tc.desc   set the property of the window can layout in full screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLayoutFullScreen_False_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowLayoutFullScreen_False_Callback';
@@ -1777,12 +1787,12 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
-     * @tc.name      : testEnumWindowStageEventTypeReName_Test_001.
-     * @tc.desc      : To test the enum value of WindowStageEventType.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testEnumWindowStageEventTypeReName_Test_001
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
+     * @tc.desc   To test the enum value of WindowStageEventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testEnumWindowStageEventTypeReName_Test_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async  ()=> {
       console.info('test the enum value of WindowStageEventType begin');

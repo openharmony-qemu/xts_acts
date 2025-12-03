@@ -40,12 +40,12 @@ export default function gridColJsunit() {
     });
 
     /**
+     * @tc.name   gridColTest_0001
      * @tc.number gridColTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set order values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set order values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridColTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('gridColTest_0001 START');
@@ -59,12 +59,12 @@ export default function gridColJsunit() {
     });
 
     /**
+     * @tc.name   gridColTest_0002
      * @tc.number gridColTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set gridColOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set gridColOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridColTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('gridColTest_0002 START');
@@ -78,12 +78,12 @@ export default function gridColJsunit() {
     });
 
     /**
+     * @tc.name   gridColTest_0003
      * @tc.number gridColTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set span values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set span values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridColTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('gridColTest_0003 START');
@@ -97,12 +97,12 @@ export default function gridColJsunit() {
     });
 
     /**
+     * @tc.name   gridColTest_0004
      * @tc.number gridColTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Change order values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change order values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridColTest_0004', Level.LEVEL0, async (done: Function) => {
 

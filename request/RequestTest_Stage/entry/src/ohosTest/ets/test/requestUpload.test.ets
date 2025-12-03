@@ -176,12 +176,12 @@ export default function requestUploadJSUnit() {
     };
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_UploadTaskCreation_0300
-     * @tc.name      SUB_REQUEST_FileUpload_UploadTaskCreation_0300
-     * @tc.desc      multiples files upload.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_UploadTaskCreation_0300
+     * @tc.number SUB_REQUEST_FileUpload_UploadTaskCreation_0300
+     * @tc.desc   multiples files upload.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_UploadTaskCreation_0300', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_UploadTaskCreation_0300 is starting-----------------------');
@@ -229,12 +229,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_UploadTaskCreation_0400
-     * @tc.name      SUB_REQUEST_FileUpload_UploadTaskCreation_0400
-     * @tc.desc      multiples files upload.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_UploadTaskCreation_0400
+     * @tc.number SUB_REQUEST_FileUpload_UploadTaskCreation_0400
+     * @tc.desc   multiples files upload.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_UploadTaskCreation_0400', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_UploadTaskCreation_0400 is starting-----------------------');
@@ -270,12 +270,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_UploadTaskCreation_0500
-     * @tc.name      SUB_REQUEST_FileUpload_UploadTaskCreation_0500
-     * @tc.desc      multiples files upload.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_UploadTaskCreation_0500
+     * @tc.number SUB_REQUEST_FileUpload_UploadTaskCreation_0500
+     * @tc.desc   multiples files upload.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_UploadTaskCreation_0500', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_UploadTaskCreation_0500 is starting-----------------------');
@@ -349,12 +349,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_UploadTaskCreation_0700
-     * @tc.name      SUB_REQUEST_FileUpload_UploadTaskCreation_0700
-     * @tc.desc      upload multiples tasks.
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_UploadTaskCreation_0700
+     * @tc.number SUB_REQUEST_FileUpload_UploadTaskCreation_0700
+     * @tc.desc   upload multiples tasks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_UploadTaskCreation_0700', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_UploadTaskCreation_0700 is starting-----------------------');
@@ -396,12 +396,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_other_0100
-     * @tc.name      SUB_REQUEST_FileUpload_other_0100
-     * @tc.desc      the not POST or PUT method.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_other_0100
+     * @tc.number SUB_REQUEST_FileUpload_other_0100
+     * @tc.desc   the not POST or PUT method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_other_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_other_0100 is starting-----------------------');
@@ -439,12 +439,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_post_0100
-     * @tc.name      SUB_REQUEST_FileUpload_post_0100
-     * @tc.desc      POST method upload.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_post_0100
+     * @tc.number SUB_REQUEST_FileUpload_post_0100
+     * @tc.desc   POST method upload.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_post_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_post_0100 is starting-----------------------');
@@ -481,12 +481,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_OnSuccess_0100
-     * @tc.name      SUB_REQUEST_FileUpload_OnSuccess_0100
-     * @tc.desc      the onComplete opens.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_OnSuccess_0100
+     * @tc.number SUB_REQUEST_FileUpload_OnSuccess_0100
+     * @tc.desc   the onComplete opens.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_OnSuccess_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_OnSuccess_0100 is starting-----------------------');
@@ -521,12 +521,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_MonitoringProgress_0100
-     * @tc.name      SUB_REQUEST_FileUpload_MonitoringProgress_0100
-     * @tc.desc      the onProgress interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_MonitoringProgress_0100
+     * @tc.number SUB_REQUEST_FileUpload_MonitoringProgress_0100
+     * @tc.desc   the onProgress interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_MonitoringProgress_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_MonitoringProgress_0100 is starting-----------------------');
@@ -561,12 +561,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_MonitoringProgress_0200
-     * @tc.name      SUB_REQUEST_FileUpload_MonitoringProgress_0200
-     * @tc.desc      the on-off progress interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_MonitoringProgress_0200
+     * @tc.number SUB_REQUEST_FileUpload_MonitoringProgress_0200
+     * @tc.desc   the on-off progress interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_MonitoringProgress_0200', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_MonitoringProgress_0200 is starting-----------------------');
@@ -599,12 +599,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_MonitoringProgress_0300
-     * @tc.name      SUB_REQUEST_FileUpload_MonitoringProgress_0300
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_MonitoringProgress_0300
+     * @tc.number SUB_REQUEST_FileUpload_MonitoringProgress_0300
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_MonitoringProgress_0300', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_MonitoringProgress_0300 is starting-----------------------');
@@ -640,12 +640,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_MonitoringProgress_0400
-     * @tc.name      SUB_REQUEST_FileUpload_MonitoringProgress_0400
-     * @tc.desc      the offHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_MonitoringProgress_0400
+     * @tc.number SUB_REQUEST_FileUpload_MonitoringProgress_0400
+     * @tc.desc   the offHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_MonitoringProgress_0400', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_MonitoringProgress_0400 is starting-----------------------');
@@ -678,12 +678,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_MonitoringProgress_0600
-     * @tc.name      SUB_REQUEST_FileUpload_MonitoringProgress_0600
-     * @tc.desc      the off interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_MonitoringProgress_0600
+     * @tc.number SUB_REQUEST_FileUpload_MonitoringProgress_0600
+     * @tc.desc   the off interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_MonitoringProgress_0600', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_MonitoringProgress_0600 is starting-----------------------');
@@ -716,12 +716,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUESdT_FileUpload_OnFail_0100
-     * @tc.name      SUB_REQUESdT_FileUpload_OnFail_0100
-     * @tc.desc      the onFailed pass.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_OnFail_0100
+     * @tc.number SUB_REQUESdT_FileUpload_OnFail_0100
+     * @tc.desc   the onFailed pass.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_OnFail_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_OnFail_0100 is starting-----------------------');
@@ -768,12 +768,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_OffFail_0100
-     * @tc.name      SUB_REQUEST_FileUpload_OffFail_0100
-     * @tc.desc      the offFailed fail.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_OffFail_0100
+     * @tc.number SUB_REQUEST_FileUpload_OffFail_0100
+     * @tc.desc   the offFailed fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_OffFail_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_OffFail_0100 is starting-----------------------');
@@ -815,12 +815,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_offSuccess_0100
-     * @tc.name      SUB_REQUEST_FileUpload_offSuccess_0100
-     * @tc.desc      the onComplete close.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_offSuccess_0100
+     * @tc.number SUB_REQUEST_FileUpload_offSuccess_0100
+     * @tc.desc   the onComplete close.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_offSuccess_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_offSuccess_0100 is starting-----------------------');
@@ -853,12 +853,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_DeletingTask_0100
-     * @tc.name      SUB_REQUEST_FileUpload_DeletingTask_0100
-     * @tc.desc      the remove task.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_DeletingTask_0100
+     * @tc.number SUB_REQUEST_FileUpload_DeletingTask_0100
+     * @tc.desc   the remove task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_DeletingTask_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_FileUpload_DeletingTask_0100 is starting-----------------------');
@@ -882,12 +882,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_ResponseBody_0100
-     * @tc.name      SUB_REQUEST_FileUpload_ResponseBody_0100
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_ResponseBody_0100
+     * @tc.number SUB_REQUEST_FileUpload_ResponseBody_0100
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_ResponseBody_0100', Level.LEVEL2, async (done: Function) => {
       let config: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -936,12 +936,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_ResponseBody_0200
-     * @tc.name      SUB_REQUEST_FileUpload_ResponseBody_0200
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_ResponseBody_0200
+     * @tc.number SUB_REQUEST_FileUpload_ResponseBody_0200
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_ResponseBody_0200', Level.LEVEL2, async (done: Function) => {
       if (deviceinfo.deviceType === 'wearable') {
@@ -995,12 +995,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_FileUpload_ResponseBody_0400
-     * @tc.name      SUB_REQUEST_FileUpload_ResponseBody_0400
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_FileUpload_ResponseBody_0400
+     * @tc.number SUB_REQUEST_FileUpload_ResponseBody_0400
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_FileUpload_ResponseBody_0400', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1051,12 +1051,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_0100
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_0100
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_0100
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_0100
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_0100', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1092,12 +1092,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_0200
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_0200
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_0200
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_0200
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_0200', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1133,12 +1133,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_0300
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_0300
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_0300
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_0300
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_0300', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1173,12 +1173,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_0700
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_0700
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_0700
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_0700
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_0700', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1213,12 +1213,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_0800
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_0800
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_0800
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_0800
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_0800', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1253,12 +1253,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_0900
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_0900
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_0900
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_0900
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_0900', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1293,12 +1293,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_1000
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_1000
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_1000
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_1000
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_1000', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1333,12 +1333,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_1100
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_1100
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_1100
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_1100
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_1100', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1373,12 +1373,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_1200
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_1200
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_1200
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_1200
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_1200', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1414,12 +1414,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_1300
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_1300
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_1300
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_1300
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_1300', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1455,12 +1455,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_1400
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_1400
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_1400
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_1400
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_1400', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1496,12 +1496,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_UpLoadFile_Multipart_Supported_1500
-     * @tc.name      SUB_Request_UpLoadFile_Multipart_Supported_1500
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_UpLoadFile_Multipart_Supported_1500
+     * @tc.number SUB_Request_UpLoadFile_Multipart_Supported_1500
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_UpLoadFile_Multipart_Supported_1500', Level.LEVEL2, async (done: Function) => {
       let config_multi: request.UploadConfig = JSON.parse(JSON.stringify(uploadConfig));
@@ -1537,12 +1537,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_uploadFile_STAGE_API_CALLBACK_0001
-     * @tc.name    SUB_REQUEST_uploadFile_STAGE_API_CALLBACK_0001
-     * @tc.desc      Starts a upload task.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_REQUEST_uploadFile_STAGE_API_CALLBACK_0001
+     * @tc.number SUB_REQUEST_uploadFile_STAGE_API_CALLBACK_0001
+     * @tc.desc   Starts a upload task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_uploadFile_STAGE_API_CALLBACK_0001', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_REQUEST_uploadFile_STAGE_API_CALLBACK_0001 is starting-----------------------");
@@ -1585,12 +1585,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_uploadFile_STAGE_API_PROMISE_0001
-     * @tc.name    SUB_REQUEST_uploadFile_STAGE_API_PROMISE_0001
-     * @tc.desc      Starts a upload task.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_REQUEST_uploadFile_STAGE_API_PROMISE_0001
+     * @tc.number SUB_REQUEST_uploadFile_STAGE_API_PROMISE_0001
+     * @tc.desc   Starts a upload task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_uploadFile_STAGE_API_PROMISE_0001', Level.LEVEL2, async (done: Function) => {
       console.info("-----------------------SUB_REQUEST_uploadFile_STAGE_API_PROMISE_0001 is starting-----------------------");
@@ -1617,12 +1617,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_DELETE_0001
-     * @tc.name    SUB_REQUEST_UPLOAD_API_DELETE_0001
-     * @tc.desc      Delete the upload task.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_REQUEST_UPLOAD_API_DELETE_0001
+     * @tc.number SUB_REQUEST_UPLOAD_API_DELETE_0001
+     * @tc.desc   Delete the upload task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_DELETE_0001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_DELETE_0001 is starting-----------------------");
@@ -1655,12 +1655,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_UPLOAD_API_DELETE_0002
-     * @tc.name    SUB_REQUEST_UPLOAD_API_DELETE_0002
-     * @tc.desc      Delete the upload task.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_REQUEST_UPLOAD_API_DELETE_0002
+     * @tc.number SUB_REQUEST_UPLOAD_API_DELETE_0002
+     * @tc.desc   Delete the upload task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_UPLOAD_API_DELETE_0002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_DELETE_0002 is starting-----------------------");
@@ -1685,12 +1685,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_FileUpload_Default_0100
-     * @tc.name      SUB_Request_FileUpload_Default_0100
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_FileUpload_Default_0100
+     * @tc.number SUB_Request_FileUpload_Default_0100
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_FileUpload_Default_0100', Level.LEVEL2, async (done: Function) => {
       let config: request.UploadConfig = {
@@ -1731,12 +1731,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_upload_headerReceive_0100
-     * @tc.name      SUB_REQUEST_upload_headerReceive_0100
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_REQUEST_upload_headerReceive_0100
+     * @tc.number SUB_REQUEST_upload_headerReceive_0100
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_upload_headerReceive_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_REQUEST_upload_headerReceive_0100 is starting-----------------------');
@@ -1772,12 +1772,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_Agent_MultipleFiles_0100
-     * @tc.name      SUB_Request_Agent_MultipleFiles_0100
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_Agent_MultipleFiles_0100
+     * @tc.number SUB_Request_Agent_MultipleFiles_0100
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_MultipleFiles_0100', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_Request_Agent_MultipleFiles_0100 is starting-----------------------');
@@ -1826,12 +1826,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_Agent_MultipleFiles_0200
-     * @tc.name      SUB_Request_Agent_MultipleFiles_0200
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_Agent_MultipleFiles_0200
+     * @tc.number SUB_Request_Agent_MultipleFiles_0200
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_MultipleFiles_0200', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_Request_Agent_MultipleFiles_0200 is starting-----------------------');
@@ -1880,12 +1880,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_Agent_MultipleFiles_0300
-     * @tc.name      SUB_Request_Agent_MultipleFiles_0300
-     * @tc.desc      the onHeaderReceive interfaces.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_Agent_MultipleFiles_0300
+     * @tc.number SUB_Request_Agent_MultipleFiles_0300
+     * @tc.desc   the onHeaderReceive interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_MultipleFiles_0300', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_Request_Agent_MultipleFiles_0300 is starting-----------------------');
@@ -1934,12 +1934,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_Agent_MultipleFiles_0400
-     * @tc.name      SUB_Request_Agent_MultipleFiles_0400
-     * @tc.desc      multipart is true and can pause resume.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_Agent_MultipleFiles_0400
+     * @tc.number SUB_Request_Agent_MultipleFiles_0400
+     * @tc.desc   multipart is true and can pause resume.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_MultipleFiles_0400', Level.LEVEL2, async (done: Function) => {
       console.info('-----------------------SUB_Request_Agent_MultipleFiles_0400 is starting-----------------------');
@@ -1981,12 +1981,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_FileUpload_ErrorCode_0100
-     * @tc.name      SUB_Request_FileUpload_ErrorCode_0100
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_FileUpload_ErrorCode_0100
+     * @tc.number SUB_Request_FileUpload_ErrorCode_0100
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_FileUpload_ErrorCode_0100', Level.LEVEL2, async (done: Function) => {
       let config: request.UploadConfig = {
@@ -2016,12 +2016,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_FileUpload_ErrorCode_0200
-     * @tc.name      SUB_Request_FileUpload_ErrorCode_0200
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_FileUpload_ErrorCode_0200
+     * @tc.number SUB_Request_FileUpload_ErrorCode_0200
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_FileUpload_ErrorCode_0200', Level.LEVEL2, async (done: Function) => {
       let config: request.UploadConfig = {
@@ -2045,12 +2045,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_FileUpload_ErrorCode_0300
-     * @tc.name      SUB_Request_FileUpload_ErrorCode_0300
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_FileUpload_ErrorCode_0300
+     * @tc.number SUB_Request_FileUpload_ErrorCode_0300
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_FileUpload_ErrorCode_0300', Level.LEVEL2, async (done: Function) => {
       let config: request.UploadConfig = {
@@ -2080,12 +2080,12 @@ export default function requestUploadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_Request_FileUpload_ErrorCode_0400
-     * @tc.name      SUB_Request_FileUpload_ErrorCode_0400
-     * @tc.desc      different index,begins and ends.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Request_FileUpload_ErrorCode_0400
+     * @tc.number SUB_Request_FileUpload_ErrorCode_0400
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_FileUpload_ErrorCode_0400', Level.LEVEL2, async (done: Function) => {
       let config: request.UploadConfig = {

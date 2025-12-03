@@ -42,14 +42,14 @@ export default function webHitTestTypeEnumTest() {
       console.info('webKeyboardController afterEach end');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBHITTESTTYPE_ENUM_0100
-    * @tc.name        : webKeyboardControllerStatic002
-    * @tc.desc        : test the value of WebHitTestType.EditText is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   webKeyboardControllerStatic002
+     * @tc.number SUB_WEB_WEBHITTESTTYPE_ENUM_0100
+     * @tc.desc   test the value of WebHitTestType.EditText is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('webKeyboardControllerStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.pageInteractionFive.test.static', 'EntryAbility');
@@ -128,6 +128,14 @@ export default function webHitTestTypeEnumTest() {
       done();
     })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitonSwitchNextPage", 10)

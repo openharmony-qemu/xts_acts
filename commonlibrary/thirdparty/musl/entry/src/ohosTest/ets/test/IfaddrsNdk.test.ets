@@ -26,12 +26,12 @@ export default function muslIfaddrsNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IFADDRS_GETIFADDRS_0100
-     * @tc.name       : testMuslIfAddrsGetIfAddrs001
-     * @tc.desc       : test getifaddrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIfAddrsGetIfAddrs001
+     * @tc.number SUB_THIRDPARTY_MUSL_IFADDRS_GETIFADDRS_0100
+     * @tc.desc   test getifaddrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIfAddrsGetIfAddrs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = ifAddrs.getIfAddrs();
@@ -40,12 +40,12 @@ export default function muslIfaddrsNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IFADDRS_FREEIFADDRS_0200
-     * @tc.name       : testMuslIfAddrsFreeIfAddrs002
-     * @tc.desc       : test freeifaddrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIfAddrsFreeIfAddrs002
+     * @tc.number SUB_THIRDPARTY_MUSL_IFADDRS_FREEIFADDRS_0200
+     * @tc.desc   test freeifaddrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIfAddrsFreeIfAddrs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: string = ifAddrs.freeIfAddrs();

@@ -68,9 +68,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getNetworkState_Async_0700
-     * @tc.name    SlotId parameter input is -1, test getNetworkState() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getNetworkState_Async_0700
+     * @tc.number Telephony_NetworkSearch_getNetworkState_Async_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkState_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.getNetworkState(SLOT_2, (err, data) => {
@@ -93,9 +96,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getRadioTech_Async_0400
-     * @tc.name    SlotId parameter input is -1, test getRadioTech() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getRadioTech_Async_0400
+     * @tc.number Telephony_NetworkSearch_getRadioTech_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getRadioTech_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.getRadioTech(SLOT_2, (err, data) => {
@@ -111,9 +117,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getSignalInformation_Async_0400
-     * @tc.name    SlotId parameter input is -1, test getSignalInformation() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Async_0400
+     * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getSignalInformation_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.getSignalInformation(SLOT_2, (err, data) => {
@@ -134,9 +143,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0400
-     * @tc.name    SlotId parameter input is -1, test getISOCountryCodeForNetwork() query function and datalengtch = 0
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0400
+     * @tc.number Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.getISOCountryCodeForNetwork(SLOT_2, (err, data) => {
@@ -154,9 +166,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0400
-     * @tc.name    SlotId parameter input is -1, test getISOCountryCodeForNetwork() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0400
+     * @tc.number Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -174,9 +189,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getNetworkSelectionMode_Async_0500
-     * @tc.name    SlotId parameter input is -1, test getNetworkSelectionMode() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getNetworkSelectionMode_Async_0500
+     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkSelectionMode_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.getNetworkSelectionMode(SLOT_2, (err, res) => {
@@ -193,9 +211,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0500
-     * @tc.name    SlotId parameter input is -1, test getNetworkSelectionMode() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0500
+     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -211,9 +232,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getNetworkState_Promise_0700
-     * @tc.name    SlotId parameter input is -1, test getNetworkState() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getNetworkState_Promise_0700
+     * @tc.number Telephony_NetworkSearch_getNetworkState_Promise_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getNetworkState_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -229,9 +253,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getRadioTech_Promise_0400
-     * @tc.name    SlotId parameter input is -1, test getRadioTech() query function go to the error
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getRadioTech_Promise_0400
+     * @tc.number Telephony_NetworkSearch_getRadioTech_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getRadioTech_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -247,9 +274,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getSignalInformation_Promise_0400
-     * @tc.name    SlotId parameter input is -1, test getSignalInformation() query function return the datalength is 0
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Promise_0400
+     * @tc.number Telephony_NetworkSearch_getSignalInformation_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getSignalInformation_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -267,9 +297,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getOperatorName_Async_0400
-     * @tc.name    Verify the abnormal input of "slotId", test getOperatorName() to view the callback result
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getOperatorName_Async_0400
+     * @tc.number Telephony_NetworkSearch_getOperatorName_Async_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getOperatorName_Async_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.getOperatorName(SLOT_2, (err, data) => {
@@ -286,9 +319,12 @@ describe('ActsNetworkSearchTest',  () => {
     })
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getOperatorName_Promise_0400
-     * @tc.name    Verify the abnormal input of "slotId", test getOperatorName() to view the callback result
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_getOperatorName_Promise_0400
+     * @tc.number Telephony_NetworkSearch_getOperatorName_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getOperatorName_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -303,11 +339,14 @@ describe('ActsNetworkSearchTest',  () => {
         }
     })
 
-    /**
-     * @tc.number  Telephony_NetworkSearch_getOperatorName_Async_0500
-     * @tc.name    testGetOperatorName_0500
-     * @tc.desc    Test getOperatorName api by callback.
-     */
+     /**
+      * @tc.name   Telephony_NetworkSearch_getOperatorName_Async_0500
+      * @tc.number Telephony_NetworkSearch_getOperatorName_Async_0500
+      * @tc.desc   Test getOperatorName api by callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('Telephony_NetworkSearch_getOperatorName_Async_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
         radio.getOperatorName(0, (err, data) => {
             if (err) {
@@ -323,9 +362,12 @@ describe('ActsNetworkSearchTest',  () => {
     })
 
     /**
-     * @tc.number  Telephony_NetworkSearch_getOperatorName_Async_0600
-     * @tc.name    testGetOperatorName_0600
-     * @tc.desc    Test getOperatorName api by promise.
+     * @tc.name   Telephony_NetworkSearch_getOperatorName_Promise_0500
+     * @tc.number Telephony_NetworkSearch_getOperatorName_Async_0600
+     * @tc.desc   Test getOperatorName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_NetworkSearch_getOperatorName_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
         try {
@@ -341,9 +383,12 @@ describe('ActsNetworkSearchTest',  () => {
     })
 
     /**
-     * @tc.number  Telephony_NetworkSearch_isRadioOn_Async_0200
-     * @tc.name    Test The function isRadioOn
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_isRadioOn_Async_0200
+     * @tc.number Telephony_NetworkSearch_isRadioOn_Async_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_isRadioOn_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.isRadioOn((err, data) => {
@@ -360,9 +405,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_isRadioOn_Promise_0200
-     * @tc.name    Test The function isRadioOn
-     * @tc.desc    Function test
+     * @tc.name   Telephony_NetworkSearch_isRadioOn_Promise_0200
+     * @tc.number Telephony_NetworkSearch_isRadioOn_Promise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_isRadioOn_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -376,9 +424,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_isRadioOn_Async_0300
-     * @tc.name    testIsRadioOn_0300
-     * @tc.desc    Test isRadioOn api by callback.
+     * @tc.name   Telephony_NetworkSearch_isRadioOn_Async_0300
+     * @tc.number Telephony_NetworkSearch_isRadioOn_Async_0300
+     * @tc.desc   Test isRadioOn api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_isRadioOn_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         radio.isRadioOn(0, (err,data) => {
@@ -401,9 +452,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_NetworkSearch_isRadioOn_Async_0400
-     * @tc.name    testIsRadioOn_0400
-     * @tc.desc    Test isRadioOn api by promise.
+     * @tc.name   Telephony_NetworkSearch_isRadioOn_Promise_0300
+     * @tc.number Telephony_NetworkSearch_isRadioOn_Async_0400
+     * @tc.desc   Test isRadioOn api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_isRadioOn_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
         try {
@@ -418,9 +472,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_StateRegistry_off_0200
-     * @tc.name    Add a networkStatus change listen and test observer.off() to view the callback results
-     * @tc.desc    Function test
+     * @tc.name   Telephony_StateRegistry_off_0200
+     * @tc.number Telephony_StateRegistry_off_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_StateRegistry_off_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
         try {
@@ -440,9 +497,12 @@ describe('ActsNetworkSearchTest',  () => {
     });
 
     /**
-     * @tc.number  Telephony_StateRegistry_off_0300
-     * @tc.name    Add a networkStatus change listen and test observer.off() to view the callback results
-     * @tc.desc    Function test
+     * @tc.name   Telephony_StateRegistry_off_0300
+     * @tc.number Telephony_StateRegistry_off_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Telephony_StateRegistry_off_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
         try {

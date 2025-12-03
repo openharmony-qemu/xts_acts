@@ -37,12 +37,12 @@ export default function showDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showDialogBackgroundEffectTest_0100
-     * @tc.name      showDialogBackgroundEffectTest_0100
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogBackgroundEffectTest_0100
+     * @tc.number showDialogBackgroundEffectTest_0100
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function showDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showDialogBackgroundEffectTest_0200
-     * @tc.name      showDialogBackgroundEffectTest_0200
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogBackgroundEffectTest_0200
+     * @tc.number showDialogBackgroundEffectTest_0200
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function showDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showDialogBackgroundEffectTest_0300
-     * @tc.name      showDialogBackgroundEffectTest_0300
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogBackgroundEffectTest_0300
+     * @tc.number showDialogBackgroundEffectTest_0300
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogBackgroundEffectTest_0300';

@@ -68,13 +68,13 @@ export default function ifThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsIfThemeColors_0100
-      * @tc.name      : ActsIfThemeColors_0100
-      * @tc.desc      : check system colors values of child component inside if-else body
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsIfThemeColors_0100
+     * @tc.number ActsIfThemeColors_0100
+     * @tc.desc   check system colors values of child component inside if-else body
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsIfThemeColors_0100`, Level.LEVEL0, async () => {
       const CASE: string = `ActsIfThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -102,13 +102,13 @@ export default function ifThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsIfThemeColors_0200
-      * @tc.name      : ActsIfThemeColors_0200
-      * @tc.desc      : check custom colors values of child component inside if-else body
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsIfThemeColors_0200
+     * @tc.number ActsIfThemeColors_0200
+     * @tc.desc   check custom colors values of child component inside if-else body
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsIfThemeColors_0200`, Level.LEVEL0, async () => {
       const CASE: string = `ActsIfThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -138,14 +138,13 @@ export default function ifThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsIfThemeColors_0300
-      * @tc.name      : ActsIfThemeColors_0300
-      * @tc.desc      : check custom colors values of child component inside if-else body
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsIfThemeColors_0300
+     * @tc.number ActsIfThemeColors_0300
+     * @tc.desc   check custom colors values of child component inside if-else body
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsIfThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsIfThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

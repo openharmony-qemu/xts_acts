@@ -81,7 +81,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_clock_0100
      * @tc.number SUB_GLOBAL_I18N_JS_CLOCK_0100
      * @tc.desc   check the value of is24HourClock method
@@ -104,7 +103,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_clock_0120
      * @tc.number SUB_GLOBAL_I18N_JS_CLOCK_0120
      * @tc.desc   check the value of set24HourClock method
@@ -135,7 +133,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_preferredlanguage_0100
      * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0100
      * @tc.desc   check the value of getPreferredLanguageList method
@@ -151,7 +148,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_preferredlanguage_0120
      * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0120
      * @tc.desc   check the value of addPreferredLanguage method
@@ -178,7 +174,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_preferredlanguage_0140
      * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0140
      * @tc.desc   check the value of removePreferredLanguage method
@@ -200,7 +195,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_preferredlanguage_1000
      * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_1000
      * @tc.desc   check the value of getFirstPreferredLanguage method
@@ -224,7 +218,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_0100
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0100
      * @tc.desc   check the transfer result
@@ -240,7 +233,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_0200
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0200
      * @tc.desc   check the transfer result
@@ -256,7 +248,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_0300
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0300
      * @tc.desc   check the transfer result
@@ -272,7 +263,6 @@ describe('LangTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   transfer_test_0400
      * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0400
      * @tc.desc   check the transfer result

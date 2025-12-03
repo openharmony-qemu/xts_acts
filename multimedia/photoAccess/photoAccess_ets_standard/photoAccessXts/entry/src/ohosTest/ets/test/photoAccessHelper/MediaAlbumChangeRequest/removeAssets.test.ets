@@ -70,12 +70,12 @@ export default function MediaAlbumChangeRequestRemoveAssetsTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ALBUM_CHANGE_REQUEST_REMOVE_ASSETS_001
-     * @tc.name      : mediaAlbumChangeRequest_removeAssets_promise_001
-     * @tc.desc      : removeAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   mediaAlbumChangeRequest_removeAssets_promise_001
+     * @tc.number MEDIA_ALBUM_CHANGE_REQUEST_REMOVE_ASSETS_001
+     * @tc.desc   removeAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('mediaAlbumChangeRequest_removeAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'mediaAlbumChangeRequest_removeAssets_promise_001';

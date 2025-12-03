@@ -45,9 +45,12 @@ export default function RouterPageUpdateTest() {
     });
 
     /**
+     * @tc.name   RouterPageUpdateTest_0100
      * @tc.number RouterPageUpdateTest_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   RouterPageUpdateTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterPageUpdateTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('RouterPageUpdateTest_0100 START');

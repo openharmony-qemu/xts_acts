@@ -97,12 +97,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     }
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_AUTO_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_AUTO_0100
-     * @tc.desc     : Test the IMAGE_DYNAMIC_RANGE_AUTO in the enumeration IMAGE_DYNAMIC_RANGE.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_AUTO_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_AUTO_0100
+     * @tc.desc   Test the IMAGE_DYNAMIC_RANGE_AUTO in the enumeration IMAGE_DYNAMIC_RANGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_AUTO_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageDynamicRangeAuto();
@@ -111,12 +111,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_SDR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_SDR_0100
-     * @tc.desc     : Test the IMAGE_DYNAMIC_RANGE_SDR in the enumeration IMAGE_DYNAMIC_RANGE.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_SDR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_SDR_0100
+     * @tc.desc   Test the IMAGE_DYNAMIC_RANGE_SDR in the enumeration IMAGE_DYNAMIC_RANGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_SDR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageDynamicRangeHDR();
@@ -125,12 +125,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_HDR_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_HDR_0100
-     * @tc.desc     : Test the IMAGE_DYNAMIC_RANGE_HDR in the enumeration IMAGE_DYNAMIC_RANGE.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_HDR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_HDR_0100
+     * @tc.desc   Test the IMAGE_DYNAMIC_RANGE_HDR in the enumeration IMAGE_DYNAMIC_RANGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEDYNAMICRANGE_HDR_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageDynamicRangeHDR();
@@ -139,12 +139,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_AUTO_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_AUTO_0100
-     * @tc.desc     : Test the IMAGE_ALLOCATOR_TYPE_AUTO in the enumeration IMAGE_ALLOCATOR_TYPE.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_AUTO_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_AUTO_0100
+     * @tc.desc   Test the IMAGE_ALLOCATOR_TYPE_AUTO in the enumeration IMAGE_ALLOCATOR_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_AUTO_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -154,12 +154,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_DMA_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_DMA_0100
-     * @tc.desc     : Test the IMAGE_ALLOCATOR_TYPE_DMA in the enumeration IMAGE_ALLOCATOR_TYPE.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_DMA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_DMA_0100
+     * @tc.desc   Test the IMAGE_ALLOCATOR_TYPE_DMA in the enumeration IMAGE_ALLOCATOR_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_DMA_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -169,12 +169,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_SHAREMEMORY_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_SHAREMEMORY_0100
-     * @tc.desc     : Test the IMAGE_ALLOCATOR_TYPE_SHARE_MEMORY in the enumeration IMAGE_ALLOCATOR_TYPE.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_SHAREMEMORY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_SHAREMEMORY_0100
+     * @tc.desc   Test the IMAGE_ALLOCATOR_TYPE_SHARE_MEMORY in the enumeration IMAGE_ALLOCATOR_TYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGEALLOCATORTYPE_SHAREMEMORY_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -184,12 +184,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_SCALEFIRST_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_SCALEFIRST_0100
-     * @tc.desc     : Test the IMAGE_CROP_AND_SCALE_STRATEGY_SCALE_FIRST in the enumeration Image_CropAndScaleStrategy.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_SCALEFIRST_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_SCALEFIRST_0100
+     * @tc.desc   Test the IMAGE_CROP_AND_SCALE_STRATEGY_SCALE_FIRST in the enumeration Image_CropAndScaleStrategy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_SCALEFIRST_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageCropAndScaleStrategyScaleFirst();
@@ -198,12 +198,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_CROPFIRST_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_CROPFIRST_0100
-     * @tc.desc     : Test the IMAGE_CROP_AND_SCALE_STRATEGY_CROP_FIRST in the enumeration Image_CropAndScaleStrategy.
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_CROPFIRST_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_CROPFIRST_0100
+     * @tc.desc   Test the IMAGE_CROP_AND_SCALE_STRATEGY_CROP_FIRST in the enumeration Image_CropAndScaleStrategy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGECROPANDSCALESTRATEGY_CROPFIRST_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageCropAndScaleStrategyCropFirst();
@@ -212,12 +212,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0100
-     * @tc.desc     : OH_ImageSourceInfo_GetWidth return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0100
+     * @tc.desc   OH_ImageSourceInfo_GetWidth return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetWidth();
@@ -226,12 +226,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0200
-     * @tc.desc     : OH_ImageSourceInfo_GetWidth return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0200
+     * @tc.desc   OH_ImageSourceInfo_GetWidth return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETWIDTH_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetWidthBadParameter();
@@ -240,12 +240,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0100
-     * @tc.desc     : OH_ImageSourceInfo_GetHeight return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0100
+     * @tc.desc   OH_ImageSourceInfo_GetHeight return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetHeight();
@@ -254,12 +254,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0200
-     * @tc.desc     : OH_ImageSourceInfo_GetHeight return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0200
+     * @tc.desc   OH_ImageSourceInfo_GetHeight return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETHEIGHT_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetHeightBadParameter();
@@ -268,12 +268,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0100
-     * @tc.desc     : OH_ImageSourceInfo_GetDynamicRange return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0100
+     * @tc.desc   OH_ImageSourceInfo_GetDynamicRange return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetDynamicRange();
@@ -282,12 +282,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0200
-     * @tc.desc     : OH_ImageSourceInfo_GetDynamicRange return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0200
+     * @tc.desc   OH_ImageSourceInfo_GetDynamicRange return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETDYNAMICRANGE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetDynamicRangeBadParameter();
@@ -296,12 +296,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETMIMETYPE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETMIMETYPE_0100
-     * @tc.desc     : OH_ImageSourceInfo_GetMimeType return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETMIMETYPE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETMIMETYPE_0100
+     * @tc.desc   OH_ImageSourceInfo_GetMimeType return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_GETMIMETYPE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoGetMimeType();
@@ -310,12 +310,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0100
-     * @tc.desc     : OH_ImageSourceInfo_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0100
+     * @tc.desc   OH_ImageSourceInfo_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoRelease();
@@ -324,12 +324,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0200
-     * @tc.desc     : OH_ImageSourceInfo_Release return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0200
+     * @tc.desc   OH_ImageSourceInfo_Release return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_IMAGESOURCEINFO_RELEASE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeImageSourceInfoReleasBadParameter();
@@ -338,12 +338,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0100
-     * @tc.desc     : OH_DecodingOptions_GetPixelFormat return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0100
+     * @tc.desc   OH_DecodingOptions_GetPixelFormat return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetPixelFormat();
@@ -352,12 +352,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0200
-     * @tc.desc     : OH_DecodingOptions_GetPixelFormat return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0200
+     * @tc.desc   OH_DecodingOptions_GetPixelFormat return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETPIXELFORMAT_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetPixelFormatBadParameter();
@@ -367,12 +367,12 @@ export default function ImageSourceNativeErrorCodeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETPIXELFORMAT_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETPIXELFORMAT_0200
-     * @tc.desc     : OH_DecodingOptions_SetPixelFormat return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETPIXELFORMAT_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETPIXELFORMAT_0200
+     * @tc.desc   OH_DecodingOptions_SetPixelFormat return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETPIXELFORMAT_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetPixelFormatBadParameter();
@@ -381,12 +381,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0100
-     * @tc.desc     : OH_DecodingOptions_GetIndex return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0100
+     * @tc.desc   OH_DecodingOptions_GetIndex return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetIndex();
@@ -395,12 +395,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0200
-     * @tc.desc     : OH_DecodingOptions_GetIndex return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0200
+     * @tc.desc   OH_DecodingOptions_GetIndex return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETINDEX_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetIndexBadParameter();
@@ -409,12 +409,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0100
-     * @tc.desc     : OH_DecodingOptions_SetIndex return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0100
+     * @tc.desc   OH_DecodingOptions_SetIndex return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetIndex();
@@ -423,12 +423,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0200
-     * @tc.desc     : OH_DecodingOptions_SetIndex return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0200
+     * @tc.desc   OH_DecodingOptions_SetIndex return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETINDEX_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetIndexBadParameter();
@@ -437,12 +437,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0100
-     * @tc.desc     : OH_DecodingOptions_GetRotate return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0100
+     * @tc.desc   OH_DecodingOptions_GetRotate return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetRotate();
@@ -451,12 +451,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0200
-     * @tc.desc     : OH_DecodingOptions_GetRotate return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0200
+     * @tc.desc   OH_DecodingOptions_GetRotate return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETROTATE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetRotateBadParameter();
@@ -465,12 +465,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0100
-     * @tc.desc     : OH_DecodingOptions_SetRotate return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0100
+     * @tc.desc   OH_DecodingOptions_SetRotate return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetRotate();
@@ -479,12 +479,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0200
-     * @tc.desc     : OH_DecodingOptions_SetRotate return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0200
+     * @tc.desc   OH_DecodingOptions_SetRotate return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETROTATE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetRotateBadParameter();
@@ -493,12 +493,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0100
-     * @tc.desc     : OH_DecodingOptions_GetDesiredSize return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0100
+     * @tc.desc   OH_DecodingOptions_GetDesiredSize return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredSize();
@@ -507,12 +507,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0200
-     * @tc.desc     : OH_DecodingOptions_GetDesiredSize return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0200
+     * @tc.desc   OH_DecodingOptions_GetDesiredSize return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDSIZE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredSizeBadParameter();
@@ -521,12 +521,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDSIZE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDSIZE_0200
-     * @tc.desc     : OH_DecodingOptions_SetDesiredSize return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDSIZE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDSIZE_0200
+     * @tc.desc   OH_DecodingOptions_SetDesiredSize return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDSIZE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredSizeBadParameter();
@@ -535,12 +535,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0100
-     * @tc.desc     : OH_DecodingOptions_GetDesiredRegion return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0100
+     * @tc.desc   OH_DecodingOptions_GetDesiredRegion return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredRegion();
@@ -549,12 +549,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0200
-     * @tc.desc     : OH_DecodingOptions_GetDesiredRegion return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0200
+     * @tc.desc   OH_DecodingOptions_GetDesiredRegion return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDREGION_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredRegionBadParameter();
@@ -563,12 +563,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0100
-     * @tc.desc     : OH_DecodingOptions_SetDesiredRegion return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0100
+     * @tc.desc   OH_DecodingOptions_SetDesiredRegion return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredRegion();
@@ -577,12 +577,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0200
-     * @tc.desc     : OH_DecodingOptions_SetDesiredRegion return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0200
+     * @tc.desc   OH_DecodingOptions_SetDesiredRegion return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDREGION_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredRegionBadParameter();
@@ -591,12 +591,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0100
-     * @tc.desc     : OH_DecodingOptions_GetDesiredDynamicRange return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0100
+     * @tc.desc   OH_DecodingOptions_GetDesiredDynamicRange return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredDynamicRange();
@@ -605,12 +605,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0200
-     * @tc.desc     : OH_DecodingOptions_GetDesiredDynamicRange return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0200
+     * @tc.desc   OH_DecodingOptions_GetDesiredDynamicRange return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDDYNAMICRANGE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredDynamicRangeBadParameter();
@@ -619,12 +619,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0100
-     * @tc.desc     : OH_DecodingOptions_SetDesiredDynamicRange return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0100
+     * @tc.desc   OH_DecodingOptions_SetDesiredDynamicRange return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredDynamicRange();
@@ -633,12 +633,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0200
-     * @tc.desc     : OH_DecodingOptions_SetDesiredDynamicRange return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0200
+     * @tc.desc   OH_DecodingOptions_SetDesiredDynamicRange return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDDYNAMICRANGE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredDynamicRangeBadParameter();
@@ -647,12 +647,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0100
-     * @tc.desc     : OH_DecodingOptions_SetCropAndScaleStrategy return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0100
+     * @tc.desc   OH_DecodingOptions_SetCropAndScaleStrategy return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetCropAndScaleStrategy();
@@ -661,12 +661,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0200
-     * @tc.desc     : OH_DecodingOptions_SetCropAndScaleStrategy return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0200
+     * @tc.desc   OH_DecodingOptions_SetCropAndScaleStrategy return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPANDSCALESTRATEGY_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetCropAndScaleStrategyBadParameter();
@@ -675,12 +675,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0100
-     * @tc.desc     : OH_DecodingOptions_GetCropAndScaleStrategy return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0100
+     * @tc.desc   OH_DecodingOptions_GetCropAndScaleStrategy return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0100", Level.LEVEL3,  async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetCropAndScaleStrategy();
@@ -689,12 +689,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0200
-     * @tc.desc     : OH_DecodingOptions_GetCropAndScaleStrategy return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0200
+     * @tc.desc   OH_DecodingOptions_GetCropAndScaleStrategy return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPANDSCALESTRATEGY_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetCropAndScaleStrategyBadParameter();
@@ -703,12 +703,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPREGION_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPREGION_0200
-     * @tc.desc     : OH_DecodingOptions_SetCropRegion return IMAGE_SOURCE_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPREGION_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPREGION_0200
+     * @tc.desc   OH_DecodingOptions_SetCropRegion return IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETCROPREGION_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetCropRegionInvaildParamter();
@@ -717,12 +717,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPREGION_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPREGION_0200
-     * @tc.desc     : OH_DecodingOptions_GetCropRegion return IMAGE_SOURCE_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPREGION_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPREGION_0200
+     * @tc.desc   OH_DecodingOptions_GetCropRegion return IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETCROPREGION_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetCropRegionInvaildParamter();
@@ -731,12 +731,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0100
-     * @tc.desc     : OH_DecodingOptions_GetDesiredColorSpace return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0100
+     * @tc.desc   OH_DecodingOptions_GetDesiredColorSpace return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredColorSpace();
@@ -745,12 +745,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0200
-     * @tc.desc     : OH_DecodingOptions_GetDesiredColorSpace return IMAGE_SOURCE_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0200
+     * @tc.desc   OH_DecodingOptions_GetDesiredColorSpace return IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_GETDESIREDCOLORSPACE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsGetDesiredColorSpaceInvaildParamter();
@@ -759,12 +759,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0100
-     * @tc.desc     : OH_DecodingOptions_SetDesiredColorSpace return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0100
+     * @tc.desc   OH_DecodingOptions_SetDesiredColorSpace return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredColorSpace();
@@ -773,12 +773,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0200
-     * @tc.desc     : OH_DecodingOptions_SetDesiredColorSpace return IMAGE_SOURCE_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0200
+     * @tc.desc   OH_DecodingOptions_SetDesiredColorSpace return IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_SETDESIREDCOLORSPACE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsSetDesiredColorSpaceInvaildParamter();
@@ -787,12 +787,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0100
-     * @tc.desc     : OH_DecodingOptions_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0100
+     * @tc.desc   OH_DecodingOptions_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsRelease();
@@ -801,12 +801,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0200
-     * @tc.desc     : OH_DecodingOptions_Release return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0200
+     * @tc.desc   OH_DecodingOptions_Release return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONS_RELEASE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsReleaseBadParameter();
@@ -815,12 +815,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0100
-     * @tc.desc     : OH_ImageSourceNative_CreateFromUri return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0100
+     * @tc.desc   OH_ImageSourceNative_CreateFromUri return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -830,12 +830,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0200
-     * @tc.desc     : OH_ImageSourceNative_CreateFromUri return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0200
+     * @tc.desc   OH_ImageSourceNative_CreateFromUri return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMURI_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreateFromUriBadParameter();
@@ -844,12 +844,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMFD_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMFD_0200
-     * @tc.desc     : OH_ImageSourceNative_CreateFromFd return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMFD_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMFD_0200
+     * @tc.desc   OH_ImageSourceNative_CreateFromFd return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMFD_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreateFromFdBadParameter();
@@ -858,12 +858,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0100
-     * @tc.desc     : OH_ImageSourceNative_CreateFromData return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0100
+     * @tc.desc   OH_ImageSourceNative_CreateFromData return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0100", Level.LEVEL3, async (done: Function) => {
       await getBuffer('test51.jpg');
@@ -873,12 +873,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0200
-     * @tc.desc     : OH_ImageSourceNative_CreateFromData return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0200
+     * @tc.desc   OH_ImageSourceNative_CreateFromData return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATA_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreateFromDataBadParameter();
@@ -887,12 +887,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0100
-     * @tc.desc     : OH_ImageSourceNative_CreateFromDataWithUserBuffer return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0100
+     * @tc.desc   OH_ImageSourceNative_CreateFromDataWithUserBuffer return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0100", Level.LEVEL3, async (done: Function) => {
       await getBuffer('test51.jpg');
@@ -902,12 +902,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0200
-     * @tc.desc     : OH_ImageSourceNative_CreateFromDataWithUserBuffer return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0200
+     * @tc.desc   OH_ImageSourceNative_CreateFromDataWithUserBuffer return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMDATAWithUSERBUFFER_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreateFromDataWithUserBufferInvaildParamter();
@@ -916,12 +916,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200
-     * @tc.desc     : OH_ImageSourceNative_CreateFromRawFile return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200
+     * @tc.desc   OH_ImageSourceNative_CreateFromRawFile return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEFROMRAWFILE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreateFromRawFileBadParameter();
@@ -930,12 +930,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAP_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAP_0200
-     * @tc.desc     : OH_ImageSourceNative_CreatePixelmap return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAP_0200
+     * @tc.desc   OH_ImageSourceNative_CreatePixelmap return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAP_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreatePixelmapBadParameter();
@@ -944,12 +944,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0200
-     * @tc.desc     : OH_ImageSourceNative_CreatePixelmapUsingAllocator return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0200
+     * @tc.desc   OH_ImageSourceNative_CreatePixelmapUsingAllocator return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreatePixelmapUsingAllocatorBadParameter();
@@ -958,12 +958,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0300
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0300
-     * @tc.desc     : OH_ImageSourceNative_CreatePixelmapUsingAllocator return IMAGE_SOURCE_UNSUPPORTED_ALLOCATOR_TYPE
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0300
+     * @tc.desc   OH_ImageSourceNative_CreatePixelmapUsingAllocator return IMAGE_SOURCE_UNSUPPORTED_ALLOCATOR_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPUSINGALLOCATOR_0300", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -973,12 +973,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0100
-     * @tc.desc     : OH_ImageSourceNative_CreatePixelmapList return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0100
+     * @tc.desc   OH_ImageSourceNative_CreatePixelmapList return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -988,12 +988,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0200
-     * @tc.desc     : OH_ImageSourceNative_CreatePixelmapList return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0200
+     * @tc.desc   OH_ImageSourceNative_CreatePixelmapList return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPIXELMAPLIST_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreatePixelmapListBadParameter();
@@ -1003,12 +1003,12 @@ export default function ImageSourceNativeErrorCodeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0100
-     * @tc.desc     : OH_ImageSourceNative_CreatePicture return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0100
+     * @tc.desc   OH_ImageSourceNative_CreatePicture return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -1018,12 +1018,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0200
-     * @tc.desc     : OH_ImageSourceNative_CreatePicture return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0200
+     * @tc.desc   OH_ImageSourceNative_CreatePicture return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTURE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreatePictureBadParameter();
@@ -1032,12 +1032,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0100
-     * @tc.desc     : OH_ImageSourceNative_CreatePictureAtIndex return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0100
+     * @tc.desc   OH_ImageSourceNative_CreatePictureAtIndex return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1047,12 +1047,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0200
-     * @tc.desc     : OH_ImageSourceNative_CreatePictureAtIndex return IMAGE_BAD_SOURCE
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0200
+     * @tc.desc   OH_ImageSourceNative_CreatePictureAtIndex return IMAGE_BAD_SOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeCreatePictureAtIndexBadSource();
@@ -1061,12 +1061,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0300
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0300
-     * @tc.desc     : OH_ImageSourceNative_CreatePictureAtIndex return IMAGE_SOURCE_UNSUPPORTED_OPTIONS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0300
+     * @tc.desc   OH_ImageSourceNative_CreatePictureAtIndex return IMAGE_SOURCE_UNSUPPORTED_OPTIONS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_CREATEPICTUREATINDEX_0300", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -1077,12 +1077,12 @@ export default function ImageSourceNativeErrorCodeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0100
-     * @tc.desc     : OH_ImageSourceNative_GetDelayTimeList return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0100
+     * @tc.desc   OH_ImageSourceNative_GetDelayTimeList return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1092,12 +1092,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0200
-     * @tc.desc     : OH_ImageSourceNative_GetDelayTimeList return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0200
+     * @tc.desc   OH_ImageSourceNative_GetDelayTimeList return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETDELAYTIMELIST_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeGetDelayTimeListBadParameter();
@@ -1106,12 +1106,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0100
-     * @tc.desc     : OH_ImageSourceNative_GetImageInfo return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0100
+     * @tc.desc   OH_ImageSourceNative_GetImageInfo return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1121,12 +1121,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0200
-     * @tc.desc     : OH_ImageSourceNative_GetImageInfo return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0200
+     * @tc.desc   OH_ImageSourceNative_GetImageInfo return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEINFO_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeGetImageInfoBadParameter();
@@ -1135,12 +1135,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0200
-     * @tc.desc     : OH_ImageSourceNative_GetImageProperty return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0200
+     * @tc.desc   OH_ImageSourceNative_GetImageProperty return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeGetImagePropertyBadParameter();
@@ -1149,12 +1149,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0300
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0300
-     * @tc.desc     : OH_ImageSourceNative_GetImageProperty return IMAGE_ALLOC_FAILED
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0300
+     * @tc.desc   OH_ImageSourceNative_GetImageProperty return IMAGE_ALLOC_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTY_0300", Level.LEVEL3, async (done: Function) => {
       await getFd('test_exif_v21.jpg');
@@ -1165,12 +1165,12 @@ export default function ImageSourceNativeErrorCodeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTYWITHNULL_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTYWITHNULL_0200
-     * @tc.desc     : OH_ImageSourceNative_GetImagePropertyWithNull return IMAGE_SOURCE_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTYWITHNULL_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTYWITHNULL_0200
+     * @tc.desc   OH_ImageSourceNative_GetImagePropertyWithNull return IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETIMAGEPROPERTYWITHNULL_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeGetImagePropertyWithNullInvaildParamter();
@@ -1179,12 +1179,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0100
-     * @tc.desc     : OH_ImageSourceNative_ModifyImageProperty return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0100
+     * @tc.desc   OH_ImageSourceNative_ModifyImageProperty return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test51.jpg');
@@ -1194,12 +1194,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0200
-     * @tc.desc     : OH_ImageSourceNative_ModifyImageProperty return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0200
+     * @tc.desc   OH_ImageSourceNative_ModifyImageProperty return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_MODIFYIMAGEPROPERTY_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeModifyImagePropertyBadParameter();
@@ -1208,12 +1208,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0100
-     * @tc.desc     : OH_ImageSourceNative_GetFrameCount return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0100
+     * @tc.desc   OH_ImageSourceNative_GetFrameCount return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1223,12 +1223,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0200
-     * @tc.desc     : OH_ImageSourceNative_GetFrameCount return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0200
+     * @tc.desc   OH_ImageSourceNative_GetFrameCount return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_GETFRAMECOUNT_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeGetFrameCountBadParameter();
@@ -1237,12 +1237,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0100
-     * @tc.desc     : OH_ImageSourceNative_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0100
+     * @tc.desc   OH_ImageSourceNative_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1252,12 +1252,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0200
-     * @tc.desc     : OH_ImageSourceNative_Release return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0200
+     * @tc.desc   OH_ImageSourceNative_Release return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_RELEASE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeReleaseBadParameter();
@@ -1266,12 +1266,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_CREATE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_CREATE_0200
-     * @tc.desc     : OH_DecodingOptionsForPicture_Create return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_CREATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_CREATE_0200
+     * @tc.desc   OH_DecodingOptionsForPicture_Create return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_CREATE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsForPictureCreateBadParameter();
@@ -1281,12 +1281,12 @@ export default function ImageSourceNativeErrorCodeTest() {
 
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0100
-     * @tc.desc     : OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0100
+     * @tc.desc   OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0100", Level.LEVEL3, async (done: Function) => {
       let inAuxTpyes: Array<image.AuxiliaryPictureType> = [image.AuxiliaryPictureType.GAINMAP,
@@ -1299,12 +1299,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0200
-     * @tc.desc     : OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0200
+     * @tc.desc   OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETDESIREDAUXILIARYPICTURES_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsForPictureGetDesiredAuxiliaryPicturesBadParameter();
@@ -1313,12 +1313,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0100
-     * @tc.desc     : OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0100
+     * @tc.desc   OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0100", Level.LEVEL3, async (done: Function) => {
       let inAuxTpyes: Array<image.AuxiliaryPictureType> = [image.AuxiliaryPictureType.GAINMAP,
@@ -1330,12 +1330,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0200
-     * @tc.desc     : OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0200
+     * @tc.desc   OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_SETDESIREDAUXILIARYPICTURES_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsForPictureSetDesiredAuxiliaryPicturesBadParameter();
@@ -1344,12 +1344,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0100
-     * @tc.desc     : OH_DecodingOptionsForPicture_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0100
+     * @tc.desc   OH_DecodingOptionsForPicture_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0100", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsForPictureRelease();
@@ -1358,12 +1358,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0200
-     * @tc.desc     : OH_DecodingOptionsForPicture_Release return IMAGE_BAD_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0200
+     * @tc.desc   OH_DecodingOptionsForPicture_Release return IMAGE_BAD_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_RELESAE_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeDecodingOptionsForPictureReleaseBadParameter();
@@ -1372,12 +1372,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0100
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0100
-     * @tc.desc     : OH_ImageSourceNative_GetSupportedFormats return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0100
+     * @tc.desc   OH_ImageSourceNative_GetSupportedFormats return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0100", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1387,12 +1387,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0200
-     * @tc.name     : SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0200
-     * @tc.desc     : OH_ImageSourceNative_GetSupportedFormats return IMAGE_SOURCE_INVALID_PARAMETER
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0200
+     * @tc.desc   OH_ImageSourceNative_GetSupportedFormats return IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_SOURCE_NATIVE_DECODINGOPTIONSFORPICTURE_GETSUPPORTEDFORMATS_0200", Level.LEVEL3, async (done: Function) => {
       let res: number = ndkTest.jsImageSoureNativeGetSupportedFormatsInvalidParameter();
@@ -1401,12 +1401,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_CreatePicture
-     * @tc.name     : SUB_testPictureNative_CreatePicture
-     * @tc.desc     : OH_PictureNative_CreatePicture return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_CreatePicture
+     * @tc.number SUB_testPictureNative_CreatePicture
+     * @tc.desc   OH_PictureNative_CreatePicture return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_CreatePicture", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1416,12 +1416,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_GetMainPixelmap
-     * @tc.name     : SUB_testPictureNative_GetMainPixelmap
-     * @tc.desc     : OH_PictureNative_GetMainPixelmap return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_GetMainPixelmap
+     * @tc.number SUB_testPictureNative_GetMainPixelmap
+     * @tc.desc   OH_PictureNative_GetMainPixelmap return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_GetMainPixelmap", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1431,12 +1431,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_GetHdrComposedPixelmap
-     * @tc.name     : SUB_testPictureNative_GetHdrComposedPixelmap
-     * @tc.desc     : OH_PictureNative_GetHdrComposedPixelmap return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_GetHdrComposedPixelmap
+     * @tc.number SUB_testPictureNative_GetHdrComposedPixelmap
+     * @tc.desc   OH_PictureNative_GetHdrComposedPixelmap return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_GetHdrComposedPixelmap", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1446,12 +1446,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_GetGainmapPixelmap
-     * @tc.name     : SUB_testPictureNative_GetGainmapPixelmap
-     * @tc.desc     : OH_PictureNative_GetGainmapPixelmap return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_GetGainmapPixelmap
+     * @tc.number SUB_testPictureNative_GetGainmapPixelmap
+     * @tc.desc   OH_PictureNative_GetGainmapPixelmap return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_GetGainmapPixelmap", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1461,12 +1461,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_SetAuxiliaryPicture
-     * @tc.name     : SUB_testPictureNative_SetAuxiliaryPicture
-     * @tc.desc     : OH_PictureNative_SetAuxiliaryPicture return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_SetAuxiliaryPicture
+     * @tc.number SUB_testPictureNative_SetAuxiliaryPicture
+     * @tc.desc   OH_PictureNative_SetAuxiliaryPicture return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_SetAuxiliaryPicture", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1477,12 +1477,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_GetAuxiliaryPicture
-     * @tc.name     : SUB_testPictureNative_GetAuxiliaryPicture
-     * @tc.desc     : OH_PictureNative_GetAuxiliaryPicture return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_GetAuxiliaryPicture
+     * @tc.number SUB_testPictureNative_GetAuxiliaryPicture
+     * @tc.desc   OH_PictureNative_GetAuxiliaryPicture return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_GetAuxiliaryPicture", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1492,12 +1492,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_GetMetadata
-     * @tc.name     : SUB_testPictureNative_GetMetadata
-     * @tc.desc     : Test OH_PictureNative_GetMetadata return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_GetMetadata
+     * @tc.number SUB_testPictureNative_GetMetadata
+     * @tc.desc   Test OH_PictureNative_GetMetadata return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_GetMetadata", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1507,12 +1507,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testPictureNative_SetMetadata
-     * @tc.name     : SUB_testPictureNative_SetMetadata
-     * @tc.desc     : Test OH_PictureNative_SetMetadata return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_SetMetadata
+     * @tc.number SUB_testPictureNative_SetMetadata
+     * @tc.desc   Test OH_PictureNative_SetMetadata return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_SetMetadata", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1521,12 +1521,12 @@ export default function ImageSourceNativeErrorCodeTest() {
       done();
     });
     /**
-     * @tc.number   : SUB_testPictureNative_Release
-     * @tc.name     : SUB_testPictureNative_Release
-     * @tc.desc     : Test OH_PictureNative_Release return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testPictureNative_Release
+     * @tc.number SUB_testPictureNative_Release
+     * @tc.desc   Test OH_PictureNative_Release return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testPictureNative_Release", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1535,12 +1535,12 @@ export default function ImageSourceNativeErrorCodeTest() {
       done();
     });
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNativeWritePixelsImage
-     * @tc.name     : SUB_testAuxiliaryPictureNativeWritePixelsImage
-     * @tc.desc     : Test OH_AuxiliaryPictureNativeWritePixelsImage return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNativeWritePixelsImage
+     * @tc.number SUB_testAuxiliaryPictureNativeWritePixelsImage
+     * @tc.desc   Test OH_AuxiliaryPictureNativeWritePixelsImage return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNativeWritePixelsImage", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1550,12 +1550,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNative_ReadPixels
-     * @tc.name     : SUB_testAuxiliaryPictureNative_ReadPixels
-     * @tc.desc     : Test OH_AuxiliaryPictureNative_ReadPixels return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNative_ReadPixels
+     * @tc.number SUB_testAuxiliaryPictureNative_ReadPixels
+     * @tc.desc   Test OH_AuxiliaryPictureNative_ReadPixels return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNative_ReadPixels", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1565,12 +1565,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNative_GetType
-     * @tc.name     : SUB_testAuxiliaryPictureNative_GetType
-     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetType return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNative_GetType
+     * @tc.number SUB_testAuxiliaryPictureNative_GetType
+     * @tc.desc   Test OH_AuxiliaryPictureNative_GetType return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNative_GetType", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1580,12 +1580,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNative_GetInfo
-     * @tc.name     : SUB_testAuxiliaryPictureNative_GetInfo
-     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetInfo return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNative_GetInfo
+     * @tc.number SUB_testAuxiliaryPictureNative_GetInfo
+     * @tc.desc   Test OH_AuxiliaryPictureNative_GetInfo return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNative_GetInfo", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1595,12 +1595,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNative_SetInfo
-     * @tc.name     : SUB_testAuxiliaryPictureNative_SetInfo
-     * @tc.desc     : Test OH_AuxiliaryPictureNative_SetInfo return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNative_SetInfo
+     * @tc.number SUB_testAuxiliaryPictureNative_SetInfo
+     * @tc.desc   Test OH_AuxiliaryPictureNative_SetInfo return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNative_SetInfo", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1610,12 +1610,12 @@ export default function ImageSourceNativeErrorCodeTest() {
     });
 
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNative_GetMetadata
-     * @tc.name     : SUB_testAuxiliaryPictureNative_GetMetadata
-     * @tc.desc     : Test OH_AuxiliaryPictureNative_GetMetadata return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNative_GetMetadata
+     * @tc.number SUB_testAuxiliaryPictureNative_GetMetadata
+     * @tc.desc   Test OH_AuxiliaryPictureNative_GetMetadata return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNative_GetMetadata", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');
@@ -1624,12 +1624,12 @@ export default function ImageSourceNativeErrorCodeTest() {
       done();
     });
     /**
-     * @tc.number   : SUB_testAuxiliaryPictureNative_SetMetadata
-     * @tc.name     : SUB_testAuxiliaryPictureNative_SetMetadata
-     * @tc.desc     : Test OH_AuxiliaryPictureNative_SetMetadata return IMAGE_SUCCESS
-     * @tc.size     : MediumTest
-     * @tc.type     : Functional
-     * @tc.level    : Level 3
+     * @tc.name   SUB_testAuxiliaryPictureNative_SetMetadata
+     * @tc.number SUB_testAuxiliaryPictureNative_SetMetadata
+     * @tc.desc   Test OH_AuxiliaryPictureNative_SetMetadata return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_testAuxiliaryPictureNative_SetMetadata", Level.LEVEL3, async (done: Function) => {
       await getFd('test61.gif');

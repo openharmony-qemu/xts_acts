@@ -26,39 +26,39 @@ export default function textInputBlurOnSubmitTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_BLURONSUBMIT_0100
-     * @tc.name: testTextInputBlurOnSubmit001
-     * @tc.desc: testing BlurOnSubmit for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputBlurOnSubmit001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BLURONSUBMIT_0100
+     * @tc.desc   testing BlurOnSubmit for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBlurOnSubmit001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBlurOnSubmit001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_BLURONSUBMIT_0200
-     * @tc.name: testTextInputBlurOnSubmit002
-     * @tc.desc: testing BlurOnSubmit for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputBlurOnSubmit002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BLURONSUBMIT_0200
+     * @tc.desc   testing BlurOnSubmit for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBlurOnSubmit002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBlurOnSubmit002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_BLURONSUBMIT_0300
-     * @tc.name: testTextInputBlurOnSubmit003
-     * @tc.desc: testing BlurOnSubmit for textInput with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputBlurOnSubmit003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BLURONSUBMIT_0300
+     * @tc.desc   testing BlurOnSubmit for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBlurOnSubmit003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBlurOnSubmit003()).assertEqual(0)

@@ -9,6 +9,7 @@
     "testability/pages/WebViewEnumAndFontLibrary",
     "testability/pages/WebViewEnumAndSetWebController",
     "testability/pages/WebViewOverviewModeAccess",
-	"testability/pages/WebViewRotateRenderEffect"
+    "testability/pages/WebViewRotateRenderEffect",
+    "testability/pages/WebZoomControlAccess"
   ]
 }

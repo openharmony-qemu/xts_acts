@@ -48,13 +48,13 @@ export default function FastBufferBaseTest2() {
       done();
     })
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05000
-    * @tc.name: testFill0092
-    * @tc.desc: Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFill0092
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05000
+     * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFill0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(3).fill("$*$");
       let str = buf.toString();
@@ -62,13 +62,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05100
-    * @tc.name: testFill0093
-    * @tc.desc: Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFill0093
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05100
+     * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFill0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let buf = fastbuffer.alloc(3).fill("$*$", -1);
@@ -80,13 +80,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05200
-    * @tc.name: testFill0094
-    * @tc.desc: Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFill0094
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05200
+     * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFill0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let buf = fastbuffer.alloc(3).fill("$*$", 0, 5);
@@ -97,13 +97,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05900
-    * @tc.name: testWrite0105
-    * @tc.desc: Writes string to buf at offset according to the character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite0105
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_05900
+     * @tc.desc   Writes string to buf at offset according to the character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWrite0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(8);
       try {
@@ -115,13 +115,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06000
-    * @tc.name: testWrite0106
-    * @tc.desc: Writes string to buf at offset according to the character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWrite0106
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06000
+     * @tc.desc   Writes string to buf at offset according to the character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWrite0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(8);
       try {
@@ -133,15 +133,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06200
-    * @tc.name: testCompare0110
-    * @tc.desc: Compares buf with target and returns a number indicating whether buf comes before, after,
-    *           or is the same as target in sort order. Comparison is based on the actual sequence of 
-    *           bytes in each fastbuffer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCompare0110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06200
+     * @tc.desc   Compares buf with target and returns a number indicating whether buf comes before, after,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCompare0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1235");
@@ -150,15 +148,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06400
-    * @tc.name: testCompare0112
-    * @tc.desc: Compares buf with target and returns a number indicating whether buf comes before, after,
-    *           or is the same as target in sort order. Comparison is based on the actual sequence of 
-    *           bytes in each fastbuffer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCompare0112
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06400
+     * @tc.desc   Compares buf with target and returns a number indicating whether buf comes before, after,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCompare0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1235");
@@ -171,13 +167,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06500
-    * @tc.name: testEquals0120
-    * @tc.desc: Returns true if both buf and otherBuffer have exactly the same bytes, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testEquals0120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06500
+     * @tc.desc   Returns true if both buf and otherBuffer have exactly the same bytes, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testEquals0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1235");
@@ -186,13 +182,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06600
-    * @tc.name: testEquals0121
-    * @tc.desc: Returns true if both buf and otherBuffer have exactly the same bytes, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testEquals0121
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06600
+     * @tc.desc   Returns true if both buf and otherBuffer have exactly the same bytes, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testEquals0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236测试");
       let buf2 = fastbuffer.from("1236测试");
@@ -201,13 +197,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06700
-    * @tc.name: testEquals0122
-    * @tc.desc: Returns true if both buf and otherBuffer have exactly the same bytes, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testEquals0122
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06700
+     * @tc.desc   Returns true if both buf and otherBuffer have exactly the same bytes, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testEquals0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("O@O");
       let buf2 = fastbuffer.from("O^O");
@@ -216,14 +212,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06900
-    * @tc.name: testSubarray0130
-    * @tc.desc: Returns a new Buffer that references the same memory as the original,
-    *           but offset and cropped by the start and end indices.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSubarray0130
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_06900
+     * @tc.desc   Returns a new Buffer that references the same memory as the original,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSubarray0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf = buf1.subarray(0, 3);
@@ -232,14 +227,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07000
-    * @tc.name: testSubarray0133
-    * @tc.desc: Returns a new Buffer that references the same memory as the original,
-    *           but offset and cropped by the start and end indices.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSubarray0133
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07000
+     * @tc.desc   Returns a new Buffer that references the same memory as the original,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSubarray0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf = buf1.subarray(3, 4);
@@ -248,14 +242,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07100
-    * @tc.name: testSubarray0136
-    * @tc.desc: Returns a new Buffer that references the same memory as the original,
-    *           but offset and cropped by the start and end indices.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSubarray0136
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07100
+     * @tc.desc   Returns a new Buffer that references the same memory as the original,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSubarray0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf = buf1.subarray(-3, 0);
@@ -263,14 +256,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07200
-    * @tc.name: testSubarray0139
-    * @tc.desc: Returns a new Buffer that references the same memory as the original,
-    *           but offset and cropped by the start and end indices.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSubarray0139
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07200
+     * @tc.desc   Returns a new Buffer that references the same memory as the original,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSubarray0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf = buf1.subarray(6, 9);
@@ -278,16 +270,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07300
-    * @tc.name: testCopy0140
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0140
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07300
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1235");
@@ -298,16 +287,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07400
-    * @tc.name: testCopy0141
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0141
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07400
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abcdefg");
       let buf2 = fastbuffer.from("1235789");
@@ -318,16 +304,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07500
-    * @tc.name: testCopy0143
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0143
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07500
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123656");
       let buf2 = fastbuffer.from("1235");
@@ -338,16 +321,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07600
-    * @tc.name: testCopy0144
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0144
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07600
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123656");
       let buf2 = fastbuffer.from("1235");
@@ -360,16 +340,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07800
-    * @tc.name: testCopy0146
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0146
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07800
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("ab$#");
       let buf2 = fastbuffer.from("123556");
@@ -380,13 +357,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07900
-    * @tc.name: testToString0150
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_07900
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let str = buf1.toString();
@@ -394,13 +371,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08000
-    * @tc.name: testToString0151
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08000
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("张三");
       let str = buf1.toString();
@@ -408,13 +385,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08100
-    * @tc.name: testToString0152
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08100
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("binary");
@@ -422,13 +399,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08200
-    * @tc.name: testToString0153
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08200
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("ascii");
@@ -436,13 +413,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08300
-    * @tc.name: testToString0154
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08300
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("base64");
@@ -450,13 +427,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08400
-    * @tc.name: testToString0155
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08400
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("hex");
@@ -464,13 +441,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08500
-    * @tc.name: testToString0156
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08500
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("latin1");
@@ -478,13 +455,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08600
-    * @tc.name: testToString0157
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08600
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("ucs2");
@@ -492,13 +469,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08700
-    * @tc.name: testToString0158
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08700
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let str = buf1.toString("utf16le");
@@ -506,13 +483,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08800
-    * @tc.name: testToString0159
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_08800
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("!@#$%^&*");
       let str = buf1.toString();
@@ -520,13 +497,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09000
-    * @tc.name: testIndexOf0170
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf0170
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09000
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let index = buf1.indexOf("3");
@@ -534,13 +511,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09100
-    * @tc.name: testIndexOf0171
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf0171
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09100
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let index = buf1.indexOf("3", 2);
@@ -548,13 +525,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09200
-    * @tc.name: testIndexOf0173
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf0173
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09200
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236235");
       let index = buf1.indexOf("23");
@@ -562,13 +539,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09300
-    * @tc.name: testIndexOf0174
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf0174
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09300
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("测试特殊字符$#@!");
       let index = buf1.indexOf("@");
@@ -576,13 +553,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09400
-    * @tc.name: testIndexOf0175
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf0175
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09400
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236235");
       let index = buf1.indexOf("23", 3);
@@ -590,13 +567,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09500
-    * @tc.name: testIndexOf0176
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf0176
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09500
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let index = buf1.indexOf("a");
@@ -604,13 +581,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09900
-    * @tc.name: testLastIndexOf0180
-    * @tc.desc: The index of the last occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testLastIndexOf0180
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_09900
+     * @tc.desc   The index of the last occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLastIndexOf0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let index = buf1.lastIndexOf("3");
@@ -618,13 +595,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10000
-    * @tc.name: testLastIndexOf0181
-    * @tc.desc: The index of the last occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testLastIndexOf0181
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10000
+     * @tc.desc   The index of the last occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLastIndexOf0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let index = buf1.lastIndexOf("3", 2);
@@ -632,13 +609,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10100
-    * @tc.name: testLastIndexOf0183
-    * @tc.desc: The index of the last occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testLastIndexOf0183
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10100
+     * @tc.desc   The index of the last occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLastIndexOf0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236235");
       let index = buf1.lastIndexOf("23");
@@ -646,13 +623,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10200
-    * @tc.name: testLastIndexOf0184
-    * @tc.desc: The index of the last occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testLastIndexOf0184
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10200
+     * @tc.desc   The index of the last occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLastIndexOf0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236235");
       let index = buf1.lastIndexOf("23", 3);
@@ -660,27 +637,27 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10300
-    * @tc.name: testLastIndexOf0186
-    * @tc.desc: The index of the last occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testLastIndexOf0186
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10300
+     * @tc.desc   The index of the last occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLastIndexOf0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let index = buf1.lastIndexOf("a");
       expect(index).assertEqual(-1);
     });
 
-    /**\
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10700
-    * @tc.name: testIncludes0190
-    * @tc.desc: Returns true if value was found in buf, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testIncludes0190
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10700
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let flag = buf1.includes("3");
@@ -688,13 +665,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10800
-    * @tc.name: testIncludes0191
-    * @tc.desc: Returns true if value was found in buf, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIncludes0191
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10800
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let flag = buf1.includes("3", 2);
@@ -702,13 +679,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10900
-    * @tc.name: testIncludes0193
-    * @tc.desc: Returns true if value was found in buf, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIncludes0193
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_10900
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes0193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let flag = buf1.includes("32");
@@ -716,13 +693,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11000
-    * @tc.name: testIncludes0194
-    * @tc.desc: Returns true if value was found in buf, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIncludes0194
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11000
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes0194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let flag = buf1.includes("32", 2);
@@ -730,13 +707,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11100
-    * @tc.name: testIncludes0195
-    * @tc.desc: Returns true if value was found in buf, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIncludes0195
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11100
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes0195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("测试特殊字符$#@!");
       let flag = buf1.includes("#@");
@@ -746,13 +723,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11200
-    * @tc.name: testIncludes0196
-    * @tc.desc: Returns true if value was found in buf, false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIncludes0196
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11200
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes0196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236");
       let flag = buf1.includes("abc");
@@ -760,13 +737,13 @@ export default function FastBufferBaseTest2() {
     });
   
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11500
-    * @tc.name: testSwap160200
-    * @tc.desc: Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSwap160200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11500
+     * @tc.desc   Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSwap160200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1323");
       buf1.swap16();
@@ -775,13 +752,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11600
-    * @tc.name: testSwap160201
-    * @tc.desc: Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSwap160201
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11600
+     * @tc.desc   Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSwap160201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("132");
       try {
@@ -793,13 +770,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11700
-    * @tc.name: testSwap320210
-    * @tc.desc: Interprets buf as an array of unsigned 32-bit integers and swaps the byte order in-place.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSwap320210
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11700
+     * @tc.desc   Interprets buf as an array of unsigned 32-bit integers and swaps the byte order in-place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSwap320210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1234");
       buf1.swap32();
@@ -808,13 +785,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11800
-    * @tc.name: testswap320211
-    * @tc.desc: Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testswap320211
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_11800
+     * @tc.desc   Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testswap320211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("132");
       try {
@@ -826,13 +803,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12000
-    * @tc.name: testSwap640221
-    * @tc.desc: Interprets buf as an array of unsigned 64-bit integers and swaps the byte order in-place.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testSwap640221
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12000
+     * @tc.desc   Interprets buf as an array of unsigned 64-bit integers and swaps the byte order in-place.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testSwap640221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1234567");
       try {
@@ -844,13 +821,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12100
-    * @tc.name: testKeys0230
-    * @tc.desc: Creates and returns an iterator of buf keys (indices).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testKeys0230
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12100
+     * @tc.desc   Creates and returns an iterator of buf keys (indices).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testKeys0230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1234");
       let keys = buf1.keys();
@@ -862,13 +839,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12200
-    * @tc.name: testKeys0235
-    * @tc.desc: Creates and returns an iterator of buf keys (indices).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testKeys0235
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12200
+     * @tc.desc   Creates and returns an iterator of buf keys (indices).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testKeys0235", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uarr = new Uint8Array(4);
       uarr[0] = 0x31;
@@ -885,13 +862,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12300
-    * @tc.name: testValues0240
-    * @tc.desc: Creates and returns an iterator for buf values (bytes).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testValues0240
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12300
+     * @tc.desc   Creates and returns an iterator for buf values (bytes).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testValues0240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1234");
       let keys = buf1.values();
@@ -903,13 +880,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12400
-    * @tc.name: testValues0245
-    * @tc.desc: Creates and returns an iterator for buf values (bytes).
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testValues0245
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12400
+     * @tc.desc   Creates and returns an iterator for buf values (bytes).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testValues0245", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uarr = new Uint8Array(4);
       uarr[0] = 0x31;
@@ -926,13 +903,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12700
-    * @tc.name: testfrom0260
-    * @tc.desc: Copies the passed buffer data onto a new Buffer instance.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0260
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12700
+     * @tc.desc   Copies the passed buffer data onto a new Buffer instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uarr = new Uint8Array(3);
       uarr[0] = 0x12;
@@ -944,14 +921,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12800
-    * @tc.name: testfrom0261
-    * @tc.desc: Allocates a new Buffer using an array of bytes in the range 0 – 255.
-    *           Array entries outside that range will be truncated to fit into it.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0261
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12800
+     * @tc.desc   Allocates a new Buffer using an array of bytes in the range 0 – 255.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0261", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf = fastbuffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
       let str = buf.toString("hex");
@@ -959,13 +935,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12900
-    * @tc.name: testfrom0262
-    * @tc.desc: This creates a view of the ArrayBuffer without copying the underlying memory.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0262
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_12900
+     * @tc.desc   This creates a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0262", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new Uint8Array(2);
       arr[0] = 97;
@@ -979,13 +955,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13000
-    * @tc.name: testfrom0263
-    * @tc.desc: This creates a view of the ArrayBuffer without copying the underlying memory.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0263
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13000
+     * @tc.desc   This creates a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new Uint8Array(2);
       arr[0] = 97;
@@ -999,13 +975,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13100
-    * @tc.name: testfrom0264
-    * @tc.desc: Copies the passed buffer data onto a new Buffer instance.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0264
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13100
+     * @tc.desc   Copies the passed buffer data onto a new Buffer instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf1 = fastbuffer.from('buffer');
       const buf2 = fastbuffer.from(buf1);
@@ -1017,14 +993,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13200
-    * @tc.name: testfrom0265
-    * @tc.desc: Creates a new Buffer containing string. The encoding parameter identifies the character encoding
-    *           to be used when converting string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0265
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13200
+     * @tc.desc   Creates a new Buffer containing string. The encoding parameter identifies the character encoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf1 = fastbuffer.from('this is a test');
       let str = buf1.toString();
@@ -1032,14 +1007,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13300
-    * @tc.name: testfrom0266
-    * @tc.desc: Creates a new Buffer containing string. The encoding parameter identifies the character encoding
-    *           to be used when converting string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0266
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13300
+     * @tc.desc   Creates a new Buffer containing string. The encoding parameter identifies the character encoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf1 = fastbuffer.from('F1刘FG', 'hex');
       let str = buf1.toString('hex');
@@ -1099,14 +1073,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13400
-    * @tc.name: testfrom0267
-    * @tc.desc: For the object whose value returned by valueof() function is strictly equal to object
-    *           or supports symbol To primitive object, a new buffer instance is created.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0267
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13400
+     * @tc.desc   For the object whose value returned by valueof() function is strictly equal to object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf = fastbuffer.from('this is a test');
       let str = buf.toString();
@@ -1114,13 +1087,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13600
-    * @tc.name: testfrom0269
-    * @tc.desc: Create a new buffer containing a newline character string. Creating using base64 encoding
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0269
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_13600
+     * @tc.desc   Create a new buffer containing a newline character string. Creating using base64 encoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0269", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC/OgIQLaulKklB\npZltSaWwM3Cnzcmvh+LoqYFYjCePUxnoJRDusFqy4sjwBx9fn/XSxxJ9A0KxMtXa\nr7YFjwQo3FsIjLZ3+8wS+Kydcg==`;
       const buf = fastbuffer.from(str, 'base64');
@@ -1129,14 +1102,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_14700
-    * @tc.name: testWriteInt32BE0310
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32BE0310
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_14700
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32BE0310", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       let ref = buf.writeInt32BE(0x12345678, 0);
@@ -1145,14 +1117,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_14800
-    * @tc.name: testWriteInt32BE0311
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32BE0311
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_14800
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32BE0311", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       try {
@@ -1164,14 +1135,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_14900
-    * @tc.name: testWriteInt32BE0312
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32BE0312
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_14900
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32BE0312", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       try {
@@ -1183,14 +1153,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15000
-    * @tc.name: testWriteInt32BE0313
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32BE0313
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15000
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32BE0313", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       try {
@@ -1202,14 +1171,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15200
-    * @tc.name: testWriteInt32LE0320
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32LE0320
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15200
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32LE0320", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       let ref = buf.writeInt32LE(0x12345678, 0);
@@ -1217,14 +1185,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15300
-    * @tc.name: testWriteInt32LE0321
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32LE0321
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15300
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32LE0321", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       try {
@@ -1236,14 +1203,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15400
-    * @tc.name: testWriteInt32LE0322
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32LE0322
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15400
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32LE0322", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       try {
@@ -1255,14 +1221,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15500
-    * @tc.name: testWriteInt32LE0323
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt32LE0323
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15500
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt32LE0323", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       try {
@@ -1274,14 +1239,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15600
-    * @tc.name: testWriteInt16BE0330
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16BE0330
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15600
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16BE0330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       let ref = buf.writeInt16BE(0x7bca, 0);
@@ -1289,14 +1253,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15700
-    * @tc.name: testWriteInt16BE0331
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16BE0331
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15700
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16BE0331", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       try {
@@ -1308,14 +1271,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15800
-    * @tc.name: testWriteInt16BE0332
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16BE0332
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15800
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16BE0332", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       try {
@@ -1327,14 +1289,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15900
-    * @tc.name: testWriteInt16BE0333
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16BE0333
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_15900
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16BE0333", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       try {
@@ -1346,14 +1307,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16000
-    * @tc.name: testWriteInt16LE0340
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16LE0340
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16000
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16LE0340", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       let ref = buf.writeInt16LE(0x1234, 0);
@@ -1362,14 +1322,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16100
-    * @tc.name: testWriteInt16LE0341
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16LE0341
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16100
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16LE0341", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       try {
@@ -1381,14 +1340,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16200
-    * @tc.name: testWriteInt16LE0342
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16LE0342
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16200
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16LE0342", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       try {
@@ -1400,14 +1358,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16300
-    * @tc.name: testWriteInt16LE0343
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid signed 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt16LE0343
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16300
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt16LE0343", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       try {
@@ -1419,14 +1376,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16400
-    * @tc.name: testWriteInt80350
-    * @tc.desc: Writes value to buf at the specified offset.
-    *           value must be a valid signed 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt80350
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16400
+     * @tc.desc   Writes value to buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt80350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
       let ref = buf.writeInt8(2, 0);
@@ -1434,14 +1390,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16500
-    * @tc.name: testWriteInt80351
-    * @tc.desc: Writes value to buf at the specified offset.
-    *           value must be a valid signed 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt80351
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16500
+     * @tc.desc   Writes value to buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt80351", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
       try {
@@ -1453,13 +1408,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16600
-    * @tc.name: testWriteInt80352
-    * @tc.desc: Writes value to buf at the specified offset.value must be a valid signed 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt80352
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16600
+     * @tc.desc   Writes value to buf at the specified offset.value must be a valid signed 8-bit integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt80352", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
       try {
@@ -1471,13 +1426,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16700
-    * @tc.name: testWriteInt80353
-    * @tc.desc: Writes value to buf at the specified offset.value must be a valid signed 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteInt80353
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16700
+     * @tc.desc   Writes value to buf at the specified offset.value must be a valid signed 8-bit integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteInt80353", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
       let ref = buf.writeInt8(0x2, 1);
@@ -1485,14 +1440,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16800
-    * @tc.name: testWriteUInt16BE0360
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16BE0360
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16800
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16BE0360", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt16BE(0xdead, 0);
@@ -1500,14 +1454,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16900
-    * @tc.name: testWriteUInt16BE0361
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16BE0361
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_16900
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16BE0361", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1519,14 +1472,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17000
-    * @tc.name: testWriteUInt16BE0362
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16BE0362
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17000
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16BE0362", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1538,14 +1490,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17100
-    * @tc.name: testWriteUInt16BE0363
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16BE0363
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17100
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16BE0363", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt16BE(0xdead, 1);
@@ -1553,14 +1504,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17200
-    * @tc.name: testWriteUInt16LE0370
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16LE0370
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17200
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16LE0370", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt16LE(0xdead, 0);
@@ -1568,14 +1518,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17300
-    * @tc.name: testWriteUInt16LE0371
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16LE0371
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17300
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16LE0371", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1587,14 +1536,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17400
-    * @tc.name: testWriteUInt16LE0372
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16LE0372
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17400
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16LE0372", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1606,14 +1554,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17500
-    * @tc.name: testWriteUInt16LE0373
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 16-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt16LE0373
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17500
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt16LE0373", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt16LE(0xdead, 1);
@@ -1621,14 +1568,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17600
-    * @tc.name: testWriteUInt32BE0380
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt32BE0380
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17600
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt32BE0380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt32BE(0xfeedface, 0);
@@ -1636,14 +1582,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17700
-    * @tc.name: testWriteUInt32BE0381
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt32BE0381
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17700
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt32BE0381", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1655,14 +1600,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17800
-    * @tc.name: testWriteUInt32BE0382
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    *           The value must be a valid unsigned 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt32BE0382
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17800
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt32BE0382", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1674,14 +1618,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17900
-    * @tc.name: testWriteUInt32LE0390
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt32LE0390
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_17900
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt32LE0390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt32LE(0xfeedface, 0);
@@ -1689,14 +1632,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18000
-    * @tc.name: testWriteUInt32LE0391
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt32LE0391
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18000
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt32LE0391", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1708,14 +1650,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18100
-    * @tc.name: testWriteUInt32LE0392
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    *           The value must be a valid unsigned 32-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt32LE0392
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18100
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt32LE0392", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1727,13 +1668,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18200
-    * @tc.name: testWriteUInt80400
-    * @tc.desc: Writes value to buf at the specified offset. value must be a valid unsigned 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt80400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18200
+     * @tc.desc   Writes value to buf at the specified offset. value must be a valid unsigned 8-bit integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt80400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt8(0x42, 3);
@@ -1741,13 +1682,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18300
-    * @tc.name: testWriteUInt80401
-    * @tc.desc: Writes value to buf at the specified offset. value must be a valid unsigned 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt80401
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18300
+     * @tc.desc   Writes value to buf at the specified offset. value must be a valid unsigned 8-bit integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt80401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1759,13 +1700,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18400
-    * @tc.name: testWriteUInt80402
-    * @tc.desc: Writes value to buf at the specified offset. value must be a valid unsigned 8-bit integer.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUInt80402
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18400
+     * @tc.desc   Writes value to buf at the specified offset. value must be a valid unsigned 8-bit integer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUInt80402", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUInt8(0x42, 1);
@@ -1773,13 +1714,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18500
-    * @tc.name: testWriteUIntBE0410
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntBE0410
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18500
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntBE0410", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUIntBE(0x13141516, 0, 4);
@@ -1787,13 +1728,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18600
-    * @tc.name: testWriteUIntBE0411
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntBE0411
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18600
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntBE0411", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1805,13 +1746,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18700
-    * @tc.name: testWriteUIntBE0412
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntBE0412
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18700
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntBE0412", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1823,13 +1764,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18800
-    * @tc.name: testWriteUIntLE0420
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntLE0420
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18800
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntLE0420", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeUIntLE(0x13141516, 0, 4);
@@ -1837,13 +1778,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18900
-    * @tc.name: testWriteUIntLE0421
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntLE0421
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_18900
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntLE0421", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1855,13 +1796,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19000
-    * @tc.name: testWriteUIntLE0422
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntLE0422
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19000
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntLE0422", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -1873,13 +1814,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19100
-    * @tc.name: testWriteUIntLE0423
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteUIntLE0423
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19100
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteUIntLE0423", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(5);
       let ref = buf.writeUIntLE(0x13141516, 1, 4);
@@ -1887,13 +1828,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19200
-    * @tc.name: testWriteIntBE0430
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteIntBE0430
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19200
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteIntBE0430", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       let ref = buf.writeIntBE(0x1234567890ab, 0, 6);
@@ -1901,13 +1842,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19300
-    * @tc.name: testWriteIntBE0431
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteIntBE0431
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19300
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteIntBE0431", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       try {
@@ -1919,13 +1860,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19400
-    * @tc.name: testWriteIntLE0440
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteIntLE0440
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19400
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteIntLE0440", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       let ref = buf.writeIntLE(0x1234567890ab, 0, 6);
@@ -1933,13 +1874,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19500
-    * @tc.name: testWriteIntLE0441
-    * @tc.desc: Writes byteLength bytes of value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteIntLE0441
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19500
+     * @tc.desc   Writes byteLength bytes of value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteIntLE0441", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       try {
@@ -1951,13 +1892,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19600
-    * @tc.name: testWriteDoubleBE0450
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteDoubleBE0450
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19600
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteDoubleBE0450", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       let ref = buf.writeDoubleBE(123.456, 0);
@@ -1965,13 +1906,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19700
-    * @tc.name: testWriteDoubleBE0451
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteDoubleBE0451
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19700
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteDoubleBE0451", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       try {
@@ -1983,13 +1924,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19800
-    * @tc.name: testWriteDoubleLE0460
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteDoubleLE0460
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19800
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteDoubleLE0460", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       let ref = buf.writeDoubleLE(123.456, 0);
@@ -1997,13 +1938,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19900
-    * @tc.name: testWriteDoubleLE0461
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteDoubleLE0461
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_19900
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteDoubleLE0461", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       try {
@@ -2015,13 +1956,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20000
-    * @tc.name: testWriteFloatBE0470
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteFloatBE0470
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20000
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteFloatBE0470", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       let ref = buf.writeFloatBE(0xcabcbcbc, 0);
@@ -2029,13 +1970,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20100
-    * @tc.name: testWriteFloatBE0471
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteFloatBE0471
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20100
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteFloatBE0471", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -2047,13 +1988,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20200
-    * @tc.name: testWriteFloatLE0480
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteFloatLE0480
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20200
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteFloatLE0480", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(16);
       let ref = buf.writeFloatLE(0xcabcbcbc, 12);
@@ -2061,13 +2002,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20300
-    * @tc.name: testWriteFloatLE0481
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteFloatLE0481
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20300
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteFloatLE0481", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       try {
@@ -2079,13 +2020,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20400
-    * @tc.name: testWriteBigInt64BE0490
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigInt64BE0490
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20400
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigInt64BE0490", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       let ref = buf.writeBigInt64BE(0x0102030405060708n, 0);
@@ -2093,13 +2034,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20500
-    * @tc.name: testWriteBigInt64BE0491
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigInt64BE0491
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20500
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigInt64BE0491", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       try {
@@ -2111,13 +2052,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20600
-    * @tc.name: testWriteBigInt64LE0500
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigInt64LE0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20600
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigInt64LE0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       let ref = buf.writeBigInt64LE(0x0102030405060708n, 0);
@@ -2125,13 +2066,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20700
-    * @tc.name: testWriteBigInt64LE0501
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigInt64LE0501
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20700
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigInt64LE0501", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       try {
@@ -2143,13 +2084,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20800
-    * @tc.name: testWriteBigUInt64BE0510
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigUInt64BE0510
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20800
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigUInt64BE0510", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       let ref = buf.writeBigUInt64BE(0xdecafafecacefaden, 0);
@@ -2157,13 +2098,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20900
-    * @tc.name: testWriteBigUInt64BE0511
-    * @tc.desc: Writes value to buf at the specified offset as big-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigUInt64BE0511
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_20900
+     * @tc.desc   Writes value to buf at the specified offset as big-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigUInt64BE0511", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       try {
@@ -2175,13 +2116,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21000
-    * @tc.name: testWriteBigUInt64LE0520
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigUInt64LE0520
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21000
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigUInt64LE0520", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       let ref = buf.writeBigUInt64LE(0xdecafafecacefaden, 0);
@@ -2189,13 +2130,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21100
-    * @tc.name: testWriteBigUInt64LE0521
-    * @tc.desc: Writes value to buf at the specified offset as little-endian.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testWriteBigUInt64LE0521
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21100
+     * @tc.desc   Writes value to buf at the specified offset as little-endian.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testWriteBigUInt64LE0521", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       try {
@@ -2207,13 +2148,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21200
-    * @tc.name: testReadInt32BE0530
-    * @tc.desc: Reads a signed, big-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt32BE0530
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21200
+     * @tc.desc   Reads a signed, big-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt32BE0530", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       buf.writeInt32BE(0x12345678, 0);
@@ -2222,13 +2163,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21300
-    * @tc.name: testReadInt32BE0531
-    * @tc.desc: Reads a signed, big-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt32BE0531
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21300
+     * @tc.desc   Reads a signed, big-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt32BE0531", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       buf.writeInt32BE(0x12345678, 0);
@@ -2241,13 +2182,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21500
-    * @tc.name: testReadInt32LE0540
-    * @tc.desc: Reads a signed, little-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt32LE0540
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21500
+     * @tc.desc   Reads a signed, little-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt32LE0540", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       buf.writeInt32BE(0x12345678, 0);
@@ -2256,13 +2197,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21600
-    * @tc.name: testReadInt32LE0541
-    * @tc.desc: Reads a signed, little-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt32LE0541
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21600
+     * @tc.desc   Reads a signed, little-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt32LE0541", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(4);
       buf.writeInt32BE(0x12345678, 0);
@@ -2275,13 +2216,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21700
-    * @tc.name: testReadInt16BE0550
-    * @tc.desc: Reads a signed, big-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt16BE0550
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21700
+     * @tc.desc   Reads a signed, big-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt16BE0550", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       buf.writeInt16BE(0x1234, 0);
@@ -2290,13 +2231,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21800
-    * @tc.name: testReadInt16BE0551
-    * @tc.desc: Reads a signed, big-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt16BE0551
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21800
+     * @tc.desc   Reads a signed, big-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt16BE0551", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       buf.writeInt16BE(0x1234, 0);
@@ -2309,13 +2250,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21900
-    * @tc.name: testReadInt16LE0560
-    * @tc.desc: Reads a signed, little-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt16LE0560
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_21900
+     * @tc.desc   Reads a signed, little-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt16LE0560", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       buf.writeInt16BE(0x1234, 0);
@@ -2324,13 +2265,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22000
-    * @tc.name: testReadInt16LE0561
-    * @tc.desc: Reads a signed, little-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt16LE0561
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22000
+     * @tc.desc   Reads a signed, little-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt16LE0561", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(2);
       buf.writeInt16BE(0x1234, 0);
@@ -2343,13 +2284,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22100
-    * @tc.name: testReadInt80570
-    * @tc.desc: Reads a signed 8-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt80570
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22100
+     * @tc.desc   Reads a signed 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt80570", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
       buf.writeInt8(0x12);
@@ -2358,13 +2299,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22200
-    * @tc.name: testReadInt80571
-    * @tc.desc: Reads a signed 8-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadInt80571
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22200
+     * @tc.desc   Reads a signed 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadInt80571", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
       buf.writeInt8(0x12);
@@ -2377,13 +2318,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22300
-    * @tc.name: testReadUInt16BE0580
-    * @tc.desc: Reads an unsigned, big-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt16BE0580
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22300
+     * @tc.desc   Reads an unsigned, big-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt16BE0580", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt16BE(0x1234, 0);
@@ -2392,13 +2333,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22400
-    * @tc.name: testReadUInt16BE0581
-    * @tc.desc: Reads an unsigned, big-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt16BE0581
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22400
+     * @tc.desc   Reads an unsigned, big-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt16BE0581", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt16BE(0x1234, 0);
@@ -2411,13 +2352,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22500
-    * @tc.name: testReadUInt16LE0590
-    * @tc.desc: Reads an unsigned, little-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt16LE0590
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22500
+     * @tc.desc   Reads an unsigned, little-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt16LE0590", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt16LE(0x1234, 0);
@@ -2426,13 +2367,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22600
-    * @tc.name: testReadUInt16LE0591
-    * @tc.desc: Reads an unsigned, little-endian 16-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt16LE0591
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22600
+     * @tc.desc   Reads an unsigned, little-endian 16-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt16LE0591", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt16LE(0x1234, 0);
@@ -2445,13 +2386,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22700
-    * @tc.name: testReadUInt32BE0600
-    * @tc.desc: Reads an unsigned, big-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt32BE0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22700
+     * @tc.desc   Reads an unsigned, big-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt32BE0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt32BE(0x12345678, 0);
@@ -2460,13 +2401,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22800
-    * @tc.name: testReadUInt32BE0601
-    * @tc.desc: Reads an unsigned, big-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt32BE0601
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22800
+     * @tc.desc   Reads an unsigned, big-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt32BE0601", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt32BE(0x12345678, 0);
@@ -2479,13 +2420,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22900
-    * @tc.name: testReadUInt32LE0610
-    * @tc.desc: Reads an unsigned, little-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt32LE0610
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_22900
+     * @tc.desc   Reads an unsigned, little-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt32LE0610", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt32LE(0x12345678, 0);
@@ -2494,13 +2435,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23000
-    * @tc.name: testReadUInt32LE0611
-    * @tc.desc: Reads an unsigned, little-endian 32-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt32LE0611
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23000
+     * @tc.desc   Reads an unsigned, little-endian 32-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt32LE0611", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt32LE(0x12345678, 0);
@@ -2513,13 +2454,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23100
-    * @tc.name: testReadUInt80620
-    * @tc.desc: Reads an unsigned 8-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt80620
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23100
+     * @tc.desc   Reads an unsigned 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt80620", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt8(0x42);
@@ -2528,13 +2469,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23200
-    * @tc.name: testReadUInt80621
-    * @tc.desc: Reads an unsigned 8-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUInt80621
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23200
+     * @tc.desc   Reads an unsigned 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUInt80621", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUInt8(0x42);
@@ -2547,13 +2488,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23300
-    * @tc.name: testReadUIntBE0630
-    * @tc.desc: Reads an unsigned 8-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUIntBE0630
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23300
+     * @tc.desc   Reads an unsigned 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUIntBE0630", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUIntBE(0x13141516, 0, 4);
@@ -2562,13 +2503,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23400
-    * @tc.name: testReadUIntBE0631
-    * @tc.desc: Reads an unsigned 8-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUIntBE0631
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23400
+     * @tc.desc   Reads an unsigned 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUIntBE0631", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUIntBE(0x13141516, 0, 4);
@@ -2581,14 +2522,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23500
-    * @tc.name: testReadUIntLE0640
-    * @tc.desc: Reads byteLength number of bytes from buf at the specified offset and interprets
-    *           the result as an unsigned, little-endian integer supporting up to 48 bits of accuracy.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUIntLE0640
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23500
+     * @tc.desc   Reads byteLength number of bytes from buf at the specified offset and interprets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUIntLE0640", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUIntLE(0x13141516, 0, 4);
@@ -2597,14 +2537,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23600
-    * @tc.name: testReadUIntLE0641
-    * @tc.desc: Reads byteLength number of bytes from buf at the specified offset and interprets
-    *           the result as an unsigned, little-endian integer supporting up to 48 bits of accuracy.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadUIntLE0641
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23600
+     * @tc.desc   Reads byteLength number of bytes from buf at the specified offset and interprets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadUIntLE0641", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeUIntLE(0x13141516, 0, 4);
@@ -2617,14 +2556,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23700
-    * @tc.name: testReadIntBE0650
-    * @tc.desc: Reads byteLength number of bytes from buf at the specified offset and interprets
-    *           the result as a big-endian, two's complement signed value supporting up to 48 bits of accuracy.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadIntBE0650
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23700
+     * @tc.desc   Reads byteLength number of bytes from buf at the specified offset and interprets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadIntBE0650", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       buf.writeIntBE(0x123456789011, 0, 6);
@@ -2633,14 +2571,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23800
-    * @tc.name: testReadIntBE0651
-    * @tc.desc: Reads byteLength number of bytes from buf at the specified offset and interprets
-    *           the result as a big-endian, two's complement signed value supporting up to 48 bits of accuracy.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadIntBE0651
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23800
+     * @tc.desc   Reads byteLength number of bytes from buf at the specified offset and interprets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadIntBE0651", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       buf.writeIntBE(0x123456789011, 0, 6);
@@ -2653,14 +2590,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23900
-    * @tc.name: testReadIntLE0660
-    * @tc.desc: Reads byteLength number of bytes from buf at the specified offset and interprets
-    *           the result as a little-endian, two's complement signed value supporting up to 48 bits of accuracy.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadIntLE0660
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_23900
+     * @tc.desc   Reads byteLength number of bytes from buf at the specified offset and interprets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadIntLE0660", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       buf.writeIntLE(0x123456789011, 0, 6);
@@ -2669,14 +2605,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24000
-    * @tc.name: testReadIntLE0661
-    * @tc.desc: Reads byteLength number of bytes from buf at the specified offset and interprets
-    *           the result as a little-endian, two's complement signed value supporting up to 48 bits of accuracy.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadIntLE0661
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24000
+     * @tc.desc   Reads byteLength number of bytes from buf at the specified offset and interprets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadIntLE0661", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(6);
       buf.writeIntLE(0x123456789011, 0, 6);
@@ -2689,13 +2624,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24100
-    * @tc.name: testReadDoubleBE0670
-    * @tc.desc: Reads a 64-bit, big-endian double from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadDoubleBE0670
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24100
+     * @tc.desc   Reads a 64-bit, big-endian double from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadDoubleBE0670", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeDoubleBE(123.456, 0);
@@ -2704,13 +2639,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24200
-    * @tc.name: testReadDoubleBE0671
-    * @tc.desc: Reads a 64-bit, big-endian double from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadDoubleBE0671
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24200
+     * @tc.desc   Reads a 64-bit, big-endian double from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadDoubleBE0671", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeDoubleBE(123.456, 0);
@@ -2723,13 +2658,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24300
-    * @tc.name: testReadDoubleLE0680
-    * @tc.desc: Reads a 64-bit, little-endian double from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadDoubleLE0680
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24300
+     * @tc.desc   Reads a 64-bit, little-endian double from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadDoubleLE0680", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeDoubleLE(123.456, 0);
@@ -2738,13 +2673,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24400
-    * @tc.name: testReadDoubleLE0681
-    * @tc.desc: Reads a 64-bit, little-endian double from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadDoubleLE0681
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24400
+     * @tc.desc   Reads a 64-bit, little-endian double from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadDoubleLE0681", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeDoubleLE(123.456, 0);
@@ -2757,13 +2692,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24500
-    * @tc.name: testReadFloatBE0690
-    * @tc.desc: Reads a 32-bit, big-endian float from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadFloatBE0690
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24500
+     * @tc.desc   Reads a 32-bit, big-endian float from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadFloatBE0690", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeFloatBE(0xcabcbcbc, 0);
@@ -2772,13 +2707,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24600
-    * @tc.name: testReadFloatBE0691
-    * @tc.desc: Reads a 32-bit, big-endian float from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadFloatBE0691
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24600
+     * @tc.desc   Reads a 32-bit, big-endian float from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadFloatBE0691", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeFloatBE(0xcabcbcbc, 0);
@@ -2791,13 +2726,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24700
-    * @tc.name: testReadFloatLE0700
-    * @tc.desc: Reads a 32-bit, little-endian float from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadFloatLE0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24700
+     * @tc.desc   Reads a 32-bit, little-endian float from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadFloatLE0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeFloatLE(0xcabcbcbc, 0);
@@ -2806,13 +2741,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24800
-    * @tc.name: testReadFloatLE0701
-    * @tc.desc: Reads a 32-bit, little-endian float from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadFloatLE0701
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24800
+     * @tc.desc   Reads a 32-bit, little-endian float from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadFloatLE0701", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
       buf.writeFloatLE(0xcabcbcbc, 0);
@@ -2825,13 +2760,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24900
-    * @tc.name: testReadBigInt64BE0710
-    * @tc.desc: Reads a signed, big-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigInt64BE0710
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_24900
+     * @tc.desc   Reads a signed, big-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigInt64BE0710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigInt64BE(0x0102030405060708n, 0);
@@ -2840,13 +2775,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25000
-    * @tc.name: testReadBigInt64BE0711
-    * @tc.desc: Reads a signed, big-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigInt64BE0711
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25000
+     * @tc.desc   Reads a signed, big-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigInt64BE0711", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigInt64BE(0x0102030405060708n, 0);
@@ -2859,13 +2794,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25100
-    * @tc.name: testReadBigInt64LE0720
-    * @tc.desc: Reads a signed, little-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigInt64LE0720
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25100
+     * @tc.desc   Reads a signed, little-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigInt64LE0720", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigInt64BE(0x0102030405060708n, 0);
@@ -2874,13 +2809,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25200
-    * @tc.name: testReadBigInt64LE0721
-    * @tc.desc: Reads a signed, little-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigInt64LE0721
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25200
+     * @tc.desc   Reads a signed, little-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigInt64LE0721", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigInt64BE(0x0102030405060708n, 0);
@@ -2893,13 +2828,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25300
-    * @tc.name: testReadBigUInt64BE0730
-    * @tc.desc: Reads a unsigned, big-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigUInt64BE0730
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25300
+     * @tc.desc   Reads a unsigned, big-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigUInt64BE0730", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigUInt64BE(0xdecafafecacefaden, 0);
@@ -2908,13 +2843,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25400
-    * @tc.name: testReadBigUInt64BE0731
-    * @tc.desc: Reads a unsigned, big-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigUInt64BE0731
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25400
+     * @tc.desc   Reads a unsigned, big-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigUInt64BE0731", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigUInt64BE(0xdecafafecacefaden, 0);
@@ -2927,13 +2862,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25500
-    * @tc.name: testReadBigUInt64LE0740
-    * @tc.desc: Reads a unsigned, little-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigUInt64LE0740
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25500
+     * @tc.desc   Reads a unsigned, little-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigUInt64LE0740", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigUInt64BE(0xdecafafecacefaden, 0);
@@ -2942,13 +2877,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25600
-    * @tc.name: testReadBigUInt64LE0741
-    * @tc.desc: Reads a unsigned, little-endian 64-bit integer from buf at the specified offset.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testReadBigUInt64LE0741
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25600
+     * @tc.desc   Reads a unsigned, little-endian 64-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testReadBigUInt64LE0741", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(8);
       buf.writeBigUInt64BE(0xdecafafecacefaden, 0);
@@ -2961,13 +2896,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25700
-    * @tc.name: testBufferLength0750
-    * @tc.desc: Returns the number of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferLength0750
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_25700
+     * @tc.desc   Returns the number of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferLength0750", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from("1236");
       let len = buf.length;
@@ -2975,13 +2910,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_LENGTH_0751
-    * @tc.name: testBufferLength0751
-    * @tc.desc: Returns the number of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferLength0751
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_LENGTH_0751
+     * @tc.desc   Returns the number of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferLength0751", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from("1236");
       try {
@@ -2992,13 +2927,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_LENGTH_0752
-    * @tc.name: testBufferLength0752
-    * @tc.desc: Returns the number of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferLength0752
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_LENGTH_0752
+     * @tc.desc   Returns the number of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferLength0752", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from("测试特殊字符$#@!");
       let len = buf.length;
@@ -3006,13 +2941,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26000
-    * @tc.name: testBufferByteOffset0755
-    * @tc.desc: Returns the offset of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferByteOffset0755
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26000
+     * @tc.desc   Returns the offset of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferByteOffset0755", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from("1236");
       let offset = buf.byteOffset;
@@ -3020,13 +2955,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26100
-    * @tc.name: testBufferByteOffset0756
-    * @tc.desc: Returns the offset of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferByteOffset0756
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26100
+     * @tc.desc   Returns the offset of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferByteOffset0756", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10);
       let offset = buf.byteOffset;
@@ -3034,13 +2969,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26200
-    * @tc.name: testBufferByteOffset0757
-    * @tc.desc: Returns the offset of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferByteOffset0757
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26200
+     * @tc.desc   Returns the offset of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferByteOffset0757", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitializedFromPool(10);
       let offset = buf.byteOffset;
@@ -3048,13 +2983,13 @@ export default function FastBufferBaseTest2() {
     });
     
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26300
-    * @tc.name: testBufferByteOffset0758
-    * @tc.desc: Returns the offset of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferByteOffset0758
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26300
+     * @tc.desc   Returns the offset of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferByteOffset0758", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitialized(10);
       let offset = buf.byteOffset;
@@ -3062,13 +2997,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26400
-    * @tc.name: testBufferByteOffset0759
-    * @tc.desc: Returns the offset of bytes in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testBufferByteOffset0759
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_26400
+     * @tc.desc   Returns the offset of bytes in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testBufferByteOffset0759", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from("1236");
       try {
@@ -3079,39 +3014,39 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27000
-    * @tc.name: testAllocUninitialized0780
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testAllocUninitialized0780
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27000
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testAllocUninitialized0780", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitialized(10);
       expect(buf.length).assertEqual(10);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27100
-    * @tc.name: testAllocUninitialized0781
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testAllocUninitialized0781
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27100
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testAllocUninitialized0781", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.allocUninitialized(0);
       expect(buf.length).assertEqual(0);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27200
-    * @tc.name: testAllocUninitialized0782
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testAllocUninitialized0782
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27200
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testAllocUninitialized0782", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let buf = fastbuffer.allocUninitialized(-5);
@@ -3123,13 +3058,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27500
-    * @tc.name: testToString0785
-    * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testToString0785
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27500
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0785", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       try {
@@ -3142,14 +3077,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27600
-    * @tc.name: testfrom0786
-    * @tc.desc: For the object whose value returned by valueof() function is strictly equal to object
-    *           or supports symbol To primitive object, a new buffer instance is created.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0786
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27600
+     * @tc.desc   For the object whose value returned by valueof() function is strictly equal to object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0786", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let arrayBuffer = new ArrayBuffer(5);
       let array = new Int8Array(arrayBuffer);
@@ -3167,13 +3101,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27700
-    * @tc.name: testfrom0787
-    * @tc.desc: The buffer handles a uint8array and decodes it with base64 and base64url.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0787
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27700
+     * @tc.desc   The buffer handles a uint8array and decodes it with base64 and base64url.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testfrom0787', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let array = new Uint8Array([252,11,3,67,237,118,91,177,43]);
       let buf = fastbuffer.from(array);
@@ -3219,15 +3153,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27800
-    * @tc.name: testByteLength0036
-    * @tc.desc: Returns the byte length of a string when encoded using `encoding`.
-    *           This is not the same as [`String.prototype.length`], which does not account
-    *           for the encoding that is used to convert the string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testByteLength0036
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27800
+     * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testByteLength0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abc");
       let byteLen = fastbuffer.byteLength(buf1);
@@ -3235,15 +3167,13 @@ export default function FastBufferBaseTest2() {
     });
       
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27900
-    * @tc.name: testByteLength0037
-    * @tc.desc: Returns the byte length of a string when encoded using `encoding`.
-    *           This is not the same as [`String.prototype.length`], which does not account
-    *           for the encoding that is used to convert the string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testByteLength0037
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_27900
+     * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testByteLength0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.alloc(8);
       let byteLen = fastbuffer.byteLength(buf1);
@@ -3251,13 +3181,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28000
-      * @tc.name: testToString0038
-      * @tc.desc: Decodes buf to a string according to the specified character encoding in encoding.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+     * @tc.name   testToString0038
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28000
+     * @tc.desc   Decodes buf to a string according to the specified character encoding in encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testToString0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let str = "abcdefhajksalfsdfjl12346287467823®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
       let strbuf = fastbuffer.from(str, "latin1");
@@ -3266,13 +3196,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28100
-      * @tc.name: testLastIndexOf30000
-      * @tc.desc: The index of the last occurrence of value in buf.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+     * @tc.name   testLastIndexOf30000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28100
+     * @tc.desc   The index of the last occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testLastIndexOf30000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("13236235");
       let index = buf1.lastIndexOf("23", 9999999999999);
@@ -3280,81 +3210,81 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28200
-      * @tc.name: testIncludes30010
-      * @tc.desc: Returns true if value was found in buf, false otherwise.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+     * @tc.name   testIncludes30010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28200
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes30010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abcdefghigk");
       let flag = buf1.includes("f", -3);
       expect(flag).assertEqual(false);
     });
 
-      /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28300
-      * @tc.name: testIncludes30020
-      * @tc.desc: Returns true if value was found in buf, false otherwise.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   testIncludes30020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28300
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes30020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abcdefghigk");
       let flag = buf1.includes("f", 9999999999999);
       expect(flag).assertEqual(false);
     });
 
-      /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28400
-      * @tc.name: testIncludes30030
-      * @tc.desc: Returns true if value was found in buf, false otherwise.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   testIncludes30030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28400
+     * @tc.desc   Returns true if value was found in buf, false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIncludes30030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("abcdefghigk");
       let flag = buf1.includes("f", -9999999999999);
       expect(flag).assertEqual(true);
     });
 
-      /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28500
-      * @tc.name: testAlloc30040
-      * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   testAlloc30040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28500
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testAlloc30040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10, '');
       expect(buf.length).assertEqual(10);
     });
 
-      /**
-      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28600
-      * @tc.name: testAlloc30050
-      * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   testAlloc30050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28600
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testAlloc30050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(20).fill('');
       expect(buf.length).assertEqual(20);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28700
-    * @tc.name: testIndexOf30060
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf30060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28700
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf30060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123456789abcdefg");
       let index = buf1.indexOf("3", -1);
@@ -3362,13 +3292,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28800
-    * @tc.name: testIndexOf30070
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf30070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28800
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf30070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123456789abcdefg");
       let index = buf1.indexOf("3", 99999999999999);
@@ -3376,13 +3306,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28900
-    * @tc.name: testIndexOf30080
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf30080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_28900
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf30080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123456789abcdefg");
       let index = buf1.indexOf("3", -99999999999999);
@@ -3390,13 +3320,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29000
-    * @tc.name: testIndexOf30090
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf30090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29000
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf30090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("This is a buffer");
       let index = buf1.indexOf("is", -5);
@@ -3404,13 +3334,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29100
-    * @tc.name: testIndexOf30100
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIndexOf30100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29100
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIndexOf30100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("This is a buffer");
       let index = buf1.indexOf("f", -20);
@@ -3418,13 +3348,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29200
-    * @tc.name: testFrom30110
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFrom30110
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29200
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFrom30110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let buf1 = fastbuffer.from(null);
@@ -3437,13 +3367,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29300
-    * @tc.name: testFrom30120
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFrom30120
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29300
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFrom30120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let buf1 = fastbuffer.from(undefined);
@@ -3456,13 +3386,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29600
-    * @tc.name: testFrom30150
-    * @tc.desc: The index of the first occurrence of value in buf.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFrom30150
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29600
+     * @tc.desc   The index of the first occurrence of value in buf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFrom30150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let arrBuf = new ArrayBuffer(10);
@@ -3476,16 +3406,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29700
-    * @tc.name: testCopy0147
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0147
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29700
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uint8array = new Uint8Array(10).fill(0);
       let buf = fastbuffer.from([1, 2, 3, 4, 5, 6, 7]);
@@ -3496,16 +3423,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29800
-    * @tc.name: testCopy0148
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0148
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_29800
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uint8array = new Uint8Array(10).fill(0);
       let buf = fastbuffer.from([1, 2, 3, 4, 5, 6, 7]);
@@ -3516,16 +3440,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30100
-    * @tc.name: testCopy0151
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0151
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30100
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let uint8array = new Uint8Array(10).fill(0);
@@ -3537,16 +3458,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30200
-    * @tc.name: testCopy0152
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0152
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30200
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uint8array = new Uint8Array(10).fill(0);
       let buf = fastbuffer.from([1, 2, 3, 4, 5, 6, 7]);
@@ -3557,16 +3475,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30300
-    * @tc.name: testCopy0153
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0153
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30300
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uint8array = new Uint8Array(10).fill(0);
       let buf = fastbuffer.from([1, 2, 3, 4, 5, 6, 7]);
@@ -3577,16 +3492,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30400
-    * @tc.name: testCopy0154
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0154
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30400
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let uint8array = new Uint8Array(10).fill(0);
@@ -3598,16 +3510,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30500
-    * @tc.name: testCopy0155
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0155
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30500
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uint8array = new Uint8Array(10).fill(9);
       const buf = fastbuffer.from([1,2,3,4,5,6,7]);
@@ -3618,16 +3527,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30600
-    * @tc.name: testCopy0156
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0156
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30600
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.alloc(1024);
       let buf2 = fastbuffer.alloc(512);
@@ -3645,16 +3551,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30700
-    * @tc.name: testCopy0157
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0157
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30700
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10);
       let buf1 = fastbuffer.alloc(10).fill('!');
@@ -3667,16 +3570,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30800
-    * @tc.name: testCopy0158
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0158
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30800
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10);
       for (let i = 0; i < 10; i++) {
@@ -3688,16 +3588,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30900
-    * @tc.name: testCopy0159
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0159
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_30900
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10);
       for (let i = 0; i < 10; i++) {
@@ -3709,16 +3606,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31000
-    * @tc.name: testCopy0160
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0160
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31000
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10);
       for (let i = 0; i < 10; i++) {
@@ -3730,16 +3624,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31100
-    * @tc.name: testCopy0161
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testCopy0161
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31100
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testCopy0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(10);
       for (let i = 0; i < 10; i++) {
@@ -3751,16 +3642,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31200
-    * @tc.name: testfrom0788
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0788
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31200
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0788", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let sharedArr = new SharedArrayBuffer(20)
       let uint8Arr = new Uint8Array(sharedArr);
@@ -3772,16 +3660,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31300
-    * @tc.name: testfrom0789
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0789
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31300
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0789", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let sharedArr = new SharedArrayBuffer(10)
       let uint8Arr = new Uint8Array(sharedArr);
@@ -3793,16 +3678,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31400
-    * @tc.name: testfrom0790
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0790
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31400
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0790", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let sharedArr = new SharedArrayBuffer(1000)
       let bufObj = fastbuffer.from(sharedArr, 5, undefined);
@@ -3810,16 +3692,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31500
-    * @tc.name: testfrom0791
-    * @tc.desc: Copies data from a region of buf to a region in target,
-    *           even if the target memory region overlaps with buf.
-    *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-    *           and the extra part will not be overwritten.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0791
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31500
+     * @tc.desc   Copies data from a region of buf to a region in target,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0791", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let sharedArr = new SharedArrayBuffer(10)
       let bufObj = fastbuffer.from(sharedArr, undefined, 6);
@@ -3827,13 +3706,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31600
-    * @tc.name: testfrom0792
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0792
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31600
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0792", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ab = new ArrayBuffer(100);
       let buf = fastbuffer.from(ab, 1.2, 1.2);
@@ -3842,13 +3721,13 @@ export default function FastBufferBaseTest2() {
     });
   
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31700
-    * @tc.name: testfrom0793
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0793
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31700
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0793", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let ab = new ArrayBuffer(100);
         let buf = fastbuffer.from(ab, 1, 1.2);
@@ -3856,14 +3735,14 @@ export default function FastBufferBaseTest2() {
         expect(res).assertEqual('00');
     });
   
-    /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31800
-    * @tc.name: testfrom0794
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+      /**
+       * @tc.name   testfrom0794
+       * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31800
+       * @tc.desc   Create a new buffer containing parameter is non integer
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it("testfrom0794", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let ab = new ArrayBuffer(100);
         let buf = fastbuffer.from(ab, 1.2, 1);
@@ -3872,13 +3751,13 @@ export default function FastBufferBaseTest2() {
     });
   
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31900
-    * @tc.name: testfrom0795
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0795
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_31900
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0795", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         let ab = new ArrayBuffer(100);
         let buf = fastbuffer.from(ab, 9.9, 9.9);
@@ -3887,13 +3766,13 @@ export default function FastBufferBaseTest2() {
     });
   
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32000
-    * @tc.name: testfrom0796
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0796
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32000
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0796", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let ab = new ArrayBuffer(100);
       let buf = fastbuffer.from(ab, 2.9, 2.9);
@@ -3902,13 +3781,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32700
-    * @tc.name: testfrom0275
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0275
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32700
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0275", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from('this buffer is a buffer');
       expect(buf.lastIndexOf('buffer', -4)).assertEqual(17);
@@ -3931,13 +3810,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32800
-    * @tc.name: testfrom0276
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0276
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32800
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0276", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from('this buffer is a buffer');
       expect(buf.lastIndexOf('is',undefined)).assertEqual(12);
@@ -3947,13 +3826,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32900
-    * @tc.name: testfrom0277
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0277
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_32900
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0277", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.from([11,12,13,14,15,16,17,18,19])
       expect(buf.lastIndexOf(13,-1)).assertEqual(2);
@@ -3965,13 +3844,13 @@ export default function FastBufferBaseTest2() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_33000
-    * @tc.name: testfrom0278
-    * @tc.desc: Create a new buffer containing parameter is non integer
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testfrom0278
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_33000
+     * @tc.desc   Create a new buffer containing parameter is non integer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testfrom0278", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
         let buf = fastbuffer.from([11,12,13,14,15,16,17,18,19]);

@@ -137,7 +137,6 @@ export default function LinkEnhanceAPI() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100
      * @tc.desc   linkEnhance.createConnection接口入参deviceid长度为空
@@ -168,7 +167,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0200
      * @tc.desc   linkEnhance.createConnection接口入参deviceid长度为null
@@ -199,7 +197,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0300
      * @tc.desc   linkEnhance.createConnection接口入参deviceid为undefined
@@ -230,7 +227,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0300----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0400
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0400
      * @tc.desc   linkEnhance.createConnection接口入参name长度为空
@@ -261,7 +257,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0400----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0500
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0500
      * @tc.desc   linkEnhance.createConnection接口入参name为null
@@ -293,7 +288,6 @@ export default function LinkEnhanceAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0600
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0600
      * @tc.desc   linkEnhance.createConnection接口入参name为undefined
@@ -325,7 +319,6 @@ export default function LinkEnhanceAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connect_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connect_0100
      * @tc.desc   linkEnhance.connection.connect()接口,createConnection入参deviceid格式错误
@@ -364,7 +357,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_connect_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connect_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connect_0200
      * @tc.desc   linkEnhance.connection.connect()接口超过10个限制
@@ -407,7 +399,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_connect_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connect_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connect_0300
      * @tc.desc   linkEnhance.connection.connect()接口deviceid为空格
@@ -448,7 +439,6 @@ export default function LinkEnhanceAPI() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connect_0400
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connect_0400
      * @tc.desc   linkEnhance.connection.connect()接口name为max(255)
@@ -491,7 +481,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_connect_0400----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connect_0500
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connect_0500
      * @tc.desc   linkEnhance.connection.connect()接口name为max+1(256)
@@ -534,7 +523,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_connect_0500----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100
      * @tc.desc   linkEnhance.connection.sendData()接口连接无效发送数据
@@ -576,7 +564,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200
      * @tc.desc   linkEnhance.connection.sendData()接口连接处于不可用状态
@@ -619,7 +606,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0100
      * @tc.desc   linkEnhance.connection.on(type:'connectResult')接口入参callback为null
@@ -661,7 +647,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0200
      * @tc.desc   linkEnhance.connection.on(type:'disconnected')接口入参callback为null
@@ -703,7 +688,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0300
      * @tc.desc   linkEnhance.connection.on(type:'dataReceived')接口入参callback为null
@@ -745,7 +729,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOn_0300----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100
      * @tc.desc   linkEnhance.connection.off(type:'connectResult')接口入参callback为null
@@ -787,7 +770,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0200
      * @tc.desc   linkEnhance.connection.off(type:'disconnected')接口入参callback为null
@@ -829,7 +811,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0300
      * @tc.desc   linkEnhance.connection.off(type:'dataReceived')接口入参callback为null
@@ -871,7 +852,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_ConnectionOff_0300----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100
      * @tc.desc   linkEnhance.connection.disconnet接口入调用成功
@@ -909,7 +889,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100
      * @tc.desc   linkEnhance.connection.getPeerDeviceId接口调用成功
@@ -945,7 +924,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_close_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_close_0100
      * @tc.desc   linkEnhance.connection.close接口调用成功
@@ -980,7 +958,6 @@ export default function LinkEnhanceAPI() {
         console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_close_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100
      * @tc.desc   linkEnhance.createServer接口正在创建的服务名已存在
@@ -1017,7 +994,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createServer_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createServer_0200
      * @tc.desc   linkEnhance.createServer接口入参name为null
@@ -1046,7 +1022,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createServer_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createServer_0300
      * @tc.desc   linkEnhance.createServer接口入参name为空格
@@ -1075,7 +1050,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0300----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createServer_0400
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createServer_0400
      * @tc.desc   linkEnhance.createServer接口入参name为undefined
@@ -1104,7 +1078,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0400----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0100
      * @tc.desc   linkEnhance.on(type: 'connectionAccepted')接口回调为空
@@ -1140,7 +1113,6 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200
      * @tc.desc   linkEnhance.on(type: 'serverStopped')接口回调为空
@@ -1176,7 +1148,6 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0100
      * @tc.desc   linkEnhance.off(type: 'connectionAccepted')接口回调为空
@@ -1212,7 +1183,6 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200
      * @tc.desc   linkEnhance.off(type: 'serverStopped')接口回调为空
@@ -1248,7 +1218,6 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300
      * @tc.desc   linkEnhance.off(type: 'serverStopped')接口回调为undefined
@@ -1285,7 +1254,6 @@ export default function LinkEnhanceAPI() {
     console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_serverOff_0300----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100
      * @tc.desc   linkEnhance.createServer接口服务个数超过10个
@@ -1374,7 +1342,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200
      * @tc.desc   linkEnhance.createServer接口入参name长度为max(255)
@@ -1406,7 +1373,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_server_start_0300
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_server_start_0300
      * @tc.desc   linkEnhance.createServer接口入参name长度为max+1
@@ -1438,7 +1404,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_server_start_0300----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100
      * @tc.desc   linkEnhance.server.stop接口调用正常
@@ -1474,7 +1439,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100
      * @tc.desc   linkEnhance.server.close接口正常调用
@@ -1509,7 +1473,6 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100----------------");
     });
     /**
-     * @generated.time 2025-11-09 20:49:45
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100
      * @tc.desc   linkEnhance.connection.connectResult接口参数错误

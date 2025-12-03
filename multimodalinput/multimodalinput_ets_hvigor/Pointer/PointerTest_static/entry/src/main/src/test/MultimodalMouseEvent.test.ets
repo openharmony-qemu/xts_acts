@@ -40,7 +40,6 @@ export default function MultimodalMouseEventTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_Action_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_Action_0100
      * @tc.desc   Test MouseEvent Action
@@ -72,7 +71,6 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_Button_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_Button_0100
      * @tc.desc   Test MouseEvent Button
@@ -104,7 +102,6 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_Axis_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_Axis_0100
      * @tc.desc   Test MouseEvent Axis
@@ -130,7 +127,6 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_AxisValue_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_AxisValue_0100
      * @tc.desc   Test MouseEvent AxisValue
@@ -159,7 +155,6 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_ToolType_0100
      * @tc.number SUB_MMI_Input_Api_MouseEvent_ToolType_0100
      * @tc.desc   Test MouseEvent ToolType
@@ -186,7 +181,6 @@ export default function MultimodalMouseEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_ToolType_0200
      * @tc.number SUB_MMI_Input_Api_MouseEvent_ToolType_0200
      * @tc.desc   Test MouseEvent

@@ -27,7 +27,6 @@ export default function ActsShortTimeTaskManagerStaticTest() {
   describe('ActsShortTimeTaskManagerStaticTest', () => {
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001
      * @tc.desc   Test that the requestSuspendDelay function normal call and cancelSuspendDelay function normal call
@@ -74,7 +73,6 @@ export default function ActsShortTimeTaskManagerStaticTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_002
      * @tc.desc   Test that the getRemainingDelayTime callback function normal call
@@ -135,7 +133,6 @@ export default function ActsShortTimeTaskManagerStaticTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
      * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
      * @tc.desc   Test that the getRemainingDelayTime promise function normal call

@@ -149,12 +149,12 @@ export default function MediaSourceLoadingRequestTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_SOURCE_LOADING_REQUEST_TEST_001
-     * @tc.name      : initResourceLoader_001
-     * @tc.desc      : initResourceLoader
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   initResourceLoader_001
+     * @tc.number MEDIA_SOURCE_LOADING_REQUEST_TEST_001
+     * @tc.desc   initResourceLoader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('initResourceLoader_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'initResourceLoader_001';

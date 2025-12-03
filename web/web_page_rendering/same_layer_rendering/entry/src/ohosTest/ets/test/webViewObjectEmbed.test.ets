@@ -52,13 +52,13 @@ export default function ActsAceWebViewObjectEmbed() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_API_0001
-     *@tc.name testWebViewObjectEmbed01
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbed01
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0001
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbed01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbed01"
@@ -68,13 +68,13 @@ export default function ActsAceWebViewObjectEmbed() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_API_0004
-     *@tc.name testWebViewObjectEmbed04
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbed04
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_API_0004
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbed04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbed04"
@@ -83,13 +83,13 @@ export default function ActsAceWebViewObjectEmbed() {
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0001
-     *@tc.name testWebViewObjectEmbedGesture01
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedGesture01
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0001
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedGesture01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedGesture01"
@@ -97,13 +97,13 @@ export default function ActsAceWebViewObjectEmbed() {
       Utils.registerEvent("testWebViewObjectEmbedGesture01", 'success', 154000, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0002
-     *@tc.name testWebViewObjectEmbedGesture02
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedGesture02
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0002
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedGesture02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedGesture02"
@@ -111,13 +111,13 @@ export default function ActsAceWebViewObjectEmbed() {
       Utils.registerEvent("testWebViewObjectEmbedGesture02", 'success', 154010, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
-    /*
-     *@tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0003
-     *@tc.name testWebViewObjectEmbedGesture03
-     *@tc.desc test objectEmbed
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewObjectEmbedGesture03
+     * @tc.number SUB_ACE_WEB_OBJECTEMBED_Gesture_API_0003
+     * @tc.desc   test objectEmbed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewObjectEmbedGesture03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedGesture03"

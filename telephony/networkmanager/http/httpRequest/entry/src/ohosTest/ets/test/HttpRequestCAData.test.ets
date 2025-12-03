@@ -129,14 +129,14 @@ function getWrongTlsConnOptions(port:number): socket.TLSConnectOptions {
 export default function HttpRequestDataCATest() {
   describe('HttpRequestDataCATest', () => {
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_Http_CAData_0100
-    * @tc.name  : testNetworkMgr_Http_CAData_0100
-    * @tc.desc  : The test can be performed using self-signed certificate.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0100
+     * @tc.number SUB_NetworkMgr_Http_CAData_0100
+     * @tc.desc   The test can be performed using self-signed certificate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrHttpCAData0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = "testNetworkMgrHttpCAData0100";
       console.info(`${caseName}---Start`);
@@ -198,14 +198,14 @@ export default function HttpRequestDataCATest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_Http_CAData_0200
-    * @tc.name  : testNetworkMgrHttpCAData0200
-    * @tc.desc  : Expired self-signed certificate cannot be used
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0200
+     * @tc.number SUB_NetworkMgr_Http_CAData_0200
+     * @tc.desc   Expired self-signed certificate cannot be used
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrHttpCAData0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = "testNetworkMgrHttpCAData0200";
       console.info(`${caseName}---Start`);
@@ -267,14 +267,14 @@ export default function HttpRequestDataCATest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_Http_CAData_0300
-    * @tc.name  : testNetworkMgrHttpCAData0300
-    * @tc.desc  : Verification failed when the certificate is empty.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0300
+     * @tc.number SUB_NetworkMgr_Http_CAData_0300
+     * @tc.desc   Verification failed when the certificate is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrHttpCAData0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = "testNetworkMgrHttpCAData0300";
       console.info(`${caseName}---Start`);
@@ -335,14 +335,14 @@ export default function HttpRequestDataCATest() {
       }
     });
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_Http_CAData_0400
-    * @tc.name  : testNetworkMgrHttpCAData0400
-    * @tc.desc  : Verify the parameter priority.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 2
-    */
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0400
+     * @tc.number SUB_NetworkMgr_Http_CAData_0400
+     * @tc.desc   Verify the parameter priority.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrHttpCAData0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = "testNetworkMgrHttpCAData0400";
       console.info(`${caseName}---Start`);
@@ -405,14 +405,14 @@ export default function HttpRequestDataCATest() {
     });
 
 
-    /* *
-   * @tc.number: SUB_NetworkMgr_Http_CAData_0500
-   * @tc.name  : testNetworkMgrHttpCAData0500
-   * @tc.desc  : The certificate and key do not match.
-   * @tc.size  : MediumTest
-   * @tc.type  : Function
-   * @tc.level : level 2
-   */
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0500
+     * @tc.number SUB_NetworkMgr_Http_CAData_0500
+     * @tc.desc   The certificate and key do not match.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrHttpCAData0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = "testNetworkMgrHttpCAData0500";
       console.info(`${caseName}---Start`);
@@ -473,14 +473,14 @@ export default function HttpRequestDataCATest() {
       }
     });
 
-    /* *
-      * @tc.number: SUB_NetworkMgr_Http_CAData_0600
-      * @tc.name  : testNetworkMgrHttpCAData0600
-      * @tc.desc  : The certificate and key do not match.
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 2
-      */
+    /**
+     * @tc.name   testNetworkMgrHttpCAData0600
+     * @tc.number SUB_NetworkMgr_Http_CAData_0600
+     * @tc.desc   The certificate and key do not match.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("testNetworkMgrHttpCAData0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = "testNetworkMgrHttpCAData0600";
       console.info(`${caseName}---Start`);

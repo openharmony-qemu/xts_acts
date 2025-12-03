@@ -45,12 +45,12 @@ export default function NetfirewallNoP() {
   };
   describe('NetfirewallNoPTest',  () => {
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0100
-     * @tc.name   : testTelephonyNetfirewallNop0100
-     * @tc.desc   : setNetFirewallPolicy No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0100
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0100
+     * @tc.desc   setNetFirewallPolicy No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0100';
@@ -74,12 +74,12 @@ export default function NetfirewallNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0200
-     * @tc.name   : testTelephonyNetfirewallNop0200
-     * @tc.desc   : updateNetFirewallRule No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0200
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0200
+     * @tc.desc   updateNetFirewallRule No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0200';
@@ -104,12 +104,12 @@ export default function NetfirewallNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0300
-     * @tc.name   : testTelephonyNetfirewallNop0300
-     * @tc.desc   : getNetFirewallPolicy No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0300
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0300
+     * @tc.desc   getNetFirewallPolicy No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0300';
@@ -135,12 +135,12 @@ export default function NetfirewallNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0400
-     * @tc.name   : testTelephonyNetfirewallNop0400
-     * @tc.desc   : removeNetFirewallRule No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0400
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0400
+     * @tc.desc   removeNetFirewallRule No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0400';
@@ -165,12 +165,12 @@ export default function NetfirewallNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0500
-     * @tc.name   : testTelephonyNetfirewallNop0500
-     * @tc.desc   : getNetFirewallRules No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0500
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0500
+     * @tc.desc   getNetFirewallRules No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0500';
@@ -194,12 +194,12 @@ export default function NetfirewallNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0600
-     * @tc.name   : testTelephonyNetfirewallNop0600
-     * @tc.desc   : getNetFirewallRule No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0600
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0600
+     * @tc.desc   getNetFirewallRule No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0600';
@@ -224,12 +224,12 @@ export default function NetfirewallNoP() {
     })
 
     /**
-     * @tc.number : SUB_Telephony_Netfirewall_Nop_0700
-     * @tc.name   : testTelephonyNetfirewallNop0700
-     * @tc.desc   : addNetFirewallRule No permission
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testTelephonyNetfirewallNop0700
+     * @tc.number SUB_Telephony_Netfirewall_Nop_0700
+     * @tc.desc   addNetFirewallRule No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyNetfirewallNop0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       const caseName: string = 'testTelephonyNetfirewallNop0700';

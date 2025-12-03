@@ -21,14 +21,14 @@ let listFileOption: ListFileOptions = {
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    /*
-    * @tc.number: Test_cleanBundleCacheFilesForSelf_001
-    * @tc.name: cleanBundleCacheFilesForSelf
-    * @tc.desc: test cleanBundleCacheFilesForSelf
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   Test_cleanBundleCacheFilesForSelf_001
+     * @tc.number Test_cleanBundleCacheFilesForSelf_001
+     * @tc.desc   test cleanBundleCacheFilesForSelf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Test_cleanBundleCacheFilesForSelf_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(domain, tag, '%{public}s', 'it begin');

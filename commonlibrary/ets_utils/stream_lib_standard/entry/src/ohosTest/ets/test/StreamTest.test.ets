@@ -27,12 +27,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00100
-     * @tc.name: testStreamWritable001
-     * @tc.desc: Create a writable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritable001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00100
+     * @tc.desc   Create a writable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -43,12 +43,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00200
-     * @tc.name: testStreamWritable002
-     * @tc.desc: The state when closing the flow.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritable002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00200
+     * @tc.desc   The state when closing the flow.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -60,12 +60,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00300
-     * @tc.name: testStreamWritable003
-     * @tc.desc: The state of the writable attribute of a writable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritable003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00300
+     * @tc.desc   The state of the writable attribute of a writable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -81,12 +81,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00400
-     * @tc.name: testStreamWritable004
-     * @tc.desc: Write data to stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritable004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00400
+     * @tc.desc   Write data to stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -101,12 +101,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00500
-     * @tc.name: testStreamWritable005
-     * @tc.desc: DoWrite not called.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritable005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00500
+     * @tc.desc   DoWrite not called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritable005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -118,12 +118,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00600
-     * @tc.name: testStreamWritableCbError001
-     * @tc.desc: Write data failed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableCbError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00600
+     * @tc.desc   Write data failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableCbError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let callbackCalled = false;
@@ -141,12 +141,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00700
-     * @tc.name: testStreamWritableCbError002
-     * @tc.desc: Write data failed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableCbError002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00700
+     * @tc.desc   Write data failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableCbError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -164,12 +164,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00800
-     * @tc.name: testStreamWritableCbTwice001
-     * @tc.desc: Multiple callbacks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableCbTwice001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00800
+     * @tc.desc   Multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableCbTwice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let writableStream = new stream.Writable();
@@ -187,12 +187,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_00900
-     * @tc.name: testStreamWritableCbTwice002
-     * @tc.desc: Multiple callbacks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableCbTwice002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_00900
+     * @tc.desc   Multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableCbTwice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -211,12 +211,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01000
-     * @tc.name: testStreamWritableCbTwice003
-     * @tc.desc: Multiple callbacks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableCbTwice003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01000
+     * @tc.desc   Multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableCbTwice003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -237,12 +237,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWriteError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01100
-     * @tc.name: testStreamWritableWriteError001
-     * @tc.desc: Write data error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWriteError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01100
+     * @tc.desc   Write data error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWriteError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -262,12 +262,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWriteError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01200
-     * @tc.name: testStreamWritableWriteError002
-     * @tc.desc: Write data error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWriteError002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01200
+     * @tc.desc   Write data error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWriteError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -279,12 +279,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWriteError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01300
-     * @tc.name: testStreamWritableWriteError003
-     * @tc.desc: Write data error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWriteError003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01300
+     * @tc.desc   Write data error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWriteError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const test: Function = () => {
@@ -299,12 +299,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01400
-     * @tc.name: testStreamWritableWritevFinish001
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevFinish001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01400
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevFinish001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done) => {
       let writableStream = new stream.Writable();
@@ -322,12 +322,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01500
-     * @tc.name: testStreamWritableWritevFinish002
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevFinish002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01500
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevFinish002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -346,12 +346,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01600
-     * @tc.name: testStreamWritableWritevFinish003
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevFinish003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01600
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevFinish003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -375,12 +375,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01700
-     * @tc.name: testStreamWritableWritevFinish004
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevFinish004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01700
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevFinish004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -408,12 +408,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01800
-     * @tc.name: testStreamWritableWritevFinish005
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevFinish005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01800
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevFinish005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
       let readableStream = new stream.Readable();
@@ -439,12 +439,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_01900
-     * @tc.name: testStreamWritableWritevFinish006
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevFinish006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_01900
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevFinish006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -462,12 +462,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableConstructorSetMethods.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02000
-     * @tc.name: testStreamWritableConstructorSetMethods001
-     * @tc.desc: Writable constructor Set Methods.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableConstructorSetMethods001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02000
+     * @tc.desc   Writable constructor Set Methods.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableConstructorSetMethods001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -479,12 +479,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableConstructorSetMethods.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02100
-     * @tc.name: testStreamWritableConstructorSetMethods002
-     * @tc.desc: Writable constructor Set Methods.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableConstructorSetMethods002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02100
+     * @tc.desc   Writable constructor Set Methods.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableConstructorSetMethods002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let _writev = (chunk, callback) => {
@@ -508,12 +508,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableEndCbError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02200
-     * @tc.name: testStreamWritableEndCbError001
-     * @tc.desc: Writable end event error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableEndCbError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02200
+     * @tc.desc   Writable end event error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableEndCbError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -537,12 +537,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableEndedState.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02300
-     * @tc.name: testStreamWritableEndedState001
-     * @tc.desc: The status of writableEnded.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableEndedState001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02300
+     * @tc.desc   The status of writableEnded.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableEndedState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -567,12 +567,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02400
-     * @tc.name: testStreamWritableFinished001
-     * @tc.desc: The status of the writableFinished attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableFinished001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02400
+     * @tc.desc   The status of the writableFinished attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableFinished001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(stream.Writable.prototype.hasOwnProperty('writableFinished')).assertEqual(true);
@@ -580,12 +580,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02500
-     * @tc.name: testStreamWritableFinished002
-     * @tc.desc: The status of the writableFinished attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableFinished002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02500
+     * @tc.desc   The status of the writableFinished attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableFinished002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -603,12 +603,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02600
-     * @tc.name: testStreamWritableFinished003
-     * @tc.desc: The status of the writableFinished attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableFinished003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02600
+     * @tc.desc   The status of the writableFinished attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableFinished003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -627,12 +627,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02700
-     * @tc.name: testStreamWritableFinished004
-     * @tc.desc: The status of the writableFinished attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableFinished004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02700
+     * @tc.desc   The status of the writableFinished attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableFinished004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -649,12 +649,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02800
-     * @tc.name: testStreamWritableFinished005
-     * @tc.desc: The status of the writableFinished attribute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableFinished005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02800
+     * @tc.desc   The status of the writableFinished attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableFinished005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -674,12 +674,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_02900
-     * @tc.name: testStreamWritableProperties001
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_02900
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -700,12 +700,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03000
-     * @tc.name: testStreamWritableProperties002
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03000
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -714,12 +714,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03100
-     * @tc.name: testStreamWritableProperties003
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03100
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -728,12 +728,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03200
-     * @tc.name: testStreamWritableProperties004
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03200
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -745,12 +745,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03300
-     * @tc.name: testStreamWritableProperties005
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03300
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -765,12 +765,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03400
-     * @tc.name: testStreamWritableProperties006
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03400
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -779,12 +779,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03500
-     * @tc.name: testStreamWritableProperties007
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03500
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let customWritable = new CustomWritable();
@@ -794,12 +794,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03600
-     * @tc.name: testStreamWritableProperties008
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03600
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let customWritable = new CustomWritable();
@@ -810,12 +810,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03700
-     * @tc.name: testStreamWritableProperties009
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03700
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let customWritable = new CustomWritable();
@@ -828,12 +828,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03800
-     * @tc.name: testStreamWritableProperties010
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03800
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const largeData = Array.from({
@@ -851,12 +851,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_03900
-     * @tc.name: testStreamWritableProperties011
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_03900
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const largeData = Array.from({
@@ -874,12 +874,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04000
-     * @tc.name: testStreamWritableProperties012
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04000
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const largeData = Array.from({
@@ -895,12 +895,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04100
-     * @tc.name: testStreamWritableProperties013
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04100
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const largeData = Array.from({
@@ -915,12 +915,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04200
-     * @tc.name: testStreamWritableProperties014
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04200
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new CustomWritable();
@@ -935,12 +935,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04300
-     * @tc.name: testStreamWritableProperties015
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04300
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let errorEvent = new ErrorEventWritable();
@@ -953,12 +953,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04400
-     * @tc.name: testStreamWritableProperties016
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04400
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new ErrorEventWritable();
@@ -972,12 +972,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04500
-     * @tc.name: testStreamWritableProperties017
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableProperties017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04500
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableProperties017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -989,12 +989,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCork.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04600
-     * @tc.name: testStreamWritableCork001
-     * @tc.desc: Calling the core and uncork methods in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableCork001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04600
+     * @tc.desc   Calling the core and uncork methods in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableCork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let dataWritten = '';
@@ -1012,12 +1012,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCork.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04700
-     * @tc.name: testStreamWritableCork002
-     * @tc.desc: Calling the core and uncork methods in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableCork002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04700
+     * @tc.desc   Calling the core and uncork methods in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableCork002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let dataWritten = '';
@@ -1040,12 +1040,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCork.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04800
-     * @tc.name: testStreamWritableCork003
-     * @tc.desc: Calling the core and uncork methods in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableCork003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04800
+     * @tc.desc   Calling the core and uncork methods in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableCork003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let dataWritten = '';
@@ -1066,12 +1066,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableOff.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_04900
-     * @tc.name: testStreamWritableOff001
-     * @tc.desc: Remove listeners from Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableOff001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_04900
+     * @tc.desc   Remove listeners from Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -1093,12 +1093,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableOff.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05000
-     * @tc.name: testStreamWritableOff002
-     * @tc.desc: Remove listeners from Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableOff002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05000
+     * @tc.desc   Remove listeners from Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableOff002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -1126,12 +1126,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableChangeDefaultEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05100
-     * @tc.name: testStreamWritableChangeDefaultEncoding001
-     * @tc.desc: Default encoding in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableChangeDefaultEncoding001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05100
+     * @tc.desc   Default encoding in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableChangeDefaultEncoding001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let testWritable = new TestWritable((chunk, type, enc) => {
@@ -1143,12 +1143,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableChangeDefaultEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05200
-     * @tc.name: testStreamWritableChangeDefaultEncoding002
-     * @tc.desc: Default encoding in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableChangeDefaultEncoding002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05200
+     * @tc.desc   Default encoding in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableChangeDefaultEncoding002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let testWritable = new TestWritable((chunk, type, enc) => {
@@ -1162,12 +1162,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableChangeDefaultEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05300
-     * @tc.name: testStreamWritableChangeDefaultEncoding003
-     * @tc.desc: Default encoding in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableChangeDefaultEncoding003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05300
+     * @tc.desc   Default encoding in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableChangeDefaultEncoding003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const test: Function = () => {
@@ -1183,12 +1183,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableInvalidChunk.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05400
-     * @tc.name: testStreamWritableInvalidChunk001
-     * @tc.desc: Write invalid chunk in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableInvalidChunk001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05400
+     * @tc.desc   Write invalid chunk in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableInvalidChunk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       testWriteType(true, 'Parameter error. The type of true must be string or UintArray');
@@ -1213,12 +1213,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableInvalidDrain.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05500
-     * @tc.name: testStreamWritableDrain001
-     * @tc.desc: Trigger of drain event in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableDrain001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05500
+     * @tc.desc   Trigger of drain event in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableDrain001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -1238,12 +1238,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05600
-     * @tc.name: testStreamWritableWritev001
-     * @tc.desc: Trigger doWritev event.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableWritev001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05600
+     * @tc.desc   Trigger doWritev event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableWritev001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -1258,12 +1258,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexEnd.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05700
-     * @tc.name: testStreamDuplexEnd001
-     * @tc.desc: Duplex stream end read.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexEnd001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05700
+     * @tc.desc   Duplex stream end read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1280,12 +1280,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05800
-     * @tc.name: testStreamDuplexWritableFinished001
-     * @tc.desc: writableFinished property for Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexWritableFinished001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05800
+     * @tc.desc   writableFinished property for Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexWritableFinished001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(stream.Duplex.prototype.hasOwnProperty('writableFinished')).assertEqual(true);
@@ -1293,12 +1293,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexWritableFinished.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_05900
-     * @tc.name: testStreamDuplexWritableFinished002
-     * @tc.desc: writableFinished property for Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexWritableFinished002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_05900
+     * @tc.desc   writableFinished property for Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexWritableFinished002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1316,12 +1316,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplex.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06000
-     * @tc.name: testStreamDuplex001
-     * @tc.desc: The basic functions of Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplex001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06000
+     * @tc.desc   The basic functions of Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1347,12 +1347,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplex.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06100
-     * @tc.name: testStreamDuplex002
-     * @tc.desc: The basic functions of Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplex002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06100
+     * @tc.desc   The basic functions of Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1374,12 +1374,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplex.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06200
-     * @tc.name: testStreamDuplex003
-     * @tc.desc: The basic functions of Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplex003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06200
+     * @tc.desc   The basic functions of Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplex003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1395,12 +1395,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplex.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06300
-     * @tc.name: testStreamDuplex004
-     * @tc.desc: The basic functions of Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplex004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06300
+     * @tc.desc   The basic functions of Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1421,12 +1421,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06400
-     * @tc.name: testStreamDuplexProperties001
-     * @tc.desc: Duplex Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexProperties001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06400
+     * @tc.desc   Duplex Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexProperties001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -1435,12 +1435,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableResumePause.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06500
-     * @tc.name: testStreamReadableResumePause001
-     * @tc.desc: The resume and pause methods for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableResumePause001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06500
+     * @tc.desc   The resume and pause methods for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableResumePause001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let readable = new TestReadable();
@@ -1464,12 +1464,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableResumePause.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06600
-     * @tc.name: testStreamReadableResumePause002
-     * @tc.desc: The resume and pause methods for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableResumePause002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06600
+     * @tc.desc   The resume and pause methods for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableResumePause002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -1481,12 +1481,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableResumePause.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06700
-     * @tc.name: testStreamReadableResumePause003
-     * @tc.desc: The resume and pause methods for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableResumePause003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06700
+     * @tc.desc   The resume and pause methods for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableResumePause003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -1501,12 +1501,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableResumePause.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06800
-     * @tc.name: testStreamReadableResumePause004
-     * @tc.desc: The resume and pause methods for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableResumePause004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06800
+     * @tc.desc   The resume and pause methods for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableResumePause004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -1515,12 +1515,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableResumePause.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_06900
-     * @tc.name: testStreamReadableResumePause005
-     * @tc.desc: The resume and pause methods for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableResumePause005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_06900
+     * @tc.desc   The resume and pause methods for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableResumePause005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -1530,12 +1530,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableResumePause.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07000
-     * @tc.name: testStreamReadableResumePause006
-     * @tc.desc: The resume and pause methods for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableResumePause006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07000
+     * @tc.desc   The resume and pause methods for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableResumePause006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -1546,12 +1546,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07100
-     * @tc.name: testStreamReadableProperties001
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07100
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1560,12 +1560,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07200
-     * @tc.name: testStreamReadableProperties002
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07200
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1574,12 +1574,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07300
-     * @tc.name: testStreamReadableProperties003
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07300
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1595,12 +1595,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07400
-     * @tc.name: testStreamReadableProperties004
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07400
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1609,12 +1609,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07500
-     * @tc.name: testStreamReadableProperties005
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07500
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1627,12 +1627,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07600
-     * @tc.name: testStreamReadableProperties006
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07600
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1644,12 +1644,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07700
-     * @tc.name: testStreamReadableProperties007
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07700
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1658,12 +1658,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07800
-     * @tc.name: testStreamReadableProperties008
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07800
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1676,12 +1676,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_07900
-     * @tc.name: testStreamReadableProperties009
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_07900
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1699,12 +1699,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08000
-     * @tc.name: testStreamReadableProperties010
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08000
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1721,12 +1721,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08100
-     * @tc.name: testStreamReadableProperties011
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08100
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1742,12 +1742,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08200
-     * @tc.name: testStreamReadableProperties012
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08200
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1762,12 +1762,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08300
-     * @tc.name: testStreamReadableProperties013
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08300
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1776,12 +1776,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08400
-     * @tc.name: testStreamReadableProperties014
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08400
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1793,12 +1793,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08500
-     * @tc.name: testStreamReadableProperties015
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08500
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1809,12 +1809,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08600
-     * @tc.name: testStreamReadableProperties016
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08600
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1829,12 +1829,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08700
-     * @tc.name: testStreamReadableProperties017
-     * @tc.desc: Readable properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableProperties017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08700
+     * @tc.desc   Readable properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableProperties017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1848,12 +1848,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableConstructorSetMethods.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08800
-     * @tc.name: testStreamReadableConstructorSetMethods001
-     * @tc.desc: Readable stream set methods.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableConstructorSetMethods001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08800
+     * @tc.desc   Readable stream set methods.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableConstructorSetMethods001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let doReadCalled = true;
@@ -1869,12 +1869,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_08900
-     * @tc.name: testStreamReadableData001
-     * @tc.desc: Data events in a Readable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_08900
+     * @tc.desc   Data events in a Readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -1896,12 +1896,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_25200
-     * @tc.name: testStreamReadableData002
-     * @tc.desc: Data events in a Readable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_25200
+     * @tc.desc   Data events in a Readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readableStream = new stream.Readable();
@@ -1917,12 +1917,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23000
-     * @tc.name: testStreamReadableData003
-     * @tc.desc: Data events in a Readable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23000
+     * @tc.desc   Data events in a Readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let dataSource = ["1"];
@@ -1945,12 +1945,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24500
-     * @tc.name: testStreamReadableData005
-     * @tc.desc: should read data in paused mode.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24500
+     * @tc.desc   should read data in paused mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -1973,12 +1973,12 @@ export default function StreamTest() {
     
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24200
-     * @tc.name: testStreamReadableData006
-     * @tc.desc: should handle pause/resume.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24200
+     * @tc.desc   should handle pause/resume.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -2009,12 +2009,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23200
-     * @tc.name: testStreamReadableData007
-     * @tc.desc: should handle empty stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23200
+     * @tc.desc   should handle empty stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -2038,12 +2038,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24300
-     * @tc.name: testStreamReadableData008
-     * @tc.desc: should handle remove data listener.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableData008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24300
+     * @tc.desc   should handle remove data listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableData008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -2071,13 +2071,13 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24600
-    * @tc.name: testStreamReadableData009
-    * @tc.desc: should handle remove data listener.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStreamReadableData009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24600
+     * @tc.desc   should handle remove data listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStreamReadableData009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
         constructor(opt?: stream.ReadableOptions) {
@@ -2103,13 +2103,13 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22900
-    * @tc.name: testStreamReadableData010
-    * @tc.desc: should handle remove data listener.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStreamReadableData010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22900
+     * @tc.desc   should handle remove data listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStreamReadableData010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
         constructor(opt?: stream.ReadableOptions) {
@@ -2133,13 +2133,13 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23800
-    * @tc.name: testStreamReadableData011
-    * @tc.desc: should handle remove data listener.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStreamReadableData011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23800
+     * @tc.desc   should handle remove data listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStreamReadableData011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
         constructor(opt?: stream.ReadableOptions) {
@@ -2162,13 +2162,13 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_25300
-    * @tc.name: testStreamReadableData012
-    * @tc.desc: should switch between flowing and paused modes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStreamReadableData012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_25300
+     * @tc.desc   should switch between flowing and paused modes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStreamReadableData012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
         constructor(opt?: stream.ReadableOptions) {
@@ -2197,13 +2197,13 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24000
-    * @tc.name: testStreamReadableData013
-    * @tc.desc: should switch between flowing and paused modes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStreamReadableData013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24000
+     * @tc.desc   should switch between flowing and paused modes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStreamReadableData013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
         constructor(opt?: stream.ReadableOptions) {
@@ -2232,13 +2232,13 @@ export default function StreamTest() {
 
     // Check the StreamReadableData.
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09000
-    * @tc.name: testStreamReadableData014
-    * @tc.desc: should switch between flowing and paused modes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStreamReadableData014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09000
+     * @tc.desc   should switch between flowing and paused modes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStreamReadableData014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
         constructor(opt?: stream.ReadableOptions) {
@@ -2267,12 +2267,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableDefaultEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09100
-     * @tc.name: testStreamReadableDefaultEncoding001
-     * @tc.desc: Default encoding in Readable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableDefaultEncoding001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09100
+     * @tc.desc   Default encoding in Readable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableDefaultEncoding001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const test: Function = () => {
@@ -2284,12 +2284,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableEmitReadableShortStream.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09200
-     * @tc.name: testStreamReadableEmitReadableShortStream001
-     * @tc.desc: Call of events after data push in Readable Stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableEmitReadableShortStream001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09200
+     * @tc.desc   Call of events after data push in Readable Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableEmitReadableShortStream001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readableStream = new TestReadable();
@@ -2308,12 +2308,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableEmitReadableShortStream.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09300
-     * @tc.name: testStreamReadableEmitReadableShortStream002
-     * @tc.desc: Call of events after data push in Readable Stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableEmitReadableShortStream002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09300
+     * @tc.desc   Call of events after data push in Readable Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableEmitReadableShortStream002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readableStream = new TestReadable();
@@ -2334,12 +2334,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableEnded.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09400
-     * @tc.name: testStreamReadableEnded001
-     * @tc.desc: Readable readableEnded.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableEnded001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09400
+     * @tc.desc   Readable readableEnded.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableEnded001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(stream.Readable.prototype.hasOwnProperty('readableEnded')).assertTrue();
@@ -2347,12 +2347,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableEnded.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09500
-     * @tc.name: testStreamReadableEnded002
-     * @tc.desc: Readable readableEnded.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableEnded002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09500
+     * @tc.desc   Readable readableEnded.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableEnded002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readableStream = new TestReadable();
@@ -2373,12 +2373,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableEnded.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09600
-     * @tc.name: testStreamReadableEnded003
-     * @tc.desc: Readable readableEnded.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableEnded003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09600
+     * @tc.desc   Readable readableEnded.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableEnded003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -2395,12 +2395,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableHwm0Async.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09700
-     * @tc.name: testStreamReadableHwm0Async001
-     * @tc.desc: Triggered in the end event of a readable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableHwm0Async001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09700
+     * @tc.desc   Triggered in the end event of a readable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableHwm0Async001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let count = 5;
@@ -2425,12 +2425,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableInvalidChunk.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09800
-     * @tc.name: testStreamReadableInvalidChunk001
-     * @tc.desc: Write invalid chunk in Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableInvalidChunk001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09800
+     * @tc.desc   Write invalid chunk in Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableInvalidChunk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       testPushInvalidArg([]);
@@ -2450,12 +2450,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePauseAndResume.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_09900
-     * @tc.name: testStreamReadablePauseAndResume001
-     * @tc.desc: Pause and Resume in Readable Stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadablePauseAndResume001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_09900
+     * @tc.desc   Pause and Resume in Readable Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadablePauseAndResume001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -2476,12 +2476,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableReadable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10000
-     * @tc.name: testStreamReadableReadable001
-     * @tc.desc: Readable property in Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableReadable001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10000
+     * @tc.desc   Readable property in Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableReadable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let mustNotCall = common.mustNotCall();
@@ -2501,12 +2501,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableSetEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10100
-     * @tc.name: testStreamReadableSetEncoding001
-     * @tc.desc: Set encoding for Readable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableSetEncoding001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10100
+     * @tc.desc   Set encoding for Readable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableSetEncoding001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -2516,12 +2516,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableWithUnimplementedDoRead.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10200
-     * @tc.name: testStreamReadableWithUnimplementedDoRead001
-     * @tc.desc: Readable does not implement DoRead.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableWithUnimplementedDoRead001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10200
+     * @tc.desc   Readable does not implement DoRead.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableWithUnimplementedDoRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -2535,12 +2535,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformCallbackTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10300
-     * @tc.name: testStreamTransformCallbackTwice001
-     * @tc.desc: Call Callback twice in Transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformCallbackTwice001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10300
+     * @tc.desc   Call Callback twice in Transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformCallbackTwice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2557,12 +2557,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformConstructor.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10400
-     * @tc.name: testStreamTransformConstructor001
-     * @tc.desc: Transform constructor.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformConstructor001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10400
+     * @tc.desc   Transform constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2574,12 +2574,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformFlushData.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10500
-     * @tc.name: testStreamTransformFlushData001
-     * @tc.desc: Transform uses the doFlush method to push data.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformFlushData001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10500
+     * @tc.desc   Transform uses the doFlush method to push data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformFlushData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2603,12 +2603,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10600
-     * @tc.name: testStreamTransform001
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10600
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2630,12 +2630,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10700
-     * @tc.name: testStreamTransform002
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10700
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2654,12 +2654,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10800
-     * @tc.name: testStreamTransform003
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10800
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyTransform extends stream.Transform {
@@ -2682,12 +2682,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_10900
-     * @tc.name: testStreamTransform004
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_10900
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -2697,12 +2697,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11000
-     * @tc.name: testStreamTransform005
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11000
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -2718,12 +2718,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11100
-     * @tc.name: testStreamTransform006
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11100
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done) => {
       let transformStream = new stream.Transform();
@@ -2744,12 +2744,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11200
-     * @tc.name: testStreamTransform007
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11200
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done) => {
       let transformStream = new stream.Transform();
@@ -2770,12 +2770,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11300
-     * @tc.name: testStreamTransform008
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11300
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -2785,12 +2785,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11400
-     * @tc.name: testStreamTransform009
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11400
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -2801,12 +2801,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11500
-     * @tc.name: testStreamTransform010
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11500
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyRead extends stream.Readable {
@@ -2833,12 +2833,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11600
-     * @tc.name: testStreamTransform011
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11600
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyRead extends stream.Readable {
@@ -2870,12 +2870,12 @@ export default function StreamTest() {
 
     // Check the StreamTransform.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11700
-     * @tc.name: testStreamTransform012
-     * @tc.desc: The basic methods of transform.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransform012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11700
+     * @tc.desc   The basic methods of transform.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransform012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class TestTransform extends stream.Transform {
@@ -2902,12 +2902,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11800
-     * @tc.name: testStreamTransformProperties001
-     * @tc.desc: Duplex Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformProperties001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11800
+     * @tc.desc   Duplex Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformProperties001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2916,12 +2916,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_11900
-     * @tc.name: testStreamTransformProperties002
-     * @tc.desc: Duplex Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformProperties002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_11900
+     * @tc.desc   Duplex Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformProperties002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2930,12 +2930,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformEvent.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12000
-     * @tc.name: testStreamTransformEvent001
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformEvent001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12000
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -2957,12 +2957,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformEvent.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12100
-     * @tc.name: testStreamTransformEvent002
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformEvent002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12100
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformEvent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -2979,12 +2979,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformEvent.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12200
-     * @tc.name: testStreamTransformEvent003
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformEvent003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12200
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformEvent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -2998,12 +2998,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformEvent.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12300
-     * @tc.name: testStreamTransformEvent004
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformEvent004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12300
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformEvent004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transformStream = new stream.Transform();
@@ -3020,12 +3020,12 @@ export default function StreamTest() {
 
     // Check the StreamTransformEvent.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12400
-     * @tc.name: testStreamTransformEvent005
-     * @tc.desc: Event triggering of Transform stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamTransformEvent005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12400
+     * @tc.desc   Event triggering of Transform stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamTransformEvent005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done) => {
       let transformStream = new stream.Transform();
@@ -3051,12 +3051,12 @@ export default function StreamTest() {
 
     // Check the pipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12500
-     * @tc.name: testStreamPipe001
-     * @tc.desc: Verify the use of pipe.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12500
+     * @tc.desc   Verify the use of pipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyRead extends stream.Readable {
@@ -3084,12 +3084,12 @@ export default function StreamTest() {
 
     // Check the pipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12600
-     * @tc.name: testStreamPipe002
-     * @tc.desc: Verify the use of pipe.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12600
+     * @tc.desc   Verify the use of pipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyRead extends stream.Readable {
@@ -3118,12 +3118,12 @@ export default function StreamTest() {
 
     // Check the pipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12700
-     * @tc.name: testStreamPipe003
-     * @tc.desc: Verify the use of pipe.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12700
+     * @tc.desc   Verify the use of pipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -3142,12 +3142,12 @@ export default function StreamTest() {
 
     // Check the pipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12800
-     * @tc.name: testStreamPipe004
-     * @tc.desc: Verify the use of pipe.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12800
+     * @tc.desc   Verify the use of pipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new TestReadable();
@@ -3163,12 +3163,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_12900
-     * @tc.name: testStreamDuplexProperties002
-     * @tc.desc: Duplex Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexProperties002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_12900
+     * @tc.desc   Duplex Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexProperties002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -3177,12 +3177,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13000
-     * @tc.name: testStreamDuplexProperties003
-     * @tc.desc: Duplex Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexProperties003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13000
+     * @tc.desc   Duplex Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexProperties003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -3190,12 +3190,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13100
-     * @tc.name: testStreamReadableread001
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13100
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const stringdecoder = new StringDecoderReadable();
@@ -3204,12 +3204,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13200
-     * @tc.name: testStreamReadableread002
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13200
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const stringdecoder = new StringDecoderReadable();
@@ -3218,12 +3218,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13300
-     * @tc.name: testStreamReadableread003
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13300
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
@@ -3237,12 +3237,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13400
-     * @tc.name: testStreamReadableread004
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13400
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
@@ -3254,12 +3254,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13500
-     * @tc.name: testStreamReadableread005
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13500
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let enc : stream.ReadableOptions = {
@@ -3273,12 +3273,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13600
-     * @tc.name: testStreamReadableread006
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13600
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let enc : stream.ReadableOptions = {
@@ -3293,12 +3293,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13700
-     * @tc.name: testStreamReadableread007
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13700
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let enc : stream.ReadableOptions = {
@@ -3310,12 +3310,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13800
-     * @tc.name: testStreamReadableread008
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13800
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const stringdecoder = new StringDecoderReadable();
@@ -3324,12 +3324,12 @@ export default function StreamTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_13900
-     * @tc.name: testStreamReadableread009
-     * @tc.desc: Reads a buffer of a specified size from the buffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamReadableread009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_13900
+     * @tc.desc   Reads a buffer of a specified size from the buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamReadableread009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
@@ -3341,12 +3341,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14000
-     * @tc.name: testStreamPipe005
-     * @tc.desc: Readable pipe.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14000
+     * @tc.desc   Readable pipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done) => {
       let sumData = 0;
@@ -3382,12 +3382,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14100
-     * @tc.name: testStreamPipe006
-     * @tc.desc: Readable pipe.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14100
+     * @tc.desc   Readable pipe.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let a = 0;
@@ -3433,12 +3433,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24700
-     * @tc.name: testStreamPipe007
-     * @tc.desc: Readable pipe should support multiple destinations.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24700
+     * @tc.desc   Readable pipe should support multiple destinations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let count = 0;
@@ -3489,12 +3489,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_25000
-     * @tc.name: testStreamPipe008
-     * @tc.desc: Readable pipe should support multiple destinations.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_25000
+     * @tc.desc   Readable pipe should support multiple destinations.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let count = 0;
@@ -3551,12 +3551,12 @@ export default function StreamTest() {
 
    // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23100
-     * @tc.name: testStreamPipe009
-     * @tc.desc: Readable pipe should emit pipe/unpipe events.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23100
+     * @tc.desc   Readable pipe should emit pipe/unpipe events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let num = 0
@@ -3599,12 +3599,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23400
-     * @tc.name: testStreamPipe010
-     * @tc.desc: Readable pipe should verify chunk sequence.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23400
+     * @tc.desc   Readable pipe should verify chunk sequence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       const chunks = ['A', 'B', 'C'];
@@ -3642,12 +3642,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23600
-     * @tc.name: testStreamPipe011
-     * @tc.desc: Readable pipe should verify chunk sequence.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23600
+     * @tc.desc   Readable pipe should verify chunk sequence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       const chunks = ['1', '2', '3'];
@@ -3685,12 +3685,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24900
-     * @tc.name: testStreamPipe012
-     * @tc.desc: Readable pipe should handle multiple pipe/unpipe cycles.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24900
+     * @tc.desc   Readable pipe should handle multiple pipe/unpipe cycles.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       class MyReadable extends stream.Readable {
@@ -3725,12 +3725,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_25100
-     * @tc.name: testStreamPipe013
-     * @tc.desc: Readable pipe should handle manual pause/resume.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_25100
+     * @tc.desc   Readable pipe should handle manual pause/resume.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let writeCount = 0;
@@ -3769,12 +3769,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24100
-     * @tc.name: testStreamPipe014
-     * @tc.desc: Readable pipe should handle empty streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24100
+     * @tc.desc   Readable pipe should handle empty streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let called = false
@@ -3811,12 +3811,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23700
-     * @tc.name: testStreamPipe015
-     * @tc.desc: Readable pipe should ignore data after unpiping.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23700
+     * @tc.desc   Readable pipe should ignore data after unpiping.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let callCount = 0
@@ -3856,12 +3856,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24400
-     * @tc.name: testStreamPipe016
-     * @tc.desc: Readable pipe should handle async write completion.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24400
+     * @tc.desc   Readable pipe should handle async write completion.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       class MyReadable extends stream.Readable {
@@ -3896,12 +3896,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_24800
-     * @tc.name: testStreamPipe017
-     * @tc.desc: Readable pipe should handle async write completion.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_24800
+     * @tc.desc   Readable pipe should handle async write completion.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       class MyReadable extends stream.Readable {
@@ -3936,12 +3936,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23500
-     * @tc.name: testStreamPipe018
-     * @tc.desc: Readable pipe should ignore data after unpiping.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23500
+     * @tc.desc   Readable pipe should ignore data after unpiping.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       let callCount = 0
@@ -3982,12 +3982,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23900
-     * @tc.name: testStreamPipe019
-     * @tc.desc: Readable pipe should verify chunk sequence.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23900
+     * @tc.desc   Readable pipe should verify chunk sequence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       const chunks = ['x', 'y', 'z'];
@@ -4025,12 +4025,12 @@ export default function StreamTest() {
 
     // Check the StreamReadablePipe.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_23300
-     * @tc.name: testStreamPipe020
-     * @tc.desc: Readable pipe should verify chunk sequence.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamPipe020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_23300
+     * @tc.desc   Readable pipe should verify chunk sequence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamPipe020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done) => {
       const chunks = ['a', 'b', 'c'];
@@ -4070,12 +4070,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexDoWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14200
-     * @tc.name: testStreamDuplexDoWritev001
-     * @tc.desc: Duplex method doWritev.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexDoWritev001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14200
+     * @tc.desc   Duplex method doWritev.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexDoWritev001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class CustomDuplex extends stream.Duplex {
@@ -4103,12 +4103,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexDoWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14300
-     * @tc.name: testStreamDuplexDoWritev002
-     * @tc.desc: Duplex method doWritev.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexDoWritev002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14300
+     * @tc.desc   Duplex method doWritev.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexDoWritev002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class CustomDuplex extends stream.Duplex {
@@ -4130,12 +4130,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexDoWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14400
-     * @tc.name: testStreamDuplexDoWritev003
-     * @tc.desc: Duplex method doWritev.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexDoWritev003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14400
+     * @tc.desc   Duplex method doWritev.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexDoWritev003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4152,12 +4152,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14500
-     * @tc.name: testStreamEncoding001
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14500
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4172,12 +4172,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14600
-     * @tc.name: testStreamEncoding002
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14600
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4192,12 +4192,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14700
-     * @tc.name: testStreamEncoding003
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14700
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4212,12 +4212,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14800
-     * @tc.name: testStreamEncoding004
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14800
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4231,12 +4231,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_14900
-     * @tc.name: testStreamEncoding005
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_14900
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4250,12 +4250,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15000
-     * @tc.name: testStreamEncoding006
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15000
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4269,12 +4269,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15100
-     * @tc.name: testStreamEncoding007
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15100
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4289,12 +4289,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15200
-     * @tc.name: testStreamEncoding008
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15200
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4309,12 +4309,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15300
-     * @tc.name: testStreamEncoding009
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15300
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -4329,12 +4329,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15400
-     * @tc.name: testStreamEncoding010
-     * @tc.desc: SetEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15400
+     * @tc.desc   SetEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -4345,12 +4345,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15500
-     * @tc.name: testStreamEncoding011
-     * @tc.desc: SetEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15500
+     * @tc.desc   SetEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -4361,12 +4361,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15600
-     * @tc.name: testStreamEncoding012
-     * @tc.desc: SetEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15600
+     * @tc.desc   SetEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -4377,12 +4377,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15700
-     * @tc.name: testStreamEncoding013
-     * @tc.desc: Push method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15700
+     * @tc.desc   Push method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -4392,12 +4392,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15800
-     * @tc.name: testStreamEncoding014
-     * @tc.desc: Push method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15800
+     * @tc.desc   Push method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -4407,12 +4407,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_15900
-     * @tc.name: testStreamEncoding015
-     * @tc.desc: Push method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_15900
+     * @tc.desc   Push method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let readable = new stream.Readable();
@@ -4422,12 +4422,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16000
-     * @tc.name: testStreamEncoding016
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16000
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4441,12 +4441,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16100
-     * @tc.name: testStreamEncoding017
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16100
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4460,12 +4460,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16200
-     * @tc.name: testStreamEncoding018
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16200
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4479,12 +4479,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16300
-     * @tc.name: testStreamEncoding019
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16300
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4498,12 +4498,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16400
-     * @tc.name: testStreamEncoding020
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16400
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4517,12 +4517,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16500
-     * @tc.name: testStreamEncoding021
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16500
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4536,12 +4536,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16600
-     * @tc.name: testStreamEncoding022
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16600
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4556,12 +4556,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16700
-     * @tc.name: testStreamEncoding023
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16700
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4576,12 +4576,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16800
-     * @tc.name: testStreamEncoding024
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16800
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -4596,12 +4596,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_16900
-     * @tc.name: testStreamEncoding025
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_16900
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -4616,12 +4616,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17000
-     * @tc.name: testStreamEncoding026
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17000
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -4636,12 +4636,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17100
-     * @tc.name: testStreamEncoding027
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17100
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let transform = new stream.Transform();
@@ -4656,12 +4656,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17200
-     * @tc.name: testStreamEncoding028
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17200
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4681,12 +4681,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17300
-     * @tc.name: testStreamEncoding029
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17300
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4706,12 +4706,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17400
-     * @tc.name: testStreamEncoding030
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17400
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4731,12 +4731,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17500
-     * @tc.name: testStreamEncoding031
-     * @tc.desc: DoTransform method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17500
+     * @tc.desc   DoTransform method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4754,12 +4754,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableEventTrigger.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17600
-     * @tc.name: testStreamEncoding032
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17600
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4786,12 +4786,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17700
-     * @tc.name: testStreamEncoding033
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17700
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4819,12 +4819,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17800
-     * @tc.name: testStreamEncoding034
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17800
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4853,12 +4853,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_17900
-     * @tc.name: testStreamPipe035
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_17900
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4892,12 +4892,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18000
-     * @tc.name: testStreamPipe036
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding036
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18000
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4931,12 +4931,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18100
-     * @tc.name: testStreamPipe037
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding037
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18100
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -4970,12 +4970,12 @@ export default function StreamTest() {
 
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18200
-     * @tc.name: testStreamPipe038
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding038
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18200
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -5012,12 +5012,12 @@ export default function StreamTest() {
     
     // Check the StreamReadableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18300
-     * @tc.name: testStreamPipe039
-     * @tc.desc: The readable event triggers the check.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testStreamEncoding039
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18300
+     * @tc.desc   The readable event triggers the check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class MyReadable extends stream.Readable {
@@ -5056,12 +5056,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18400
-     * @tc.name: testStreamWritableUintArr001
-     * @tc.desc: The state of the writable attribute of a writable stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArr001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18400
+     * @tc.desc   The state of the writable attribute of a writable stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -5078,12 +5078,12 @@ export default function StreamTest() {
 
     // Check the StreamWritable.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18500
-     * @tc.name: testStreamWritableUintArr002
-     * @tc.desc: Write data to stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArr002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18500
+     * @tc.desc   Write data to stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -5099,12 +5099,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18600
-     * @tc.name: testStreamWritableUintArr003
-     * @tc.desc: Write data failed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArr003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18600
+     * @tc.desc   Write data failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let callbackCalled = false;
@@ -5123,12 +5123,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18700
-     * @tc.name: testStreamWritableUintArrCbError001
-     * @tc.desc: Write data failed.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArrCbError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18700
+     * @tc.desc   Write data failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArrCbError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -5145,12 +5145,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18800
-     * @tc.name: testStreamWritableUintArrCbTwice001
-     * @tc.desc: Multiple callbacks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArrCbTwice001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18800
+     * @tc.desc   Multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArrCbTwice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let writableStream = new stream.Writable();
@@ -5169,12 +5169,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_18900
-     * @tc.name: testStreamWritableUintArrCbTwice002
-     * @tc.desc: Multiple callbacks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArrCbTwice002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_18900
+     * @tc.desc   Multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArrCbTwice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -5194,12 +5194,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCbTwice.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19000
-     * @tc.name: testStreamWritableUintArrCbTwice003
-     * @tc.desc: Multiple callbacks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArrCbTwice003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19000
+     * @tc.desc   Multiple callbacks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArrCbTwice003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -5221,12 +5221,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19100
-     * @tc.name: testStreamWritableWritevUintArrFinish001
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevUintArrFinish001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19100
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevUintArrFinish001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done) => {
       let writableStream = new stream.Writable();
@@ -5245,12 +5245,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19200
-     * @tc.name: testStreamWritableWritevUintArrFinish002
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevUintArrFinish002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19200
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevUintArrFinish002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -5270,12 +5270,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19300
-     * @tc.name: testStreamWritableWritevUintArrFinish003
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevUintArrFinish003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19300
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevUintArrFinish003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -5300,12 +5300,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19400
-     * @tc.name: testStreamWritableWritevUintArrFinish004
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevUintArrFinish004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19400
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevUintArrFinish004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -5335,12 +5335,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritevFinish.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19500
-     * @tc.name: testStreamWritableWritevUintArrFinish006
-     * @tc.desc: Finish event for different writev scenarios of writable streams.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableWritevUintArrFinish006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19500
+     * @tc.desc   Finish event for different writev scenarios of writable streams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableWritevUintArrFinish006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writableStream = new stream.Writable();
@@ -5360,12 +5360,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableConstructorSetMethods.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19600
-     * @tc.name: testStreamWritableUintArrConstructorSetMethods001
-     * @tc.desc: Writable constructor Set Methods.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArrConstructorSetMethods001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19600
+     * @tc.desc   Writable constructor Set Methods.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArrConstructorSetMethods001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let _writev = (chunk, callback) => {
@@ -5390,12 +5390,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableEndCbError.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19700
-     * @tc.name: testStreamWritableUintArrEndCbError001
-     * @tc.desc: Writable end event error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testStreamWritableUintArrEndCbError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19700
+     * @tc.desc   Writable end event error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStreamWritableUintArrEndCbError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let writable = new stream.Writable();
@@ -5417,12 +5417,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19800
-     * @tc.name: testStreamWritableUintArrProperties001
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrProperties001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19800
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrProperties001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -5438,12 +5438,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_19900
-     * @tc.name: testStreamWritableUintArrProperties002
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrProperties002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_19900
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrProperties002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let customWritable = new CustomWritable();
@@ -5454,12 +5454,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20000
-     * @tc.name: testStreamWritableUintArrProperties003
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrProperties003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20000
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrProperties003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let customWritable = new CustomWritable();
@@ -5472,12 +5472,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20100
-     * @tc.name: testStreamWritableUintArrProperties004
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrProperties004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20100
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrProperties004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let customWritable = new CustomWritable();
@@ -5491,12 +5491,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableProperties.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20200
-     * @tc.name: testStreamWritableUintArrProperties005
-     * @tc.desc: Writable Properties.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrProperties005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20200
+     * @tc.desc   Writable Properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrProperties005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new CustomWritable();
@@ -5513,12 +5513,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCork.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20300
-     * @tc.name: testStreamWritableUintArrCork001
-     * @tc.desc: Calling the core and uncork methods in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrCork001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20300
+     * @tc.desc   Calling the core and uncork methods in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrCork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let T = new Uint8Array(0);
@@ -5547,12 +5547,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCork.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20400
-     * @tc.name: testStreamWritableUintArrCork002
-     * @tc.desc: Calling the core and uncork methods in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrCork002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20400
+     * @tc.desc   Calling the core and uncork methods in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrCork002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let T = new Uint8Array(0);
@@ -5589,12 +5589,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableCork.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20500
-     * @tc.name: testStreamWritableUintArrCork003
-     * @tc.desc: Calling the core and uncork methods in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrCork003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20500
+     * @tc.desc   Calling the core and uncork methods in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrCork003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let T = new Uint8Array(0);
@@ -5623,12 +5623,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableInvalidDrain.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20600
-     * @tc.name: testStreamWritableUintArrDrain001
-     * @tc.desc: Trigger of drain event in Writable.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableUintArrDrain001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20600
+     * @tc.desc   Trigger of drain event in Writable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableUintArrDrain001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writableStream = new stream.Writable();
@@ -5649,12 +5649,12 @@ export default function StreamTest() {
 
     // Check the StreamWritableWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20700
-     * @tc.name: testStreamWritableWritevUintArr001
-     * @tc.desc: Trigger doWritev event.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamWritableWritevUintArr001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20700
+     * @tc.desc   Trigger doWritev event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamWritableWritevUintArr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5670,12 +5670,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplex.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20800
-     * @tc.name: testStreamDuplexUintArr001
-     * @tc.desc: The basic functions of Duplex stream.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexUintArr001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20800
+     * @tc.desc   The basic functions of Duplex stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexUintArr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -5692,12 +5692,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexDoWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_20900
-     * @tc.name: testStreamDuplexDoWritevUintArr001
-     * @tc.desc: Duplex method doWritev.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexDoWritevUintArr001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_20900
+     * @tc.desc   Duplex method doWritev.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexDoWritevUintArr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class CustomDuplex extends stream.Duplex {
@@ -5720,12 +5720,12 @@ export default function StreamTest() {
 
     // Check the StreamDuplexDoWritev.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21000
-     * @tc.name: testStreamDuplexDoWritevUintArr002
-     * @tc.desc: Duplex method doWritev.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamDuplexDoWritevUintArr002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21000
+     * @tc.desc   Duplex method doWritev.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamDuplexDoWritevUintArr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -5743,12 +5743,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21100
-     * @tc.name: testStreamEncoding040
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21100
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5763,12 +5763,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21200
-     * @tc.name: testStreamEncoding041
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding041
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21200
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5782,12 +5782,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21300
-     * @tc.name: testStreamEncoding042
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding042
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21300
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5802,12 +5802,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21400
-     * @tc.name: testStreamEncoding043
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding043
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21400
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5822,12 +5822,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21500
-     * @tc.name: testStreamEncoding044
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding044
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21500
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5841,12 +5841,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21600
-     * @tc.name: testStreamEncoding045
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21600
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5861,12 +5861,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21700
-     * @tc.name: testStreamEncoding046
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21700
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5881,12 +5881,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21800
-     * @tc.name: testStreamEncoding047
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21800
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5900,12 +5900,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_21900
-     * @tc.name: testStreamEncoding048
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding048
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_21900
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let writable = new stream.Writable();
@@ -5920,12 +5920,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22000
-     * @tc.name: testStreamEncoding049
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding049
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22000
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -5939,12 +5939,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22100
-     * @tc.name: testStreamEncoding050
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22100
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -5958,12 +5958,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22200
-     * @tc.name: testStreamEncoding051
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding051
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22200
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -5978,12 +5978,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22300
-     * @tc.name: testStreamEncoding052
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding052
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22300
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -5997,12 +5997,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22400
-     * @tc.name: testStreamEncoding053
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22400
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -6016,12 +6016,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22500
-     * @tc.name: testStreamEncoding054
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding054
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22500
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -6036,12 +6036,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22600
-     * @tc.name: testStreamEncoding055
-     * @tc.desc: Write method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding055
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22600
+     * @tc.desc   Write method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -6055,12 +6055,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22700
-     * @tc.name: testStreamEncoding056
-     * @tc.desc: End method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22700
+     * @tc.desc   End method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();
@@ -6074,12 +6074,12 @@ export default function StreamTest() {
 
     // Check the StreamEncoding.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_STREAM_22800
-     * @tc.name: testStreamEncoding057
-     * @tc.desc: SetDefaultEncoding method encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testStreamEncoding057
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_STREAM_22800
+     * @tc.desc   SetDefaultEncoding method encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStreamEncoding057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let duplex = new stream.Duplex();

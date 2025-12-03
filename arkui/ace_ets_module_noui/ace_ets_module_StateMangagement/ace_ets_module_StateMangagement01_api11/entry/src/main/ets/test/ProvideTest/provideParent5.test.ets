@@ -56,12 +56,12 @@ export default function provideParent5() {
     });
 
     /**
+     * @tc.name   provideParentFiveTest_0100
      * @tc.number SUB_ACE_provideParent5_0100
-     * @tc.name provideParent5_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('provideParentFiveTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('provideParentFiveTest_0100 START');

@@ -40,7 +40,6 @@ export default function BatteryStatisticsServiceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryStatisticsServiceTest_0100
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0010
      * @tc.desc   BatteryStatisticsService stop test
@@ -68,7 +67,6 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryStatisticsServiceTest_0200
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0020
      * @tc.desc   BatteryStatisticsService stop test
@@ -93,7 +91,6 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryStatisticsServiceTest_0300
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0030
      * @tc.desc   BatteryStatisticsService stop test
@@ -114,7 +111,6 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryStatisticsServiceTest_0400
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0040
      * @tc.desc   BatteryStatisticsService stop test
@@ -135,7 +131,6 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryStatisticsServiceTest_0500
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0050
      * @tc.desc   BatteryStatisticsService stop test
@@ -156,7 +151,6 @@ export default function BatteryStatisticsServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   BatteryStatisticsServiceTest_0600
      * @tc.number SUB_PowerSystem_BatteryStatisticsService_JSTest_0060
      * @tc.desc   BatteryStatisticsService stop test

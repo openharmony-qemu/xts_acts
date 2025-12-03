@@ -103,12 +103,12 @@ export default function pixelMapWritePixelsTest() {
     });
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0001
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0001
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0001
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0001
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0001', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0001";
@@ -128,12 +128,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0002
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0002
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0002
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0002
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0002', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0002";
@@ -153,12 +153,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0003
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0003
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0003
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0003
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0003', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0003";
@@ -178,12 +178,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0004
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0004
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0004
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0004
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0004', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0004";
@@ -203,12 +203,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0005
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0005
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0005
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0005
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0005', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0005";
@@ -228,12 +228,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0006
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0006
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0006
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0006
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0006', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0006";
@@ -253,12 +253,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0007
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0007
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0007
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0007
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0007', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0007";
@@ -278,12 +278,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0008
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0008
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0008
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0008
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0008', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0008";
@@ -303,12 +303,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0009
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0009
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0009
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0009
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0009', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0009";
@@ -328,12 +328,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0010
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0010
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0010
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0010
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0010', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0010";
@@ -353,12 +353,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0011
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0011
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0011
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0011
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0011', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0011";
@@ -378,12 +378,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0012
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0012
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0012
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0012
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0012', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0012";
@@ -403,12 +403,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0013
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0013
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0013
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0013
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0013', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0013";
@@ -428,12 +428,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0014
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0014
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0014
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0014
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0014', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0014";
@@ -453,12 +453,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0015
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0015
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0015
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0015
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0015', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0015";
@@ -478,12 +478,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0016
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0016
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0016
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0016
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0016', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0016";
@@ -503,12 +503,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0017
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0017
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0017
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0017
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0017', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0017";
@@ -528,12 +528,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0018
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0018
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0018
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0018
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0018', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0018";
@@ -553,12 +553,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0019
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0019
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0019
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0019
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0019', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0019";
@@ -578,12 +578,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0020
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0020
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0020
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0020
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0020', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0020";
@@ -603,12 +603,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0021
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0021
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0021
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0021
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0021', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0021";
@@ -628,12 +628,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0022
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0022
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0022
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0022
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0022', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0022";
@@ -653,12 +653,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0023
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0023
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0023
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0023
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0023', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0023";
@@ -678,12 +678,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0024
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0024
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0024
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0024
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0024', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0024";
@@ -703,12 +703,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0025
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0025
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0025
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0025
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0025', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0025";
@@ -728,12 +728,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0026
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0026
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0026
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0026
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0026', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0026";
@@ -756,12 +756,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0027
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0027
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0027
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0027
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0027', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0027";
@@ -784,12 +784,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0028
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0028
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0028
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0028
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0028', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0028";
@@ -812,12 +812,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0029
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0029
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0029
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0029
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0029', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0029";
@@ -837,12 +837,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0030
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0030
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0030
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0030
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0030', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0030";
@@ -862,12 +862,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0031
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0031
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0031
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0031
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0031', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0031";
@@ -887,12 +887,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0032
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0032
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0032
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0032
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0032', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0032";
@@ -912,12 +912,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0033
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0033
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0033
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0033
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0033', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0033";
@@ -937,12 +937,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0034
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0034
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0034
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0034
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0034', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0034";
@@ -962,12 +962,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0035
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0035
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0035
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0035
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0035', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0035";
@@ -987,12 +987,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0036
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0036
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0036
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0036
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0036', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0036";
@@ -1012,12 +1012,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0037
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0037
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0037
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0037
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0037', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0037";
@@ -1037,12 +1037,12 @@ export default function pixelMapWritePixelsTest() {
     })
 
     /**
-     * @tc.number    SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0038
-     * @tc.name      SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0038
-     * @tc.desc      writePixels
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0038
+     * @tc.number SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0038
+     * @tc.desc   writePixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0038', Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_MEDIA_PIXEL_MAP_WRITE_PIXELS_ASYNC_CALLBACK_0038";

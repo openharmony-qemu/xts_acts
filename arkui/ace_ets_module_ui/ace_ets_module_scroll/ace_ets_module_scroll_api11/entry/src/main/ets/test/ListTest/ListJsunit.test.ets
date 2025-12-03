@@ -46,6 +46,14 @@ export default function listJsunit() {
       console.info("list after each called");
     });
 
+    /**
+     * @tc.name   testList01
+     * @tc.number testList01
+     * @tc.desc   testList01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList01', Level.LEVEL1, async (done:Function) => {
       console.info('[testList01] START');
       await CommonFunc.sleep(1000);
@@ -64,6 +72,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList02
+     * @tc.number testList02
+     * @tc.desc   testList02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList02', Level.LEVEL1, async (done:Function) => {
       console.info('[testList02] START');
       try {
@@ -90,6 +106,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList03
+     * @tc.number testList03
+     * @tc.desc   testList03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList03', Level.LEVEL1, async (done:Function) => {
       console.info('[testList03] START');
       try {
@@ -116,6 +140,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList04
+     * @tc.number testList04
+     * @tc.desc   testList04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList04', Level.LEVEL1, async (done:Function) => {
       console.info('[testList04] START');
       try {
@@ -142,6 +174,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList05
+     * @tc.number testList05
+     * @tc.desc   testList05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList05', Level.LEVEL1, async (done:Function) => {
       console.info('[testList05] START');
       try {
@@ -168,6 +208,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList06
+     * @tc.number testList06
+     * @tc.desc   testList06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList06', Level.LEVEL1, async (done:Function) => {
       console.info('[testList06] START');
       try {
@@ -194,6 +242,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList07
+     * @tc.number testList07
+     * @tc.desc   testList07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList07', Level.LEVEL1, async (done:Function) => {
       console.info('[testList07] START');
       try {
@@ -220,6 +276,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList08
+     * @tc.number testList08
+     * @tc.desc   testList08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList08', Level.LEVEL1, async (done:Function) => {
       console.info('[testList08] START');
       try {
@@ -246,6 +310,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList09
+     * @tc.number testList09
+     * @tc.desc   testList09
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList09', Level.LEVEL1, async (done:Function) => {
       console.info('[testList09] START');
       try {
@@ -272,6 +344,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList10
+     * @tc.number testList10
+     * @tc.desc   testList10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList10', Level.LEVEL1, async (done:Function) => {
       console.info('[testList10] START');
       try {
@@ -298,6 +378,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList11
+     * @tc.number testList11
+     * @tc.desc   testList11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList11', Level.LEVEL1, async (done:Function) => {
       console.info('[testList11] START');
       try {
@@ -324,6 +412,14 @@ export default function listJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testList12
+     * @tc.number testList12
+     * @tc.desc   testList12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testList12', Level.LEVEL1, async (done:Function) => {
       console.info('[testList12] START');
       try {

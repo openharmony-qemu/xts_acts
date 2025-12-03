@@ -46,12 +46,12 @@ export default function itemIndexList() {
     });
 
     /**
-     * @tc.number    itemIndexList_001
-     * @tc.name      itemIndexList_0100
-     * @tc.desc      Retrieve the index of subcomponents through coordinates.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   itemIndexList_0100
+     * @tc.number itemIndexList_001
+     * @tc.desc   Retrieve the index of subcomponents through coordinates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('itemIndexList_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[itemIndexList_0100] START');

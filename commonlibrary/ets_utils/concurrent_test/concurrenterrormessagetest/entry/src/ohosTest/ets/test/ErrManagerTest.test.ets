@@ -227,12 +227,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SetTimeoutThrowErrorTest0100
-     * @tc.name      : SetTimeoutThrowErrorTest0100
-     * @tc.desc      : 主线程_setTimeOut中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SetTimeoutThrowErrorTest0100
+     * @tc.number SetTimeoutThrowErrorTest0100
+     * @tc.desc   主线程_setTimeOut中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetTimeoutThrowErrorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       let errorCaught = "";
@@ -248,12 +248,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : PromiseThrowErrorTest0200
-     * @tc.name      : PromiseThrowErrorTest0200
-     * @tc.desc      : 主线程_promise中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PromiseThrowErrorTest0200
+     * @tc.number PromiseThrowErrorTest0200
+     * @tc.desc   主线程_promise中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PromiseThrowErrorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       let errorCaught = "";
@@ -271,12 +271,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : PromiseThenThrowErrorTest0300
-     * @tc.name      : PromiseThenThrowErrorTest0300
-     * @tc.desc      : 主线程_promise的then中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PromiseThenThrowErrorTest0300
+     * @tc.number PromiseThenThrowErrorTest0300
+     * @tc.desc   主线程_promise的then中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PromiseThenThrowErrorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -295,12 +295,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : PromiseCatchThrowErrorTest0400
-     * @tc.name      : PromiseCatchThrowErrorTest0400
-     * @tc.desc      : 主线程_promise的catch中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PromiseCatchThrowErrorTest0400
+     * @tc.number PromiseCatchThrowErrorTest0400
+     * @tc.desc   主线程_promise的catch中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PromiseCatchThrowErrorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -320,12 +320,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : PromiseFinallyThrowErrorTest0500
-     * @tc.name      : PromiseFinallyThrowErrorTest0500
-     * @tc.desc      : 主线程_promise的finally中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PromiseFinallyThrowErrorTest0500
+     * @tc.number PromiseFinallyThrowErrorTest0500
+     * @tc.desc   主线程_promise的finally中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PromiseFinallyThrowErrorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -340,12 +340,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : AsyncLockThrowErrorTest0600
-     * @tc.name      : AsyncLockThrowErrorTest0600
-     * @tc.desc      : 主线程_asyncLock中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLockThrowErrorTest0600
+     * @tc.number AsyncLockThrowErrorTest0600
+     * @tc.desc   主线程_asyncLock中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLockThrowErrorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
@@ -359,12 +359,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : AsyncLockThrowErrorTest0700
-     * @tc.name      : AsyncLockThrowErrorTest0700
-     * @tc.desc      : 主线程_asyncLock.then中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLockThrowErrorTest0700
+     * @tc.number AsyncLockThrowErrorTest0700
+     * @tc.desc   主线程_asyncLock.then中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLockThrowErrorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
@@ -379,12 +379,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : AsyncLockThrowErrorTest0800
-     * @tc.name      : AsyncLockThrowErrorTest0800
-     * @tc.desc      : 主线程_asyncLock.catch中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncLockThrowErrorTest0800
+     * @tc.number AsyncLockThrowErrorTest0800
+     * @tc.desc   主线程_asyncLock.catch中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncLockThrowErrorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
@@ -400,12 +400,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : WaitForThrowErrorTest0900
-     * @tc.name      : WaitForThrowErrorTest0900
-     * @tc.desc      : 主线程_waitFor.finally中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WaitForThrowErrorTest0900
+     * @tc.number WaitForThrowErrorTest0900
+     * @tc.desc   主线程_waitFor.finally中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WaitForThrowErrorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
@@ -420,12 +420,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : WaitForErrorTest1000
-     * @tc.name      : WaitForErrorTest1000
-     * @tc.desc      : 主线程_wait/waitFor中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WaitForErrorTest1000
+     * @tc.number WaitForErrorTest1000
+     * @tc.desc   主线程_wait/waitFor中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WaitForErrorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
       errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
@@ -439,12 +439,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : AsyncFunctionThrowErrorTest1100
-     * @tc.name      : AsyncFunctionThrowErrorTest1100
-     * @tc.desc      : 主线程_async异步方法中抛异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   AsyncFunctionThrowErrorTest1100
+     * @tc.number AsyncFunctionThrowErrorTest1100
+     * @tc.desc   主线程_async异步方法中抛异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AsyncFunctionThrowErrorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -456,12 +456,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolTaskThrowErrorTest1300
-     * @tc.name      : TaskpoolTaskThrowErrorTest1300
-     * @tc.desc      : taskpool线程中普通task抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolTaskThrowErrorTest1300
+     * @tc.number TaskpoolTaskThrowErrorTest1300
+     * @tc.desc   taskpool线程中普通task抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolTaskThrowErrorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -477,12 +477,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolGenericTaskThenThrowErrorTest1400
-     * @tc.name      : TaskpoolGenericTaskThenThrowErrorTest1400
-     * @tc.desc      : taskpool线程中泛型任务的then回调抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolGenericTaskThenThrowErrorTest1400
+     * @tc.number TaskpoolGenericTaskThenThrowErrorTest1400
+     * @tc.desc   taskpool线程中泛型任务的then回调抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolGenericTaskThenThrowErrorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -498,12 +498,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolTaskGroupTaskThrowErrorTest1500
-     * @tc.name      : TaskpoolTaskGroupTaskThrowErrorTest1500
-     * @tc.desc      : taskgroup中的task抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolTaskGroupTaskThrowErrorTest1500
+     * @tc.number TaskpoolTaskGroupTaskThrowErrorTest1500
+     * @tc.desc   taskgroup中的task抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolTaskGroupTaskThrowErrorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -520,12 +520,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolTaskGroupTaskThrowErrorTest1600
-     * @tc.name      : TaskpoolTaskGroupTaskThrowErrorTest1600
-     * @tc.desc      : taskgroup中的task1正常，task2抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolTaskGroupTaskThrowErrorTest1600
+     * @tc.number TaskpoolTaskGroupTaskThrowErrorTest1600
+     * @tc.desc   taskgroup中的task1正常，task2抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolTaskGroupTaskThrowErrorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -543,12 +543,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolTaskGroupOnExecutionFailedThrowErrorTest1700
-     * @tc.name      : TaskpoolTaskGroupOnExecutionFailedThrowErrorTest1700
-     * @tc.desc      : taskgroup中task1的onExecutionFailed回调抛出异常，task2抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolTaskGroupOnExecutionFailedThrowErrorTest1700
+     * @tc.number TaskpoolTaskGroupOnExecutionFailedThrowErrorTest1700
+     * @tc.desc   taskgroup中task1的onExecutionFailed回调抛出异常，task2抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolTaskGroupOnExecutionFailedThrowErrorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -582,12 +582,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolDelayedTaskThrowErrorTest1800
-     * @tc.name      : TaskpoolDelayedTaskThrowErrorTest1800
-     * @tc.desc      : 延时任务的task抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolDelayedTaskThrowErrorTest1800
+     * @tc.number TaskpoolDelayedTaskThrowErrorTest1800
+     * @tc.desc   延时任务的task抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolDelayedTaskThrowErrorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -603,12 +603,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolDelayedTaskCatchThrowErrorTest1900
-     * @tc.name      : TaskpoolDelayedTaskCatchThrowErrorTest1900
-     * @tc.desc      : 延时任务的task的catch回调中抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolDelayedTaskCatchThrowErrorTest1900
+     * @tc.number TaskpoolDelayedTaskCatchThrowErrorTest1900
+     * @tc.desc   延时任务的task的catch回调中抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolDelayedTaskCatchThrowErrorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -624,12 +624,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolPeriodicTaskThrowErrorTest2000
-     * @tc.name      : TaskpoolPeriodicTaskThrowErrorTest2000
-     * @tc.desc      : 周期任务的task抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolPeriodicTaskThrowErrorTest2000
+     * @tc.number TaskpoolPeriodicTaskThrowErrorTest2000
+     * @tc.desc   周期任务的task抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolPeriodicTaskThrowErrorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -646,12 +646,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolPeriodicTaskOnEnqueuedThrowErrorTest2100
-     * @tc.name      : TaskpoolPeriodicTaskOnEnqueuedThrowErrorTest2100
-     * @tc.desc      : 周期任务的task的onEnqueued回调中抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolPeriodicTaskOnEnqueuedThrowErrorTest2100
+     * @tc.number TaskpoolPeriodicTaskOnEnqueuedThrowErrorTest2100
+     * @tc.desc   周期任务的task的onEnqueued回调中抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolPeriodicTaskOnEnqueuedThrowErrorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -681,12 +681,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolLongTaskThrowErrorTest2200
-     * @tc.name      : TaskpoolLongTaskThrowErrorTest2200
-     * @tc.desc      : longTask抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolLongTaskThrowErrorTest2200
+     * @tc.number TaskpoolLongTaskThrowErrorTest2200
+     * @tc.desc   longTask抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolLongTaskThrowErrorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -702,12 +702,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolLongTaskOnReceiveDataThrowErrorTest2300
-     * @tc.name      : TaskpoolLongTaskOnReceiveDataThrowErrorTest2300
-     * @tc.desc      : LongTask的onReceiveData回调中抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolLongTaskOnReceiveDataThrowErrorTest2300
+     * @tc.number TaskpoolLongTaskOnReceiveDataThrowErrorTest2300
+     * @tc.desc   LongTask的onReceiveData回调中抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolLongTaskOnReceiveDataThrowErrorTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -734,12 +734,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolSerialTaskThrowErrorTest2400
-     * @tc.name      : TaskpoolSerialTaskThrowErrorTest2400
-     * @tc.desc      : 串行队列task抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolSerialTaskThrowErrorTest2400
+     * @tc.number TaskpoolSerialTaskThrowErrorTest2400
+     * @tc.desc   串行队列task抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolSerialTaskThrowErrorTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -756,12 +756,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolSerialTask1ErrorTask2NormalTest2500
-     * @tc.name      : TaskpoolSerialTask1ErrorTask2NormalTest2500
-     * @tc.desc      : 串行队列task1抛出异常，task2正常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolSerialTask1ErrorTask2NormalTest2500
+     * @tc.number TaskpoolSerialTask1ErrorTask2NormalTest2500
+     * @tc.desc   串行队列task1抛出异常，task2正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolSerialTask1ErrorTask2NormalTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -780,12 +780,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolSerialTask1OnStartExecutionErrorTask2NormalTest2600
-     * @tc.name      : TaskpoolSerialTask1OnStartExecutionErrorTask2NormalTest2600
-     * @tc.desc      : 串行队列task1的onStartExecution回调中抛出异常，task2正常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolSerialTask1OnStartExecutionErrorTask2NormalTest2600
+     * @tc.number TaskpoolSerialTask1OnStartExecutionErrorTask2NormalTest2600
+     * @tc.desc   串行队列task1的onStartExecution回调中抛出异常，task2正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolSerialTask1OnStartExecutionErrorTask2NormalTest2600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
@@ -817,12 +817,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolAsyncTaskThrowErrorTest2700
-     * @tc.name      : TaskpoolAsyncTaskThrowErrorTest2700
-     * @tc.desc      : 异步队列的task抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolAsyncTaskThrowErrorTest2700
+     * @tc.number TaskpoolAsyncTaskThrowErrorTest2700
+     * @tc.desc   异步队列的task抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolAsyncTaskThrowErrorTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -839,12 +839,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolAsyncTask1NormalTask2ErrorTest2800
-     * @tc.name      : TaskpoolAsyncTask1NormalTask2ErrorTest2800
-     * @tc.desc      : 异步队列的task1正常，task2抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolAsyncTask1NormalTask2ErrorTest2800
+     * @tc.number TaskpoolAsyncTask1NormalTask2ErrorTest2800
+     * @tc.desc   异步队列的task1正常，task2抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolAsyncTask1NormalTask2ErrorTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -863,12 +863,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : TaskpoolAsyncTask1OnExecutionSucceededErrorTask2ErrorTest2900
-     * @tc.name      : TaskpoolAsyncTask1OnExecutionSucceededErrorTask2ErrorTest2900
-     * @tc.desc      : 异步队列的task1的onExecutionSucceeded回调中抛出异常，task2抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   TaskpoolAsyncTask1OnExecutionSucceededErrorTask2ErrorTest2900
+     * @tc.number TaskpoolAsyncTask1OnExecutionSucceededErrorTask2ErrorTest2900
+     * @tc.desc   异步队列的task1的onExecutionSucceeded回调中抛出异常，task2抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TaskpoolAsyncTask1OnExecutionSucceededErrorTask2ErrorTest2900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
@@ -901,12 +901,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : WorkerTopLevelThrowErrorTest3000
-     * @tc.name      : WorkerTopLevelThrowErrorTest3000
-     * @tc.desc      : worker线程的顶级作用域中抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WorkerTopLevelThrowErrorTest3000
+     * @tc.number WorkerTopLevelThrowErrorTest3000
+     * @tc.desc   worker线程的顶级作用域中抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WorkerTopLevelThrowErrorTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -929,12 +929,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : WorkerSubWorkerThrowErrorTest3500
-     * @tc.name      : WorkerSubWorkerThrowErrorTest3500
-     * @tc.desc      : worker线程的顶级作用域创建的二级worker中的onmessage抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WorkerSubWorkerThrowErrorTest3500
+     * @tc.number WorkerSubWorkerThrowErrorTest3500
+     * @tc.desc   worker线程的顶级作用域创建的二级worker中的onmessage抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WorkerSubWorkerThrowErrorTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -967,12 +967,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : WorkerSubWorkerThrowErrorTest3600
-     * @tc.name      : WorkerSubWorkerThrowErrorTest3600
-     * @tc.desc      : worker线程的onmessage中创建的二级worker中抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WorkerSubWorkerThrowErrorTest3600
+     * @tc.number WorkerSubWorkerThrowErrorTest3600
+     * @tc.desc   worker线程的onmessage中创建的二级worker中抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WorkerSubWorkerThrowErrorTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -996,12 +996,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : WorkerSubWorkerThrowErrorTest3700
-     * @tc.name      : WorkerSubWorkerThrowErrorTest3700
-     * @tc.desc      : worker线程的onmessage中抛出异常前，主线程terminate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WorkerSubWorkerThrowErrorTest3700
+     * @tc.number WorkerSubWorkerThrowErrorTest3700
+     * @tc.desc   worker线程的onmessage中抛出异常前，主线程terminate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WorkerSubWorkerThrowErrorTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {
@@ -1020,12 +1020,12 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.number    : WorkerSubWorkerThrowErrorTest3800
-     * @tc.name      : WorkerSubWorkerThrowErrorTest3800
-     * @tc.desc      : worker的宿主线程回调onmessage中抛出异常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   WorkerSubWorkerThrowErrorTest3800
+     * @tc.number WorkerSubWorkerThrowErrorTest3800
+     * @tc.desc   worker的宿主线程回调onmessage中抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WorkerSubWorkerThrowErrorTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void) => {

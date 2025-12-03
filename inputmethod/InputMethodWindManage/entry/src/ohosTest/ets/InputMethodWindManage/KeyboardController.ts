@@ -534,6 +534,30 @@ export class KeyboardController {
           console.debug(TAG + '====>Sub_InputMethod_IME_OffsetArea_1100 event:' + data.event);
           that.Sub_InputMethod_IME_OffsetArea_1100();
           break;
+        case 550:
+          console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_setSystemPanelButtonColor_0100();
+          break;
+        case 551:
+          console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_setSystemPanelButtonColor_0200();
+          break;
+        case 552:
+          console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_setSystemPanelButtonColor_0300();
+          break;
+        case 553:
+          console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_setSystemPanelButtonColor_0400();
+          break;
+        case 554:
+          console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0500 event:' + data.event);
+          that.Sub_InputMethod_IME_setSystemPanelButtonColor_0500();
+          break;
+        case 555:
+          console.debug(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0600 event:' + data.event);
+          that.Sub_InputMethod_IME_setSystemPanelButtonColor_0600();
+          break;
       }
     }
 
@@ -1864,7 +1888,7 @@ export class KeyboardController {
           console.info(TAG + '====>Sub_InputMethod_IME_Custom_0200 onMessage msgId: ' + msgId + ', msgParam: ' +
           that.GetArrayBufferString(msgParam) + ', msgParamObj' + msgParam);
           console.info(TAG + '====>Sub_InputMethod_IME_Custom_0200 sedMessages msgIdSize: ' + msgId.length + ', msgParamSize: ' +
-            that.GetArrayBufferString(msgParam)?.length + ', ArrayBufferSize' +  msgParam?.byteLength);
+            that.GetArrayBufferString(msgParam)?.length + ', ArrayBufferSize' + msgParam?.byteLength);
           if (msgId.length === 256 && msgParam?.byteLength === 131072) {
             console.info(TAG + '====>Sub_InputMethod_IME_Custom_0200 start sendMessage');
             that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('SUCCESS'))
@@ -3843,6 +3867,112 @@ export class KeyboardController {
       console.info(TAG + `====>Sub_InputMethod_IME_OffsetArea_1100 cathch err.code: ${err.code}  , err.message: ${err.message}`);
     };
     commoneventmanager.publish('Sub_InputMethod_IME_OffsetArea_1100', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_setSystemPanelButtonColor_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_setSystemPanelButtonColor_0100 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      await this.softKeyboardPanel.setSystemPanelButtonColor('#01000000', '#01000000');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0100 success ');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_setSystemPanelButtonColor_0100 cathch err.code: ${err.code} err.message: ${err.message}`);
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_setSystemPanelButtonColor_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_setSystemPanelButtonColor_0200 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      await this.softKeyboardPanel.setSystemPanelButtonColor('#000000', '#FFFFFF');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0200 success ');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_setSystemPanelButtonColor_0200 cathch err.code: ${err.code} err.message: ${err.message}`);
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_setSystemPanelButtonColor_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_setSystemPanelButtonColor_0300 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      await this.softKeyboardPanel.setSystemPanelButtonColor(undefined, '#FFFFFFFF');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0300 success ');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_setSystemPanelButtonColor_0300 cathch err.code: ${err.code} err.message: ${err.message}`);
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_setSystemPanelButtonColor_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_setSystemPanelButtonColor_0400 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      await this.softKeyboardPanel.setSystemPanelButtonColor('#FFFFFFFF', undefined);
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+      console.info(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0400 success ');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_setSystemPanelButtonColor_0400 cathch err.code: ${err.code} err.message: ${err.message}`);
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_setSystemPanelButtonColor_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_setSystemPanelButtonColor_0500 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      await this.softKeyboardPanel.setSystemPanelButtonColor('#FFFFFFFF', '#00xxxxxx');
+      console.info(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0500 success ');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_setSystemPanelButtonColor_0500 cathch err.code: ${err.code} err.message: ${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0500', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IME_setSystemPanelButtonColor_0600(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_setSystemPanelButtonColor_0600 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      await this.softKeyboardPanel.setSystemPanelButtonColor('#00xxxxxx', '#FFFFFFFF');
+      console.info(TAG + '====>Sub_InputMethod_IME_setSystemPanelButtonColor_0600 success ');
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_setSystemPanelButtonColor_0600 cathch err.code: ${err.code} err.message: ${err.message}`);
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+    };
+    commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0600', commonEventPublishData, this.publishCallback);
   }
 
 }

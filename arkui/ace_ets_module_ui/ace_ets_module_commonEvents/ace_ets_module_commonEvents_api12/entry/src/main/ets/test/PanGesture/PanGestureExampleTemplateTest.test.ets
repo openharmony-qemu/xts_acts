@@ -47,12 +47,12 @@ export default function PanGestureExampleTemplateTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      PanGestureExampleTemplateTest_0010
-     * @tc.desc      api test TapGesture and test GetHistoricalPoints notNull
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PanGestureExampleTemplateTest_0010
+     * @tc.number PanGestureExampleTemplateTest_0010
+     * @tc.desc   api test TapGesture and test GetHistoricalPoints notNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanGestureExampleTemplateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureExampleTemplateTest_0010 START');
@@ -82,12 +82,12 @@ export default function PanGestureExampleTemplateTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      PanGestureExampleTemplateTest_0020
-     * @tc.desc      api test getHistoricalPoints null
-     * @tc.level:    Level0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PanGestureExampleTemplateTest_0020
+     * @tc.number PanGestureExampleTemplateTest_0020
+     * @tc.desc   api test getHistoricalPoints null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanGestureExampleTemplateTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureExampleTemplateTest_0020 START');

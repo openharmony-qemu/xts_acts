@@ -43,12 +43,12 @@ export default function onkeyEventDispatchTest4() {
     });
 
     /**
-     * @tc.number onkeyEventDispatchTest4_0100
      * @tc.name   onkeyEventDispatchTest4_0100
+     * @tc.number onkeyEventDispatchTest4_0100
      * @tc.desc   test the onkeyEventDispatch tab key focus when parent component set onKeyEventDispatch event
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onkeyEventDispatchTest4_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[onkeyEventDispatchTest4_0100] START');

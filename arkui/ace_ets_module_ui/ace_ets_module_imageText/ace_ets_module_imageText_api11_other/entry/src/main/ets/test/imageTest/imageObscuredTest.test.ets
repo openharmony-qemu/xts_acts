@@ -52,6 +52,14 @@ export default function imageObscuredTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0150
+     * @tc.number ArkUX_Redacted_Image_0150
+     * @tc.desc   ArkUX_Redacted_Image_0150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Image_0150', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0150 START');
       setTimeout(() => {
@@ -74,6 +82,14 @@ export default function imageObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0160
+     * @tc.number ArkUX_Redacted_Image_0160
+     * @tc.desc   ArkUX_Redacted_Image_0160
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Image_0160', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0160 START');
       setTimeout(() => {
@@ -93,6 +109,14 @@ export default function imageObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0170
+     * @tc.number ArkUX_Redacted_Image_0170
+     * @tc.desc   ArkUX_Redacted_Image_0170
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Image_0170', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0170 START');
       setTimeout(() => {
@@ -114,6 +138,14 @@ export default function imageObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0180
+     * @tc.number ArkUX_Redacted_Image_0180
+     * @tc.desc   ArkUX_Redacted_Image_0180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Image_0180', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0180 START');
       setTimeout(() => {
@@ -133,6 +165,14 @@ export default function imageObscuredTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0190
+     * @tc.number ArkUX_Redacted_Image_0190
+     * @tc.desc   ArkUX_Redacted_Image_0190
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Redacted_Image_0190', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0190 START');
       setTimeout(() => {

@@ -19,12 +19,12 @@ export default function concurrencyReturnCoveredTest() {
     })
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest001
      * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0101
-     * @tc.name concurrencyReturnCoveredTest001
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let func = () => {
@@ -34,12 +34,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest002
      * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0102
-     * @tc.name concurrencyReturnCoveredTest002
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let lru = new ArkTSUtils.SendableLruCache<string, number>()
@@ -48,12 +48,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
-     * @tc.number.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0103
-     * @tc.name concurrencyReturnCoveredTest003
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name   concurrencyReturnCoveredTest003
+     * @tc.number .number SUB_CONCURRENCY_RETURN_COVERED_TEST_0103
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let lru = new ArkTSUtils.SendableLruCache<string, number>()
@@ -62,12 +62,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest004
      * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0104
-     * @tc.name concurrencyReturnCoveredTest004
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = ArkTSUtils.ASON.parse('null')
@@ -75,12 +75,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest005
      * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0105
-     * @tc.name concurrencyReturnCoveredTest005
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let bit = new collections.BitVector(0)
@@ -89,12 +89,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest006
      * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0106
-     * @tc.name concurrencyReturnCoveredTest006
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Float32Array(2)
@@ -106,12 +106,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest007
      * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0107
-     * @tc.name concurrencyReturnCoveredTest007
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Float32Array(2)
@@ -120,12 +120,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest008
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0108
-     * @tc.name concurrencyReturnCoveredTest008
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -138,12 +138,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest009
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0109
-     * @tc.name concurrencyReturnCoveredTest009
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -156,12 +156,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest010
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0110
-     * @tc.name concurrencyReturnCoveredTest010
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint32Array(2)
@@ -173,12 +173,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest011
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0111
-     * @tc.name concurrencyReturnCoveredTest011
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint32Array(2)
@@ -187,12 +187,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest012
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0112
-     * @tc.name concurrencyReturnCoveredTest012
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -205,12 +205,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest013
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0113
-     * @tc.name concurrencyReturnCoveredTest013
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -223,12 +223,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest014
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0114
-     * @tc.name concurrencyReturnCoveredTest014
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Int32Array(2)
@@ -240,12 +240,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest015
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0115
-     * @tc.name concurrencyReturnCoveredTest015
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Int32Array(2)
@@ -254,12 +254,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest016
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0116
-     * @tc.name concurrencyReturnCoveredTest016
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -272,12 +272,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest017
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0117
-     * @tc.name concurrencyReturnCoveredTest017
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -290,12 +290,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest018
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0118
-     * @tc.name concurrencyReturnCoveredTest018
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint16Array(2)
@@ -307,12 +307,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest019
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0119
-     * @tc.name concurrencyReturnCoveredTest019
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint16Array(2)
@@ -321,12 +321,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest020
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0120
-     * @tc.name concurrencyReturnCoveredTest020
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -339,12 +339,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest021
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0121
-     * @tc.name concurrencyReturnCoveredTest021
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -357,12 +357,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest022
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0122
-     * @tc.name concurrencyReturnCoveredTest022
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Int16Array(2)
@@ -374,12 +374,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest023
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0123
-     * @tc.name concurrencyReturnCoveredTest023
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Int16Array(2)
@@ -388,12 +388,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest024
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0124
-     * @tc.name concurrencyReturnCoveredTest024
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -406,12 +406,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest025
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0125
-     * @tc.name concurrencyReturnCoveredTest025
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -424,12 +424,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest026
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0126
-     * @tc.name concurrencyReturnCoveredTest026
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint8Array(2)
@@ -441,12 +441,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest027
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0127
-     * @tc.name concurrencyReturnCoveredTest027
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint8Array(2)
@@ -455,12 +455,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest028
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0128
-     * @tc.name concurrencyReturnCoveredTest028
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -473,12 +473,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest029
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0129
-     * @tc.name concurrencyReturnCoveredTest029
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -491,12 +491,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest030
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0130
-     * @tc.name concurrencyReturnCoveredTest030
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint8ClampedArray(2)
@@ -508,12 +508,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest031
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0131
-     * @tc.name concurrencyReturnCoveredTest031
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Uint8ClampedArray(2)
@@ -522,12 +522,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest032
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0132
-     * @tc.name concurrencyReturnCoveredTest032
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -540,12 +540,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest033
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0133
-     * @tc.name concurrencyReturnCoveredTest033
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [10, 20, 30, 40, 50];
@@ -558,12 +558,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest034
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0134
-     * @tc.name concurrencyReturnCoveredTest034
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Int8Array(2)
@@ -575,12 +575,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest035
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0135
-     * @tc.name concurrencyReturnCoveredTest035
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Int8Array(2)
@@ -589,12 +589,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest036
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0136
-     * @tc.name concurrencyReturnCoveredTest036
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -607,12 +607,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest037
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0137
-     * @tc.name concurrencyReturnCoveredTest037
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arrayLike = [-10, 20, -30, 40, -50];
@@ -625,12 +625,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest038
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0138
-     * @tc.name concurrencyReturnCoveredTest038
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new collections.Map<number, string>([
@@ -645,12 +645,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest039
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0139
-     * @tc.name concurrencyReturnCoveredTest039
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new collections.Map<number, string>([
@@ -663,12 +663,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest040
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0140
-     * @tc.name concurrencyReturnCoveredTest040
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map = new collections.Map<number, string>([
@@ -683,12 +683,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest041
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0141
-     * @tc.name concurrencyReturnCoveredTest041
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let newArray: collections.Array<number> = collections.Array.from([-10, 20, -30, 40, -50]);
@@ -697,12 +697,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest042
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0142
-     * @tc.name concurrencyReturnCoveredTest042
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let newArray: collections.Array<number> = collections.Array.from([-10, 20, -30, 40, -50]);
@@ -714,12 +714,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest043
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0143
-     * @tc.name concurrencyReturnCoveredTest043
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array: collections.Array<number> = collections.Array.from([1, 2, 3, 4, 5, 6, 7, 8]);
@@ -731,12 +731,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest044
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0144
-     * @tc.name concurrencyReturnCoveredTest044
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr: collections.Array<string> = collections.Array.of('a', 'b', 'c', 'd');
@@ -748,12 +748,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest045
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0145
-     * @tc.name concurrencyReturnCoveredTest045
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr: collections.Array<string> = new collections.Array('a', 'b', 'c', 'd');
@@ -764,12 +764,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest046
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0146
-     * @tc.name concurrencyReturnCoveredTest046
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array = new collections.Array<number>(1, 2, 3, 4, 5);
@@ -780,12 +780,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest047
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0147
-     * @tc.name concurrencyReturnCoveredTest047
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array = new collections.Array<number>(1, 2, 3, 4, 5);
@@ -796,12 +796,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest048
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0148
-     * @tc.name concurrencyReturnCoveredTest048
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array = new collections.Array(1, 2, 3);
@@ -817,12 +817,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest049
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0149
-     * @tc.name concurrencyReturnCoveredTest049
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array = new collections.Array(1, 2, 3, 4, 5);
@@ -834,12 +834,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest050
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0150
-     * @tc.name concurrencyReturnCoveredTest050
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array = new collections.Array<number>(1, 3, 5, 4, 2);
@@ -851,12 +851,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest051
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0151
-     * @tc.name concurrencyReturnCoveredTest051
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array = new collections.Array<number>(1, 2, 3, 4, 5);
@@ -867,12 +867,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest052
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0152
-     * @tc.name concurrencyReturnCoveredTest052
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array: Array<number> = [1, 2, 3];
@@ -886,12 +886,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest053
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0153
-     * @tc.name concurrencyReturnCoveredTest053
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let array: Array<number> = [1, 2, 3];
@@ -905,12 +905,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest054
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0154
-     * @tc.name concurrencyReturnCoveredTest054
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
@@ -933,12 +933,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest055
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0155
-     * @tc.name concurrencyReturnCoveredTest055
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
@@ -960,12 +960,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest056
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0156
-     * @tc.name concurrencyReturnCoveredTest056
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -974,12 +974,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest057
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0157
-     * @tc.name concurrencyReturnCoveredTest057
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 100); // 100: test number
@@ -993,12 +993,12 @@ export default function concurrencyReturnCoveredTest() {
     });
 
     /**
+     * @tc.name   concurrencyReturnCoveredTest058
      * @tc.number SUB_CONCURRENCY_return_COVERED_TEST_0158
-     * @tc.name concurrencyReturnCoveredTest058
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('concurrencyReturnCoveredTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 1000); // 100: test number

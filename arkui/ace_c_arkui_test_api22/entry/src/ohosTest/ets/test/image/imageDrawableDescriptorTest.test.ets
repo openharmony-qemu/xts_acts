@@ -26,13 +26,13 @@ export default function ImageDrawableDescriptorTest(){
       done();
     })
 
-    /*
-     * @tc.number: imageDrawableDescriptorTest001
-     * @tc.name: imageDrawableDescriptorTest001
-     * @tc.desc: Test the SetAnimationFrameDurations interface to set normal values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   imageDrawableDescriptorTest001
+     * @tc.number imageDrawableDescriptorTest001
+     * @tc.desc   Test the SetAnimationFrameDurations interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('imageDrawableDescriptorTest001', Level.LEVEL1, async (done: Function) => {
       console.info('imageDrawableDescriptorTest001 START');
@@ -54,14 +54,13 @@ export default function ImageDrawableDescriptorTest(){
       done();
     });
 
-    /*
-     * @tc.number: imageDrawableDescriptorTest002
-     * @tc.name: imageDrawableDescriptorTest002
-     * @tc.desc: Test the functionality of the StartAnimation, StopAnimation,
-     *  PauseAnimation, and ResumeAnimation interfaces
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   imageDrawableDescriptorTest002
+     * @tc.number imageDrawableDescriptorTest002
+     * @tc.desc   Test the functionality of the StartAnimation, StopAnimation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('imageDrawableDescriptorTest002', Level.LEVEL1, async (done: Function) => {
       console.info('imageDrawableDescriptorTest002 START');
@@ -109,13 +108,13 @@ export default function ImageDrawableDescriptorTest(){
       done();
     });
 
-    /*
-     * @tc.number: imageDrawableDescriptorTest003
-     * @tc.name: imageDrawableDescriptorTest003
-     * @tc.desc: Test the AutoPlay interface to set normal values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   imageDrawableDescriptorTest003
+     * @tc.number imageDrawableDescriptorTest003
+     * @tc.desc   Test the AutoPlay interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('imageDrawableDescriptorTest003', Level.LEVEL2, async (done: Function) => {
       console.info('imageDrawableDescriptorTest003 START');
@@ -137,13 +136,13 @@ export default function ImageDrawableDescriptorTest(){
       done();
     });
 
-    /*
-     * @tc.number: imageDrawableDescriptorTest004
-     * @tc.name: imageDrawableDescriptorTest004
-     * @tc.desc: Test the SetAnimationFrameDurations interface to set Outlier values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   imageDrawableDescriptorTest004
+     * @tc.number imageDrawableDescriptorTest004
+     * @tc.desc   Test the SetAnimationFrameDurations interface to set Outlier values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('imageDrawableDescriptorTest004', Level.LEVEL3, async (done: Function) => {
       console.info('imageDrawableDescriptorTest004 START');

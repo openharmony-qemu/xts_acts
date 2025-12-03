@@ -53,12 +53,12 @@ export default function LightWeightMapTest1() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0100
-     * @tc.name       : testLightWeightMap0001
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testConstructor001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testConstructor001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
@@ -72,12 +72,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0200
-     * @tc.name       : testLightWeightMap0002
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0200
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -89,12 +89,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0300
-     * @tc.name       : testLightWeightMap0003
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0300
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -106,12 +106,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0400
-     * @tc.name       : testLightWeightMap0004
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0400
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, number[]>();
@@ -124,12 +124,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0500
-     * @tc.name       : testLightWeightMap0005
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0500
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
 
@@ -143,12 +143,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0600
-     * @tc.name       : testLightWeightMap0006
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0600
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -162,12 +162,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0700
-     * @tc.name       : testLightWeightMap0007
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0700
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -181,12 +181,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0800
-     * @tc.name       : testLightWeightMap0008
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0800
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -203,12 +203,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0900
-     * @tc.name       : testLightWeightMap0009
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0900
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -224,12 +224,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_00100
-     * @tc.name       : testLightWeightMap0010
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_00100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -245,12 +245,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01100
-     * @tc.name       : testLightWeightMap0011
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -265,12 +265,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01200
-     * @tc.name       : testLightWeightMap0012
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01200
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -288,12 +288,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01300
-     * @tc.name       : testLightWeightMap0013
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01300
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -302,12 +302,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01400
-     * @tc.name       : testLightWeightMap0014
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01400
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -321,12 +321,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01500
-     * @tc.name       : testLightWeightMap0015
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01500
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -340,12 +340,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01600
-     * @tc.name       : testLightWeightMap0016
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01600
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -360,12 +360,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01700
-     * @tc.name       : testLightWeightMap0017
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01700
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -379,12 +379,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01800
-     * @tc.name       : testLightWeightMap0018
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01800
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -400,12 +400,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01900
-     * @tc.name       : testLightWeightMap0019
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_01900
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -419,12 +419,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02000
-     * @tc.name       : testLightWeightMap0020
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02000
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -442,12 +442,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02100
-     * @tc.name       : testLightWeightMap0021
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightMap0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightMap0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -466,12 +466,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02200
-     * @tc.name       : testLightWeightMap0022
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02200
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -487,12 +487,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02300
-     * @tc.name       : testLightWeightMap0023
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02300
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -512,12 +512,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02400
-     * @tc.name       : testLightWeightMap0024
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02400
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, string>();
@@ -534,12 +534,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02500
-     * @tc.name       : testLightWeightMap0025
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02500
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -554,12 +554,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02600
-     * @tc.name       : testLightWeightMap0026
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02600
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -579,12 +579,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02700
-     * @tc.name       : testLightWeightMap0027
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02700
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -596,12 +596,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02800
-     * @tc.name       : testLightWeightMap0028
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02800
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -619,12 +619,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02900
-     * @tc.name       : testLightWeightMap0029
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_02900
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -638,12 +638,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03000
-     * @tc.name       : testLightWeightMap0030
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03000
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -666,12 +666,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03100
-     * @tc.name       : testLightWeightMap0031
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, null>();
@@ -683,12 +683,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03200
-     * @tc.name       : testLightWeightMap0032
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03200
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<null, null>();
@@ -700,12 +700,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03300
-     * @tc.name       : testLightWeightMap0033
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03300
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<boolean, boolean>();
@@ -717,12 +717,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03400
-     * @tc.name       : testLightWeightMap0034
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03400
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -734,12 +734,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03500
-     * @tc.name       : testLightWeightMap0035
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03500
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -756,12 +756,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03600
-     * @tc.name       : testLightWeightMap0036
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03600
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -778,12 +778,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03700
-     * @tc.name       : testLightWeightMap0037
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03700
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -792,12 +792,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03800
-     * @tc.name       : testLightWeightMap0038
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03800
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -806,12 +806,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03900
-     * @tc.name       : testLightWeightMap0039
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_03900
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<string, string>();
@@ -826,12 +826,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04000
-     * @tc.name       : testLightWeightMap0040
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04000
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<string, string>();
@@ -851,12 +851,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04100
-     * @tc.name       : testLightWeightMap0041
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<string, string>();
@@ -871,12 +871,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04200
-     * @tc.name       : testLightWeightMap0042
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04200
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, string>();
@@ -896,12 +896,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04300
-     * @tc.name       : testLightWeightMap0043
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04300
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap();
@@ -921,12 +921,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04400
-     * @tc.name       : testLightWeightMap0044
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04400
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -936,12 +936,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04500
-     * @tc.name       : testLightWeightMap0045
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04500
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -955,12 +955,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04600
-     * @tc.name       : testLightWeightMap0046
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04600
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -974,12 +974,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04700
-     * @tc.name       : testLightWeightMap0047
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04700
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, number>();
@@ -997,12 +997,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04800
-     * @tc.name       : testLightWeightMap0048
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04800
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, number>();
@@ -1029,12 +1029,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04900
-     * @tc.name       : testLightWeightMap0049
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04900
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<boolean, number>();
@@ -1046,12 +1046,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05000
-     * @tc.name       : testLightWeightMap0050
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05000
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let a = new Array<number>(1, 2, 3, 4)
@@ -1064,12 +1064,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05100
-     * @tc.name       : testLightWeightMap0051
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05100
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<Object, string>();
@@ -1082,12 +1082,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05200
-     * @tc.name       : testLightWeightMap0052
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05200
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -1101,12 +1101,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05300
-     * @tc.name       : testLightWeightMap0053
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_05300
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<string, string>();
@@ -1123,12 +1123,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0540
-     * @tc.name       : testLightWeightMap0054
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0540
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, Array<number>>();
@@ -1143,12 +1143,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0550
-     * @tc.name       : testLightWeightMap0055
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0550
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -1169,12 +1169,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0560
-     * @tc.name       : testLightWeightMap0056
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0560
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, string>();
@@ -1191,12 +1191,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0570
-     * @tc.name       : testLightWeightMap0057
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0570
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightMap = new LightWeightMap<number, string>();
@@ -1213,12 +1213,12 @@ export default function LightWeightMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0580
-     * @tc.name       : testLightWeightMap0058
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0580
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();
@@ -1236,12 +1236,12 @@ export default function LightWeightMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0590
-     * @tc.name       : testLightWeightMap0059
-     * @tc.desc       : Test the function By LightWeightMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testLightWeightMap0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0590
+     * @tc.desc   Test the function By LightWeightMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightMap0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightMap = new LightWeightMap<number, string>();

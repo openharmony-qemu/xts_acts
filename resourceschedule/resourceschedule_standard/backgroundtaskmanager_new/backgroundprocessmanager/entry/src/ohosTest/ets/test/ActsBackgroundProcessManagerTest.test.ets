@@ -41,13 +41,13 @@ export default function BackgroundProcessManagerTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001
-     * @tc.desc:Test that the setProcessPriority function normal call and resetProcessPriority function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001
+     * @tc.desc   Test that the setProcessPriority function normal call and resetProcessPriority function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -84,13 +84,13 @@ export default function BackgroundProcessManagerTest() {
       })
 
     
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002
-     * @tc.desc:Test that the backgroundProcessManager enum ProcessPriority of PROCESS_BACKGROUND
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002
+     * @tc.desc   Test that the backgroundProcessManager enum ProcessPriority of PROCESS_BACKGROUND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -103,13 +103,13 @@ export default function BackgroundProcessManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002 end---');
       })
 
-      /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003
-     * @tc.desc:Test that the backgroundProcessManager enum ProcessPriority of PROCESS_INACTIVE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003
+     * @tc.desc   Test that the backgroundProcessManager enum ProcessPriority of PROCESS_INACTIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

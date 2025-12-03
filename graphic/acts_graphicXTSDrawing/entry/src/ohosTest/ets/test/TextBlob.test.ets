@@ -42,12 +42,12 @@ export default function textBlobTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0100
-     * @tc.name      : testTextBlobMakeFromStringNormal
-     * @tc.desc      : Test for testTextBlobMakeFromStringNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTextBlobMakeFromStringNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0100
+     * @tc.desc   Test for testTextBlobMakeFromStringNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextBlobMakeFromStringNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTextBlobMakeFromStringNormal';
@@ -91,12 +91,12 @@ export default function textBlobTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0101
-     * @tc.name      : testTextBlobMakeFromStringNull
-     * @tc.desc      : Test for testTextBlobMakeFromStringNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromStringNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0101
+     * @tc.desc   Test for testTextBlobMakeFromStringNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromStringNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromStringNull';
@@ -152,12 +152,12 @@ export default function textBlobTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0103
-     * @tc.name      : testTextBlobMakeFromStringMultipleCalls
-     * @tc.desc      : Test for testTextBlobMakeFromStringMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromStringMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0103
+     * @tc.desc   Test for testTextBlobMakeFromStringMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromStringMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromStringMultipleCalls';
@@ -181,12 +181,12 @@ export default function textBlobTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0200
-     * @tc.name      : testTextBlobMakeFromRunBufferBoundsNormal
-     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTextBlobMakeFromRunBufferBoundsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0200
+     * @tc.desc   Test for testTextBlobMakeFromRunBufferBoundsNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextBlobMakeFromRunBufferBoundsNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTextBlobMakeFromRunBufferBoundsNormal';
@@ -281,12 +281,12 @@ export default function textBlobTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0201
-     * @tc.name      : testTextBlobMakeFromRunBufferBoundsNull
-     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromRunBufferBoundsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0201
+     * @tc.desc   Test for testTextBlobMakeFromRunBufferBoundsNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromRunBufferBoundsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromRunBufferBoundsNull';
@@ -415,12 +415,12 @@ export default function textBlobTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0203
-     * @tc.name      : testTextBlobMakeFromRunBufferBoundsMultipleCalls
-     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromRunBufferBoundsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0203
+     * @tc.desc   Test for testTextBlobMakeFromRunBufferBoundsMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromRunBufferBoundsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromRunBufferBoundsMultipleCalls';

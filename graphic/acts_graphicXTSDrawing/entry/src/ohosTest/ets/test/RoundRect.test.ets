@@ -41,12 +41,12 @@ export default function roundRectTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0100
-     * @tc.name      : testRoundRectConstructorNormal
-     * @tc.desc      : Test for testRoundRectConstructorNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectConstructorNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0100
+     * @tc.desc   Test for testRoundRectConstructorNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructorNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRoundRectConstructorNormal';
@@ -133,24 +133,24 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0101
-     * @tc.name      : testRoundRectConstructorNull
-     * @tc.desc      : Test for testRoundRectConstructorNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectConstructorNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0101
+     * @tc.desc   Test for testRoundRectConstructorNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructorNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRoundRectConstructorNull';
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0103
-     * @tc.name      : testRoundRectConstructorMultipleCalls
-     * @tc.desc      : Test for testRoundRectConstructorMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectConstructorMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0103
+     * @tc.desc   Test for testRoundRectConstructorMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructorMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRoundRectConstructorMultipleCalls';
@@ -170,12 +170,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0200
-     * @tc.name      : testRoundRectSetAndGetCornerNormal
-     * @tc.desc      : Test for testRoundRectSetAndGetCornerNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectSetAndGetCornerNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0200
+     * @tc.desc   Test for testRoundRectSetAndGetCornerNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectSetAndGetCornerNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRoundRectSetAndGetCornerNormal';
@@ -305,12 +305,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0201
-     * @tc.name      : testRoundRectSetAndGetCornerNull
-     * @tc.desc      : Test for testRoundRectSetAndGetCornerNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectSetAndGetCornerNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0201
+     * @tc.desc   Test for testRoundRectSetAndGetCornerNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectSetAndGetCornerNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectSetAndGetCornerNull';
@@ -384,12 +384,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0203
-     * @tc.name      : testRoundRectSetAndGetCornerMultipleCalls
-     * @tc.desc      : Test for testRoundRectSetAndGetCornerMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectSetAndGetCornerMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0203
+     * @tc.desc   Test for testRoundRectSetAndGetCornerMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectSetAndGetCornerMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectSetAndGetCornerMultipleCalls';
@@ -433,12 +433,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0204
-     * @tc.name      : testRoundRectSetAndGetCornerAbnormal
-     * @tc.desc      : Test for testRoundRectSetAndGetCornerAbnormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectSetAndGetCornerAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0204
+     * @tc.desc   Test for testRoundRectSetAndGetCornerAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectSetAndGetCornerAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectSetAndGetCornerAbnormal';
@@ -465,12 +465,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0300
-     * @tc.name      : testRoundRectOffsetNormal
-     * @tc.desc      : Test for testRoundRectOffsetNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectOffsetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0300
+     * @tc.desc   Test for testRoundRectOffsetNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectOffsetNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRoundRectOffsetNormal';
@@ -512,12 +512,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0301
-     * @tc.name      : testRoundRectOffsetNull
-     * @tc.desc      : Test for testRoundRectOffsetNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectOffsetNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0301
+     * @tc.desc   Test for testRoundRectOffsetNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectOffsetNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectOffsetNull';
@@ -559,12 +559,12 @@ export default function roundRectTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0303
-     * @tc.name      : testRoundRectOffsetMultipleCalls
-     * @tc.desc      : Test for testRoundRectOffsetMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectOffsetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0303
+     * @tc.desc   Test for testRoundRectOffsetMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectOffsetMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectOffsetMultipleCalls';
@@ -583,12 +583,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0400
-     * @tc.name      : testRoundRectConstructor2Normal
-     * @tc.desc      : Test for testRoundRectConstructor2Normal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRoundRectConstructor2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0400
+     * @tc.desc   Test for testRoundRectConstructor2Normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRoundRectConstructor2Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testRoundRectConstructor2Normal';
@@ -624,12 +624,12 @@ export default function roundRectTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0401
-     * @tc.name      : testRoundRectConstructor2MultipleCalls
-     * @tc.desc      : testRoundRectConstructor2MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRoundRectConstructor2MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0401
+     * @tc.desc   testRoundRectConstructor2MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectConstructor2MultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectConstructor2MultipleCalls';
@@ -645,12 +645,12 @@ export default function roundRectTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0402
-     * @tc.name      : testRoundRectConstructor2Null
-     * @tc.desc      : testRoundRectConstructor2Null
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRoundRectConstructor2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_0402
+     * @tc.desc   testRoundRectConstructor2Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRoundRectConstructor2Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testRoundRectConstructor2Null';

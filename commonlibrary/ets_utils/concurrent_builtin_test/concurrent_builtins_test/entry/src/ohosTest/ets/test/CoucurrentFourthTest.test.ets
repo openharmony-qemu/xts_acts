@@ -72,12 +72,12 @@ export default function supplyTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0100
-     * @tc.name      : test_concurrent_builtins_regexp_tostring_001
-     * @tc.desc      : test RegExp.prototype.toString in concurrent taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_tostring_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0100
+     * @tc.desc   test RegExp.prototype.toString in concurrent taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_tostring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0200
-     * @tc.name      : test_concurrent_builtins_regexp_test_001
-     * @tc.desc      : test RegExp.prototype.test in concurrent taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_test_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0200
+     * @tc.desc   test RegExp.prototype.test in concurrent taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -142,12 +142,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0300
-     * @tc.name      : test_concurrent_builtins_regexp_symbol_split_001
-     * @tc.desc      : test RegExp[Symbol.split] via helper in concurrent taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_symbol_split_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0300
+     * @tc.desc   test RegExp[Symbol.split] via helper in concurrent taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_symbol_split_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -177,12 +177,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0400
-     * @tc.name      : test_concurrent_builtins_regexp_symbol_search_001
-     * @tc.desc      : test RegExp[Symbol.search] via regExpSymbolSearch in concurrent taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_symbol_search_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0400
+     * @tc.desc   test RegExp[Symbol.search] via regExpSymbolSearch in concurrent taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_symbol_search_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -212,12 +212,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0500
-     * @tc.name      : test_concurrent_builtins_regexp_symbol_replace_001
-     * @tc.desc      : test RegExp[Symbol.replace] via regExpSymbolReplace in concurrent taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_symbol_replace_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0500
+     * @tc.desc   test RegExp[Symbol.replace] via regExpSymbolReplace in concurrent taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_symbol_replace_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -243,12 +243,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0600
-     * @tc.name      : test_concurrent_builtins_regexp_symbol_match_001
-     * @tc.desc      : test RegExp[Symbol.match] via regExpSymbolMatch in concurrent taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_symbol_match_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0600
+     * @tc.desc   test RegExp[Symbol.match] via regExpSymbolMatch in concurrent taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_symbol_match_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -274,12 +274,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0700
-     * @tc.name      : test_concurrent_builtins_regexp_static_props_001
-     * @tc.desc      : test legacy RegExp static props remain undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_static_props_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0700
+     * @tc.desc   test legacy RegExp static props remain undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_static_props_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -305,12 +305,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0800
-     * @tc.name      : test_concurrent_builtins_regexp_instance_dotall_001
-     * @tc.desc      : test RegExp instance property dotAll
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_instance_dotall_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0800
+     * @tc.desc   test RegExp instance property dotAll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_instance_dotall_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -336,12 +336,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_0900
-     * @tc.name      : test_concurrent_builtins_regexp_constructor_001
-     * @tc.desc      : test RegExp constructor with flags
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_regexp_constructor_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0900
+     * @tc.desc   test RegExp constructor with flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_regexp_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -367,12 +367,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1000
-     * @tc.name      : test_concurrent_builtins_multiple_generics_isFirstGreaterThanZero_001
-     * @tc.desc      : 多泛型约束：验证 isFirstGreaterThanZero 并发正确性
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_multiple_generics_isFirstGreaterThanZero_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1000
+     * @tc.desc   多泛型约束：验证 isFirstGreaterThanZero 并发正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_multiple_generics_isFirstGreaterThanZero_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -400,12 +400,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1100
-     * @tc.name      : test_concurrent_builtins_bigint_valueof_001
-     * @tc.desc      : 并发验证 BigInt 对象 valueOf 返回原始值
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_bigint_valueof_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1100
+     * @tc.desc   并发验证 BigInt 对象 valueOf 返回原始值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_bigint_valueof_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -433,12 +433,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1200
-     * @tc.name      : test_concurrent_builtins_undefined_literal_001
-     * @tc.desc      : 并发验证 undefined 字面量
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_undefined_literal_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1200
+     * @tc.desc   并发验证 undefined 字面量
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_undefined_literal_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -466,12 +466,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1300
-     * @tc.name      : test_concurrent_builtins_bigint_tostring_001
-     * @tc.desc      : 并发验证 BigInt.prototype.toString 基本用例
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_bigint_tostring_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1300
+     * @tc.desc   并发验证 BigInt.prototype.toString 基本用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_bigint_tostring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -499,12 +499,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1301
-     * @tc.name      : test_concurrent_builtins_bigint_tolocalestring_001
-     * @tc.desc      : 并发验证 BigInt.prototype.toLocaleString 基本用例（en-US）
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_bigint_tolocalestring_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1301
+     * @tc.desc   并发验证 BigInt.prototype.toLocaleString 基本用例（en-US）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_bigint_tolocalestring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -532,12 +532,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1400
-     * @tc.name      : test_concurrent_builtins_string_charat_001
-     * @tc.desc      : 并发验证 String.prototype.charAt 基本用例
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_string_charat_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1400
+     * @tc.desc   并发验证 String.prototype.charAt 基本用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_string_charat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -565,12 +565,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1500
-     * @tc.name      : test_concurrent_builtins_string_padend_001
-     * @tc.desc      : 并发验证 String.prototype.padEnd 基本用例
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_string_padend_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1500
+     * @tc.desc   并发验证 String.prototype.padEnd 基本用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_string_padend_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -598,12 +598,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1600
-     * @tc.name      : test_concurrent_builtins_string_startswith_001
-     * @tc.desc      : 并发验证 String.prototype.startsWith 基本用例
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_string_startswith_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1600
+     * @tc.desc   并发验证 String.prototype.startsWith 基本用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_string_startswith_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -631,12 +631,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1700
-     * @tc.name      : test_concurrent_builtins_string_literal_union_001
-     * @tc.desc      : 并发验证字符串字面量类型赋值与比较
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_string_literal_union_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1700
+     * @tc.desc   并发验证字符串字面量类型赋值与比较
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_string_literal_union_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -664,12 +664,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1800
-     * @tc.name      : test_concurrent_builtins_required_utility_001
-     * @tc.desc      : 并发验证 Required<T> 基本用例
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_required_utility_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1800
+     * @tc.desc   并发验证 Required<T> 基本用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_required_utility_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -697,12 +697,12 @@ export default function supplyTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_FORTH_TEST_1900
-     * @tc.name      : test_concurrent_builtins_reflect_wrapper_001
-     * @tc.desc      : 并发验证 Reflect 相关工具函数返回错误类型字符串（main1）
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_concurrent_builtins_reflect_wrapper_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_1900
+     * @tc.desc   并发验证 Reflect 相关工具函数返回错误类型字符串（main1）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_concurrent_builtins_reflect_wrapper_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

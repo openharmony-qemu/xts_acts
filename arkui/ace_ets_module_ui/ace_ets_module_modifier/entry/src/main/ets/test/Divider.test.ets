@@ -40,12 +40,12 @@ export default function dividerJsunit() {
     });
 
     /**
+     * @tc.name   dividerTest_0001
      * @tc.number dividerTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set lineCap values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set lineCap values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0001 START');
@@ -58,12 +58,12 @@ export default function dividerJsunit() {
     });
 
     /**
+     * @tc.name   dividerTest_0002
      * @tc.number dividerTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set strokeWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0002 START');
@@ -76,12 +76,12 @@ export default function dividerJsunit() {
     });
 
     /**
+     * @tc.name   dividerTest_0003
      * @tc.number dividerTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0003 START');
@@ -94,12 +94,12 @@ export default function dividerJsunit() {
     });
 
     /**
+     * @tc.name   dividerTest_0004
      * @tc.number dividerTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set vertical values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set vertical values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('dividerTest_0004 START');
@@ -112,12 +112,12 @@ export default function dividerJsunit() {
     });
 
     /**
+     * @tc.name   dividerTest_0005
      * @tc.number dividerTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Change color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dividerTest_0005', Level.LEVEL0, async (done: Function) => {
 

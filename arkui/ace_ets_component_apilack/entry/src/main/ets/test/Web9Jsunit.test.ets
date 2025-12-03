@@ -64,31 +64,40 @@ export default function web9Jsunit() {
 
     })
 
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_0001
-     * tc.name WebContextMenuResult
-     * tc.desic webContextMenuResult
+    /**
+     * @tc.name   webContextMenuResultTest001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   webContextMenuResultTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('webContextMenuResultTest001', Level.LEVEL0, async () => {
       emitKey = "emitwebContextMenuResult";
       Utils.registerContainEvent("webContextMenuResult", true, 1101);
     })
 
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_0002
-     * tc.name  HitTestValue
-     * tc.desic webContextMenuResult
+    /**
+     * @tc.name   setWebControllerTest002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   setWebControllerTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setWebControllerTest002', Level.LEVEL0, async () => {
       emitKey = "emitsetWebController";
       Utils.registerContainEvent("setWebController", true, 1102);
     })
 
-    /*
-    * tc.number SUB_ACE_BASIC_ETS_API_0002
-    * tc.name  HitTestValue
-    * tc.desic webContextMenuResult
-    */
+    /**
+     * @tc.name   setWebControllerTest003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   setWebControllerTest003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('setWebControllerTest003', Level.LEVEL0, async () => {
       emitKey = "emitHitTestValue";
       Utils.registerContainEvent("HitTestValue", true, 1103);

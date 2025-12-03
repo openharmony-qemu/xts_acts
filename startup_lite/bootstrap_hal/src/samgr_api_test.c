@@ -29,12 +29,6 @@ static int g_sysExFeatureInit[API_PRI_MAX] = {0};
 static int g_appServiceInit[API_PRI_MAX] = {0};
 static int g_appFeatureInit[API_PRI_MAX] = {0};
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is startup
- * @param        : module name is bootstrap
- * @param        : test suit name is SamgrApiTestSuite
- */
 LITE_TEST_SUIT(startup, bootstrap, SamgrApiTestSuite);
 
 /**
@@ -335,9 +329,12 @@ APP_FEATURE_INIT_PRI(AppFeatureInit4, 4);
 APP_FEATURE_INIT_PRI(AppFeatureInit2, 2);
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0100
- * @tc.name      : check total init index
- * @tc.desc      : check total init index, return success
+ * @tc.name   TestStartBootstrapSamgr001
+ * @tc.number SUB_START_Bootstrap_Samgr_0100
+ * @tc.desc   check total init index, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr001, Function | MediumTest | Level0)
 {
@@ -346,9 +343,12 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr001, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0200
- * @tc.name      : check core init index
- * @tc.desc      : check core init, return success
+ * @tc.name   TestStartBootstrapSamgr002
+ * @tc.number SUB_START_Bootstrap_Samgr_0200
+ * @tc.desc   check core init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr002, Function | MediumTest | Level0)
 {
@@ -358,9 +358,12 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr002, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0300
- * @tc.name      : check system service init index
- * @tc.desc      : check system service init, return success
+ * @tc.name   TestStartBootstrapSamgr003
+ * @tc.number SUB_START_Bootstrap_Samgr_0300
+ * @tc.desc   check system service init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr003, Function | MediumTest | Level0)
 {
@@ -370,9 +373,12 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr003, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0400
- * @tc.name      : check system feature init index
- * @tc.desc      : check system feature init, return success
+ * @tc.name   TestStartBootstrapSamgr004
+ * @tc.number SUB_START_Bootstrap_Samgr_0400
+ * @tc.desc   check system feature init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr004, Function | MediumTest | Level0)
 {
@@ -382,9 +388,12 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr004, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0500
- * @tc.name      : check system extend service and app service init index
- * @tc.desc      : check system extend service and app service init, return success
+ * @tc.name   TestStartBootstrapSamgr005
+ * @tc.number SUB_START_Bootstrap_Samgr_0500
+ * @tc.desc   check system extend service and app service init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr005, Function | MediumTest | Level0)
 {
@@ -396,9 +405,12 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr005, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0600
- * @tc.name      : check system extend feature and app feature init index
- * @tc.desc      : check system extend feature and app feature init, return success
+ * @tc.name   TestStartBootstrapSamgr006
+ * @tc.number SUB_START_Bootstrap_Samgr_0600
+ * @tc.desc   check system extend feature and app feature init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr006, Function | MediumTest | Level0)
 {
@@ -410,9 +422,12 @@ LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr006, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0700
- * @tc.name      : check system run index
- * @tc.desc      : check system run, return success
+ * @tc.name   TestStartBootstrapSamgr007
+ * @tc.number SUB_START_Bootstrap_Samgr_0700
+ * @tc.desc   check system run, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(SamgrApiTestSuite, TestStartBootstrapSamgr007, Function | MediumTest | Level0)
 {

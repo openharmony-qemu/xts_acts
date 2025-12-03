@@ -46,6 +46,14 @@ export default function sliderMovingJsunit() {
       console.info("sliderMoving after each called");
     });
 
+    /**
+     * @tc.name   testsliderMoving0011
+     * @tc.number testsliderMoving0011
+     * @tc.desc   testsliderMoving0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsliderMoving0011', Level.LEVEL1, async (done: Function) => {
       console.info('sliderMoving testsliderMoving0011 START');
       await Utils.sleep(2000);

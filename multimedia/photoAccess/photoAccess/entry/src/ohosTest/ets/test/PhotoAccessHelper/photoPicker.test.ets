@@ -132,12 +132,12 @@ export default function photoPickerTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0000
-     * @tc.name      : photopicker_select_promise_000
-     * @tc.desc      : select with option.MIMEType = IMAGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_000
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0000
+     * @tc.desc   select with option.MIMEType = IMAGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_000";
@@ -149,12 +149,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0100
-     * @tc.name      : photopicker_select_promise_001
-     * @tc.desc      : select with option.MIMEType = VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_001
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0100
+     * @tc.desc   select with option.MIMEType = VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_001";
@@ -166,12 +166,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0200
-     * @tc.name      : photopicker_select_promise_002
-     * @tc.desc      : select with option.MIMEType = IMAGE_VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_002
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0200
+     * @tc.desc   select with option.MIMEType = IMAGE_VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_002";
@@ -183,12 +183,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0300
-     * @tc.name      : photopicker_select_promise_003
-     * @tc.desc      : select without option
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_003
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0300
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_003", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_003";
@@ -198,12 +198,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0400
-     * @tc.name      : photopicker_select_promise_004
-     * @tc.desc      : select with option isSearchSupported = true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_004
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0400
+     * @tc.desc   select with option isSearchSupported = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_004", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_004";
@@ -216,12 +216,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0500
-     * @tc.name      : photopicker_select_promise_005
-     * @tc.desc      : select with option isPhotoTakingSupported = true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_005
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0500
+     * @tc.desc   select with option isPhotoTakingSupported = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_005", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_005";
@@ -234,12 +234,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0600
-     * @tc.name      : photopicker_select_promise_006
-     * @tc.desc      : select with option isEditSupported = true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_006
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0600
+     * @tc.desc   select with option isEditSupported = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_006", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_006";
@@ -252,12 +252,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0700
-     * @tc.name      : photopicker_select_promise_007
-     * @tc.desc      : select with option preselectedUris
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_007
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0700
+     * @tc.desc   select with option preselectedUris
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_007", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_007";
@@ -270,12 +270,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0800
-     * @tc.name      : photopicker_select_promise_008
-     * @tc.desc      : select with option themeColor
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_008
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0800
+     * @tc.desc   select with option themeColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_008", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_008";
@@ -287,12 +287,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0900
-     * @tc.name      : photopicker_select_promise_009
-     * @tc.desc      : select with option MOVING_PHOTO_IMAGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_009
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_0900
+     * @tc.desc   select with option MOVING_PHOTO_IMAGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_009", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_009";
@@ -305,12 +305,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_1000
-     * @tc.name      : photopicker_select_promise_010
-     * @tc.desc      : select with option isPreviewForSingleSelectionSupported
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_010
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_1000
+     * @tc.desc   select with option isPreviewForSingleSelectionSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_010", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_010";
@@ -324,12 +324,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_1100
-     * @tc.name      : photopicker_select_promise_011
-     * @tc.desc      : select with option isOriginalSupported
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_011
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_1100
+     * @tc.desc   select with option isOriginalSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_011", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_011";
@@ -342,12 +342,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_1200
-     * @tc.name      : photopicker_select_promise_012
-     * @tc.desc      : select with option subWindowName
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_promise_012
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_PROMISE_1200
+     * @tc.desc   select with option subWindowName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_promise_012", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_promise_012";
@@ -361,12 +361,12 @@ export default function photoPickerTest() {
 
     //callback
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0000
-     * @tc.name      : photopicker_select_callback_000
-     * @tc.desc      : select with option.MIMEType = IMAGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_000
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0000
+     * @tc.desc   select with option.MIMEType = IMAGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_000";
@@ -378,12 +378,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0100
-     * @tc.name      : photopicker_select_callback_001
-     * @tc.desc      : select with option.MIMEType = VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_001
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0100
+     * @tc.desc   select with option.MIMEType = VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_001";
@@ -395,12 +395,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0200
-     * @tc.name      : photopicker_select_callback_002
-     * @tc.desc      : select with option.MIMEType = IMAGE_VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_002
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0200
+     * @tc.desc   select with option.MIMEType = IMAGE_VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_002";
@@ -412,12 +412,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0300
-     * @tc.name      : photopicker_select_callback_003
-     * @tc.desc      : select without option
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_003
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0300
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_003", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_003";
@@ -427,12 +427,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0400
-     * @tc.name      : photopicker_select_callback_004
-     * @tc.desc      : select with option isSearchSupported = true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_004
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0400
+     * @tc.desc   select with option isSearchSupported = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_004", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_004";
@@ -445,12 +445,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0500
-     * @tc.name      : photopicker_select_callback_005
-     * @tc.desc      : select with option isPhotoTakingSupported = true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_005
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0500
+     * @tc.desc   select with option isPhotoTakingSupported = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_005", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_005";
@@ -463,12 +463,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0600
-     * @tc.name      : photopicker_select_callback_006
-     * @tc.desc      : select with option isEditSupported = true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   photopicker_select_callback_006
+     * @tc.number SUB_MULTIMEDIA_PHOTOPICKER_SELECT_CALLBACK_0600
+     * @tc.desc   select with option isEditSupported = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("photopicker_select_callback_006", Level.LEVEL0, async (done: Function) => {
       let testNum = "photopicker_select_callback_006";
@@ -482,12 +482,12 @@ export default function photoPickerTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0000
-     * @tc.name      : smart_photopicker_select_promise_000
-     * @tc.desc      : select with option.MIMEType = IMAGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   smart_photopicker_select_promise_000
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0000
+     * @tc.desc   select with option.MIMEType = IMAGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("smart_photopicker_select_promise_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_000";
@@ -503,12 +503,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0100
-     * @tc.name      : smart_photopicker_select_promise_001
-     * @tc.desc      : select with option.MIMEType = VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   smart_photopicker_select_promise_001
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0100
+     * @tc.desc   select with option.MIMEType = VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("smart_photopicker_select_promise_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_001";
@@ -524,12 +524,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0200
-     * @tc.name      : smart_photopicker_select_promise_002
-     * @tc.desc      : select with option.MIMEType = IMAGE_VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   smart_photopicker_select_promise_002
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0200
+     * @tc.desc   select with option.MIMEType = IMAGE_VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("smart_photopicker_select_promise_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_002";
@@ -545,12 +545,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0300
-     * @tc.name      : smart_photopicker_select_promise_003
-     * @tc.desc      : select with recommendationType = QR_OR_BAR_CODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_003
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0300
+     * @tc.desc   select with recommendationType = QR_OR_BAR_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_003", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_003";
@@ -566,12 +566,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0400
-     * @tc.name      : smart_photopicker_select_promise_004
-     * @tc.desc      : select with recommendationType = BAR_CODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_004
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0400
+     * @tc.desc   select with recommendationType = BAR_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_004", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_004";
@@ -587,12 +587,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0500
-     * @tc.name      : smart_photopicker_select_promise_005
-     * @tc.desc      : select with recommendationType = ID_CARD
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_005
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0500
+     * @tc.desc   select with recommendationType = ID_CARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_005", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_005";
@@ -608,12 +608,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0600
-     * @tc.name      : smart_photopicker_select_promise_006
-     * @tc.desc      : select with recommendationType = PROFILE_PICTURE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_006
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0600
+     * @tc.desc   select with recommendationType = PROFILE_PICTURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_006", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_006";
@@ -629,12 +629,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0700
-     * @tc.name      : smart_photopicker_select_promise_007
-     * @tc.desc      : select with recommendationType = PASSPORT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_007
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0700
+     * @tc.desc   select with recommendationType = PASSPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_007", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_007";
@@ -650,12 +650,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0800
-     * @tc.name      : smart_photopicker_select_promise_008
-     * @tc.desc      : select with recommendationType = BANK_CARD
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_008
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0800
+     * @tc.desc   select with recommendationType = BANK_CARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_008", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_008";
@@ -671,12 +671,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0900
-     * @tc.name      : smart_photopicker_select_promise_009
-     * @tc.desc      : select with recommendationType = DRIVER_LICENSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_009
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_0900
+     * @tc.desc   select with recommendationType = DRIVER_LICENSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_009", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_009";
@@ -692,12 +692,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_1000
-     * @tc.name      : smart_photopicker_select_promise_010
-     * @tc.desc      : select with recommendationType = DRIVING_LICENSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_010
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_1000
+     * @tc.desc   select with recommendationType = DRIVING_LICENSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_010", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_010";
@@ -713,12 +713,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_1100
-     * @tc.name      : smart_photopicker_select_promise_011
-     * @tc.desc      : select with recommendationType = PROFILE_PICTURE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_011
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_1100
+     * @tc.desc   select with recommendationType = PROFILE_PICTURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_011", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_011";
@@ -737,12 +737,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_1200
-     * @tc.name      : smart_photopicker_select_promise_012
-     * @tc.desc      : select with recommendationType = FEATURED_SINGLE_PORTRAIT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_promise_012
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_PROMISE_1200
+     * @tc.desc   select with recommendationType = FEATURED_SINGLE_PORTRAIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_promise_012", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_promise_012";
@@ -759,12 +759,12 @@ export default function photoPickerTest() {
 
     //callback
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0000
-     * @tc.name      : smart_photopicker_select_callback_000
-     * @tc.desc      : select with option.MIMEType = IMAGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   smart_photopicker_select_callback_000
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0000
+     * @tc.desc   select with option.MIMEType = IMAGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("smart_photopicker_select_callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_000";
@@ -780,12 +780,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0100
-     * @tc.name      : smart_photopicker_select_callback_001
-     * @tc.desc      : select with option.MIMEType = VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   smart_photopicker_select_callback_001
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0100
+     * @tc.desc   select with option.MIMEType = VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("smart_photopicker_select_callback_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_001";
@@ -801,12 +801,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0200
-     * @tc.name      : smart_photopicker_select_callback_002
-     * @tc.desc      : select with option.MIMEType = IMAGE_VIDEO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   smart_photopicker_select_callback_002
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0200
+     * @tc.desc   select with option.MIMEType = IMAGE_VIDEO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("smart_photopicker_select_callback_002", Level.LEVEL0, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_002";
@@ -822,12 +822,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0300
-     * @tc.name      : smart_photopicker_select_callback_003
-     * @tc.desc      : select with recommendationType = QR_OR_BAR_CODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_003
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0300
+     * @tc.desc   select with recommendationType = QR_OR_BAR_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_003", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_003";
@@ -843,12 +843,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0400
-     * @tc.name      : smart_photopicker_select_callback_004
-     * @tc.desc      : select with recommendationType = BAR_CODE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_004
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0400
+     * @tc.desc   select with recommendationType = BAR_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_004", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_004";
@@ -864,12 +864,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0500
-     * @tc.name      : smart_photopicker_select_callback_005
-     * @tc.desc      : select with recommendationType = ID_CARD
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_005
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0500
+     * @tc.desc   select with recommendationType = ID_CARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_005", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_005";
@@ -885,12 +885,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0600
-     * @tc.name      : smart_photopicker_select_callback_006
-     * @tc.desc      : select with recommendationType = PROFILE_PICTURE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_006
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0600
+     * @tc.desc   select with recommendationType = PROFILE_PICTURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_006", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_006";
@@ -906,12 +906,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0700
-     * @tc.name      : smart_photopicker_select_callback_007
-     * @tc.desc      : select with recommendationType = PASSPORT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_007
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0700
+     * @tc.desc   select with recommendationType = PASSPORT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_007", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_007";
@@ -927,12 +927,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0800
-     * @tc.name      : smart_photopicker_select_callback_008
-     * @tc.desc      : select with recommendationType = BANK_CARD
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_008
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0800
+     * @tc.desc   select with recommendationType = BANK_CARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_008", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_008";
@@ -948,12 +948,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0900
-     * @tc.name      : smart_photopicker_select_callback_009
-     * @tc.desc      : select with recommendationType = DRIVER_LICENSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_009
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_0900
+     * @tc.desc   select with recommendationType = DRIVER_LICENSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_009", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_009";
@@ -969,12 +969,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_1000
-     * @tc.name      : smart_photopicker_select_callback_010
-     * @tc.desc      : select with recommendationType = DRIVING_LICENSE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_010
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_1000
+     * @tc.desc   select with recommendationType = DRIVING_LICENSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_010", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_010";
@@ -990,12 +990,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_1100
-     * @tc.name      : smart_photopicker_select_callback_011
-     * @tc.desc      : select with textContextInfo
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_011
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_1100
+     * @tc.desc   select with textContextInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_011", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_011";
@@ -1014,12 +1014,12 @@ export default function photoPickerTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_1200
-     * @tc.name      : smart_photopicker_select_callback_012
-     * @tc.desc      : select with recommendationType = FEATURED_SINGLE_PORTRAIT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   smart_photopicker_select_callback_012
+     * @tc.number SUB_MULTIMEDIA_SMART_PHOTOPICKER_SELECT_CALLBACK_1200
+     * @tc.desc   select with recommendationType = FEATURED_SINGLE_PORTRAIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("smart_photopicker_select_callback_012", Level.LEVEL1, async (done: Function) => {
       let testNum = "smart_photopicker_select_callback_012";

@@ -37,13 +37,12 @@ export default function AVPlayerMediaSource() {
       console.info('afterAll case');
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0100
-      * @tc.desc    Local Video playback control test
-      *               : 001.testMediaSource
-      * @tc.size    MediumTest
-      * @tc.type    Function Test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       console.info('AVPlayerMediaSource success');
@@ -70,13 +69,12 @@ export default function AVPlayerMediaSource() {
       done();
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0200
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0200
-      * @tc.desc    Local Video playback control test
-      *               : 002.testMediaSource
-      * @tc.size    MediumTest
-      * @tc.type    Function Test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       let header: Record<string, string> = {
@@ -88,13 +86,12 @@ export default function AVPlayerMediaSource() {
       done();
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0300
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0300
-      * @tc.desc    flv live stream with createMediaSourceWithStreamData success
-      *               : 003.testMediaSource
-      * @tc.size    MediumTest
-      * @tc.type    Function Test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0300
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       let streams : Array<media.MediaStream> = [];
@@ -110,13 +107,12 @@ export default function AVPlayerMediaSource() {
       done();
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0400
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0400
-      * @tc.desc    flv live stream with createMediaSourceWithStreamData return empty for exceed maxStreamNum
-      *               : 004.testMediaSource
-      * @tc.size    MediumTest
-      * @tc.type    Function Test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0400
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData return empty for exceed maxStreamNum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       let streams : Array<media.MediaStream> = [];
@@ -133,13 +129,12 @@ export default function AVPlayerMediaSource() {
       done();
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0500
-      * @tc.name    SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0500
-      * @tc.desc    flv live stream with createMediaSourceWithStreamData return empty for empty MediaStream
-      *               : 005.testMediaSource
-      * @tc.size    MediumTest
-      * @tc.type    Function Test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0500
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData return empty for empty MediaStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       let streams : Array<media.MediaStream> = [];

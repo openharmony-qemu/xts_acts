@@ -26,52 +26,52 @@ export default function customDialogEnableCustomAnimationTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0100
-     * @tc.name       : testCustomDialogEnableCustomAnimation001
-     * @tc.desc       : testing enableCustomAnimation for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogEnableCustomAnimation001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0100
+     * @tc.desc   testing enableCustomAnimation for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogEnableCustomAnimation001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogEnableCustomAnimation001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0200
-     * @tc.name       : testCustomDialogEnableCustomAnimation002
-     * @tc.desc       : testing enableCustomAnimation for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogEnableCustomAnimation002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0200
+     * @tc.desc   testing enableCustomAnimation for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogEnableCustomAnimation002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogEnableCustomAnimation002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0300
-     * @tc.name       : testCustomDialogEnableCustomAnimation003
-     * @tc.desc       : testing enableCustomAnimation for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogEnableCustomAnimation003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0300
+     * @tc.desc   testing enableCustomAnimation for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogEnableCustomAnimation003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogEnableCustomAnimation003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0400
-     * @tc.name       : testCustomDialogEnableCustomAnimation004
-     * @tc.desc       : testing enableCustomAnimation for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogEnableCustomAnimation004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_ENABLECUSTOMANIMATION_0400
+     * @tc.desc   testing enableCustomAnimation for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogEnableCustomAnimation004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogEnableCustomAnimation004()).assertEqual(0)

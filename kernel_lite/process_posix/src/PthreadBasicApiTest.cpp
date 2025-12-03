@@ -33,9 +33,12 @@ void *ThreadPthreadCreateBasic(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CREATE_0100
- * @tc.name     pthread_create create a thread
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCreateBasic
+ * @tc.number SUB_KERNEL_PTHREAD_CREATE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(PthreadTest, testPthreadCreateBasic, Function | MediumTest | Level2)
 {
@@ -54,9 +57,12 @@ void *ThreadPthreadJoinWait(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_JOIN_0100
- * @tc.name     Test the waiting function of pthread_join
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadJoinWait
+ * @tc.number SUB_KERNEL_PTHREAD_JOIN_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(PthreadTest, testPthreadJoinWait, Function | MediumTest | Level2)
 {
@@ -68,9 +74,12 @@ HWTEST_F(PthreadTest, testPthreadJoinWait, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_JOIN_0200
- * @tc.name     Test the function of pthread_join to get the return value
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testJoinReturn
+ * @tc.number SUB_KERNEL_PTHREAD_JOIN_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testJoinReturn, Function | MediumTest | Level3)
 {
@@ -86,9 +95,12 @@ HWTEST_F(PthreadTest, testJoinReturn, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_JOIN_0300
- * @tc.name     Test the function about pthread_join, but child thread Exited
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testJoinExited
+ * @tc.number SUB_KERNEL_PTHREAD_JOIN_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testJoinExited, Function | MediumTest | Level3)
 {
@@ -105,9 +117,12 @@ void *ThreadPthreadExitThread(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_EXIT_0100
- * @tc.name     Test the return function of pthread_exit in the child thread
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadExitThread
+ * @tc.number SUB_KERNEL_PTHREAD_EXIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadExitThread, Function | MediumTest | Level3)
 {
@@ -133,9 +148,12 @@ void *ThreadPthreadExitFunction(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_EXIT_0200
- * @tc.name     Test the return function of pthread_exit in the child thread function
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadExitFunction
+ * @tc.number SUB_KERNEL_PTHREAD_EXIT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadExitFunction, Function | MediumTest | Level3)
 {
@@ -150,9 +168,12 @@ HWTEST_F(PthreadTest, testPthreadExitFunction, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_DETACH_0100
- * @tc.name     Use pthread_detach to detach child threads
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadDetach
+ * @tc.number SUB_KERNEL_PTHREAD_DETACH_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadDetach, Function | MediumTest | Level3)
 {
@@ -171,9 +192,12 @@ void *ThreadPthreadEqual(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_EQUAL_0100
- * @tc.name     Use pthread_equal checks process equality
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadEqual
+ * @tc.number SUB_KERNEL_PTHREAD_EQUAL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadEqual, Function | MediumTest | Level3)
 {
@@ -184,9 +208,12 @@ HWTEST_F(PthreadTest, testPthreadEqual, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_KEY_CREATE_0100
- * @tc.name     Check the parameter PTHREAD_KEYS_MAX of pthread_key_create
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadKeysMax
+ * @tc.number SUB_KERNEL_PTHREAD_KEY_CREATE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadKeysMax, Function | MediumTest | Level3)
 {
@@ -229,9 +256,12 @@ HWTEST_F(PthreadTest, testPthreadKeysMax, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_GETSPECIFIC_0100
- * @tc.name     Use pthread_getspecific to get the value corresponding to the parameter key
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadGetspecific
+ * @tc.number SUB_KERNEL_PTHREAD_GETSPECIFIC_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadGetspecific, Function | MediumTest | Level3)
 {
@@ -311,9 +341,12 @@ void *ThreadPthreadSpecificAllDelete(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_SPECIFIC_ALL_0200
- * @tc.name     Delete the key before the child thread exits
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadSpecificAllDelete
+ * @tc.number SUB_KERNEL_PTHREAD_SPECIFIC_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadSpecificAllDelete, Function | MediumTest | Level3)
 {
@@ -345,9 +378,12 @@ void *ThreadTestPush(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CLEANUP_ALL_0100
- * @tc.name     pthread_cleanup_push and pthread_cleanup_pop basic test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCleanupPushPopBasic
+ * @tc.number SUB_KERNEL_PTHREAD_CLEANUP_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCleanupPushPopBasic, Function | MediumTest | Level3)
 {
@@ -375,9 +411,12 @@ void *ThreadTestPushParam(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CLEANUP_ALL_0200
- * @tc.name     pthread_cleanup_push and pthread_cleanup_pop test with param
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCleanupPushPopParam
+ * @tc.number SUB_KERNEL_PTHREAD_CLEANUP_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCleanupPushPopParam, Function | MediumTest | Level3)
 {
@@ -410,9 +449,12 @@ static void *ThreadTestop(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CLEANUP_ALL_0300
- * @tc.name     pthread_cleanup_pop use different parameters
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPop
+ * @tc.number SUB_KERNEL_PTHREAD_CLEANUP_ALL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPop, Function | MediumTest | Level3)
 {
@@ -425,9 +467,12 @@ HWTEST_F(PthreadTest, testPop, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_BARRIER_INIT_0100
- * @tc.name     basic test of pthread_barrier_init
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testBarrierInit
+ * @tc.number SUB_KERNEL_PTHREAD_BARRIER_INIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(PthreadTest, testBarrierInit, Function | MediumTest | Level2)
 {
@@ -436,9 +481,12 @@ HWTEST_F(PthreadTest, testBarrierInit, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_BARRIERATTR_INIT_0100
- * @tc.name     basic test with pthread_barrierattr_init
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testBarrierattrInit
+ * @tc.number SUB_KERNEL_PTHREAD_BARRIERATTR_INIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testBarrierattrInit, Function | MediumTest | Level3)
 {
@@ -482,9 +530,12 @@ void *ThreadTestBarrierWait2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_BARRIER_ALL_0100
- * @tc.name     test pthread_barrier_wait return value
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testBarrierWait
+ * @tc.number SUB_KERNEL_PTHREAD_BARRIER_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testBarrierWait, Function | MediumTest | Level3)
 {
@@ -525,9 +576,12 @@ void *ThreadTestBarrierAlwaysWait(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_BARRIER_ALL_0200
- * @tc.name     Comprehensive test with barrier properties, always waiting
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testBarrierAlwaysWait
+ * @tc.number SUB_KERNEL_PTHREAD_BARRIER_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testBarrierAlwaysWait, Function | MediumTest | Level3)
 {
@@ -554,9 +608,12 @@ HWTEST_F(PthreadTest, testBarrierAlwaysWait, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_SETCANCELSTATE_0100
- * @tc.name     basic test about pthread_setcancelstate
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadSetcancelstate
+ * @tc.number SUB_KERNEL_PTHREAD_SETCANCELSTATE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadSetcancelstate, Function | MediumTest | Level3)
 {
@@ -570,9 +627,12 @@ HWTEST_F(PthreadTest, testPthreadSetcancelstate, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_SETCANCELTYPE_0100
- * @tc.name     basic test about pthread_setcanceltype
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadSetcanceltype
+ * @tc.number SUB_KERNEL_PTHREAD_SETCANCELTYPE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadSetcanceltype, Function | MediumTest | Level3)
 {
@@ -594,9 +654,12 @@ void *ThreadPthreadNoCancelPoint(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CANCEL_0100
- * @tc.name     test pthread_cancel with no cancel point
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadNoCancelPoint
+ * @tc.number SUB_KERNEL_PTHREAD_CANCEL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadNoCancelPoint, Function | MediumTest | Level3)
 {
@@ -621,9 +684,12 @@ void *ThreadPthreadCancelPoint(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CANCEL_0200
- * @tc.name     test pthread_cancel with cancel point
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCancelPoint
+ * @tc.number SUB_KERNEL_PTHREAD_CANCEL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCancelPoint, Function | MediumTest | Level3)
 {
@@ -648,9 +714,12 @@ void *ThreadPthreadCancelDisable(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CANCEL_ALL_0100
- * @tc.name     test pthread_cancel with PTHREAD_CANCEL_DISABLE
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCancelDisable
+ * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCancelDisable, Function | MediumTest | Level3)
 {
@@ -676,9 +745,12 @@ void *ThreadPthreadCancelAsynchronous(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CANCEL_ALL_0200
- * @tc.name     test pthread_cancel with PTHREAD_CANCEL_ASYNCHRONOUS
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCancelAsynchronous
+ * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCancelAsynchronous, Function | MediumTest | Level3)
 {
@@ -704,9 +776,12 @@ void *ThreadPthreadCancelDeferred(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CANCEL_ALL_0300
- * @tc.name     test pthread_cancel with PTHREAD_CANCEL_DEFERRED
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCancelDeferred
+ * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCancelDeferred, Function | MediumTest | Level3)
 {
@@ -733,9 +808,12 @@ void *ThreadPthreadCancelEnable(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_CANCEL_ALL_0400
- * @tc.name     test pthread_cancel with PTHREAD_CANCEL_ENABLE
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadCancelEnable
+ * @tc.number SUB_KERNEL_PTHREAD_CANCEL_ALL_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadCancelEnable, Function | MediumTest | Level3)
 {
@@ -766,9 +844,12 @@ void ChildPthreadAtfork(void)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATFORK_0100
- * @tc.name     Basic test about pthread_atfork whit one thread
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPthreadAtfork
+ * @tc.number SUB_KERNEL_PTHREAD_ATFORK_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAtfork, Function | MediumTest | Level3)
 {
@@ -859,9 +940,12 @@ void *ThreadNPthreadAtfork(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATFORK_0200
- * @tc.name     Basic test about pthread_atfork whit two thread
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testNPthreadAtfork
+ * @tc.number SUB_KERNEL_PTHREAD_ATFORK_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testNPthreadAtfork, Function | MediumTest | Level3)
 {
@@ -893,9 +977,12 @@ void *ThreadOnce(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_PTHREAD_ONCE_0100
- * @tc.name       pthread_once basic test
- * @tc.desc       [C- SOFTWARE -0200]
+ * @tc.name   testPthreadOnce
+ * @tc.number SUB_KERNEL_PTHREAD_ONCE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadOnce, Function | MediumTest | Level3)
 {

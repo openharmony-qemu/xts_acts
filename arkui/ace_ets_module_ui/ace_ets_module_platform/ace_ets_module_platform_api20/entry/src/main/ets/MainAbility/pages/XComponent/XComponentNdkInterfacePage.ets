@@ -27,10 +27,6 @@ struct XComponentNdkInterfacePage {
   @State frameCallbackState: string = '取消';
   @State needSoftKeyboardState: string = 'needSoftKeyboard=' + this.needSoftKeyboard;
   @State text: string = '单指点击XComponent软键盘消失'
-  @State setNeedSoftKeyboardResult: number = -1
-  @State setFrameRateResult: number = -1
-  @State registerFrameCallbackResult: number = -1
-  @State unregisterFrameCallbackResult: number = -1
 
   controller: TextInputController = new TextInputController()
   build() {
@@ -39,12 +35,6 @@ struct XComponentNdkInterfacePage {
         .onChange((value: string) => {
           this.text = value
         })
-      Row({space: 5}) {
-        Text(this.setNeedSoftKeyboardResult.toString()).key('XComponent_setNeedSoftKeyboardResult')
-        Text(this.setFrameRateResult.toString()).key('XComponent_setFrameRateResult')
-        Text(this.registerFrameCallbackResult.toString()).key('XComponent_registerFrameCallbackResult')
-        Text(this.unregisterFrameCallbackResult.toString()).key('XComponent_unregisterFrameCallbackResult')
-      }.height('8%')
 
       Column() {
         XComponent({
@@ -66,34 +56,12 @@ struct XComponentNdkInterfacePage {
       }.height('50%')
 
       Row() {
-        Button('setFrameCallback')
-          .controlSize(ControlSize.SMALL)
-          .onClick(()=>{
-            this.frameCallback = !this.frameCallback
-            if (this.frameCallback) {
-              this.frameCallbackState = '取消'
-              this.registerFrameCallbackResult = nativeNode.registerFrameCallback(this.xcomponentId)
-            } else {
-              this.frameCallbackState = '注册'
-              this.unregisterFrameCallbackResult = nativeNode.unregisterFrameCallback(this.xcomponentId)
-            }
-          })
-          .key('XComponent_frameCallback')
-        Button('setFrameRate')
-          .controlSize(ControlSize.SMALL)
-          .onClick(()=>{
-            this.setFrameRateResult = nativeNode.setFrameRate(this.xcomponentId, this.minRate, this.maxRate, this.expected)
-          })
-          .key('XComponent_setFrameRate')
-      }.height('8%')
-
-      Row() {
         Button(this.needSoftKeyboardState)
           .controlSize(ControlSize.SMALL)
           .onClick(()=>{
             this.needSoftKeyboard = !this.needSoftKeyboard;
             this.needSoftKeyboardState = 'needSoftKeyboard=' + this.needSoftKeyboard;
-            this.setNeedSoftKeyboardResult = nativeNode.setNeedSoftKeyboard(this.xcomponentId, this.needSoftKeyboard);
+            nativeNode.setNeedSoftKeyboard(this.xcomponentId, this.needSoftKeyboard);
             this.text = this.needSoftKeyboard ?  '单指点击XComponent软键盘不消失' : '单指点击XComponent软键盘消失'
           })
           .key('XComponent_setNeedSoftKeyboard')

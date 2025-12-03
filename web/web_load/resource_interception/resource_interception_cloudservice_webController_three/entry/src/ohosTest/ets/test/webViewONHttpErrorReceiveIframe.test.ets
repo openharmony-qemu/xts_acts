@@ -56,10 +56,13 @@ export default function webViewONHttpErrorReceiveIframe() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0400
-     *tc.name testOnHttpErrorReceiveByIframeHtml
-     *tc.desc test interface of onHttpErrorReceive with parameter used by html file with iframe
+    /**
+     * @tc.name   testOnHttpErrorReceiveByIframeHtml
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORRECV_API_0400
+     * @tc.desc   test interface of onHttpErrorReceive with parameter used by html file with iframe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorReceiveByIframeHtml',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("emitOnHttpErrorReceiveByIframeHtml", EVENT_ID_SET_EMIT_KEY);

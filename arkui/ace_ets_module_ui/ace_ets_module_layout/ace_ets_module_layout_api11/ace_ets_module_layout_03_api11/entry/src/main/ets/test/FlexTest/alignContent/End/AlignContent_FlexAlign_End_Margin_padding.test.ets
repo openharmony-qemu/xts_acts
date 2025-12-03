@@ -49,13 +49,15 @@ export default function AlignContent_FlexAlign_End_Margin_padding() {
       console.info("AlignContent_FlexAlign_End_Margin_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0600
-     * @tc.name testAlignContentEndFlexMarginPaddingNOSatisfy
-     * @tc.desc The AlignContent property of the Flex component is set to FlexAlign.End, and setting the margin
-     *               and padding for the Flex component does not meet the height requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexMarginPaddingNOSatisfy
+     * @tc.number testAlignContentEndFlexMarginPaddingNOSatisfy
+     * @tc.desc   testAlignContentEndFlexMarginPaddingNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexMarginPaddingNOSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexMarginPaddingNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -124,13 +126,15 @@ export default function AlignContent_FlexAlign_End_Margin_padding() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_0700
-     * @tc.name testAlignContentEndFlexMarginPaddingSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the margin and
-     *               padding for the Flex component to meet the height requirements of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexMarginPaddingSatisfy
+     * @tc.number testAlignContentEndFlexMarginPaddingSatisfy
+     * @tc.desc   testAlignContentEndFlexMarginPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexMarginPaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexMarginPaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

@@ -243,12 +243,12 @@ export default function createVideoOutputBackTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_001
-     * @tc.name      : createVideoOutput_with_profile_back_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_001
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_back_001';
@@ -256,12 +256,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_002
-     * @tc.name      : createVideoOutput_with_profile_back_002
-     * @tc.desc      : No abnormal scenarios-with media surfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_002
+     * @tc.desc   No abnormal scenarios-with media surfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_back_002';
@@ -269,12 +269,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_003
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_001
-     * @tc.desc      : surfaceId->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_003
+     * @tc.desc   surfaceId->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_001';
@@ -282,12 +282,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_004
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_002
-     * @tc.desc      : surfaceId->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_004
+     * @tc.desc   surfaceId->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_002';
@@ -295,12 +295,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_005
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_003
-     * @tc.desc      : abnormal surfaceId -> videoOutput->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_003
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_005
+     * @tc.desc   abnormal surfaceId -> videoOutput->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_003';
@@ -308,12 +308,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_006
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_004
-     * @tc.desc      : new previewProfile, with Index surfaceId -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_004
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_006
+     * @tc.desc   new previewProfile, with Index surfaceId -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_004';
@@ -322,12 +322,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_007
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_005
-     * @tc.desc      : new previewProfile, with media surfaceId -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_005
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_007
+     * @tc.desc   new previewProfile, with media surfaceId -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_005';
@@ -336,12 +336,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_008
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_006
-     * @tc.desc      : abnormal previewProfile, with Index surfaceId -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_006
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_008
+     * @tc.desc   abnormal previewProfile, with Index surfaceId -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_006';
@@ -354,12 +354,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_009
-     * @tc.name      : createVideoOutput_with_profile_abnormal_back_007
-     * @tc.desc      : abnormal previewProfile, with media surfaceId -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_with_profile_abnormal_back_007
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_009
+     * @tc.desc   abnormal previewProfile, with media surfaceId -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_with_profile_abnormal_back_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_with_profile_abnormal_back_007';
@@ -372,12 +372,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_010
-     * @tc.name      : createVideoOutput_back_001
-     * @tc.desc      : No abnormal scenarios-only Index surfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_010
+     * @tc.desc   No abnormal scenarios-only Index surfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_back_001';
@@ -385,12 +385,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_011
-     * @tc.name      : createVideoOutput_back_002
-     * @tc.desc      : No abnormal scenarios-only media surfaceId
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_011
+     * @tc.desc   No abnormal scenarios-only media surfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_back_002';
@@ -398,12 +398,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_012
-     * @tc.name      : createVideoOutput_abnormal_back_001
-     * @tc.desc      : Only surfaceId->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_abnormal_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_012
+     * @tc.desc   Only surfaceId->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_abnormal_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_abnormal_back_001';
@@ -411,12 +411,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_013
-     * @tc.name      : createVideoOutput_abnormal_back_002
-     * @tc.desc      : Only surfaceId->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_abnormal_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_013
+     * @tc.desc   Only surfaceId->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_abnormal_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_abnormal_back_002';
@@ -424,12 +424,12 @@ export default function createVideoOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_014
-     * @tc.name      : createVideoOutput_abnormal_back_003
-     * @tc.desc      : Only abnormal surfaceId -> videoOutput->null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createVideoOutput_abnormal_back_003
+     * @tc.number CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_BACK_014
+     * @tc.desc   Only abnormal surfaceId -> videoOutput->null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createVideoOutput_abnormal_back_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createVideoOutput_abnormal_back_003';

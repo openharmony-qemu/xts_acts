@@ -23,6 +23,7 @@ import { Driver, ON, Component, MatchPattern } from '@kit.TestKit';
 
 const TAG: string = 'ProcessModel';
 const DOMAIN_NUMBER: number = 0xFF00;
+let driver = Driver.create();
 
 function sleep(time: number){
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -31,10 +32,17 @@ function sleep(time: number){
 export default function abilityTest() {
   describe('SUB_Ability_AbilityRuntime_deeplink', () => {
     let context: common.UIAbilityContext;
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get<Context>('abilityContext') as common.UIAbilityContext;
-    })
-    beforeAll(() => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
     })
     beforeEach(() => {
 
@@ -50,12 +58,12 @@ export default function abilityTest() {
     afterAll(() => {
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_deeplink_1100
      * @tc.number SUB_Ability_AbilityRuntime_deeplink_1100
-     * @tc.name SUB_Ability_AbilityRuntime_deeplink_1100
-     * @tc.desc The three-party app calls UIAbilityContext.startAbility to implicitly start the three-party app, only configuring the action, and the action contains special characters.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   The three-party app calls UIAbilityContext.startAbility to implicitly start the three-party app, only configuring the action, and the action contains special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_deeplink_1100', Level.LEVEL0, async (done:Function) => {
       const  TAG = 'SUB_Ability_AbilityRuntime_deeplink_1100';

@@ -24,12 +24,12 @@ export default function ListItemSwipeActionStateTest() {
 
   describe('ListItemSwipeActionStateTest', () => {
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_COLLAPSED_0100
-     * @tc.name    : testListItemSwipeActionState0100
-     * @tc.desc    : Test the ArkUI_ListItemSwipeActionState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemSwipeActionState0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_COLLAPSED_0100
+     * @tc.desc   Test the ArkUI_ListItemSwipeActionState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSwipeActionState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -43,12 +43,12 @@ export default function ListItemSwipeActionStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_EXPANDED_0200
-     * @tc.name    : testListItemSwipeActionState0200
-     * @tc.desc    : Test the ArkUI_ListItemSwipeActionState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemSwipeActionState0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_EXPANDED_0200
+     * @tc.desc   Test the ArkUI_ListItemSwipeActionState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSwipeActionState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -62,12 +62,12 @@ export default function ListItemSwipeActionStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_ACTIONING_0300
-     * @tc.name    : testListItemSwipeActionState0300
-     * @tc.desc    : Test the ArkUI_ListItemSwipeActionState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testListItemSwipeActionState0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_ACTIONING_0300
+     * @tc.desc   Test the ArkUI_ListItemSwipeActionState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSwipeActionState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

@@ -59,16 +59,16 @@ export default function OnWindowNewTest() {
     })
 
 
+
+
     /**
-     * @tc.number     SUB_WEB_ONWINDOWNEW_0100
-     * @tc.name       testAllowWindowOpenMethod
-     * @tc.desc       test onWindowNew
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testAllowWindowOpenMethod
+     * @tc.number testAllowWindowOpenMethod
+     * @tc.desc   testAllowWindowOpenMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('testAllowWindowOpenMethod',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitonWindowNewMethod";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);

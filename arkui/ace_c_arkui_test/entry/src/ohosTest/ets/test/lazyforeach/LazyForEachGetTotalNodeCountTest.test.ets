@@ -26,13 +26,13 @@ export default function lazyForEachGetTotalNodeCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETTOTALNODECOUNT_0100
-     * @tc.name       : testLazyForEachGetTotalNodeCount001
-     * @tc.desc       : testing getTotalNodeCount for lazyForEach with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetTotalNodeCount001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETTOTALNODECOUNT_0100
+     * @tc.desc   testing getTotalNodeCount for lazyForEach with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetTotalNodeCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetTotalNodeCount001()).assertEqual(0)

@@ -39,12 +39,14 @@ export default function NavigationStack20Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0020
-    * @tc.name  : NavigationStack20Jsunit_0100
-    * @tc.desc  : When NavigationMode is set to auto, hideNavBar is dynamically changed to false, and the content area is not empty.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack20Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0020
+     * @tc.desc   When NavigationMode is set to auto, hideNavBar is dynamically changed to false, and the content area is not empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack20Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()

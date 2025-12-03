@@ -124,7 +124,6 @@ export default function geolocationTest_geo8() {
 
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testBlueToothScan01
          * @tc.number SUB_HSS_LOCATIONSYSTEM_BLUE_TOOTH_SCAN_0001
          * @tc.desc   Test Report Fence Transition.
@@ -175,7 +174,6 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testGetCurrentLocation41
          * @tc.number SUB_HSS_LOCATIONSYSTEM_SINGLELOC_4100
          * @tc.desc   Initiate a specified single location request and set the exception location timeout interval.
@@ -204,7 +202,6 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testGetCurrentWifiBssidForLocating01
          * @tc.number SUB_HSS_LOCATIONSYSTEM_GETWIFIBSSID_0001
          * @tc.desc   Obtain the Actual Bssid of the Wifi Network.
@@ -227,7 +224,6 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testGetDistanceBetweenLocations01
          * @tc.number SUB_HSS_LOCATIONSYSTEM_GET_DISTANCE_BETWEEN_LOCATIONS_0001
          * @tc.desc   Obtain the
@@ -251,7 +247,6 @@ export default function geolocationTest_geo8() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   testIsPoiServiceSupported001
          * @tc.number SUB_HSS_LOCATIONSYSTEM_IS_POI_SERVICE_SUPPORTED_0001
          * @tc.desc   Obtain the

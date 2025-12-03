@@ -17,31 +17,30 @@ import hilog from '@ohos.hilog';
 import Want from '@ohos.app.ability.Want'
 import PrintExtensionAbility from '@ohos.app.ability.PrintExtensionAbility';
 
-const DOMAIN: number = 0x0023
 const TAG: string = 'printExtension';
 
 export default class PrintExtension extends PrintExtensionAbility {
   onCreate(want: Want): void {
-    hilog.info(DOMAIN, TAG, 'PrintExtension onCreate');
+    hilog.info(0x0023, TAG, 'PrintExtension onCreate');
   }
 
   onStartDiscoverPrinter(): void {
-    hilog.info(DOMAIN, TAG, 'PrintExtension onStartDiscoverPrinter');
+    hilog.info(0x0023, TAG, 'PrintExtension onStartDiscoverPrinter');
   }
 
   onStopDiscoverPrinter(): void {
-    hilog.info(DOMAIN, TAG, 'PrintExtension onStopDiscoverPrinter');
+    hilog.info(0x0023, TAG, 'PrintExtension onStopDiscoverPrinter');
   }
 
   onConnectPrinter(): void {
-    hilog.info(DOMAIN, TAG, 'PrintExtension onConnectPrinter');
+    hilog.info(0x0023, TAG, 'PrintExtension onConnectPrinter');
   }
 
   onDisconnectPrinter(): void {
-    hilog.info(DOMAIN, TAG, 'PrintExtension onDisconnectPrinter');
+    hilog.info(0x0023, TAG, 'PrintExtension onDisconnectPrinter');
   }
 
   onDestroy(): void {
-    hilog.info(DOMAIN, TAG, 'PrintExtension onDestroy');
+    hilog.info(0x0023, TAG, 'PrintExtension onDestroy');
   }
 }

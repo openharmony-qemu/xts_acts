@@ -38,14 +38,14 @@ export default function webOnInterceptKeyEvent() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONINTERCEPTKEYEVENT_0200
-    * @tc.name        : testOnInterceptKeyEventStatic002
-    * @tc.desc        : test onInterceptKeyEvent when return true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnInterceptKeyEventStatic002
+     * @tc.number SUB_WEB_ONINTERCEPTKEYEVENT_0200
+     * @tc.desc   test onInterceptKeyEvent when return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnInterceptKeyEventStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       let driver = Driver.create();
@@ -68,14 +68,14 @@ export default function webOnInterceptKeyEvent() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONINTERCEPTKEYEVENT_0300
-    * @tc.name        : testOnInterceptKeyEventStatic003
-    * @tc.desc        : test onInterceptKeyEvent when return false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnInterceptKeyEventStatic003
+     * @tc.number SUB_WEB_ONINTERCEPTKEYEVENT_0300
+     * @tc.desc   test onInterceptKeyEvent when return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnInterceptKeyEventStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       let driver = Driver.create();
       Utils.emitEvent("emitOnInterceptKeyEvent003", 10)

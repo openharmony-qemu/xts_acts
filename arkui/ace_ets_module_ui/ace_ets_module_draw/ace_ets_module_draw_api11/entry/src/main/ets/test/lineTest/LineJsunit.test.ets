@@ -44,6 +44,14 @@ export default function LineJsunit() {
       console.info("line after each called");
     });
 
+    /**
+     * @tc.name   lineTest_0100
+     * @tc.number lineTest_0100
+     * @tc.desc   lineTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0100 START');
       await Utils.sleep(2000);
@@ -54,6 +62,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0200
+     * @tc.number lineTest_0200
+     * @tc.desc   lineTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0200 START');
       let strJson = getInspectorByKey('line');
@@ -63,6 +79,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0300
+     * @tc.number lineTest_0300
+     * @tc.desc   lineTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0300 START');
       let strJson = getInspectorByKey('line');
@@ -72,6 +96,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0400
+     * @tc.number lineTest_0400
+     * @tc.desc   lineTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0400 START');
       let strJson = getInspectorByKey('line');
@@ -81,6 +113,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0500
+     * @tc.number lineTest_0500
+     * @tc.desc   lineTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0500 START');
       await Utils.sleep(1000);
@@ -111,6 +151,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0600
+     * @tc.number lineTest_0600
+     * @tc.desc   lineTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0600 START');
       await Utils.sleep(1000);
@@ -141,6 +189,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0700
+     * @tc.number lineTest_0700
+     * @tc.desc   lineTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0700 START');
       await Utils.sleep(1000);
@@ -171,6 +227,14 @@ export default function LineJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   lineTest_0800
+     * @tc.number lineTest_0800
+     * @tc.desc   lineTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('lineTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0900 START');
       await Utils.sleep(1000);

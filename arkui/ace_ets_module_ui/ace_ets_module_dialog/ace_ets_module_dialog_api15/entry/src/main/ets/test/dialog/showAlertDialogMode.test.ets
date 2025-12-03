@@ -42,12 +42,12 @@ export default function showAlertDialogMode() {
     });
 
     /**
-     * @tc.number    showAlertDialogMode_0100
-     * @tc.name      showAlertDialogMode_0100
-     * @tc.desc      set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogMode_0100
+     * @tc.number showAlertDialogMode_0100
+     * @tc.desc   set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0100 START');
@@ -84,12 +84,12 @@ export default function showAlertDialogMode() {
     });
 
     /**
-     * @tc.number    showAlertDialogMode_0200
-     * @tc.name      showAlertDialogMode_0200
-     * @tc.desc      set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogMode_0200
+     * @tc.number showAlertDialogMode_0200
+     * @tc.desc   set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0200 START');
@@ -127,12 +127,12 @@ export default function showAlertDialogMode() {
     });
 
     /**
-     * @tc.number    showAlertDialogMode_0300
-     * @tc.name      showAlertDialogMode_0300
-     * @tc.desc      set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogMode_0300
+     * @tc.number showAlertDialogMode_0300
+     * @tc.desc   set levelMode: 0(LevelMode.OVERLAY),levelUniqueId: Abnormal value,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0300', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0300 START');
@@ -170,12 +170,12 @@ export default function showAlertDialogMode() {
     });
 
     /**
-     * @tc.number    showAlertDialogMode_0400
-     * @tc.name      showAlertDialogMode_0400
-     * @tc.desc      set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogMode_0400
+     * @tc.number showAlertDialogMode_0400
+     * @tc.desc   set  set levelMode: 1(LevelMode.EMBEDDED),levelUniqueId: Abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0400', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0400 START');
@@ -213,13 +213,13 @@ export default function showAlertDialogMode() {
     });
 
 
-     /**
-     * @tc.number    showAlertDialogMode_0500
-     * @tc.name      showAlertDialogMode_0500
-     * @tc.desc      set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:1(imMode: extend)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   showAlertDialogMode_0500
+     * @tc.number showAlertDialogMode_0500
+     * @tc.desc   set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:1(imMode: extend)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0500', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0500 START');
@@ -253,13 +253,13 @@ export default function showAlertDialogMode() {
     });
 
     
-     /**
-     * @tc.number    showAlertDialogMode_0500
-     * @tc.name      showAlertDialogMode_0500
-     * @tc.desc      set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:0(imMode: extend)
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   showAlertDialogMode_0600
+     * @tc.number showAlertDialogMode_0500
+     * @tc.desc   set levelMode: 0(LevelMode.EMBEDDED),levelUniqueId: Normal value,immersiveMode:0(imMode: extend)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0600', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0500 START');
@@ -292,12 +292,12 @@ export default function showAlertDialogMode() {
     });
 
     /**
-     * @tc.number    showAlertDialogMode_0700
-     * @tc.name      showAlertDialogMode_0700
-     * @tc.desc      set levelMode: undefined,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogMode_0700
+     * @tc.number showAlertDialogMode_0700
+     * @tc.desc   set levelMode: undefined,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0700', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0700 START');
@@ -333,13 +333,13 @@ export default function showAlertDialogMode() {
       done();
     });
 
-/**
-     * @tc.number    showAlertDialogMode_0800
-     * @tc.name      showAlertDialogMode_0800
-     * @tc.desc      set levelMode: null,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   showAlertDialogMode_0800
+     * @tc.number showAlertDialogMode_0800
+     * @tc.desc   set levelMode: null,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('showAlertDialogMode_0800', Level.LEVEL1, async (done: Function) => {
       console.info('showAlertDialogMode_0800 START');

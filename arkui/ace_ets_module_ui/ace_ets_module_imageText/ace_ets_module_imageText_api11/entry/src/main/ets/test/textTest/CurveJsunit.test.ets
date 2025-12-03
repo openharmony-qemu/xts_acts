@@ -46,10 +46,13 @@ export default function CurveJsunit() {
       console.info("curve after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testCurve001
-     * @tc.desic         aceCurveEtsTest
+    /**
+     * @tc.name   testCurve001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   testCurve001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCurve001', Level.LEVEL1, async (done: Function) => {
       console.info('curve testCurve001 START');
@@ -83,10 +86,13 @@ export default function CurveJsunit() {
       }, 3000)
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0020
-     * @tc.name         testCurve002
-     * @tc.desic         aceCurveEtsTest
+    /**
+     * @tc.name   testCurve002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0020
+     * @tc.desc   testCurve002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCurve002', Level.LEVEL1, async (done: Function) => {
       console.info('curve testCurve02 START');
@@ -120,10 +126,13 @@ export default function CurveJsunit() {
       }, 3000)
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0030
-     * @tc.name         testCurve003
-     * @tc.desic        aceCurveEtsTest
+    /**
+     * @tc.name   testCurve003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0030
+     * @tc.desc   testCurve003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCurve003', Level.LEVEL1, async (done: Function) => {
       console.info('curve testCurve003 START');
@@ -157,10 +166,13 @@ export default function CurveJsunit() {
       }, 3000)
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0040
-     * @tc.name         testCurve004
-     * @tc.desic         aceCurveEtsTest
+    /**
+     * @tc.name   testCurve004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0040
+     * @tc.desc   testCurve004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCurve004', Level.LEVEL1, async (done: Function) => {
       console.info('curve testCurve004 START');

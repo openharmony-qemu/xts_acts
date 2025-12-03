@@ -25,12 +25,12 @@ export default function mountNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MOUNT_UMOUNT_0100
-     * @tc.name       : testMuslMountUmount001
-     * @tc.desc       : test umount
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMountUmount001
+     * @tc.number SUB_THIRDPARTY_MUSL_MOUNT_UMOUNT_0100
+     * @tc.desc   test umount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMountUmount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mount.umount();
@@ -40,12 +40,12 @@ export default function mountNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MOUNT_UMOUNT2_0100
-     * @tc.name       : testMuslMountUmount2001
-     * @tc.desc       : test umount2
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMountUmount2001
+     * @tc.number SUB_THIRDPARTY_MUSL_MOUNT_UMOUNT2_0100
+     * @tc.desc   test umount2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMountUmount2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mount.umount2();

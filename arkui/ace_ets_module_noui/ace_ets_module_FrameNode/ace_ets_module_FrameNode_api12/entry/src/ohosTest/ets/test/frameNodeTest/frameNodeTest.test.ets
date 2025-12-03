@@ -52,16 +52,16 @@ export default function frameNodeTest() {
       }
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest_0100
+     * @tc.number frameNodeTest_0100
+     * @tc.desc   frameNodeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest_0100 START');
       let driver = await Driver.create()
@@ -76,16 +76,16 @@ export default function frameNodeTest() {
       console.info('[frameNodeTest_0100] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest_0200
+     * @tc.number frameNodeTest_0200
+     * @tc.desc   frameNodeTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest_0200 START');
       let driver = await Driver.create()
@@ -100,16 +100,16 @@ export default function frameNodeTest() {
       console.info('[frameNodeTest_0200] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest_0300
+     * @tc.number frameNodeTest_0300
+     * @tc.desc   frameNodeTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest_0300 START');
       let driver = await Driver.create()
@@ -124,16 +124,16 @@ export default function frameNodeTest() {
       console.info('[frameNodeTest_0100] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest_0400
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest_0400
+     * @tc.number frameNodeTest_0400
+     * @tc.desc   frameNodeTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest_0400 START');
       let driver = await Driver.create()
@@ -148,16 +148,16 @@ export default function frameNodeTest() {
       console.info('[frameNodeTest_0400] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest_0600
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest_0500
+     * @tc.number frameNodeTest_0500
+     * @tc.desc   frameNodeTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest_0500 START');
       let driver = await Driver.create()
@@ -178,16 +178,16 @@ export default function frameNodeTest() {
       console.info('[frameNodeTest_0500] END');
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest_0700
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest_0600
+     * @tc.number frameNodeTest_0600
+     * @tc.desc   frameNodeTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest_0600 START');
       let driver = await Driver.create()

@@ -54,9 +54,12 @@ export default function rowMar_TextMarPadTest() {
       console.info("RowMar_TextMarPadTest after each called");
     });
     /**
+     * @tc.name   testRowMarTextPad
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0600
-     * @tc.name testRowMarTextPad
-     * @tc.desc The parent component set margin to 5,and the first subcomponent set padding to 10
+     * @tc.desc   The parent component set margin to 5,and the first subcomponent set padding to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowMarTextPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowMarTextPad] START');
@@ -110,9 +113,12 @@ export default function rowMar_TextMarPadTest() {
       done();
     });
     /**
+     * @tc.name   testRowMarTextMar
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0700
-     * @tc.name testRowMarTextMar
-     * @tc.desc The parent component set margin to 5,and the first subcomponent set margin to 10
+     * @tc.desc   The parent component set margin to 5,and the first subcomponent set margin to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowMarTextMar',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowMarTextMar] START');
@@ -165,9 +171,12 @@ export default function rowMar_TextMarPadTest() {
       done();
     });
     /**
+     * @tc.name   testRowMarTextMarPad
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0800
-     * @tc.name testRowMarTextMarPad
-     * @tc.desc The parent component set margin to 5,and the first subcomponent set margin to 10,set padding to 10
+     * @tc.desc   The parent component set margin to 5,and the first subcomponent set margin to 10,set padding to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowMarTextMarPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowMarTextMarPad] START');

@@ -55,12 +55,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_0100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_0100
-     * @tc.name check X509CertChain validate with local OCSP (normal param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0100';
@@ -91,12 +91,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_0200
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_0200
-     * @tc.name check X509CertChain validate with local OCSP (abnormal param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0200';
@@ -124,12 +124,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_0300
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_0300
-     * @tc.name check X509CertChain validate with local OCSP (empty param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0300';
@@ -157,12 +157,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_0600
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_0600
-     * @tc.name check X509CertChain validate with online OCSP (but abnormal param ocspResponderCert)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0600';
@@ -192,12 +192,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_0700
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_0700
-     * @tc.name check X509CertChain validate with online OCSP (don't connect network)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0700';
@@ -225,12 +225,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_0800
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_0800
-     * @tc.name check X509CertChain validate with online OCSP (CertChain doesn't contain ocsp url)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0800';
@@ -258,12 +258,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1000
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1000
-     * @tc.name check X509CertChain validate with online OCSP (abnormal param ocspResponderURI)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1000';
@@ -292,12 +292,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1100
-     * @tc.name check X509CertChain validate with online OCSP (empty param ocspResponderURI)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1100';
@@ -326,12 +326,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1300
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1300
-     * @tc.name check X509CertChain validate with online CRL (don't connect network)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1300';
@@ -348,21 +348,22 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
+        expect(null).assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(null).assertFail();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION);
         done();
       }
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1400
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1400
-     * @tc.name check X509CertChain validate with online CRL (CertChain doesn't contain CRL url)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1400';
@@ -389,12 +390,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1600
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1600
-     * @tc.name check X509CertChain validate with online CRL (abnormal param crlDownloadURI)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1600';
@@ -423,12 +424,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1700
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1700
-     * @tc.name check X509CertChain validate with online CRL (empty param crlDownloadURI)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1700';
@@ -457,12 +458,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_1900
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_1900
-     * @tc.name check X509CertChain validate with prepare online CRL (don't connect network)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1900';
@@ -480,22 +481,23 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        await certChain1.validate(param); // ocsp校验失败，CRL校验成功
+        await certChain1.validate(param);
+        expect(null).assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(null).assertFail();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
       }
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2100
-     * @tc.name check X509CertChain validate with prepare online OCSP (don't connect network)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2100';
@@ -513,21 +515,22 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
+        expect(null).assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(null).assertFail();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
       }
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2200
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2200
-     * @tc.name check X509CertChain validate with local OCSP (CertChain doesn't contain ocsp url, normal param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2200';
@@ -558,12 +561,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2300
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2300
-     * @tc.name check X509CertChain validate with local OCSP (CertChain doesn't contain ocsp url, abnormal param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2300';
@@ -595,12 +598,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2400
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2400
-     * @tc.name check X509CertChain validate with local CRL (CertChain doesn't contain CRL url, normal param certCRLs)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2400';
@@ -632,12 +635,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2500
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2500
-     * @tc.name check X509CertChain validate with local CRL (CertChain doesn't contain CRL url, abnormal param certCRLs)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2500';
@@ -662,12 +665,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2600
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2600
-     * @tc.name check X509CertChain validate with local CRL (CertChain doesn't contain CRL url, empty param certCRLs)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2600';
@@ -695,12 +698,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_2900
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_2900
-     * @tc.name check X509CertChain validate with local ocsp (CertChain doesn't contain ocsp url & CRL url, normal param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_2900';
@@ -735,12 +738,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3000
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3000
-     * @tc.name check X509CertChain validate with local CRL (CertChain doesn't contain ocsp url & CRL url, normal param certCRLs)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3000';
@@ -778,12 +781,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3100
-     * @tc.name check X509CertChain validate (CertChain doesn't contain ocsp url & CRL url, abnormal params)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3100';
@@ -820,12 +823,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3400
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3400
-     * @tc.name check X509CertChain validate with local CRL (CertChain doesn't contain ocsp url & CRL url, normal param certCRLs)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3400';
@@ -862,12 +865,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3500
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3500
-     * @tc.name check X509CertChain validate with local ocsp (CertChain doesn't contain ocsp url & CRL url, normal param ocspResponses)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3500';
@@ -901,12 +904,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3600
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3600
-     * @tc.name check X509CertChain validate (CertChain doesn't contain ocsp url & CRL url, abnormal params)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3600';
@@ -942,12 +945,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3700
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3700
-     * @tc.name check X509CertChain validate with empty param options
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3700';
@@ -972,12 +975,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3800
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3800
-     * @tc.name check X509CertChain validate with empty param ocspRequestExtension
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3800';
@@ -1002,12 +1005,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_3900
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_3900
-     * @tc.name check X509CertChain validate with param options (invalid value)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_3900';
@@ -1032,12 +1035,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_4000
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_4000
-     * @tc.name check X509CertChain validate with empty param revocationCheckParameter
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_4000';
@@ -1062,12 +1065,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
     });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_CertChain_Online_Func_4100
      * @tc.number SUB_Security_Cert_Framework_CertChain_Online_Func_4100
-     * @tc.name check X509CertChain validate with local OCSP (abnormal param ocspRequestExtension)
-     * @tc.desc Use Promise Type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   Use Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CertChain_Online_Func_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_4100';
@@ -1090,7 +1093,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
       }
     });

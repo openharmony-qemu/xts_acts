@@ -118,12 +118,12 @@ export default function ActsMediaLibraryTest() {
       await getPhotoReceiverSurface();
     })
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_0100
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_0100
-     * @tc.desc    : test OH_MediaAssetChangeRequest_AddResourceWithUri parameter error
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_0100
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_0100
+     * @tc.desc   test OH_MediaAssetChangeRequest_AddResourceWithUri parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -144,12 +144,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_0200
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_0200
-     * @tc.desc    : test OH_MediaAssetChangeRequest_AddResourceWithBuffer parameter error
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_0200
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_0200
+     * @tc.desc   test OH_MediaAssetChangeRequest_AddResourceWithBuffer parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -170,12 +170,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_0300
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_0300
-     * @tc.desc    : test OH_MediaAssetChangeRequest_GetWriteCacheHandler parameter error
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_0300
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_0300
+     * @tc.desc   test OH_MediaAssetChangeRequest_GetWriteCacheHandler parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_GetWriteCacheHandler_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -196,12 +196,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_SaveCameraPhoto_0400
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_SaveCameraPhoto_0400
-     * @tc.desc    : test OH_MediaAssetChangeRequest_SaveCameraPhoto parameter error
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_SaveCameraPhoto_0400
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_SaveCameraPhoto_0400
+     * @tc.desc   test OH_MediaAssetChangeRequest_SaveCameraPhoto parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_SaveCameraPhoto_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -222,12 +222,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_DiscardCameraPhoto_0500
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_DiscardCameraPhoto_0500
-     * @tc.desc    : test OH_MediaAssetChangeRequest_DiscardCameraPhoto parameter error
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_DiscardCameraPhoto_0500
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_DiscardCameraPhoto_0500
+     * @tc.desc   test OH_MediaAssetChangeRequest_DiscardCameraPhoto parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_DiscardCameraPhoto_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -248,12 +248,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetUri_0600
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetUri_0600
-     * @tc.desc    : test OH_MediaAsset_GetUri Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetUri_0600
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetUri_0600
+     * @tc.desc   test OH_MediaAsset_GetUri Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetUri_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -276,12 +276,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaType_0700
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaType_0700
-     * @tc.desc    : test OH_MediaAsset_GetMediaType Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaType_0700
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaType_0700
+     * @tc.desc   test OH_MediaAsset_GetMediaType Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaType_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -304,12 +304,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaSubType_0800
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaSubType_0800
-     * @tc.desc    : test OH_MediaAsset_GetMediaSubType Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaSubType_0800
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaSubType_0800
+     * @tc.desc   test OH_MediaAsset_GetMediaSubType Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetMediaSubType_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -332,12 +332,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDisplayName_0900
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDisplayName_0900
-     * @tc.desc    : test OH_MediaAsset_GetDisplayName Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDisplayName_0900
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDisplayName_0900
+     * @tc.desc   test OH_MediaAsset_GetDisplayName Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDisplayName_0900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -360,12 +360,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetSize_1000
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetSize_1000
-     * @tc.desc    : test OH_MediaAsset_GetSize Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetSize_1000
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetSize_1000
+     * @tc.desc   test OH_MediaAsset_GetSize Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetSize_1000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -388,12 +388,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAdded_1100
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAdded_1100
-     * @tc.desc    : test OH_MediaAsset_GetDateAdded Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAdded_1100
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAdded_1100
+     * @tc.desc   test OH_MediaAsset_GetDateAdded Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAdded_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -416,12 +416,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModified_1200
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModified_1200
-     * @tc.desc    : test OH_MediaAsset_GetDateModified Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModified_1200
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModified_1200
+     * @tc.desc   test OH_MediaAsset_GetDateModified Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModified_1200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -444,12 +444,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateTaken_1300
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateTaken_1300
-     * @tc.desc    : test OH_MediaAsset_GetDateTaken Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateTaken_1300
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateTaken_1300
+     * @tc.desc   test OH_MediaAsset_GetDateTaken Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateTaken_1300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -472,12 +472,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAddedMs_1400
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAddedMs_1400
-     * @tc.desc    : test OH_MediaAsset_GetDateAddedMs Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAddedMs_1400
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAddedMs_1400
+     * @tc.desc   test OH_MediaAsset_GetDateAddedMs Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateAddedMs_1400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -500,12 +500,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModifiedMs_1500
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModifiedMs_1500
-     * @tc.desc    : test OH_MediaAsset_GetDateModifiedMs Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModifiedMs_1500
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModifiedMs_1500
+     * @tc.desc   test OH_MediaAsset_GetDateModifiedMs Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDateModifiedMs_1500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -528,12 +528,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDuration_1600
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDuration_1600
-     * @tc.desc    : test OH_MediaAsset_GetDuration Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDuration_1600
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDuration_1600
+     * @tc.desc   test OH_MediaAsset_GetDuration Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetDuration_1600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -556,12 +556,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetWidth_1700
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetWidth_1700
-     * @tc.desc    : test OH_MediaAsset_GetWidth Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetWidth_1700
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetWidth_1700
+     * @tc.desc   test OH_MediaAsset_GetWidth Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetWidth_1700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -584,12 +584,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetHeight_1800
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetHeight_1800
-     * @tc.desc    : test OH_MediaAsset_GetHeight Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetHeight_1800
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetHeight_1800
+     * @tc.desc   test OH_MediaAsset_GetHeight Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetHeight_1800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -612,12 +612,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetOrientation_1900
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetOrientation_1900
-     * @tc.desc    : test OH_MediaAsset_GetOrientation Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetOrientation_1900
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetOrientation_1900
+     * @tc.desc   test OH_MediaAsset_GetOrientation Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetOrientation_1900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -640,12 +640,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_IsFavorite_2000
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_IsFavorite_2000
-     * @tc.desc    : test OH_MediaAsset_IsFavorite Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_IsFavorite_2000
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_IsFavorite_2000
+     * @tc.desc   test OH_MediaAsset_IsFavorite Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_IsFavorite_2000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -668,12 +668,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetTitle_2100
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetTitle_2100
-     * @tc.desc    : test OH_MediaAsset_GetTitle Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetTitle_2100
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetTitle_2100
+     * @tc.desc   test OH_MediaAsset_GetTitle Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_GetTitle_2100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -696,12 +696,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_Release_2200
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_Release_2200
-     * @tc.desc    : test OH_MediaAsset_Release Media Library Ok
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_Release_2200
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_Release_2200
+     * @tc.desc   test OH_MediaAsset_Release Media Library Ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAsset_Release_2200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -724,12 +724,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Image_2300
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Image_2300
-     * @tc.desc    : test MEDIA_LIBRARY_IMAGE
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Image_2300
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Image_2300
+     * @tc.desc   test MEDIA_LIBRARY_IMAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Image_2300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -752,12 +752,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Default_2400
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Default_2400
-     * @tc.desc    : test MEDIA_LIBRARY_DEFAULT
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Default_2400
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Default_2400
+     * @tc.desc   test MEDIA_LIBRARY_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Default_2400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -780,12 +780,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_2500
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_2500
-     * @tc.desc    : test OH_MediaAssetChangeRequest_AddResourceWithUri the file does not exist.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_2500
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_2500
+     * @tc.desc   test OH_MediaAssetChangeRequest_AddResourceWithUri the file does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_2500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -808,12 +808,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_Release_2700
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_Release_2700
-     * @tc.desc    : test OH_MediaAssetChangeRequest_Release Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_Release_2700
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_Release_2700
+     * @tc.desc   test OH_MediaAssetChangeRequest_Release Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_Release_2700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -836,12 +836,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestMovingPhoto_2800
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestMovingPhoto_2800
-     * @tc.desc    : test OH_MediaAssetManager_RequestMovingPhoto Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestMovingPhoto_2800
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestMovingPhoto_2800
+     * @tc.desc   test OH_MediaAssetManager_RequestMovingPhoto Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestMovingPhoto_2800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -864,12 +864,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestImage_2900
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestImage_2900
-     * @tc.desc    : test OH_MediaAssetManager_RequestImage Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestImage_2900
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestImage_2900
+     * @tc.desc   test OH_MediaAssetManager_RequestImage Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetManager_RequestImage_2900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -892,12 +892,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_GetUri_3000
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_GetUri_3000
-     * @tc.desc    : test OH_MovingPhoto_GetUri Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_GetUri_3000
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_GetUri_3000
+     * @tc.desc   test OH_MovingPhoto_GetUri Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_GetUri_3000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -920,12 +920,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUris_3100
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUris_3100
-     * @tc.desc    : test OH_MovingPhoto_RequestContentWithUris Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUris_3100
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUris_3100
+     * @tc.desc   test OH_MovingPhoto_RequestContentWithUris Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUris_3100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -948,12 +948,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUri_3200
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUri_3200
-     * @tc.desc    : test OH_MovingPhoto_RequestContentWithUri Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUri_3200
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUri_3200
+     * @tc.desc   test OH_MovingPhoto_RequestContentWithUri Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithUri_3200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -976,12 +976,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithBuffer_3300
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithBuffer_3300
-     * @tc.desc    : test OH_MovingPhoto_RequestContentWithBuffer Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithBuffer_3300
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithBuffer_3300
+     * @tc.desc   test OH_MovingPhoto_RequestContentWithBuffer Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_RequestContentWithBuffer_3300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1004,12 +1004,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_Release_3400
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_Release_3400
-     * @tc.desc    : test OH_MovingPhoto_Release Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_Release_3400
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_Release_3400
+     * @tc.desc   test OH_MovingPhoto_Release Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MovingPhoto_Release_3400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1032,12 +1032,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_3500
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_3500
-     * @tc.desc    : test OH_MediaAssetChangeRequest_AddResourceWithBuffer Operation not supported.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_3500
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_3500
+     * @tc.desc   test OH_MediaAssetChangeRequest_AddResourceWithBuffer Operation not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithBuffer_3500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1060,12 +1060,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_3600
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_3600
-     * @tc.desc    : test OH_MediaAssetChangeRequest_AddResourceWithUri Operation not supported.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_3600
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_3600
+     * @tc.desc   test OH_MediaAssetChangeRequest_AddResourceWithUri Operation not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAssetChangeRequest_AddResourceWithUri_3600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1088,12 +1088,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Fast_3700
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Fast_3700
-     * @tc.desc    : test MEDIA_LIBRARY_QUALITY_FAST .
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Fast_3700
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Fast_3700
+     * @tc.desc   test MEDIA_LIBRARY_QUALITY_FAST .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Fast_3700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1116,12 +1116,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Full_3800
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Full_3800
-     * @tc.desc    : test MEDIA_LIBRARY_QUALITY_FULL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Full_3800
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Full_3800
+     * @tc.desc   test MEDIA_LIBRARY_QUALITY_FULL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Quality_Full_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1144,12 +1144,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Compressed_3900
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Compressed_3900
-     * @tc.desc    : test MEDIA_LIBRARY_COMPRESSED.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Compressed_3900
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Compressed_3900
+     * @tc.desc   test MEDIA_LIBRARY_COMPRESSED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Compressed_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1172,12 +1172,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Picture_Object_4000
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Picture_Object_4000
-     * @tc.desc    : test MEDIA_LIBRARY_PICTURE_OBJECT.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Picture_Object_4000
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Picture_Object_4000
+     * @tc.desc   test MEDIA_LIBRARY_PICTURE_OBJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Picture_Object_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1200,12 +1200,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Moving_Photo_4100
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Moving_Photo_4100
-     * @tc.desc    : test MEDIA_LIBRARY_MOVING_PHOTO.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Moving_Photo_4100
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Moving_Photo_4100
+     * @tc.desc   test MEDIA_LIBRARY_MOVING_PHOTO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Moving_Photo_4100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1228,12 +1228,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Rust_4200
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Rust_4200
-     * @tc.desc    : test MEDIA_LIBRARY_BURST.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Rust_4200
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Rust_4200
+     * @tc.desc   test MEDIA_LIBRARY_BURST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Rust_4200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1256,12 +1256,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAccessHelper_ApplyChanges_4300
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_OH_MediaAccessHelper_ApplyChanges_4300
-     * @tc.desc    : test OH_MediaAccessHelper_ApplyChanges Ok.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_OH_MediaAccessHelper_ApplyChanges_4300
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_OH_MediaAccessHelper_ApplyChanges_4300
+     * @tc.desc   test OH_MediaAccessHelper_ApplyChanges Ok.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_OH_MediaAccessHelper_ApplyChanges_4300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1284,12 +1284,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Parameter_Error_4400
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Parameter_Error_4400
-     * @tc.desc    : test MEDIA_LIBRARY_PARAMETER_ERROR.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Parameter_Error_4400
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Parameter_Error_4400
+     * @tc.desc   test MEDIA_LIBRARY_PARAMETER_ERROR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Parameter_Error_4400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1310,12 +1310,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_No_Such_File_4500
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_No_Such_File_4500
-     * @tc.desc    : test MEDIA_LIBRARY_NO_SUCH_FILE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_No_Such_File_4500
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_No_Such_File_4500
+     * @tc.desc   test MEDIA_LIBRARY_NO_SUCH_FILE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_No_Such_File_4500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1338,12 +1338,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_High_Quality_Mode_4700
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_High_Quality_Mode_4700
-     * @tc.desc    : test MEDIA_LIBRARY_HIGH_QUALITY_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_High_Quality_Mode_4700
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_High_Quality_Mode_4700
+     * @tc.desc   test MEDIA_LIBRARY_HIGH_QUALITY_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_High_Quality_Mode_4700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1366,12 +1366,12 @@ export default function ActsMediaLibraryTest() {
       })
 
     /**
-     * @tc.number  : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Balanced_Mode_4800
-     * @tc.name    : SUB_Multimedia_MediaLibrary_SDK_Media_Library_Balanced_Mode_4800
-     * @tc.desc    : test MEDIA_LIBRARY_BALANCED_MODE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Multimedia_MediaLibrary_SDK_Media_Library_Balanced_Mode_4800
+     * @tc.number SUB_Multimedia_MediaLibrary_SDK_Media_Library_Balanced_Mode_4800
+     * @tc.desc   test MEDIA_LIBRARY_BALANCED_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Multimedia_MediaLibrary_SDK_Media_Library_Balanced_Mode_4800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

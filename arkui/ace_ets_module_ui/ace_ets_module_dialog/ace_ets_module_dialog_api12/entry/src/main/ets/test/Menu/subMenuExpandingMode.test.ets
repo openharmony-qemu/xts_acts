@@ -43,14 +43,15 @@ export default function subMenuExpandingMode() {
       console.info('subMenuExpandingMode after each called');
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_subMenuExpandingMode_0100
-     * @tc.name      subMenuExpandingMode_0100
-     * @tc.desc      subMenuExpandingMode test
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   subMenuExpandingMode_0100
+     * @tc.number subMenuExpandingMode_0100
+     * @tc.desc   subMenuExpandingMode_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('subMenuExpandingMode_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[subMenuExpandingMode_0100] START');
 

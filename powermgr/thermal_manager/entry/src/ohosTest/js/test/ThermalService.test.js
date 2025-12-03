@@ -40,7 +40,6 @@ export default function ThermalServiceTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   ThermalServiceTest_0100
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0010
      * @tc.desc   ThermalService stop test
@@ -63,7 +62,6 @@ export default function ThermalServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   ThermalServiceTest_0200
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0020
      * @tc.desc   ThermalService stop test
@@ -86,7 +84,6 @@ export default function ThermalServiceTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   ThermalServiceTest_0300
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0030
      * @tc.desc   ThermalService stop test

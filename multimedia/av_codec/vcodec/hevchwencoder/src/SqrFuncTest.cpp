@@ -71,9 +71,12 @@ void HwEncFuncSqrTest::TearDown()
 
 namespace {
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_001
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_001
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_001
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_001, TestSize.Level1)
 {
@@ -105,9 +108,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_002
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_002
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_002, TestSize.Level1)
 {
@@ -137,9 +143,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_003
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_003
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_003
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_003, TestSize.Level1)
 {
@@ -169,9 +178,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_003, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_004
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_004
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_004
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_004, TestSize.Level1)
 {
@@ -197,9 +209,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_004, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_005
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_005
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_005
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_005, TestSize.Level1)
 {
@@ -229,9 +244,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_006
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_006
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_006
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_006, TestSize.Level1)
 {
@@ -259,9 +277,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_006, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_007
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_007
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_007
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_007, TestSize.Level1)
 {
@@ -291,9 +312,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_007, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_008
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_008
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_008
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_008
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_008, TestSize.Level1)
 {
@@ -325,9 +349,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_008, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_009
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_009
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_009
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_009, TestSize.Level1)
 {
@@ -361,9 +388,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_009, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_010
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_010
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_010, TestSize.Level1)
 {
@@ -396,9 +426,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_011
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_011
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_011
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_011, TestSize.Level1)
 {
@@ -428,9 +461,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_011, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_012
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_012
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_012
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_012, TestSize.Level1)
 {
@@ -456,9 +492,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_012, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_013
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_013
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_013
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_013, TestSize.Level1)
 {
@@ -488,9 +527,12 @@ HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_013, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_SQR_FUNC_014
- * @tc.name      : VIDEO_HW_ENCODE_SQR_FUNC_014
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_014
+ * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_014
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncFuncSqrTest, VIDEO_HW_ENCODE_SQR_FUNC_014, TestSize.Level1)
 {

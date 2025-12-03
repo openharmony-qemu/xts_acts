@@ -85,12 +85,12 @@ export default function PictureGetGainmapPixelmapTest() {
 
 
     /**
-     * @tc.number    : PICTURE_GET_GAIN_MAP_PIXEL_MAP_001
-     * @tc.name      : picture_getGainmapPixelmap_abnormal_promise_001
-     * @tc.desc      : getGainmapPixelmap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   picture_getGainmapPixelmap_abnormal_promise_001
+     * @tc.number PICTURE_GET_GAIN_MAP_PIXEL_MAP_001
+     * @tc.desc   getGainmapPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('picture_getGainmapPixelmap_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'picture_getGainmapPixelmap_abnormal_promise_001';

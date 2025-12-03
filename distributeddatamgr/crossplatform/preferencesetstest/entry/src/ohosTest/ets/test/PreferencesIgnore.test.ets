@@ -40,7 +40,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesGetPreferences001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0600
      * @tc.desc   GetPreferences callback interface test
@@ -70,7 +69,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0600
      * @tc.desc   DeletePreferences callback interface test
@@ -107,7 +105,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeletePreferences003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1500
      * @tc.desc   DeletePreferences callback interface test
@@ -146,7 +143,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCache002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1000
      * @tc.desc   RemovePreferencesFromCache callback interface test
@@ -182,7 +178,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetPreferencesHelper0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0400
      * @tc.desc   GetPreferences interface test
@@ -204,7 +199,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetPreferencesHelper0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1000
      * @tc.desc   GetPreferences interface test
@@ -226,7 +220,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCacheHelper0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1100
      * @tc.desc   RemovePreferencesFromCache interface test
@@ -249,7 +242,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCacheHelper0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1200
      * @tc.desc   RemovePreferencesFromCache interface test
@@ -272,7 +264,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1700
      * @tc.desc   DeletePreferences interface test
@@ -295,7 +286,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1900
      * @tc.desc   DeletePreferences interface test
@@ -318,7 +308,6 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2000
      * @tc.desc   DeletePreferences interface test

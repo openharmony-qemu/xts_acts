@@ -43,12 +43,12 @@ export default function blurStyleOptions() {
     });
 
     /**
-     * @tc.number: MenuStyleOptionsTest_0101
-     * @tc.name  : MenuStyleOptionsTest_0101
-     * @tc.desc  : Menu component interface backgroundBlurStyleOptions
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   MenuStyleOptionsTest_0101
+     * @tc.number MenuStyleOptionsTest_0101
+     * @tc.desc   Menu component interface backgroundBlurStyleOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MenuStyleOptionsTest_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('MenuStyleOptionsTest_0101 START');
@@ -92,12 +92,12 @@ export default function blurStyleOptions() {
     });
 
     /**
-     * @tc.number: MenuStyleOptionsTest_0102
-     * @tc.name  : MenuStyleOptionsTest_0102
-     * @tc.desc  : Menu component interface backgroundBlurStyleOptions
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   MenuStyleOptionsTest_0102
+     * @tc.number MenuStyleOptionsTest_0102
+     * @tc.desc   Menu component interface backgroundBlurStyleOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MenuStyleOptionsTest_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('MenuStyleOptionsTest_0102 START');
@@ -124,12 +124,12 @@ export default function blurStyleOptions() {
     });
 
     /**
-     * @tc.number: MenuStyleOptionsTest_0103
-     * @tc.name  : MenuStyleOptionsTest_0103
-     * @tc.desc  : Menu component interface backgroundBlurStyleOptions
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   MenuStyleOptionsTest_0103
+     * @tc.number MenuStyleOptionsTest_0103
+     * @tc.desc   Menu component interface backgroundBlurStyleOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MenuStyleOptionsTest_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('MenuStyleOptionsTest_0103 START');

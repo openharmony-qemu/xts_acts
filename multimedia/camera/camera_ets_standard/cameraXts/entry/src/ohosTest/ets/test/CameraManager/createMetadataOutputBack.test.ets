@@ -89,12 +89,12 @@ export default function createMetadataOutputBackTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_001
-     * @tc.name      : createMetadataOutput_back_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createMetadataOutput_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_001
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createMetadataOutput_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createMetadataOutput_back_001';
@@ -134,12 +134,12 @@ export default function createMetadataOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_002
-     * @tc.name      : createMetadataOutput_back_002
-     * @tc.desc      : No abnormal scenarios-new metadataObjectTypes
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createMetadataOutput_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_002
+     * @tc.desc   No abnormal scenarios-new metadataObjectTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createMetadataOutput_back_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createMetadataOutput_back_002';
@@ -148,12 +148,12 @@ export default function createMetadataOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_003
-     * @tc.name      : createMetadataOutput_back_003
-     * @tc.desc      : No abnormal scenarios-sceneMode: SECURE_PHOTO, normal outputCap list
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createMetadataOutput_back_003
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_003
+     * @tc.desc   No abnormal scenarios-sceneMode: SECURE_PHOTO, normal outputCap list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createMetadataOutput_back_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createMetadataOutput_back_003';
@@ -168,12 +168,12 @@ export default function createMetadataOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_004
-     * @tc.name      : createMetadataOutput_abnormal_back_001
-     * @tc.desc      : metadataObjectTypes->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createMetadataOutput_abnormal_back_001
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_004
+     * @tc.desc   metadataObjectTypes->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createMetadataOutput_abnormal_back_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'createMetadataOutput_abnormal_back_001';
@@ -181,12 +181,12 @@ export default function createMetadataOutputBackTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_005
-     * @tc.name      : createMetadataOutput_abnormal_back_002
-     * @tc.desc      : metadataObjectTypes->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createMetadataOutput_abnormal_back_002
+     * @tc.number CAMERA_MANAGER_CREATE_METADATA_OUTPUT_BACK_005
+     * @tc.desc   metadataObjectTypes->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createMetadataOutput_abnormal_back_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'createMetadataOutput_abnormal_back_002';

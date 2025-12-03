@@ -102,7 +102,7 @@ struct WebSageLoadOne {
   build() {
     Column() {
       Row() {
-        Button('web click').key('webcomponent').onClick(async () => {
+        Button('web click').key('webSafeLoadButton').onClick(async () => {
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
           this.isReceive = -1;

@@ -84,10 +84,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0280
-	 * @tc.name       testGetProperties_Promise
-	 * @tc.desc       Get the current application main window properties
-	 */
+         * @tc.name   testGetProperties_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0280
+         * @tc.desc   Get the current application main window properties
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetProperties_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getProperties_Test_001';
             console.log(msgStr + ' begin');
@@ -125,10 +128,13 @@ export default function window_test() {
         })
 
         /**
-        * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0270
-        * @tc.name      testGetProperties_Callback
-        * @tc.desc      Get the current application main window properties
-        */
+         * @tc.name   testGetProperties_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0270
+         * @tc.desc   Get the current application main window properties
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetProperties_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getProperties_Test_002';
             console.log(msgStr + ' begin');
@@ -167,10 +173,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0170
-	 * @tc.name       testGetAvoidArea_SystemUI_Type_Promise
-	 * @tc.desc       Get SystemUI type avoidance area
-	 */
+         * @tc.name   testGetAvoidArea_SystemUI_Type_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0170
+         * @tc.desc   Get SystemUI type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_SystemUI_Type_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidArea_Test_001';
             console.log(msgStr + ' begin');
@@ -198,10 +207,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0160
-	 * @tc.name       testGetAvoidArea_Notch_Type_Promise
-	 * @tc.desc       Get Notch type avoidance area
-	 */
+         * @tc.name   testGetAvoidArea_Notch_Type_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0160
+         * @tc.desc   Get Notch type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_Notch_Type_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidArea_Test_002';
             console.log(msgStr + ' begin');
@@ -229,10 +241,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0190
-	 * @tc.name       testGetAvoidArea_System_Gesture_Type_Promise
-	 * @tc.desc       Get system gesture type avoidance area
-	 */
+         * @tc.name   testGetAvoidArea_System_Gesture_Type_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0190
+         * @tc.desc   Get system gesture type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_System_Gesture_Type_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidArea_Test_003';
             console.log(msgStr + ' begin');
@@ -260,10 +275,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0210
-     * @tc.name      testGetAvoidArea_System_Type_Promise
-     * @tc.desc      Get System type avoidance area
-     */
+         * @tc.name   testGetAvoidArea_System_Type_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0210
+         * @tc.desc   Get System type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_System_Type_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidArea_Test_004';
             console.log(msgStr + ' begin');
@@ -288,10 +306,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0140
-     * @tc.name      testGetAvoidArea_Cutout_Type_Callback
-     * @tc.desc      Get Cutout type avoidance area
-     */
+         * @tc.name   testGetAvoidArea_Cutout_Type_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0140
+         * @tc.desc   Get Cutout type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_Cutout_Type_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidArea_Test_005';
             console.log(msgStr + ' begin');
@@ -321,10 +342,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0180
-     * @tc.name      testGetAvoidArea_System_Gesture_Type_Callback
-     * @tc.desc      Get system gesture type avoidance area
-     */
+         * @tc.name   testGetAvoidArea_System_Gesture_Type_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0180
+         * @tc.desc   Get system gesture type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_System_Gesture_Type_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidArea_Test_006';
             console.log(msgStr + ' begin');
@@ -353,10 +377,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0820
-	 * @tc.name       testSetFullScreen_Parameter1_Promise
-	 * @tc.desc       Set the window to be non-fullscreen first and then fullscreen
-	 */
+         * @tc.name   testSetFullScreen_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0820
+         * @tc.desc   Set the window to be non-fullscreen first and then fullscreen
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFullScreen_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFullScreen_Test_001';
             console.log(msgStr + ' begin');
@@ -402,10 +429,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0830
-     * @tc.name      testSetFullScreen_Parameter2_Callback
-     * @tc.desc      Set the window to be non-fullscreen first and then fullscreen.
-     */
+         * @tc.name   testSetFullScreen_Parameter2_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0830
+         * @tc.desc   Set the window to be non-fullscreen first and then fullscreen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFullScreen_Parameter2_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFullScreen_Test_002';
             console.log(msgStr + ' begin');
@@ -456,10 +486,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0880
-	 * @tc.name       testSetLayoutFullScreen_Parameter1_Promise
-	 * @tc.desc       Set window and layout to full screen
-	 */
+         * @tc.name   testSetLayoutFullScreen_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0880
+         * @tc.desc   Set window and layout to full screen
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetLayoutFullScreen_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_001';
             console.log(msgStr + ' begin');
@@ -503,10 +536,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0890
-     * @tc.name      testSetLayoutFullScreen_Parameter2_Callback
-     * @tc.desc      Set window and layout to full screen.
-     */
+         * @tc.name   testSetLayoutFullScreen_Parameter2_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0890
+         * @tc.desc   Set window and layout to full screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetLayoutFullScreen_Parameter2_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_002';
             console.log(msgStr + ' begin');
@@ -559,10 +595,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0900
-	 * @tc.name       testSetLayoutFullScreen_Parameter3_Promise
-	 * @tc.desc       Set the window to full screen, the layout is not full screen
-	 */
+         * @tc.name   testSetLayoutFullScreen_Parameter3_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0900
+         * @tc.desc   Set the window to full screen, the layout is not full screen
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetLayoutFullScreen_Parameter3_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_003';
             console.log(msgStr + ' begin');
@@ -606,10 +645,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0910
-     * @tc.name      testSetLayoutFullScreen_Parameter4_Callback
-     * @tc.desc      Set the window to full screen, the layout is not full screen
-     */
+         * @tc.name   testSetLayoutFullScreen_Parameter4_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0910
+         * @tc.desc   Set the window to full screen, the layout is not full screen
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetLayoutFullScreen_Parameter4_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_004';
             console.log(msgStr + ' begin');
@@ -660,10 +702,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0920
-	 * @tc.name       testSetLayoutFullScreen_Parameter5_Promise
-	 * @tc.desc       Set the window to be non-full-screen and the layout to be full-screen
-	 */
+         * @tc.name   testSetLayoutFullScreen_Parameter5_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0920
+         * @tc.desc   Set the window to be non-full-screen and the layout to be full-screen
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetLayoutFullScreen_Parameter5_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_005';
             console.log(msgStr + ' begin');
@@ -708,10 +753,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0930
-     * @tc.name      testSetLayoutFullScreen_Parameter6_Callback
-     * @tc.desc      Set the window to be non-full-screen and the layout to be full-screen.
-     */
+         * @tc.name   setLayoutFullScreen_Test_006
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0930
+         * @tc.desc   Set the window to be non-full-screen and the layout to be full-screen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setLayoutFullScreen_Test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_006';
             console.log(msgStr + ' begin');
@@ -761,10 +809,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0940
-	 * @tc.name       Test testSetLayoutFullScreen_Parameter7_Promise
-	 * @tc.desc       Setting windows and layouts to be non-fullscreen
-	 */
+         * @tc.name   setLayoutFullScreen_Test_007
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0940
+         * @tc.desc   Setting windows and layouts to be non-fullscreen
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setLayoutFullScreen_Test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_007';
             console.log(msgStr + ' begin');
@@ -807,10 +858,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0950
-     * @tc.name      testSetLayoutFullScreen_Parameter8_Callback
-     * @tc.desc      Setting window and layouts to be non-fullscreen.
-     */
+         * @tc.name   testSetLayoutFullScreen_Parameter8_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0950
+         * @tc.desc   Setting window and layouts to be non-fullscreen.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetLayoutFullScreen_Parameter8_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setLayoutFullScreen_Test_008';
             console.log(msgStr + ' begin');
@@ -861,10 +915,13 @@ export default function window_test() {
 
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0090
-	 * @tc.name       testFindWindow_Main_Window_Promise
-	 * @tc.desc       Query main window
-	 */
+         * @tc.name   testFindWindow_Main_Window_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0090
+         * @tc.desc   Query main window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testFindWindow_Main_Window_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'find_Test_001';
             console.log(msgStr + ' begin');
@@ -880,10 +937,13 @@ export default function window_test() {
         })
 
         /**
-	 * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0110
-	 * @tc.name       testFindWindow_Non_Existing_Window_Promise
-	 * @tc.desc       Query for non-existing windows
-	 */
+         * @tc.name   testFindWindow_Non_Existing_Window_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0110
+         * @tc.desc   Query for non-existing windows
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('testFindWindow_Non_Existing_Window_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let msgStr = 'find_Test_002';
             console.log(msgStr + ' begin');
@@ -899,10 +959,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0080
-     * @tc.name      testFindWindow_Main_Window_Callback
-     * @tc.desc      Query main window.
-     */
+         * @tc.name   testFindWindow_Main_Window_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0080
+         * @tc.desc   Query main window.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testFindWindow_Main_Window_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'find_Test_003';
             console.log(msgStr + ' begin');
@@ -920,10 +983,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0100
-     * @tc.name      testFindWindow_Non_Existing_Window_Callback
-     * @tc.desc      Query for non-existing windows
-     */
+         * @tc.name   testFindWindow_Non_Existing_Window_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0100
+         * @tc.desc   Query for non-existing windows
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('testFindWindow_Non_Existing_Window_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let msgStr = 'find_Test_004';
             console.log(msgStr + ' begin');
@@ -942,10 +1008,13 @@ export default function window_test() {
 
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0410
-     * @tc.name      testOnOff_SystemAvoidAreaChange_Callback
-     * @tc.desc      To verify the function of enabling and disabling intercepting when the window size changes.
-     */
+         * @tc.name   testOnOff_SystemAvoidAreaChange_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0410
+         * @tc.desc   To verify the function of enabling and disabling intercepting when the window size changes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testOnOff_SystemAvoidAreaChange_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'onOff_Test_001';
             console.log(msgStr + ' begin');
@@ -971,10 +1040,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0310
-     * @tc.name        testIsShowing_Promise
-     * @tc.desc        To verify the function of obtaining the display status when a window is hidden and then displayed.
-     */
+         * @tc.name   testIsShowing_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0310
+         * @tc.desc   To verify the function of obtaining the display status when a window is hidden and then displayed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testIsShowing_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'isShowing_Test_001';
             console.log(msgStr + ' begin');
@@ -1019,10 +1091,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0300
-     * @tc.name      testIsShowing_Callback
-     * @tc.desc      To verify the function of obtaining the display status when a window is hidden and then displayed.
-     */
+         * @tc.name   testIsShowing_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0300
+         * @tc.desc   To verify the function of obtaining the display status when a window is hidden and then displayed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testIsShowing_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'isShowing_Test_002';
             console.log(msgStr + ' begin');
@@ -1076,10 +1151,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0710
-     * @tc.name        testSetColorSpace_IsSupportWideGamut_Wide_Gaumt_Promise
-     * @tc.desc        To verify the setting of the wide color gamut color space
-     */
+         * @tc.name   testSetColorSpace_IsSupportWideGamut_Wide_Gaumt_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0710
+         * @tc.desc   To verify the setting of the wide color gamut color space
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetColorSpace_IsSupportWideGamut_Wide_Gaumt_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setColorSpace_Test_001';
             console.log(msgStr + ' begin');
@@ -1117,10 +1195,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0730
-     * @tc.name        testSetColorSpace_Parameter_Promise
-     * @tc.desc        To verify that the color space of invaild values is set successfully
-     */
+         * @tc.name   testSetColorSpace_Parameter_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0730
+         * @tc.desc   To verify that the color space of invaild values is set successfully
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetColorSpace_Parameter_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setColorSpace_Test_002';
             console.log(msgStr + ' begin');
@@ -1144,10 +1225,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0700
-     * @tc.name      testSetColorSpace_IsSupportWideGamut_Wide_Gaumt_Callback
-     * @tc.desc      To verify the setting of the wide color gamut color space
-     */
+         * @tc.name   testSetColorSpace_IsSupportWideGamut_Wide_Gaumt_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0700
+         * @tc.desc   To verify the setting of the wide color gamut color space
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetColorSpace_IsSupportWideGamut_Wide_Gaumt_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setColorSpace_Test_003';
             console.log(msgStr + ' begin');
@@ -1189,10 +1273,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0720
-     * @tc.name      testSetColorSpace_Parameter_Callback
-     * @tc.desc      To verify that the color space of invalid values is set successfully
-     */
+         * @tc.name   testSetColorSpace_Parameter_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0720
+         * @tc.desc   To verify that the color space of invalid values is set successfully
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetColorSpace_Parameter_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setColorSpace_Test_004';
             console.log(msgStr + ' begin');
@@ -1218,10 +1305,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0020
-     * @tc.name			testCreateWindow_Promise
-     * @tc.desc			To verify the function of creating an application subwindow.
-     */
+         * @tc.name   testCreateWindow_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0020
+         * @tc.desc   To verify the function of creating an application subwindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testCreateWindow_Promise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'create_Test_001';
             console.log(msgStr + ' begin');
@@ -1248,10 +1338,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0010
-     * @tc.name      testCreateWindow_Callback
-     * @tc.desc      To verify the function of creating an application subwindow
-     */
+         * @tc.name   testCreateWindow_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0010
+         * @tc.desc   To verify the function of creating an application subwindow
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testCreateWindow_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'create_Test_002';
             console.log(msgStr + ' begin');
@@ -1279,10 +1372,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0050
-     * @tc.name			testDestroyWiondow_Promise
-     * @tc.desc			Verify that a window is destroyed after being created
-     */
+         * @tc.name   testDestroyWiondow_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0050
+         * @tc.desc   Verify that a window is destroyed after being created
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testDestroyWiondow_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'destroy_Test_001';
             console.log(msgStr + ' begin');
@@ -1317,10 +1413,13 @@ export default function window_test() {
             })
         })
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0040
-     * @tc.name      testDestroyWiondow_Callback
-     * @tc.desc      Verify that a window is destroyed after being created
-     */
+         * @tc.name   testDestroyWiondow_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0040
+         * @tc.desc   Verify that a window is destroyed after being created
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testDestroyWiondow_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'destroy_Test_002';
             console.log(msgStr + ' begin');
@@ -1362,10 +1461,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1000
-     * @tc.name			testSetSystemBarEnable_Parameter1_Promise
-     * @tc.desc			To verify the function of setting a scenario that is visible to the system bar
-     */
+         * @tc.name   setSystemBarEnable_Test_001
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1000
+         * @tc.desc   To verify the function of setting a scenario that is visible to the system bar
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setSystemBarEnable_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setSystemBarEnable_Test_001';
             console.log(msgStr + ' begin');
@@ -1396,10 +1498,13 @@ export default function window_test() {
 
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1010
-     * @tc.name      testSetSystemBarEnable_Parameter2_Callback
-     * @tc.desc      To verify the function of setting a scenario that is visible to the system bar
-     */
+         * @tc.name   testSetSystemBarEnable_Parameter2_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1010
+         * @tc.desc   To verify the function of setting a scenario that is visible to the system bar
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetSystemBarEnable_Parameter2_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setSystemBarEnable_Test_002';
             console.log(msgStr + ' begin');
@@ -1427,10 +1532,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1020
-     * @tc.name			testSetSystemBarProperties_Parameter1_Promise
-     * @tc.desc			To verify the function of setting system bar attributes
-     */
+         * @tc.name   testSetSystemBarProperties_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1020
+         * @tc.desc   To verify the function of setting system bar attributes
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetSystemBarProperties_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setSystemBarProperties_Test_001';
             console.log(msgStr + ' begin');
@@ -1462,10 +1570,13 @@ export default function window_test() {
 
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_002
-     * @tc.name      testSetSystemBarProperties_Parameter2_Callback
-     * @tc.desc      To verify the function of setting system bar attributes
-     */
+         * @tc.name   testSetSystemBarProperties_Parameter2_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_002
+         * @tc.desc   To verify the function of setting system bar attributes
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetSystemBarProperties_Parameter2_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setSystemBarProperties_Test_002';
             console.log(msgStr + ' begin');
@@ -1500,10 +1611,13 @@ export default function window_test() {
 
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0330
-     * @tc.name      testMoveTo_Parameter1_Callback
-     * @tc.desc      Verify the scene where the window moves
-     */
+         * @tc.name   testMoveTo_Parameter1_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0330
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMoveTo_Parameter1_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
             let msgStr = 'move_Test_001';
             console.log(msgStr + ' begin');
@@ -1524,10 +1638,13 @@ export default function window_test() {
             })
         })
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
-    * @tc.name       testMoveTo_Parameter2_Promise
-    * @tc.desc       Verify the scene where the window moves
-    */
+         * @tc.name   testMoveTo_Parameter2_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMoveTo_Parameter2_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'move_Test_002';
             console.log(msgStr + ' begin');
@@ -1551,10 +1668,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0350
-    * @tc.name       testMoveTo_Parameter3_Promise
-    * @tc.desc       Verify the scene where the window moves
-    */
+         * @tc.name   testMoveTo_Parameter3_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0350
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMoveTo_Parameter3_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'move_Test_003';
             console.log(msgStr + ' begin');
@@ -1578,10 +1698,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0360
-    * @tc.name       testMoveTo_Parameter4_Promise
-    * @tc.desc       Verify the scene where the window moves
-    */
+         * @tc.name   testMoveTo_Parameter4_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0360
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMoveTo_Parameter4_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'move_Test_004';
             console.log(msgStr + ' begin');
@@ -1605,10 +1728,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0370
-    * @tc.name       testMoveTo_Parameter5_Promise
-    * @tc.desc       Verify that the window is moved into the normal scene
-    */
+         * @tc.name   testMoveTo_Parameter5_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0370
+         * @tc.desc   Verify that the window is moved into the normal scene
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMoveTo_Parameter5_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'move_Test_005';
             console.log(msgStr + ' begin');
@@ -1633,10 +1759,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0380
-    * @tc.name       testMoveTo_Parameter6_Callback
-    * @tc.desc       Verify the scene where the window moves
-    */
+         * @tc.name   testMoveTo_Parameter6_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0380
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMoveTo_Parameter6_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'move_Test_006';
             console.log(msgStr + ' begin');
@@ -1662,10 +1791,13 @@ export default function window_test() {
         })
 
         /**
-	* @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0390
-	* @tc.name      testMove_Test_007
-	* @tc.desc      Verify the scene where the window moves
-	*/
+         * @tc.name   testMove_Test_007
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0390
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMove_Test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'move_Test_007';
             console.log(msgStr + ' begin');
@@ -1689,10 +1821,13 @@ export default function window_test() {
         })
 
         /**
-	* @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0320
-	* @tc.name      testMoveTo_Multi_Parameter1_Promise
-	* @tc.desc      Verify the scene where the window moves
-	*/
+         * @tc.name   testMoveTo_Multi_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0320
+         * @tc.desc   Verify the scene where the window moves
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testMoveTo_Multi_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'move_Test_008';
             console.log(msgStr + ' begin');
@@ -1721,10 +1856,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0420
-    * @tc.name       testResetSize_Parameter1_Promise
-    * @tc.desc       Verify the scene where the window resets size
-    */
+         * @tc.name   testResetSize_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0420
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'resetSize_Test_001';
             console.log(msgStr + ' begin');
@@ -1748,10 +1886,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0430
-    * @tc.name       testResetSize_Parameter2_Promise
-    * @tc.desc       Verify the scene where the window resets size
-    */
+         * @tc.name   testResetSize_Parameter2_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0430
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Parameter2_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'resetSize_Test_002';
             console.log(msgStr + ' begin');
@@ -1775,10 +1916,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0440
-    * @tc.name       testResetSize_Parameter3_Promise
-    * @tc.desc       Verify the scene where the window resets size
-    */
+         * @tc.name   testResetSize_Parameter3_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0440
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Parameter3_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'resetSize_Test_003';
             console.log(msgStr + ' begin');
@@ -1802,10 +1946,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0450
-    * @tc.name       testResetSize_Parameter4_Promise
-    * @tc.desc       Verify the scene where the window resets size
-    */
+         * @tc.name   testResetSize_Parameter4_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0450
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Parameter4_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'resetSize_Test_004';
             console.log(msgStr + ' begin');
@@ -1829,10 +1976,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0470
-    * @tc.name       testResetSize_Repeat_5_Times_Parameter5_Promise
-    * @tc.desc       Verify the scene where the window resets size
-    */
+         * @tc.name   testResetSize_Repeat_5_Times_Parameter5_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0470
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Repeat_5_Times_Parameter5_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'resetSize_Test_005';
             console.log(msgStr + ' begin');
@@ -1858,10 +2008,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0460
-     * @tc.name      testResetSize_Parameter6_Callback
-     * @tc.desc      Verify the scene where the window resets size
-     */
+         * @tc.name   testResetSize_Parameter6_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0460
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Parameter6_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
             let msgStr = 'resetSize_Test_006';
             console.log(msgStr + ' begin');
@@ -1883,10 +2036,13 @@ export default function window_test() {
         })
 
         /**
-	* @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0480
-	* @tc.name      testResetSize_Repeat_5_Times_Parameter7_Promise
-	* @tc.desc      Verify the scene where the window resets size
-	*/
+         * @tc.name   testResetSize_Repeat_5_Times_Parameter7_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0480
+         * @tc.desc   Verify the scene where the window resets size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testResetSize_Repeat_5_Times_Parameter7_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             var width = 100;
             var height = 100;
@@ -1916,10 +2072,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0290
-    * @tc.name       testGetTopWindow_Promise
-    * @tc.desc       Verify the scene that gets the top window
-    */
+         * @tc.name   testGetTopWindow_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0290
+         * @tc.desc   Verify the scene that gets the top window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testGetTopWindow_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'getTopWindow_Test_001';
             console.log(msgStr + ' begin');
@@ -1935,10 +2094,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1110
-     * @tc.name			testWindowStageEventType_Enum_Value
-     * @tc.desc			To test the enum value of WindowStageEventType.
-     */
+         * @tc.name   testWindowStageEventType_Enum_Value
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1110
+         * @tc.desc   To test the enum value of WindowStageEventType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testWindowStageEventType_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'enumWindowStageEventType_Test_001';
             console.log(msgStr + ' begin');
@@ -1956,10 +2118,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1080
-    * @tc.name			testWindowColorSpace_Enum_Value
-    * @tc.desc			To test the enum value of WindowCOLORSPACE.
-    */
+         * @tc.name   testWindowColorSpace_Enum_Value
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1080
+         * @tc.desc   To test the enum value of WindowCOLORSPACE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testWindowColorSpace_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'enumWindowCOLORSPACE_Test_001';
             console.log(msgStr + ' begin');
@@ -1973,10 +2138,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1120
-     * @tc.name			testWindowType_Enum_Value
-     * @tc.desc			To test the enum value of WindowType.
-     */
+         * @tc.name   testWindowType_Enum_Value
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1120
+         * @tc.desc   To test the enum value of WindowType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testWindowType_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'enumWindowType_Test_001';
             console.log(msgStr + ' begin');
@@ -1989,10 +2157,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1100
-     * @tc.name	    testWindowProperties_Enum_Value
-     * @tc.desc		To test the enum value of WindowProperties.
-    */
+         * @tc.name   testWindowProperties_Enum_Value
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1100
+         * @tc.desc   To test the enum value of WindowProperties.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testWindowProperties_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'enumWindowProperties_Test_001';
             console.log(msgStr + ' begin');
@@ -2050,10 +2221,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0770
-     * @tc.name			testSetFocusable_Parameter1_Promise
-     * @tc.desc			Setting window focus acquisition and defocus
-     */
+         * @tc.name   testSetFocusable_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0770
+         * @tc.desc   Setting window focus acquisition and defocus
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFocusable_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFocusable_Test_001';
             console.log(msgStr + ' begin');
@@ -2094,10 +2268,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0780
-     * @tc.name			testSetFocusable_Parameter2_Promise
-     * @tc.desc			The setting window loses focus and cannot be touched
-     */
+         * @tc.name   testSetFocusable_Parameter2_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0780
+         * @tc.desc   The setting window loses focus and cannot be touched
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetFocusable_Parameter2_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setFocusable_Test_002';
             console.log(msgStr + ' begin');
@@ -2141,10 +2318,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0790
-     * @tc.name			testSetFocusable_Parameter3_Promise
-     * @tc.desc			Set the window to lose focus and be touchable
-     */
+         * @tc.name   testSetFocusable_Parameter3_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0790
+         * @tc.desc   Set the window to lose focus and be touchable
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFocusable_Parameter3_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFocusable_Test_003';
             console.log(msgStr + ' begin');
@@ -2188,10 +2368,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0800
-     * @tc.name			testSetFocusable_Parameter4_Promise
-     * @tc.desc			Setting the window to get focus is not touchable
-     */
+         * @tc.name   testSetFocusable_Parameter4_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0800
+         * @tc.desc   Setting the window to get focus is not touchable
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFocusable_Parameter4_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFocusable_Test_004';
             console.log(msgStr + ' begin');
@@ -2235,10 +2418,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0810
-     * @tc.name			testSetFocusable_Parameter5_Promise
-     * @tc.desc			Set the window to get focus and touch
-     */
+         * @tc.name   testSetFocusable_Parameter5_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0810
+         * @tc.desc   Set the window to get focus and touch
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFocusable_Parameter5_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFocusable_Test_005';
             console.log(msgStr + ' begin');
@@ -2282,10 +2468,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1050
-     * @tc.name		    testTouchable_Parameter1_Promise
-     * @tc.desc			Set whether the window can be touched or not
-     */
+         * @tc.name   testTouchable_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1050
+         * @tc.desc   Set whether the window can be touched or not
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testTouchable_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setTouchable_Test_001';
             console.log(msgStr + ' begin');
@@ -2336,10 +2525,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0860
-     * @tc.name			testSetKeepScreenOn_Parameter3_Promise
-     * @tc.desc			Set whether the window can be touched or not
-     */
+         * @tc.name   testSetKeepScreenOn_Parameter3_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0860
+         * @tc.desc   Set whether the window can be touched or not
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetKeepScreenOn_Parameter3_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setKeepScreenOn_Test_001';
             console.log(msgStr + ' begin');
@@ -2390,10 +2582,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0870
-     * @tc.name			testSetKeepScreenOn_Parameter4_Promise
-     * @tc.desc			Set whether the window can be touched or not
-     */
+         * @tc.name   testSetKeepScreenOn_Parameter4_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0870
+         * @tc.desc   Set whether the window can be touched or not
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetKeepScreenOn_Parameter4_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setKeepScreenOn_Test_002';
             console.log(msgStr + ' begin');
@@ -2446,10 +2641,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0560
-     * @tc.name			testSetBackgroundColor_IsTransparent_RGB_Promise
-     * @tc.desc			Set the window background color to red and Default opacity
-     */
+         * @tc.name   testSetBackgroundColor_IsTransparent_RGB_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0560
+         * @tc.desc   Set the window background color to red and Default opacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBackgroundColor_IsTransparent_RGB_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBackgroundColor_Test_001';
             console.log(msgStr + ' begin');
@@ -2479,10 +2677,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0550
-     * @tc.name			testSetBackgroundColor_IsTransparent_RGBA_Promise
-     * @tc.desc			Set the window background color to red opaque
-     */
+         * @tc.name   testSetBackgroundColor_IsTransparent_RGBA_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0550
+         * @tc.desc   Set the window background color to red opaque
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBackgroundColor_IsTransparent_RGBA_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBackgroundColor_Test_002';
             console.log(msgStr + ' begin');
@@ -2512,10 +2713,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0570
-     * @tc.name			testSetBackgroundColor_IsTransparent_Transparent_RGBA_Promise
-     * @tc.desc			Set the window background color to red transparent
-     */
+         * @tc.name   testSetBackgroundColor_IsTransparent_Transparent_RGBA_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0570
+         * @tc.desc   Set the window background color to red transparent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBackgroundColor_IsTransparent_Transparent_RGBA_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBackgroundColor_Test_003';
             console.log(msgStr + ' begin');
@@ -2545,10 +2749,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0540
-     * @tc.name			testSetBackgroundColor_Invalid_Parameter_Promise
-     * @tc.desc			Set the background color input parameter as an outlier
-     */
+         * @tc.name   testSetBackgroundColor_Invalid_Parameter_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0540
+         * @tc.desc   Set the background color input parameter as an outlier
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBackgroundColor_Invalid_Parameter_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBackgroundColor_Test_004';
             console.log(msgStr + ' begin');
@@ -2572,10 +2779,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0500
-     * @tc.name			testSetBackgroundColor_16bit_Invalid_Parameter_Promise
-     * @tc.desc			Setting window background color input exception ARGB
-     */
+         * @tc.name   testSetBackgroundColor_16bit_Invalid_Parameter_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0500
+         * @tc.desc   Setting window background color input exception ARGB
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBackgroundColor_16bit_Invalid_Parameter_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBackgroundColor_Test_005';
             console.log(msgStr + ' begin');
@@ -2599,10 +2809,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0520
-     * @tc.name			testSetBackgroundColor_8bit_Invalid_Parameter_Promise
-     * @tc.desc			Setting window background color input exception RGB
-     */
+         * @tc.name   testSetBackgroundColor_8bit_Invalid_Parameter_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0520
+         * @tc.desc   Setting window background color input exception RGB
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBackgroundColor_8bit_Invalid_Parameter_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBackgroundColor_Test_006';
             console.log(msgStr + ' begin');
@@ -2626,10 +2839,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0660
-     * @tc.name			testSetBrightness_Multi_Parameter1_Promise
-     * @tc.desc			Setting the brightness bar input parameter is normal
-     */
+         * @tc.name   testSetBrightness_Multi_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0660
+         * @tc.desc   Setting the brightness bar input parameter is normal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBrightness_Multi_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBrightness_Test_001';
             console.log(msgStr + ' begin');
@@ -2691,10 +2907,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0680
-     * @tc.name			testSetBrightness_Parameter1_Promise
-     * @tc.desc			Set the brightness bar input parameter to decimal
-     */
+         * @tc.name   testSetBrightness_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0680
+         * @tc.desc   Set the brightness bar input parameter to decimal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBrightness_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBrightness_Test_002';
             console.log(msgStr + ' begin');
@@ -2725,10 +2944,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0630
-     * @tc.name			testSetBrightness_Invalid_Parameter_MAX_Value_Promise
-     * @tc.desc			Set the brightness bar input parameter to number max
-     */
+         * @tc.name   testSetBrightness_Invalid_Parameter_MAX_Value_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0630
+         * @tc.desc   Set the brightness bar input parameter to number max
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBrightness_Invalid_Parameter_MAX_Value_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBrightness_Test_003';
             console.log(msgStr + ' begin');
@@ -2752,10 +2974,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0650
-     * @tc.name			testSetBrightness_Invalid_Parameter_MIN_Value_Promise
-     * @tc.desc			Set the brightness bar input parameter to number min
-     */
+         * @tc.name   testSetBrightness_Invalid_Parameter_MIN_Value_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0650
+         * @tc.desc   Set the brightness bar input parameter to number min
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBrightness_Invalid_Parameter_MIN_Value_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBrightness_Test_004';
             console.log(msgStr + ' begin');
@@ -2779,10 +3004,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0610
-     * @tc.name			testSetBrightness_Invalid_Multi_Parameter1_Promise
-     * @tc.desc			Setting brightness bar input parameter exception
-     */
+         * @tc.name   testSetBrightness_Invalid_Multi_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0610
+         * @tc.desc   Setting brightness bar input parameter exception
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBrightness_Invalid_Multi_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBrightness_Test_005';
             console.log(msgStr + ' begin');
@@ -2814,10 +3042,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0750
-     * @tc.name			testSetDimBehind_DeviceNotSupport_Promise
-     * @tc.desc			Set the setDimBehind interface invalid
-     */
+         * @tc.name   testSetDimBehind_DeviceNotSupport_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0750
+         * @tc.desc   Set the setDimBehind interface invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetDimBehind_DeviceNotSupport_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setDimBehindDeviceNotSupport_Test_001';
             console.log(msgStr + ' begin');
@@ -2841,10 +3072,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0740
-     * @tc.name			testSetDimBehind_DeviceNotSupport_Callback
-     * @tc.desc			Set the setDimBehind interface invalid
-     */
+         * @tc.name   testSetDimBehind_DeviceNotSupport_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0740
+         * @tc.desc   Set the setDimBehind interface invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetDimBehind_DeviceNotSupport_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setDimBehindDeviceNotSupport_Test_002';
             console.log(msgStr + ' begin');
@@ -2870,10 +3104,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0960
-     * @tc.name			testSetOutsideTouchable_Parameter1_Promise
-     * @tc.desc			Set the setOutsideTouchable interface invalid
-     */
+         * @tc.name   testSetOutsideTouchable_Parameter1_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0960
+         * @tc.desc   Set the setOutsideTouchable interface invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetOutsideTouchable_Parameter1_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setOutsideTouchable_Test_001';
             console.log(msgStr + ' begin');
@@ -2897,10 +3134,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0970
-     * @tc.name			testSetOutsideTouchable_Parameter2_Promise
-     * @tc.desc			Set the setOutsideTouchable interface invalid
-     */
+         * @tc.name   testSetOutsideTouchable_Parameter2_Promise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0970
+         * @tc.desc   Set the setOutsideTouchable interface invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetOutsideTouchable_Parameter2_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setOutsideTouchable_Test_002';
             console.log(msgStr + ' begin');
@@ -2924,10 +3164,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0980
-     * @tc.name			testSetOutsideTouchable_Parameter3_Callback
-     * @tc.desc			Set the setOutsideTouchable interface invalid
-     */
+         * @tc.name   testSetOutsideTouchable_Parameter3_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0980
+         * @tc.desc   Set the setOutsideTouchable interface invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetOutsideTouchable_Parameter3_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setOutsideTouchable_Test_003';
             console.log(msgStr + ' begin');
@@ -2953,10 +3196,13 @@ export default function window_test() {
         })
 
         /**
-    * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0990
-    * @tc.name			testSetOutsideTouchable_Parameter4_Callback
-    * @tc.desc			Set the setOutsideTouchable interface invalid
-    */
+         * @tc.name   testSetOutsideTouchable_Parameter4_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0990
+         * @tc.desc   Set the setOutsideTouchable interface invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetOutsideTouchable_Parameter4_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setOutsideTouchable_Test_004';
             console.log(msgStr + ' begin');
@@ -2982,10 +3228,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1090
-     * @tc.name			testWindowOrientation_Enum_Value
-     * @tc.desc			To test the enum value of Orientation.
-     */
+         * @tc.name   testWindowOrientation_Enum_Value
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1090
+         * @tc.desc   To test the enum value of Orientation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testWindowOrientation_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'setOutsideTouchable_Test_004';
             console.log(msgStr + ' begin');
@@ -3011,10 +3260,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0840
-     * @tc.name			testSetKeepScreenOn_Parameter1_Callback
-    * @tc.desc			Set whether setKeepScreenOn or not
-    */
+         * @tc.name   testSetKeepScreenOn_Parameter1_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0840
+         * @tc.desc   Set whether setKeepScreenOn or not
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetKeepScreenOn_Parameter1_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setKeepScreenOnCallBack_Test_001';
             console.log(msgStr + ' begin');
@@ -3053,10 +3305,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0850
-     * @tc.name			testSetKeepScreenOn_Parameter2_Callback
-     * @tc.desc			Set whether the window can be touched or not
-     */
+         * @tc.name   testSetKeepScreenOn_Parameter2_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0850
+         * @tc.desc   Set whether the window can be touched or not
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetKeepScreenOn_Parameter2_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setKeepScreenOnCallBack_Test_002';
             console.log(msgStr + ' begin');
@@ -3106,10 +3361,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0590
-     * @tc.name			testSetBackgroundColor_RGB_Callback
-     * @tc.desc			Set the window background color to red and Default opacity
-     */
+         * @tc.name   testSetBackgroundColor_RGB_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0590
+         * @tc.desc   Set the window background color to red and Default opacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBackgroundColor_RGB_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBackgroundColorCallBack_Test_001';
             console.log(msgStr + ' begin');
@@ -3141,10 +3399,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0580
-     * @tc.name			testSetBackgroundColor_RGBA_Callback
-    * @tc.desc			Set the window background color to red opaque
-    */
+         * @tc.name   testSetBackgroundColor_RGBA_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0580
+         * @tc.desc   Set the window background color to red opaque
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBackgroundColor_RGBA_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBackgroundColorCallBack_Test_002';
             console.log(msgStr + ' begin');
@@ -3176,10 +3437,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0600
-     * @tc.name			testSetBackgroundColor_Transparent_RGBA_Callback
-     * @tc.desc			Set the window background color to red transparent
-     */
+         * @tc.name   testSetBackgroundColor_Transparent_RGBA_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0600
+         * @tc.desc   Set the window background color to red transparent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBackgroundColor_Transparent_RGBA_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBackgroundColorCallBack_Test_003';
             console.log(msgStr + ' begin');
@@ -3211,10 +3475,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0530
-     * @tc.name			testSetBackgroundColor_Invalid_Parameter_Callback
-     * @tc.desc			Set the background color input parameter as an outlier
-     */
+         * @tc.name   testSetBackgroundColor_Invalid_Parameter_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0530
+         * @tc.desc   Set the background color input parameter as an outlier
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBackgroundColor_Invalid_Parameter_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBackgroundColorCallBack_Test_004';
             console.log(msgStr + ' begin');
@@ -3240,10 +3507,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0510
-     * @tc.name			testSetBackgroundColor_8bit_Invalid_Parameter_Callback
-     * @tc.desc			Setting window background color input exception ARGB
-     */
+         * @tc.name   testSetBackgroundColor_8bit_Invalid_Parameter_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0510
+         * @tc.desc   Setting window background color input exception ARGB
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBackgroundColor_8bit_Invalid_Parameter_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBackgroundColorCallBack_Test_005';
             console.log(msgStr + ' begin');
@@ -3269,10 +3539,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0490
-     * @tc.name			testSetBackgroundColor_16bit_Invalid_Parameter_Callback
-     * @tc.desc			Setting window background color input exception RGB
-     */
+         * @tc.name   testSetBackgroundColor_16bit_Invalid_Parameter_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0490
+         * @tc.desc   Setting window background color input exception RGB
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBackgroundColor_16bit_Invalid_Parameter_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBackgroundColorCallBack_Test_006';
             console.log(msgStr + ' begin');
@@ -3298,10 +3571,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0670
-     * @tc.name			testSetBrightness_Parameter1_Callback
-     * @tc.desc			Set the brightness bar input parameter to decimal
-     */
+         * @tc.name   testSetBrightness_Parameter1_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0670
+         * @tc.desc   Set the brightness bar input parameter to decimal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetBrightness_Parameter1_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setBrightnessCallBack_Test_002';
             console.log(msgStr + ' begin');
@@ -3335,10 +3611,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0620
-     * @tc.name			testSetBrightness_Invalid_Parameter_MAX_Value_Callback
-     * @tc.desc			Set the brightness bar input parameter to number max
-     */
+         * @tc.name   testSetBrightness_Invalid_Parameter_MAX_Value_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0620
+         * @tc.desc   Set the brightness bar input parameter to number max
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBrightness_Invalid_Parameter_MAX_Value_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBrightnessCallBack_Test_003';
             console.log(msgStr + ' begin');
@@ -3364,10 +3643,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0640
-     * @tc.name			testSetBrightness_Invalid_Parameter_MIN_Value_Callback
-     * @tc.desc			Set the brightness bar input parameter to number min
-     */
+         * @tc.name   testSetBrightness_Invalid_Parameter_MIN_Value_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0640
+         * @tc.desc   Set the brightness bar input parameter to number min
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBrightness_Invalid_Parameter_MIN_Value_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBrightnessCallBack_Test_004';
             console.log(msgStr + ' begin');
@@ -3393,10 +3675,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0690
-     * @tc.name			testSetBrightness_Parameter2_Callback
-     * @tc.desc			Setting brightness bar input parameter exception
-     */
+         * @tc.name   testSetBrightness_Parameter2_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0690
+         * @tc.desc   Setting brightness bar input parameter exception
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetBrightness_Parameter2_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'setBrightnessCallBack_Test_004';
             console.log(msgStr + ' begin');
@@ -3422,10 +3707,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1040
-     * @tc.name			testSetTouchable_Parameter1_Callback
-     * @tc.desc			Set whether the window can be touched or not
-    */
+         * @tc.name   testSetTouchable_Parameter1_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1040
+         * @tc.desc   Set whether the window can be touched or not
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetTouchable_Parameter1_Callback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setTouchableCallBack_Test_001';
             console.log(msgStr + ' begin');
@@ -3471,10 +3759,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0760
-     * @tc.name			testSetFocusable_Callback
-     * @tc.desc			Setting window focus acquisition and defocus
-     */
+         * @tc.name   testSetFocusable_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0760
+         * @tc.desc   Setting window focus acquisition and defocus
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetFocusable_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let msgStr = 'setFocusableCallBack_Test_001';
             console.log(msgStr + ' begin');
@@ -3521,10 +3812,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1070
-     * @tc.name			testWindowAvoidAreaType_Enum_Value
-     * @tc.desc			To test the enum value of avoidareatype.
-    */
+         * @tc.name   testWindowAvoidAreaType_Enum_Value
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1070
+         * @tc.desc   To test the enum value of avoidareatype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testWindowAvoidAreaType_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let msgStr = 'enumAvoidAreaType_Test_001';
             console.log(msgStr + ' begin');
@@ -3543,10 +3837,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0200
-     * @tc.name      testGetAvoidArea_Sytem_Type_Callback
-     * @tc.desc      Get System type avoidance area
-    */
+         * @tc.name   testGetAvoidArea_Sytem_Type_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0200
+         * @tc.desc   Get System type avoidance area
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_Sytem_Type_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'enumAvoidAreaType_Test_001';
             console.log(msgStr + ' begin');
@@ -3571,10 +3868,13 @@ export default function window_test() {
         })
 
         /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0150
-     * @tc.name      testGetAvoidArea_Invalid_Parameter_Callback
-     * @tc.desc      Get invalid parameter avoidarea
-     */
+         * @tc.name   testGetAvoidArea_Invalid_Parameter_Callback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0150
+         * @tc.desc   Get invalid parameter avoidarea
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetAvoidArea_Invalid_Parameter_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let msgStr = 'getAvoidAreaAdd_Test_002';
             console.log(msgStr + ' begin');
@@ -3597,10 +3897,13 @@ export default function window_test() {
 
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1130
-     * @tc.name			testIsFoldable_Test
-     * @tc.desc			To test the function of isFoldable
-    */
+     * @tc.name   testIsFoldable_Test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1130
+     * @tc.desc   To test the function of isFoldable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testIsFoldable_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         
         let tag = 'isFoldable_Test_001 '
@@ -3616,10 +3919,13 @@ export default function window_test() {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1140
-     * @tc.name			testGetFoldStatus_Test
-     * @tc.desc			To test the function of getFoldStatus
-    */
+     * @tc.name   testGetFoldStatus_Test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1140
+     * @tc.desc   To test the function of getFoldStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetFoldStatus_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         
         let tag = 'getFoldStatus_Test_001 '
@@ -3640,10 +3946,13 @@ export default function window_test() {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1150
-     * @tc.name			testGetFoldDisplayMode_Test
-     * @tc.desc			To test the function of getFoldDisplayMode
-    */
+     * @tc.name   testGetFoldDisplayMode_Test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1150
+     * @tc.desc   To test the function of getFoldDisplayMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetFoldDisplayMode_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         
         let tag = 'getFoldDisplayMode_Test_001 '
@@ -3665,10 +3974,13 @@ export default function window_test() {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1160
-     * @tc.name			testGetCurrentFoldCreaseRegion_Test
-     * @tc.desc			To test the function of getCurrentFoldCreaseRegion
-    */
+     * @tc.name   testGetCurrentFoldCreaseRegion_Test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1160
+     * @tc.desc   To test the function of getCurrentFoldCreaseRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetCurrentFoldCreaseRegion_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         
         let tag = 'getCurrentFoldCreaseRegion_Test_001 '
@@ -3692,14 +4004,14 @@ export default function window_test() {
         }
     })
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1170
-     * @tc.name      : testGetWindowLimits_Test
-     * @tc.desc      : test the function of getWindowLimits
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
-     */
+     /**
+      * @tc.name   testGetWindowLimits_Test
+      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1170
+      * @tc.desc   test the function of getWindowLimits
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('testGetWindowLimits_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async function (done) {
         console.log('www data testGetWindowLimits_Test begin')
         try {
@@ -3724,14 +4036,14 @@ export default function window_test() {
     })
 
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1190
-     * @tc.name      : testMinimize_Function_Callback
-     * @tc.desc      : test the function of minimize callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
-     */
+     /**
+      * @tc.name   testMinimize_Function_Callback
+      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1190
+      * @tc.desc   test the function of minimize callback
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testMinimize_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         let msgStr = 'testMinimize_Function_Callback';
         console.log(msgStr + ' begin');
@@ -3795,14 +4107,14 @@ export default function window_test() {
         })
     })
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1200
-     * @tc.name      : testMinimize_Function_Promise
-     * @tc.desc      : test the function of minimize promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
-     */
+     /**
+      * @tc.name   testMinimize_Function_Promise
+      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1200
+      * @tc.desc   test the function of minimize promise
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testMinimize_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         let msgStr = 'testMinimize_Function_Promise';
         console.log(msgStr + ' begin');
@@ -3868,14 +4180,14 @@ export default function window_test() {
     })
 
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1210
-     * @tc.name      : testWindowStatusType_attr
-     * @tc.desc      : test the enum value of WindowStatusType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
-     */
+     /**
+      * @tc.name   testWindowStatusType_attr
+      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1210
+      * @tc.desc   test the enum value of WindowStatusType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testWindowStatusType_attr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let msgStr = 'testWindowStatusType_attr';
         console.log(msgStr + ' begin');

@@ -46,12 +46,12 @@ export default function TextPickerDialog_Cancel_Test() {
     });
 
     /**
-     * @tc.number    TextPickerDialog_Cancel_Test
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   TextPickerDialog_Cancel_Test_001
+     * @tc.number TextPickerDialog_Cancel_Test
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextPickerDialog_Cancel_Test_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TextPickerDialog_Cancel_Test_001] START');

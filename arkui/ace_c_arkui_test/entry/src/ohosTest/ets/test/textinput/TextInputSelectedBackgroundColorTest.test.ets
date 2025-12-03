@@ -26,39 +26,39 @@ export default function textInputSelectedBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SELECTEDBACKGROUNDCOLOR_0100
-     * @tc.name: testTextInputSelectedBackgroundColor001
-     * @tc.desc: testing selectedBackgroundColor for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputSelectedBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTEDBACKGROUNDCOLOR_0100
+     * @tc.desc   testing selectedBackgroundColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputSelectedBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelectedBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SELECTEDBACKGROUNDCOLOR_0200
-     * @tc.name: testTextInputSelectedBackgroundColor002
-     * @tc.desc: testing selectedBackgroundColor for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputSelectedBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTEDBACKGROUNDCOLOR_0200
+     * @tc.desc   testing selectedBackgroundColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputSelectedBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelectedBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SELECTEDBACKGROUNDCOLOR_0300
-     * @tc.name: testTextInputSelectedBackgroundColor003
-     * @tc.desc: testing selectedBackgroundColor for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputSelectedBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTEDBACKGROUNDCOLOR_0300
+     * @tc.desc   testing selectedBackgroundColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputSelectedBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelectedBackgroundColor003()).assertEqual(0)

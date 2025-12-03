@@ -36,9 +36,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi01
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0100
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi01 start');
@@ -52,9 +55,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi02
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0200
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi02 start');
@@ -68,9 +74,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi03
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0300
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi03 start');
@@ -84,9 +93,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi04
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0400
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi04 start');
@@ -100,9 +112,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi05
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0500
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi04 start');
@@ -116,9 +131,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi06
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0600
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi06 start');
@@ -128,9 +146,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi07
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0700
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi07 start');
@@ -144,9 +165,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi08
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_0800
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi08 start');
@@ -156,9 +180,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi09
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1100
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi09 start');
@@ -168,9 +195,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi10
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1200
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi10 start');
@@ -180,9 +210,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi11
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1300
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi11 start');
@@ -192,9 +225,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi12
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1400
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi12 start');
@@ -204,9 +240,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi13
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1500
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi13 start');
@@ -216,9 +255,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi14
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1600
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi14 start');
@@ -228,9 +270,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi15
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_01700
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi15 start');
@@ -240,9 +285,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi16
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_1800
-     * @tc.name hitrace interface test
-     * @tc.desc hitrace begin interface test.
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi16 start');
@@ -256,9 +304,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi17
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_2100
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi17 start');
@@ -272,9 +323,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi18
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_2500
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi18 start');
@@ -288,9 +342,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi19
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_2600
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi19 start');
@@ -304,9 +361,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi20
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_2900
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi20 start');
@@ -320,9 +380,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi21
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3000
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi21 start');
@@ -336,9 +399,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi22
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3200
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi22 start');
@@ -352,9 +418,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi23
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3300
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi23 start');
@@ -369,9 +438,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi24
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3400
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi24 start');
@@ -385,9 +457,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi25
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3500
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi25 start');
@@ -401,9 +476,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi26
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3800
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi26 start');
@@ -418,9 +496,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi27
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_3900
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi27 start');
@@ -434,9 +515,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi28
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4000
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi28 start');
@@ -450,9 +534,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi29
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4100
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi29 start');
@@ -466,9 +553,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi30
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4200
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi30 start');
@@ -482,15 +572,18 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi31
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4300
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi31 start');
       try{
         // @ts-ignore
-        hilog.info("ÖÐÎÄdomainId", "HILOGTEST", "username:%{public}s, password:%{public}s.", "username", "password")
+        hilog.info("ä¸­æ–‡domainId", "HILOGTEST", "username:%{public}s, password:%{public}s.", "username", "password")
       }catch(error){
         console.log(`testHilogJsApi31 got an error: ${JSON.stringify(error)}`)
         expect().assertFail();
@@ -499,9 +592,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi32
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4400
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi32 start');
@@ -515,9 +611,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi33
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4500
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi33 start');
@@ -531,9 +630,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi34
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4600
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi34 start');
@@ -547,9 +649,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi35
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4700
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi35 start');
@@ -563,14 +668,17 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi36
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4800
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi36 start');
       try{
-        hilog.info(0x3200, "HILOGTEST", "ÖÐÎÄ²âÊÔ:%{public}s, »ìºÏ´òÓ¡:%{public}s", "ÖÐÎÄ´òÓ¡²âÊÔ", "forÖÐÎÄtest,.;:*_-=^(%)?#$/|\\")
+        hilog.info(0x3200, "HILOGTEST", "ä¸­æ–‡æµ‹è¯•:%{public}s, æ··åˆæ‰“å°:%{public}s", "ä¸­æ–‡æ‰“å°æµ‹è¯•", "forä¸­æ–‡test,.;:*_-=^(%)?#$/|\\")
       }catch(error){
         console.log(`testHilogJsApi36 got an error: ${JSON.stringify(error)}`)
         expect().assertFail();
@@ -579,9 +687,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi37
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_4900
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi37 start');
@@ -595,9 +706,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi38
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5100
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi38 start');
@@ -607,9 +721,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi39
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5200
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi39 start');
@@ -619,9 +736,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi40
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5400
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi40 start');
@@ -631,9 +751,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi41
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5500
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi41 start');
@@ -643,9 +766,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi42
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5600
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi42 start');
@@ -655,22 +781,28 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi43
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5700
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi43 start');
       // @ts-ignore
-      const res = hilog.isLoggable("ÖÐÎÄ²âÊÔ", "HILOGTEST", hilog.LogLevel.INFO);
+      const res = hilog.isLoggable("ä¸­æ–‡æµ‹è¯•", "HILOGTEST", hilog.LogLevel.INFO);
       expect(res).assertEqual(undefined);
       console.info('testHilogJsApi43 end');
     })
 	
-	/**
+    /**
+     * @tc.name   testHilogJsApi44
      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5800
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi44 start');
@@ -679,11 +811,14 @@ describe('HilogJsTest', function () {
         console.info('testHilogJsApi44 end');
     })
 
-    /**
-     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5900
-     * @tc.name hilog interface test
-     * @tc.desc hilog begin interface test.
-     */
+     /**
+      * @tc.name   testHilogJsApi45
+      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5900
+      * @tc.desc   hilog begin interface test.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testHilogJsApi45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi45 start');
         const res = hilogndk.ohPrintTest();
@@ -692,12 +827,12 @@ describe('HilogJsTest', function () {
     })
     
     /**
+     * @tc.name   testHilogJsApi46
      * @tc.number SUB_DFX_DFT_Hilog_Redirect_0100
-     * @tc.name hilog interface test
-     * @tc.desc ÑéÖ¤nativie²ãÁ÷Ë®ÈÕÖ¾´òÓ¡¿ÉÍ¨¹ý»Øµ÷½Ó¿ÚÖØ¶¨ÏòÖ±×ÔÉíjs²ã.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   éªŒè¯nativieå±‚æµæ°´æ—¥å¿—æ‰“å°å¯é€šè¿‡å›žè°ƒæŽ¥å£é‡å®šå‘ç›´è‡ªèº«jså±‚.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi46 start');
@@ -716,12 +851,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   testHilogJsApi47
      * @tc.number SUB_DFX_DFT_Hilog_Redirect_0200
-     * @tc.name hilog interface test
-     * @tc.desc ÑéÖ¤js²ãÁ÷Ë®ÈÕÖ¾´òÓ¡¿ÉÍ¨¹ý»Øµ÷½Ó¿ÚÖØ¶¨ÏòÖ±×ÔÉíjs²ã.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   éªŒè¯jså±‚æµæ°´æ—¥å¿—æ‰“å°å¯é€šè¿‡å›žè°ƒæŽ¥å£é‡å®šå‘ç›´è‡ªèº«jså±‚.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogJsApi47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi47 start');
@@ -756,6 +891,14 @@ describe('HilogJsTest', function () {
         console.info('testHilogJsApi47 end');
     })
 
+    /**
+     * @tc.name   testHilogJsApi48
+     * @tc.number testHilogJsApi48
+     * @tc.desc   testHilogJsApi48
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHilogJsApi48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi48 start');
         const res = hilogndk.ohPrintMsgTest();
@@ -763,6 +906,14 @@ describe('HilogJsTest', function () {
         console.info('testHilogJsApi48 end');
     })
     
+    /**
+     * @tc.name   testHilogJsApi49
+     * @tc.number testHilogJsApi49
+     * @tc.desc   testHilogJsApi49
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHilogJsApi49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi49 start');
         const res = hilogndk.ohPrintMsgByLenTest();
@@ -770,6 +921,14 @@ describe('HilogJsTest', function () {
         console.info('testHilogJsApi49 end');
     })
 	
+    /**
+     * @tc.name   testHilogJsApi50
+     * @tc.number testHilogJsApi50
+     * @tc.desc   testHilogJsApi50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHilogJsApi50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('testHilogJsApi50 start');
         const res = hilogndk.ohVPrintTest();
@@ -777,6 +936,14 @@ describe('HilogJsTest', function () {
         console.info('testHilogJsApi50 end');
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0100
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0100
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_DefaultLevel_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.INFO);
       let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.DEBUG);
@@ -785,6 +952,14 @@ describe('HilogJsTest', function () {
       expect(res1).assertEqual(true);
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0200
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0200
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_DefaultLevel_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.WARN);
       let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
@@ -793,6 +968,14 @@ describe('HilogJsTest', function () {
       expect(res1).assertEqual(true);
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0300
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0300
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_DefaultLevel_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.ERROR);
       let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
@@ -801,6 +984,14 @@ describe('HilogJsTest', function () {
       expect(res1).assertEqual(true);
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0400
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0400
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_DefaultLevel_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.FATAL);
       let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.ERROR);
@@ -809,12 +1000,28 @@ describe('HilogJsTest', function () {
       expect(res1).assertEqual(true);
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0500
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0500
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_DefaultLevel_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.FATAL);
       let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
       expect(res).assertEqual(false);
     })
 
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_0600
+     * @tc.number SUB_DFX_DFT_DefaultLevel_0600
+     * @tc.desc   SUB_DFX_DFT_DefaultLevel_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_DefaultLevel_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.ERROR);
       try{
@@ -829,12 +1036,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1700
      * @tc.number SUB_DFX_DFT_DefaultLevel_1700
-     * @tc.name hilog interface test
-     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-Ê¹ÓÃÄ¬ÈÏÈÕÖ¾¼¶±ðsetLogLevel 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogæ–°å¢žå‘ä¸‹è°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£-ä½¿ç”¨é»˜è®¤æ—¥å¿—çº§åˆ«setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.UNSET_LOGLEVEL)
@@ -845,12 +1052,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1800
      * @tc.number SUB_DFX_DFT_DefaultLevel_1800
-     * @tc.name hilog interface test
-     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½Ï´óÖµsetLogLevel 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogæ–°å¢žå‘ä¸‹è°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£-æ¯”è¾ƒé»˜è®¤å€¼å’Œè®¾ç½®å€¼åŽå–è¾ƒå¤§å€¼setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_CLOSE_LOG)
@@ -861,12 +1068,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1900
      * @tc.number SUB_DFX_DFT_DefaultLevel_1900
-     * @tc.name hilog interface test
-     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½ÏÐ¡ÖµsetLogLevel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogæ–°å¢žå‘ä¸‹è°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£-æ¯”è¾ƒé»˜è®¤å€¼å’Œè®¾ç½®å€¼åŽå–è¾ƒå°å€¼setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_OPEN_LOG)
@@ -877,12 +1084,12 @@ describe('HilogJsTest', function () {
     })
     
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2400
      * @tc.number SUB_DFX_DFT_DefaultLevel_2400
-     * @tc.name hilog interface test
-     * @tc.desc hilogµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿ÚºóÖ´ÐÐsetMinLogLevel·½·¨
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogè°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£åŽæ‰§è¡ŒsetMinLogLevelæ–¹æ³•
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       hilog.setLogLevel(hilog.LogLevel.ERROR, hilog.PreferStrategy.PREFER_CLOSE_LOG)
@@ -898,12 +1105,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2000
      * @tc.number SUB_DFX_DFT_DefaultLevel_2000
-     * @tc.name hilog interface test
-     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-Ê¹ÓÃÄ¬ÈÏÈÕÖ¾¼¶±ðOH_LOG_SetLogLevel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogæ–°å¢žå‘ä¸‹è°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£-ä½¿ç”¨é»˜è®¤æ—¥å¿—çº§åˆ«OH_LOG_SetLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
         console.info('SUB_DFX_DFT_DefaultLevel_2000 start');
@@ -913,12 +1120,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2100
      * @tc.number SUB_DFX_DFT_DefaultLevel_2100
-     * @tc.name hilog interface test
-     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½Ï´óÖµOH_LOG_SetLogLevel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogæ–°å¢žå‘ä¸‹è°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£-æ¯”è¾ƒé»˜è®¤å€¼å’Œè®¾ç½®å€¼åŽå–è¾ƒå¤§å€¼OH_LOG_SetLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info('SUB_DFX_DFT_DefaultLevel_2100 start');
@@ -928,12 +1135,12 @@ describe('HilogJsTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2200
      * @tc.number SUB_DFX_DFT_DefaultLevel_2200
-     * @tc.name hilog interface test
-     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½ÏÐ¡ÖµOH_LOG_SetLogLevel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   hilogæ–°å¢žå‘ä¸‹è°ƒæ•´æ—¥å¿—çº§åˆ«æŽ¥å£-æ¯”è¾ƒé»˜è®¤å€¼å’Œè®¾ç½®å€¼åŽå–è¾ƒå°å€¼OH_LOG_SetLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_DefaultLevel_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info('SUB_DFX_DFT_DefaultLevel_2200 start');

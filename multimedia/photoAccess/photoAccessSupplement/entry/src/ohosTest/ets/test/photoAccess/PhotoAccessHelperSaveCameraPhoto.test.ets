@@ -68,12 +68,12 @@ export default function SaveCameraPhoto() {
 
 
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_001
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_001
-     * @tc.desc      saveCameraPhoto(ImageFileType:0 ): void
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_001
+     * @tc.desc   saveCameraPhoto(ImageFileType:0 ): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_001';
@@ -85,12 +85,12 @@ export default function SaveCameraPhoto() {
     })
 
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_002
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_002
-     * @tc.desc      saveCameraPhoto(imageFileType: -1): void
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_002
+     * @tc.desc   saveCameraPhoto(imageFileType: -1): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_002';
@@ -102,12 +102,12 @@ export default function SaveCameraPhoto() {
     })
 
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_003
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_003
-     * @tc.desc      saveCameraPhoto(imageFileType: 3000): void
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_003
+     * @tc.desc   saveCameraPhoto(imageFileType: 3000): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_003';
@@ -118,12 +118,12 @@ export default function SaveCameraPhoto() {
       done();
     })
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_004
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_004
-     * @tc.desc      saveCameraPhoto(imageFileType: null): void
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_004
+     * @tc.desc   saveCameraPhoto(imageFileType: null): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_004';
@@ -134,12 +134,12 @@ export default function SaveCameraPhoto() {
       done();
     })
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_005
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_005
-     * @tc.desc      saveCameraPhoto(imageFileType: undefined): void
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_005
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_005
+     * @tc.desc   saveCameraPhoto(imageFileType: undefined): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_005';
@@ -151,12 +151,12 @@ export default function SaveCameraPhoto() {
     })
 
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_006
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_006
-     * @tc.desc      saveCameraPhoto(): void double save
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_006
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_006
+     * @tc.desc   saveCameraPhoto(): void double save
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_006', Level.LEVEL0, async (done: Function) => {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -180,12 +180,12 @@ export default function SaveCameraPhoto() {
       }
     })
     /**
-     * @tc.number    MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_007
-     * @tc.name      MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_007
-     * @tc.desc      saveCameraPhoto(): void double Request
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_007
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_007
+     * @tc.desc   saveCameraPhoto(): void double Request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_SAVE_CAMERA_PHOTO_ERROR_007', Level.LEVEL0, async (done: Function,phAccessHelper: photoAccessHelper.PhotoAccessHelper,
       asset: photoAccessHelper.PhotoAsset) => {

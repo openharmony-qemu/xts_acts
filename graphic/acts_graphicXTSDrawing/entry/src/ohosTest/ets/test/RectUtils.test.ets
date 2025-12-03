@@ -41,12 +41,12 @@ export default function rectUtilsTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0100
-     * @tc.name      : testRectUtilsMakeEmptyNormal
-     * @tc.desc      : Test for testRectUtilsMakeEmptyNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testRectUtilsMakeEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0100
+     * @tc.desc   Test for testRectUtilsMakeEmptyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectUtilsMakeEmptyNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRectUtilsMakeEmptyNormal';
@@ -63,12 +63,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0101
-     * @tc.name      : testRectUtilsMakeEmptyMultipleCalls
-     * @tc.desc      : testRectUtilsMakeEmptyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsMakeEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0101
+     * @tc.desc   testRectUtilsMakeEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsMakeEmptyMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsMakeEmptyMultipleCalls';
@@ -89,12 +89,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0200
-     * @tc.name      : testRectUtilsMakeLtrbNormal
-     * @tc.desc      : Test for testRectUtilsMakeLtrbNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsMakeLtrbNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0200
+     * @tc.desc   Test for testRectUtilsMakeLtrbNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsMakeLtrbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsMakeLtrbNormal';
@@ -173,12 +173,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0201
-     * @tc.name      : testRectUtilsMakeLtrbMultipleCalls
-     * @tc.desc      : testRectUtilsMakeLtrbMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsMakeLtrbMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0201
+     * @tc.desc   testRectUtilsMakeLtrbMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsMakeLtrbMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsMakeLtrbMultipleCalls';
@@ -195,12 +195,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0202
-     * @tc.name      : testRectUtilsMakeLtrbNull
-     * @tc.desc      : testRectUtilsMakeLtrbNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRectUtilsMakeLtrbNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0202
+     * @tc.desc   testRectUtilsMakeLtrbNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsMakeLtrbNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsMakeLtrbNull';
@@ -270,12 +270,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0300
-     * @tc.name      : testRectUtilsMakeCopyNormal
-     * @tc.desc      : Test for testRectUtilsMakeCopyNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsMakeCopyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0300
+     * @tc.desc   Test for testRectUtilsMakeCopyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsMakeCopyNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsMakeCopyNormal';
@@ -408,12 +408,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0301
-     * @tc.name      : testRectUtilsMakeCopyMultipleCalls
-     * @tc.desc      : testRectUtilsMakeCopyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsMakeCopyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0301
+     * @tc.desc   testRectUtilsMakeCopyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsMakeCopyMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsMakeCopyMultipleCalls';
@@ -446,12 +446,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0302
-     * @tc.name      : testRectUtilsMakeCopyNull
-     * @tc.desc      : testRectUtilsMakeCopyNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRectUtilsMakeCopyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0302
+     * @tc.desc   testRectUtilsMakeCopyNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsMakeCopyNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsMakeCopyNull';
@@ -473,12 +473,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0400
-     * @tc.name      : testRectUtilsGetWidthHeightNormal
-     * @tc.desc      : Test for testRectUtilsGetWidthHeightNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsGetWidthHeightNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0400
+     * @tc.desc   Test for testRectUtilsGetWidthHeightNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsGetWidthHeightNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsGetWidthHeightNormal';
@@ -578,12 +578,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0401
-     * @tc.name      : testRectUtilsGetWidthHeightMultipleCalls
-     * @tc.desc      : testRectUtilsGetWidthHeightMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsGetWidthHeightMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0401
+     * @tc.desc   testRectUtilsGetWidthHeightMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsGetWidthHeightMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsGetWidthHeightMultipleCalls';
@@ -605,12 +605,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0402
-     * @tc.name      : testRectUtilsGetWidthHeightNull
-     * @tc.desc      : testRectUtilsGetWidthHeightNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRectUtilsGetWidthHeightNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0402
+     * @tc.desc   testRectUtilsGetWidthHeightNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsGetWidthHeightNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsGetWidthHeightNull';
@@ -650,12 +650,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0500
-     * @tc.name      : testRectUtilsCenterXYNormal
-     * @tc.desc      : Test for testRectUtilsCenterXYNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsCenterXYNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0500
+     * @tc.desc   Test for testRectUtilsCenterXYNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsCenterXYNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsCenterXYNormal';
@@ -772,12 +772,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0501
-     * @tc.name      : testRectUtilsCenterXYMultipleCalls
-     * @tc.desc      : testRectUtilsCenterXYMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsCenterXYMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0501
+     * @tc.desc   testRectUtilsCenterXYMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsCenterXYMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsCenterXYMultipleCalls';
@@ -799,12 +799,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0502
-     * @tc.name      : testRectUtilsCenterXYNull
-     * @tc.desc      : testRectUtilsCenterXYNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRectUtilsCenterXYNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0502
+     * @tc.desc   testRectUtilsCenterXYNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsCenterXYNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsCenterXYNull';
@@ -844,12 +844,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0600
-     * @tc.name      : testRectUtilsContains1Normal
-     * @tc.desc      : Test for testRectUtilsContains1Normal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsContains1Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0600
+     * @tc.desc   Test for testRectUtilsContains1Normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsContains1Normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsContains1Normal';
@@ -1105,12 +1105,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0601
-     * @tc.name      : testRectUtilsContains1MultipleCalls
-     * @tc.desc      : testRectUtilsContains1MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsContains1MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0601
+     * @tc.desc   testRectUtilsContains1MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsContains1MultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsContains1MultipleCalls';
@@ -1130,12 +1130,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0602
-     * @tc.name      : testRectUtilsContains1Null
-     * @tc.desc      : testRectUtilsContains1Null
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRectUtilsContains1Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0602
+     * @tc.desc   testRectUtilsContains1Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsContains1Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsContains1Null';
@@ -1179,12 +1179,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0700
-     * @tc.name      : testRectUtilsContains2Normal
-     * @tc.desc      : Test for testRectUtilsContains2Normal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsContains2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0700
+     * @tc.desc   Test for testRectUtilsContains2Normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsContains2Normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsContains2Normal';
@@ -1369,12 +1369,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0701
-     * @tc.name      : testRectUtilsContains2MultipleCalls
-     * @tc.desc      : testRectUtilsContains2MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsContains2MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0701
+     * @tc.desc   testRectUtilsContains2MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsContains2MultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsContains2MultipleCalls';
@@ -1393,12 +1393,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0702
-     * @tc.name      : testRectUtilsContains2Null
-     * @tc.desc      : testRectUtilsContains2Null
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testRectUtilsContains2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0702
+     * @tc.desc   testRectUtilsContains2Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsContains2Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsContains2Null';
@@ -1477,12 +1477,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0800
-     * @tc.name      : testRectUtilsContains3Normal
-     * @tc.desc      : Test for testRectUtilsContains3Normal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsContains3Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0800
+     * @tc.desc   Test for testRectUtilsContains3Normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsContains3Normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsContains3Normal';
@@ -1684,12 +1684,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0801
-     * @tc.name      : testRectUtilsContains3MultipleCalls
-     * @tc.desc      : testRectUtilsContains3MultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsContains3MultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0801
+     * @tc.desc   testRectUtilsContains3MultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsContains3MultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsContains3MultipleCalls';
@@ -1708,12 +1708,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0802
-     * @tc.name      : testRectUtilsContains3Null
-     * @tc.desc      : testRectUtilsContains3Null
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsContains3Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0802
+     * @tc.desc   testRectUtilsContains3Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsContains3Null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsContains3Null';
@@ -1774,12 +1774,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0900
-     * @tc.name      : testRectUtilsInsetNormal
-     * @tc.desc      : Test for testRectUtilsInsetNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsInsetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0900
+     * @tc.desc   Test for testRectUtilsInsetNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsInsetNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsInsetNormal';
@@ -1923,12 +1923,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0901
-     * @tc.name      : testRectUtilsInsetMultipleCalls
-     * @tc.desc      : testRectUtilsInsetMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsInsetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0901
+     * @tc.desc   testRectUtilsInsetMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsInsetMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsInsetMultipleCalls';
@@ -1946,12 +1946,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0902
-     * @tc.name      : testRectUtilsInsetNull
-     * @tc.desc      : testRectUtilsInsetNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsInsetNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_0902
+     * @tc.desc   testRectUtilsInsetNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsInsetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsInsetNull';
@@ -2038,12 +2038,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1000
-     * @tc.name      : testRectUtilsIntersectNormal
-     * @tc.desc      : Test for testRectUtilsIntersectNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIntersectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1000
+     * @tc.desc   Test for testRectUtilsIntersectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIntersectNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIntersectNormal';
@@ -2284,12 +2284,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1001
-     * @tc.name      : testRectUtilsIntersectMultipleCalls
-     * @tc.desc      : testRectUtilsIntersectMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsIntersectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1001
+     * @tc.desc   testRectUtilsIntersectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsIntersectMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsIntersectMultipleCalls';
@@ -2308,12 +2308,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1002
-     * @tc.name      : testRectUtilsIntersectNull
-     * @tc.desc      : testRectUtilsIntersectNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsIntersectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1002
+     * @tc.desc   testRectUtilsIntersectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsIntersectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsIntersectNull';
@@ -2353,12 +2353,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1100
-     * @tc.name      : testRectUtilsIsIntersectNormal
-     * @tc.desc      : Test for testRectUtilsIsIntersectNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIsIntersectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1100
+     * @tc.desc   Test for testRectUtilsIsIntersectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIsIntersectNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIsIntersectNormal';
@@ -2578,12 +2578,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1101
-     * @tc.name      : testRectUtilsIsIntersectMultipleCalls
-     * @tc.desc      : testRectUtilsIsIntersectMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsIsIntersectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1101
+     * @tc.desc   testRectUtilsIsIntersectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsIsIntersectMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsIsIntersectMultipleCalls';
@@ -2602,12 +2602,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1102
-     * @tc.name      : testRectUtilsIsIntersectNull
-     * @tc.desc      : testRectUtilsIsIntersectNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsIsIntersectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1102
+     * @tc.desc   testRectUtilsIsIntersectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsIsIntersectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsIsIntersectNull';
@@ -2647,12 +2647,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1200
-     * @tc.name      : testRectUtilsUnionNormal
-     * @tc.desc      : Test for testRectUtilsUnionNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsUnionNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1200
+     * @tc.desc   Test for testRectUtilsUnionNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsUnionNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsUnionNormal';
@@ -2899,12 +2899,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1201
-     * @tc.name      : testRectUtilsUnionMultipleCalls
-     * @tc.desc      : testRectUtilsUnionMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsUnionMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1201
+     * @tc.desc   testRectUtilsUnionMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsUnionMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsUnionMultipleCalls';
@@ -2921,12 +2921,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1202
-     * @tc.name      : testRectUtilsUnionNull
-     * @tc.desc      : testRectUtilsUnionNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsUnionNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1202
+     * @tc.desc   testRectUtilsUnionNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsUnionNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsUnionNull';
@@ -2966,12 +2966,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1300
-     * @tc.name      : testRectUtilsIsEmptyNormal
-     * @tc.desc      : Test for testRectUtilsIsEmptyNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIsEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1300
+     * @tc.desc   Test for testRectUtilsIsEmptyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIsEmptyNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIsEmptyNormal';
@@ -3049,12 +3049,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1301
-     * @tc.name      : testRectUtilsIsEmptyMultipleCalls
-     * @tc.desc      : testRectUtilsIsEmptyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsIsEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1301
+     * @tc.desc   testRectUtilsIsEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsIsEmptyMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsIsEmptyMultipleCalls';
@@ -3071,12 +3071,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1302
-     * @tc.name      : testRectUtilsIsEmptyNull
-     * @tc.desc      : testRectUtilsIsEmptyNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsIsEmptyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1302
+     * @tc.desc   testRectUtilsIsEmptyNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsIsEmptyNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsIsEmptyNull';
@@ -3099,12 +3099,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1400
-     * @tc.name      : testRectUtilsOffsetNormal
-     * @tc.desc      : Test for testRectUtilsOffsetNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsOffsetNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1400
+     * @tc.desc   Test for testRectUtilsOffsetNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsOffsetNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsOffsetNormal';
@@ -3199,12 +3199,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1401
-     * @tc.name      : testRectUtilsOffsetMultipleCalls
-     * @tc.desc      : testRectUtilsOffsetMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsOffsetMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1401
+     * @tc.desc   testRectUtilsOffsetMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsOffsetMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsOffsetMultipleCalls';
@@ -3220,12 +3220,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1402
-     * @tc.name      : testRectUtilsOffsetNull
-     * @tc.desc      : testRectUtilsOffsetNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsOffsetNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1402
+     * @tc.desc   testRectUtilsOffsetNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsOffsetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsOffsetNull';
@@ -3280,12 +3280,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1500
-     * @tc.name      : testRectUtilsOffsetToNormal
-     * @tc.desc      : Test for testRectUtilsOffsetToNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsOffsetToNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1500
+     * @tc.desc   Test for testRectUtilsOffsetToNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsOffsetToNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsOffsetToNormal';
@@ -3380,12 +3380,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1501
-     * @tc.name      : testRectUtilsOffsetToMultipleCalls
-     * @tc.desc      : testRectUtilsOffsetToMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsOffsetToMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1501
+     * @tc.desc   testRectUtilsOffsetToMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsOffsetToMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsOffsetToMultipleCalls';
@@ -3401,12 +3401,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1502
-     * @tc.name      : testRectUtilsOffsetToNull
-     * @tc.desc      : testRectUtilsOffsetToNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsOffsetToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1502
+     * @tc.desc   testRectUtilsOffsetToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsOffsetToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsOffsetToNull';
@@ -3461,12 +3461,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1600
-     * @tc.name      : testRectUtilsSetRectNormal
-     * @tc.desc      : Test for testRectUtilsSetRectNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsSetRectNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1600
+     * @tc.desc   Test for testRectUtilsSetRectNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsSetRectNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsSetRectNormal';
@@ -3573,12 +3573,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1601
-     * @tc.name      : testRectUtilsSetRectMultipleCalls
-     * @tc.desc      : testRectUtilsSetRectMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsSetRectMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1601
+     * @tc.desc   testRectUtilsSetRectMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsSetRectMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsSetRectMultipleCalls';
@@ -3595,12 +3595,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1602
-     * @tc.name      : testRectUtilsSetRectNull
-     * @tc.desc      : testRectUtilsSetRectNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsSetRectNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1602
+     * @tc.desc   testRectUtilsSetRectNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsSetRectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsSetRectNull';
@@ -3640,12 +3640,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1700
-     * @tc.name      : testRectUtilsSetLtrbNormal
-     * @tc.desc      : Test for testRectUtilsSetLtrbNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsSetLtrbNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1700
+     * @tc.desc   Test for testRectUtilsSetLtrbNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsSetLtrbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsSetLtrbNormal';
@@ -3742,12 +3742,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1701
-     * @tc.name      : testRectUtilsSetLtrbMultipleCalls
-     * @tc.desc      : testRectUtilsSetLtrbMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsSetLtrbMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1701
+     * @tc.desc   testRectUtilsSetLtrbMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsSetLtrbMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsSetLtrbMultipleCalls';
@@ -3763,12 +3763,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1702
-     * @tc.name      : testRectUtilsSetLtrbNull
-     * @tc.desc      : testRectUtilsSetLtrbNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsSetLtrbNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1702
+     * @tc.desc   testRectUtilsSetLtrbNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsSetLtrbNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsSetLtrbNull';
@@ -3855,12 +3855,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1800
-     * @tc.name      : testRectUtilsSetEmptyNormal
-     * @tc.desc      : Test for testRectUtilsSetEmptyNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsSetEmptyNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1800
+     * @tc.desc   Test for testRectUtilsSetEmptyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsSetEmptyNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsSetEmptyNormal';
@@ -3956,12 +3956,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1801
-     * @tc.name      : testRectUtilsSetEmptyMultipleCalls
-     * @tc.desc      : testRectUtilsSetEmptyMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsSetEmptyMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1801
+     * @tc.desc   testRectUtilsSetEmptyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsSetEmptyMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsSetEmptyMultipleCalls';
@@ -3979,12 +3979,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1802
-     * @tc.name      : testRectUtilsSetEmptyNull
-     * @tc.desc      : testRectUtilsSetEmptyNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsSetEmptyNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1802
+     * @tc.desc   testRectUtilsSetEmptyNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsSetEmptyNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsSetEmptyNull';
@@ -4007,12 +4007,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1900
-     * @tc.name      : testRectUtilsSortNormal
-     * @tc.desc      : Test for testRectUtilsSortNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsSortNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1900
+     * @tc.desc   Test for testRectUtilsSortNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsSortNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsSortNormal';
@@ -4107,12 +4107,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1901
-     * @tc.name      : testRectUtilsSortMultipleCalls
-     * @tc.desc      : testRectUtilsSortMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsSortMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1901
+     * @tc.desc   testRectUtilsSortMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsSortMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsSortMultipleCalls';
@@ -4130,12 +4130,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1902
-     * @tc.name      : testRectUtilsSortNull
-     * @tc.desc      : testRectUtilsSortNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsSortNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_1902
+     * @tc.desc   testRectUtilsSortNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsSortNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsSortNull';
@@ -4158,12 +4158,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_2000
-     * @tc.name      : testRectUtilsIsEqualNormal
-     * @tc.desc      : Test for testRectUtilsIsEqualNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIsEqualNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_2000
+     * @tc.desc   Test for testRectUtilsIsEqualNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIsEqualNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIsEqualNormal';
@@ -4247,12 +4247,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_2001
-     * @tc.name      : testRectUtilsIsEqualMultipleCalls
-     * @tc.desc      : testRectUtilsIsEqualMultipleCalls
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsIsEqualMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_2001
+     * @tc.desc   testRectUtilsIsEqualMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsIsEqualMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsIsEqualMultipleCalls';
@@ -4270,12 +4270,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_2002
-     * @tc.name      : testRectUtilsIsEqualNull
-     * @tc.desc      : testRectUtilsIsEqualNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   testRectUtilsIsEqualNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_2002
+     * @tc.desc   testRectUtilsIsEqualNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testRectUtilsIsEqualNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, () => {
       const msg = 'testRectUtilsIsEqualNull';

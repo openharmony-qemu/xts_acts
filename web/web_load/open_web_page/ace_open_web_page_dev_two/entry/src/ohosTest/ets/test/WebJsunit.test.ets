@@ -36,10 +36,13 @@ export default function webJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_078                                                                                                                                                                  
-     *tc.name loadData                                                                                                                                                                                                              
-     *tc.desic load specific strings
+    /**
+     * @tc.name   loadData
+     * @tc.number SUB_ACE_BASIC_ETS_API_078
+     * @tc.desc   loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('loadData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitLoaData";

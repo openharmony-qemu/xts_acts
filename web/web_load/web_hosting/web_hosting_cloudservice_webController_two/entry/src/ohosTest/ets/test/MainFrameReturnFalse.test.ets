@@ -55,12 +55,12 @@ export default function ActsWebViewTest4() {
     });
 
     /**
+     * @tc.name   SUB_ACE_WEB_LoadCommittedDetails_SDK_0200
      * @tc.number SUB_ACE_WEB_LoadCommittedDetails_SDK_0200
-     * @tc.name SUB_ACE_WEB_isMainFrame_return_false
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_WEB_LoadCommittedDetails_SDK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("runJavaScript", 147011);

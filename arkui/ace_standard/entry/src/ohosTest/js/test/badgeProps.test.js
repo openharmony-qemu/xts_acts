@@ -82,9 +82,12 @@ export default function undo() {
         // 通用属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeIdProp
-         * @tc.desc      ACE
+         * @tc.name   testbadgeIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeIdProp', Level.LEVEL0, async function(done) {
             console.info('testbadgeIdProp START');
@@ -100,9 +103,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeClassProp
-         * @tc.desc      ACE
+         * @tc.name   testbadgeClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeClassProp', Level.LEVEL0, async function(done) {
             console.info('testbadgeClassProp START');
@@ -118,9 +124,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeClassPropNone START');
@@ -138,9 +147,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeRefProp
-         * @tc.desc      ACE
+         * @tc.name   testbadgeRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeRefProp', Level.LEVEL0, async function(done) {
             console.info('testbadgeRefProp START');
@@ -157,9 +169,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeRefPropNone START');
@@ -177,9 +192,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testbadgeDisabledPropTrue START');
@@ -196,9 +214,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testbadgeDisabledPropFalse START');
@@ -215,9 +236,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeDisabledPropNone START');
@@ -234,9 +258,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testbadgeFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testbadgeFocusablePropTrue START');
@@ -253,9 +280,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testbadgeFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testbadgeFocusablePropFalse START');
@@ -272,9 +302,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeFocusablePropNone START');
@@ -291,9 +324,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDataProp
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDataProp', Level.LEVEL0, async function(done) {
             console.info('testbadgeDataProp START');
@@ -311,9 +347,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeDataPropNone START');
@@ -331,9 +370,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testbadgeClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testbadgeClickEffectPropSmall START');
@@ -350,9 +392,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testbadgeClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testbadgeClickEffectPropMedium START');
@@ -369,9 +414,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testbadgeClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testbadgeClickEffectPropLarge START');
@@ -388,9 +436,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeClickEffectPropNone START');
@@ -408,9 +459,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testbadgeDirPropRtl START');
@@ -427,9 +481,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testbadgeDirPropLtr START');
@@ -446,9 +503,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testbadgeDirPropAuto START');
@@ -465,9 +525,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeDirPropNone START');
@@ -484,9 +547,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testbadgeForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeForPropNull', Level.LEVEL0, async function(done) {
             console.info('testbadgeForPropNull START');
@@ -504,9 +570,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testbadgeForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeForPropOne', Level.LEVEL0, async function(done) {
             console.info('testbadgeForPropOne START');
@@ -524,9 +593,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testbadgeForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeForPropThree', Level.LEVEL0, async function(done) {
             console.info('testbadgeForPropThree START');
@@ -544,9 +616,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testbadgeIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testbadgeIfPropTrue START');
@@ -564,9 +639,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testbadgeShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testbadgeShowPropTrue START');
@@ -584,9 +662,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testbadgeShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testbadgeShowPropFalse START');
@@ -604,9 +685,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeShowPropNone START');
@@ -626,9 +710,12 @@ export default function undo() {
         // 特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeplacementRight
-         * @tc.desc      ACE
+         * @tc.name   testbadgeplacementRight
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeplacementRight', Level.LEVEL0, async function(done) {
             console.info('testbadgeplacementRight START');
@@ -646,9 +733,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeplacementRightTop
-         * @tc.desc      ACE
+         * @tc.name   testbadgeplacementRightTop
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeplacementRightTop', Level.LEVEL0, async function(done) {
             console.info('testbadgeplacementRightTop START');
@@ -666,9 +756,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeplacementLeft
-         * @tc.desc      ACE
+         * @tc.name   testbadgeplacementLeft
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeplacementLeft', Level.LEVEL0, async function(done) {
             console.info('testbadgeplacementLeft START');
@@ -686,9 +779,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgeplacementNone
-         * @tc.desc      ACE
+         * @tc.name   testbadgeplacementNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgeplacementNone', Level.LEVEL0, async function(done) {
             console.info('testbadgeplacementNone START');
@@ -706,9 +802,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testbadgecount
-         * @tc.desc      ACE
+         * @tc.name   testbadgecount
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testbadgecount', Level.LEVEL0, async function(done) {
             console.info('testbadgecount START');
@@ -726,9 +825,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testvisibleTrue
-         * @tc.desc      ACE
+         * @tc.name   testvisibleTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testvisibleTrue', Level.LEVEL0, async function(done) {
             console.info('testvisibleTrue START');
@@ -746,9 +848,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testvisibleFalse
-         * @tc.desc      ACE
+         * @tc.name   testvisibleFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testvisibleFalse', Level.LEVEL0, async function(done) {
             console.info('testvisibleFalse START');
@@ -766,9 +871,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testvisibleNone
-         * @tc.desc      ACE
+         * @tc.name   testvisibleNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testvisibleNone', Level.LEVEL0, async function(done) {
             console.info('testvisibleNone START');
@@ -786,9 +894,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmaxcount
-         * @tc.desc      ACE
+         * @tc.name   testmaxcount
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmaxcount', Level.LEVEL0, async function(done) {
             console.info('testmaxcount START');
@@ -806,9 +917,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testmaxcountNone
-         * @tc.desc      ACE
+         * @tc.name   testmaxcountNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testmaxcountNone', Level.LEVEL0, async function(done) {
             console.info('testmaxcountNone START');
@@ -826,9 +940,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testconfig
-         * @tc.desc      ACE
+         * @tc.name   testconfig
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testconfig', Level.LEVEL0, async function(done) {
             console.info('testconfig START');
@@ -846,9 +963,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testconfigNone
-         * @tc.desc      ACE
+         * @tc.name   testconfigNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testconfigNone', Level.LEVEL0, async function(done) {
             console.info('testconfigNone START');
@@ -866,9 +986,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlabel
-         * @tc.desc      ACE
+         * @tc.name   testlabel
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlabel', Level.LEVEL0, async function(done) {
             console.info('testlabel START');
@@ -886,9 +1009,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlabelNone
-         * @tc.desc      ACE
+         * @tc.name   testlabelNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlabelNone', Level.LEVEL0, async function(done) {
             console.info('testlabelNone START');

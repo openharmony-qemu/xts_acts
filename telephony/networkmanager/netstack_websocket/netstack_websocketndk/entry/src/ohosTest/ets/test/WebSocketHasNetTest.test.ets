@@ -18,13 +18,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import webSocket from 'libtestNetStackWebsocketNdk.so'
 export default function webSocketHasNetTest() {
   describe('webSocketHasNetTest', () => {    
-    /*
-     * @tc.number:SUB_testWebSocketClientConstruct001
-     * @tc.name: testWebSocketClientConstruct001
-     * @tc.desc:test webSocket OHWebSocketClientConstruct 
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testWebSocketClientConstruct001
+     * @tc.number SUB_testWebSocketClientConstruct001
+     * @tc.desc   test webSocket OHWebSocketClientConstruct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebSocketClientConstruct001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -34,13 +34,13 @@ export default function webSocketHasNetTest() {
       done()
     })
     
-   /*
-     * @tc.number:SUB_testWebSocketClientConnect003
-     * @tc.name: testWebSocketClientConnect003
-     * @tc.desc:test webSocket OHWebSocketClientConnect 
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testWebSocketClientConnect003
+     * @tc.number SUB_testWebSocketClientConnect003
+     * @tc.desc   test webSocket OHWebSocketClientConnect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebSocketClientConnect003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

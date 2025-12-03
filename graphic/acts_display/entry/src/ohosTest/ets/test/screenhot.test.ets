@@ -35,12 +35,12 @@ export default function screenHotTest() {
         });
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_SCREEN_SHOT_CAPTURE_ERRORCODE_0100
-         * @tc.name      : tesScreenShot_Capture_ErrorCode201
-         * @tc.desc      : tesScreenShot_Capture_ErrorCode201 when without permission
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   tesScreenShot_Capture_ErrorCode201
+         * @tc.number SUB_BASIC_WMS_SPCIAL_SCREEN_SHOT_CAPTURE_ERRORCODE_0100
+         * @tc.desc   tesScreenShot_Capture_ErrorCode201 when without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('tesScreenShot_Capture_ErrorCode201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
             let caseName = 'tesScreenShot_Capture_ErrorCode201';
@@ -72,6 +72,14 @@ export default function screenHotTest() {
         //  * @tc.type      : Function
         //  * @tc.level     : Level3
         //  */
+        /**
+         * @tc.name   tesScreenHot_pick
+         * @tc.number tesScreenHot_pick
+         * @tc.desc   tesScreenHot_pick
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         // it('tesScreenHot_pick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         //     let caseName = 'tesScreenHot_pick';
         //     let msgStr = 'jsunittest ' + caseName + ' ';

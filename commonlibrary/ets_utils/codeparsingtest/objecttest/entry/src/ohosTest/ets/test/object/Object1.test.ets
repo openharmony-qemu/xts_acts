@@ -241,12 +241,12 @@ export default function Object1Test() {
     })
 
     /**
+     * @tc.name   Object1Test001
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0100
-     * @tc.name Object1Test001
-     * @tc.desc Call Object() with no parameters, verify returning empty object and its prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with no parameters, verify returning empty object and its prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result1).assertEqual('object');
@@ -254,12 +254,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test002
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0200
-     * @tc.name Object1Test002
-     * @tc.desc Call Object() with null as parameter, verify returning empty object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with null as parameter, verify returning empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result2).assertEqual('object');
@@ -267,12 +267,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test003
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0300
-     * @tc.name Object1Test003
-     * @tc.desc Call Object() with undefined as parameter, verify returning empty object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with undefined as parameter, verify returning empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result3).assertEqual('object');
@@ -280,12 +280,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test004
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0400
-     * @tc.name Object1Test004
-     * @tc.desc Call Object() with a plain object as parameter, verify returning original object and its properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a plain object as parameter, verify returning original object and its properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result4).assertEqual(originalObj4);
@@ -294,12 +294,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test005
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0500
-     * @tc.name Object1Test005
-     * @tc.desc Call Object() with an array as parameter, verify returning original array and its characteristics
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an array as parameter, verify returning original array and its characteristics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result5).assertEqual(originalArr5);
@@ -309,12 +309,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test006
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0600
-     * @tc.name Object1Test006
-     * @tc.desc Call Object() with a function as parameter, verify returning original function and its callability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function as parameter, verify returning original function and its callability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result6).assertEqual(originalFn6);
@@ -323,12 +323,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test007
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0700
-     * @tc.name Object1Test007
-     * @tc.desc Call Object() with a BigInt as parameter, verify wrapped object and its characteristics
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a BigInt as parameter, verify wrapped object and its characteristics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result7).assertEqual('object');
@@ -336,12 +336,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test008
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0800
-     * @tc.name Object1Test008
-     * @tc.desc Call Object() with a Symbol as parameter, verify wrapped object and its characteristics
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol as parameter, verify wrapped object and its characteristics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result8).assertEqual('object');
@@ -349,12 +349,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test009
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_0900
-     * @tc.name Object1Test009
-     * @tc.desc Call Object() with a Number primitive as parameter, verify wrapped object and its prototype methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Number primitive as parameter, verify wrapped object and its prototype methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result9).assertEqual('object');
@@ -363,12 +363,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test010
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1000
-     * @tc.name Object1Test010
-     * @tc.desc Call Object() with a String primitive as parameter, verify wrapped object and its prototype methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a String primitive as parameter, verify wrapped object and its prototype methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result10).assertEqual('object');
@@ -377,12 +377,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test011
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1100
-     * @tc.name Object1Test011
-     * @tc.desc Call Object() with a Boolean primitive (true), verify wrapped object and value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Boolean primitive (true), verify wrapped object and value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result11).assertEqual('object');
@@ -391,12 +391,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test012
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1200
-     * @tc.name Object1Test012
-     * @tc.desc Call Object() with a Boolean primitive (false), verify wrapped object and value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Boolean primitive (false), verify wrapped object and value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result12).assertEqual('object');
@@ -405,12 +405,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test013
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1300
-     * @tc.name Object1Test013
-     * @tc.desc Call Object() with a Date object, verify returning original Date and its value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Date object, verify returning original Date and its value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result13).assertEqual(originalDate13);
@@ -419,12 +419,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test014
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1400
-     * @tc.name Object1Test014
-     * @tc.desc Call Object() with a RegExp object, verify returning original RegExp and its properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a RegExp object, verify returning original RegExp and its properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result14).assertEqual(originalRegExp14);
@@ -433,12 +433,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test015
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1500
-     * @tc.name Object1Test015
-     * @tc.desc Call Object() with a Map object, verify returning original Map and its size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Map object, verify returning original Map and its size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result15).assertEqual(originalMap15);
@@ -447,12 +447,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test016
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1600
-     * @tc.name Object1Test016
-     * @tc.desc Call Object() with a Set object, verify returning original Set and its size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Set object, verify returning original Set and its size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result16).assertEqual(originalSet16);
@@ -461,12 +461,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test017
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1700
-     * @tc.name Object1Test017
-     * @tc.desc Call Object() with a Uint8Array, verify returning original array and its length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Uint8Array, verify returning original array and its length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result17).assertEqual(originalTypedArr17);
@@ -475,12 +475,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test019
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_1900
-     * @tc.name Object1Test019
-     * @tc.desc Call Object() with a nested object, verify returning original object and nested properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a nested object, verify returning original object and nested properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result19).assertEqual(originalObj19);
@@ -489,12 +489,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test020
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2000
-     * @tc.name Object1Test020
-     * @tc.desc Call Object() with an empty array, verify returning original array and length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an empty array, verify returning original array and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result20).assertEqual(originalArr20);
@@ -503,12 +503,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test021
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2100
-     * @tc.name Object1Test021
-     * @tc.desc Call Object() with a function with prototype properties, verify returning original function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function with prototype properties, verify returning original function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn21_1();
@@ -518,12 +518,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test022
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2200
-     * @tc.name Object1Test022
-     * @tc.desc Call Object() with a Number object (new Number()), verify returning original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Number object (new Number()), verify returning original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result22).assertEqual(originalNumObj22);
@@ -532,12 +532,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test023
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2300
-     * @tc.name Object1Test023
-     * @tc.desc Call Object() with a String object (new String()), verify returning original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a String object (new String()), verify returning original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result23).assertEqual(originalStrObj23);
@@ -546,12 +546,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test024
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2400
-     * @tc.name Object1Test024
-     * @tc.desc Call Object() with a Boolean object (new Boolean()), verify returning original object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Boolean object (new Boolean()), verify returning original object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result24).assertEqual(originalBoolObj24);
@@ -560,12 +560,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test025
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2500
-     * @tc.name Object1Test025
-     * @tc.desc Call Object() with a BigInt object (wrapped), verify valueOf() matches original BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a BigInt object (wrapped), verify valueOf() matches original BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result25).assertEqual(wrappedBigInt25);
@@ -574,12 +574,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test026
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2600
-     * @tc.name Object1Test026
-     * @tc.desc Call Object() with a Symbol object (wrapped), verify valueOf() matches original Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol object (wrapped), verify valueOf() matches original Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result26).assertEqual('object');
@@ -588,12 +588,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test027
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2700
-     * @tc.name Object1Test027
-     * @tc.desc Call Object() with an array of objects, verify returning original array and elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an array of objects, verify returning original array and elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result27).assertEqual(originalArr27);
@@ -602,12 +602,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test028
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2800
-     * @tc.name Object1Test028
-     * @tc.desc Call Object() with a function that returns an object, verify function callability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function that returns an object, verify function callability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result28).assertEqual(getObj28);
@@ -616,12 +616,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test029
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_2900
-     * @tc.name Object1Test029
-     * @tc.desc Call Object() with a frozen object, verify returning original frozen object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a frozen object, verify returning original frozen object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result29).assertEqual(originalObj29);
@@ -630,12 +630,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test030
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3000
-     * @tc.name Object1Test030
-     * @tc.desc Call Object() with a sealed object, verify returning original sealed object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a sealed object, verify returning original sealed object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result30).assertEqual(originalObj30);
@@ -644,12 +644,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test031
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3100
-     * @tc.name Object1Test031
-     * @tc.desc Call Object() with a non-enumerable property object, verify property existence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a non-enumerable property object, verify property existence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn31();
@@ -659,12 +659,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test032
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3200
-     * @tc.name Object1Test032
-     * @tc.desc Call Object() with a read-only property object, verify property immutability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a read-only property object, verify property immutability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn32()
@@ -672,12 +672,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test033
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3300
-     * @tc.name Object1Test033
-     * @tc.desc Call Object() with a Symbol-keyed property object, verify property access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol-keyed property object, verify property access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result33).assertEqual(originalObj33);
@@ -686,12 +686,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test034
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3400
-     * @tc.name Object1Test034
-     * @tc.desc Call Object() with a large Number primitive, verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a large Number primitive, verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result34).assertEqual('object');
@@ -699,12 +699,12 @@ export default function Object1Test() {
       expect(result34.toString()).assertEqual('999999999999999');
     });
     /**
+     * @tc.name   Object1Test035
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3500
-     * @tc.name Object1Test035
-     * @tc.desc Call Object() with a negative Number primitive, verify wrapped object value and methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a negative Number primitive, verify wrapped object value and methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result35).assertEqual('object');
@@ -713,12 +713,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test036
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3600
-     * @tc.name Object1Test036
-     * @tc.desc Call Object() with a floating-point Number primitive, verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a floating-point Number primitive, verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result36).assertEqual('object');
@@ -727,12 +727,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test037
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3700
-     * @tc.name Object1Test037
-     * @tc.desc Call Object() with an empty string primitive, verify wrapped object and length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an empty string primitive, verify wrapped object and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result37).assertEqual('object');
@@ -742,12 +742,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test038
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3800
-     * @tc.name Object1Test038
-     * @tc.desc Call Object() with a string with special characters, verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a string with special characters, verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result38).assertEqual('object');
@@ -757,12 +757,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test039
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_3900
-     * @tc.name Object1Test039
-     * @tc.desc Call Object() with a Map with multiple entries, verify original Map properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Map with multiple entries, verify original Map properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result39).assertEqual(originalMap39);
@@ -772,12 +772,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test040
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4000
-     * @tc.name Object1Test040
-     * @tc.desc Call Object() with a Set with duplicate values (auto-removed), verify Set size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Set with duplicate values (auto-removed), verify Set size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result40).assertEqual(originalSet40);
@@ -787,12 +787,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test041
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4100
-     * @tc.name Object1Test041
-     * @tc.desc Call Object() with a Uint32Array, verify original typed array values and length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Uint32Array, verify original typed array values and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result41).assertEqual(originalTypedArr41);
@@ -802,12 +802,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test042
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4200
-     * @tc.name Object1Test042
-     * @tc.desc Call Object() with a nested array, verify original array and nested elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a nested array, verify original array and nested elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result42).assertEqual(originalArr42);
@@ -817,12 +817,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test043
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4300
-     * @tc.name Object1Test043
-     * @tc.desc Call Object() with a function with static properties, verify static property access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function with static properties, verify static property access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn43_1();
@@ -832,12 +832,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test044
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4400
-     * @tc.name Object1Test044
-     * @tc.desc Call Object() with a Date object of current time, verify time consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Date object of current time, verify time consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result44).assertEqual(originalDate44);
@@ -846,12 +846,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test045
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4500
-     * @tc.name Object1Test045
-     * @tc.desc Call Object() with a RegExp with multiple flags, verify flag consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a RegExp with multiple flags, verify flag consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result45).assertEqual(originalRegExp45);
@@ -861,12 +861,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test046
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4600
-     * @tc.name Object1Test046
-     * @tc.desc Call Object() with a weak Map (WeakMap), verify returning original WeakMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a weak Map (WeakMap), verify returning original WeakMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn46();
@@ -876,12 +876,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test047
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4700
-     * @tc.name Object1Test047
-     * @tc.desc Call Object() with a WeakSet, verify returning original WeakSet
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a WeakSet, verify returning original WeakSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn47();
@@ -891,12 +891,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test048
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4800
-     * @tc.name Object1Test048
-     * @tc.desc Call Object() with an object with inherited properties, verify inherited property access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an object with inherited properties, verify inherited property access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn48();
@@ -906,12 +906,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test049
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_4900
-     * @tc.name Object1Test049
-     * @tc.desc Call Object() with a function that takes parameters, verify function execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function that takes parameters, verify function execution
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result49).assertEqual(calculate49);
@@ -920,12 +920,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test050
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5000
-     * @tc.name Object1Test050
-     * @tc.desc Call Object() with a BigInt of large value, verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a BigInt of large value, verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result50).assertEqual('object');
@@ -934,12 +934,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test051
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5100
-     * @tc.name Object1Test051
-     * @tc.desc Call Object() with a Symbol with empty description, verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol with empty description, verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result51).assertEqual('object');
@@ -948,12 +948,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test052
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5200
-     * @tc.name Object1Test052
-     * @tc.desc Call Object() with a Boolean object (new Boolean(false)), verify value and type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Boolean object (new Boolean(false)), verify value and type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result52).assertEqual(originalBoolObj52);
@@ -963,12 +963,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test053
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5300
-     * @tc.name Object1Test053
-     * @tc.desc Call Object() with an object with a getter property, verify getter functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an object with a getter property, verify getter functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result53).assertEqual(originalObj53);
@@ -978,12 +978,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test054
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5400
-     * @tc.name Object1Test054
-     * @tc.desc Call Object() with an object with a setter property, verify setter functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an object with a setter property, verify setter functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result54).assertEqual(originalObj54);
@@ -992,12 +992,12 @@ export default function Object1Test() {
       expect(result54._name).assertEqual('Test User');
     });
     /**
+     * @tc.name   Object1Test055
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5500
-     * @tc.name Object1Test055
-     * @tc.desc Call Object() with a Float32Array, verify original typed array values and BYTES_PER_ELEMENT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Float32Array, verify original typed array values and BYTES_PER_ELEMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result55).assertEqual(originalTypedArr55);
@@ -1007,12 +1007,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test056
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5600
-     * @tc.name Object1Test056
-     * @tc.desc Call Object() with a Float64Array, verify original typed array value accuracy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Float64Array, verify original typed array value accuracy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result56).assertEqual(originalTypedArr56);
@@ -1021,12 +1021,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test057
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5700
-     * @tc.name Object1Test057
-     * @tc.desc Call Object() with a string containing Unicode characters, verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a string containing Unicode characters, verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result57).assertEqual('object');
@@ -1036,12 +1036,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test058
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5800
-     * @tc.name Object1Test058
-     * @tc.desc Call Object() with a Map that has object keys, verify key-value access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Map that has object keys, verify key-value access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result58).assertEqual(originalMap58);
@@ -1050,12 +1050,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test059
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_5900
-     * @tc.name Object1Test059
-     * @tc.desc Call Object() with a Set that contains object elements, verify element existence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Set that contains object elements, verify element existence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result59).assertEqual(originalSet59);
@@ -1064,12 +1064,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test061
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6100
-     * @tc.name Object1Test061
-     * @tc.desc Call Object() with a Date object set to a past timestamp, verify date string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Date object set to a past timestamp, verify date string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result61).assertEqual(originalDate61);
@@ -1078,12 +1078,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test062
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6200
-     * @tc.name Object1Test062
-     * @tc.desc Call Object() with a RegExp that matches numbers, verify test() functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a RegExp that matches numbers, verify test() functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result62).assertEqual(originalRegExp62);
@@ -1092,12 +1092,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test063
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6300
-     * @tc.name Object1Test063
-     * @tc.desc Call Object() with a WeakMap that has multiple object keys, verify value access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a WeakMap that has multiple object keys, verify value access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Fn63();
@@ -1106,12 +1106,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test064
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6400
-     * @tc.name Object1Test064
-     * @tc.desc Call Object() with a WeakSet that has multiple object elements, verify existence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a WeakSet that has multiple object elements, verify existence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let list: Array<string> = Fn64();
@@ -1119,12 +1119,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test065
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6500
-     * @tc.name Object1Test065
-     * @tc.desc Call Object() with an object with a computed property name, verify property access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an object with a computed property name, verify property access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result65).assertEqual(originalObj65);
@@ -1133,12 +1133,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test066
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6600
-     * @tc.name Object1Test066
-     * @tc.desc Call Object() with an array of primitives (mixed types), verify element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an array of primitives (mixed types), verify element values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result66).assertEqual(originalArr66);
@@ -1148,12 +1148,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test067
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6700
-     * @tc.name Object1Test067
-     * @tc.desc Call Object() with a function that uses rest parameters, verify parameter handling
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function that uses rest parameters, verify parameter handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result67).assertEqual(sum67);
@@ -1162,12 +1162,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test068
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6800
-     * @tc.name Object1Test068
-     * @tc.desc Call Object() with a BigInt that is the result of an operation, verify wrapped value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a BigInt that is the result of an operation, verify wrapped value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result68).assertEqual('object');
@@ -1176,12 +1176,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test069
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_6900
-     * @tc.name Object1Test069
-     * @tc.desc Call Object() with a Symbol that is the result of Symbol.for(), verify consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol that is the result of Symbol.for(), verify consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result69).assertEqual('object');
@@ -1190,12 +1190,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test071
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7100
-     * @tc.name Object1Test071
-     * @tc.desc Call Object() with a frozen array, verify original array and frozen state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a frozen array, verify original array and frozen state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result71).assertEqual(originalArr71);
@@ -1204,12 +1204,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test072
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7200
-     * @tc.name Object1Test072
-     * @tc.desc Call Object() with a sealed array, verify original array and sealed state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a sealed array, verify original array and sealed state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result72).assertEqual(originalArr72);
@@ -1219,12 +1219,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test073
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7300
-     * @tc.name Object1Test073
-     * @tc.desc Call Object() with a string with leading/trailing spaces, verify trim() functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a string with leading/trailing spaces, verify trim() functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result73).assertEqual('object');
@@ -1233,12 +1233,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test074
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7400
-     * @tc.name Object1Test074
-     * @tc.desc Call Object() with a Number primitive (Infinity), verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Number primitive (Infinity), verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result74).assertEqual('object');
@@ -1247,12 +1247,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test075
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7500
-     * @tc.name Object1Test075
-     * @tc.desc Call Object() with a Number primitive (NaN), verify wrapped object value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Number primitive (NaN), verify wrapped object value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result75).assertEqual('object');
@@ -1261,12 +1261,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test076
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7600
-     * @tc.name Object1Test076
-     * @tc.desc Call Object() with a cleared Map, verify original Map's size and empty state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a cleared Map, verify original Map's size and empty state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result76).assertEqual(originalMap76);
@@ -1276,12 +1276,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test077
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7700
-     * @tc.name Object1Test077
-     * @tc.desc Call Object() with a cleared Set, verify original Set's size and empty state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a cleared Set, verify original Set's size and empty state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       fn77();
@@ -1291,12 +1291,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test078
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7800
-     * @tc.name Object1Test078
-     * @tc.desc Call Object() with a Uint16Array, verify original typed array values and byte size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Uint16Array, verify original typed array values and byte size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result78).assertEqual(originalTypedArr78);
@@ -1306,12 +1306,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test079
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_7900
-     * @tc.name Object1Test079
-     * @tc.desc Call Object() with a function that returns a generator, verify generator functionality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function that returns a generator, verify generator functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(generator.next().value).assertEqual(1);
@@ -1320,12 +1320,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test080
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8000
-     * @tc.name Object1Test080
-     * @tc.desc Call Object() with a Date object set to a future timestamp, verify date consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Date object set to a future timestamp, verify date consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result80).assertEqual(originalDate80);
@@ -1334,12 +1334,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test081
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8100
-     * @tc.name Object1Test081
-     * @tc.desc Call Object() with a RegExp that matches special characters, verify test() result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a RegExp that matches special characters, verify test() result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result81).assertEqual(originalRegExp81);
@@ -1349,12 +1349,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test082
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8200
-     * @tc.name Object1Test082
-     * @tc.desc Call Object() with an object with a method, verify method callability
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an object with a method, verify method callability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result82).assertEqual(originalObj82);
@@ -1364,12 +1364,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test083
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8300
-     * @tc.name Object1Test083
-     * @tc.desc Call Object() with an array with holes (sparse array), verify hole preservation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an array with holes (sparse array), verify hole preservation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result83).assertEqual(originalArr83);
@@ -1379,12 +1379,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test084
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8400
-     * @tc.name Object1Test084
-     * @tc.desc Call Object() with a BigInt that is negative, verify wrapped object value and sign
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a BigInt that is negative, verify wrapped object value and sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result84).assertEqual('object');
@@ -1394,12 +1394,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test085
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8500
-     * @tc.name Object1Test085
-     * @tc.desc Call Object() with a Symbol used as an object key, verify key access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol used as an object key, verify key access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result85).assertEqual(originalObj85);
@@ -1410,12 +1410,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test087
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8700
-     * @tc.name Object1Test087
-     * @tc.desc Call Object() with a Float32Array with negative values, verify value accuracy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Float32Array with negative values, verify value accuracy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result87).assertEqual(originalTypedArr87);
@@ -1425,12 +1425,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test088
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_8800
-     * @tc.name Object1Test088
-     * @tc.desc Call Object() with a string that is a number, verify wrapped object methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a string that is a number, verify wrapped object methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result88).assertEqual('object');
@@ -1440,12 +1440,12 @@ export default function Object1Test() {
 
 
     /**
+     * @tc.name   Object1Test092
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9200
-     * @tc.name Object1Test092
-     * @tc.desc Call Object() with an array of objects (mutable), verify mutation reflects in result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with an array of objects (mutable), verify mutation reflects in result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result92).assertEqual(originalArr92);
@@ -1456,12 +1456,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test093
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9300
-     * @tc.name Object1Test093
-     * @tc.desc Call Object() with a function that has a default parameter, verify default value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function that has a default parameter, verify default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result93).assertEqual(greet93);
@@ -1470,12 +1470,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test094
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9400
-     * @tc.name Object1Test094
-     * @tc.desc Call Object() with a Date object that is invalid, verify invalid state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Date object that is invalid, verify invalid state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result94).assertEqual(originalDate94);
@@ -1484,12 +1484,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test095
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9500
-     * @tc.name Object1Test095
-     * @tc.desc Call Object() with a Symbol that is Symbol.iterator, verify wrapped object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Symbol that is Symbol.iterator, verify wrapped object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result95).assertEqual('object');
@@ -1498,12 +1498,12 @@ export default function Object1Test() {
       expect(result95.valueOf() === Symbol.iterator).assertEqual(true);
     });
     /**
+     * @tc.name   Object1Test096
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9600
-     * @tc.name Object1Test096
-     * @tc.desc Call Object() with a Uint8ClampedArray, verify value clamping behavior preservation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Uint8ClampedArray, verify value clamping behavior preservation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result96).assertEqual(originalTypedArr96);
@@ -1515,12 +1515,12 @@ export default function Object1Test() {
 
 
     /**
+     * @tc.name   Object1Test098
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9800
-     * @tc.name Object1Test098
-     * @tc.desc Call Object() with a Map that has a BigInt key, verify key-value lookup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a Map that has a BigInt key, verify key-value lookup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(result98).assertEqual(originalMap98);
@@ -1530,12 +1530,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test099
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_9900
-     * @tc.name Object1Test099
-     * @tc.desc Call Object() with a function that returns a WeakMap, verify function output
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a function that returns a WeakMap, verify function output
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(weakMapResult99 instanceof WeakMap).assertEqual(true);
@@ -1543,12 +1543,12 @@ export default function Object1Test() {
     });
 
     /**
+     * @tc.name   Object1Test100
      * @tc.number SUB_BUILTINS_OBJECT1_TEST_10000
-     * @tc.name Object1Test100
-     * @tc.desc Call Object() with a string with line breaks, verify wrapped object value and length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Call Object() with a string with line breaks, verify wrapped object value and length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(typeof result100).assertEqual('object');

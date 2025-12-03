@@ -38,12 +38,12 @@ export default function actsConnectServiceTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Context_AbilityContext_1600
      * @tc.number SUB_Ability_AbilityRuntime_Context_AbilityContext_1600
-     * @tc.name test connectServiceExtension function
-     * @tc.desc test want as undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test want as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Context_AbilityContext_1600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_Context_AbilityContext_1600';
@@ -80,12 +80,12 @@ export default function actsConnectServiceTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Context_AbilityContext_1700
      * @tc.number SUB_Ability_AbilityRuntime_Context_AbilityContext_1700
-     * @tc.name test connectServiceExtension function
-     * @tc.desc test want as empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test want as empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Context_AbilityContext_1700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_Context_AbilityContext_1700';
