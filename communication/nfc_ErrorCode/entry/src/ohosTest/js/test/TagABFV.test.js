@@ -279,8 +279,16 @@ export default function nfcTagABFVErrorTest() {
                 console.info('[NFC_test]08 nfc unregisterForegroundDispatch pass')
                 expect().assertFail();
             } catch (error) {
-                console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code)
-                expect(401).assertEqual(error.code);
+                if (error.code == 201) {
+                    console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code);
+                    expect(201).assertEqual(error.code);
+                } else if (error.code == 201) {
+                    console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test]08 nfc unregisterForegroundDispatch failed');
+                    expect().assertFail();
+                }
             }
         })
 

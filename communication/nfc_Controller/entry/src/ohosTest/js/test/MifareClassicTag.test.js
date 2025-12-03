@@ -56,7 +56,13 @@ export default function nfcMifareClassicTag() {
             try{
                 MifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
             } catch (error) {
-                console.info('beforeAll mifareClassic error' + error)
+                if (error.code == 3100201) {
+                    expect(error.code).assertEqual(3100201);
+                    console.info('beforeAll mifareClassic error' + error.code + error);
+                } else {
+                    expect.assertFail();
+                    console.info('beforeAll mifareClassic Fail');
+                }
             }
         })
         beforeEach(function() {

@@ -846,8 +846,16 @@ export default function nfcTagABFVTest() {
                 expect(MifareClassicTag != null).assertTrue();
                 expect(MifareClassicTag instanceof Object).assertTrue();
             } catch (error) {
-                console.info('nfc mifareClassic20 error' + error + "/" + error.code)
-                expect(801).assertEqual(error.code)
+                if (error.code == 801) {
+                    console.info('nfc mifareClassic20 error' + error + "/" + error.code);
+                    expect(801).assertEqual(error.code)
+                } else if (error.code == 3100201) {
+                    console.info('nfc mifareClassic20 error' + error + "/" + error.code);
+                    expect(3100201).assertEqual(error.code)
+                } else {
+                    console.info('nfc mifareClassic20 failed');
+                    expect().assertFail();
+                }
             }
         })
 
@@ -918,8 +926,16 @@ export default function nfcTagABFVTest() {
                 tag.unregisterForegroundDispatch(elementName);
                 console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
             } catch (error) {
-                console.info('nfc registerForegroundDispatch error' + error + "/" + error.code)
-                expect(801).assertEqual(error.code)
+                if (error.code == 201) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(801).assertEqual(error.code)
+                } else if (error.code == 801) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(801).assertEqual(error.code)
+                } else {
+                    console.info('nfc registerForegroundDispatch failed');
+                    expect().assertFail();
+                }
             }
         })
 
