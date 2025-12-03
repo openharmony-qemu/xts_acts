@@ -51,7 +51,7 @@ napi_value ShowCounterTest::showCounterTest(
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     auto Column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     TextArea = nodeAPI->createNode(ARKUI_NODE_TEXT_AREA);
-    ArkUI_AttributeItem buttonItem = {.string = "textArea"};
+    ArkUI_AttributeItem buttonItem = {.string = "textArea_01"};
     ArkUI_NumberValue maxLengthValue[] = {{.i32 = 5}};
     ArkUI_AttributeItem maxLengthItem = {maxLengthValue, 1};
     TextInput = nodeAPI->createNode(ARKUI_NODE_TEXT_INPUT);
