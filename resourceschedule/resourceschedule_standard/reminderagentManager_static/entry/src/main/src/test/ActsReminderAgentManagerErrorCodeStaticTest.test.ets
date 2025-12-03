@@ -41,12 +41,12 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
 
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003
-     * @tc.desc:test cancelReminder callback function errorCode is 1700003
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003
+     * @tc.desc   test cancelReminder callback function errorCode is 1700003
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -76,12 +76,12 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004
-     * @tc.desc:test cancelReminder promise function errorCode is 1700003
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004
+     * @tc.desc   Test cancelReminder promise function errorCode is 1700003
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -107,12 +107,12 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005
-     * @tc.desc:test addExcludeDate function errorCode is 1700003
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005
+     * @tc.desc   Test addExcludeDate function errorCode is 1700003
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -139,12 +139,12 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
-     * @tc.desc:test deleteExcludeDates function errorCode is 1700003
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
+     * @tc.name:  SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
+     * @tc.desc   Test deleteExcludeDates function errorCode is 1700003
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -170,12 +170,12 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007
-     * @tc.desc:test getExcludeDates function errorCode is 1700003
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007
+     * @tc.desc   Test getExcludeDates function errorCode is 1700003
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
