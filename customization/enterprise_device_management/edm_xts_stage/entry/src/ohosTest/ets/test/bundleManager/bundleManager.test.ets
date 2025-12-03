@@ -28,7 +28,9 @@ import {
   HAP_FILE_PATH,
   EDM_INSTALL_PARAM,
   EDM_INSTALL_PARAM_FOR_ALL_USER,
-  HAP_FILE_PATH_ERROR
+  HAP_FILE_PATH_ERROR,
+  MARKET_APPS,
+  ERROR_MARKET_APPS
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -2610,6 +2612,87 @@ export default function bundleManagerTest() {
         expect(edmBundleInfo?.signatureInfo?.certificate === bmsBundleInfo?.signatureInfo?.certificate).assertTrue();
       } catch (error) {
         expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_001
+     * @tc.desc   test install market apps method without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_002
+     * @tc.desc   test install market apps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_002", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_003
+     * @tc.desc   test market apps method with Super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_003", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error.code == 9201002) || (error.code == 801)).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_004
+     * @tc.desc   test market apps method with Super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_004", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.installMarketApps(SELFWANT, ERROR_MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error.code == 9200012) || (error.code == 801)).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

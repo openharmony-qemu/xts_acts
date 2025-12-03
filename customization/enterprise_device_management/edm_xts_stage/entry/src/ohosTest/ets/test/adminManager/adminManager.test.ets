@@ -16,7 +16,7 @@ import { describe, expect, it, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want'
 import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS,
   BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND,
-  OTHER_WANT, NOT_EXIST_WANT
+  OTHER_WANT, NOT_EXIST_WANT, DEFAULT_USER_ID, TEST_BUNDLENAME
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -1149,6 +1149,45 @@ export default function adminManagerTest() {
       } finally {
         await adminManager.disableAdmin(SELFWANT);
         await adminManager.disableAdmin(OTHER_WANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DELEGATED_POLICIES_001
+     * @tc.name      : test_set_delegated_policies_001
+     * @tc.desc      : test set delegated policies method without admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_set_delegated_policies_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.setDelegatedPolicies(TEST_BUNDLENAME, DEFAULT_USER_ID, DELEGATED_POLICIES);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200009).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DELEGATED_POLICIES_002
+     * @tc.name      : test_set_delegated_policies_002
+     * @tc.desc      : test set delegated policies method when bundle is admin.
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_set_delegated_policies_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await adminManager.setDelegatedPolicies(SELFWANT.bundleName, DEFAULT_USER_ID, DELEGATED_POLICIES);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200009).assertTrue();
+      }  finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })
